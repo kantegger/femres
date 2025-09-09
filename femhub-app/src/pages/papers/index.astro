@@ -1,0 +1,185 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PaperCard from '../../components/PaperCard.astro';
+
+// 获取所有已发布的论文
+const papers = await getCollection('papers', ({ data }) => data.status === 'published');
+
+// 按发布日期排序
+const sortedPapers = papers.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
+
+// 统计信息
+const totalPapers = papers.length;
+const totalCitations = papers.reduce((acc, paper) => acc + (paper.data.citationCount || 0), 0);
+
+// 获取所有主题并去重
+const allTopics = [...new Set(papers.flatMap(paper => paper.data.topics))].sort();
+
+// 论文类型统计
+const paperTypes = papers.reduce((acc, paper) => {
+  const type = paper.data.paperType || 'research';
+  acc[type] = (acc[type] || 0) + 1;
+  return acc;
+}, {} as Record<string, number>);
+
+// 期刊统计
+const journalCount = new Set(papers.map(paper => paper.data.journal).filter(Boolean)).size;
+
+// 格式化数字
+const formatNumber = (num: number) => {
+  if (num >= 1000) {
+    return (num / 1000).toFixed(1) + 'K';
+  }
+  return num.toString();
+};
+---
+
+<Layout title="学术论文 - FemHub" description="汇聚女性主义学术研究的前沿论文，探索性别研究的理论发展与实践应用">
+  <!-- Hero Section -->
+  <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          📄 学术论文
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+          汇聚女性主义学术研究的前沿成果，探索性别研究的理论创新与实证分析
+        </p>
+        
+        <!-- Statistics -->
+        <div class="flex flex-wrap justify-center gap-6 text-sm">
+          <div class="flex items-center bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-full">
+            <span class="text-blue-600 dark:text-blue-400 mr-2">📄</span>
+            <span class="text-blue-800 dark:text-blue-200">共 {totalPapers} 篇论文</span>
+          </div>
+          <div class="flex items-center bg-red-50 dark:bg-red-900/20 px-4 py-2 rounded-full">
+            <span class="text-red-600 dark:text-red-400 mr-2">📊</span>
+            <span class="text-red-800 dark:text-red-200">总引用 {formatNumber(totalCitations)} 次</span>
+          </div>
+          <div class="flex items-center bg-green-50 dark:bg-green-900/20 px-4 py-2 rounded-full">
+            <span class="text-green-600 dark:text-green-400 mr-2">📚</span>
+            <span class="text-green-800 dark:text-green-200">{journalCount} 个期刊</span>
+          </div>
+          <div class="flex items-center bg-purple-50 dark:bg-purple-900/20 px-4 py-2 rounded-full">
+            <span class="text-purple-600 dark:text-purple-400 mr-2">🏷️</span>
+            <span class="text-purple-800 dark:text-purple-200">{allTopics.length} 个研究领域</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- 主题标签筛选 -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">研究领域</h2>
+      <div class="flex flex-wrap gap-3">
+        <button 
+          data-topic="all"
+          class="topic-filter inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium active"
+        >
+          全部论文
+        </button>
+        {allTopics.map(topic => (
+          <button 
+            data-topic={topic}
+            class="topic-filter inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-amber-500 dark:hover:border-amber-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors text-sm"
+          >
+            {topic}
+          </button>
+        ))}
+      </div>
+    </div>
+
+
+    <!-- 论文网格 -->
+    <div class="mb-8">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">全部论文</h2>
+        <div class="text-sm text-gray-600 dark:text-gray-400">
+          共 {totalPapers} 篇论文
+        </div>
+      </div>
+      
+      <div id="papers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sortedPapers.map(paper => (
+          <div class="paper-card" data-topics={JSON.stringify(paper.data.topics)}>
+            <PaperCard
+              title={paper.data.title}
+              author={paper.data.author}
+              description={paper.data.description}
+              publishDate={paper.data.publishDate}
+              sourceUrl={paper.data.sourceUrl}
+              slug={paper.slug}
+              topics={paper.data.topics}
+              doi={paper.data.doi}
+              journal={paper.data.journal}
+              citationCount={paper.data.citationCount}
+              paperType={paper.data.paperType}
+              keywords={paper.data.keywords}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.topic-filter');
+    const paperCards = document.querySelectorAll('.paper-card');
+    const countDisplay = document.querySelector('.text-sm.text-gray-600.dark\\:text-gray-400');
+    const sectionTitle = document.querySelector('.mb-8 h2');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const selectedTopic = this.dataset.topic;
+        
+        // Update active button
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active', 'bg-indigo-600', 'text-white');
+          btn.classList.add('bg-white', 'dark:bg-gray-800', 'border', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+        });
+        
+        this.classList.add('active', 'bg-indigo-600', 'text-white');
+        this.classList.remove('bg-white', 'dark:bg-gray-800', 'border', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+        
+        // Filter papers
+        let visibleCount = 0;
+        paperCards.forEach(card => {
+          const topics = JSON.parse(card.dataset.topics);
+          const shouldShow = selectedTopic === 'all' || topics.includes(selectedTopic);
+          
+          if (shouldShow) {
+            card.style.display = 'block';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        
+        // Update count display
+        if (countDisplay) {
+          countDisplay.textContent = `共 ${visibleCount} 篇论文`;
+        }
+        
+        // Update section title
+        if (sectionTitle) {
+          sectionTitle.textContent = selectedTopic === 'all' ? '全部论文' : `${selectedTopic} 论文`;
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .topic-filter.active {
+    background-color: rgb(79 70 229) !important;
+    color: white !important;
+    border: none !important;
+  }
+</style>

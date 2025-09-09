@@ -1,30 +1,37 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import ContentCard from '../../components/ContentCard.astro';
+import BookCard from '../../components/BookCard.astro';
+import PodcastCard from '../../components/PodcastCard.astro';
+import VideoCard from '../../components/VideoCard.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const books = await getCollection('books');
   const articles = await getCollection('articles');
   const videos = await getCollection('videos');
+  const podcasts = await getCollection('podcasts');
+  const papers = await getCollection('papers');
   
   const allContent = [
     ...books.map(item => ({ ...item, contentType: 'book' as const })),
     ...articles.map(item => ({ ...item, contentType: 'article' as const })),
-    ...videos.map(item => ({ ...item, contentType: 'video' as const }))
+    ...videos.map(item => ({ ...item, contentType: 'video' as const })),
+    ...podcasts.map(item => ({ ...item, contentType: 'podcast' as const })),
+    ...papers.map(item => ({ ...item, contentType: 'paper' as const }))
   ];
 
   // 获取所有唯一的主题
   const allTopics = [...new Set(allContent.flatMap(item => item.data.topics))];
   
   return allTopics.map(topic => ({
-    params: { topic: encodeURIComponent(topic) },
+    params: { topic: topic },
     props: { topic, allContent }
   }));
 }
 
 const { topic, allContent } = Astro.props;
-const decodedTopic = decodeURIComponent(topic);
+const decodedTopic = topic;
 
 // 筛选包含该主题的内容
 const topicContent = allContent.filter(item => 
@@ -110,49 +117,161 @@ const topicIcons: Record<string, string> = {
       </nav>
     </div>
 
-    <!-- Stats Section -->
-    {Object.keys(contentTypeStats).length > 0 && (
-      <section class="mb-16">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-          内容分布
-        </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {Object.entries(contentTypeStats).map(([type, count]) => (
-            <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-              <div class="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2">
-                {count}
-              </div>
-              <div class="text-sm text-gray-600 dark:text-gray-400">
-                {contentTypeLabels[type as keyof typeof contentTypeLabels] || type}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    )}
-
-    <!-- Content Grid -->
+    <!-- Content by Type -->
     {topicContent.length > 0 ? (
       <section class="mb-16">
-        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">
-          相关内容
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {topicContent.map(item => (
-            <ContentCard
-              title={item.data.title}
-              author={item.data.author}
-              description={item.data.description}
-              contentType={item.contentType}
-              topics={item.data.topics}
-              publishDate={item.data.publishDate}
-              sourceUrl={item.data.sourceUrl}
-              slug={item.slug}
-              readingTime={item.data.readingTime}
-              duration={item.data.duration}
-            />
-          ))}
-        </div>
+
+        <!-- Books Section -->
+        {topicContent.filter(item => item.contentType === 'book').length > 0 && (
+          <div class="mb-12">
+            <div class="flex items-center mb-6">
+              <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
+                <span class="text-3xl mr-3">📚</span>
+                书籍
+                <span class="ml-2 px-2 py-1 text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
+                  {topicContent.filter(item => item.contentType === 'book').length}
+                </span>
+              </h3>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+              {topicContent.filter(item => item.contentType === 'book').map(item => (
+                <BookCard
+                  title={item.data.title}
+                  author={item.data.author}
+                  description={item.data.description}
+                  coverImage={item.data.coverImage}
+                  publishDate={item.data.publishDate}
+                  slug={item.slug}
+                  topics={item.data.topics}
+                  isbn={item.data.isbn}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Articles Section -->
+        {topicContent.filter(item => item.contentType === 'article').length > 0 && (
+          <div class="mb-12">
+            <div class="flex items-center mb-6">
+              <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
+                <span class="text-3xl mr-3">📰</span>
+                文章
+                <span class="ml-2 px-2 py-1 text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
+                  {topicContent.filter(item => item.contentType === 'article').length}
+                </span>
+              </h3>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+              {topicContent.filter(item => item.contentType === 'article').map(item => (
+                <ContentCard
+                  title={item.data.title}
+                  author={item.data.author}
+                  description={item.data.description}
+                  contentType={item.contentType}
+                  topics={item.data.topics}
+                  publishDate={item.data.publishDate}
+                  sourceUrl={item.data.sourceUrl}
+                  slug={item.slug}
+                  readingTime={item.data.readingTime}
+                  duration={item.data.duration}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Videos Section -->
+        {topicContent.filter(item => item.contentType === 'video').length > 0 && (
+          <div class="mb-12">
+            <div class="flex items-center mb-6">
+              <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
+                <span class="text-3xl mr-3">🎥</span>
+                视频
+                <span class="ml-2 px-2 py-1 text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
+                  {topicContent.filter(item => item.contentType === 'video').length}
+                </span>
+              </h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {topicContent.filter(item => item.contentType === 'video').map(item => (
+                <VideoCard
+                  title={item.data.title}
+                  author={item.data.author}
+                  description={item.data.description}
+                  slug={item.slug}
+                  thumbnail={item.data.thumbnail}
+                  publishDate={item.data.publishDate}
+                  duration={item.data.duration}
+                  sourceUrl={item.data.sourceUrl}
+                  topics={item.data.topics}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Podcasts Section -->
+        {topicContent.filter(item => item.contentType === 'podcast').length > 0 && (
+          <div class="mb-12">
+            <div class="flex items-center mb-6">
+              <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
+                <span class="text-3xl mr-3">🎧</span>
+                播客
+                <span class="ml-2 px-2 py-1 text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
+                  {topicContent.filter(item => item.contentType === 'podcast').length}
+                </span>
+              </h3>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {topicContent.filter(item => item.contentType === 'podcast').map(item => (
+                <PodcastCard
+                  title={item.data.title}
+                  author={item.data.author}
+                  description={item.data.description}
+                  slug={item.slug}
+                  thumbnail={item.data.thumbnail}
+                  publishDate={item.data.publishDate}
+                  duration={item.data.duration}
+                  sourceUrl={item.data.sourceUrl}
+                  topics={item.data.topics}
+                  episodeNumber={item.data.episodeNumber}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Papers Section -->
+        {topicContent.filter(item => item.contentType === 'paper').length > 0 && (
+          <div class="mb-12">
+            <div class="flex items-center mb-6">
+              <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
+                <span class="text-3xl mr-3">📄</span>
+                论文
+                <span class="ml-2 px-2 py-1 text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
+                  {topicContent.filter(item => item.contentType === 'paper').length}
+                </span>
+              </h3>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+              {topicContent.filter(item => item.contentType === 'paper').map(item => (
+                <ContentCard
+                  title={item.data.title}
+                  author={item.data.author}
+                  description={item.data.description}
+                  contentType={item.contentType}
+                  topics={item.data.topics}
+                  publishDate={item.data.publishDate}
+                  sourceUrl={item.data.sourceUrl}
+                  slug={item.slug}
+                  readingTime={item.data.readingTime}
+                  duration={item.data.duration}
+                />
+              ))}
+            </div>
+          </div>
+        )}
       </section>
     ) : (
       <section class="text-center py-16">
@@ -183,7 +302,7 @@ const topicIcons: Record<string, string> = {
         <div class="flex flex-wrap justify-center gap-3">
           {topRelatedTopics.map(relatedTopic => (
             <a 
-              href={`/topics/${encodeURIComponent(relatedTopic)}`}
+              href={`/topics/${relatedTopic}`}
               class="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-full hover:border-purple-500 dark:hover:border-purple-400 hover:shadow-md transition-all duration-200 group"
             >
               <span class="text-xl mr-2">

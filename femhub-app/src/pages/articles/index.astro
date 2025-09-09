@@ -42,7 +42,7 @@ const enrichedArticles = sortedArticles.map(article => {
             📰 精选文章
           </h1>
           <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-            深度探讨女性主义议题，从学术研究到社会观察，为理解性别平等提供多元视角
+            深度探讨女性主义议题，从社会观察到实践思考，为理解性别平等提供多元视角
           </p>
           
           <!-- 统计信息 -->
@@ -67,19 +67,19 @@ const enrichedArticles = sortedArticles.map(article => {
       <div class="mb-12">
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">主题分类</h2>
         <div class="flex flex-wrap gap-3">
-          <a 
-            href="/articles"
-            class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+          <button 
+            class="filter-btn inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+            data-filter="all"
           >
             全部文章
-          </a>
+          </button>
           {allTopics.map(topic => (
-            <a 
-              href={`/topics/${encodeURIComponent(topic)}`}
-              class="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm"
+            <button 
+              class="filter-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm"
+              data-filter={topic}
             >
               {topic}
-            </a>
+            </button>
           ))}
         </div>
       </div>
@@ -87,26 +87,40 @@ const enrichedArticles = sortedArticles.map(article => {
       <!-- 文章网格 -->
       <div class="mb-8">
         <div class="flex items-center justify-between mb-6">
-          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">全部文章</h2>
-          <div class="text-sm text-gray-600 dark:text-gray-400">
-            按时间排序
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            <span id="current-filter">全部文章</span>
+            <span id="article-count" class="text-base font-normal text-gray-600 dark:text-gray-400 ml-2">
+              ({totalArticles} 篇)
+            </span>
+          </h2>
+          <div class="flex items-center gap-4">
+            <select id="sort-select" class="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-sm">
+              <option value="date-desc">最新发布</option>
+              <option value="date-asc">最早发布</option>
+              <option value="title-asc">标题 A-Z</option>
+              <option value="title-desc">标题 Z-A</option>
+              <option value="reading-time-asc">阅读时间（短）</option>
+              <option value="reading-time-desc">阅读时间（长）</option>
+            </select>
           </div>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
           {enrichedArticles.map(article => (
-            <ArticleCard
-              title={article.data.title}
-              author={article.data.author}
-              description={article.data.description}
-              featuredImage={article.data.featuredImage}
-              publishDate={article.data.publishDate}
-              readingTime={article.data.readingTime}
-              sourceUrl={article.data.sourceUrl}
-              slug={article.slug}
-              topics={article.data.topics}
-              articleType={article.articleType}
-            />
+            <div class="article-item" data-topics={JSON.stringify(article.data.topics)} data-title={article.data.title} data-date={article.data.publishDate.toISOString()} data-reading-time={article.data.readingTime || 5}>
+              <ArticleCard
+                title={article.data.title}
+                author={article.data.author}
+                description={article.data.description}
+                featuredImage={article.data.featuredImage}
+                publishDate={article.data.publishDate}
+                readingTime={article.data.readingTime}
+                sourceUrl={article.data.sourceUrl}
+                slug={article.slug}
+                topics={article.data.topics}
+                articleType={article.articleType}
+              />
+            </div>
           ))}
         </div>
       </div>
@@ -158,3 +172,111 @@ const enrichedArticles = sortedArticles.map(article => {
     </div>
   </div>
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const sortSelect = document.getElementById('sort-select');
+    const articlesGrid = document.getElementById('articles-grid');
+    const currentFilter = document.getElementById('current-filter');
+    const articleCount = document.getElementById('article-count');
+    
+    let currentTopic = 'all';
+    
+    // 筛选功能
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const filterValue = this.dataset.filter;
+        currentTopic = filterValue;
+        
+        // 更新按钮样式
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-blue-600', 'text-white');
+          btn.classList.add('bg-white', 'dark:bg-gray-800', 'border', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+        });
+        
+        this.classList.remove('bg-white', 'dark:bg-gray-800', 'border', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+        this.classList.add('bg-blue-600', 'text-white');
+        
+        // 更新标题
+        currentFilter.textContent = filterValue === 'all' ? '全部文章' : filterValue;
+        
+        // 执行筛选
+        filterAndSort();
+      });
+    });
+    
+    // 排序功能
+    sortSelect.addEventListener('change', function() {
+      filterAndSort();
+    });
+    
+    function filterAndSort() {
+      const articleItems = Array.from(document.querySelectorAll('.article-item'));
+      const sortValue = sortSelect.value;
+      
+      // 筛选
+      let filteredArticles = articleItems.filter(item => {
+        if (currentTopic === 'all') return true;
+        const topics = JSON.parse(item.dataset.topics);
+        return topics.includes(currentTopic);
+      });
+      
+      // 排序
+      filteredArticles.sort((a, b) => {
+        switch (sortValue) {
+          case 'date-desc':
+            return new Date(b.dataset.date).getTime() - new Date(a.dataset.date).getTime();
+          case 'date-asc':
+            return new Date(a.dataset.date).getTime() - new Date(b.dataset.date).getTime();
+          case 'title-asc':
+            return a.dataset.title.localeCompare(b.dataset.title);
+          case 'title-desc':
+            return b.dataset.title.localeCompare(a.dataset.title);
+          case 'reading-time-asc':
+            return parseInt(a.dataset.readingTime) - parseInt(b.dataset.readingTime);
+          case 'reading-time-desc':
+            return parseInt(b.dataset.readingTime) - parseInt(a.dataset.readingTime);
+          default:
+            return 0;
+        }
+      });
+      
+      // 隐藏所有文章
+      articleItems.forEach(item => {
+        item.style.display = 'none';
+      });
+      
+      // 显示筛选后的文章
+      filteredArticles.forEach((item, index) => {
+        item.style.display = 'block';
+        articlesGrid.appendChild(item);
+      });
+      
+      // 更新计数
+      articleCount.textContent = `(${filteredArticles.length} 篇)`;
+      
+      // 如果没有结果，显示空状态
+      const emptyState = document.getElementById('empty-state');
+      if (filteredArticles.length === 0) {
+        if (!emptyState) {
+          const emptyDiv = document.createElement('div');
+          emptyDiv.id = 'empty-state';
+          emptyDiv.className = 'col-span-full text-center py-16';
+          emptyDiv.innerHTML = `
+            <div class="text-6xl mb-6">📰</div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              暂无相关文章
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              该主题下暂无文章，试试其他主题或查看全部文章
+            </p>
+          `;
+          articlesGrid.appendChild(emptyDiv);
+        }
+      } else if (emptyState) {
+        emptyState.remove();
+      }
+    }
+  });
+</script>

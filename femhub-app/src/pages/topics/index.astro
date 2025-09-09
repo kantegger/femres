@@ -6,12 +6,16 @@ import { getCollection } from 'astro:content';
 const books = await getCollection('books');
 const articles = await getCollection('articles'); 
 const videos = await getCollection('videos');
+const podcasts = await getCollection('podcasts');
+const papers = await getCollection('papers');
 
 // 合并所有内容
 const allContent = [
   ...books.map(item => ({ ...item, contentType: 'book' as const })),
   ...articles.map(item => ({ ...item, contentType: 'article' as const })),
-  ...videos.map(item => ({ ...item, contentType: 'video' as const }))
+  ...videos.map(item => ({ ...item, contentType: 'video' as const })),
+  ...podcasts.map(item => ({ ...item, contentType: 'podcast' as const })),
+  ...papers.map(item => ({ ...item, contentType: 'paper' as const }))
 ];
 
 // 分析主题数据
@@ -23,25 +27,20 @@ const topicStats = allTopics.reduce((acc, topic) => {
 
 // 定义主题分类
 const topicCategories = {
-  '权利与法律': {
-    topics: ['教育权利', '法律权利', '政治参与', '身体自主'],
+  '权利与社会': {
+    topics: ['教育权利', '法律权利', '政治参与', '性别平等', '性别正义', '社会正义', '原住民主权', '职场平等', '薪酬差距', '领导力', '社会运动', '#MeToo', '性骚扰', '社会结构', '结构性暴力', '社会工作'],
     icon: '⚖️',
-    description: '法律保障、政治参与和基本权利'
+    description: '权利保障、社会平等和职场发展'
   },
-  '社会与文化': {
-    topics: ['职场平等', '媒体表征', '家庭角色', '社会观念'],
+  '文化与媒体': {
+    topics: ['媒体表征', '家庭角色', '社会观念', '流行文化', '影视分析', '文化批评', '文化翻译', '中国艺术史', '男性权利运动', '名人女性主义', '青少年', '媒体研究', '女性主义艺术批评', '时事新闻'],
     icon: '🌍',
-    description: '社会角色、文化观念和职场环境'
+    description: '文化表现、媒体分析和社会观念'
   },
-  '安全与保护': {
-    topics: ['性别暴力', '人身安全', '心理健康', '社会保护'],
-    icon: '🛡️', 
-    description: '人身安全、心理健康和社会保护'
-  },
-  '历史与理论': {
-    topics: ['历史人物', '女性理论', '存在主义', '性别研究'],
+  '理论与实践': {
+    topics: ['历史人物', '女性理论', '存在主义', '性别研究', '女权主义', '交叉女性主义', '去殖民女性主义', '女性主义批评', '数据分析', '社会批评', '性别政治', '信仰与女性主义', '宗教创伤', '教会批判', '属灵旅程', '创业', '传记', '纪录片', '女性主义心理学', '神经系统调节', '情绪健康', '自我关怀', '创伤复原', '压力管理', '情绪劳动', '女性财务', '个人理财'],
     icon: '📚',
-    description: '理论研究、历史发展和学术探讨'
+    description: '理论研究、历史发展和实践应用'
   }
 };
 
@@ -71,61 +70,60 @@ const enrichedCategories = Object.entries(topicCategories).map(([categoryName, c
     </div>
 
     <!-- Topic Categories -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
       {enrichedCategories.map(category => (
         <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-shadow duration-200">
-          <div class="p-8">
+          <div class="p-6">
             <!-- Category Header -->
-            <div class="flex items-center mb-6">
-              <div class="text-4xl mr-4">{category.icon}</div>
+            <div class="flex items-center mb-4">
+              <div class="text-3xl mr-3">{category.icon}</div>
               <div>
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
                   {category.name}
                 </h2>
-                <p class="text-gray-600 dark:text-gray-400">
+                <p class="text-sm text-gray-600 dark:text-gray-400">
                   {category.description}
                 </p>
               </div>
             </div>
 
             <!-- Stats -->
-            <div class="mb-6 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+            <div class="mb-4 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
               <div class="flex items-center justify-between">
-                <span class="text-sm font-medium text-purple-800 dark:text-purple-200">
+                <span class="text-xs font-medium text-purple-800 dark:text-purple-200">
                   总内容数量
                 </span>
-                <span class="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                <span class="text-lg font-bold text-purple-600 dark:text-purple-400">
                   {category.totalContent}
                 </span>
               </div>
             </div>
 
             <!-- Topics List -->
-            <div class="space-y-3">
+            <div class="grid grid-cols-2 gap-2">
               {category.topics.map(topic => (
-                <a 
-                  href={`/topics/${encodeURIComponent(topic.name)}`}
-                  class="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group"
-                >
-                  <div class="flex items-center">
-                    <div class="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                    <span class="font-medium text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                      {topic.name}
+                topic.count > 0 && (
+                  <a 
+                    href={`/topics/${topic.name}`}
+                    class="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group"
+                  >
+                    <div class="flex items-center">
+                      <div class="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
+                      <span class="text-sm font-medium text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                        {topic.name}
+                      </span>
+                    </div>
+                    <span class="text-xs text-gray-500 dark:text-gray-400">
+                      {topic.count}
                     </span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                    <span class="mr-2">{topic.count} 个内容</span>
-                    <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </div>
-                </a>
+                  </a>
+                )
               ))}
             </div>
 
-            {category.topics.length === 0 && (
-              <div class="text-center py-8 text-gray-500 dark:text-gray-400">
-                <p>该分类暂无内容</p>
+            {category.topics.filter(t => t.count > 0).length === 0 && (
+              <div class="text-center py-4 text-gray-500 dark:text-gray-400">
+                <p class="text-sm">该分类暂无内容</p>
               </div>
             )}
           </div>
@@ -149,7 +147,7 @@ const enrichedCategories = Object.entries(topicCategories).map(([categoryName, c
           .sort((a, b) => b[1] - a[1])
           .map(([topic, count]) => (
             <a 
-              href={`/topics/${encodeURIComponent(topic)}`}
+              href={`/topics/${topic}`}
               class="inline-flex items-center px-4 py-2 rounded-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:border-purple-500 dark:hover:border-purple-400 hover:shadow-md transition-all duration-200 group"
             >
               <span class="font-medium text-gray-700 dark:text-gray-300 group-hover:text-purple-600 dark:group-hover:text-purple-400">

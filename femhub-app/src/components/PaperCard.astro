@@ -28,10 +28,6 @@ const formatDate = (date: Date) => {
   return date.getFullYear();
 };
 
-// 判断是否为高影响力论文
-const isHighImpact = (citations?: number, score?: number) => {
-  return (citations && citations >= 50) || (score && score >= 9);
-};
 ---
 
 <article class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border-l-4 border-indigo-500">
@@ -52,19 +48,15 @@ const isHighImpact = (citations?: number, score?: number) => {
         </div>
         
         <div class="flex items-center gap-2">
-            <div class="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 text-xs font-bold px-2 py-1 rounded-full">
-              🔥 高影响力
-            </div>
-          )}
-          <span class="text-sm text-gray-500 dark:text-gray-400 font-mono">
-            {formatDate(publishDate)}
-          </span>
         </div>
       </div>
 
       <!-- Title -->
       <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors leading-tight">
         {title}
+        <span class="text-sm text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded-md font-mono ml-2">
+          {formatDate(publishDate)}
+        </span>
       </h3>
 
       <!-- Authors -->
@@ -82,14 +74,14 @@ const isHighImpact = (citations?: number, score?: number) => {
 
       <!-- Topics -->
       <div class="flex flex-wrap gap-1.5 mb-4">
-        {topics.slice(0, 4).map(topic => (
+        {topics.slice(0, 3).map(topic => (
           <span class="inline-block px-2 py-1 text-xs bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-md border border-indigo-200 dark:border-indigo-800">
             {topic}
           </span>
         ))}
-        {topics.length > 4 && (
+        {topics.length > 3 && (
           <span class="inline-block px-2 py-1 text-xs text-gray-500 dark:text-gray-500">
-            +{topics.length - 4}
+            +{topics.length - 3}
           </span>
         )}
       </div>
@@ -104,13 +96,6 @@ const isHighImpact = (citations?: number, score?: number) => {
               </svg>
               <span class="font-medium">{citationCount}</span>
               <span class="text-xs">引用</span>
-            </div>
-          )}
-          
-            <div class="flex items-center gap-1">
-              <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
             </div>
           )}
           
@@ -133,12 +118,19 @@ const isHighImpact = (citations?: number, score?: number) => {
               DOI
             </a>
           )}
-          <span class="text-indigo-600 dark:text-indigo-400 text-sm font-medium group-hover:underline flex items-center">
-            查看全文
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-            </svg>
-          </span>
+          {doi && (
+            <a 
+              href={`https://doi.org/${doi}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-indigo-600 dark:text-indigo-400 text-sm font-medium hover:underline flex items-center transition-colors"
+            >
+              原文链接
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          )}
         </div>
       </div>
     </div>

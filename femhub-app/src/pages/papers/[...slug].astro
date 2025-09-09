@@ -1,0 +1,359 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const papers = await getCollection('papers');
+  return papers.map((paper) => ({
+    params: { slug: paper.slug },
+    props: paper,
+  }));
+}
+
+const paper = Astro.props;
+const { Content } = await paper.render();
+
+// 获取相关论文
+const allPapers = await getCollection('papers');
+const relatedPapers = allPapers
+  .filter(p => 
+    p.slug !== paper.slug && 
+    p.data.topics.some(topic => paper.data.topics.includes(topic))
+  )
+  .slice(0, 3);
+
+// 格式化日期
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('zh-CN', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+
+// 格式化引用次数
+const formatCitations = (count?: number) => {
+  if (!count) return '0';
+  if (count >= 1000) {
+    return (count / 1000).toFixed(1) + 'K';
+  }
+  return count.toString();
+};
+
+// 获取论文类型中文名称
+const getPaperTypeText = (type?: string) => {
+  switch (type) {
+    case 'research': return '研究论文';
+    case 'review': return '综述文章';
+    case 'case-study': return '案例研究';
+    case 'theoretical': return '理论研究';
+    default: return '学术论文';
+  }
+};
+
+// 获取论文类型图标
+const getPaperTypeIcon = (type?: string) => {
+  switch (type) {
+    case 'research': return '🔬';
+    case 'review': return '📝';
+    case 'case-study': return '📋';
+    case 'theoretical': return '💭';
+    default: return '📄';
+  }
+};
+---
+
+<Layout 
+  title={`${paper.data.title} - FemHub`}
+  description={paper.data.description}
+>
+  <article class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- Breadcrumb -->
+    <nav class="mb-8">
+      <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+        <a href="/" class="hover:text-amber-600 dark:hover:text-amber-400">首页</a>
+        <span>/</span>
+        <a href="/papers" class="hover:text-amber-600 dark:hover:text-amber-400">学术论文</a>
+        <span>/</span>
+        <span class="text-gray-900 dark:text-white">{paper.data.title}</span>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="mb-12">
+      <div class="flex items-center mb-4">
+        {paper.data.paperType && (
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200 mr-4">
+            <span class="mr-1">{getPaperTypeIcon(paper.data.paperType)}</span>
+            {getPaperTypeText(paper.data.paperType)}
+          </span>
+        )}
+        <span class="text-amber-600 dark:text-amber-400 text-sm font-medium">学术论文</span>
+      </div>
+      
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 leading-tight">
+        {paper.data.title}
+      </h1>
+      
+      {paper.data.originalTitle && (
+        <h2 class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-6 font-medium italic">
+          {paper.data.originalTitle}
+        </h2>
+      )}
+      
+      <!-- Meta Info -->
+      <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-6">
+        <div class="flex items-center">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg>
+          <span class="font-medium">{paper.data.author}</span>
+        </div>
+        
+        <div class="flex items-center">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          <time datetime={paper.data.publishDate.toISOString()}>
+            {formatDate(paper.data.publishDate)}
+          </time>
+        </div>
+        
+        {paper.data.journal && (
+          <div class="flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+            </svg>
+            <span>{paper.data.journal}</span>
+          </div>
+        )}
+        
+        {paper.data.citationCount && (
+          <div class="flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+            <span>{formatCitations(paper.data.citationCount)} 次引用</span>
+          </div>
+        )}
+      </div>
+
+      <!-- Description -->
+      <div class="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/30 dark:to-orange-900/30 rounded-xl p-6 mb-8">
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+          {paper.data.description}
+        </p>
+      </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Main Content -->
+      <div class="lg:col-span-2">
+
+        <!-- Action Buttons -->
+        <div class="flex items-center justify-between py-6 border-y border-gray-200 dark:border-gray-700 mb-8">
+          <div class="flex items-center space-x-4">
+            <button class="flex items-center text-gray-600 dark:text-gray-400 hover:text-amber-500 transition-colors">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+              <span class="text-sm">收藏</span>
+            </button>
+            
+            <button class="flex items-center text-gray-600 dark:text-gray-400 hover:text-amber-500 transition-colors">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path>
+              </svg>
+              <span class="text-sm">分享</span>
+            </button>
+
+            <button class="flex items-center text-gray-600 dark:text-gray-400 hover:text-amber-500 transition-colors">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              <span class="text-sm">引用</span>
+            </button>
+          </div>
+          
+          <a 
+            href={paper.data.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium rounded-lg transition-colors"
+          >
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+            阅读原文
+          </a>
+        </div>
+
+        <!-- Detailed Content -->
+        <div class="prose prose-lg max-w-none 
+                     prose-headings:text-gray-900 dark:prose-headings:text-white
+                     prose-p:text-gray-700 dark:prose-p:text-gray-300
+                     prose-a:text-amber-600 hover:prose-a:text-amber-800
+                     prose-strong:text-gray-900 dark:prose-strong:text-white
+                     prose-blockquote:text-gray-700 dark:prose-blockquote:text-gray-300
+                     prose-blockquote:border-amber-500
+                     prose-code:text-amber-600 dark:prose-code:text-amber-400
+                     prose-pre:bg-gray-800 dark:prose-pre:bg-gray-900">
+          <Content />
+        </div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <div class="lg:col-span-1 space-y-6">
+        <!-- Paper Info -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-4">论文信息</h3>
+          
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between">
+              <span class="text-gray-500 dark:text-gray-400">作者:</span>
+              <span class="text-gray-900 dark:text-white font-medium">{paper.data.author}</span>
+            </div>
+            
+            <div class="flex justify-between">
+              <span class="text-gray-500 dark:text-gray-400">发表:</span>
+              <span class="text-gray-900 dark:text-white">{formatDate(paper.data.publishDate)}</span>
+            </div>
+            
+            {paper.data.journal && (
+              <div class="flex justify-between">
+                <span class="text-gray-500 dark:text-gray-400">期刊:</span>
+                <span class="text-gray-900 dark:text-white">{paper.data.journal}</span>
+              </div>
+            )}
+            
+            {paper.data.doi && (
+              <div class="flex justify-between">
+                <span class="text-gray-500 dark:text-gray-400">DOI:</span>
+                <span class="text-gray-900 dark:text-white font-mono text-xs break-all">{paper.data.doi}</span>
+              </div>
+            )}
+            
+            {paper.data.citationCount && (
+              <div class="flex justify-between">
+                <span class="text-gray-500 dark:text-gray-400">引用次数:</span>
+                <span class="text-gray-900 dark:text-white">{formatCitations(paper.data.citationCount)}</span>
+              </div>
+            )}
+
+            <div class="flex justify-between">
+              <span class="text-gray-500 dark:text-gray-400">语言:</span>
+              <span class="text-gray-900 dark:text-white">
+                {paper.data.language === 'zh-CN' ? '中文' : 
+                 paper.data.language === 'en' ? '英语' : paper.data.language}
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="max-h-screen overflow-y-auto space-y-6">
+          <!-- Abstract -->
+          {paper.data.abstract && (
+            <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                <span class="text-amber-600 dark:text-amber-400 mr-2">📋</span>
+                摘要
+              </h3>
+              <div class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">
+                {paper.data.abstract}
+              </div>
+            </div>
+          )}
+
+          <!-- Keywords -->
+          {paper.data.keywords && paper.data.keywords.length > 0 && (
+            <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                <span class="text-amber-600 dark:text-amber-400 mr-2">🔑</span>
+                关键词
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                {paper.data.keywords.map(keyword => (
+                  <span class="inline-block px-2 py-1 bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-700 text-amber-700 dark:text-amber-300 rounded-full text-xs">
+                    {keyword}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <!-- Topics -->
+          <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-4">研究主题</h3>
+            <div class="flex flex-wrap gap-2">
+              {paper.data.topics.map(topic => (
+                <a 
+                  href={`/topics/${encodeURIComponent(topic)}`}
+                  class="inline-block px-2 py-1 bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-700 text-amber-700 dark:text-amber-300 rounded-full text-xs hover:bg-amber-100 dark:hover:bg-amber-900/50 transition-colors"
+                >
+                  #{topic}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Related Papers -->
+          {relatedPapers.length > 0 && (
+            <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-4">相关论文</h3>
+              <div class="space-y-4">
+                {relatedPapers.map(relatedPaper => (
+                  <a 
+                    href={`/papers/${relatedPaper.slug}`}
+                    class="group block hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg p-2 transition-colors"
+                  >
+                    <h4 class="font-medium text-gray-900 dark:text-white text-sm leading-tight mb-1 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors line-clamp-2">
+                      {relatedPaper.data.title}
+                    </h4>
+                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-1">
+                      {relatedPaper.data.author}
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-500">
+                      {relatedPaper.data.journal || '学术论文'}
+                    </p>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+
+    <!-- Comments Section -->
+    <section class="border-t border-gray-200 dark:border-gray-700 pt-12 mt-16">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">学术讨论</h2>
+      <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 text-center">
+        <div class="text-4xl mb-4">💬</div>
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+          分享您的学术观点
+        </h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          与其他研究者讨论这篇论文的理论贡献和实践意义
+        </p>
+        <button class="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-medium rounded-lg transition-colors">
+          发表讨论
+        </button>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-4">
+          讨论功能即将上线，敬请期待
+        </p>
+      </div>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

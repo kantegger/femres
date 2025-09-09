@@ -56,19 +56,19 @@ const totalBooks = publishedBooks.length;
       <div class="mb-12">
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">主题分类</h2>
         <div class="flex flex-wrap gap-3">
-          <a 
-            href="/books"
-            class="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium"
+          <button 
+            class="filter-btn inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium"
+            data-filter="all"
           >
             全部书籍
-          </a>
+          </button>
           {allTopics.map(topic => (
-            <a 
-              href={`/topics/${encodeURIComponent(topic)}`}
-              class="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-sm"
+            <button 
+              class="filter-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-sm"
+              data-filter={topic}
             >
               {topic}
-            </a>
+            </button>
           ))}
         </div>
       </div>
@@ -76,24 +76,36 @@ const totalBooks = publishedBooks.length;
       <!-- 书籍网格 -->
       <div class="mb-8">
         <div class="flex items-center justify-between mb-6">
-          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">全部书籍</h2>
-          <div class="text-sm text-gray-600 dark:text-gray-400">
-            按时间排序
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            <span id="current-filter">全部书籍</span>
+            <span id="book-count" class="text-base font-normal text-gray-600 dark:text-gray-400 ml-2">
+              ({totalBooks} 本)
+            </span>
+          </h2>
+          <div class="flex items-center gap-4">
+            <select id="sort-select" class="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-sm">
+              <option value="date-desc">最新发布</option>
+              <option value="date-asc">最早发布</option>
+              <option value="title-asc">标题 A-Z</option>
+              <option value="title-desc">标题 Z-A</option>
+            </select>
           </div>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div id="books-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {sortedBooks.map(book => (
-            <BookCard 
-              title={book.data.title}
-              author={book.data.author}
-              description={book.data.description}
-              slug={book.slug}
-              coverImage={book.data.coverImage}
-              publishDate={book.data.publishDate}
-              topics={book.data.topics}
-              isbn={book.data.isbn}
-            />
+            <div class="book-item" data-topics={JSON.stringify(book.data.topics)} data-title={book.data.title} data-date={book.data.publishDate.toISOString()}>
+              <BookCard 
+                title={book.data.title}
+                author={book.data.author}
+                description={book.data.description}
+                slug={book.slug}
+                coverImage={book.data.coverImage}
+                publishDate={book.data.publishDate}
+                topics={book.data.topics}
+                isbn={book.data.isbn}
+              />
+            </div>
           ))}
         </div>
       </div>
@@ -145,3 +157,107 @@ const totalBooks = publishedBooks.length;
     </div>
   </div>
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const sortSelect = document.getElementById('sort-select');
+    const booksGrid = document.getElementById('books-grid');
+    const currentFilter = document.getElementById('current-filter');
+    const bookCount = document.getElementById('book-count');
+    
+    let currentTopic = 'all';
+    
+    // 筛选功能
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const filterValue = this.dataset.filter;
+        currentTopic = filterValue;
+        
+        // 更新按钮样式
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-purple-600', 'text-white');
+          btn.classList.add('bg-white', 'dark:bg-gray-800', 'border', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+        });
+        
+        this.classList.remove('bg-white', 'dark:bg-gray-800', 'border', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+        this.classList.add('bg-purple-600', 'text-white');
+        
+        // 更新标题
+        currentFilter.textContent = filterValue === 'all' ? '全部书籍' : filterValue;
+        
+        // 执行筛选
+        filterAndSort();
+      });
+    });
+    
+    // 排序功能
+    sortSelect.addEventListener('change', function() {
+      filterAndSort();
+    });
+    
+    function filterAndSort() {
+      const bookItems = Array.from(document.querySelectorAll('.book-item'));
+      const sortValue = sortSelect.value;
+      
+      // 筛选
+      let filteredBooks = bookItems.filter(item => {
+        if (currentTopic === 'all') return true;
+        const topics = JSON.parse(item.dataset.topics);
+        return topics.includes(currentTopic);
+      });
+      
+      // 排序
+      filteredBooks.sort((a, b) => {
+        switch (sortValue) {
+          case 'date-desc':
+            return new Date(b.dataset.date).getTime() - new Date(a.dataset.date).getTime();
+          case 'date-asc':
+            return new Date(a.dataset.date).getTime() - new Date(b.dataset.date).getTime();
+          case 'title-asc':
+            return a.dataset.title.localeCompare(b.dataset.title);
+          case 'title-desc':
+            return b.dataset.title.localeCompare(a.dataset.title);
+          default:
+            return 0;
+        }
+      });
+      
+      // 隐藏所有书籍
+      bookItems.forEach(item => {
+        item.style.display = 'none';
+      });
+      
+      // 显示筛选后的书籍
+      filteredBooks.forEach((item, index) => {
+        item.style.display = 'block';
+        booksGrid.appendChild(item);
+      });
+      
+      // 更新计数
+      bookCount.textContent = `(${filteredBooks.length} 本)`;
+      
+      // 如果没有结果，显示空状态
+      const emptyState = document.getElementById('empty-state');
+      if (filteredBooks.length === 0) {
+        if (!emptyState) {
+          const emptyDiv = document.createElement('div');
+          emptyDiv.id = 'empty-state';
+          emptyDiv.className = 'col-span-full text-center py-16';
+          emptyDiv.innerHTML = `
+            <div class="text-6xl mb-6">📚</div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              暂无相关书籍
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              该主题下暂无书籍，试试其他主题或查看全部书籍
+            </p>
+          `;
+          booksGrid.appendChild(emptyDiv);
+        }
+      } else if (emptyState) {
+        emptyState.remove();
+      }
+    }
+  });
+</script>

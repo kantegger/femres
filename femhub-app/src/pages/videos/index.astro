@@ -70,19 +70,19 @@ const formatTotalDuration = (minutes: number) => {
       <div class="mb-12">
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">主题分类</h2>
         <div class="flex flex-wrap gap-3">
-          <a 
-            href="/videos"
-            class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm font-medium"
+          <button 
+            class="filter-btn inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm font-medium"
+            data-filter="all"
           >
             全部视频
-          </a>
+          </button>
           {allTopics.map(topic => (
-            <a 
-              href={`/topics/${encodeURIComponent(topic)}`}
-              class="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-red-500 dark:hover:border-red-400 hover:text-red-600 dark:hover:text-red-400 transition-colors text-sm"
+            <button 
+              class="filter-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-red-500 dark:hover:border-red-400 hover:text-red-600 dark:hover:text-red-400 transition-colors text-sm"
+              data-filter={topic}
             >
               {topic}
-            </a>
+            </button>
           ))}
         </div>
       </div>
@@ -90,25 +90,39 @@ const formatTotalDuration = (minutes: number) => {
       <!-- 视频网格 -->
       <div class="mb-8">
         <div class="flex items-center justify-between mb-6">
-          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">全部视频</h2>
-          <div class="text-sm text-gray-600 dark:text-gray-400">
-            按时间排序
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            <span id="current-filter">全部视频</span>
+            <span id="video-count" class="text-base font-normal text-gray-600 dark:text-gray-400 ml-2">
+              ({totalVideos} 个)
+            </span>
+          </h2>
+          <div class="flex items-center gap-4">
+            <select id="sort-select" class="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-sm">
+              <option value="date-desc">最新发布</option>
+              <option value="date-asc">最早发布</option>
+              <option value="title-asc">标题 A-Z</option>
+              <option value="title-desc">标题 Z-A</option>
+              <option value="duration-asc">时长（短）</option>
+              <option value="duration-desc">时长（长）</option>
+            </select>
           </div>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div id="videos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {sortedVideos.map(video => (
-            <VideoCard 
-              title={video.data.title}
-              author={video.data.author}
-              description={video.data.description}
-              slug={video.slug}
-              thumbnail={video.data.thumbnail}
-              publishDate={video.data.publishDate}
-              duration={video.data.duration}
-              sourceUrl={video.data.sourceUrl}
-              topics={video.data.topics}
-            />
+            <div class="video-item" data-topics={JSON.stringify(video.data.topics)} data-title={video.data.title} data-date={video.data.publishDate.toISOString()} data-duration={video.data.duration || 0}>
+              <VideoCard 
+                title={video.data.title}
+                author={video.data.author}
+                description={video.data.description}
+                slug={video.slug}
+                thumbnail={video.data.thumbnail}
+                publishDate={video.data.publishDate}
+                duration={video.data.duration}
+                sourceUrl={video.data.sourceUrl}
+                topics={video.data.topics}
+              />
+            </div>
           ))}
         </div>
       </div>
@@ -160,3 +174,111 @@ const formatTotalDuration = (minutes: number) => {
     </div>
   </div>
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const sortSelect = document.getElementById('sort-select');
+    const videosGrid = document.getElementById('videos-grid');
+    const currentFilter = document.getElementById('current-filter');
+    const videoCount = document.getElementById('video-count');
+    
+    let currentTopic = 'all';
+    
+    // 筛选功能
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const filterValue = this.dataset.filter;
+        currentTopic = filterValue;
+        
+        // 更新按钮样式
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-red-600', 'text-white');
+          btn.classList.add('bg-white', 'dark:bg-gray-800', 'border', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+        });
+        
+        this.classList.remove('bg-white', 'dark:bg-gray-800', 'border', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+        this.classList.add('bg-red-600', 'text-white');
+        
+        // 更新标题
+        currentFilter.textContent = filterValue === 'all' ? '全部视频' : filterValue;
+        
+        // 执行筛选
+        filterAndSort();
+      });
+    });
+    
+    // 排序功能
+    sortSelect.addEventListener('change', function() {
+      filterAndSort();
+    });
+    
+    function filterAndSort() {
+      const videoItems = Array.from(document.querySelectorAll('.video-item'));
+      const sortValue = sortSelect.value;
+      
+      // 筛选
+      let filteredVideos = videoItems.filter(item => {
+        if (currentTopic === 'all') return true;
+        const topics = JSON.parse(item.dataset.topics);
+        return topics.includes(currentTopic);
+      });
+      
+      // 排序
+      filteredVideos.sort((a, b) => {
+        switch (sortValue) {
+          case 'date-desc':
+            return new Date(b.dataset.date).getTime() - new Date(a.dataset.date).getTime();
+          case 'date-asc':
+            return new Date(a.dataset.date).getTime() - new Date(b.dataset.date).getTime();
+          case 'title-asc':
+            return a.dataset.title.localeCompare(b.dataset.title);
+          case 'title-desc':
+            return b.dataset.title.localeCompare(a.dataset.title);
+          case 'duration-asc':
+            return parseInt(a.dataset.duration) - parseInt(b.dataset.duration);
+          case 'duration-desc':
+            return parseInt(b.dataset.duration) - parseInt(a.dataset.duration);
+          default:
+            return 0;
+        }
+      });
+      
+      // 隐藏所有视频
+      videoItems.forEach(item => {
+        item.style.display = 'none';
+      });
+      
+      // 显示筛选后的视频
+      filteredVideos.forEach((item, index) => {
+        item.style.display = 'block';
+        videosGrid.appendChild(item);
+      });
+      
+      // 更新计数
+      videoCount.textContent = `(${filteredVideos.length} 个)`;
+      
+      // 如果没有结果，显示空状态
+      const emptyState = document.getElementById('empty-state');
+      if (filteredVideos.length === 0) {
+        if (!emptyState) {
+          const emptyDiv = document.createElement('div');
+          emptyDiv.id = 'empty-state';
+          emptyDiv.className = 'col-span-full text-center py-16';
+          emptyDiv.innerHTML = `
+            <div class="text-6xl mb-6">🎬</div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              暂无相关视频
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              该主题下暂无视频，试试其他主题或查看全部视频
+            </p>
+          `;
+          videosGrid.appendChild(emptyDiv);
+        }
+      } else if (emptyState) {
+        emptyState.remove();
+      }
+    }
+  });
+</script>
