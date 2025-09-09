@@ -1,0 +1,187 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 获取所有内容
+const books = await getCollection('books');
+const articles = await getCollection('articles'); 
+const videos = await getCollection('videos');
+
+// 合并所有内容
+const allContent = [
+  ...books.map(item => ({ ...item, contentType: 'book' as const })),
+  ...articles.map(item => ({ ...item, contentType: 'article' as const })),
+  ...videos.map(item => ({ ...item, contentType: 'video' as const }))
+];
+
+// 分析主题数据
+const allTopics = allContent.flatMap(item => item.data.topics);
+const topicStats = allTopics.reduce((acc, topic) => {
+  acc[topic] = (acc[topic] || 0) + 1;
+  return acc;
+}, {} as Record<string, number>);
+
+// 定义主题分类
+const topicCategories = {
+  '权利与法律': {
+    topics: ['教育权利', '法律权利', '政治参与', '身体自主'],
+    icon: '⚖️',
+    description: '法律保障、政治参与和基本权利'
+  },
+  '社会与文化': {
+    topics: ['职场平等', '媒体表征', '家庭角色', '社会观念'],
+    icon: '🌍',
+    description: '社会角色、文化观念和职场环境'
+  },
+  '安全与保护': {
+    topics: ['性别暴力', '人身安全', '心理健康', '社会保护'],
+    icon: '🛡️', 
+    description: '人身安全、心理健康和社会保护'
+  },
+  '历史与理论': {
+    topics: ['历史人物', '女性理论', '存在主义', '性别研究'],
+    icon: '📚',
+    description: '理论研究、历史发展和学术探讨'
+  }
+};
+
+// 为每个分类添加统计数据
+const enrichedCategories = Object.entries(topicCategories).map(([categoryName, category]) => ({
+  name: categoryName,
+  ...category,
+  totalContent: category.topics.reduce((sum, topic) => sum + (topicStats[topic] || 0), 0),
+  topics: category.topics.map(topic => ({
+    name: topic,
+    count: topicStats[topic] || 0
+  })).filter(t => t.count > 0) // 只显示有内容的主题
+}));
+---
+
+<Layout title="主题分类 - FemHub" description="探索女性主义的各个主题领域，深入了解性别平等的不同维度">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- Page Header -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+        主题分类
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+        深入探索女性主义的各个维度，从权利保障到社会文化，从历史传承到现代实践
+      </p>
+    </div>
+
+    <!-- Topic Categories -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+      {enrichedCategories.map(category => (
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-shadow duration-200">
+          <div class="p-8">
+            <!-- Category Header -->
+            <div class="flex items-center mb-6">
+              <div class="text-4xl mr-4">{category.icon}</div>
+              <div>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  {category.name}
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400">
+                  {category.description}
+                </p>
+              </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="mb-6 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+              <div class="flex items-center justify-between">
+                <span class="text-sm font-medium text-purple-800 dark:text-purple-200">
+                  总内容数量
+                </span>
+                <span class="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                  {category.totalContent}
+                </span>
+              </div>
+            </div>
+
+            <!-- Topics List -->
+            <div class="space-y-3">
+              {category.topics.map(topic => (
+                <a 
+                  href={`/topics/${encodeURIComponent(topic.name)}`}
+                  class="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group"
+                >
+                  <div class="flex items-center">
+                    <div class="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                    <span class="font-medium text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                      {topic.name}
+                    </span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="mr-2">{topic.count} 个内容</span>
+                    <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            {category.topics.length === 0 && (
+              <div class="text-center py-8 text-gray-500 dark:text-gray-400">
+                <p>该分类暂无内容</p>
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- All Topics Grid -->
+    <section>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          所有主题标签
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300">
+          按热门程度排序的所有主题标签
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3 justify-center">
+        {Object.entries(topicStats)
+          .sort((a, b) => b[1] - a[1])
+          .map(([topic, count]) => (
+            <a 
+              href={`/topics/${encodeURIComponent(topic)}`}
+              class="inline-flex items-center px-4 py-2 rounded-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:border-purple-500 dark:hover:border-purple-400 hover:shadow-md transition-all duration-200 group"
+            >
+              <span class="font-medium text-gray-700 dark:text-gray-300 group-hover:text-purple-600 dark:group-hover:text-purple-400">
+                {topic}
+              </span>
+              <span class="ml-2 px-2 py-1 text-xs font-semibold bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
+                {count}
+              </span>
+            </a>
+          ))}
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="mt-20 text-center">
+      <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-12 text-white">
+        <h2 class="text-3xl font-bold mb-4">
+          发现更多内容
+        </h2>
+        <p class="text-xl mb-8 opacity-90">
+          通过搜索功能探索更多女性主义相关内容
+        </p>
+        <a 
+          href="/search"
+          class="inline-flex items-center px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/30 rounded-md font-medium transition-colors backdrop-blur"
+        >
+          开始搜索
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>

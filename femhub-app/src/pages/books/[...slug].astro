@@ -1,0 +1,246 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import TopicBreadcrumb from '../../components/TopicBreadcrumb.astro';
+
+export async function getStaticPaths() {
+  const books = await getCollection('books');
+  return books.map((book) => ({
+    params: { slug: book.slug },
+    props: book,
+  }));
+}
+
+const book = Astro.props;
+const { Content } = await book.render();
+
+// 获取相关书籍（相同主题的其他书籍）
+const allBooks = await getCollection('books');
+const relatedBooks = allBooks
+  .filter(b => 
+    b.slug !== book.slug && 
+    b.data.topics.some(topic => book.data.topics.includes(topic))
+  )
+  .slice(0, 3);
+
+// 格式化日期
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('zh-CN', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+---
+
+<Layout 
+  title={`${book.data.title} - ${book.data.author} - FemHub`}
+  description={book.data.description}
+>
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- Breadcrumb -->
+    <nav class="mb-8">
+      <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+        <a href="/" class="hover:text-purple-600 dark:hover:text-purple-400">首页</a>
+        <span>/</span>
+        <a href="/books" class="hover:text-purple-600 dark:hover:text-purple-400">书籍</a>
+        <span>/</span>
+        <span class="text-gray-900 dark:text-white">{book.data.title}</span>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="mb-12">
+      <div class="flex flex-col lg:flex-row gap-8">
+        
+        <!-- Book Cover -->
+        <div class="flex-shrink-0 lg:w-80">
+          <div class="aspect-[3/4] bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 to-pink-900 rounded-2xl flex items-center justify-center mb-6">
+            {book.data.coverImage ? (
+              <img 
+                src={book.data.coverImage} 
+                alt={book.data.title}
+                class="w-full h-full object-cover rounded-2xl"
+              />
+            ) : (
+              <div class="text-center p-8">
+                <span class="text-6xl">📚</span>
+                <p class="text-gray-600 dark:text-gray-400 mt-4">暂无封面</p>
+              </div>
+            )}
+          </div>
+          
+          <!-- Action Buttons -->
+          <div class="space-y-3">
+            <a 
+              href={book.data.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-200 text-center"
+            >
+              查看详情
+            </a>
+            <button class="block w-full px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold rounded-lg hover:border-purple-500 dark:hover:border-purple-400 transition-colors">
+              添加到收藏
+            </button>
+          </div>
+        </div>
+
+        <!-- Book Info -->
+        <div class="flex-1">
+          <div class="mb-6">
+            <span class="inline-flex items-center px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-sm font-medium rounded-full mb-4">
+              <span class="mr-1">📚</span>
+              书籍
+            </span>
+          </div>
+
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
+            {book.data.title}
+          </h1>
+          
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center text-lg text-gray-700 dark:text-gray-300">
+              <span class="w-20 text-gray-500 dark:text-gray-400">作者:</span>
+              <span class="font-medium">{book.data.author}</span>
+            </div>
+            
+            <div class="flex items-center text-lg text-gray-700 dark:text-gray-300">
+              <span class="w-20 text-gray-500 dark:text-gray-400">出版:</span>
+              <span>{formatDate(book.data.publishDate)}</span>
+            </div>
+            
+            {book.data.isbn && (
+              <div class="flex items-center text-lg text-gray-700 dark:text-gray-300">
+                <span class="w-20 text-gray-500 dark:text-gray-400">ISBN:</span>
+                <span>{book.data.isbn}</span>
+              </div>
+            )}
+            
+            {book.data.qualityScore && (
+              <div class="flex items-center text-lg text-gray-700 dark:text-gray-300">
+                <span class="w-20 text-gray-500 dark:text-gray-400">评分:</span>
+                <div class="flex items-center">
+                  <span class="text-yellow-500 mr-1">⭐</span>
+                  <span class="font-medium">{book.data.qualityScore.toFixed(1)}</span>
+                  <span class="text-gray-400 ml-1">/10</span>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <!-- Description -->
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 mb-8">
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">内容简介</h2>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              {book.data.description}
+            </p>
+          </div>
+
+          <!-- Topics -->
+          <div>
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">相关主题</h2>
+            <div class="flex flex-wrap gap-2">
+              {book.data.topics.map(topic => (
+                <a 
+                  href={`/topics/${encodeURIComponent(topic)}`}
+                  class="inline-block px-3 py-1 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                >
+                  {topic}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="prose prose-lg max-w-none prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-a:text-purple-600 hover:prose-a:text-purple-800 prose-strong:text-gray-900 dark:prose-strong:text-white prose-blockquote:text-gray-700 dark:prose-blockquote:text-gray-300 prose-blockquote:border-purple-500 mb-16">
+      <Content />
+    </div>
+
+    <!-- Related Books -->
+    {relatedBooks.length > 0 && (
+      <section class="border-t border-gray-200 dark:border-gray-700 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">相关推荐</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {relatedBooks.map(relatedBook => (
+            <a 
+              href={`/books/${relatedBook.slug}`}
+              class="group block bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
+            >
+              <div class="aspect-[4/3] bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 to-pink-900 flex items-center justify-center">
+                {relatedBook.data.coverImage ? (
+                  <img 
+                    src={relatedBook.data.coverImage} 
+                    alt={relatedBook.data.title}
+                    class="w-full h-full object-cover"
+                  />
+                ) : (
+                  <span class="text-4xl">📚</span>
+                )}
+              </div>
+              <div class="p-6">
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors line-clamp-2">
+                  {relatedBook.data.title}
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                  {relatedBook.data.author}
+                </p>
+                <p class="text-gray-500 dark:text-gray-500 text-sm line-clamp-3">
+                  {relatedBook.data.description}
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Share Section -->
+    <section class="border-t border-gray-200 dark:border-gray-700 pt-12 mt-16">
+      <div class="text-center">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">分享这本书</h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-8">帮助更多人发现优质的女性主义内容</p>
+        <div class="flex justify-center space-x-4">
+          <button class="flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+            </svg>
+            Twitter
+          </button>
+          <button class="flex items-center px-6 py-3 bg-blue-800 hover:bg-blue-900 text-white rounded-lg transition-colors">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Facebook
+          </button>
+          <button class="flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+            WhatsApp
+          </button>
+        </div>
+      </div>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
