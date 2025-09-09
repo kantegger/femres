@@ -1,5 +1,6 @@
 ---
 title: "第二性"
+originalTitle: "The Second Sex"
 author: "西蒙·德·波伏娃"
 description: "现代女性主义的奠基之作，深刻分析了女性在社会中的地位和处境，提出了\"女人不是天生的，而是后天形成的\"这一著名观点。"
 publishDate: 1949-06-01

@@ -98,24 +98,30 @@ const formatDate = (date: Date) => {
           <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
             <h3 class="font-semibold text-gray-900 dark:text-white mb-4">书籍信息</h3>
             <div class="space-y-3 text-sm">
-              <div class="flex justify-between">
-                <span class="text-gray-500 dark:text-gray-400">作者:</span>
-                <span class="font-medium">{book.data.author}</span>
+              {book.data.originalTitle && (
+                <div class="flex">
+                  <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">原名:</span>
+                  <span class="font-medium flex-1 text-right">{book.data.originalTitle}</span>
+                </div>
+              )}
+              <div class="flex">
+                <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">作者:</span>
+                <span class="font-medium flex-1 text-right">{book.data.author}</span>
               </div>
-              <div class="flex justify-between">
-                <span class="text-gray-500 dark:text-gray-400">出版:</span>
-                <span>{formatDate(book.data.publishDate)}</span>
+              <div class="flex">
+                <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">出版:</span>
+                <span class="flex-1 text-right">{formatDate(book.data.publishDate)}</span>
               </div>
               {book.data.isbn && (
-                <div class="flex justify-between">
-                  <span class="text-gray-500 dark:text-gray-400">ISBN:</span>
-                  <span class="font-mono text-xs">{book.data.isbn}</span>
+                <div class="flex">
+                  <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">ISBN:</span>
+                  <span class="font-mono text-xs flex-1 text-right">{book.data.isbn}</span>
                 </div>
               )}
               {book.data.qualityScore && (
-                <div class="flex justify-between">
-                  <span class="text-gray-500 dark:text-gray-400">评分:</span>
-                  <div class="flex items-center">
+                <div class="flex">
+                  <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">评分:</span>
+                  <div class="flex items-center flex-1 justify-end">
                     <span class="text-yellow-500 mr-1">⭐</span>
                     <span class="font-medium">{book.data.qualityScore.toFixed(1)}</span>
                     <span class="text-gray-400 ml-1">/10</span>
@@ -164,11 +170,11 @@ const formatDate = (date: Date) => {
       <div class="flex-1">
         <!-- Content -->
         <div class="mb-16">
-          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-            <span class="text-purple-600 dark:text-purple-400 mr-3">📝</span>
-            详细内容
-          </h2>
           <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+              <span class="text-purple-600 dark:text-purple-400 mr-3">📝</span>
+              详细内容
+            </h2>
             <div class="prose prose-lg max-w-none">
               <Content />
             </div>

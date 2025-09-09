@@ -1,5 +1,6 @@
 ---
 title: "女性主义：从边缘到中心"
+originalTitle: "Feminist Theory: From Margin to Center"
 author: "贝尔·胡克斯"
 description: "这位美国黑人女性主义理论家的经典作品，从交叉性视角重新审视女性主义，强调种族、阶级与性别的多重压迫，为包容性女性主义奠定理论基础。"
 publishDate: 1984-01-01
