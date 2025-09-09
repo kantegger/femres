@@ -1,0 +1,160 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PodcastCard from '../../components/PodcastCard.astro';
+
+const podcasts = await getCollection('podcasts');
+const publishedPodcasts = podcasts.filter(podcast => podcast.data.status === 'published');
+
+// 按发布日期排序
+const sortedPodcasts = publishedPodcasts.sort((a, b) => {
+  return new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime();
+});
+
+// 获取所有主题标签
+const allTopics = [...new Set(publishedPodcasts.flatMap(podcast => podcast.data.topics))].sort();
+
+// 统计信息
+const totalPodcasts = publishedPodcasts.length;
+const totalDuration = publishedPodcasts.reduce((sum, podcast) => sum + (podcast.data.duration || 0), 0);
+const totalEpisodes = publishedPodcasts.reduce((sum, podcast) => sum + (podcast.data.episodeNumber ? 1 : 0), 0);
+
+// 格式化总时长
+const formatTotalDuration = (minutes: number) => {
+  const hours = Math.floor(minutes / 60);
+  if (hours > 0) {
+    return `${hours}小时${minutes % 60}分钟`;
+  }
+  return `${minutes}分钟`;
+};
+---
+
+<Layout 
+  title="播客 - FemHub"
+  description="精选女性主义播客内容，聆听来自全球的女性声音，探讨性别议题的深度对话与思辨。"
+>
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <!-- Header -->
+    <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            🎧 播客频道
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+            聆听全球女性主义学者、活动家和思想家的声音，在对话中启发思考
+          </p>
+          
+          <!-- 统计信息 -->
+          <div class="flex flex-wrap justify-center gap-6 text-sm">
+            <div class="flex items-center bg-purple-50 dark:bg-purple-900/20 px-4 py-2 rounded-full">
+              <span class="text-purple-600 dark:text-purple-400 mr-2">🎙️</span>
+              <span class="text-purple-800 dark:text-purple-200">共 {totalPodcasts} 档播客</span>
+            </div>
+            <div class="flex items-center bg-orange-50 dark:bg-orange-900/20 px-4 py-2 rounded-full">
+              <span class="text-orange-600 dark:text-orange-400 mr-2">🏷️</span>
+              <span class="text-orange-800 dark:text-orange-200">{allTopics.length} 个主题分类</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      
+      <!-- 主题标签筛选 -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">主题分类</h2>
+        <div class="flex flex-wrap gap-3">
+          <a 
+            href="/podcasts"
+            class="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium"
+          >
+            全部播客
+          </a>
+          {allTopics.map(topic => (
+            <a 
+              href={`/topics/${encodeURIComponent(topic)}`}
+              class="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-sm"
+            >
+              {topic}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- 播客网格 -->
+      <div class="mb-8">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">全部播客</h2>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            按时间排序
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {sortedPodcasts.map(podcast => (
+            <PodcastCard 
+              title={podcast.data.title}
+              author={podcast.data.author}
+              description={podcast.data.description}
+              slug={podcast.slug}
+              thumbnail={podcast.data.thumbnail}
+              publishDate={podcast.data.publishDate}
+              duration={podcast.data.duration}
+              sourceUrl={podcast.data.sourceUrl}
+              topics={podcast.data.topics}
+              episodeNumber={podcast.data.episodeNumber}
+            />
+          ))}
+        </div>
+      </div>
+
+      <!-- 空状态 -->
+      {sortedPodcasts.length === 0 && (
+        <div class="text-center py-16">
+          <div class="text-6xl mb-4">🎧</div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            暂无播客内容
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            我们正在努力添加更多优质的女性主义播客资源
+          </p>
+        </div>
+      )}
+
+      <!-- 收听指南 -->
+      <div class="mt-16 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-2xl p-8">
+        <div class="text-center">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            🎯 收听建议
+          </h2>
+          <div class="grid md:grid-cols-3 gap-6 text-left mt-8">
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">🌍</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">多元声音</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                聆听来自不同文化背景的女性主义者的声音，拓展全球视野和理解
+              </p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">💭</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">深度对话</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                通过长篇对话和访谈，深入了解复杂的性别议题和社会现象
+              </p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">📱</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">随时随地</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                利用碎片化时间学习，在通勤或休息时收听，让思考融入日常生活
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

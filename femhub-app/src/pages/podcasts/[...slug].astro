@@ -1,0 +1,377 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const podcasts = await getCollection('podcasts');
+  return podcasts.map((podcast) => ({
+    params: { slug: podcast.slug },
+    props: podcast,
+  }));
+}
+
+const podcast = Astro.props;
+const { Content } = await podcast.render();
+
+// 获取相关播客
+const allPodcasts = await getCollection('podcasts');
+const relatedPodcasts = allPodcasts
+  .filter(p => 
+    p.slug !== podcast.slug && 
+    p.data.topics.some(topic => podcast.data.topics.includes(topic))
+  )
+  .slice(0, 3);
+
+// 格式化日期
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('zh-CN', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+
+// 格式化时长
+const formatDuration = (minutes?: number) => {
+  if (!minutes) return '';
+  const hours = Math.floor(minutes / 60);
+  const mins = minutes % 60;
+  return hours > 0 ? `${hours}小时${mins}分钟` : `${mins}分钟`;
+};
+
+// 检测并处理不同平台的embed代码
+const getPodcastEmbed = (embedUrl: string) => {
+  // Spotify embed URL 示例: https://open.spotify.com/embed/show/0b5qzMiw22wHBfe1x9LfaQ
+  if (embedUrl.includes('open.spotify.com/embed')) {
+    return { platform: 'spotify', url: embedUrl };
+  }
+  // Apple Podcasts embed URL 示例: https://embed.podcasts.apple.com/us/podcast/financial-feminist/id1566054936
+  if (embedUrl.includes('embed.podcasts.apple.com')) {
+    return { platform: 'apple', url: embedUrl };
+  }
+  return null;
+};
+---
+
+<Layout 
+  title={`${podcast.data.title} - FemHub`}
+  description={podcast.data.description}
+>
+  <article class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- Breadcrumb -->
+    <nav class="mb-8">
+      <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+        <a href="/" class="hover:text-purple-600 dark:hover:text-purple-400">首页</a>
+        <span>/</span>
+        <a href="/podcasts" class="hover:text-purple-600 dark:hover:text-purple-400">播客</a>
+        <span>/</span>
+        <span class="text-gray-900 dark:text-white">{podcast.data.title}</span>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="mb-12">
+      <div class="flex items-center mb-4">
+        {podcast.data.episodeNumber && (
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 mr-4">
+            第 {podcast.data.episodeNumber} 期
+          </span>
+        )}
+      </div>
+      
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+        {podcast.data.title}
+      </h1>
+      
+      <!-- Meta Info -->
+      <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-6">
+        <div class="flex items-center">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a2 2 0 012-2h2a2 2 0 012 2v3a3 3 0 01-3 3z"></path>
+          </svg>
+          <span class="font-medium">{podcast.data.author}</span>
+        </div>
+        
+        <div class="flex items-center">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          <time datetime={podcast.data.publishDate.toISOString()}>
+            {formatDate(podcast.data.publishDate)}
+          </time>
+        </div>
+        
+        {podcast.data.duration && (
+          <div class="flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>{formatDuration(podcast.data.duration)}</span>
+          </div>
+        )}
+      </div>
+
+      <!-- Description -->
+      <div class="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl p-6 mb-8">
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+          {podcast.data.description}
+        </p>
+      </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Main Content -->
+      <div class="lg:col-span-2">
+        <!-- Podcast Player -->
+        <div class="mb-8">
+          {podcast.data.embedUrl && getPodcastEmbed(podcast.data.embedUrl) ? (
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-200 dark:border-gray-700">
+              <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                <span class="text-purple-600 dark:text-purple-400 mr-3">🎧</span>
+                在线收听
+                {getPodcastEmbed(podcast.data.embedUrl)?.platform === 'spotify' && (
+                  <span class="ml-2 text-xs bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-2 py-1 rounded">
+                    Spotify
+                  </span>
+                )}
+                {getPodcastEmbed(podcast.data.embedUrl)?.platform === 'apple' && (
+                  <span class="ml-2 text-xs bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200 px-2 py-1 rounded">
+                    Apple Podcasts
+                  </span>
+                )}
+              </h2>
+              <div class="rounded-xl overflow-hidden">
+                {getPodcastEmbed(podcast.data.embedUrl)?.platform === 'spotify' ? (
+                  <iframe 
+                    data-testid="embed-iframe"
+                    style="border-radius:12px" 
+                    src={podcast.data.embedUrl}
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy"
+                    class="w-full"
+                  ></iframe>
+                ) : (
+                  <iframe 
+                    allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" 
+                    frameborder="0" 
+                    height="450" 
+                    style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" 
+                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" 
+                    src={podcast.data.embedUrl}
+                    class="w-full"
+                  ></iframe>
+                )}
+              </div>
+            </div>
+          ) : (
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-200 dark:border-gray-700 text-center">
+              <div class="text-6xl mb-4">🎧</div>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">音频播放器</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-6">
+                播放器暂时不可用，请通过原始链接收听
+              </p>
+              <a 
+                href={podcast.data.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors"
+              >
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+                前往收听
+              </a>
+            </div>
+          )}
+        </div>
+
+        <!-- Topics -->
+        <div class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">相关主题</h2>
+          <div class="flex flex-wrap gap-2">
+            {podcast.data.topics.map(topic => (
+              <a 
+                href={`/topics/${encodeURIComponent(topic)}`}
+                class="inline-block px-3 py-1 bg-purple-50 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-700 text-purple-700 dark:text-purple-300 rounded-full text-sm hover:bg-purple-100 dark:hover:bg-purple-900/50 transition-colors"
+              >
+                #{topic}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex items-center justify-between py-6 border-y border-gray-200 dark:border-gray-700 mb-8">
+          <div class="flex items-center space-x-4">
+            <button class="flex items-center text-gray-600 dark:text-gray-400 hover:text-purple-500 transition-colors">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+              <span class="text-sm">收藏</span>
+            </button>
+            
+            <button class="flex items-center text-gray-600 dark:text-gray-400 hover:text-purple-500 transition-colors">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path>
+              </svg>
+              <span class="text-sm">分享</span>
+            </button>
+          </div>
+          
+          <a 
+            href={podcast.data.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium rounded-lg transition-colors"
+          >
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+            原始链接
+          </a>
+        </div>
+
+        <!-- Detailed Content -->
+        <div class="prose prose-lg max-w-none 
+                     prose-headings:text-gray-900 dark:prose-headings:text-white
+                     prose-p:text-gray-700 dark:prose-p:text-gray-300
+                     prose-a:text-purple-600 hover:prose-a:text-purple-800
+                     prose-strong:text-gray-900 dark:prose-strong:text-white
+                     prose-blockquote:text-gray-700 dark:prose-blockquote:text-gray-300
+                     prose-blockquote:border-purple-500
+                     prose-code:text-purple-600 dark:prose-code:text-purple-400
+                     prose-pre:bg-gray-800 dark:prose-pre:bg-gray-900">
+          <Content />
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="lg:col-span-1">
+        <!-- Podcast Info -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 mb-6 sticky top-8">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-4">播客信息</h3>
+          
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between">
+              <span class="text-gray-500 dark:text-gray-400">主播:</span>
+              <span class="text-gray-900 dark:text-white font-medium">{podcast.data.author}</span>
+            </div>
+            
+            <div class="flex justify-between">
+              <span class="text-gray-500 dark:text-gray-400">收录:</span>
+              <span class="text-gray-900 dark:text-white">{formatDate(podcast.data.publishDate)}</span>
+            </div>
+            
+            {podcast.data.duration && (
+              <div class="flex justify-between">
+                <span class="text-gray-500 dark:text-gray-400">时长:</span>
+                <span class="text-gray-900 dark:text-white">{formatDuration(podcast.data.duration)}</span>
+              </div>
+            )}
+            
+            {podcast.data.episodeNumber && (
+              <div class="flex justify-between">
+                <span class="text-gray-500 dark:text-gray-400">集数:</span>
+                <span class="text-gray-900 dark:text-white">第 {podcast.data.episodeNumber} 期</span>
+              </div>
+            )}
+
+            <div class="flex justify-between">
+              <span class="text-gray-500 dark:text-gray-400">语言:</span>
+              <span class="text-gray-900 dark:text-white">
+                {podcast.data.language === 'zh-CN' ? '中文' : 
+                 podcast.data.language === 'en' ? '英语' : podcast.data.language}
+              </span>
+            </div>
+            
+            {podcast.data.transcript && (
+              <div class="pt-3 border-t border-gray-200 dark:border-gray-600">
+                <p class="text-gray-900 dark:text-white text-sm">{podcast.data.transcript}</p>
+              </div>
+            )}
+          </div>
+
+          <div class="border-t border-gray-200 dark:border-gray-600 pt-4 mt-6">
+            <button class="w-full px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200">
+              添加到播放列表
+            </button>
+          </div>
+        </div>
+
+        <!-- Related Podcasts -->
+        {relatedPodcasts.length > 0 && (
+          <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-4">相关播客</h3>
+            <div class="space-y-4">
+              {relatedPodcasts.map(relatedPodcast => (
+                <a 
+                  href={`/podcasts/${relatedPodcast.slug}`}
+                  class="group flex gap-3 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg p-2 transition-colors"
+                >
+                  <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900 to-indigo-900 rounded-lg flex items-center justify-center">
+                    {relatedPodcast.data.thumbnail ? (
+                      <img 
+                        src={relatedPodcast.data.thumbnail} 
+                        alt={relatedPodcast.data.title}
+                        class="w-full h-full object-cover rounded-lg"
+                      />
+                    ) : (
+                      <span class="text-lg">🎧</span>
+                    )}
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-medium text-gray-900 dark:text-white text-sm leading-tight mb-1 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors line-clamp-2">
+                      {relatedPodcast.data.title}
+                    </h4>
+                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-1">
+                      {relatedPodcast.data.author}
+                    </p>
+                    {relatedPodcast.data.duration && (
+                      <p class="text-xs text-gray-500 dark:text-gray-500">
+                        {formatDuration(relatedPodcast.data.duration)}
+                      </p>
+                    )}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+
+    <!-- Comments Section -->
+    <section class="border-t border-gray-200 dark:border-gray-700 pt-12 mt-16">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">评论与讨论</h2>
+      <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 text-center">
+        <div class="text-4xl mb-4">💬</div>
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+          分享您的收听感受
+        </h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          与其他听众一起讨论这期播客的内容和观点
+        </p>
+        <button class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors">
+          发表评论
+        </button>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-4">
+          评论功能即将上线，敬请期待
+        </p>
+      </div>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

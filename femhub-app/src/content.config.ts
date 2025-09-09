@@ -62,6 +62,7 @@ const podcasts = defineCollection({
     topics: z.array(z.string()),
     sourceUrl: z.string().url(),
     audioUrl: z.string().url().optional(),
+    embedUrl: z.string().url().optional(),
     duration: z.number().optional(), // in minutes
     transcript: z.string().optional(),
     thumbnail: z.string().optional(),

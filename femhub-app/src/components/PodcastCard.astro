@@ -56,25 +56,14 @@ const formatDate = (date: Date) => {
 <article class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-700">
   <a href={`/podcasts/${slug}`} class="block">
     <div class="p-6">
-      <!-- Header with Platform and Episode Info -->
-      <div class="flex items-center justify-between mb-4">
-        <div class="flex items-center gap-2">
-          <div class={`${platform.color} text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5`}>
-            <span>{platform.icon}</span>
-            <span>{platform.name}</span>
-          </div>
-          {episodeNumber && (
-            <span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded-md">
-              第{episodeNumber}期
-            </span>
-          )}
+      <!-- Episode Info -->
+      {episodeNumber && (
+        <div class="mb-4">
+          <span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded-md">
+            第{episodeNumber}期
+          </span>
         </div>
-        
-          <div class="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs font-bold px-2 py-1 rounded-full">
-            ⭐ 推荐
-          </div>
-        )}
-      </div>
+      )}
 
       <!-- Podcast Content -->
       <div class="flex gap-4">
@@ -88,13 +77,13 @@ const formatDate = (date: Date) => {
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <!-- Audio Wave Overlay -->
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-2">
+              <div class="absolute inset-0 flex items-end justify-center pb-2">
                 <div class="flex items-center gap-1">
-                  <div class="w-1 bg-white/80 rounded-full animate-pulse" style="height: 8px; animation-delay: 0ms;"></div>
-                  <div class="w-1 bg-white/60 rounded-full animate-pulse" style="height: 12px; animation-delay: 150ms;"></div>
-                  <div class="w-1 bg-white/80 rounded-full animate-pulse" style="height: 6px; animation-delay: 300ms;"></div>
-                  <div class="w-1 bg-white/90 rounded-full animate-pulse" style="height: 14px; animation-delay: 450ms;"></div>
-                  <div class="w-1 bg-white/70 rounded-full animate-pulse" style="height: 10px; animation-delay: 600ms;"></div>
+                  <div class="w-1 bg-white/90 rounded-full animate-pulse shadow-sm" style="height: 8px; animation-delay: 0ms;"></div>
+                  <div class="w-1 bg-white/80 rounded-full animate-pulse shadow-sm" style="height: 12px; animation-delay: 150ms;"></div>
+                  <div class="w-1 bg-white/90 rounded-full animate-pulse shadow-sm" style="height: 6px; animation-delay: 300ms;"></div>
+                  <div class="w-1 bg-white rounded-full animate-pulse shadow-sm" style="height: 14px; animation-delay: 450ms;"></div>
+                  <div class="w-1 bg-white/80 rounded-full animate-pulse shadow-sm" style="height: 10px; animation-delay: 600ms;"></div>
                 </div>
               </div>
             </div>
@@ -118,10 +107,16 @@ const formatDate = (date: Date) => {
 
         <!-- Content -->
         <div class="flex-1 min-w-0">
-          <!-- Title -->
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-            {title}
-          </h3>
+          <!-- Title with Platform Badge -->
+          <div class="flex items-start justify-between mb-2">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white line-clamp-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors flex-1 mr-3">
+              {title}
+            </h3>
+            <div class={`${platform.color} text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 flex-shrink-0`}>
+              <span>{platform.icon}</span>
+              <span>{platform.name}</span>
+            </div>
+          </div>
 
           <!-- Host & Meta -->
           <div class="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-3">
@@ -153,14 +148,14 @@ const formatDate = (date: Date) => {
 
           <!-- Topics -->
           <div class="flex flex-wrap gap-1.5">
-            {topics.slice(0, 3).map(topic => (
+            {topics.slice(0, 5).map(topic => (
               <span class="inline-block px-2 py-1 text-xs bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-md">
                 #{topic}
               </span>
             ))}
-            {topics.length > 3 && (
+            {topics.length > 5 && (
               <span class="inline-block px-2 py-1 text-xs text-gray-500 dark:text-gray-500">
-                +{topics.length - 3}
+                +{topics.length - 5}
               </span>
             )}
           </div>
@@ -172,9 +167,9 @@ const formatDate = (date: Date) => {
         <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
           <button class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors flex items-center gap-1">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h8m-9 4h10a2 2 0 002-2V6a2 2 0 00-2-2H4a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
             </svg>
-            订阅
+            收藏
           </button>
           <button class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors flex items-center gap-1">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
