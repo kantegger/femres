@@ -36,7 +36,7 @@ const formatDate = (date: Date) => {
   title={`${article.data.title} - FemHub`}
   description={article.data.description}
 >
-  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <article class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     
     <!-- Breadcrumb -->
     <nav class="mb-8">
@@ -51,16 +51,9 @@ const formatDate = (date: Date) => {
 
     <!-- Header -->
     <header class="mb-12">
-      <div class="text-center mb-8">
-        <span class="inline-flex items-center px-3 py-1 bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 text-sm font-medium rounded-full mb-6">
-          <span class="mr-1">📰</span>
-          文章
-        </span>
-        
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-          {article.data.title}
-        </h1>
-      </div>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+        {article.data.title}
+      </h1>
 
       <!-- Article Meta -->
       <div class="flex flex-col md:flex-row md:items-center md:justify-between bg-gray-50 dark:bg-gray-800 rounded-xl p-6 mb-8">

@@ -1,5 +1,225 @@
 @import "tailwindcss";
 
+/* Prose styles for markdown content */
+@utility prose {
+  color: var(--color-gray-700);
+  max-width: 65ch;
+  
+  /* Headings */
+  & h1, & h2, & h3, & h4, & h5, & h6 {
+    color: var(--color-gray-900);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  
+  & h1 {
+    font-size: 2.25rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-gray-200);
+    margin-top: 0;
+  }
+  
+  & h2 {
+    font-size: 1.875rem;
+    color: var(--color-purple-700);
+    margin-bottom: 1.25rem;
+    margin-top: 3rem;
+  }
+  
+  & h3 {
+    font-size: 1.5rem;
+    color: var(--color-gray-800);
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+  
+  & h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-gray-700);
+    margin-bottom: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  
+  /* Paragraphs */
+  & p {
+    color: var(--color-gray-700);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Links */
+  & a {
+    color: var(--color-purple-600);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  & a:hover {
+    text-decoration: underline;
+    color: var(--color-purple-800);
+  }
+  
+  /* Strong and emphasis */
+  & strong {
+    color: var(--color-gray-900);
+    font-weight: 600;
+  }
+  
+  & em {
+    color: var(--color-gray-600);
+    font-style: italic;
+  }
+  
+  /* Blockquotes */
+  & blockquote {
+    border-left: 4px solid var(--color-purple-500);
+    background-color: var(--color-purple-50);
+    padding-left: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-style: normal;
+    color: var(--color-gray-700);
+    margin: 2rem 0;
+  }
+  
+  /* Lists */
+  & ul, & ol {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+  }
+  
+  & li {
+    margin: 0.5rem 0;
+    color: var(--color-gray-700);
+    line-height: 1.75;
+  }
+  
+  /* Code */
+  & code {
+    color: var(--color-purple-600);
+    background-color: var(--color-purple-50);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    font-family: ui-monospace, SFMono-Regular, 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-size: 0.875rem;
+  }
+  
+  & pre {
+    background-color: var(--color-gray-900);
+    color: var(--color-gray-100);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 2rem 0;
+  }
+  
+  & pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+  }
+  
+  /* Images */
+  & img {
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    margin: 2rem auto;
+  }
+  
+  /* Horizontal rules */
+  & hr {
+    border-color: var(--color-gray-300);
+    margin: 3rem 0;
+  }
+}
+
+@utility prose-lg {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  
+  & h1 { font-size: 2.75rem; }
+  & h2 { font-size: 2.25rem; }
+  & h3 { font-size: 1.875rem; }
+  & h4 { font-size: 1.5rem; }
+  & p { margin-bottom: 1.75rem; }
+}
+
+@utility max-w-none {
+  max-width: none;
+}
+
+/* Dark mode prose styles */
+@media (prefers-color-scheme: dark) {
+  .prose {
+    color: var(--color-gray-300);
+    
+    & h1, & h2, & h3, & h4, & h5, & h6 {
+      color: var(--color-white);
+    }
+    
+    & h2 {
+      color: var(--color-purple-300);
+    }
+    
+    & h3 {
+      color: var(--color-gray-200);
+    }
+    
+    & h4 {
+      color: var(--color-gray-300);
+    }
+    
+    & p {
+      color: var(--color-gray-300);
+    }
+    
+    & a {
+      color: var(--color-purple-400);
+    }
+    
+    & a:hover {
+      color: var(--color-purple-300);
+    }
+    
+    & strong {
+      color: var(--color-white);
+    }
+    
+    & em {
+      color: var(--color-gray-400);
+    }
+    
+    & blockquote {
+      background-color: var(--color-purple-900);
+      background-color: color-mix(in srgb, var(--color-purple-900) 20%, transparent);
+      color: var(--color-gray-300);
+    }
+    
+    & li {
+      color: var(--color-gray-300);
+    }
+    
+    & code {
+      color: var(--color-purple-400);
+      background-color: var(--color-purple-900);
+      background-color: color-mix(in srgb, var(--color-purple-900) 20%, transparent);
+    }
+    
+    & hr {
+      border-color: var(--color-gray-600);
+    }
+    
+    & h1 {
+      border-color: var(--color-gray-700);
+    }
+  }
+}
+
 /* Custom animations */
 @keyframes blob {
   0% {

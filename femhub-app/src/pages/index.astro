@@ -23,11 +23,6 @@ const allContent = [
   ...papers.map(item => ({ ...item, contentType: 'paper' as const }))
 ].sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
 
-// 获取编辑推荐内容（质量分数高的）
-const editorsChoice = allContent
-  .filter(item => item.data.qualityScore && item.data.qualityScore >= 9)
-  .sort((a, b) => (b.data.qualityScore || 0) - (a.data.qualityScore || 0))
-  .slice(0, 3);
 
 // 获取最新内容（分类型）
 const latestBooks = books.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 3);
@@ -142,121 +137,12 @@ const enrichedArticles = articles.map(article => {
       </div>
     </section>
 
-    <!-- Editors' Choice Section -->
-    {editorsChoice.length > 0 && (
-      <section class="mb-20">
-        <div class="flex items-center justify-between mb-10">
-          <div>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">编辑推荐</h2>
-            <p class="text-lg text-gray-600 dark:text-gray-300">精心挑选的高质量内容</p>
-          </div>
-          <div class="hidden md:flex items-center text-yellow-500">
-            <span class="text-2xl mr-2">⭐</span>
-            <span class="text-sm font-medium text-gray-600 dark:text-gray-400">精选内容</span>
-          </div>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {editorsChoice.map(item => {
-            if (item.contentType === 'book') {
-              return (
-                <div class="md:col-span-1">
-                  <BookCard
-                    title={item.data.title}
-                    author={item.data.author}
-                    description={item.data.description}
-                    coverImage={item.data.coverImage}
-                    publishDate={item.data.publishDate}
-                    qualityScore={item.data.qualityScore}
-                    slug={item.slug}
-                    topics={item.data.topics}
-                    isbn={item.data.isbn}
-                  />
-                </div>
-              );
-            } else if (item.contentType === 'video') {
-              return (
-                <div class="md:col-span-1">
-                  <VideoCard
-                    title={item.data.title}
-                    author={item.data.author}
-                    description={item.data.description}
-                    thumbnail={item.data.thumbnail}
-                    publishDate={item.data.publishDate}
-                    duration={item.data.duration}
-                    sourceUrl={item.data.sourceUrl}
-                    slug={item.slug}
-                    topics={item.data.topics}
-                    qualityScore={item.data.qualityScore}
-                  />
-                </div>
-              );
-            } else if (item.contentType === 'podcast') {
-              return (
-                <div class="md:col-span-1">
-                  <PodcastCard
-                    title={item.data.title}
-                    author={item.data.author}
-                    description={item.data.description}
-                    thumbnail={item.data.thumbnail}
-                    publishDate={item.data.publishDate}
-                    duration={item.data.duration}
-                    sourceUrl={item.data.sourceUrl}
-                    slug={item.slug}
-                    topics={item.data.topics}
-                    qualityScore={item.data.qualityScore}
-                    episodeNumber={item.data.episodeNumber}
-                  />
-                </div>
-              );
-            } else if (item.contentType === 'paper') {
-              return (
-                <div class="md:col-span-1">
-                  <PaperCard
-                    title={item.data.title}
-                    author={item.data.author}
-                    description={item.data.description}
-                    publishDate={item.data.publishDate}
-                    qualityScore={item.data.qualityScore}
-                    slug={item.slug}
-                    topics={item.data.topics}
-                    journal={item.data.journal}
-                    doi={item.data.doi}
-                    citationCount={item.data.citationCount}
-                    paperType={item.data.paperType}
-                  />
-                </div>
-              );
-            } else {
-              const enriched = enrichedArticles.find(a => a.slug === item.slug);
-              return (
-                <div class="md:col-span-1">
-                  <ArticleCard
-                    title={item.data.title}
-                    author={item.data.author}
-                    description={item.data.description}
-                    featuredImage={item.data.featuredImage}
-                    publishDate={item.data.publishDate}
-                    readingTime={item.data.readingTime}
-                    sourceUrl={item.data.sourceUrl}
-                    slug={item.slug}
-                    topics={item.data.topics}
-                    qualityScore={item.data.qualityScore}
-                    articleType={enriched?.articleType}
-                  />
-                </div>
-              );
-            }
-          })}
-        </div>
-      </section>
-    )}
 
-    <!-- Latest Updates Section -->
+    <!-- Latest Content Section -->
     <section class="mb-20">
-      <div class="mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">最新更新</h2>
-        <p class="text-lg text-gray-600 dark:text-gray-300">持续更新的女性主义内容</p>
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">精选内容</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">探索最新的女性主义思想、研究与实践，汇聚全球优质内容</p>
       </div>
 
       <!-- Latest Books -->
