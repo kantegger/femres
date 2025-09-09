@@ -1,0 +1,162 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import VideoCard from '../../components/VideoCard.astro';
+
+const videos = await getCollection('videos');
+const publishedVideos = videos.filter(video => video.data.status === 'published');
+
+// 按发布日期排序
+const sortedVideos = publishedVideos.sort((a, b) => {
+  return new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime();
+});
+
+// 获取所有主题标签
+const allTopics = [...new Set(publishedVideos.flatMap(video => video.data.topics))].sort();
+
+// 统计信息
+const totalVideos = publishedVideos.length;
+const totalDuration = publishedVideos.reduce((sum, video) => sum + (video.data.duration || 0), 0);
+
+// 格式化总时长
+const formatTotalDuration = (minutes: number) => {
+  const hours = Math.floor(minutes / 60);
+  if (hours > 0) {
+    return `${hours}小时${minutes % 60}分钟`;
+  }
+  return `${minutes}分钟`;
+};
+---
+
+<Layout 
+  title="视频 - FemHub"
+  description="精选女性主义视频内容，包括纪录片、演讲、讨论等多种形式，为学习女性主义提供生动的视觉资源。"
+>
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <!-- Header -->
+    <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            🎬 视频资源
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+            汇集女性主义纪录片、演讲、访谈等优质视频内容，用影像传递思想力量
+          </p>
+          
+          <!-- 统计信息 -->
+          <div class="flex flex-wrap justify-center gap-6 text-sm">
+            <div class="flex items-center bg-red-50 dark:bg-red-900/20 px-4 py-2 rounded-full">
+              <span class="text-red-600 dark:text-red-400 mr-2">🎥</span>
+              <span class="text-red-800 dark:text-red-200">共 {totalVideos} 个视频</span>
+            </div>
+            <div class="flex items-center bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-full">
+              <span class="text-blue-600 dark:text-blue-400 mr-2">🕒</span>
+              <span class="text-blue-800 dark:text-blue-200">总时长 {formatTotalDuration(totalDuration)}</span>
+            </div>
+            <div class="flex items-center bg-green-50 dark:bg-green-900/20 px-4 py-2 rounded-full">
+              <span class="text-green-600 dark:text-green-400 mr-2">🏷️</span>
+              <span class="text-green-800 dark:text-green-200">{allTopics.length} 个主题分类</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      
+      <!-- 主题标签筛选 -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">主题分类</h2>
+        <div class="flex flex-wrap gap-3">
+          <a 
+            href="/videos"
+            class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm font-medium"
+          >
+            全部视频
+          </a>
+          {allTopics.map(topic => (
+            <a 
+              href={`/topics/${encodeURIComponent(topic)}`}
+              class="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-red-500 dark:hover:border-red-400 hover:text-red-600 dark:hover:text-red-400 transition-colors text-sm"
+            >
+              {topic}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- 视频网格 -->
+      <div class="mb-8">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">全部视频</h2>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            按时间排序
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {sortedVideos.map(video => (
+            <VideoCard 
+              title={video.data.title}
+              author={video.data.author}
+              description={video.data.description}
+              slug={video.slug}
+              thumbnail={video.data.thumbnail}
+              publishDate={video.data.publishDate}
+              duration={video.data.duration}
+              sourceUrl={video.data.sourceUrl}
+              topics={video.data.topics}
+            />
+          ))}
+        </div>
+      </div>
+
+      <!-- 空状态 -->
+      {sortedVideos.length === 0 && (
+        <div class="text-center py-16">
+          <div class="text-6xl mb-4">🎬</div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            暂无视频内容
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            我们正在努力添加更多优质的女性主义视频资源
+          </p>
+        </div>
+      )}
+
+      <!-- 观看指南 -->
+      <div class="mt-16 bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 rounded-2xl p-8">
+        <div class="text-center">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            🎯 观看建议
+          </h2>
+          <div class="grid md:grid-cols-3 gap-6 text-left mt-8">
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">📽️</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">纪录片优先</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                推荐从经典女性主义纪录片开始，如《RBG》等，了解历史人物与重要事件
+              </p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">🎤</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">演讲访谈</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                观看学者、活动家的演讲和访谈，深入理解不同视角的女性主义观点
+              </p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">💭</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">批判思考</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                观看后可结合个人经历和现实情况思考，形成独立的判断和见解
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
