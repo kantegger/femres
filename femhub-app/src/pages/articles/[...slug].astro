@@ -30,6 +30,30 @@ const formatDate = (date: Date) => {
     day: 'numeric'
   });
 };
+
+// 获取作者名字首字母
+const getAuthorInitial = (author: string) => {
+  return author.charAt(0).toUpperCase();
+};
+
+// 为作者头像生成颜色
+const getAuthorColor = (author: string) => {
+  const colors = [
+    'bg-purple-500',
+    'bg-blue-500', 
+    'bg-green-500',
+    'bg-yellow-500',
+    'bg-pink-500',
+    'bg-indigo-500',
+    'bg-red-500',
+    'bg-teal-500'
+  ];
+  let hash = 0;
+  for (let i = 0; i < author.length; i++) {
+    hash = author.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return colors[Math.abs(hash) % colors.length];
+};
 ---
 
 <Layout 
@@ -59,9 +83,9 @@ const formatDate = (date: Date) => {
       <div class="flex flex-col md:flex-row md:items-center md:justify-between bg-gray-50 dark:bg-gray-800 rounded-xl p-6 mb-8">
         <div class="flex flex-col md:flex-row md:items-center space-y-3 md:space-y-0 md:space-x-8">
           <div class="flex items-center text-gray-700 dark:text-gray-300">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-            </svg>
+            <div class={`w-6 h-6 rounded-full ${getAuthorColor(article.data.author)} flex items-center justify-center text-white text-xs font-semibold mr-3`}>
+              {getAuthorInitial(article.data.author)}
+            </div>
             <span class="font-medium">{article.data.author}</span>
           </div>
           
@@ -85,14 +109,6 @@ const formatDate = (date: Date) => {
         </div>
 
         <div class="flex items-center mt-4 md:mt-0">
-          {article.data.qualityScore && (
-            <div class="flex items-center bg-yellow-50 dark:bg-yellow-900/30 px-3 py-1 rounded-full">
-              <span class="text-yellow-500 mr-1">⭐</span>
-              <span class="text-yellow-800 dark:text-yellow-200 font-medium text-sm">
-                {article.data.qualityScore.toFixed(1)}
-              </span>
-            </div>
-          )}
         </div>
       </div>
 
@@ -251,7 +267,7 @@ const formatDate = (date: Date) => {
         <input 
           type="email" 
           placeholder="输入您的邮箱"
-          class="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500"
+          class="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-400 focus:placeholder-gray-500"
         />
         <button class="px-6 py-3 bg-white/20 hover:bg-white/30 backdrop-blur text-white font-medium rounded-lg transition-colors">
           订阅

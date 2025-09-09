@@ -5,7 +5,6 @@ description: "本期邀请三位在科技行业工作的女性，分享她们在
 publishDate: 2024-01-10
 language: zh-CN
 topics: ["科技行业", "职场平等", "创业"]
-qualityScore: 8.2
 sourceUrl: "https://spotify.com/women-in-tech"
 audioUrl: "https://audio.example.com/women-tech.mp3"
 duration: 62

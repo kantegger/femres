@@ -5,7 +5,6 @@ description: "本研究基于大规模调查数据，分析了中国不同行业
 publishDate: 2024-02-01
 language: zh-CN
 topics: ["职场平等", "工资差距", "实证研究", "政策分析"]
-qualityScore: 9.2
 sourceUrl: "https://doi.org/10.1000/example-paper"
 doi: "10.1000/182394"
 journal: "中国社会科学"

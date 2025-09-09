@@ -7,7 +7,6 @@ publishDate: 1949-06-01
 isbn: "9787020035816"
 language: "zh-CN"
 topics: ["历史人物", "女性理论", "存在主义", "性别研究"]
-qualityScore: 9.8
 sourceUrl: "https://book.douban.com/subject/1035853/"
 coverImage: "/images/books/the-second-sex.jpg"
 status: "published"

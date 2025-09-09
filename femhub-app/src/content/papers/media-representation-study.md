@@ -5,7 +5,6 @@ description: "本研究采用批判话语分析方法，考察了主流社交媒
 publishDate: 2024-01-20
 language: zh-CN
 topics: ["媒体表征", "话语分析", "广告研究", "数字媒体"]
-qualityScore: 8.9
 sourceUrl: "https://journal.example.com/media-representation"
 doi: "10.1000/media2024"
 journal: "新闻与传播研究"

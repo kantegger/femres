@@ -9,10 +9,9 @@ export interface Props {
   sourceUrl: string;
   slug: string;
   topics: string[];
-  qualityScore?: number;
 }
 
-const { title, author, description, thumbnail, publishDate, duration, sourceUrl, slug, topics, qualityScore } = Astro.props;
+const { title, author, description, thumbnail, publishDate, duration, sourceUrl, slug, topics } = Astro.props;
 
 // 识别视频平台
 const getPlatform = (url: string) => {
@@ -92,7 +91,6 @@ const formatDate = (date: Date) => {
       </div>
 
       <!-- Quality Badge -->
-      {qualityScore && qualityScore >= 8.5 && (
         <div class="absolute top-2 right-2 bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded-full">
           ⭐ 精选
         </div>

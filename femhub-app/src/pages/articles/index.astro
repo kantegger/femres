@@ -1,0 +1,160 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+const articles = await getCollection('articles');
+const publishedArticles = articles.filter(article => article.data.status === 'published');
+
+// 按发布日期排序
+const sortedArticles = publishedArticles.sort((a, b) => {
+  return new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime();
+});
+
+// 获取所有主题标签
+const allTopics = [...new Set(publishedArticles.flatMap(article => article.data.topics))].sort();
+
+// 统计信息
+const totalArticles = publishedArticles.length;
+
+// 为文章添加类型标记
+const enrichedArticles = sortedArticles.map(article => {
+  let articleType: 'news' | 'blog' | 'research' | 'opinion' | 'analysis' = 'blog';
+  if (article.data.title.includes('报告') || article.data.title.includes('数据')) {
+    articleType = 'analysis';
+  } else if (article.data.title.includes('现状') || article.data.title.includes('MeToo')) {
+    articleType = 'news';
+  }
+  return { ...article, articleType };
+});
+---
+
+<Layout 
+  title="文章 - FemHub"
+  description="深度探讨女性主义议题的精选文章，涵盖社会分析、学术研究、新闻观点等多个角度，为理解性别平等提供全面视角。"
+>
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <!-- Header -->
+    <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            📰 精选文章
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+            深度探讨女性主义议题，从学术研究到社会观察，为理解性别平等提供多元视角
+          </p>
+          
+          <!-- 统计信息 -->
+          <div class="flex flex-wrap justify-center gap-6 text-sm">
+            <div class="flex items-center bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-full">
+              <span class="text-blue-600 dark:text-blue-400 mr-2">📄</span>
+              <span class="text-blue-800 dark:text-blue-200">共 {totalArticles} 篇文章</span>
+            </div>
+            <div class="flex items-center bg-green-50 dark:bg-green-900/20 px-4 py-2 rounded-full">
+              <span class="text-green-600 dark:text-green-400 mr-2">🏷️</span>
+              <span class="text-green-800 dark:text-green-200">{allTopics.length} 个主题分类</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      
+      <!-- 主题标签筛选 -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">主题分类</h2>
+        <div class="flex flex-wrap gap-3">
+          <a 
+            href="/articles"
+            class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+          >
+            全部文章
+          </a>
+          {allTopics.map(topic => (
+            <a 
+              href={`/topics/${encodeURIComponent(topic)}`}
+              class="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm"
+            >
+              {topic}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- 文章网格 -->
+      <div class="mb-8">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">全部文章</h2>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            按时间排序
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {enrichedArticles.map(article => (
+            <ArticleCard
+              title={article.data.title}
+              author={article.data.author}
+              description={article.data.description}
+              featuredImage={article.data.featuredImage}
+              publishDate={article.data.publishDate}
+              readingTime={article.data.readingTime}
+              sourceUrl={article.data.sourceUrl}
+              slug={article.slug}
+              topics={article.data.topics}
+              articleType={article.articleType}
+            />
+          ))}
+        </div>
+      </div>
+
+      <!-- 空状态 -->
+      {sortedArticles.length === 0 && (
+        <div class="text-center py-16">
+          <div class="text-6xl mb-4">📰</div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            暂无文章内容
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            我们正在努力添加更多优质的女性主义文章内容
+          </p>
+        </div>
+      )}
+
+      <!-- 阅读建议 -->
+      <div class="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl p-8">
+        <div class="text-center">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            📖 阅读指南
+          </h2>
+          <div class="grid md:grid-cols-3 gap-6 text-left mt-8">
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">📊</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">数据分析</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                从统计数据和研究报告中了解性别平等的现状与趋势
+              </p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">💭</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">观点交流</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                阅读不同视角的观点文章，培养批判性思维和多元理解
+              </p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">🌍</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">全球视野</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                关注全球范围内的女性主义运动和社会变化
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

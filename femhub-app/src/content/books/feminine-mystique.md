@@ -7,7 +7,6 @@ publishDate: 1963-02-19
 isbn: "9787020116249"
 language: "zh-CN"
 topics: ["历史人物", "女性理论", "家庭角色", "职场平等"]
-qualityScore: 9.5
 sourceUrl: "https://book.douban.com/subject/1033133/"
 coverImage: "/images/books/feminine-mystique.jpg"
 status: "published"

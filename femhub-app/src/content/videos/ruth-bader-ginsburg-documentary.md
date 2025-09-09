@@ -5,10 +5,9 @@ description: "这部获得艾美奖的纪录片讲述了美国最高法院大法
 publishDate: 2018-05-04
 language: "en"
 topics: ["历史人物", "法律权利", "政治参与", "传记"]
-qualityScore: 9.2
-sourceUrl: "https://www.rbgmovie.com/"
+sourceUrl: "https://youtu.be/biIRlcQqmOc"
 embedUrl: "https://www.youtube.com/embed/biIRlcQqmOc"
-duration: 98
+duration: 3
 thumbnail: "/images/videos/rbg-documentary.jpg"
 status: "published"
 ---

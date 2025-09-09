@@ -5,13 +5,12 @@ export interface Props {
   description: string;
   coverImage?: string;
   publishDate: Date;
-  qualityScore?: number;
   slug: string;
   topics: string[];
   isbn?: string;
 }
 
-const { title, author, description, coverImage, publishDate, qualityScore, slug, topics, isbn } = Astro.props;
+const { title, author, description, coverImage, publishDate, slug, topics, isbn } = Astro.props;
 
 const formatYear = (date: Date) => {
   return date.getFullYear();
@@ -39,12 +38,6 @@ const formatYear = (date: Date) => {
             </div>
           )}
           
-          <!-- Quality Score Badge -->
-          {qualityScore && qualityScore >= 9 && (
-            <div class="absolute top-3 right-3 bg-gradient-to-r from-yellow-400 to-orange-400 text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg">
-              ⭐ {qualityScore.toFixed(1)}
-            </div>
-          )}
           
           <!-- Category Badge -->
           <div class="absolute bottom-3 left-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full px-3 py-1">

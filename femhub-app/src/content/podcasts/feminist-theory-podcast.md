@@ -5,7 +5,6 @@ description: "从波伏娃到朱迪斯·巴特勒，本期节目将带您了解�
 publishDate: 2024-01-15
 language: zh-CN
 topics: ["女性主义理论", "性别研究", "社会学"]
-qualityScore: 8.8
 sourceUrl: "https://spotify.com/feminist-theory-intro"
 audioUrl: "https://audio.example.com/feminist-theory.mp3"
 duration: 45

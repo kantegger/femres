@@ -7,7 +7,6 @@ publishDate: 2014-07-29
 isbn: "9787559827463"
 language: "zh-CN"
 topics: ["女性理论", "职场平等", "教育权利", "媒体表征"]
-qualityScore: 9.0
 sourceUrl: "https://book.douban.com/subject/26807354/"
 coverImage: "/images/books/we-should-all-be-feminists.jpg"
 status: "published"

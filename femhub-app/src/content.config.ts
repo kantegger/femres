@@ -12,7 +12,6 @@ const books = defineCollection({
     isbn: z.string().optional(),
     language: z.enum(['zh-CN', 'en', 'zh-TW']).default('zh-CN'),
     topics: z.array(z.string()),
-    qualityScore: z.number().min(0).max(10).optional(),
     sourceUrl: z.string().url().optional(),
     coverImage: z.string().optional(),
     status: z.enum(['published', 'draft']).default('published')
@@ -28,7 +27,6 @@ const articles = defineCollection({
     publishDate: z.date(),
     language: z.enum(['zh-CN', 'en', 'zh-TW']).default('zh-CN'),
     topics: z.array(z.string()),
-    qualityScore: z.number().min(0).max(10).optional(),
     sourceUrl: z.string().url(),
     readingTime: z.number().optional(),
     featuredImage: z.string().optional(),
@@ -45,7 +43,6 @@ const videos = defineCollection({
     publishDate: z.date(),
     language: z.enum(['zh-CN', 'en', 'zh-TW']).default('zh-CN'),
     topics: z.array(z.string()),
-    qualityScore: z.number().min(0).max(10).optional(),
     sourceUrl: z.string().url(),
     embedUrl: z.string().url().optional(),
     duration: z.number().optional(), // in minutes
@@ -63,7 +60,6 @@ const podcasts = defineCollection({
     publishDate: z.date(),
     language: z.enum(['zh-CN', 'en', 'zh-TW']).default('zh-CN'),
     topics: z.array(z.string()),
-    qualityScore: z.number().min(0).max(10).optional(),
     sourceUrl: z.string().url(),
     audioUrl: z.string().url().optional(),
     duration: z.number().optional(), // in minutes
@@ -83,7 +79,6 @@ const papers = defineCollection({
     publishDate: z.date(),
     language: z.enum(['zh-CN', 'en', 'zh-TW']).default('zh-CN'),
     topics: z.array(z.string()),
-    qualityScore: z.number().min(0).max(10).optional(),
     sourceUrl: z.string().url(),
     doi: z.string().optional(),
     journal: z.string().optional(),

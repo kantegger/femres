@@ -85,12 +85,6 @@ const formatDate = (date: Date) => {
                 </div>
               )}
               
-              <!-- Quality Score Badge -->
-              {book.data.qualityScore && book.data.qualityScore >= 9 && (
-                <div class="absolute top-2 right-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg">
-                  ⭐ {book.data.qualityScore.toFixed(1)}
-                </div>
-              )}
             </div>
           </div>
 
@@ -116,16 +110,6 @@ const formatDate = (date: Date) => {
                 <div class="flex">
                   <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">ISBN:</span>
                   <span class="font-mono text-xs flex-1 text-right">{book.data.isbn}</span>
-                </div>
-              )}
-              {book.data.qualityScore && (
-                <div class="flex">
-                  <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">评分:</span>
-                  <div class="flex items-center flex-1 justify-end">
-                    <span class="text-yellow-500 mr-1">⭐</span>
-                    <span class="font-medium">{book.data.qualityScore.toFixed(1)}</span>
-                    <span class="text-gray-400 ml-1">/10</span>
-                  </div>
                 </div>
               )}
             </div>

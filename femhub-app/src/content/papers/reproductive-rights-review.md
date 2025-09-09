@@ -5,7 +5,6 @@ description: "本综述性研究比较了全球20个国家在生殖权利保护�
 publishDate: 2023-12-15
 language: zh-CN
 topics: ["生殖权利", "比较法", "女性权益", "政策研究"]
-qualityScore: 9.5
 sourceUrl: "https://law-review.example.com/reproductive-rights"
 doi: "10.1000/repro2023"
 journal: "比较法研究"
