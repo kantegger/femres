@@ -52,26 +52,26 @@ const enrichedArticles = articles.map(article => {
     <!-- 搜索头部 -->
     <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="text-center mb-8">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+        <div class="text-center mb-6 sm:mb-8">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
             内容搜索
           </h1>
-          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
             在 {allContent.length} 个精选内容中发现您需要的女性主义资源
           </p>
         </div>
 
         <!-- 搜索框 -->
-        <div class="max-w-3xl mx-auto mb-8">
+        <div class="max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
           <div class="relative">
             <input
               type="text"
               id="searchInput"
               placeholder="搜索标题、作者、描述或主题..."
-              class="w-full px-6 py-4 pr-12 text-lg bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm"
+              class="w-full px-4 sm:px-6 py-3 sm:py-4 pr-12 text-base sm:text-lg bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm"
             />
-            <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
-              <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="absolute right-3 sm:right-4 top-1/2 transform -translate-y-1/2">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
             </div>
@@ -79,21 +79,23 @@ const enrichedArticles = articles.map(article => {
         </div>
 
         <!-- 快速筛选标签 -->
-        <div class="flex flex-wrap justify-center gap-3 mb-6">
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6">
           {contentTypes.map(type => (
             <button
-              class="content-type-filter px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-purple-50 dark:hover:bg-gray-600 hover:border-purple-300 dark:hover:border-purple-400 transition-colors text-sm font-medium text-gray-700 dark:text-gray-300"
+              class="content-type-filter px-3 sm:px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-purple-50 dark:hover:bg-gray-600 hover:border-purple-300 dark:hover:border-purple-400 transition-colors text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap"
               data-type={type.value}
             >
-              <span class="mr-2">{type.icon}</span>
-              {type.label} ({type.count})
+              <span class="mr-1 sm:mr-2">{type.icon}</span>
+              <span class="hidden sm:inline">{type.label} ({type.count})</span>
+              <span class="sm:hidden">{type.icon}</span>
             </button>
           ))}
           <button
             id="clearFilters"
-            class="px-4 py-2 bg-gray-100 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-500 transition-colors text-sm font-medium text-gray-600 dark:text-gray-400"
+            class="px-3 sm:px-4 py-2 bg-gray-100 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-500 transition-colors text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400"
           >
-            清除筛选
+            <span class="sm:hidden">清除</span>
+            <span class="hidden sm:inline">清除筛选</span>
           </button>
         </div>
       </div>
@@ -102,60 +104,121 @@ const enrichedArticles = articles.map(article => {
     <!-- 筛选和排序栏 -->
     <div class="bg-gray-100 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div class="flex flex-col sm:flex-row gap-4">
-            <!-- 主题筛选 -->
-            <div class="relative">
-              <select id="topicFilter" class="appearance-none w-full sm:w-48 px-4 py-3 pr-10 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl shadow-sm hover:border-purple-300 dark:hover:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm text-gray-900 dark:text-white transition-all duration-200 cursor-pointer">
-                <option value="">所有主题</option>
-                {allTopics.map(topic => (
-                  <option value={topic}>{topic}</option>
-                ))}
-              </select>
-              <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                <svg class="w-4 h-4 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
+        <div class="flex flex-col gap-4">
+          <!-- 移动端筛选器 - 水平滚动 -->
+          <div class="md:hidden">
+            <div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+              <!-- 主题筛选 -->
+              <div class="relative flex-shrink-0">
+                <select id="topicFilter" class="appearance-none w-40 px-3 py-2 pr-8 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg shadow-sm hover:border-purple-300 dark:hover:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm text-gray-900 dark:text-white transition-all duration-200 cursor-pointer">
+                  <option value="">所有主题</option>
+                  {allTopics.map(topic => (
+                    <option value={topic}>{topic}</option>
+                  ))}
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                  <svg class="w-4 h-4 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- 语言筛选 -->
+              <div class="relative flex-shrink-0">
+                <select id="languageFilter" class="appearance-none w-32 px-3 py-2 pr-8 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg shadow-sm hover:border-purple-300 dark:hover:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm text-gray-900 dark:text-white transition-all duration-200 cursor-pointer">
+                  <option value="">语言</option>
+                  <option value="zh-CN">中文</option>
+                  <option value="en">English</option>
+                  <option value="zh-TW">繁體中文</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                  <svg class="w-4 h-4 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- 排序 -->
+              <div class="relative flex-shrink-0">
+                <select id="sortBy" class="appearance-none w-28 px-3 py-2 pr-8 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg shadow-sm hover:border-purple-300 dark:hover:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm text-gray-900 dark:text-white transition-all duration-200 cursor-pointer">
+                  <option value="relevance">相关度</option>
+                  <option value="date-desc">最新</option>
+                  <option value="date-asc">最早</option>
+                  <option value="title-asc">A-Z</option>
+                  <option value="title-desc">Z-A</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                  <svg class="w-4 h-4 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
+                  </svg>
+                </div>
               </div>
             </div>
-
-            <!-- 语言筛选 -->
-            <div class="relative">
-              <select id="languageFilter" class="appearance-none w-full sm:w-40 px-4 py-3 pr-10 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl shadow-sm hover:border-purple-300 dark:hover:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm text-gray-900 dark:text-white transition-all duration-200 cursor-pointer">
-                <option value="">所有内容语言</option>
-                <option value="zh-CN">中文</option>
-                <option value="en">English</option>
-                <option value="zh-TW">繁體中文</option>
-              </select>
-              <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                <svg class="w-4 h-4 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
-                </svg>
-              </div>
+            
+            <!-- 移动端结果数量 -->
+            <div class="text-center mt-2">
+              <span id="resultsCountMobile" class="text-sm text-gray-600 dark:text-gray-400">
+                显示 {allContent.length} 个结果
+              </span>
             </div>
           </div>
 
-          <div class="flex items-center gap-4">
-            <!-- 排序 -->
-            <div class="relative">
-              <select id="sortBy" class="appearance-none w-full sm:w-36 px-4 py-3 pr-10 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl shadow-sm hover:border-purple-300 dark:hover:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm text-gray-900 dark:text-white transition-all duration-200 cursor-pointer">
-                <option value="relevance">相关度</option>
-                <option value="date-desc">最新发布</option>
-                <option value="date-asc">最早发布</option>
-                <option value="title-asc">标题 A-Z</option>
-                <option value="title-desc">标题 Z-A</option>
-              </select>
-              <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                <svg class="w-4 h-4 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
-                </svg>
+          <!-- 桌面端筛选器 -->
+          <div class="hidden md:flex md:items-center md:justify-between gap-4">
+            <div class="flex gap-4">
+              <!-- 主题筛选 -->
+              <div class="relative">
+                <select id="topicFilterDesktop" class="appearance-none w-48 px-4 py-3 pr-10 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl shadow-sm hover:border-purple-300 dark:hover:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm text-gray-900 dark:text-white transition-all duration-200 cursor-pointer">
+                  <option value="">所有主题</option>
+                  {allTopics.map(topic => (
+                    <option value={topic}>{topic}</option>
+                  ))}
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                  <svg class="w-4 h-4 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- 语言筛选 -->
+              <div class="relative">
+                <select id="languageFilterDesktop" class="appearance-none w-40 px-4 py-3 pr-10 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl shadow-sm hover:border-purple-300 dark:hover:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm text-gray-900 dark:text-white transition-all duration-200 cursor-pointer">
+                  <option value="">所有内容语言</option>
+                  <option value="zh-CN">中文</option>
+                  <option value="en">English</option>
+                  <option value="zh-TW">繁體中文</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                  <svg class="w-4 h-4 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+                  </svg>
+                </div>
               </div>
             </div>
 
-            <!-- 结果数量显示 -->
-            <span id="resultsCount" class="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
-              显示 {allContent.length} 个结果
-            </span>
+            <div class="flex items-center gap-4">
+              <!-- 排序 -->
+              <div class="relative">
+                <select id="sortByDesktop" class="appearance-none w-36 px-4 py-3 pr-10 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl shadow-sm hover:border-purple-300 dark:hover:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm text-gray-900 dark:text-white transition-all duration-200 cursor-pointer">
+                  <option value="relevance">相关度</option>
+                  <option value="date-desc">最新发布</option>
+                  <option value="date-asc">最早发布</option>
+                  <option value="title-asc">标题 A-Z</option>
+                  <option value="title-desc">标题 Z-A</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                  <svg class="w-4 h-4 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- 结果数量显示 -->
+              <span id="resultsCountDesktop" class="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
+                显示 {allContent.length} 个结果
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -171,7 +234,7 @@ const enrichedArticles = articles.map(article => {
       </div>
 
       <!-- 结果网格 -->
-      <div id="searchResults" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div id="searchResults" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         <!-- 书籍结果 -->
         {books.map(book => (
           <div class="search-item" data-type="book" data-title={book.data.title.toLowerCase()} data-author={book.data.author.toLowerCase()} data-description={book.data.description.toLowerCase()} data-topics={book.data.topics.join(' ').toLowerCase()} data-language={book.data.language} data-date={book.data.publishDate.getTime()}>
@@ -267,10 +330,17 @@ const enrichedArticles = articles.map(article => {
     class ContentSearch {
       constructor() {
         this.searchInput = document.getElementById('searchInput') as HTMLInputElement;
+        // 移动端筛选器
         this.topicFilter = document.getElementById('topicFilter') as HTMLSelectElement;
         this.languageFilter = document.getElementById('languageFilter') as HTMLSelectElement;
         this.sortBy = document.getElementById('sortBy') as HTMLSelectElement;
-        this.resultsCount = document.getElementById('resultsCount') as HTMLElement;
+        this.resultsCountMobile = document.getElementById('resultsCountMobile') as HTMLElement;
+        // 桌面端筛选器
+        this.topicFilterDesktop = document.getElementById('topicFilterDesktop') as HTMLSelectElement;
+        this.languageFilterDesktop = document.getElementById('languageFilterDesktop') as HTMLSelectElement;
+        this.sortByDesktop = document.getElementById('sortByDesktop') as HTMLSelectElement;
+        this.resultsCountDesktop = document.getElementById('resultsCountDesktop') as HTMLElement;
+        // 通用元素
         this.noResults = document.getElementById('noResults') as HTMLElement;
         this.searchResults = document.getElementById('searchResults') as HTMLElement;
         this.clearFiltersBtn = document.getElementById('clearFilters') as HTMLButtonElement;
@@ -287,10 +357,33 @@ const enrichedArticles = articles.map(article => {
         // 搜索输入
         this.searchInput?.addEventListener('input', () => this.updateResults());
         
-        // 筛选器
-        this.topicFilter?.addEventListener('change', () => this.updateResults());
-        this.languageFilter?.addEventListener('change', () => this.updateResults());
-        this.sortBy?.addEventListener('change', () => this.updateResults());
+        // 移动端筛选器
+        this.topicFilter?.addEventListener('change', () => {
+          if (this.topicFilterDesktop) this.topicFilterDesktop.value = this.topicFilter.value;
+          this.updateResults();
+        });
+        this.languageFilter?.addEventListener('change', () => {
+          if (this.languageFilterDesktop) this.languageFilterDesktop.value = this.languageFilter.value;
+          this.updateResults();
+        });
+        this.sortBy?.addEventListener('change', () => {
+          if (this.sortByDesktop) this.sortByDesktop.value = this.sortBy.value;
+          this.updateResults();
+        });
+        
+        // 桌面端筛选器
+        this.topicFilterDesktop?.addEventListener('change', () => {
+          if (this.topicFilter) this.topicFilter.value = this.topicFilterDesktop.value;
+          this.updateResults();
+        });
+        this.languageFilterDesktop?.addEventListener('change', () => {
+          if (this.languageFilter) this.languageFilter.value = this.languageFilterDesktop.value;
+          this.updateResults();
+        });
+        this.sortByDesktop?.addEventListener('change', () => {
+          if (this.sortBy) this.sortBy.value = this.sortByDesktop.value;
+          this.updateResults();
+        });
         
         // 内容类型筛选
         this.contentTypeFilters?.forEach(btn => {
@@ -323,9 +416,15 @@ const enrichedArticles = articles.map(article => {
       
       clearFilters() {
         this.searchInput.value = '';
-        this.topicFilter.value = '';
-        this.languageFilter.value = '';
-        this.sortBy.value = 'relevance';
+        // 移动端筛选器
+        if (this.topicFilter) this.topicFilter.value = '';
+        if (this.languageFilter) this.languageFilter.value = '';
+        if (this.sortBy) this.sortBy.value = 'relevance';
+        // 桌面端筛选器
+        if (this.topicFilterDesktop) this.topicFilterDesktop.value = '';
+        if (this.languageFilterDesktop) this.languageFilterDesktop.value = '';
+        if (this.sortByDesktop) this.sortByDesktop.value = 'relevance';
+        
         this.activeContentTypes.clear();
         
         // 重置内容类型按钮样式
@@ -349,16 +448,19 @@ const enrichedArticles = articles.map(article => {
           const button = document.querySelector(`[data-type="${type}"]`) as HTMLButtonElement;
           if (button) this.toggleContentType(button);
         }
-        if (topic) this.topicFilter.value = topic;
+        if (topic) {
+          if (this.topicFilter) this.topicFilter.value = topic;
+          if (this.topicFilterDesktop) this.topicFilterDesktop.value = topic;
+        }
         
         this.updateResults();
       }
       
       updateResults() {
         const query = this.searchInput.value.toLowerCase().trim();
-        const selectedTopic = this.topicFilter.value;
-        const selectedLanguage = this.languageFilter.value;
-        const sortBy = this.sortBy.value;
+        const selectedTopic = this.topicFilter?.value || this.topicFilterDesktop?.value || '';
+        const selectedLanguage = this.languageFilter?.value || this.languageFilterDesktop?.value || '';
+        const sortBy = this.sortBy?.value || this.sortByDesktop?.value || 'relevance';
         
         let filteredItems = this.allItems.filter(item => {
           // 搜索匹配
@@ -408,7 +510,8 @@ const enrichedArticles = articles.map(article => {
         this.displayResults(filteredItems);
         
         // 更新计数
-        this.resultsCount.textContent = `显示 ${filteredItems.length} 个结果`;
+        if (this.resultsCountMobile) this.resultsCountMobile.textContent = `显示 ${filteredItems.length} 个结果`;
+        if (this.resultsCountDesktop) this.resultsCountDesktop.textContent = `显示 ${filteredItems.length} 个结果`;
       }
       
       sortResults(items: HTMLElement[], sortBy: string) {

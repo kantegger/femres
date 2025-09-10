@@ -4,98 +4,98 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="联系我们 - FemRes" description="与FemRes团队取得联系，分享您的想法、建议或合作意向">
   <!-- Hero Section -->
-  <section class="relative py-20 overflow-hidden">
+  <section class="relative py-12 sm:py-16 lg:py-20 overflow-hidden">
     <!-- Background decorative elements -->
     <div class="absolute inset-0 -z-10">
-      <div class="absolute top-20 left-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-      <div class="absolute top-10 right-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-      <div class="absolute bottom-20 left-1/3 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+      <div class="absolute top-20 left-20 w-32 sm:w-48 lg:w-72 h-32 sm:h-48 lg:h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+      <div class="absolute top-10 right-10 w-32 sm:w-48 lg:w-72 h-32 sm:h-48 lg:h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div class="absolute bottom-20 left-1/3 w-32 sm:w-48 lg:w-72 h-32 sm:h-48 lg:h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
-        <h1 class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
           联系
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">我们</span>
         </h1>
-        <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <p class="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
           我们重视每一份反馈，期待与您建立联系
         </p>
       </div>
     </div>
   </section>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
     <!-- Contact Options Grid -->
-    <section class="mb-20">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section class="mb-16 sm:mb-20">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
         <!-- General Inquiries -->
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow">
-          <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center text-white text-lg sm:text-2xl mb-4 sm:mb-6">
             💬
           </div>
-          <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">一般咨询</h3>
-          <p class="text-gray-600 dark:text-gray-400 mb-6">
+          <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">一般咨询</h3>
+          <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 sm:mb-6">
             对FemRes有任何疑问？我们很乐意为您解答
           </p>
           <a 
             href="mailto:info@femres.org" 
-            class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium transition-colors"
+            class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium transition-colors text-sm sm:text-base break-all"
           >
-            info@femres.org
-            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span class="truncate">info@femres.org</span>
+            <svg class="ml-2 w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
           </a>
         </div>
 
         <!-- Content Submission -->
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow">
-          <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center text-white text-lg sm:text-2xl mb-4 sm:mb-6">
             📝
           </div>
-          <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">内容投稿</h3>
-          <p class="text-gray-600 dark:text-gray-400 mb-6">
+          <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">内容投稿</h3>
+          <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 sm:mb-6">
             有优质内容想要分享？欢迎向我们投稿
           </p>
           <a 
             href="mailto:submissions@femres.org" 
-            class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium transition-colors"
+            class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium transition-colors text-sm sm:text-base break-all"
           >
-            submissions@femres.org
-            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span class="truncate">submissions@femres.org</span>
+            <svg class="ml-2 w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
           </a>
         </div>
 
         <!-- Partnership -->
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow">
-          <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center text-white text-lg sm:text-2xl mb-4 sm:mb-6">
             🤝
           </div>
-          <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">合作伙伴</h3>
-          <p class="text-gray-600 dark:text-gray-400 mb-6">
+          <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">合作伙伴</h3>
+          <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 sm:mb-6">
             寻求合作机会？让我们一起推动性别平等
           </p>
           <a 
             href="mailto:partnership@femres.org" 
-            class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium transition-colors"
+            class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium transition-colors text-sm sm:text-base break-all"
           >
-            partnership@femres.org
-            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span class="truncate">partnership@femres.org</span>
+            <svg class="ml-2 w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
           </a>
         </div>
 
         <!-- Volunteer -->
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow">
-          <div class="w-16 h-16 bg-gradient-to-br from-violet-500 to-violet-600 rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-violet-500 to-violet-600 rounded-2xl flex items-center justify-center text-white text-lg sm:text-2xl mb-4 sm:mb-6">
             ❤️
           </div>
-          <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">志愿者招募</h3>
-          <p class="text-gray-600 dark:text-gray-400 mb-6">
+          <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">志愿者招募</h3>
+          <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 sm:mb-6">
             想要加入我们的志愿者团队？欢迎您的参与
           </p>
           <a 
