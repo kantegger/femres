@@ -110,21 +110,21 @@ const formatDate = (date: Date) => {
               {book.data.originalTitle && (
                 <div class="flex">
                   <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">原名:</span>
-                  <span class="font-medium flex-1 text-right">{book.data.originalTitle}</span>
+                  <span class="font-medium flex-1 text-right text-gray-900 dark:text-white">{book.data.originalTitle}</span>
                 </div>
               )}
               <div class="flex">
                 <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">作者:</span>
-                <span class="font-medium flex-1 text-right">{book.data.author}</span>
+                <span class="font-medium flex-1 text-right text-gray-900 dark:text-white">{book.data.author}</span>
               </div>
               <div class="flex">
                 <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">出版:</span>
-                <span class="flex-1 text-right">{formatDate(book.data.publishDate)}</span>
+                <span class="flex-1 text-right text-gray-900 dark:text-white">{formatDate(book.data.publishDate)}</span>
               </div>
               {book.data.isbn && (
                 <div class="flex">
                   <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">ISBN:</span>
-                  <span class="font-mono text-xs flex-1 text-right">{book.data.isbn}</span>
+                  <span class="font-mono text-xs flex-1 text-right text-gray-900 dark:text-white">{book.data.isbn}</span>
                 </div>
               )}
             </div>

@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Enable dark mode variant for Tailwind CSS v4 */
+@variant dark (&:where(.dark, .dark *));
+
 /* Prose styles for markdown content */
 @utility prose {
   color: var(--color-gray-700);
@@ -151,8 +154,7 @@
 }
 
 /* Dark mode prose styles */
-@media (prefers-color-scheme: dark) {
-  .prose {
+.dark .prose {
     color: var(--color-gray-300);
     
     & h1, & h2, & h3, & h4, & h5, & h6 {
@@ -214,7 +216,6 @@
     & h1 {
       border-color: var(--color-gray-700);
     }
-  }
 }
 
 /* Custom animations */

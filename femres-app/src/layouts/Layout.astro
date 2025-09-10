@@ -46,3 +46,52 @@ const { title, description = "FemRes - 女性主义内容聚合平台，汇聚�
     scroll-behavior: smooth;
   }
 </style>
+
+<script is:inline>
+  function initTheme() {
+    // 获取存储的主题或系统偏好
+    const storedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // 确定初始主题
+    const isDark = storedTheme === 'dark' || (!storedTheme && prefersDark);
+    
+    // 应用主题
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    
+    return isDark;
+  }
+  
+  function toggleTheme() {
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    if (isDark) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+  
+  // 立即初始化主题（防止闪烁）
+  initTheme();
+  
+  // 页面加载完成后绑定事件
+  document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+    
+    if (themeToggle) {
+      themeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    if (themeToggleMobile) {
+      themeToggleMobile.addEventListener('click', toggleTheme);
+    }
+  });
+</script>
