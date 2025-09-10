@@ -4,7 +4,7 @@ author: "Tori Dunlap"
 description: "《Financial Feminist》是一档由理财专家 Tori Dunlap 主持的播客，旨在帮助女性在由富有白人男性主导的世界中实现财务自由。节目以“对抗父权制，变得富有”为口号，通过独立讲述与嘉宾访谈，分享如何赚钱、节省、投资以及建立财务自信的实用策略。Tori 也是 Her First $100K 的创始人，致力于女性财务教育与赋权。播客每周一更新正式集，隔周四发布迷你集，内容涵盖创业、债务管理、退休规划、心理财务等多个维度，深受听众喜爱，评分高达 4.7（6,228 条评论）。"
 publishDate: 2025-09-02
 language: en
-topics: ["女性财务", "创业", "个人理财", "社会结构", "女性主义"]
+topics: ["经济赋权", "资本主义批判", "职场平等"]
 sourceUrl: "https://open.spotify.com/show/0b5qzMiw22wHBfe1x9LfaQ?si=6c992d90849e4ada"
 embedUrl: "https://open.spotify.com/embed/show/0b5qzMiw22wHBfe1x9LfaQ?utm_source=generator"
 thumbnail: "/images/podcasts/financial-feminist.jpg"

@@ -4,7 +4,7 @@ author: "桑德琳·隆贡布"
 description: "深入解读#MeToo运动五周年以来的全球影响，探讨其如何激发女性发声，揭示社会深层问题，并推动持续的结构性变革。" 
 publishDate: 2022-10-15 
 language: "zh-CN" 
-topics: ["#MeToo", "性别平等", "性骚扰", "社会运动"] 
+topics: ["MeToo运动", "反性暴力", "第四波女性主义"] 
 sourceUrl: "https://www.bbc.com/zhongwen/simp/world-63256653" 
 readingTime: 8 
 featuredImage: "/images/articles/metoo.jpg" 

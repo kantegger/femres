@@ -39,8 +39,65 @@ const topicCounts = allTopics.reduce((acc, topic) => {
 }, {} as Record<string, number>);
 const popularTopics = Object.entries(topicCounts)
   .sort((a, b) => b[1] - a[1])
-  .slice(0, 8)
-  .map(([topic]) => topic);
+  .slice(0, 8);
+
+// 主题图标映射
+const topicIcons: Record<string, string> = {
+  // 理论流派
+  '交叉女性主义': '🌐',
+  '马克思主义女性主义': '⚒️',
+  '去殖民女性主义': '🌍',
+  '存在主义女性主义': '🤔',
+  '自由主义女性主义': '🗽',
+  '激进女性主义': '⚡',
+  '黑人女性主义': '✊🏿',
+  '原住民女性主义': '🪶',
+  '跨性别女性主义': '🏳️‍⚧️',
+  '生态女性主义': '🌱',
+  '后现代女性主义': '🎭',
+  
+  // 运动议题
+  '职场平等': '💼',
+  '同工同酬': '💰',
+  '玻璃天花板': '🔝',
+  '生育自主': '🤱',
+  '堕胎权': '⚕️',
+  '反性暴力': '🛡️',
+  '政治参与': '🗳️',
+  '法律平等': '⚖️',
+  '经济赋权': '📈',
+  '教育平等': '📚',
+  '家庭解放': '🏠',
+  '体育平等': '⚽',
+  '身体自主': '💪',
+  
+  // 批判领域
+  '父权制批判': '👑',
+  '资本主义批判': '🏭',
+  '媒体表征批判': '📺',
+  '宗教父权批判': '⛪',
+  '男权运动批判': '🚫',
+  '文化批判': '🎨',
+  '反女性主义研究': '🔍',
+  
+  // 历史脉络
+  '第一波女性主义': '1️⃣',
+  '第二波女性主义': '2️⃣',
+  '第三波女性主义': '3️⃣',
+  '第四波女性主义': '4️⃣',
+  'MeToo运动': '#️⃣',
+  '中国女权运动': '🇨🇳',
+  '流行文化女性主义': '🎬',
+  '基督教女性主义': '✝️',
+  '灵性女性主义': '🔮',
+  
+  // 特殊概念
+  '情绪劳动': '💭',
+  '关怀伦理': '❤️',
+  '女性主义心理学': '🧠',
+  '女性主义艺术': '🎨',
+  '种族与性别': '🌈'
+};
 
 // 为文章添加类型标记
 const enrichedArticles = articles.map(article => {
@@ -347,7 +404,7 @@ const enrichedArticles = articles.map(article => {
         <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">探索最受关注的女性主义话题，深入了解各个领域的发展现状</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {popularTopics.slice(0, 8).map((topic, index) => {
+        {popularTopics.slice(0, 8).map(([topic, count], index) => {
           const colors = [
             'from-purple-500 to-pink-500',
             'from-pink-500 to-rose-500', 
@@ -371,15 +428,7 @@ const enrichedArticles = articles.map(article => {
               <!-- Icon with background -->
               <div class={`relative inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${bgGradient} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 <span class="text-3xl">
-                  {topic === '职场平等' && '💼'}
-                  {topic === '身体自主' && '🌸'}
-                  {topic === '教育权利' && '📚'}
-                  {topic === '政治参与' && '🗳️'}
-                  {topic === '家庭角色' && '👨‍👩‍👧‍👦'}
-                  {topic === '性别暴力' && '🛡️'}
-                  {topic === '媒体表征' && '📺'}
-                  {topic === '历史人物' && '👩‍🎓'}
-                  {!['职场平等', '身体自主', '教育权利', '政治参与', '家庭角色', '性别暴力', '媒体表征', '历史人物'].includes(topic) && '🏷️'}
+                  {topicIcons[topic] || '📋'}
                 </span>
               </div>
               
@@ -389,13 +438,13 @@ const enrichedArticles = articles.map(article => {
                   {topic}
                 </h3>
                 <p class="text-gray-600 dark:text-gray-400 mb-4">
-                  {topicCounts[topic]} 个精选内容
+                  {count} 个精选内容
                 </p>
                 
                 <!-- Progress bar -->
                 <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                   <div class={`h-2 rounded-full bg-gradient-to-r ${bgGradient} transition-all duration-500`} 
-                       style={`width: ${Math.min(100, (topicCounts[topic] / Math.max(...Object.values(topicCounts))) * 100)}%`}>
+                       style={`width: ${Math.min(100, (count / Math.max(...popularTopics.map(([, c]) => c))) * 100)}%`}>
                   </div>
                 </div>
               </div>

@@ -2,14 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
-// 获取所有内容
+// 获取所有内容以统计主题
 const books = await getCollection('books');
-const articles = await getCollection('articles'); 
+const articles = await getCollection('articles');
 const videos = await getCollection('videos');
 const podcasts = await getCollection('podcasts');
 const papers = await getCollection('papers');
 
-// 合并所有内容
 const allContent = [
   ...books.map(item => ({ ...item, contentType: 'book' as const })),
   ...articles.map(item => ({ ...item, contentType: 'article' as const })),
@@ -18,168 +17,346 @@ const allContent = [
   ...papers.map(item => ({ ...item, contentType: 'paper' as const }))
 ];
 
-// 分析主题数据
-const allTopics = allContent.flatMap(item => item.data.topics);
-const topicStats = allTopics.reduce((acc, topic) => {
-  acc[topic] = (acc[topic] || 0) + 1;
+// 统计每个主题的内容数量
+const topicCounts = allContent.reduce((acc, item) => {
+  item.data.topics.forEach(topic => {
+    acc[topic] = (acc[topic] || 0) + 1;
+  });
   return acc;
 }, {} as Record<string, number>);
 
-// 定义主题分类
+// 主题分类定义
 const topicCategories = {
-  '权利与社会': {
-    topics: ['教育权利', '法律权利', '政治参与', '性别平等', '性别正义', '社会正义', '原住民主权', '职场平等', '薪酬差距', '领导力', '社会运动', '#MeToo', '性骚扰', '社会结构', '结构性暴力', '社会工作'],
-    icon: '⚖️',
-    description: '权利保障、社会平等和职场发展'
+  '理论流派': {
+    topics: [
+      '交叉女性主义',
+      '马克思主义女性主义', 
+      '去殖民女性主义',
+      '存在主义女性主义',
+      '自由主义女性主义',
+      '激进女性主义',
+      '黑人女性主义',
+      '原住民女性主义',
+      '跨性别女性主义',
+      '生态女性主义',
+      '后现代女性主义'
+    ],
+    icon: '🧩',
+    description: '女性主义的理论学派和思想流派'
   },
-  '文化与媒体': {
-    topics: ['媒体表征', '家庭角色', '社会观念', '流行文化', '影视分析', '文化批评', '文化翻译', '中国艺术史', '男性权利运动', '名人女性主义', '青少年', '媒体研究', '女性主义艺术批评', '时事新闻'],
-    icon: '🌍',
-    description: '文化表现、媒体分析和社会观念'
+  '运动议题': {
+    topics: [
+      '职场平等',
+      '同工同酬',
+      '玻璃天花板',
+      '生育自主',
+      '堕胎权',
+      '反性暴力',
+      '政治参与',
+      '法律平等',
+      '经济赋权',
+      '教育平等',
+      '家庭解放',
+      '体育平等',
+      '身体自主'
+    ],
+    icon: '✊',
+    description: '女性主义关注的具体社会议题'
   },
-  '理论与实践': {
-    topics: ['历史人物', '女性理论', '存在主义', '性别研究', '女权主义', '交叉女性主义', '去殖民女性主义', '女性主义批评', '数据分析', '社会批评', '性别政治', '信仰与女性主义', '宗教创伤', '教会批判', '属灵旅程', '创业', '传记', '纪录片', '女性主义心理学', '神经系统调节', '情绪健康', '自我关怀', '创伤复原', '压力管理', '情绪劳动', '女性财务', '个人理财'],
+  '批判领域': {
+    topics: [
+      '父权制批判',
+      '资本主义批判',
+      '媒体表征批判',
+      '宗教父权批判',
+      '男权运动批判',
+      '文化批判',
+      '反女性主义研究'
+    ],
+    icon: '🔍',
+    description: '女性主义批判和分析的重点领域'
+  },
+  '历史脉络': {
+    topics: [
+      '第一波女性主义',
+      '第二波女性主义',
+      '第三波女性主义',
+      '第四波女性主义',
+      'MeToo运动',
+      '中国女权运动',
+      '流行文化女性主义',
+      '基督教女性主义',
+      '灵性女性主义'
+    ],
     icon: '📚',
-    description: '理论研究、历史发展和实践应用'
+    description: '女性主义的历史发展和时代背景'
+  },
+  '特殊概念': {
+    topics: [
+      '情绪劳动',
+      '关怀伦理',
+      '女性主义心理学',
+      '女性主义艺术',
+      '种族与性别'
+    ],
+    icon: '💡',
+    description: '女性主义独特的概念和理论'
   }
+};
+
+// 主题图标映射
+const topicIcons: Record<string, string> = {
+  // 理论流派
+  '交叉女性主义': '🌐',
+  '马克思主义女性主义': '⚒️',
+  '去殖民女性主义': '🌍',
+  '存在主义女性主义': '🤔',
+  '自由主义女性主义': '🗽',
+  '激进女性主义': '⚡',
+  '黑人女性主义': '✊🏿',
+  '原住民女性主义': '🪶',
+  '跨性别女性主义': '🏳️‍⚧️',
+  '生态女性主义': '🌱',
+  '后现代女性主义': '🎭',
+  
+  // 运动议题
+  '职场平等': '💼',
+  '同工同酬': '💰',
+  '玻璃天花板': '🔝',
+  '生育自主': '🤱',
+  '堕胎权': '⚕️',
+  '反性暴力': '🛡️',
+  '政治参与': '🗳️',
+  '法律平等': '⚖️',
+  '经济赋权': '📈',
+  '教育平等': '📚',
+  '家庭解放': '🏠',
+  '体育平等': '⚽',
+  '身体自主': '💪',
+  
+  // 批判领域
+  '父权制批判': '👑',
+  '资本主义批判': '🏭',
+  '媒体表征批判': '📺',
+  '宗教父权批判': '⛪',
+  '男权运动批判': '🚫',
+  '文化批判': '🎨',
+  '反女性主义研究': '🔍',
+  
+  // 历史脉络
+  '第一波女性主义': '1️⃣',
+  '第二波女性主义': '2️⃣',
+  '第三波女性主义': '3️⃣',
+  '第四波女性主义': '4️⃣',
+  'MeToo运动': '#️⃣',
+  '中国女权运动': '🇨🇳',
+  '流行文化女性主义': '🎬',
+  '基督教女性主义': '✝️',
+  '灵性女性主义': '🔮',
+  
+  // 特殊概念
+  '情绪劳动': '💭',
+  '关怀伦理': '❤️',
+  '女性主义心理学': '🧠',
+  '女性主义艺术': '🎨',
+  '种族与性别': '🌈'
 };
 
 // 为每个分类添加统计数据
 const enrichedCategories = Object.entries(topicCategories).map(([categoryName, category]) => ({
   name: categoryName,
   ...category,
-  totalContent: category.topics.reduce((sum, topic) => sum + (topicStats[topic] || 0), 0),
+  totalContent: category.topics.reduce((sum, topic) => sum + (topicCounts[topic] || 0), 0),
   topics: category.topics.map(topic => ({
     name: topic,
-    count: topicStats[topic] || 0
-  })).filter(t => t.count > 0) // 只显示有内容的主题
+    count: topicCounts[topic] || 0
+  }))
 }));
+
+// 获取热门主题（按内容数量排序）
+const popularTopics = Object.entries(topicCounts)
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 12);
 ---
 
-<Layout title="主题分类 - FemRes" description="探索女性主义的各个主题领域，深入了解性别平等的不同维度">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<Layout 
+  title="主题分类 - FemRes" 
+  description="探索女性主义的各个主题分类，包括理论流派、运动议题、批判领域等"
+>
+  <!-- Hero Section -->
+  <section class="relative py-12 sm:py-16 lg:py-20 overflow-hidden">
+    <!-- Background decorative elements -->
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-20 left-20 w-32 sm:w-48 lg:w-72 h-32 sm:h-48 lg:h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+      <div class="absolute top-10 right-10 w-32 sm:w-48 lg:w-72 h-32 sm:h-48 lg:h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div class="absolute bottom-20 left-1/3 w-32 sm:w-48 lg:w-72 h-32 sm:h-48 lg:h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
+          女性主义
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">主题分类</span>
+        </h1>
+        <p class="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
+          深入了解女性主义的丰富内容，从理论流派到运动实践
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
     
-    <!-- Page Header -->
-    <div class="text-center mb-16">
-      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-        主题分类
-      </h1>
-      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-        深入探索女性主义的各个维度，从权利保障到社会文化，从历史传承到现代实践
-      </p>
-    </div>
-
-    <!-- Topic Categories -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
-      {enrichedCategories.map(category => (
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-shadow duration-200">
-          <div class="p-6">
-            <!-- Category Header -->
-            <div class="flex items-center mb-4">
-              <div class="text-3xl mr-3">{category.icon}</div>
-              <div>
-                <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
-                  {category.name}
-                </h2>
-                <p class="text-sm text-gray-600 dark:text-gray-400">
-                  {category.description}
-                </p>
-              </div>
-            </div>
-
-            <!-- Stats -->
-            <div class="mb-4 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-medium text-purple-800 dark:text-purple-200">
-                  总内容数量
-                </span>
-                <span class="text-lg font-bold text-purple-600 dark:text-purple-400">
-                  {category.totalContent}
-                </span>
-              </div>
-            </div>
-
-            <!-- Topics List -->
-            <div class="grid grid-cols-2 gap-2">
-              {category.topics.map(topic => (
-                topic.count > 0 && (
-                  <a 
-                    href={`/topics/${topic.name}`}
-                    class="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group"
-                  >
-                    <div class="flex items-center">
-                      <div class="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
-                      <span class="text-sm font-medium text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                        {topic.name}
-                      </span>
-                    </div>
-                    <span class="text-xs text-gray-500 dark:text-gray-400">
-                      {topic.count}
-                    </span>
-                  </a>
-                )
-              ))}
-            </div>
-
-            {category.topics.filter(t => t.count > 0).length === 0 && (
-              <div class="text-center py-4 text-gray-500 dark:text-gray-400">
-                <p class="text-sm">该分类暂无内容</p>
-              </div>
-            )}
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <!-- All Topics Grid -->
-    <section>
+    <!-- Popular Topics -->
+    <section class="mb-16 sm:mb-20">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-          所有主题标签
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          热门主题
         </h2>
-        <p class="text-lg text-gray-600 dark:text-gray-300">
-          按热门程度排序的所有主题标签
+        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          最受关注的女性主义话题
         </p>
       </div>
 
-      <div class="flex flex-wrap gap-3 justify-center">
-        {Object.entries(topicStats)
-          .sort((a, b) => b[1] - a[1])
-          .map(([topic, count]) => (
-            <a 
-              href={`/topics/${topic}`}
-              class="inline-flex items-center px-4 py-2 rounded-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:border-purple-500 dark:hover:border-purple-400 hover:shadow-md transition-all duration-200 group"
-            >
-              <span class="font-medium text-gray-700 dark:text-gray-300 group-hover:text-purple-600 dark:group-hover:text-purple-400">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+        {popularTopics.map(([topic, count]) => (
+          <a 
+            href={`/topics/${topic}`}
+            class="group bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 hover:-translate-y-1"
+          >
+            <div class="text-center">
+              <div class="text-4xl mb-3">
+                {topicIcons[topic] || '📋'}
+              </div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                 {topic}
+              </h3>
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">
+                {count} 个内容
               </span>
-              <span class="ml-2 px-2 py-1 text-xs font-semibold bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
-                {count}
-              </span>
-            </a>
-          ))}
+            </div>
+          </a>
+        ))}
       </div>
     </section>
 
+    <!-- Topic Categories -->
+    {enrichedCategories.map(category => (
+      <section class="mb-16 sm:mb-20">
+        <div class="flex items-center mb-8">
+          <div class="flex items-center">
+            <span class="text-3xl mr-4">
+              {category.icon}
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+              {category.name}
+            </h2>
+            <span class="ml-4 px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-full">
+              {category.topics.filter(topic => topic.count > 0).length} 个主题
+            </span>
+          </div>
+        </div>
+
+        <div class="mb-4 p-4 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl">
+          <p class="text-gray-700 dark:text-gray-300 mb-2">{category.description}</p>
+          <div class="flex items-center text-sm text-purple-600 dark:text-purple-400">
+            <span class="font-semibold">总内容数量：{category.totalContent}</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+          {category.topics.map(topic => (
+            <div class="group">
+              {topic.count > 0 ? (
+                <a 
+                  href={`/topics/${topic.name}`}
+                  class="block bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-200 hover:-translate-y-0.5"
+                >
+                  <div class="flex items-center">
+                    <span class="text-2xl mr-3">
+                      {topicIcons[topic.name] || '📋'}
+                    </span>
+                    <div class="flex-1 min-w-0">
+                      <h3 class="font-medium text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors truncate">
+                        {topic.name}
+                      </h3>
+                      <span class="text-sm text-gray-500 dark:text-gray-400">
+                        {topic.count} 个内容
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              ) : (
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-5 border border-gray-200 dark:border-gray-700 opacity-60">
+                  <div class="flex items-center">
+                    <span class="text-2xl mr-3 grayscale">
+                      {topicIcons[topic.name] || '📋'}
+                    </span>
+                    <div class="flex-1 min-w-0">
+                      <h3 class="font-medium text-gray-500 dark:text-gray-400 truncate">
+                        {topic.name}
+                      </h3>
+                      <span class="text-sm text-gray-400 dark:text-gray-500">
+                        即将推出
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+
     <!-- Call to Action -->
-    <section class="mt-20 text-center">
-      <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-12 text-white">
-        <h2 class="text-3xl font-bold mb-4">
-          发现更多内容
+    <section class="text-center">
+      <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 sm:p-12">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          贡献新内容
         </h2>
-        <p class="text-xl mb-8 opacity-90">
-          通过搜索功能探索更多女性主义相关内容
+        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+          如果您有优质的女性主义相关内容，欢迎与我们分享
         </p>
-        <a 
-          href="/search"
-          class="inline-flex items-center px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/30 rounded-md font-medium transition-colors backdrop-blur"
-        >
-          开始搜索
-          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-          </svg>
-        </a>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/contribute"
+            class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+          >
+            提交内容
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+            </svg>
+          </a>
+          <a 
+            href="/search"
+            class="inline-flex items-center justify-center px-8 py-4 border border-purple-600 text-purple-600 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20 font-semibold rounded-xl transition-all duration-200"
+          >
+            搜索内容
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
   </div>
+
+  <style>
+    @keyframes blob {
+      0% { transform: translate(0px, 0px) scale(1); }
+      33% { transform: translate(30px, -50px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+      100% { transform: translate(0px, 0px) scale(1); }
+    }
+    .animate-blob {
+      animation: blob 7s infinite;
+    }
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
+  </style>
 </Layout>

@@ -6,7 +6,7 @@ description: "现代女权运动的奠基之作，深刻揭示了20世纪中期�
 publishDate: 1963-02-19
 isbn: "9787020116249"
 language: "en"
-topics: ["历史人物", "女性理论", "家庭角色", "职场平等"]
+topics: ["第二波女性主义", "家庭解放", "自由主义女性主义"]
 sourceUrl: "https://book.douban.com/subject/1033133/"
 coverImage: "/images/books/feminine-mystique.jpg"
 status: "published"

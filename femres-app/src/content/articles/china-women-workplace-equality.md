@@ -4,7 +4,7 @@ author: "麦肯锡公司"
 description: "基于麦肯锡公司发布的白皮书，本文深入解读中国职场女性的现状，分析其面临的挑战，并探讨政府、企业和个人如何协同合作，共同推动职场性别平等进程。" 
 publishDate: 2023-08-20 
 language: "zh-CN" 
-topics: ["职场平等", "领导力", "薪酬差距", "数据分析"] 
+topics: ["职场平等", "同工同酬", "玻璃天花板"] 
 sourceUrl: "https://www.mckinsey.com.cn/wp-content/uploads/2023/08/%E4%B8%AD%E5%9B%BD%E8%81%8C%E5%9C%BA%E6%80%A7%E5%88%AB%E5%B9%B3%E7%AD%89%E7%8E%B0%E7%8A%B6%E4%B8%8E%E5%B1%95%E6%9C%9B%E7%99%BD%E7%9A%AE%E4%B9%A6.pdf" 
 readingTime: 8 
 featuredImage: "/images/articles/mckinsey-gender-report.jpg" 

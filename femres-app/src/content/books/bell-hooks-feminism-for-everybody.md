@@ -6,7 +6,7 @@ description: "这位美国黑人女性主义理论家的经典作品，从交叉
 publishDate: 1984-01-01
 isbn: "9787544766357"
 language: "en"
-topics: ["女性理论", "历史人物", "性别研究", "社会观念"]
+topics: ["交叉女性主义", "黑人女性主义", "第二波女性主义"]
 sourceUrl: "https://book.douban.com/subject/26697047/"
 coverImage: "/images/books/bell-hooks-feminism.jpg"
 status: "published"

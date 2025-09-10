@@ -4,7 +4,7 @@ author: "Emily Nagoski, Amelia Nagoski"
 description: "《Feminist Survival Project》是一档由双胞胎姐妹 Emily 与 Amelia Nagoski 主持的播客，专为那些在女性主义实践中感到筋疲力尽、仍不断自我怀疑的人而设。两位主持人也是畅销书《Burnout: The Secret to Unlocking the Stress Cycle》的作者，节目围绕压力循环、神经系统调节、创伤恢复与情绪劳动展开，结合心理学研究与个人经验，帮助听众在父权制社会中找到生存之道。节目风格温暖、坦率且富有洞察力，深受女性主义社群欢迎，评分高达 4.9（217 条评论）。"
 publishDate: 2025-08-27
 language: en
-topics: ["女性主义心理学", "压力管理", "创伤恢复", "神经系统调节", "情绪劳动"]
+topics: ["情绪劳动", "关怀伦理", "女性主义心理学"]
 sourceUrl: "https://open.spotify.com/show/2fn4mcGmFl42rplP9K903P"
 embedUrl: "https://open.spotify.com/embed/show/2fn4mcGmFl42rplP9K903P"
 thumbnail: "/images/podcasts/feminist-survival-project.jpg"

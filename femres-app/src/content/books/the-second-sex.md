@@ -6,7 +6,7 @@ description: "现代女性主义的奠基之作，深刻分析了女性在社会
 publishDate: 1949-06-01
 isbn: "9787020035816"
 language: "en"
-topics: ["历史人物", "女性理论", "存在主义", "性别研究"]
+topics: ["存在主义女性主义", "第二波女性主义", "父权制批判"]
 sourceUrl: "https://book.douban.com/subject/1035853/"
 coverImage: "/images/books/the-second-sex.jpg"
 status: "published"

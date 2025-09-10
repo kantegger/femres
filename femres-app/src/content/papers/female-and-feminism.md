@@ -5,7 +5,7 @@ author: "崔淑琴"
 description: "本文围绕 Linda Nochlin 于1971年提出的著名问题“为何没有伟大的女性艺术家”，探讨中国艺术界对此问题的多元回应。作者分析了女性主义艺术批评在中国的翻译与实践方式，并结合朱与肖提出的“中国特色女性主义”理论，强调性别政治在具体历史语境中的非二元性。"
 publishDate: 2023-06-01
 language: en
-topics: ["女性主义艺术批评", "性别政治", "中国艺术史", "文化翻译", "社会结构"]
+topics: ["中国女权运动", "女性主义艺术", "文化批判"]
 sourceUrl: "https://periodicos.sbu.unicamp.br/ojs/index.php/mod/article/view/8672939"
 doi: "10.20396/modos.v7i2.8672939"
 journal: "MODOS: Revista de História da Arte"
