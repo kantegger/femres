@@ -12,8 +12,6 @@ transcript: "完整文字稿与资源请访问 feministsurvivalproject.com/episo
 status: published
 ---
 
-# Feminist Survival Project
-
 由 Emily 与 Amelia Nagoski 主持的《Feminist Survival Project》是一档聚焦女性主义者如何在压力与倦怠中恢复力量的播客。节目内容涵盖创伤知情实践、神经系统调节、身体智慧、情绪劳动与社会结构批判，帮助听众理解“为什么我们会如此疲惫”，并提供科学与情感并重的应对策略。
 
 适合在社会压力中寻找恢复力的女性主义者、心理学爱好者与关注身心健康的听众。

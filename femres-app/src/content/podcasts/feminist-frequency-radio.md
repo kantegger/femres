@@ -12,8 +12,6 @@ transcript: "完整文字稿与资源请访问 feministfrequency.com/podcast"
 status: published
 ---
 
-# Feminist Frequency Radio
-
 由 Kat Spada 与 Anita Sarkeesian 主持的《Feminist Frequency Radio》是一档深度解析流行文化的女性主义播客。节目以批判性视角审视影视作品中的性别、种族与阶级再现，揭示主流媒体如何塑造社会认知与权力结构。
 
 适合对文化研究、性别政治与媒体批评感兴趣的听众，尤其是希望在娱乐内容中发现更深层社会意义的人群。

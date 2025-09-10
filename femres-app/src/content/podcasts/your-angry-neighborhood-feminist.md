@@ -12,8 +12,6 @@ transcript: "节目引用与资料来源详见每集说明页"
 status: published
 ---
 
-# Your Angry Neighborhood Feminist
-
 由 Madigan 主持的《Your Angry Neighborhood Feminist》是一档充满批判精神的女性主义播客。节目以交叉性视角审视女性在历史与当代社会中的处境，内容涵盖从玛格丽特·撒切尔的政治遗产到美国疫苗政策、阴谋论与校园枪击事件等。
 
 Madigan 以个人观点与丰富资料为基础，挑战传统叙事，推动更广泛的社会对话。适合对女性主义、社会结构与文化批评感兴趣的听众。

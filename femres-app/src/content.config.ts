@@ -75,6 +75,7 @@ const papers = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    originalTitle: z.string().optional(),
     author: z.string(),
     description: z.string(),
     publishDate: z.date(),

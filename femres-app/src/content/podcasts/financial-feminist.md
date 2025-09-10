@@ -12,8 +12,6 @@ transcript: "完整文字稿与资源请访问 herfirst100k.com/financial-femini
 status: published
 ---
 
-# Financial Feminist
-
 由 Tori Dunlap 主持的《Financial Feminist》不仅是一档理财播客，更是一场女性赋权运动。节目聚焦于女性如何在不公平的经济结构中掌控自己的财务命运，挑战传统规范。Tori 通过真实故事、专家访谈和实用工具，帮助听众建立财务自信、实现经济独立，并在过程中“踢爆父权制”。
 
 适合所有渴望改变财务现状、探索更自由生活方式的听众，尤其是女性创业者与理财初学者。

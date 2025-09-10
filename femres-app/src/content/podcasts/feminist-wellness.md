@@ -12,8 +12,6 @@ transcript: "完整文字稿与资源请访问 beatrizalbina.com/episodes"
 status: published
 ---
 
-# Feminist Wellness
-
 由 Victoria Albina 主持的《Feminist Wellness》是一档融合女性主义与神经科学的播客，专注于帮助女性识别并打破情绪外包模式。节目强调身体智慧与心理复原力，通过科学解释与实践工具，引导听众重新连接自我、建立边界，并实现真正的自我关怀。
 
 适合正在经历情绪困扰、关系挑战或希望提升自我价值的听众，尤其是对女性主义心理学与身体导向疗愈感兴趣的人群。

@@ -12,8 +12,6 @@ transcript: "完整文字稿与资源请访问 faithandfeminism.com/episodes"
 status: published
 ---
 
-# Faith and Feminism
-
 由 Meghan Tschanz 主持的《Faith and Feminism》是一档聚焦信仰与女性主义交汇点的播客。节目挑战教会长期忽视女性属灵旅程的传统，揭示宗教体系中的性别不平等与创伤，并提供疗愈与重构的路径。
 
 适合对信仰持开放态度、关注性别正义与属灵成长的听众，尤其是希望在宗教语境中重新定义女性身份的人群。
