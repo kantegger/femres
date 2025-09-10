@@ -1,0 +1,463 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BookCard from '../components/BookCard.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import VideoCard from '../components/VideoCard.astro';
+import PodcastCard from '../components/PodcastCard.astro';
+import PaperCard from '../components/PaperCard.astro';
+import { getCollection } from 'astro:content';
+
+// 获取所有内容
+const books = await getCollection('books', ({ data }) => data.status === 'published');
+const articles = await getCollection('articles', ({ data }) => data.status === 'published');
+const videos = await getCollection('videos', ({ data }) => data.status === 'published');
+const podcasts = await getCollection('podcasts', ({ data }) => data.status === 'published');
+const papers = await getCollection('papers', ({ data }) => data.status === 'published');
+
+// 合并所有内容
+const allContent = [
+  ...books.map(item => ({ ...item, contentType: 'book' as const })),
+  ...articles.map(item => ({ ...item, contentType: 'article' as const })),
+  ...videos.map(item => ({ ...item, contentType: 'video' as const })),
+  ...podcasts.map(item => ({ ...item, contentType: 'podcast' as const })),
+  ...papers.map(item => ({ ...item, contentType: 'paper' as const }))
+];
+
+// 获取所有主题用于筛选
+const allTopics = [...new Set(allContent.flatMap(item => item.data.topics))].sort();
+
+// 内容类型配置
+const contentTypes = [
+  { value: 'book', label: '书籍', icon: '📚', count: books.length },
+  { value: 'article', label: '文章', icon: '📰', count: articles.length },
+  { value: 'video', label: '视频', icon: '🎥', count: videos.length },
+  { value: 'podcast', label: '播客', icon: '🎧', count: podcasts.length },
+  { value: 'paper', label: '论文', icon: '📄', count: papers.length }
+];
+
+// 为文章添加类型标记
+const enrichedArticles = articles.map(article => {
+  let articleType: 'news' | 'blog' | 'research' | 'opinion' | 'analysis' = 'blog';
+  if (article.data.title.includes('报告') || article.data.title.includes('数据')) {
+    articleType = 'analysis';
+  } else if (article.data.title.includes('现状') || article.data.title.includes('MeToo')) {
+    articleType = 'news';
+  }
+  return { ...article, articleType };
+});
+---
+
+<Layout title="搜索 - FemRes" description="搜索FemRes平台上的女性主义内容，包括书籍、文章、视频、播客和学术论文">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <!-- 搜索头部 -->
+    <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="text-center mb-8">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            内容搜索
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            在 {allContent.length} 个精选内容中发现您需要的女性主义资源
+          </p>
+        </div>
+
+        <!-- 搜索框 -->
+        <div class="max-w-3xl mx-auto mb-8">
+          <div class="relative">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="搜索标题、作者、描述或主题..."
+              class="w-full px-6 py-4 pr-12 text-lg bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm"
+            />
+            <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
+              <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- 快速筛选标签 -->
+        <div class="flex flex-wrap justify-center gap-3 mb-6">
+          {contentTypes.map(type => (
+            <button
+              class="content-type-filter px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-purple-50 dark:hover:bg-gray-600 hover:border-purple-300 dark:hover:border-purple-400 transition-colors text-sm font-medium text-gray-700 dark:text-gray-300"
+              data-type={type.value}
+            >
+              <span class="mr-2">{type.icon}</span>
+              {type.label} ({type.count})
+            </button>
+          ))}
+          <button
+            id="clearFilters"
+            class="px-4 py-2 bg-gray-100 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-500 transition-colors text-sm font-medium text-gray-600 dark:text-gray-400"
+          >
+            清除筛选
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 筛选和排序栏 -->
+    <div class="bg-gray-100 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <!-- 主题筛选 -->
+            <div class="relative">
+              <select id="topicFilter" class="appearance-none w-full sm:w-48 px-4 py-3 pr-10 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl shadow-sm hover:border-purple-300 dark:hover:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm text-gray-900 dark:text-white transition-all duration-200 cursor-pointer">
+                <option value="">所有主题</option>
+                {allTopics.map(topic => (
+                  <option value={topic}>{topic}</option>
+                ))}
+              </select>
+              <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </div>
+
+            <!-- 语言筛选 -->
+            <div class="relative">
+              <select id="languageFilter" class="appearance-none w-full sm:w-40 px-4 py-3 pr-10 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl shadow-sm hover:border-purple-300 dark:hover:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm text-gray-900 dark:text-white transition-all duration-200 cursor-pointer">
+                <option value="">所有内容语言</option>
+                <option value="zh-CN">中文</option>
+                <option value="en">English</option>
+                <option value="zh-TW">繁體中文</option>
+              </select>
+              <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <!-- 排序 -->
+            <div class="relative">
+              <select id="sortBy" class="appearance-none w-full sm:w-36 px-4 py-3 pr-10 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl shadow-sm hover:border-purple-300 dark:hover:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm text-gray-900 dark:text-white transition-all duration-200 cursor-pointer">
+                <option value="relevance">相关度</option>
+                <option value="date-desc">最新发布</option>
+                <option value="date-asc">最早发布</option>
+                <option value="title-asc">标题 A-Z</option>
+                <option value="title-desc">标题 Z-A</option>
+              </select>
+              <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
+                </svg>
+              </div>
+            </div>
+
+            <!-- 结果数量显示 -->
+            <span id="resultsCount" class="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
+              显示 {allContent.length} 个结果
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 搜索结果 -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <!-- 无结果提示 -->
+      <div id="noResults" class="text-center py-12 hidden">
+        <div class="text-gray-400 dark:text-gray-500 text-6xl mb-4">🔍</div>
+        <h3 class="text-xl font-semibold text-gray-600 dark:text-gray-400 mb-2">未找到相关内容</h3>
+        <p class="text-gray-500 dark:text-gray-400">请尝试调整搜索词或筛选条件</p>
+      </div>
+
+      <!-- 结果网格 -->
+      <div id="searchResults" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 书籍结果 -->
+        {books.map(book => (
+          <div class="search-item" data-type="book" data-title={book.data.title.toLowerCase()} data-author={book.data.author.toLowerCase()} data-description={book.data.description.toLowerCase()} data-topics={book.data.topics.join(' ').toLowerCase()} data-language={book.data.language} data-date={book.data.publishDate.getTime()}>
+            <BookCard
+              title={book.data.title}
+              author={book.data.author}
+              description={book.data.description}
+              coverImage={book.data.coverImage}
+              publishDate={book.data.publishDate}
+              slug={book.slug}
+              topics={book.data.topics}
+              isbn={book.data.isbn}
+            />
+          </div>
+        ))}
+
+        <!-- 文章结果 -->
+        {enrichedArticles.map(article => (
+          <div class="search-item" data-type="article" data-title={article.data.title.toLowerCase()} data-author={article.data.author.toLowerCase()} data-description={article.data.description.toLowerCase()} data-topics={article.data.topics.join(' ').toLowerCase()} data-language={article.data.language} data-date={article.data.publishDate.getTime()}>
+            <ArticleCard
+              title={article.data.title}
+              author={article.data.author}
+              description={article.data.description}
+              featuredImage={article.data.featuredImage}
+              publishDate={article.data.publishDate}
+              readingTime={article.data.readingTime}
+              sourceUrl={article.data.sourceUrl}
+              slug={article.slug}
+              topics={article.data.topics}
+              articleType={article.articleType}
+            />
+          </div>
+        ))}
+
+        <!-- 视频结果 -->
+        {videos.map(video => (
+          <div class="search-item" data-type="video" data-title={video.data.title.toLowerCase()} data-author={video.data.author.toLowerCase()} data-description={video.data.description.toLowerCase()} data-topics={video.data.topics.join(' ').toLowerCase()} data-language={video.data.language} data-date={video.data.publishDate.getTime()}>
+            <VideoCard
+              title={video.data.title}
+              author={video.data.author}
+              description={video.data.description}
+              thumbnail={video.data.thumbnail}
+              publishDate={video.data.publishDate}
+              duration={video.data.duration}
+              sourceUrl={video.data.sourceUrl}
+              slug={video.slug}
+              topics={video.data.topics}
+            />
+          </div>
+        ))}
+
+        <!-- 播客结果 -->
+        {podcasts.map(podcast => (
+          <div class="search-item" data-type="podcast" data-title={podcast.data.title.toLowerCase()} data-author={podcast.data.author.toLowerCase()} data-description={podcast.data.description.toLowerCase()} data-topics={podcast.data.topics.join(' ').toLowerCase()} data-language={podcast.data.language} data-date={podcast.data.publishDate.getTime()}>
+            <PodcastCard
+              title={podcast.data.title}
+              author={podcast.data.author}
+              description={podcast.data.description}
+              thumbnail={podcast.data.thumbnail}
+              publishDate={podcast.data.publishDate}
+              duration={podcast.data.duration}
+              sourceUrl={podcast.data.sourceUrl}
+              slug={podcast.slug}
+              topics={podcast.data.topics}
+              episodeNumber={podcast.data.episodeNumber}
+            />
+          </div>
+        ))}
+
+        <!-- 论文结果 -->
+        {papers.map(paper => (
+          <div class="search-item" data-type="paper" data-title={paper.data.title.toLowerCase()} data-author={paper.data.author.toLowerCase()} data-description={paper.data.description.toLowerCase()} data-topics={paper.data.topics.join(' ').toLowerCase()} data-language={paper.data.language} data-date={paper.data.publishDate.getTime()}>
+            <PaperCard
+              title={paper.data.title}
+              author={paper.data.author}
+              description={paper.data.description}
+              publishDate={paper.data.publishDate}
+              slug={paper.slug}
+              topics={paper.data.topics}
+              journal={paper.data.journal}
+              doi={paper.data.doi}
+              citationCount={paper.data.citationCount}
+              paperType={paper.data.paperType}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 搜索和筛选功能
+    class ContentSearch {
+      constructor() {
+        this.searchInput = document.getElementById('searchInput') as HTMLInputElement;
+        this.topicFilter = document.getElementById('topicFilter') as HTMLSelectElement;
+        this.languageFilter = document.getElementById('languageFilter') as HTMLSelectElement;
+        this.sortBy = document.getElementById('sortBy') as HTMLSelectElement;
+        this.resultsCount = document.getElementById('resultsCount') as HTMLElement;
+        this.noResults = document.getElementById('noResults') as HTMLElement;
+        this.searchResults = document.getElementById('searchResults') as HTMLElement;
+        this.clearFiltersBtn = document.getElementById('clearFilters') as HTMLButtonElement;
+        this.contentTypeFilters = document.querySelectorAll('.content-type-filter') as NodeListOf<HTMLButtonElement>;
+        
+        this.allItems = Array.from(document.querySelectorAll('.search-item')) as HTMLElement[];
+        this.activeContentTypes = new Set<string>();
+        
+        this.bindEvents();
+        this.updateResults();
+      }
+      
+      bindEvents() {
+        // 搜索输入
+        this.searchInput?.addEventListener('input', () => this.updateResults());
+        
+        // 筛选器
+        this.topicFilter?.addEventListener('change', () => this.updateResults());
+        this.languageFilter?.addEventListener('change', () => this.updateResults());
+        this.sortBy?.addEventListener('change', () => this.updateResults());
+        
+        // 内容类型筛选
+        this.contentTypeFilters?.forEach(btn => {
+          btn.addEventListener('click', () => this.toggleContentType(btn));
+        });
+        
+        // 清除筛选
+        this.clearFiltersBtn?.addEventListener('click', () => this.clearFilters());
+        
+        // URL参数处理
+        this.handleURLParams();
+      }
+      
+      toggleContentType(button: HTMLButtonElement) {
+        const type = button.dataset.type;
+        if (!type) return;
+        
+        if (this.activeContentTypes.has(type)) {
+          this.activeContentTypes.delete(type);
+          button.classList.remove('bg-purple-100', 'dark:bg-purple-900', 'border-purple-300', 'dark:border-purple-600', 'text-purple-700', 'dark:text-purple-300');
+          button.classList.add('bg-white', 'dark:bg-gray-700', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+        } else {
+          this.activeContentTypes.add(type);
+          button.classList.add('bg-purple-100', 'dark:bg-purple-900', 'border-purple-300', 'dark:border-purple-600', 'text-purple-700', 'dark:text-purple-300');
+          button.classList.remove('bg-white', 'dark:bg-gray-700', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+        }
+        
+        this.updateResults();
+      }
+      
+      clearFilters() {
+        this.searchInput.value = '';
+        this.topicFilter.value = '';
+        this.languageFilter.value = '';
+        this.sortBy.value = 'relevance';
+        this.activeContentTypes.clear();
+        
+        // 重置内容类型按钮样式
+        this.contentTypeFilters.forEach(btn => {
+          btn.classList.remove('bg-purple-100', 'dark:bg-purple-900', 'border-purple-300', 'dark:border-purple-600', 'text-purple-700', 'dark:text-purple-300');
+          btn.classList.add('bg-white', 'dark:bg-gray-700', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+        });
+        
+        this.updateResults();
+      }
+      
+      handleURLParams() {
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get('q');
+        const type = params.get('type');
+        const topic = params.get('topic');
+        
+        if (query) this.searchInput.value = query;
+        if (type) {
+          this.activeContentTypes.add(type);
+          const button = document.querySelector(`[data-type="${type}"]`) as HTMLButtonElement;
+          if (button) this.toggleContentType(button);
+        }
+        if (topic) this.topicFilter.value = topic;
+        
+        this.updateResults();
+      }
+      
+      updateResults() {
+        const query = this.searchInput.value.toLowerCase().trim();
+        const selectedTopic = this.topicFilter.value;
+        const selectedLanguage = this.languageFilter.value;
+        const sortBy = this.sortBy.value;
+        
+        let filteredItems = this.allItems.filter(item => {
+          // 搜索匹配
+          if (query) {
+            const title = item.dataset.title || '';
+            const author = item.dataset.author || '';
+            const description = item.dataset.description || '';
+            const topics = item.dataset.topics || '';
+            
+            if (!title.includes(query) && !author.includes(query) && 
+                !description.includes(query) && !topics.includes(query)) {
+              return false;
+            }
+          }
+          
+          // 内容类型筛选
+          if (this.activeContentTypes.size > 0) {
+            const itemType = item.dataset.type;
+            if (!itemType || !this.activeContentTypes.has(itemType)) {
+              return false;
+            }
+          }
+          
+          // 主题筛选
+          if (selectedTopic) {
+            const topics = item.dataset.topics || '';
+            if (!topics.includes(selectedTopic.toLowerCase())) {
+              return false;
+            }
+          }
+          
+          // 语言筛选
+          if (selectedLanguage) {
+            const language = item.dataset.language || '';
+            if (language !== selectedLanguage) {
+              return false;
+            }
+          }
+          
+          return true;
+        });
+        
+        // 排序
+        this.sortResults(filteredItems, sortBy);
+        
+        // 显示结果
+        this.displayResults(filteredItems);
+        
+        // 更新计数
+        this.resultsCount.textContent = `显示 ${filteredItems.length} 个结果`;
+      }
+      
+      sortResults(items: HTMLElement[], sortBy: string) {
+        items.sort((a, b) => {
+          switch (sortBy) {
+            case 'date-desc':
+              return Number(b.dataset.date) - Number(a.dataset.date);
+            case 'date-asc':
+              return Number(a.dataset.date) - Number(b.dataset.date);
+            case 'title-asc':
+              return (a.dataset.title || '').localeCompare(b.dataset.title || '');
+            case 'title-desc':
+              return (b.dataset.title || '').localeCompare(a.dataset.title || '');
+            default: // relevance
+              return 0;
+          }
+        });
+      }
+      
+      displayResults(filteredItems: HTMLElement[]) {
+        // 隐藏所有项目
+        this.allItems.forEach(item => {
+          item.style.display = 'none';
+        });
+        
+        // 显示筛选后的项目
+        filteredItems.forEach(item => {
+          item.style.display = 'block';
+        });
+        
+        // 重新排列DOM顺序
+        filteredItems.forEach(item => {
+          this.searchResults.appendChild(item);
+        });
+        
+        // 显示/隐藏无结果提示
+        if (filteredItems.length === 0) {
+          this.noResults.classList.remove('hidden');
+          this.searchResults.classList.add('hidden');
+        } else {
+          this.noResults.classList.add('hidden');
+          this.searchResults.classList.remove('hidden');
+        }
+      }
+    }
+    
+    // 初始化搜索功能
+    document.addEventListener('DOMContentLoaded', () => {
+      new ContentSearch();
+    });
+  </script>
+</Layout>

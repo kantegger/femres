@@ -5,7 +5,7 @@ author: "贝尔·胡克斯"
 description: "这位美国黑人女性主义理论家的经典作品，从交叉性视角重新审视女性主义，强调种族、阶级与性别的多重压迫，为包容性女性主义奠定理论基础。"
 publishDate: 1984-01-01
 isbn: "9787544766357"
-language: "zh-CN"
+language: "en"
 topics: ["女性理论", "历史人物", "性别研究", "社会观念"]
 sourceUrl: "https://book.douban.com/subject/26697047/"
 coverImage: "/images/books/bell-hooks-feminism.jpg"

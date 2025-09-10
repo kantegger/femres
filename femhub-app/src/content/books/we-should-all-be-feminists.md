@@ -5,7 +5,7 @@ author: "奇玛曼达·恩戈齐·阿迪契"
 description: "尼日利亚作家阿迪契基于TED演讲扩展而成的小册子，以个人经历和尖锐观察，重新定义了21世纪的女性主义，让这个概念更加平易近人。"
 publishDate: 2014-07-29
 isbn: "9787559827463"
-language: "zh-CN"
+language: "en"
 topics: ["女性理论", "职场平等", "教育权利", "媒体表征"]
 sourceUrl: "https://book.douban.com/subject/26807354/"
 coverImage: "/images/books/we-should-all-be-feminists.jpg"

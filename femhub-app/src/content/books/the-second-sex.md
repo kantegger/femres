@@ -5,7 +5,7 @@ author: "西蒙·德·波伏娃"
 description: "现代女性主义的奠基之作，深刻分析了女性在社会中的地位和处境，提出了\"女人不是天生的，而是后天形成的\"这一著名观点。"
 publishDate: 1949-06-01
 isbn: "9787020035816"
-language: "zh-CN"
+language: "en"
 topics: ["历史人物", "女性理论", "存在主义", "性别研究"]
 sourceUrl: "https://book.douban.com/subject/1035853/"
 coverImage: "/images/books/the-second-sex.jpg"

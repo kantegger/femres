@@ -45,7 +45,7 @@ FemRes 是一个开源的女性主义内容聚合平台，致力于汇聚全球�
 
 1. **克隆项目**
    ```bash
-   git clone https://github.com/femres/femres.git
+   git clone https://github.com/kantegger/femres.git
    cd femres
    ```
 
