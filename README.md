@@ -5,9 +5,9 @@
   <p>汇聚全球女性主义声音，推动性别平等事业发展</p>
   
   [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-  [![Astro](https://img.shields.io/badge/Astro-4.0-orange.svg)](https://astro.build/)
+  [![Astro](https://img.shields.io/badge/Astro-5.13-orange.svg)](https://astro.build/)
   [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
-  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-06B6D4.svg)](https://tailwindcss.com/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1-06B6D4.svg)](https://tailwindcss.com/)
 </div>
 
 ## 📖 项目简介
@@ -78,7 +78,7 @@ npm run preview
 
 ### 前端技术栈
 
-- **[Astro 4.0](https://astro.build/)** - 现代静态站点生成器
+- **[Astro 5.13](https://astro.build/)** - 现代静态站点生成器
 - **[TypeScript](https://www.typescriptlang.org/)** - 类型安全的JavaScript
 - **[Tailwind CSS](https://tailwindcss.com/)** - 实用优先的CSS框架
 - **[React](https://reactjs.org/)** - 动态组件（Islands Architecture）
