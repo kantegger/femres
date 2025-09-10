@@ -51,7 +51,7 @@ FemRes 是一个开源的女性主义内容聚合平台，致力于汇聚全球�
 
 2. **安装依赖**
    ```bash
-   cd femhub-app
+   cd femres-app
    npm install
    ```
 
@@ -86,7 +86,7 @@ npm run preview
 ### 项目结构
 
 ```
-femhub-app/
+femres-app/
 ├── src/
 │   ├── components/          # 组件库
 │   │   ├── Header.astro     # 页面头部

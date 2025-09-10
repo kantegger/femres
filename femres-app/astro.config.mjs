@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://femhub.pages.dev',
+  site: 'https://femres.pages.dev',
   output: 'static',
   trailingSlash: 'ignore',
 

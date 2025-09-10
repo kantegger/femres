@@ -7,7 +7,7 @@ language: "en"
 topics: ["历史人物", "法律权利", "政治参与", "传记"]
 sourceUrl: "https://youtu.be/biIRlcQqmOc"
 embedUrl: "https://www.youtube.com/embed/biIRlcQqmOc"
-duration: 3
+duration: 157
 thumbnail: "/images/videos/rbg-documentary.jpg"
 status: "published"
 ---

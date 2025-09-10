@@ -1,0 +1,539 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="贡献内容 - FemRes" description="了解如何向FemRes贡献您的内容，共同构建女性主义知识库">
+  <!-- Hero Section -->
+  <section class="relative py-12 sm:py-16 lg:py-20 overflow-hidden">
+    <!-- Background decorative elements -->
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-20 left-20 w-32 sm:w-48 lg:w-72 h-32 sm:h-48 lg:h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+      <div class="absolute top-10 right-10 w-32 sm:w-48 lg:w-72 h-32 sm:h-48 lg:h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div class="absolute bottom-20 left-1/3 w-32 sm:w-48 lg:w-72 h-32 sm:h-48 lg:h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
+          贡献
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">内容</span>
+        </h1>
+        <p class="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
+          您的贡献将帮助更多人了解女性主义，共同推动性别平等
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <!-- Contribution Types -->
+    <section class="mb-16 sm:mb-20">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          您可以贡献什么？
+        </h2>
+        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          FemRes 欢迎各种形式的高质量内容贡献
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <!-- Books -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all hover:-translate-y-1">
+          <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-white text-2xl mb-4">
+            📚
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">书籍推荐</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            推荐优秀的女性主义相关书籍，包括理论著作、文学作品、传记等
+          </p>
+          <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>书籍基本信息（书名、作者、出版社）</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>内容简介（200-500字）</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>推荐理由</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Articles -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all hover:-translate-y-1">
+          <div class="w-14 h-14 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center text-white text-2xl mb-4">
+            📝
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">文章分享</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            分享有价值的文章、评论、新闻报道等内容
+          </p>
+          <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>文章标题和链接</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>作者和发布平台</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>核心观点摘要</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Videos -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all hover:-translate-y-1">
+          <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center text-white text-2xl mb-4">
+            🎬
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">视频资源</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            推荐纪录片、讲座、访谈等视频内容
+          </p>
+          <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>视频标题和链接</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>时长和语言</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>内容概述</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Podcasts -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all hover:-translate-y-1">
+          <div class="w-14 h-14 bg-gradient-to-br from-violet-500 to-violet-600 rounded-xl flex items-center justify-center text-white text-2xl mb-4">
+            🎙️
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">播客节目</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            分享优质的女性主义相关播客节目
+          </p>
+          <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>播客名称和平台</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>主播介绍</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>推荐理由</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Academic Papers -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all hover:-translate-y-1">
+          <div class="w-14 h-14 bg-gradient-to-br from-rose-500 to-rose-600 rounded-xl flex items-center justify-center text-white text-2xl mb-4">
+            🎓
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">学术论文</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            推荐学术研究、论文等专业内容
+          </p>
+          <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>论文标题和DOI</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>作者和机构</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>研究摘要</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Original Content -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all hover:-translate-y-1">
+          <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center text-white text-2xl mb-4">
+            ✍️
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">原创内容</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            投稿您的原创文章、研究或创作
+          </p>
+          <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>完整的原创内容</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>作者简介</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">✓</span>
+              <span>授权声明</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contribution Guidelines -->
+    <section class="mb-16 sm:mb-20">
+      <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 sm:p-12">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+            投稿指南
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                <span class="text-2xl mr-3">✅</span>
+                内容要求
+              </h3>
+              <ul class="space-y-3 text-gray-600 dark:text-gray-400">
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-2 mt-1">•</span>
+                  <span>内容必须与女性主义、性别平等相关</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-2 mt-1">•</span>
+                  <span>信息准确、来源可靠</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-2 mt-1">•</span>
+                  <span>尊重多元观点，避免歧视性言论</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-2 mt-1">•</span>
+                  <span>原创内容需声明版权归属</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-2 mt-1">•</span>
+                  <span>引用他人作品需注明出处</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                <span class="text-2xl mr-3">📋</span>
+                审核流程
+              </h3>
+              <ul class="space-y-3 text-gray-600 dark:text-gray-400">
+                <li class="flex items-start">
+                  <span class="text-blue-500 mr-2 mt-1">1.</span>
+                  <span>提交内容后，我们会在48小时内确认收到</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-500 mr-2 mt-1">2.</span>
+                  <span>编辑团队会在7个工作日内完成审核</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-500 mr-2 mt-1">3.</span>
+                  <span>审核通过后，内容将在24小时内发布</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-500 mr-2 mt-1">4.</span>
+                  <span>如需修改，我们会提供具体反馈</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-500 mr-2 mt-1">5.</span>
+                  <span>发布后您将收到通知邮件</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Submission Form -->
+    <section class="mb-16 sm:mb-20">
+      <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 sm:p-12 border border-gray-200 dark:border-gray-700">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-10">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              开始投稿
+            </h2>
+            <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300">
+              填写下方表单，向我们提交您的内容
+            </p>
+          </div>
+
+          <form action="https://formspree.io/f/095b5cdff33f424185e21befd3273767" method="POST" class="space-y-6">
+            <!-- Hidden field to identify this as a contribution -->
+            <input type="hidden" name="_subject" value="新的内容投稿 - FemRes">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="contributor-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  您的姓名 *
+                </label>
+                <input
+                  type="text"
+                  id="contributor-name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
+                  placeholder="请输入您的姓名"
+                />
+              </div>
+              <div>
+                <label for="contributor-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  电子邮箱 *
+                </label>
+                <input
+                  type="email"
+                  id="contributor-email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
+                  placeholder="your@email.com"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="content-type" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                内容类型 *
+              </label>
+              <select
+                id="content-type"
+                name="content_type"
+                required
+                class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
+              >
+                <option value="">请选择内容类型</option>
+                <option value="book">书籍推荐</option>
+                <option value="article">文章分享</option>
+                <option value="video">视频资源</option>
+                <option value="podcast">播客节目</option>
+                <option value="paper">学术论文</option>
+                <option value="original">原创内容</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="content-title" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                内容标题 *
+              </label>
+              <input
+                type="text"
+                id="content-title"
+                name="title"
+                required
+                class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
+                placeholder="请输入内容标题"
+              />
+            </div>
+
+            <div>
+              <label for="content-link" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                相关链接（如有）
+              </label>
+              <input
+                type="url"
+                id="content-link"
+                name="link"
+                class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
+                placeholder="https://example.com"
+              />
+            </div>
+
+            <div>
+              <label for="content-topics" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                相关主题（可多选）
+              </label>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                <label class="flex items-center">
+                  <input type="checkbox" name="topics" value="职场平等" class="mr-2 text-purple-600 rounded focus:ring-purple-500">
+                  <span class="text-sm text-gray-700 dark:text-gray-300">职场平等</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" name="topics" value="身体自主" class="mr-2 text-purple-600 rounded focus:ring-purple-500">
+                  <span class="text-sm text-gray-700 dark:text-gray-300">身体自主</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" name="topics" value="教育权利" class="mr-2 text-purple-600 rounded focus:ring-purple-500">
+                  <span class="text-sm text-gray-700 dark:text-gray-300">教育权利</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" name="topics" value="政治参与" class="mr-2 text-purple-600 rounded focus:ring-purple-500">
+                  <span class="text-sm text-gray-700 dark:text-gray-300">政治参与</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" name="topics" value="家庭角色" class="mr-2 text-purple-600 rounded focus:ring-purple-500">
+                  <span class="text-sm text-gray-700 dark:text-gray-300">家庭角色</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" name="topics" value="性别暴力" class="mr-2 text-purple-600 rounded focus:ring-purple-500">
+                  <span class="text-sm text-gray-700 dark:text-gray-300">性别暴力</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" name="topics" value="媒体表征" class="mr-2 text-purple-600 rounded focus:ring-purple-500">
+                  <span class="text-sm text-gray-700 dark:text-gray-300">媒体表征</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" name="topics" value="历史人物" class="mr-2 text-purple-600 rounded focus:ring-purple-500">
+                  <span class="text-sm text-gray-700 dark:text-gray-300">历史人物</span>
+                </label>
+              </div>
+              <div>
+                <label for="custom-topics" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  其他主题（可自定义输入）
+                </label>
+                <input
+                  type="text"
+                  id="custom-topics"
+                  name="custom_topics"
+                  class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
+                  placeholder="如有其他主题，请用逗号分隔，例如：生态女性主义, 交叉性理论"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="content-description" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                内容描述 *
+              </label>
+              <textarea
+                id="content-description"
+                name="description"
+                rows="6"
+                required
+                class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors resize-none"
+                placeholder="请详细描述内容，包括主要观点、推荐理由等..."
+              ></textarea>
+            </div>
+
+            <div class="flex items-start">
+              <input
+                type="checkbox"
+                id="contribution-terms"
+                name="terms"
+                required
+                class="mt-1 w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
+              />
+              <label for="contribution-terms" class="ml-3 text-sm text-gray-600 dark:text-gray-400">
+                我确认提交的内容真实有效，并同意FemRes的<a href="/terms" class="text-purple-600 dark:text-purple-400 hover:underline">投稿条款</a>
+              </label>
+            </div>
+
+            <div class="text-center">
+              <button
+                type="submit"
+                class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-xl text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+              >
+                提交投稿
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub Contribution -->
+    <section class="mb-16 sm:mb-20">
+      <div class="bg-gray-900 text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20"></div>
+        <div class="relative z-10 max-w-4xl mx-auto text-center">
+          <div class="text-4xl mb-6">💻</div>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+            通过 GitHub 贡献
+          </h2>
+          <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            FemRes 是一个开源项目，您也可以直接通过 GitHub 提交内容或改进代码
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://github.com/kantegger/femres"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center px-6 py-3 bg-white text-gray-900 font-semibold rounded-xl hover:bg-gray-100 transition-colors"
+            >
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              访问 GitHub 仓库
+            </a>
+            <a
+              href="https://github.com/kantegger/femres/blob/main/CONTRIBUTING.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-xl hover:bg-purple-700 transition-colors"
+            >
+              查看贡献指南
+              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recognition -->
+    <section class="text-center">
+      <div class="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20 rounded-3xl p-8 sm:p-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          贡献者荣誉
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+          我们感谢每一位贡献者的付出。优秀贡献者将获得：
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <div class="text-3xl mb-3">🏆</div>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">贡献者徽章</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">在个人主页展示特殊徽章</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <div class="text-3xl mb-3">📜</div>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">署名权</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">内容页面显示贡献者信息</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <div class="text-3xl mb-3">🎁</div>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">专属权益</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">优先体验新功能和活动</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <style>
+    @keyframes blob {
+      0% { transform: translate(0px, 0px) scale(1); }
+      33% { transform: translate(30px, -50px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+      100% { transform: translate(0px, 0px) scale(1); }
+    }
+    .animate-blob {
+      animation: blob 7s infinite;
+    }
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
+  </style>
+</Layout>

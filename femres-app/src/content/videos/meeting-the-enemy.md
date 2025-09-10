@@ -7,7 +7,7 @@ language: "en"
 topics: ["男性权利运动", "性别平等", "纪录片", "女权主义"]
 sourceUrl: "https://youtu.be/3WMuzhQXJoY?si=knmsDJpJ1Jd31Sie"
 embedUrl: "https://www.youtube.com/embed/3WMuzhQXJoY?si=oa1v-3lLBkTbYo31"
-duration: 15
+duration: 888
 thumbnail: "/images/videos/meeting-the-enemy.jpg"
 status: "published"
 ---

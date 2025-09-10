@@ -1,8 +1,8 @@
 {
-  "name": "femhub",
+  "name": "femres",
   "type": "module",
   "version": "0.0.1",
-  "description": "FemHub - 女性主义内容聚合平台",
+  "description": "FemRes - 女性主义内容聚合平台",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
