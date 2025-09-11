@@ -63,7 +63,6 @@ export const useAuthStore = create<AuthState>()(
         set({ isLoading: true });
         try {
           const url = apiUrl('/auth/register');
-          console.log('Registering with URL:', url);
           
           const response = await fetch(url, {
             method: 'POST',
@@ -71,14 +70,11 @@ export const useAuthStore = create<AuthState>()(
             body: JSON.stringify({ username, email, password })
           });
 
-          console.log('Response status:', response.status);
-          console.log('Response headers:', response.headers);
 
           if (!response.ok) {
             let errorMessage = `HTTP ${response.status}`;
             try {
               const text = await response.text();
-              console.error('Error response text:', text);
               if (text) {
                 try {
                   const data = JSON.parse(text);
@@ -88,14 +84,12 @@ export const useAuthStore = create<AuthState>()(
                 }
               }
             } catch (e) {
-              console.error('Failed to read error response:', e);
             }
             set({ isLoading: false });
             return { success: false, error: errorMessage };
           }
 
           const data = await response.json();
-          console.log('Registration successful:', data);
 
           set({ 
             user: data.user,
@@ -109,7 +103,6 @@ export const useAuthStore = create<AuthState>()(
           
           return { success: true };
         } catch (error) {
-          console.error('Registration network error:', error);
           set({ isLoading: false });
           return { success: false, error: `Network error: ${error.message || error}` };
         }
@@ -119,7 +112,6 @@ export const useAuthStore = create<AuthState>()(
         set({ isLoading: true });
         try {
           const url = apiUrl('/auth/login');
-          console.log('Logging in with URL:', url);
           
           const response = await fetch(url, {
             method: 'POST',
@@ -127,14 +119,11 @@ export const useAuthStore = create<AuthState>()(
             body: JSON.stringify({ identifier, password })
           });
 
-          console.log('Response status:', response.status);
-          console.log('Response headers:', response.headers);
 
           if (!response.ok) {
             let errorMessage = `HTTP ${response.status}`;
             try {
               const text = await response.text();
-              console.error('Error response text:', text);
               if (text) {
                 try {
                   const data = JSON.parse(text);
@@ -144,14 +133,12 @@ export const useAuthStore = create<AuthState>()(
                 }
               }
             } catch (e) {
-              console.error('Failed to read error response:', e);
             }
             set({ isLoading: false });
             return { success: false, error: errorMessage };
           }
 
           const data = await response.json();
-          console.log('Login successful:', data);
 
           set({ 
             user: data.user,
@@ -165,7 +152,6 @@ export const useAuthStore = create<AuthState>()(
           
           return { success: true };
         } catch (error) {
-          console.error('Login network error:', error);
           set({ isLoading: false });
           return { success: false, error: `Network error: ${error.message || error}` };
         }
@@ -270,30 +256,24 @@ export const useAuthStore = create<AuthState>()(
         const { getAuthHeaders } = get();
         
         try {
-          console.log('Fetching user interactions...');
           const response = await fetch(apiUrl('/users/interactions'), {
             method: 'GET',
             headers: getAuthHeaders()
           });
           
-          console.log('Interactions fetch response status:', response.status);
           
           if (response.ok) {
             const data = await response.json();
-            console.log('Interactions data:', data);
             set({ 
               interactions: {
                 likes: data.likes || [],
                 bookmarks: data.bookmarks || []
               }
             });
-            console.log('Updated interactions in store:', get().interactions);
           } else {
             const errorText = await response.text();
-            console.error('Failed to fetch interactions:', response.status, errorText);
           }
         } catch (error) {
-          console.error('Error fetching interactions:', error);
         }
       }
     }),
