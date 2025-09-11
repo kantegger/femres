@@ -32,7 +32,8 @@ export const POST: APIRoute = async ({ request, locals }) => {
     }
 
     // Verify password
-    if (!verifyPassword(password, user.password_hash)) {
+    const isValidPassword = await verifyPassword(password, user.password_hash);
+    if (!isValidPassword) {
       return new Response(
         JSON.stringify({ error: 'Invalid credentials' }),
         { status: 401, headers: { 'Content-Type': 'application/json' } }
@@ -40,7 +41,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     }
 
     // Generate JWT
-    const token = generateToken(user, jwtSecret);
+    const token = await generateToken(user, jwtSecret);
 
     // Return user data (without password hash) and token
     const { password_hash, ...userWithoutPassword } = user;

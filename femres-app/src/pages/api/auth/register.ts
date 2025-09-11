@@ -104,15 +104,21 @@ export const POST: APIRoute = async ({ request, locals }) => {
     }
 
     // Create user
-    const passwordHash = hashPassword(password);
+    console.log('Hashing password');
+    const passwordHash = await hashPassword(password);
+    console.log('Password hashed successfully');
+    
     const user = await createUser(db, {
       username,
       email,
       password_hash: passwordHash
     });
+    console.log('User created:', user.id);
 
     // Generate JWT
-    const token = generateToken(user, jwtSecret);
+    console.log('Generating JWT token');
+    const token = await generateToken(user, jwtSecret);
+    console.log('Token generated successfully');
 
     // Return user data (without password hash) and token
     const { password_hash, ...userWithoutPassword } = user;
