@@ -61,7 +61,7 @@ export default function UserProfile() {
               </div>
               <div className="text-center">
                 <p className="text-2xl font-bold text-purple-600 dark:text-purple-400">
-                  {new Date(user?.createdAt || '').toLocaleDateString('zh-CN')}
+                  {new Date(user?.created_at || '').toLocaleDateString('zh-CN')}
                 </p>
                 <p className="text-sm text-gray-600 dark:text-gray-400">加入日期</p>
               </div>

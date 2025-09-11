@@ -287,7 +287,7 @@ export const useAuthStore = create<AuthState>()(
                 bookmarks: data.bookmarks || []
               }
             });
-            console.log('Updated interactions in store');
+            console.log('Updated interactions in store:', get().interactions);
           } else {
             const errorText = await response.text();
             console.error('Failed to fetch interactions:', response.status, errorText);
