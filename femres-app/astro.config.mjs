@@ -15,13 +15,8 @@ export default defineConfig({
       enabled: true
     },
     runtime: {
-      mode: 'local',
-      type: 'pages',
-      bindings: {
-        DB: {
-          type: 'd1'
-        }
-      }
+      mode: 'remote',
+      type: 'pages'
     }
   }),
   trailingSlash: 'ignore',

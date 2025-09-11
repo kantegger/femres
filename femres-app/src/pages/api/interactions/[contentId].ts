@@ -1,4 +1,6 @@
 import type { APIRoute } from 'astro';
+
+export const prerender = false;
 import { toggleUserInteraction } from '../../../lib/database';
 import { verifyToken, extractBearerToken } from '../../../lib/auth';
 
