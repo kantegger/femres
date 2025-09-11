@@ -27,6 +27,7 @@ interface AuthState {
   login: (identifier: string, password: string) => Promise<{ success: boolean; error?: string }>;
   logout: () => void;
   refreshUser: () => Promise<void>;
+  fetchInteractions: () => Promise<void>;
   
   // Content interactions
   toggleLike: (contentId: string, contentType: string) => Promise<void>;
@@ -103,6 +104,9 @@ export const useAuthStore = create<AuthState>()(
             isLoading: false
           });
           
+          // Fetch user interactions
+          await get().fetchInteractions();
+          
           return { success: true };
         } catch (error) {
           console.error('Registration network error:', error);
@@ -155,6 +159,9 @@ export const useAuthStore = create<AuthState>()(
             isAuthenticated: true,
             isLoading: false
           });
+          
+          // Fetch user interactions
+          await get().fetchInteractions();
           
           return { success: true };
         } catch (error) {
@@ -257,6 +264,29 @@ export const useAuthStore = create<AuthState>()(
       
       isBookmarked: (contentId: string) => {
         return get().interactions.bookmarks.includes(contentId);
+      },
+      
+      fetchInteractions: async () => {
+        const { getAuthHeaders } = get();
+        
+        try {
+          const response = await fetch(apiUrl('/users/interactions'), {
+            method: 'GET',
+            headers: getAuthHeaders()
+          });
+          
+          if (response.ok) {
+            const data = await response.json();
+            set({ 
+              interactions: {
+                likes: data.likes || [],
+                bookmarks: data.bookmarks || []
+              }
+            });
+          }
+        } catch (error) {
+          console.error('Error fetching interactions:', error);
+        }
       }
     }),
     {
