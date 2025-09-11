@@ -270,19 +270,27 @@ export const useAuthStore = create<AuthState>()(
         const { getAuthHeaders } = get();
         
         try {
+          console.log('Fetching user interactions...');
           const response = await fetch(apiUrl('/users/interactions'), {
             method: 'GET',
             headers: getAuthHeaders()
           });
           
+          console.log('Interactions fetch response status:', response.status);
+          
           if (response.ok) {
             const data = await response.json();
+            console.log('Interactions data:', data);
             set({ 
               interactions: {
                 likes: data.likes || [],
                 bookmarks: data.bookmarks || []
               }
             });
+            console.log('Updated interactions in store');
+          } else {
+            const errorText = await response.text();
+            console.error('Failed to fetch interactions:', response.status, errorText);
           }
         } catch (error) {
           console.error('Error fetching interactions:', error);
