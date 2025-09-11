@@ -118,8 +118,8 @@ export async function generateToken(user: User, secret: string): Promise<string>
   const encoder = new TextEncoder();
   
   // Encode header and payload
-  const encodedHeader = btoa(JSON.stringify(header)).replace(/=/g, '');
-  const encodedPayload = btoa(JSON.stringify(payload)).replace(/=/g, '');
+  const encodedHeader = btoa(JSON.stringify(header)).replace(/[=]+$/g, '');
+  const encodedPayload = btoa(JSON.stringify(payload)).replace(/[=]+$/g, '');
   
   const message = `${encodedHeader}.${encodedPayload}`;
   
@@ -133,7 +133,7 @@ export async function generateToken(user: User, secret: string): Promise<string>
   );
   
   const signature = await crypto.subtle.sign('HMAC', key, encoder.encode(message));
-  const encodedSignature = btoa(String.fromCharCode(...new Uint8Array(signature))).replace(/=/g, '');
+  const encodedSignature = btoa(String.fromCharCode(...new Uint8Array(signature))).replace(/[=]+$/g, '');
   
   return `${message}.${encodedSignature}`;
 }
@@ -161,7 +161,7 @@ export async function verifyToken(token: string, secret: string): Promise<TokenP
     
     // Decode signature
     const signature = new Uint8Array(
-      atob(encodedSignature + '===').split('').map(c => c.charCodeAt(0))
+      atob(encodedSignature).split('').map(c => c.charCodeAt(0))
     );
     
     const isValid = await crypto.subtle.verify(
@@ -176,7 +176,7 @@ export async function verifyToken(token: string, secret: string): Promise<TokenP
     }
     
     // Decode payload
-    const payload = JSON.parse(atob(encodedPayload + '===')) as TokenPayload;
+    const payload = JSON.parse(atob(encodedPayload)) as TokenPayload;
     
     // Check expiration
     const now = Math.floor(Date.now() / 1000);
