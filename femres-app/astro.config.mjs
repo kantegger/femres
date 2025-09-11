@@ -4,11 +4,26 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 import react from '@astrojs/react';
+import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://femres.pages.dev',
-  output: 'static',
+  output: 'server',
+  adapter: cloudflare({
+    platformProxy: {
+      enabled: true
+    },
+    runtime: {
+      mode: 'local',
+      type: 'pages',
+      bindings: {
+        DB: {
+          type: 'd1'
+        }
+      }
+    }
+  }),
   trailingSlash: 'ignore',
 
   build: {
@@ -16,7 +31,10 @@ export default defineConfig({
   },
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    ssr: {
+      external: ['crypto', 'stream', 'util', 'buffer']
+    }
   },
 
   integrations: [react()]

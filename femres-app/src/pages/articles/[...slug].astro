@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import InteractionButtons from '../../components/InteractionButtons';
+import Discussion from '../../components/Discussion';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles');
@@ -151,6 +152,7 @@ const getAuthorColor = (author: string) => {
         <div class="flex items-center">
           <InteractionButtons 
             contentId={`article-${article.slug}`} 
+            contentType="article"
             initialLikes={0}
             client:visible 
           />
@@ -249,25 +251,12 @@ const getAuthorColor = (author: string) => {
       </div>
     </section>
 
-    <!-- Comments Section -->
-    <section class="border-t border-gray-200 dark:border-gray-700 pt-12 mt-16">
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">讨论与评论</h2>
-      <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 text-center">
-        <div class="text-4xl mb-4">💬</div>
-        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-          加入讨论
-        </h3>
-        <p class="text-gray-600 dark:text-gray-400 mb-6">
-          分享您对这篇文章的看法和感受
-        </p>
-        <button class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors">
-          参与讨论
-        </button>
-        <p class="text-sm text-gray-500 dark:text-gray-400 mt-4">
-          评论功能即将上线，敬请期待
-        </p>
-      </div>
-    </section>
+    <!-- Discussion Section -->
+    <Discussion 
+      contentId={`article-${article.slug}`}
+      contentType="article"
+      client:load
+    />
 
     <!-- Newsletter Subscription -->
     <!--

@@ -3,16 +3,18 @@ import { useAuthStore } from '../store/authStore';
 
 interface InteractionButtonsProps {
   contentId: string;
+  contentType: string;
   initialLikes?: number;
   className?: string;
 }
 
-export default function InteractionButtons({ contentId, initialLikes = 0, className = '' }: InteractionButtonsProps) {
-  const { isAuthenticated, toggleLike, toggleBookmark, isLiked, isBookmarked, interactions } = useAuthStore();
+export default function InteractionButtons({ contentId, contentType, initialLikes = 0, className = '' }: InteractionButtonsProps) {
+  const { isAuthenticated, toggleLike, toggleBookmark, isLiked, isBookmarked, interactions, login } = useAuthStore();
   const [liked, setLiked] = useState(false);
   const [bookmarked, setBookmarked] = useState(false);
   const [likeCount, setLikeCount] = useState(initialLikes);
   const [showLoginPrompt, setShowLoginPrompt] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -30,34 +32,56 @@ export default function InteractionButtons({ contentId, initialLikes = 0, classN
     }
   }, [contentId, isAuthenticated, isLiked, isBookmarked, interactions, initialLikes]);
 
-  const handleLike = () => {
+  const handleLike = async () => {
     if (!isAuthenticated) {
-      setShowLoginPrompt(true);
-      setTimeout(() => setShowLoginPrompt(false), 3000);
+      login();
       return;
     }
 
-    const newLikedState = !liked;
-    toggleLike(contentId);
-    setLiked(newLikedState);
+    if (isLoading) return;
+
+    setIsLoading(true);
+    const wasLiked = liked;
     
-    // Update like count based on new state
-    if (newLikedState) {
-      setLikeCount(prev => prev + 1);
-    } else {
-      setLikeCount(prev => Math.max(initialLikes, prev - 1));
+    // Optimistic update
+    setLiked(!wasLiked);
+    setLikeCount(prev => wasLiked ? prev - 1 : prev + 1);
+    
+    try {
+      await toggleLike(contentId, contentType);
+    } catch (error) {
+      // Revert on error
+      setLiked(wasLiked);
+      setLikeCount(prev => wasLiked ? prev + 1 : prev - 1);
+      console.error('Error toggling like:', error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const handleBookmark = () => {
+  const handleBookmark = async () => {
     if (!isAuthenticated) {
-      setShowLoginPrompt(true);
-      setTimeout(() => setShowLoginPrompt(false), 3000);
+      login();
       return;
     }
 
-    toggleBookmark(contentId);
-    setBookmarked(!bookmarked);
+    if (isLoading) return;
+
+    setIsLoading(true);
+    const wasBookmarked = bookmarked;
+    
+    // Optimistic update
+    setBookmarked(!wasBookmarked);
+    
+    try {
+      await toggleBookmark(contentId, contentType);
+    } catch (error) {
+      // Revert on error
+      setBookmarked(wasBookmarked);
+      console.error('Error toggling bookmark:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

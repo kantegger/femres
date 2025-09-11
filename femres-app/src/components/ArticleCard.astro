@@ -165,6 +165,7 @@ const getAuthorColor = (author: string) => {
         <div onclick="event.stopPropagation(); event.preventDefault();">
           <InteractionButtons 
             contentId={`article-${slug}`} 
+            contentType="article"
             initialLikes={0}
             client:visible 
           />

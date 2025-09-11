@@ -146,6 +146,7 @@ const formatDate = (date: Date) => {
         <div onclick="event.stopPropagation(); event.preventDefault();">
           <InteractionButtons 
             contentId={`video-${slug}`} 
+            contentType="video"
             initialLikes={0}
             client:visible 
           />

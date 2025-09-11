@@ -5,7 +5,9 @@ export interface User {
   id: string;
   username: string;
   email: string;
-  createdAt: Date;
+  avatar_url?: string;
+  created_at: string;
+  updated_at: string;
 }
 
 export interface UserInteractions {
@@ -15,62 +17,192 @@ export interface UserInteractions {
 
 interface AuthState {
   user: User | null;
+  token: string | null;
   interactions: UserInteractions;
   isAuthenticated: boolean;
-  login: (username: string, email: string) => void;
+  isLoading: boolean;
+  
+  // API methods
+  register: (username: string, email: string, password: string) => Promise<{ success: boolean; error?: string }>;
+  login: (identifier: string, password: string) => Promise<{ success: boolean; error?: string }>;
   logout: () => void;
-  toggleLike: (contentId: string) => void;
-  toggleBookmark: (contentId: string) => void;
+  refreshUser: () => Promise<void>;
+  
+  // Content interactions
+  toggleLike: (contentId: string, contentType: string) => Promise<void>;
+  toggleBookmark: (contentId: string, contentType: string) => Promise<void>;
   isLiked: (contentId: string) => boolean;
   isBookmarked: (contentId: string) => boolean;
+  
+  // Utility
+  getAuthHeaders: () => Record<string, string>;
 }
+
+// API utility functions
+const apiUrl = (endpoint: string) => `/api${endpoint}`;
 
 export const useAuthStore = create<AuthState>()(
   persist(
     (set, get) => ({
       user: null,
+      token: null,
       interactions: {
         likes: [],
         bookmarks: []
       },
       isAuthenticated: false,
+      isLoading: false,
+
+      getAuthHeaders: () => {
+        const { token } = get();
+        return token ? { 'Authorization': `Bearer ${token}` } : {};
+      },
       
-      login: (username: string, email: string) => {
-        const user: User = {
-          id: Math.random().toString(36).substr(2, 9),
-          username,
-          email,
-          createdAt: new Date()
-        };
-        set({ 
-          user, 
-          isAuthenticated: true,
-          interactions: get().interactions || { likes: [], bookmarks: [] }
-        });
+      register: async (username: string, email: string, password: string) => {
+        set({ isLoading: true });
+        try {
+          const response = await fetch(apiUrl('/auth/register'), {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, email, password })
+          });
+
+          const data = await response.json();
+
+          if (!response.ok) {
+            set({ isLoading: false });
+            return { success: false, error: data.error || 'Registration failed' };
+          }
+
+          set({ 
+            user: data.user,
+            token: data.token,
+            isAuthenticated: true,
+            isLoading: false
+          });
+          
+          return { success: true };
+        } catch (error) {
+          set({ isLoading: false });
+          return { success: false, error: 'Network error' };
+        }
+      },
+      
+      login: async (identifier: string, password: string) => {
+        set({ isLoading: true });
+        try {
+          const response = await fetch(apiUrl('/auth/login'), {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ identifier, password })
+          });
+
+          const data = await response.json();
+
+          if (!response.ok) {
+            set({ isLoading: false });
+            return { success: false, error: data.error || 'Login failed' };
+          }
+
+          set({ 
+            user: data.user,
+            token: data.token,
+            isAuthenticated: true,
+            isLoading: false
+          });
+          
+          return { success: true };
+        } catch (error) {
+          set({ isLoading: false });
+          return { success: false, error: 'Network error' };
+        }
+      },
+
+      refreshUser: async () => {
+        const { token, getAuthHeaders } = get();
+        if (!token) return;
+
+        try {
+          const response = await fetch(apiUrl('/auth/me'), {
+            method: 'GET',
+            headers: getAuthHeaders()
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            set({ user: data.user });
+          } else {
+            // Token is invalid, logout
+            get().logout();
+          }
+        } catch (error) {
+          console.error('Error refreshing user:', error);
+        }
       },
       
       logout: () => {
         set({ 
           user: null, 
+          token: null,
           isAuthenticated: false,
           interactions: { likes: [], bookmarks: [] }
         });
       },
       
-      toggleLike: (contentId: string) => {
-        const { interactions } = get();
-        const likes = interactions.likes.includes(contentId)
-          ? interactions.likes.filter(id => id !== contentId)
-          : [...interactions.likes, contentId];
-        set({ interactions: { ...interactions, likes } });
+      toggleLike: async (contentId: string, contentType: string) => {
+        const { getAuthHeaders, interactions } = get();
+        
+        try {
+          const response = await fetch(apiUrl(`/interactions/${contentId}`), {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              ...getAuthHeaders()
+            },
+            body: JSON.stringify({ 
+              content_type: contentType,
+              interaction_type: 'like'
+            })
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            const likes = data.active
+              ? [...interactions.likes, contentId]
+              : interactions.likes.filter(id => id !== contentId);
+            set({ interactions: { ...interactions, likes } });
+          }
+        } catch (error) {
+          console.error('Error toggling like:', error);
+        }
       },
       
-      toggleBookmark: (contentId: string) => {
-        const { interactions } = get();
-        const bookmarks = interactions.bookmarks.includes(contentId)
-          ? interactions.bookmarks.filter(id => id !== contentId)
-          : [...interactions.bookmarks, contentId];
-        set({ interactions: { ...interactions, bookmarks } });
+      toggleBookmark: async (contentId: string, contentType: string) => {
+        const { getAuthHeaders, interactions } = get();
+        
+        try {
+          const response = await fetch(apiUrl(`/interactions/${contentId}`), {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              ...getAuthHeaders()
+            },
+            body: JSON.stringify({ 
+              content_type: contentType,
+              interaction_type: 'bookmark'
+            })
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            const bookmarks = data.active
+              ? [...interactions.bookmarks, contentId]
+              : interactions.bookmarks.filter(id => id !== contentId);
+            set({ interactions: { ...interactions, bookmarks } });
+          }
+        } catch (error) {
+          console.error('Error toggling bookmark:', error);
+        }
       },
       
       isLiked: (contentId: string) => {
@@ -86,6 +218,7 @@ export const useAuthStore = create<AuthState>()(
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
         user: state.user,
+        token: state.token,
         interactions: state.interactions,
         isAuthenticated: state.isAuthenticated
       })

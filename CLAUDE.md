@@ -4,38 +4,42 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**FemHub** is a feminist content aggregation platform that provides high-quality, diverse feminist-related content through AI-driven curation and community collaboration.
+**FemRes** is a feminist content aggregation platform that provides high-quality, diverse feminist-related content through AI-driven curation and community collaboration. **Now upgraded to a full-stack application** with user authentication, real-time comments, and community interaction features.
 
 **Core Features:**
 - Content aggregation (books, articles, videos, podcasts, papers)
+- **Complete user authentication system** (register, login, profiles)
+- **Real-time discussion and comments** (with replies and likes)
+- **Content interaction features** (likes, bookmarks, personal collections)
 - Intelligent personalized recommendations
 - Advanced search and filtering
-- Community interaction and content contribution
 - Multi-topic categorization system
 
 ## Technical Architecture
 
 ### Frontend Stack
-- **Framework**: Astro 4.0 + TypeScript
-- **Architecture**: Static Site Generation (SSG) with Islands Architecture
-- **Interactive Components**: React (for dynamic features)
-- **Styling**: Tailwind CSS
-- **Features**: PWA support, responsive design
+- **Framework**: Astro 5.13 + TypeScript
+- **Architecture**: Server-Side Rendering (SSR) with Islands Architecture
+- **Interactive Components**: React 18.3 (for dynamic features)
+- **Styling**: Tailwind CSS 4.1
+- **State Management**: Zustand with localStorage persistence
+- **Features**: PWA support, responsive design, dark mode
 
 ### Backend Stack
-- **Runtime**: Node.js + Express/Fastify
-- **Architecture**: Microservices
-- **Database**: PostgreSQL (primary) + Redis (cache) + Elasticsearch (search)
-- **External Integrations**: RSS aggregation, social media APIs, content APIs
+- **Runtime**: Cloudflare Workers (serverless)
+- **Architecture**: Full-stack with edge computing
+- **Database**: Cloudflare D1 (SQLite at the edge)
+- **Authentication**: JWT tokens + bcrypt password encryption
+- **Deployment**: Cloudflare Pages (global CDN)
 
-### Key Services
-- Content Service: Manages content lifecycle
-- User Service: Authentication and user management
-- Search Service: Full-text search with Elasticsearch
-- Recommendation Service: Personalized content recommendations
-- Notification Service: User notifications and updates
+### Key Features (Implemented)
+- **User Authentication**: Complete registration, login, and session management
+- **Discussion System**: Real-time comments with nested replies and likes
+- **Content Interaction**: Like and bookmark functionality with user-specific tracking
+- **API Layer**: RESTful APIs for auth, comments, and user interactions
+- **Database**: Fully normalized schema with users, comments, likes, and interactions
 
-## Project Structure (Planned)
+## Project Structure (Current)
 ```
 src/
 ├── components/           # Astro/React components

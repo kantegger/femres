@@ -169,6 +169,7 @@ const formatDate = (date: Date) => {
         <div onclick="event.stopPropagation(); event.preventDefault();">
           <InteractionButtons 
             contentId={`podcast-${slug}`} 
+            contentType="podcast"
             initialLikes={0}
             client:visible 
           />

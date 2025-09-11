@@ -31,16 +31,25 @@
 2. 克隆项目到本地：
    ```bash
    git clone https://github.com/YOUR_USERNAME/femres.git
-   cd femres/femhub-app
+   cd femres/femres-app
    ```
 3. 安装依赖：
    ```bash
    npm install
+   npm install -g wrangler  # 如需完整后端功能
    ```
 4. 启动开发服务器：
    ```bash
+   # 基础开发模式（静态内容）
    npm run dev
+   
+   # 完整功能模式（需要 Cloudflare 设置）
+   wrangler pages dev dist/ --d1=DB=your-db-name
    ```
+5. 如需测试完整功能（用户认证、评论系统等）：
+   - 参考 `DEPLOYMENT.md` 设置 Cloudflare D1 数据库
+   - 运行 `npm run build` 构建项目
+   - 使用 wrangler 本地开发环境
 
 #### 代码规范
 
@@ -49,6 +58,33 @@
 - **Prettier**: 使用 Prettier 进行代码格式化
 - **命名规范**: 使用有意义的变量和函数名
 - **注释**: 为复杂逻辑添加必要的注释
+
+#### 新架构特性
+
+本项目现已升级为全栈应用，包含以下技术栈：
+
+**前端技术**：
+- Astro 5.13（SSR + Islands Architecture）
+- React 18.3（动态组件）
+- TypeScript + Tailwind CSS 4.1
+
+**后端技术**：
+- Cloudflare Workers（无服务器计算）
+- Cloudflare D1（SQLite 边缘数据库）
+- JWT 认证 + bcrypt 密码加密
+
+**核心功能模块**：
+- 用户认证系统（`src/pages/api/auth/`）
+- 评论讨论系统（`src/pages/api/comments/`）
+- 内容互动功能（`src/pages/api/interactions/`）
+- 状态管理（`src/store/authStore.ts`）
+
+**贡献时请注意**：
+- API 开发：遵循 RESTful 设计原则
+- 数据库操作：使用 `src/lib/database.ts` 中的工具函数
+- 认证相关：确保 JWT 令牌验证和权限控制
+- 前端状态：使用 Zustand store 管理用户状态
+- React 组件：使用 TypeScript 接口定义 props
 
 #### 提交规范
 
