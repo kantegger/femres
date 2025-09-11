@@ -6,7 +6,17 @@ export const prerender = false;
 
 export const POST: APIRoute = async ({ request, locals }) => {
   try {
+    console.log('Registration request received');
     const { username, email, password } = await request.json();
+    console.log('Request data:', { username, email, passwordLength: password?.length });
+
+    if (!username || !email || !password) {
+      console.log('Missing required fields');
+      return new Response(
+        JSON.stringify({ error: 'Username, email, and password are required' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
 
     // Validation
     if (!validateUsername(username)) {
@@ -32,8 +42,33 @@ export const POST: APIRoute = async ({ request, locals }) => {
       );
     }
 
-    const db = locals.runtime.env.DB;
-    const jwtSecret = locals.runtime.env.JWT_SECRET;
+    console.log('Accessing environment variables');
+    const db = locals.runtime?.env?.DB;
+    const jwtSecret = locals.runtime?.env?.JWT_SECRET;
+    
+    console.log('Environment check:', { 
+      hasDB: !!db, 
+      hasJwtSecret: !!jwtSecret,
+      localsExists: !!locals,
+      runtimeExists: !!locals.runtime,
+      envExists: !!locals.runtime?.env
+    });
+
+    if (!db) {
+      console.error('Database not available');
+      return new Response(
+        JSON.stringify({ error: 'Database not available' }),
+        { status: 500, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+
+    if (!jwtSecret) {
+      console.error('JWT secret not configured');
+      return new Response(
+        JSON.stringify({ error: 'Authentication not configured' }),
+        { status: 500, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
 
     // Check if user already exists
     const existingUserByEmail = await getUserByEmail(db, email);
