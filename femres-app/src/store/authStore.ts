@@ -61,18 +61,34 @@ export const useAuthStore = create<AuthState>()(
       register: async (username: string, email: string, password: string) => {
         set({ isLoading: true });
         try {
-          const response = await fetch(apiUrl('/auth/register'), {
+          const url = apiUrl('/auth/register');
+          console.log('Registering with URL:', url);
+          
+          const response = await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, email, password })
           });
 
-          const data = await response.json();
+          console.log('Response status:', response.status);
+          console.log('Response headers:', response.headers);
 
           if (!response.ok) {
+            let errorMessage = `HTTP ${response.status}`;
+            try {
+              const data = await response.json();
+              errorMessage = data.error || errorMessage;
+            } catch (e) {
+              const text = await response.text();
+              console.error('Failed to parse error response:', text);
+              errorMessage = text || errorMessage;
+            }
             set({ isLoading: false });
-            return { success: false, error: data.error || 'Registration failed' };
+            return { success: false, error: errorMessage };
           }
+
+          const data = await response.json();
+          console.log('Registration successful:', data);
 
           set({ 
             user: data.user,
@@ -83,26 +99,43 @@ export const useAuthStore = create<AuthState>()(
           
           return { success: true };
         } catch (error) {
+          console.error('Registration network error:', error);
           set({ isLoading: false });
-          return { success: false, error: 'Network error' };
+          return { success: false, error: `Network error: ${error.message || error}` };
         }
       },
       
       login: async (identifier: string, password: string) => {
         set({ isLoading: true });
         try {
-          const response = await fetch(apiUrl('/auth/login'), {
+          const url = apiUrl('/auth/login');
+          console.log('Logging in with URL:', url);
+          
+          const response = await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ identifier, password })
           });
 
-          const data = await response.json();
+          console.log('Response status:', response.status);
+          console.log('Response headers:', response.headers);
 
           if (!response.ok) {
+            let errorMessage = `HTTP ${response.status}`;
+            try {
+              const data = await response.json();
+              errorMessage = data.error || errorMessage;
+            } catch (e) {
+              const text = await response.text();
+              console.error('Failed to parse error response:', text);
+              errorMessage = text || errorMessage;
+            }
             set({ isLoading: false });
-            return { success: false, error: data.error || 'Login failed' };
+            return { success: false, error: errorMessage };
           }
+
+          const data = await response.json();
+          console.log('Login successful:', data);
 
           set({ 
             user: data.user,
@@ -113,8 +146,9 @@ export const useAuthStore = create<AuthState>()(
           
           return { success: true };
         } catch (error) {
+          console.error('Login network error:', error);
           set({ isLoading: false });
-          return { success: false, error: 'Network error' };
+          return { success: false, error: `Network error: ${error.message || error}` };
         }
       },
 
