@@ -53,15 +53,62 @@ src/
 └── styles/              # Styling files
 ```
 
-## Content Categories
-1. **职场平等** (Workplace Equality)
-2. **身体自主** (Bodily Autonomy)  
-3. **教育权利** (Education Rights)
-4. **政治参与** (Political Participation)
-5. **家庭角色** (Family Roles)
-6. **性别暴力** (Gender Violence)
-7. **媒体表征** (Media Representation)
-8. **历史人物** (Historical Figures)
+## Feminist Theme Categories
+
+### 一、理论流派 (Theoretical Schools)
+- **交叉女性主义** (Intersectional Feminism)
+- **马克思主义女性主义** (Marxist Feminism)
+- **去殖民女性主义** (Decolonial Feminism)
+- **存在主义女性主义** (Existentialist Feminism)
+- **自由主义女性主义** (Liberal Feminism)
+- **激进女性主义** (Radical Feminism)
+- **黑人女性主义** (Black Feminism)
+- **原住民女性主义** (Indigenous Feminism)
+- **跨性别女性主义** (Trans Feminism)
+- **生态女性主义** (Ecofeminism)
+- **后现代女性主义** (Postmodern Feminism)
+
+### 二、运动议题 (Movement Issues)
+- **职场平等** (Workplace Equality)
+- **同工同酬** (Equal Pay)
+- **玻璃天花板** (Glass Ceiling)
+- **生育自主** (Reproductive Autonomy)
+- **堕胎权** (Abortion Rights)
+- **反性暴力** (Anti-Sexual Violence)
+- **政治参与** (Political Participation)
+- **法律平等** (Legal Equality)
+- **经济赋权** (Economic Empowerment)
+- **教育平等** (Education Equality)
+- **家庭解放** (Family Liberation)
+- **体育平等** (Sports Equality)
+- **身体自主** (Bodily Autonomy)
+
+### 三、批判领域 (Critical Domains)
+- **父权制批判** (Patriarchy Critique)
+- **资本主义批判** (Capitalism Critique)
+- **媒体表征批判** (Media Representation Critique)
+- **宗教父权批判** (Religious Patriarchy Critique)
+- **男权运动批判** (Men's Rights Movement Critique)
+- **文化批判** (Cultural Critique)
+- **反女性主义研究** (Anti-Feminism Studies)
+
+### 四、历史脉络 (Historical Context)
+- **第一波女性主义** (First Wave Feminism)
+- **第二波女性主义** (Second Wave Feminism)
+- **第三波女性主义** (Third Wave Feminism)
+- **第四波女性主义** (Fourth Wave Feminism)
+- **MeToo运动** (MeToo Movement)
+- **中国女权运动** (Chinese Feminist Movement)
+- **流行文化女性主义** (Pop Culture Feminism)
+- **基督教女性主义** (Christian Feminism)
+- **灵性女性主义** (Spiritual Feminism)
+
+### 五、特殊概念 (Special Concepts)
+- **情绪劳动** (Emotional Labor)
+- **关怀伦理** (Ethics of Care)
+- **女性主义心理学** (Feminist Psychology)
+- **女性主义艺术** (Feminist Art)
+- **种族与性别** (Race and Gender)
 
 ## Development Guidelines
 

@@ -1,4 +1,6 @@
 ---
+import InteractionButtons from './InteractionButtons';
+
 export interface Props {
   title: string;
   author: string;
@@ -99,39 +101,21 @@ const formatDate = (date: Date) => {
             </div>
           )}
           
-          <button class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-1">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
-            </svg>
-            <span class="hidden sm:inline">收藏</span>
-          </button>
+          <div onclick="event.stopPropagation(); event.preventDefault();">
+            <InteractionButtons 
+              contentId={`paper-${slug}`} 
+              initialLikes={0}
+              client:visible 
+            />
+          </div>
         </div>
 
-        <div class="flex items-center gap-2">
-          {doi && (
-            <a 
-              href={`https://doi.org/${doi}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-            >
-              DOI
-            </a>
-          )}
-          {doi && (
-            <a 
-              href={`https://doi.org/${doi}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-indigo-600 dark:text-indigo-400 text-sm font-medium hover:underline flex items-center transition-colors"
-            >
-              原文链接
-              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-              </svg>
-            </a>
-          )}
-        </div>
+        <span class="text-indigo-600 dark:text-indigo-400 text-sm font-medium group-hover:underline flex items-center">
+          阅读论文
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </span>
       </div>
     </div>
   </a>

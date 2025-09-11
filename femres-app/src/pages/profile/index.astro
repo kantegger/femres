@@ -1,0 +1,13 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import UserProfile from '../../components/UserProfile';
+---
+
+<Layout 
+  title="个人中心 - FemRes" 
+  description="管理您的个人资料和内容"
+>
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <UserProfile client:load />
+  </div>
+</Layout>
