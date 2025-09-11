@@ -26,7 +26,7 @@ export const POST: APIRoute = async ({ params, request, locals }) => {
     }
 
     const jwtSecret = locals.runtime.env.JWT_SECRET;
-    const payload = verifyToken(token, jwtSecret);
+    const payload = await verifyToken(token, jwtSecret);
 
     if (!payload) {
       return new Response(
