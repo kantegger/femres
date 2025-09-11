@@ -76,12 +76,18 @@ export const useAuthStore = create<AuthState>()(
           if (!response.ok) {
             let errorMessage = `HTTP ${response.status}`;
             try {
-              const data = await response.json();
-              errorMessage = data.error || errorMessage;
-            } catch (e) {
               const text = await response.text();
-              console.error('Failed to parse error response:', text);
-              errorMessage = text || errorMessage;
+              console.error('Error response text:', text);
+              if (text) {
+                try {
+                  const data = JSON.parse(text);
+                  errorMessage = data.error || errorMessage;
+                } catch (e) {
+                  errorMessage = text || errorMessage;
+                }
+              }
+            } catch (e) {
+              console.error('Failed to read error response:', e);
             }
             set({ isLoading: false });
             return { success: false, error: errorMessage };
@@ -123,12 +129,18 @@ export const useAuthStore = create<AuthState>()(
           if (!response.ok) {
             let errorMessage = `HTTP ${response.status}`;
             try {
-              const data = await response.json();
-              errorMessage = data.error || errorMessage;
-            } catch (e) {
               const text = await response.text();
-              console.error('Failed to parse error response:', text);
-              errorMessage = text || errorMessage;
+              console.error('Error response text:', text);
+              if (text) {
+                try {
+                  const data = JSON.parse(text);
+                  errorMessage = data.error || errorMessage;
+                } catch (e) {
+                  errorMessage = text || errorMessage;
+                }
+              }
+            } catch (e) {
+              console.error('Failed to read error response:', e);
             }
             set({ isLoading: false });
             return { success: false, error: errorMessage };
