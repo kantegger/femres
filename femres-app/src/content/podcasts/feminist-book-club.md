@@ -1,25 +1,23 @@
 ---
-title: "The Feminist Book Club Podcast"
-author: "Hannah McGregor"
-description: "每期深入探讨一本女性主义相关书籍，涵盖经典作品和新出版物，邀请作者和专家进行对话，帮助听众更好地理解女性主义文学。"
-publishDate: 2024-03-15
+title: "Feminist Book Club: The Podcast"
+author: "Renee Powers & Team"
+description: "《Feminist Book Club: The Podcast》是由 Renee Powers 与其团队主持的交叉女性主义播客，围绕书籍展开社会正义对话。节目以阅读为行动主义工具，探讨性别、种族、欲望与文化表征等议题。内容涵盖女性主义文学批评、跨性别经验、媒体性别政治与情欲商品化等主题，风格融合批判性分析与亲密对话。Spotify 评分为 4.8（25 条评论），在女性主义阅读社群中广受欢迎。"
+publishDate: 2025-09-11
 language: en
-topics: ["女性主义文学", "流行文化女性主义", "女性主义艺术"]
-sourceUrl: "https://example.com/feminist-book-club"
+topics: ["交叉女性主义", "媒体表征批判", "情绪劳动"]
+sourceUrl: "https://open.spotify.com/show/3I6NcL1My0SLo1JJjCkNaN"
+embedUrl: "https://open.spotify.com/embed/show/3I6NcL1My0SLo1JJjCkNaN"
+thumbnail: "/images/podcasts/feminist-book-club.jpg"
+transcript: "完整文字稿与资源请访问 feministbookclub.com"
 status: published
 ---
 
-深入探讨女性主义文学作品的播客节目。
+《Feminist Book Club: The Podcast》是一档以阅读为核心的女性主义播客，由 Renee Powers 与多位主持人共同制作，致力于通过书籍展开社会正义对话。节目内容涵盖：
 
-## 节目特色
+- 女性主义歌词与欲望政治分析（“Man’s Best Friend?” 专题）
+- 媒体性别表征与情欲商品化批判（“Girl on Girl” 上下集）
+- 跨性别经验与男性气质重构（访谈 Jacob Tobia）
+- 家庭、边界与身体记忆的交织（“The Hollow Half”专题）
+- 阅读作为抵抗与修复的实践（推荐书目：《Hijab Butch Blues》《We Have Always Been Here》等）
 
-- 每月精选一本女性主义相关书籍进行深度讨论
-- 邀请作者和专家分享见解
-- 结合当代社会议题进行分析
-- 提供阅读指南和讨论问题
-
-## 推荐集数
-
-1. **解读《第二性》** - 与专家共同探讨波伏娃的经典之作
-2. **当代女性主义小说** - 分析近年来的重要作品
-3. **交叉性视角下的文学** - 探讨种族、阶级与性别的交织
+适合关注交叉女性主义、媒体批判与情绪劳动的听众，尤其是对阅读、文化表征与性别政治交叉议题感兴趣的社群。节目风格深刻、温柔且富有批判力，是女性主义阅读行动的重要平台。
