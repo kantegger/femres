@@ -155,11 +155,6 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
           </p>
         </div>
 
-        <div className="mt-4 text-center">
-          <p className="text-xs text-gray-500 dark:text-gray-400">
-            这是一个演示版本，数据存储在本地浏览器中
-          </p>
-        </div>
         </div>
       </div>
     </div>
