@@ -14,20 +14,24 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   
-  const login = useAuthStore(state => state.login);
+  const { login: apiLogin, register: apiRegister } = useAuthStore();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+    setIsLoading(true);
 
-    if (!username || !email) {
+    if (!username || !email || !password) {
       setError('请填写所有字段');
+      setIsLoading(false);
       return;
     }
 
     if (!isLoginMode && password !== confirmPassword) {
       setError('密码不匹配');
+      setIsLoading(false);
       return;
     }
 
@@ -35,13 +39,32 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       setError('请输入有效的邮箱地址');
+      setIsLoading(false);
       return;
     }
 
-    // For demo purposes, we'll just log the user in
-    login(username, email);
-    resetForm();
-    onClose();
+    try {
+      let result;
+      if (isLoginMode) {
+        // Login with email or username
+        result = await apiLogin(email, password);
+      } else {
+        // Register new account
+        result = await apiRegister(username, email, password);
+      }
+
+      if (result.success) {
+        resetForm();
+        onClose();
+      } else {
+        setError(result.error || `${isLoginMode ? '登录' : '注册'}失败`);
+      }
+    } catch (error) {
+      console.error('Auth error:', error);
+      setError('网络错误，请稍后重试');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const resetForm = () => {
@@ -134,9 +157,20 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
 
           <button
             type="submit"
-            className="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg shadow-lg transition-all duration-200"
+            disabled={isLoading}
+            className="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed text-white font-semibold rounded-lg shadow-lg transition-all duration-200 flex items-center justify-center"
           >
-            {isLoginMode ? '登录' : '注册'}
+            {isLoading ? (
+              <div className="flex items-center">
+                <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                {isLoginMode ? '登录中...' : '注册中...'}
+              </div>
+            ) : (
+              isLoginMode ? '登录' : '注册'
+            )}
           </button>
         </form>
 
