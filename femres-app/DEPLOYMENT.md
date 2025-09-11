@@ -29,14 +29,17 @@ wrangler auth login
 wrangler d1 create your-database-name
 ```
 
-复制输出中的 `database_id`，更新 `wrangler.toml` 文件中的相应值。
+复制输出中的 `database_id`，在 Cloudflare Pages Dashboard 中配置 D1 数据库绑定（变量名：`DB`）。
 
 ### 4. 配置环境
 
-1. 更新 `wrangler.toml` 中的 `database_id`
-2. 在 Cloudflare Dashboard 中设置环境变量：
-   - `JWT_SECRET`: 强密码（至少32字符）
-   - `NODE_ENV`: `production`
+在 Cloudflare Pages Dashboard 中设置环境变量：
+- `JWT_SECRET`: 强密码（至少32字符）- **注意：类型选择 Text，不是 Secret**
+- `NODE_ENV`: `production`
+
+并绑定 D1 数据库：
+- 变量名：`DB`
+- 数据库：选择你创建的数据库
 
 ### 5. 初始化数据库
 
@@ -72,11 +75,12 @@ wrangler pages deploy dist/ --project-name=your-project-name
 ## 🌍 本地开发
 
 ```bash
-# 启动开发服务器
+# 启动开发服务器（无后端功能）
 npm run dev
 
-# 或使用 Cloudflare Pages 本地开发
-wrangler pages dev dist/ --d1=DB=your-database-name
+# 或使用 Cloudflare Pages 本地开发（完整功能）
+npm run build  # 先构建
+wrangler pages dev dist/ --d1=DB=your-database-name --compatibility-date=2025-09-11 --compatibility-flag=nodejs_compat
 ```
 
 ## 📊 功能特性
@@ -86,7 +90,7 @@ wrangler pages dev dist/ --d1=DB=your-database-name
 - ✅ 内容点赞和收藏
 - ✅ D1 SQLite 数据库
 - ✅ JWT 令牌认证
-- ✅ 密码加密存储
+- ✅ Web Crypto API 密码加密
 - ✅ 自动扩展部署
 
 ## 🚨 重要提醒

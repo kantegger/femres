@@ -68,7 +68,8 @@ FemRes 是一个开源的女性主义内容聚合平台，致力于汇聚全球�
    npm run dev
    
    # 或使用 Cloudflare 本地环境（完整功能）
-   wrangler pages dev dist/ --d1=DB=your-db-name
+   npm run build  # 先构建
+   wrangler pages dev dist/ --d1=DB=your-db-name --compatibility-date=2025-09-11 --compatibility-flag=nodejs_compat
    ```
 
 4. **访问应用**
@@ -102,7 +103,7 @@ FemRes 是一个开源的女性主义内容聚合平台，致力于汇聚全球�
 
 ### 核心功能
 
-- **用户认证系统** - JWT 令牌 + bcrypt 密码加密
+- **用户认证系统** - JWT 令牌 + Web Crypto API 密码加密
 - **评论系统** - 支持多层回复和实时点赞
 - **状态管理** - Zustand + 本地存储持久化
 - **内容管理** - Astro Content Collections
