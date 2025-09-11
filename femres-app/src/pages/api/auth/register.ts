@@ -5,6 +5,20 @@ import { hashPassword, validateEmail, validateUsername, validatePassword, genera
 export const prerender = false;
 
 export const POST: APIRoute = async ({ request, locals }) => {
+  console.log('=== Registration API Called ===');
+  
+  // Check if all imports are available
+  console.log('Import checks:', {
+    createUser: typeof createUser,
+    getUserByEmail: typeof getUserByEmail, 
+    getUserByUsername: typeof getUserByUsername,
+    hashPassword: typeof hashPassword,
+    validateEmail: typeof validateEmail,
+    validateUsername: typeof validateUsername,
+    validatePassword: typeof validatePassword,
+    generateToken: typeof generateToken
+  });
+  
   try {
     console.log('Registration request received');
     const { username, email, password } = await request.json();
@@ -71,7 +85,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
     }
 
     // Check if user already exists
+    console.log('Checking for existing user by email');
     const existingUserByEmail = await getUserByEmail(db, email);
+    console.log('Existing user by email check complete:', !!existingUserByEmail);
     if (existingUserByEmail) {
       return new Response(
         JSON.stringify({ error: 'User with this email already exists' }),
@@ -113,10 +129,31 @@ export const POST: APIRoute = async ({ request, locals }) => {
     );
 
   } catch (error) {
-    console.error('Registration error:', error);
+    console.error('=== Registration error ===');
+    console.error('Error type:', typeof error);
+    console.error('Error name:', error?.name);
+    console.error('Error message:', error?.message);
+    console.error('Error stack:', error?.stack);
+    console.error('Full error object:', error);
+    
+    const errorMessage = error?.message || 'Unknown server error';
+    const response = {
+      error: 'Internal server error',
+      details: errorMessage,
+      timestamp: new Date().toISOString()
+    };
+    
+    console.log('Sending error response:', response);
+    
     return new Response(
-      JSON.stringify({ error: 'Internal server error' }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } }
+      JSON.stringify(response),
+      { 
+        status: 500, 
+        headers: { 
+          'Content-Type': 'application/json',
+          'X-Error-Details': errorMessage
+        } 
+      }
     );
   }
 };
