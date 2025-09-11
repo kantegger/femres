@@ -86,6 +86,8 @@ src/
 - **家庭解放** (Family Liberation)
 - **体育平等** (Sports Equality)
 - **身体自主** (Bodily Autonomy)
+- **数字女性主义** (Digital Feminism)
+- **气候正义** (Climate Justice)
 
 ### 三、批判领域 (Critical Domains)
 - **父权制批判** (Patriarchy Critique)
@@ -95,6 +97,10 @@ src/
 - **男权运动批判** (Men's Rights Movement Critique)
 - **文化批判** (Cultural Critique)
 - **反女性主义研究** (Anti-Feminism Studies)
+- **学术父权批判** (Academic Patriarchy Critique)
+- **语言性别歧视** (Linguistic Sexism)
+- **翻译政治** (Politics of Translation)
+- **知识殖民批判** (Epistemic Colonialism Critique)
 
 ### 四、历史脉络 (Historical Context)
 - **第一波女性主义** (First Wave Feminism)
@@ -107,7 +113,14 @@ src/
 - **基督教女性主义** (Christian Feminism)
 - **灵性女性主义** (Spiritual Feminism)
 
-### 五、特殊概念 (Special Concepts)
+### 五、文学与创作 (Literature and Creation)
+- **女性文学** (Women's Literature)
+- **女性写作** (Women's Writing)
+- **女性文学批评** (Feminist Literary Criticism)
+- **翻译女性主义** (Feminist Translation Studies)
+- **女性叙事学** (Feminist Narratology)
+
+### 六、特殊概念 (Special Concepts)
 - **情绪劳动** (Emotional Labor)
 - **关怀伦理** (Ethics of Care)
 - **女性主义心理学** (Feminist Psychology)

@@ -212,26 +212,26 @@ const formatDuration = (seconds: number) => {
             <h3 class="font-semibold text-gray-900 dark:text-white mb-4">视频信息</h3>
             
             <div class="space-y-4 text-sm">
-              <div class="flex justify-between">
-                <span class="text-gray-600 dark:text-gray-400">作者:</span>
-                <span class="text-gray-900 dark:text-white font-medium">{video.data.author}</span>
+              <div class="flex">
+                <span class="text-gray-600 dark:text-gray-400 w-16 flex-shrink-0">作者:</span>
+                <span class="text-gray-900 dark:text-white font-medium flex-1 text-right">{video.data.author}</span>
               </div>
               
-              <div class="flex justify-between">
-                <span class="text-gray-600 dark:text-gray-400">发布:</span>
-                <span class="text-gray-900 dark:text-white">{formatDate(video.data.publishDate)}</span>
+              <div class="flex">
+                <span class="text-gray-600 dark:text-gray-400 w-16 flex-shrink-0">发布:</span>
+                <span class="text-gray-900 dark:text-white flex-1 text-right">{formatDate(video.data.publishDate)}</span>
               </div>
               
               {video.data.duration && (
-                <div class="flex justify-between">
-                  <span class="text-gray-600 dark:text-gray-400">时长:</span>
-                  <span class="text-gray-900 dark:text-white">{formatDuration(video.data.duration)}</span>
+                <div class="flex">
+                  <span class="text-gray-600 dark:text-gray-400 w-16 flex-shrink-0">时长:</span>
+                  <span class="text-gray-900 dark:text-white flex-1 text-right">{formatDuration(video.data.duration)}</span>
                 </div>
               )}
               
-              <div class="flex justify-between">
-                <span class="text-gray-600 dark:text-gray-400">语言:</span>
-                <span class="text-gray-900 dark:text-white">
+              <div class="flex">
+                <span class="text-gray-600 dark:text-gray-400 w-16 flex-shrink-0">语言:</span>
+                <span class="text-gray-900 dark:text-white flex-1 text-right">
                   {video.data.language === 'zh-CN' ? '中文' : 
                    video.data.language === 'en' ? '英语' : video.data.language}
                 </span>
