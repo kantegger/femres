@@ -168,6 +168,35 @@ src/
   - Publisher and availability
   This prevents hallucination and ensures content authenticity.
 
+### Book Content Writing Style Guidelines
+**IMPORTANT: All book content must follow a narrative, essay-style format rather than slide-like bullet points.**
+
+#### Writing Style Requirements:
+- **Narrative Flow**: Use flowing, interconnected paragraphs that build upon each other naturally
+- **Avoid List Format**: Minimize use of bullet points (•), numbered lists, and excessive subheadings (###)
+- **Transitional Language**: Use sophisticated transitions like "尽管...但是", "从...角度来看", "更重要的是", "然而" to connect ideas
+- **Literary Quality**: Employ rich, descriptive language with metaphors and imagery (e.g., "科幻文学的浩瀚星空中", "如同璀璨的恒星")
+- **Deep Analysis**: Provide in-depth, nuanced analysis rather than superficial summaries
+- **Academic Rigor**: Maintain scholarly depth while ensuring readability for general audiences
+
+#### Structure Guidelines:
+- **Opening**: Begin with compelling, contextual introduction that situates the work's importance
+- **Body**: Organize content in flowing sections that naturally progress from biographical context to thematic analysis to contemporary relevance
+- **Integration**: Weave together different analytical threads (theoretical, historical, cultural) within coherent paragraphs
+- **Conclusion**: End with reflective synthesis that emphasizes lasting impact and significance
+
+#### Language Characteristics:
+- **Conversational Academic**: Balance scholarly rigor with engaging, accessible prose
+- **Cultural Sensitivity**: Respect diverse feminist perspectives and cultural contexts
+- **Depth over Breadth**: Prefer thorough exploration of key themes over superficial coverage of many topics
+- **Concrete Examples**: Ground abstract concepts in specific textual examples and real-world applications
+
+#### What to Avoid:
+- Slide-deck style formatting with excessive headers and bullet points
+- Dry, encyclopedia-like entries
+- Repetitive structural patterns across different books
+- Oversimplification of complex theoretical concepts
+
 ### Verified Books Added (with search confirmation):
 - **Bloodchild** by Octavia Butler (1984) - Verified as Hugo and Nebula Award-winning short story, key work in feminist science fiction exploring gender roles, male pregnancy, and power dynamics. Part of "Bloodchild and Other Stories" collection.
 - **Men Explain Things to Me** by Rebecca Solnit (2014) - Verified as influential essay collection that coined the term "mansplaining". Explores gender, power, and voice in contemporary society. Published by Haymarket Books, ISBN: 9781608464661.
