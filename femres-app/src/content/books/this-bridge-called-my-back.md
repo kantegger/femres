@@ -6,7 +6,7 @@ description: "有色女性激进主义文集，汇集了多元种族女性的声
 publishDate: 1981-01-01
 isbn: "9781438454382"
 language: "en"
-topics: ["交叉女性主义", "黑人女性主义", "原住民女性主义", "种族与性别", "去殖民女性主义"]
+topics: ["交叉女性主义", "黑人女性主义", "原住民女性主义", "种族与性别", "去殖民女性主义", "女性文学", "女性写作", "女性叙事学"]
 sourceUrl: "https://www.goodreads.com/book/show/313110.This_Bridge_Called_My_Back"
 coverImage: "/images/books/this-bridge-called-my-back.jpg"
 status: "published"

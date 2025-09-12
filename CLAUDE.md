@@ -161,6 +161,12 @@ src/
 - **Source Authority**: Prioritize content from credible feminist scholars, organizations, and publications
 - **Diversity**: Ensure content represents diverse feminist perspectives and voices
 - **Compliance**: Strict adherence to content moderation and copyright policies
+- **CRITICAL: Factual Verification**: ALWAYS search and verify the existence of books, authors, and publications before creating content. Never create fictional books or authors. Use WebSearch to confirm:
+  - Author existence and credentials
+  - Book title accuracy and publication details
+  - ISBN and publication information
+  - Publisher and availability
+  This prevents hallucination and ensures content authenticity.
 
 ## Development Commands
 

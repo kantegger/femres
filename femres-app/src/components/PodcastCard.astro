@@ -150,14 +150,14 @@ const formatDate = (date: Date) => {
 
           <!-- Topics -->
           <div class="flex flex-wrap gap-1.5">
-            {topics.slice(0, 5).map(topic => (
+            {topics.slice(0, 4).map(topic => (
               <span class="inline-block px-2 py-1 text-xs bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-md">
                 #{topic}
               </span>
             ))}
-            {topics.length > 5 && (
+            {topics.length > 4 && (
               <span class="inline-block px-2 py-1 text-xs text-gray-500 dark:text-gray-500">
-                +{topics.length - 5}
+                +{topics.length - 4}
               </span>
             )}
           </div>
