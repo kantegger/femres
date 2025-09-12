@@ -170,6 +170,10 @@ src/
 
 ### Verified Books Added (with search confirmation):
 - **Bloodchild** by Octavia Butler (1984) - Verified as Hugo and Nebula Award-winning short story, key work in feminist science fiction exploring gender roles, male pregnancy, and power dynamics. Part of "Bloodchild and Other Stories" collection.
+- **Men Explain Things to Me** by Rebecca Solnit (2014) - Verified as influential essay collection that coined the term "mansplaining". Explores gender, power, and voice in contemporary society. Published by Haymarket Books, ISBN: 9781608464661.
+- **The Female Eunuch** by Germaine Greer (1970) - Verified as groundbreaking Second Wave feminist text analyzing women's oppression in patriarchal society. Published by MacGibbon & Kee, remains influential in feminist theory. ISBN: 9780007205011.
+- **Sister Outsider** by Audre Lorde (1984) - Verified as foundational text for intersectional feminist theory. Collection of 15 essays and speeches exploring race, gender, class, and sexuality intersections. Originally published by The Crossing Press. ISBN: 9781580911863.
+- **The Politics of Reality** by Marilyn Frye (1983) - Verified as classic of radical feminist philosophy. Collection of 9 influential essays analyzing oppression, sexism, and feminist theory from philosophical perspective. Published by The Crossing Press. ISBN: 9780895940995.
 
 ## Development Commands
 
