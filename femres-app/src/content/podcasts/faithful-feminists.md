@@ -9,7 +9,7 @@ sourceUrl: "https://open.spotify.com/show/7ioDW86NKEPR6KrTQ0m6i3"
 embedUrl: "https://open.spotify.com/embed/show/7ioDW86NKEPR6KrTQ0m6i3"
 thumbnail: "/images/podcasts/faithful-feminists.jpg"
 transcript: "多数集数提供完整文字稿，详见 www.thefaithfulfeminists.com"
-status: archived
+status: published
 ---
 
 《The Faithful Feminists Podcast》是一档结合信仰与女性主义批判的播客，由 Channing 与 Elise 主持，内容包括：
