@@ -6,7 +6,7 @@ description: "从历史唯物主义视角分析美国女性运动史，揭示了
 publishDate: 1981-01-01
 isbn: "9780394713519"
 language: "en"
-topics: ["黑人女性主义", "马克思主义女性主义", "交叉女性主义", "种族与性别"]
+topics: ["黑人女性主义", "交叉女性主义", "种族与性别"]
 sourceUrl: "https://www.amazon.sg/s?k=women+race+and+class+angela+davis&tag=inkrupt-22"
 coverImage: "/images/books/women-race-class.jpg"
 status: "published"

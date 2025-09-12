@@ -6,7 +6,7 @@ description: "玛雅·安吉洛1969年的自传是一部改变文学格局的里
 publishDate: 1969-01-01
 isbn: "9780345514400"
 language: "en"
-topics: ["黑人女性主义", "交叉性女性主义", "自传文学", "种族与性别", "童年创伤", "身体自主", "文学创新", "民权运动", "女性写作", "文化批判", "身份认同", "南方文学"]
+topics: ["黑人女性主义", "交叉女性主义", "女性文学", "种族与性别", "女性写作"]
 sourceUrl: "https://www.amazon.sg/s?k=i+know+why+caged+bird+sings+maya+angelou&tag=inkrupt-22"
 coverImage: "/images/books/i-know-why-the-caged-bird-sings.jpg"
 status: published

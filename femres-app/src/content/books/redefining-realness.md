@@ -6,7 +6,7 @@ description: "跨性别权利活动家的自传体作品，以个人成长经历
 publishDate: 2014-02-01
 isbn: "9781476709123"
 language: "en"
-topics: ["跨性别女性主义", "身份认同", "种族与性别", "自传文学", "跨性别经历", "女性多样性", "社会边缘群体", "成长叙事"]
+topics: ["跨性别女性主义", "种族与性别", "女性写作", "身体自主"]
 sourceUrl: "https://www.amazon.sg/s?k=redefining+realness+janet+mock&tag=inkrupt-22"
 coverImage: "/images/books/redefining-realness.jpg"
 status: published

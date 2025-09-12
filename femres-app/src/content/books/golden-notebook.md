@@ -6,7 +6,7 @@ description: "2007年诺贝尔文学奖得主多丽丝·莱辛最著名的1962�
 publishDate: 1962-01-01
 isbn: "9780060931407"
 language: "en"
-topics: ["第二波女性主义", "女性写作", "精神健康", "性与性别", "左翼政治", "现代主义文学", "女性经验", "创作与身份"]
+topics: ["第二波女性主义", "女性写作", "女性文学", "文化批判"]
 sourceUrl: "https://www.amazon.sg/s?k=golden+notebook+doris+lessing&tag=inkrupt-22"
 coverImage: "/images/books/golden-notebook.jpg"
 status: published

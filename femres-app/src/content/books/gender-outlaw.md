@@ -6,7 +6,7 @@ description: "跨性别理论的开创性著作，挑战二元性别体系，探
 publishDate: 1994-01-01
 isbn: "9781101973240"
 language: "en"
-topics: ["跨性别女性主义", "酷儿理论", "性别表演", "非二元性别", "性别流动性", "跨性别研究", "身体政治", "身份认同"]
+topics: ["跨性别女性主义", "酷儿理论", "身体自主", "文化批判"]
 sourceUrl: "https://www.amazon.sg/s?k=gender+outlaw+kate+bornstein&tag=inkrupt-22"
 coverImage: "/images/books/gender-outlaw.jpg"
 status: published

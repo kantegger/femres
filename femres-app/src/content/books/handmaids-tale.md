@@ -6,7 +6,7 @@ description: "艾美奖获奖电视剧原著，女性主义投机小说的黄金
 publishDate: 1985-01-01
 isbn: "9780385490818"
 language: "en"
-topics: ["反乌托邦小说", "生育自主", "女性身体政治", "宗教极权主义", "女性抵抗", "未来主义女性主义", "身体控制", "生殖权利"]
+topics: ["生育自主", "身体自主", "父权制批判", "女性文学"]
 sourceUrl: "https://www.amazon.sg/s?k=handmaids+tale+margaret+atwood&tag=inkrupt-22"
 coverImage: "/images/books/handmaids-tale.jpg"
 status: published

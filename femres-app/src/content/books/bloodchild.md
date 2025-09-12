@@ -6,7 +6,7 @@ description: "科幻女性主义文学大师巴特勒的经典作品集，收录
 publishDate: 1984-06-01
 isbn: "9781583226988"
 language: "en"
-topics: ["科幻女性主义", "黑人女性主义", "性别颠覆", "身体自主", "跨物种关系", "女性科幻作家"]
+topics: ["黑人女性主义", "身体自主", "种族与性别", "女性文学"]
 sourceUrl: "https://www.amazon.sg/s?k=bloodchild+other+stories+octavia+butler&tag=inkrupt-22"
 coverImage: "/images/books/bloodchild.jpg"
 status: "published"

@@ -6,7 +6,7 @@ description: "现代女性主义经典之作，深入探讨'男性说教'现象�
 publishDate: 2014-04-14
 isbn: "9781608464661"
 language: "en"
-topics: ["权力关系", "日常女性主义", "文化批判", "性别话语权", "女性经验", "社会性别", "女性文学批评", "男性说教", "性别平等"]
+topics: ["父权制批判", "文化批判", "女性文学批评", "种族与性别"]
 sourceUrl: "https://www.amazon.sg/s?k=men+explain+things+to+me+rebecca+solnit&tag=inkrupt-22"
 coverImage: "/images/books/men-explain-things-to-me.jpg"
 status: "published"

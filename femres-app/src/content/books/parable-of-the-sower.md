@@ -6,7 +6,7 @@ description: "几乎任何奥克塔维娅·E·巴特勒的小说都是女性主�
 publishDate: 1993-01-01
 isbn: "9780446675505"
 language: "en"
-topics: ["非洲未来主义", "黑人女性主义", "生态女性主义", "反乌托邦小说", "气候变化", "社会崩溃", "宗教与灵性", "种族与阶级"]
+topics: ["黑人女性主义", "生态女性主义", "气候正义", "女性文学"]
 sourceUrl: "https://www.amazon.sg/s?k=parable+sower+octavia+butler&tag=inkrupt-22"
 coverImage: "/images/books/parable-of-the-sower.jpg"
 status: published

@@ -6,7 +6,7 @@ description: "跨性别女性主义的开创性宣言。塞拉诺从跨性别女
 publishDate: 2007-03-01
 isbn: "9781580056229"
 language: "en"
-topics: ["跨性别女性主义", "跨恐症批判", "传统女性主义批判", "性别二元论", "女性气质", "性别歧视", "跨性别权利", "身体自主权", "性别认同"]
+topics: ["跨性别女性主义", "父权制批判", "身体自主", "反女性主义研究"]
 sourceUrl: "https://www.amazon.sg/s?k=whipping+girl+julia+serano&tag=inkrupt-22"
 coverImage: "/images/books/whipping-girl.jpg"
 status: "published"

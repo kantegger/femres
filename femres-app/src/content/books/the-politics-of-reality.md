@@ -6,7 +6,7 @@ description: "激进女性主义哲学的经典之作。弗莱通过九篇深刻
 publishDate: 1983-01-01
 isbn: "9780895940995"
 language: "en"
-topics: ["激进女性主义", "女性主义哲学", "压迫理论", "女同性恋女性主义", "结构性别主义", "认识论", "社会理论", "性别压迫", "哲学批判"]
+topics: ["激进女性主义", "父权制批判", "文化批判"]
 sourceUrl: "https://www.amazon.sg/s?k=politics+of+reality+marilyn+frye&tag=inkrupt-22"
 coverImage: "/images/books/the-politics-of-reality.jpg"
 status: "published"

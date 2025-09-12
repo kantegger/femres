@@ -6,7 +6,7 @@ description: "没有这部1899年的短篇小说，任何女性主义阅读清�
 publishDate: 1899-01-01
 isbn: "9780486277868"
 language: "en"
-topics: ["第一波女性主义", "女性觉醒", "婚姻批判", "母性与自由", "维多利亚时代", "女性欲望", "自我实现", "美国南方文学"]
+topics: ["第一波女性主义", "身体自主", "女性文学", "父权制批判"]
 sourceUrl: "https://www.amazon.sg/s?k=awakening+kate+chopin&tag=inkrupt-22"
 coverImage: "/images/books/awakening.jpg"
 status: published

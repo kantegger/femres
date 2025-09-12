@@ -6,7 +6,7 @@ description: "资深政治活动家安吉拉·Y·戴维斯的重要演讲与论�
 publishDate: 1989-01-01
 isbn: "9780394757209"
 language: "en"
-topics: ["黑人女性主义", "交叉女性主义", "监狱批判", "种族与性别", "马克思主义女性主义", "反殖民女性主义", "文化批判", "政治参与"]
+topics: ["黑人女性主义", "交叉女性主义", "种族与性别", "文化批判"]
 sourceUrl: "https://www.amazon.sg/s?k=women+culture+politics+angela+davis&tag=inkrupt-22"
 coverImage: "/images/books/women-culture-politics.jpg"
 status: published

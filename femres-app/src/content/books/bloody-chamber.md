@@ -6,7 +6,7 @@ description: "女性主义童话重构的开山之作，通过颠覆经典童话
 publishDate: 1979-01-01
 isbn: "9780060107086"
 language: "en"
-topics: ["女性主义文学", "童话重构", "神话批评", "哥特文学", "性别颠覆", "女性欲望", "魔幻现实主义", "文学后现代主义"]
+topics: ["女性文学", "后现代女性主义", "文化批判", "女性写作"]
 sourceUrl: "https://www.amazon.sg/s?k=bloody+chamber+angela+carter&tag=inkrupt-22"
 coverImage: "/images/books/bloody-chamber.jpg"
 status: published

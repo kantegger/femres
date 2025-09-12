@@ -6,7 +6,7 @@ description: "2007年首次出版，2015年翻译成英文的现代寓言小说�
 publishDate: 2007-01-01
 isbn: "9780553448184"
 language: "en"
-topics: ["身体自主", "韩国女性主义", "家庭暴力", "精神健康", "女性抵抗", "父权制批判", "身体政治", "现代寓言"]
+topics: ["身体自主", "父权制批判", "女性文学"]
 sourceUrl: "https://www.amazon.sg/s?k=vegetarian+han+kang&tag=inkrupt-22"
 coverImage: "/images/books/vegetarian.jpg"
 status: published

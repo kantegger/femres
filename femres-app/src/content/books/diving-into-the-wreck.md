@@ -6,7 +6,7 @@ description: "讨论女性主义诗歌时不可能不提到阿德丽安·里奇�
 publishDate: 1973-01-01
 isbn: "9780393311402"
 language: "en"
-topics: ["女性主义诗歌", "交叉性女性主义", "lesbian政治", "父权制批判", "身份与转型", "反战运动", "社会正义", "性别与语言"]
+topics: ["交叉女性主义", "激进女性主义", "父权制批判", "女性写作", "反性暴力", "种族与性别"]
 sourceUrl: "https://www.amazon.sg/s?k=diving+into+wreck+adrienne+rich&tag=inkrupt-22"
 coverImage: "/images/books/diving-into-the-wreck.jpg"
 status: published

@@ -6,7 +6,7 @@ description: "虽然佐拉·尼尔·赫斯顿最著名的小说现在被认为�
 publishDate: 1937-01-01
 isbn: "9780061120060"
 language: "en"
-topics: ["黑人女性主义", "哈莱姆文艺复兴", "种族与性别", "女性自主", "南方文学", "口述传统", "爱与婚姻", "身份认同"]
+topics: ["黑人女性主义", "种族与性别", "女性文学", "身体自主"]
 sourceUrl: "https://www.amazon.sg/s?k=their+eyes+were+watching+god+zora+neale+hurston&tag=inkrupt-22"
 coverImage: "/images/books/their-eyes-were-watching-god.jpg"
 status: published

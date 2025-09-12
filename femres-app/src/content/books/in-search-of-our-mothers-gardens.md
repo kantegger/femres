@@ -6,7 +6,7 @@ description: "普利策奖得主爱丽丝·沃克跨越20年的散文、演讲�
 publishDate: 1983-01-01
 isbn: "9780156028646"
 language: "en"
-topics: ["黑人女性主义", "女性主义文学批评", "民权运动", "母性与创造力", "女性艺术传统", "种族与性别", "文化批判", "女性创作"]
+topics: ["黑人女性主义", "女性文学批评", "种族与性别", "女性写作"]
 sourceUrl: "https://www.amazon.sg/s?k=in+search+mothers+gardens+alice+walker&tag=inkrupt-22"
 coverImage: "/images/books/in-search-of-our-mothers-gardens.jpg"
 status: published
