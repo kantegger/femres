@@ -174,6 +174,7 @@ src/
 - **The Female Eunuch** by Germaine Greer (1970) - Verified as groundbreaking Second Wave feminist text analyzing women's oppression in patriarchal society. Published by MacGibbon & Kee, remains influential in feminist theory. ISBN: 9780007205011.
 - **Sister Outsider** by Audre Lorde (1984) - Verified as foundational text for intersectional feminist theory. Collection of 15 essays and speeches exploring race, gender, class, and sexuality intersections. Originally published by The Crossing Press. ISBN: 9781580911863.
 - **The Politics of Reality** by Marilyn Frye (1983) - Verified as classic of radical feminist philosophy. Collection of 9 influential essays analyzing oppression, sexism, and feminist theory from philosophical perspective. Published by The Crossing Press. ISBN: 9780895940995.
+- **Whipping Girl** by Julia Serano (2007) - Verified as foundational transgender feminist manifesto analyzing transphobia as rooted in sexism. Explores transmisogyny and critiques traditional feminist exclusion of trans women. Published by Seal Press. ISBN: 9781580056229.
 
 ## Development Commands
 
