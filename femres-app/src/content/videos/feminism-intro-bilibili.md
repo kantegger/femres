@@ -3,7 +3,7 @@ title: "《女性主义是什么？》：从波伏娃到当代争议"
 author: "野生的琥珀小姐"
 description: "在《女性主义是什么？》一集中，UP主野生的琥珀小姐以通俗方式梳理女性主义的发展脉络，从波伏娃的哲学思想出发，探讨女性主义的核心问题、社会误解与当代争议。视频融合读书笔记、文化批判与个人反思，是中文语境下女性主义入门内容的代表之一。"
 publishDate: 2023-08-05
-language: "zh"
+language: "zh-CN"
 topics: ["女性主义入门", "文化批判", "性别政治", "父权制批判"]
 sourceUrl: "https://www.bilibili.com/video/BV1kp4y1V7po/?spm_id_from=333.337.search-card.all.click"
 embedUrl: "https://player.bilibili.com/player.html?bvid=BV1kp4y1V7po"
