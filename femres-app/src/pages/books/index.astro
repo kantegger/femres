@@ -14,8 +14,29 @@ const sortedBooks = publishedBooks.sort((a, b) => {
 // 获取所有主题标签
 const allTopics = [...new Set(publishedBooks.flatMap(book => book.data.topics))].sort();
 
-// 统计信息
+// 分页设置
+const BOOKS_PER_PAGE = 15;
 const totalBooks = publishedBooks.length;
+const totalPages = Math.ceil(totalBooks / BOOKS_PER_PAGE);
+
+// 获取当前页码 (从URL参数获取，默认为1)
+const currentPage = Number(Astro.url.searchParams.get('page') || '1');
+const validPage = Math.max(1, Math.min(currentPage, totalPages));
+
+// 计算当前页的书籍
+const startIndex = (validPage - 1) * BOOKS_PER_PAGE;
+const endIndex = startIndex + BOOKS_PER_PAGE;
+const currentPageBooks = sortedBooks.slice(startIndex, endIndex);
+
+// 生成页码数组
+const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+// 生成中间页码数组
+const middlePages = pageNumbers.filter(num => 
+  num !== 1 && 
+  num !== totalPages && 
+  Math.abs(num - validPage) <= 1
+);
 ---
 
 <Layout 
@@ -55,21 +76,39 @@ const totalBooks = publishedBooks.length;
       <!-- 主题标签筛选 -->
       <div class="mb-12">
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">主题分类</h2>
-        <div class="flex flex-wrap gap-3">
-          <button 
-            class="filter-btn inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium"
-            data-filter="all"
-          >
-            全部书籍
-          </button>
-          {allTopics.map(topic => (
+        <div class="relative">
+          <!-- 主题标签容器 -->
+          <div id="topics-container" class="flex flex-wrap gap-3 overflow-hidden transition-all duration-300" style="max-height: 90px;">
             <button 
-              class="filter-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-sm"
-              data-filter={topic}
+              class="filter-btn inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium"
+              data-filter="all"
             >
-              {topic}
+              全部书籍
             </button>
-          ))}
+            {allTopics.map(topic => (
+              <button 
+                class="filter-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-sm"
+                data-filter={topic}
+              >
+                {topic}
+              </button>
+            ))}
+          </div>
+          
+          <!-- 展开/折叠按钮 - 只在需要时显示 -->
+          {allTopics.length > 20 && (
+            <div class="flex justify-center mt-4">
+              <button 
+                id="toggle-topics-btn"
+                class="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-lg transition-colors text-sm font-medium"
+              >
+                <span id="toggle-topics-text">展开更多主题</span>
+                <svg id="toggle-topics-icon" class="ml-2 w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
@@ -93,7 +132,7 @@ const totalBooks = publishedBooks.length;
         </div>
         
         <div id="books-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {sortedBooks.map(book => (
+          {currentPageBooks.map(book => (
             <div class="book-item" data-topics={JSON.stringify(book.data.topics)} data-title={book.data.title} data-date={book.data.publishDate.toISOString()}>
               <BookCard 
                 title={book.data.title}
@@ -108,6 +147,97 @@ const totalBooks = publishedBooks.length;
             </div>
           ))}
         </div>
+        
+        <!-- 分页组件 -->
+        {totalPages > 1 && (
+          <div class="mt-12 flex justify-center">
+            <nav class="flex items-center space-x-2" aria-label="分页导航">
+              <!-- 上一页按钮 -->
+              {validPage > 1 ? (
+                <a 
+                  href={`/books?page=${validPage - 1}`}
+                  class="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                  aria-label="上一页"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                </a>
+              ) : (
+                <span class="px-3 py-2 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg opacity-50 cursor-not-allowed">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                </span>
+              )}
+              
+              <!-- 页码按钮 -->
+              <div class="flex items-center space-x-2">
+                {/* 第一页 */}
+                {validPage === 1 ? (
+                  <span class="px-4 py-2 bg-purple-600 text-white rounded-lg font-medium">1</span>
+                ) : (
+                  <a href="/books?page=1" class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">1</a>
+                )}
+                
+                {/* 左侧省略号 */}
+                {validPage > 3 && <span class="px-2 text-gray-500">...</span>}
+                
+                {/* 中间页码 */}
+                {middlePages.map(pageNum => 
+                  pageNum === validPage ? (
+                    <span class="px-4 py-2 bg-purple-600 text-white rounded-lg font-medium">
+                      {pageNum}
+                    </span>
+                  ) : (
+                    <a 
+                      href={`/books?page=${pageNum}`}
+                      class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                    >
+                      {pageNum}
+                    </a>
+                  )
+                )}
+                
+                {/* 右侧省略号 */}
+                {validPage < totalPages - 2 && <span class="px-2 text-gray-500">...</span>}
+                
+                {/* 最后一页 */}
+                {totalPages > 1 && (
+                  validPage === totalPages ? (
+                    <span class="px-4 py-2 bg-purple-600 text-white rounded-lg font-medium">{totalPages}</span>
+                  ) : (
+                    <a href={`/books?page=${totalPages}`} class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">{totalPages}</a>
+                  )
+                )}
+              </div>
+              
+              <!-- 下一页按钮 -->
+              {validPage < totalPages ? (
+                <a 
+                  href={`/books?page=${validPage + 1}`}
+                  class="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                  aria-label="下一页"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              ) : (
+                <span class="px-3 py-2 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg opacity-50 cursor-not-allowed">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </span>
+              )}
+            </nav>
+            
+            <!-- 页码信息 -->
+            <div class="ml-6 flex items-center text-sm text-gray-600 dark:text-gray-400">
+              第 {validPage} 页，共 {totalPages} 页
+            </div>
+          </div>
+        )}
       </div>
 
       <!-- 空状态 -->
@@ -166,13 +296,53 @@ const totalBooks = publishedBooks.length;
     const currentFilter = document.getElementById('current-filter');
     const bookCount = document.getElementById('book-count');
     
+    // 主题展开/折叠功能
+    const topicsContainer = document.getElementById('topics-container');
+    const toggleBtn = document.getElementById('toggle-topics-btn');
+    const toggleText = document.getElementById('toggle-topics-text');
+    const toggleIcon = document.getElementById('toggle-topics-icon');
+    let isTopicsExpanded = false;
+    
+    // 只在按钮存在时添加事件监听器
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', function() {
+        if (isTopicsExpanded) {
+          // 折叠主题
+          topicsContainer.style.maxHeight = '90px'; // 约2行高度
+          toggleText.textContent = '展开更多主题';
+          toggleIcon.style.transform = 'rotate(0deg)';
+          isTopicsExpanded = false;
+        } else {
+          // 展开主题
+          topicsContainer.style.maxHeight = 'none';
+          toggleText.textContent = '收起主题';
+          toggleIcon.style.transform = 'rotate(180deg)';
+          isTopicsExpanded = true;
+        }
+      });
+    }
+    
     let currentTopic = 'all';
+    const BOOKS_PER_PAGE = 15;
+    let currentPage = 1;
+    let allBookItems = [];
+    
+    // 保存所有书籍项目
+    allBookItems = Array.from(document.querySelectorAll('.book-item')).map(item => {
+      return {
+        element: item.cloneNode(true),
+        topics: JSON.parse(item.dataset.topics),
+        title: item.dataset.title,
+        date: item.dataset.date
+      };
+    });
     
     // 筛选功能
     filterButtons.forEach(button => {
       button.addEventListener('click', function() {
         const filterValue = this.dataset.filter;
         currentTopic = filterValue;
+        currentPage = 1; // 重置到第一页
         
         // 更新按钮样式
         filterButtons.forEach(btn => {
@@ -193,71 +363,166 @@ const totalBooks = publishedBooks.length;
     
     // 排序功能
     sortSelect.addEventListener('change', function() {
+      currentPage = 1; // 重置到第一页
       filterAndSort();
     });
     
     function filterAndSort() {
-      const bookItems = Array.from(document.querySelectorAll('.book-item'));
       const sortValue = sortSelect.value;
       
       // 筛选
-      let filteredBooks = bookItems.filter(item => {
+      let filteredBooks = allBookItems.filter(item => {
         if (currentTopic === 'all') return true;
-        const topics = JSON.parse(item.dataset.topics);
-        return topics.includes(currentTopic);
+        return item.topics.includes(currentTopic);
       });
       
       // 排序
       filteredBooks.sort((a, b) => {
         switch (sortValue) {
           case 'date-desc':
-            return new Date(b.dataset.date).getTime() - new Date(a.dataset.date).getTime();
+            return new Date(b.date).getTime() - new Date(a.date).getTime();
           case 'date-asc':
-            return new Date(a.dataset.date).getTime() - new Date(b.dataset.date).getTime();
+            return new Date(a.date).getTime() - new Date(b.date).getTime();
           case 'title-asc':
-            return a.dataset.title.localeCompare(b.dataset.title);
+            return a.title.localeCompare(b.title);
           case 'title-desc':
-            return b.dataset.title.localeCompare(a.dataset.title);
+            return b.title.localeCompare(a.title);
           default:
             return 0;
         }
       });
       
-      // 隐藏所有书籍
-      bookItems.forEach(item => {
-        item.style.display = 'none';
-      });
+      // 清空网格
+      booksGrid.innerHTML = '';
       
-      // 显示筛选后的书籍
-      filteredBooks.forEach((item, index) => {
-        item.style.display = 'block';
-        booksGrid.appendChild(item);
+      // 计算分页
+      const totalFiltered = filteredBooks.length;
+      const totalPages = Math.ceil(totalFiltered / BOOKS_PER_PAGE);
+      const startIndex = (currentPage - 1) * BOOKS_PER_PAGE;
+      const endIndex = startIndex + BOOKS_PER_PAGE;
+      const currentPageBooks = filteredBooks.slice(startIndex, endIndex);
+      
+      // 显示当前页的书籍
+      currentPageBooks.forEach(item => {
+        booksGrid.appendChild(item.element.cloneNode(true));
       });
       
       // 更新计数
-      bookCount.textContent = `(${filteredBooks.length} 本)`;
+      bookCount.textContent = `(${totalFiltered} 本)`;
+      
+      // 创建或更新分页控件
+      updatePagination(totalPages, totalFiltered);
       
       // 如果没有结果，显示空状态
-      const emptyState = document.getElementById('empty-state');
       if (filteredBooks.length === 0) {
-        if (!emptyState) {
-          const emptyDiv = document.createElement('div');
-          emptyDiv.id = 'empty-state';
-          emptyDiv.className = 'col-span-full text-center py-16';
-          emptyDiv.innerHTML = `
-            <div class="text-6xl mb-6">📚</div>
-            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              暂无相关书籍
-            </h3>
-            <p class="text-gray-600 dark:text-gray-400">
-              该主题下暂无书籍，试试其他主题或查看全部书籍
-            </p>
-          `;
-          booksGrid.appendChild(emptyDiv);
-        }
-      } else if (emptyState) {
-        emptyState.remove();
+        const emptyDiv = document.createElement('div');
+        emptyDiv.id = 'empty-state';
+        emptyDiv.className = 'col-span-full text-center py-16';
+        emptyDiv.innerHTML = `
+          <div class="text-6xl mb-6">📚</div>
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            暂无相关书籍
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            该主题下暂无书籍，试试其他主题或查看全部书籍
+          </p>
+        `;
+        booksGrid.appendChild(emptyDiv);
       }
+    }
+    
+    function updatePagination(totalPages, totalItems) {
+      // 移除现有的分页控件（如果是通过筛选创建的）
+      const existingPagination = document.getElementById('filter-pagination');
+      if (existingPagination) {
+        existingPagination.remove();
+      }
+      
+      // 如果总页数大于1，添加分页控件
+      if (totalPages > 1) {
+        const paginationHTML = `
+          <div id="filter-pagination" class="mt-12 flex justify-center">
+            <nav class="flex items-center space-x-2" aria-label="分页导航">
+              <!-- 上一页按钮 -->
+              <button 
+                class="pagination-prev px-3 py-2 ${currentPage > 1 ? 'bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700' : 'bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 opacity-50 cursor-not-allowed'} rounded-lg transition-colors"
+                ${currentPage <= 1 ? 'disabled' : ''}
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              
+              <!-- 页码按钮 -->
+              <div class="flex items-center space-x-2" id="page-numbers">
+                ${generatePageNumbers(totalPages)}
+              </div>
+              
+              <!-- 下一页按钮 -->
+              <button 
+                class="pagination-next px-3 py-2 ${currentPage < totalPages ? 'bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700' : 'bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 opacity-50 cursor-not-allowed'} rounded-lg transition-colors"
+                ${currentPage >= totalPages ? 'disabled' : ''}
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </nav>
+            
+            <!-- 页码信息 -->
+            <div class="ml-6 flex items-center text-sm text-gray-600 dark:text-gray-400">
+              第 ${currentPage} 页，共 ${totalPages} 页
+            </div>
+          </div>
+        `;
+        
+        booksGrid.insertAdjacentHTML('afterend', paginationHTML);
+        
+        // 添加分页事件监听器
+        document.querySelector('.pagination-prev')?.addEventListener('click', () => {
+          if (currentPage > 1) {
+            currentPage--;
+            filterAndSort();
+          }
+        });
+        
+        document.querySelector('.pagination-next')?.addEventListener('click', () => {
+          if (currentPage < totalPages) {
+            currentPage++;
+            filterAndSort();
+          }
+        });
+        
+        document.querySelectorAll('.page-number').forEach(btn => {
+          btn.addEventListener('click', function() {
+            currentPage = parseInt(this.dataset.page);
+            filterAndSort();
+          });
+        });
+      }
+    }
+    
+    function generatePageNumbers(totalPages) {
+      let html = '';
+      for (let i = 1; i <= totalPages; i++) {
+        // 显示逻辑：第一页、最后一页、当前页及其前后页
+        const showPage = i === 1 || 
+                        i === totalPages || 
+                        Math.abs(i - currentPage) <= 1;
+        
+        if (showPage) {
+          if (i === currentPage) {
+            html += `<span class="px-4 py-2 bg-purple-600 text-white rounded-lg font-medium">${i}</span>`;
+          } else {
+            html += `<button class="page-number px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors" data-page="${i}">${i}</button>`;
+          }
+        } else if (i === 2 && currentPage > 4) {
+          html += `<span class="px-2 text-gray-500">...</span>`;
+        } else if (i === totalPages - 1 && currentPage < totalPages - 3) {
+          html += `<span class="px-2 text-gray-500">...</span>`;
+        }
+      }
+      return html;
     }
   });
 </script>

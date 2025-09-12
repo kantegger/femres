@@ -28,7 +28,7 @@ const allContent = [
 const latestBooks = books.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 3);
 const latestArticles = articles.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 2);
 const latestVideos = videos.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 2);
-const latestPodcasts = podcasts.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 2);
+const latestPodcasts = podcasts.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 4);
 const latestPapers = papers.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 3);
 
 // 获取热门主题

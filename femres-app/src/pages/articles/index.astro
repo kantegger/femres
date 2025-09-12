@@ -66,21 +66,39 @@ const enrichedArticles = sortedArticles.map(article => {
       <!-- 主题标签筛选 -->
       <div class="mb-12">
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">主题分类</h2>
-        <div class="flex flex-wrap gap-3">
-          <button 
-            class="filter-btn inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
-            data-filter="all"
-          >
-            全部文章
-          </button>
-          {allTopics.map(topic => (
+        <div class="relative">
+          <!-- 主题标签容器 -->
+          <div id="topics-container" class="flex flex-wrap gap-3 overflow-hidden transition-all duration-300" style="max-height: 90px;">
             <button 
-              class="filter-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm"
-              data-filter={topic}
+              class="filter-btn inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+              data-filter="all"
             >
-              {topic}
+              全部文章
             </button>
-          ))}
+            {allTopics.map(topic => (
+              <button 
+                class="filter-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm"
+                data-filter={topic}
+              >
+                {topic}
+              </button>
+            ))}
+          </div>
+          
+          <!-- 展开/折叠按钮 - 只在需要时显示 -->
+          {allTopics.length > 20 && (
+            <div class="flex justify-center mt-4">
+              <button 
+                id="toggle-topics-btn"
+                class="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-lg transition-colors text-sm font-medium"
+              >
+                <span id="toggle-topics-text">展开更多主题</span>
+                <svg id="toggle-topics-icon" class="ml-2 w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
@@ -180,6 +198,32 @@ const enrichedArticles = sortedArticles.map(article => {
     const articlesGrid = document.getElementById('articles-grid');
     const currentFilter = document.getElementById('current-filter');
     const articleCount = document.getElementById('article-count');
+    
+    // 主题展开/折叠功能
+    const topicsContainer = document.getElementById('topics-container');
+    const toggleBtn = document.getElementById('toggle-topics-btn');
+    const toggleText = document.getElementById('toggle-topics-text');
+    const toggleIcon = document.getElementById('toggle-topics-icon');
+    let isTopicsExpanded = false;
+    
+    // 只在按钮存在时添加事件监听器
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', function() {
+        if (isTopicsExpanded) {
+          // 折叠主题
+          topicsContainer.style.maxHeight = '90px'; // 约2行高度
+          toggleText.textContent = '展开更多主题';
+          toggleIcon.style.transform = 'rotate(0deg)';
+          isTopicsExpanded = false;
+        } else {
+          // 展开主题
+          topicsContainer.style.maxHeight = 'none';
+          toggleText.textContent = '收起主题';
+          toggleIcon.style.transform = 'rotate(180deg)';
+          isTopicsExpanded = true;
+        }
+      });
+    }
     
     let currentTopic = 'all';
     

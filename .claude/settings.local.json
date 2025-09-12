@@ -13,7 +13,9 @@
       "Bash(netstat:*)",
       "Bash(findstr:*)",
       "Bash(find:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
