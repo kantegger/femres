@@ -9,7 +9,7 @@ sourceUrl: "https://open.spotify.com/show/7JC4EPFBricXpPA0hkMykz"
 embedUrl: "https://open.spotify.com/embed/show/7JC4EPFBricXpPA0hkMykz"
 thumbnail: "/images/podcasts/fifty-feminist-states.jpg"
 transcript: "部分集数提供访谈摘要与支持链接，详见 fiftyfeministstates.com 或 Softer Sounds 项目"
-status: archived
+status: published
 ---
 
 《Fifty Feminist States》是一档结合旅行与访谈的女性主义播客，由 Amelia Hruby 主持，内容包括：
