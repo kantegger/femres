@@ -7,7 +7,7 @@ publishDate: 1981-01-01
 isbn: "9780896081307"
 language: "en"
 topics: ["黑人女性主义", "交叉女性主义", "种族与性别", "反女性主义研究"]
-sourceUrl: "https://book.douban.com/subject/3021316/"
+sourceUrl: "https://www.amazon.sg/s?k=ain%27t+i+woman+black+women+feminism+bell+hooks&tag=inkrupt-22"
 coverImage: "/images/books/aint-i-a-woman.jpg"
 status: "published"
 ---

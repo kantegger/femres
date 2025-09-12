@@ -7,7 +7,7 @@ publishDate: 2013-10-01
 isbn: "9781571313355"
 language: "en"
 topics: ["生态女性主义", "原住民女性主义", "气候正义", "灵性女性主义", "去殖民女性主义"]
-sourceUrl: "https://www.goodreads.com/book/show/17465709-braiding-sweetgrass"
+sourceUrl: "https://www.amazon.sg/s?k=braiding+sweetgrass+robin+wall+kimmerer&tag=inkrupt-22"
 coverImage: "/images/books/braiding-sweetgrass.jpg"
 status: "published"
 ---

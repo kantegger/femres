@@ -7,7 +7,7 @@ publishDate: 1984-01-01
 isbn: "9787544766357"
 language: "en"
 topics: ["交叉女性主义", "黑人女性主义", "第二波女性主义"]
-sourceUrl: "https://book.douban.com/subject/26697047/"
+sourceUrl: "https://www.amazon.sg/s?k=feminism+is+for+everybody+bell+hooks&tag=inkrupt-22"
 coverImage: "/images/books/bell-hooks-feminism.jpg"
 status: "published"
 ---

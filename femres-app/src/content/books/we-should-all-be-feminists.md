@@ -7,7 +7,7 @@ publishDate: 2014-07-29
 isbn: "9787559827463"
 language: "en"
 topics: ["第三波女性主义", "职场平等", "媒体表征批判", "女性文学", "女性写作"]
-sourceUrl: "https://book.douban.com/subject/26807354/"
+sourceUrl: "https://www.amazon.sg/s?k=we+should+all+be+feminists+chimamanda+ngozi+adichie&tag=inkrupt-22"
 coverImage: "/images/books/we-should-all-be-feminists.jpg"
 status: "published"
 ---

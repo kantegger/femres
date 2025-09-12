@@ -7,7 +7,7 @@ publishDate: 2019-03-01
 isbn: "9781849353267"
 language: "en"
 topics: ["身体自主", "黑人女性主义", "酷儿理论", "情绪劳动", "性解放"]
-sourceUrl: "https://www.goodreads.com/book/show/40549668-pleasure-activism"
+sourceUrl: "https://www.amazon.sg/s?k=pleasure+activism+adrienne+maree+brown&tag=inkrupt-22"
 coverImage: "/images/books/pleasure-activism.jpg"
 status: "published"
 ---

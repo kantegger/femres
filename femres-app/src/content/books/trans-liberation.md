@@ -7,7 +7,7 @@ publishDate: 1998-09-01
 isbn: "9780807079515"
 language: "en"
 topics: ["跨性别女性主义", "酷儿理论", "身体自主", "性别多样性", "交叉女性主义"]
-sourceUrl: "https://www.goodreads.com/book/show/187559.Trans_Liberation"
+sourceUrl: "https://www.amazon.sg/s?k=trans+liberation+leslie+feinberg&tag=inkrupt-22"
 coverImage: "/images/books/trans-liberation.jpg"
 status: "published"
 ---

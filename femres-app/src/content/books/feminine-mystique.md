@@ -7,7 +7,7 @@ publishDate: 1963-02-19
 isbn: "9787020116249"
 language: "en"
 topics: ["第二波女性主义", "家庭解放", "自由主义女性主义"]
-sourceUrl: "https://book.douban.com/subject/1033133/"
+sourceUrl: "https://www.amazon.sg/s?k=feminine+mystique+betty+friedan&tag=inkrupt-22"
 coverImage: "/images/books/feminine-mystique.jpg"
 status: "published"
 ---

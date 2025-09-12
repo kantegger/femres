@@ -7,7 +7,7 @@ publishDate: 1970-01-01
 isbn: "9780374527877"
 language: "en"
 topics: ["激进女性主义", "马克思主义女性主义", "生育自主"]
-sourceUrl: "https://book.douban.com/subject/4913064/"
+sourceUrl: "https://www.amazon.sg/s?k=dialectic+of+sex+shulamith+firestone&tag=inkrupt-22"
 coverImage: "/images/books/dialectic-of-sex.jpg"
 status: "published"
 ---

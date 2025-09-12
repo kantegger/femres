@@ -7,7 +7,7 @@ publishDate: 2022-03-15
 isbn: "9781839762456"
 language: "en"
 topics: ["数字女性主义", "科技批判", "人工智能伦理", "网络文化", "第四波女性主义"]
-sourceUrl: "https://www.goodreads.com/book/show/58724558-the-cyberfeminism-index"
+sourceUrl: "https://www.amazon.sg/s?k=cyberfeminism+index+mindy+seu&tag=inkrupt-22"
 coverImage: "/images/books/cyberfeminism-index.jpg"
 status: "published"
 ---

@@ -7,7 +7,7 @@ publishDate: 2014-08-05
 isbn: "9780062282712"
 language: "en"
 topics: ["第四波女性主义", "流行文化女性主义", "交叉女性主义", "媒体表征批判", "女性文学批评", "女性文学", "女性写作"]
-sourceUrl: "https://book.douban.com/subject/25908023/"
+sourceUrl: "https://www.amazon.sg/s?k=bad+feminist+roxane+gay&tag=inkrupt-22"
 coverImage: "/images/books/bad-feminist.jpg"
 status: "published"
 ---

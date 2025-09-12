@@ -7,7 +7,7 @@ publishDate: 1792-01-01
 isbn: "9787100093200"
 language: "en"
 topics: ["第一波女性主义", "教育平等", "法律平等"]
-sourceUrl: "https://book.douban.com/subject/6844263/"
+sourceUrl: "https://www.amazon.sg/s?k=vindication+rights+woman+mary+wollstonecraft&tag=inkrupt-22"
 coverImage: "/images/books/vindication-rights-woman.jpg"
 status: "published"
 ---

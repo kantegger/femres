@@ -7,7 +7,7 @@ publishDate: 2016-02-01
 isbn: "9781608465644"
 language: "en"
 topics: ["交叉女性主义", "黑人女性主义", "反女性主义研究", "政治参与", "种族与性别"]
-sourceUrl: "https://www.goodreads.com/book/show/25330108-freedom-is-a-constant-struggle"
+sourceUrl: "https://www.amazon.sg/s?k=freedom+is+a+constant+struggle+angela+davis&tag=inkrupt-22"
 coverImage: "/images/books/freedom-is-a-constant-struggle.jpg"
 status: "published"
 ---

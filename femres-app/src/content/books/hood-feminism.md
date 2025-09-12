@@ -7,7 +7,7 @@ publishDate: 2020-02-01
 isbn: "9780525560548"
 language: "en"
 topics: ["交叉女性主义", "黑人女性主义", "经济赋权", "阶级分析", "种族与性别"]
-sourceUrl: "https://www.goodreads.com/book/show/45320365-hood-feminism"
+sourceUrl: "https://www.amazon.sg/s?k=hood+feminism+mikki+kendall&tag=inkrupt-22"
 coverImage: "/images/books/hood-feminism.jpg"
 status: "published"
 ---

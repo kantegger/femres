@@ -7,7 +7,7 @@ publishDate: 1990-01-01
 isbn: "9780060512187"
 language: "en"
 topics: ["第三波女性主义", "媒体表征批判", "身体自主", "文化批判"]
-sourceUrl: "https://book.douban.com/subject/2056749/"
+sourceUrl: "https://www.amazon.sg/s?k=beauty+myth+naomi+wolf&tag=inkrupt-22"
 coverImage: "/images/books/beauty-myth.jpg"
 status: "published"
 ---

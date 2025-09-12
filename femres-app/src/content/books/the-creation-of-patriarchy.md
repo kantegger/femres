@@ -7,7 +7,7 @@ publishDate: 1986-01-01
 isbn: "9780195051858"
 language: "en"
 topics: ["父权制批判", "历史脉络", "激进女性主义"]
-sourceUrl: "https://book.douban.com/subject/3128864/"
+sourceUrl: "https://www.amazon.sg/s?k=creation+of+patriarchy+gerda+lerner&tag=inkrupt-22"
 coverImage: "/images/books/creation-of-patriarchy.jpg"
 status: "published"
 ---

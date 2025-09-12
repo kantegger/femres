@@ -7,7 +7,7 @@ publishDate: 2019-03-01
 isbn: "9781788734424"
 language: "en"
 topics: ["马克思主义女性主义", "资本主义批判", "经济赋权", "交叉女性主义", "气候正义"]
-sourceUrl: "https://www.goodreads.com/book/show/43726586-feminism-for-the-99"
+sourceUrl: "https://www.amazon.sg/s?k=feminism+for+the+99+percent&tag=inkrupt-22"
 coverImage: "/images/books/feminism-for-the-99-percent.jpg"
 status: "published"
 ---

@@ -7,7 +7,7 @@ publishDate: 2000-01-01
 isbn: "9780060959470"
 language: "en"
 topics: ["关怀伦理", "黑人女性主义", "情绪劳动", "灵性女性主义", "社会变革"]
-sourceUrl: "https://www.goodreads.com/book/show/17607.All_About_Love"
+sourceUrl: "https://www.amazon.sg/s?k=all+about+love+bell+hooks&tag=inkrupt-22"
 coverImage: "/images/books/all-about-love.jpg"
 status: "published"
 ---

@@ -168,6 +168,9 @@ src/
   - Publisher and availability
   This prevents hallucination and ensures content authenticity.
 
+### Verified Books Added (with search confirmation):
+- **Bloodchild** by Octavia Butler (1984) - Verified as Hugo and Nebula Award-winning short story, key work in feminist science fiction exploring gender roles, male pregnancy, and power dynamics. Part of "Bloodchild and Other Stories" collection.
+
 ## Development Commands
 
 *To be added when project structure is established. Will likely include:*

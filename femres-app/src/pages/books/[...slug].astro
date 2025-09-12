@@ -158,23 +158,33 @@ const formatDate = (date: Date) => {
             </div>
           </div>
 
-          <!-- Book Actions -->
-          <!-- <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-4">快速操作</h3>
-            <div class="space-y-3">
-              <a 
-                href={book.data.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="block w-full px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-200 text-center"
-              >
-                查看详情
-              </a>
-              <button class="block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold rounded-lg hover:border-purple-500 dark:hover:border-purple-400 transition-colors">
-                添加到收藏
-              </button>
+          <!-- Purchase Section -->
+          <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 shadow-sm border border-blue-200 dark:border-blue-800/30">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+              <span class="text-blue-600 dark:text-blue-400 mr-2">🛒</span>
+              购买本书
+            </h3>
+            <a 
+              href={book.data.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-lg transition-all duration-200 text-center group"
+            >
+              <span class="flex items-center justify-center">
+                <img 
+                  src="/amazon-logo.svg" 
+                  alt="Amazon" 
+                  class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform filter brightness-0 invert"
+                />
+                在亚马逊购买
+              </span>
+            </a>
+            <div class="mt-4">
+              <div class="text-xs text-gray-500 dark:text-gray-400 text-center px-2 leading-relaxed">
+                通过此链接购买，本站将获得少量佣金，不影响您的购买价格。感谢您的支持！
+              </div>
             </div>
-          </div> -->
+          </div>
 
           <!-- Buy Me a Coffee -->
           <div class="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-xl p-6 shadow-sm border border-yellow-200 dark:border-yellow-800/30">

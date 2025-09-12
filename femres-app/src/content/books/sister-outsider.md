@@ -7,7 +7,7 @@ publishDate: 1984-01-01
 isbn: "9781580911863"
 language: "en"
 topics: ["黑人女性主义", "交叉女性主义", "种族与性别", "女性文学", "女性写作"]
-sourceUrl: "https://book.douban.com/subject/2359268/"
+sourceUrl: "https://www.amazon.sg/s?k=sister+outsider+audre+lorde&tag=inkrupt-22"
 coverImage: "/images/books/sister-outsider.jpg"
 status: "published"
 ---
