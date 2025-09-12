@@ -1,66 +1,34 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
-import PodcastCard from '../../components/PodcastCard.astro';
-import Pagination from '../../components/Pagination.astro';
+import Layout from '../../../layouts/Layout.astro';
+import PodcastCard from '../../../components/PodcastCard.astro';
+import Pagination from '../../../components/Pagination.astro';
 
-const podcasts = await getCollection('podcasts');
-const publishedPodcasts = podcasts.filter(podcast => podcast.data.status === 'published');
+export async function getStaticPaths({ paginate }) {
+  const podcasts = await getCollection('podcasts');
+  const publishedPodcasts = podcasts.filter(podcast => podcast.data.status === 'published');
+  
+  // 按发布日期排序
+  const sortedPodcasts = publishedPodcasts.sort((a, b) => {
+    return new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime();
+  });
 
-// 获取URL参数
-const url = Astro.url;
-const filterParam = url.searchParams.get('filter') || 'all';
-const sortParam = url.searchParams.get('sort') || 'date-desc';
-
-// 筛选播客
-let filteredPodcasts = publishedPodcasts;
-if (filterParam !== 'all') {
-  filteredPodcasts = publishedPodcasts.filter(podcast => 
-    podcast.data.topics.includes(filterParam)
-  );
+  return paginate(sortedPodcasts, { pageSize: 12 });
 }
 
-// 排序播客
-const sortedPodcasts = filteredPodcasts.sort((a, b) => {
-  switch (sortParam) {
-    case 'date-desc':
-      return new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime();
-    case 'date-asc':
-      return new Date(a.data.publishDate).getTime() - new Date(b.data.publishDate).getTime();
-    case 'title-asc':
-      return a.data.title.localeCompare(b.data.title);
-    case 'title-desc':
-      return b.data.title.localeCompare(a.data.title);
-    case 'duration-asc':
-      return (a.data.duration || 0) - (b.data.duration || 0);
-    case 'duration-desc':
-      return (b.data.duration || 0) - (a.data.duration || 0);
-    default:
-      return new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime();
-  }
-});
-
-// 分页逻辑
-const PODCASTS_PER_PAGE = 12;
-const totalPodcasts = sortedPodcasts.length;
-const totalPages = Math.ceil(totalPodcasts / PODCASTS_PER_PAGE);
-const currentPodcasts = sortedPodcasts.slice(0, PODCASTS_PER_PAGE);
+const { page } = Astro.props;
+const allPodcasts = await getCollection('podcasts');
+const publishedPodcasts = allPodcasts.filter(podcast => podcast.data.status === 'published');
 
 // 获取所有主题标签
 const allTopics = [...new Set(publishedPodcasts.flatMap(podcast => podcast.data.topics))].sort();
 
-// 格式化总时长
-const formatTotalDuration = (minutes: number) => {
-  const hours = Math.floor(minutes / 60);
-  if (hours > 0) {
-    return `${hours}小时${minutes % 60}分钟`;
-  }
-  return `${minutes}分钟`;
-};
+// 统计信息
+const totalPodcasts = publishedPodcasts.length;
 ---
 
 <Layout 
-  title="播客 - FemRes"
+  title={`播客 - 第 ${page.currentPage} 页 - FemRes`}
   description="精选女性主义播客内容，聆听来自全球的女性声音，探讨性别议题的深度对话与思辨。"
 >
   <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -79,18 +47,12 @@ const formatTotalDuration = (minutes: number) => {
           <div class="flex flex-wrap justify-center gap-6 text-sm">
             <div class="flex items-center bg-purple-50 dark:bg-purple-900/20 px-4 py-2 rounded-full">
               <span class="text-purple-600 dark:text-purple-400 mr-2">🎙️</span>
-              <span class="text-purple-800 dark:text-purple-200">共 {publishedPodcasts.length} 档播客</span>
+              <span class="text-purple-800 dark:text-purple-200">共 {totalPodcasts} 档播客</span>
             </div>
             <div class="flex items-center bg-orange-50 dark:bg-orange-900/20 px-4 py-2 rounded-full">
               <span class="text-orange-600 dark:text-orange-400 mr-2">🏷️</span>
               <span class="text-orange-800 dark:text-orange-200">{allTopics.length} 个主题分类</span>
             </div>
-            {filterParam !== 'all' && (
-              <div class="flex items-center bg-green-50 dark:bg-green-900/20 px-4 py-2 rounded-full">
-                <span class="text-green-600 dark:text-green-400 mr-2">🔍</span>
-                <span class="text-green-800 dark:text-green-200">筛选显示 {totalPodcasts} 档</span>
-              </div>
-            )}
           </div>
         </div>
       </div>
@@ -107,25 +69,17 @@ const formatTotalDuration = (minutes: number) => {
           <div id="topics-container" class="flex flex-wrap gap-3 overflow-hidden transition-all duration-300" style="max-height: 90px;">
             <a 
               href="/podcasts"
-              class={`inline-flex items-center px-4 py-2 rounded-lg transition-colors text-sm font-medium ${
-                filterParam === 'all' 
-                  ? 'bg-purple-600 text-white' 
-                  : 'bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400'
-              }`}
+              class="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium"
             >
               全部播客
             </a>
             {allTopics.map(topic => (
-              <a 
-                href={`/podcasts?filter=${topic}`}
-                class={`inline-flex items-center px-4 py-2 rounded-lg transition-colors text-sm ${
-                  filterParam === topic 
-                    ? 'bg-purple-600 text-white' 
-                    : 'bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400'
-                }`}
+              <button 
+                class="filter-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-sm"
+                data-filter={topic}
               >
                 {topic}
-              </a>
+              </button>
             ))}
           </div>
           
@@ -150,28 +104,25 @@ const formatTotalDuration = (minutes: number) => {
       <div class="mb-8">
         <div class="flex items-center justify-between mb-6">
           <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
-            {filterParam === 'all' ? '全部播客' : filterParam}
+            全部播客
             <span class="text-base font-normal text-gray-600 dark:text-gray-400 ml-2">
               ({totalPodcasts} 档)
             </span>
           </h2>
           <div class="flex items-center gap-4">
-            <select 
-              id="sort-select" 
-              class="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-sm text-gray-900 dark:text-white"
-            >
-              <option value="date-desc" selected={sortParam === 'date-desc'}>最新发布</option>
-              <option value="date-asc" selected={sortParam === 'date-asc'}>最早发布</option>
-              <option value="title-asc" selected={sortParam === 'title-asc'}>标题 A-Z</option>
-              <option value="title-desc" selected={sortParam === 'title-desc'}>标题 Z-A</option>
-              <option value="duration-asc" selected={sortParam === 'duration-asc'}>时长（短）</option>
-              <option value="duration-desc" selected={sortParam === 'duration-desc'}>时长（长）</option>
+            <select id="sort-select" class="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-sm text-gray-900 dark:text-white">
+              <option value="date-desc">最新发布</option>
+              <option value="date-asc">最早发布</option>
+              <option value="title-asc">标题 A-Z</option>
+              <option value="title-desc">标题 Z-A</option>
+              <option value="duration-asc">时长（短）</option>
+              <option value="duration-desc">时长（长）</option>
             </select>
           </div>
         </div>
         
         <div id="podcasts-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {currentPodcasts.map(podcast => (
+          {page.data.map(podcast => (
             <div class="podcast-item" data-topics={JSON.stringify(podcast.data.topics)} data-title={podcast.data.title} data-date={podcast.data.publishDate.toISOString()} data-duration={podcast.data.duration || 0}>
               <PodcastCard 
                 title={podcast.data.title}
@@ -191,39 +142,24 @@ const formatTotalDuration = (minutes: number) => {
       </div>
 
       <!-- 分页组件 -->
-      {totalPages > 1 && (
-        <div class="flex justify-center mb-12">
-          <Pagination 
-            currentPage={1}
-            totalPages={totalPages}
-            baseUrl={filterParam === 'all' ? '/podcasts' : `/podcasts?filter=${encodeURIComponent(filterParam)}`}
-          />
-        </div>
-      )}
+      <div class="flex justify-center mb-12">
+        <Pagination 
+          currentPage={page.currentPage}
+          totalPages={page.lastPage}
+          baseUrl="/podcasts"
+        />
+      </div>
 
       <!-- 空状态 -->
-      {currentPodcasts.length === 0 && (
+      {page.data.length === 0 && (
         <div class="text-center py-16">
           <div class="text-6xl mb-4">🎧</div>
           <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-            {filterParam === 'all' ? '暂无播客内容' : '暂无相关播客'}
+            暂无播客内容
           </h3>
           <p class="text-gray-600 dark:text-gray-400">
-            {filterParam === 'all' 
-              ? '我们正在努力添加更多优质的女性主义播客资源'
-              : '该主题下暂无播客，试试其他主题或查看全部播客'
-            }
+            我们正在努力添加更多优质的女性主义播客资源
           </p>
-          {filterParam !== 'all' && (
-            <div class="mt-4">
-              <a 
-                href="/podcasts" 
-                class="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
-              >
-                查看全部播客
-              </a>
-            </div>
-          )}
         </div>
       )}
 
@@ -264,7 +200,9 @@ const formatTotalDuration = (minutes: number) => {
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
     const sortSelect = document.getElementById('sort-select');
+    const podcastsGrid = document.getElementById('podcasts-grid');
     
     // 主题展开/折叠功能
     const topicsContainer = document.getElementById('topics-container');
@@ -292,13 +230,30 @@ const formatTotalDuration = (minutes: number) => {
       });
     }
     
-    // 排序功能 - 重新加载页面并保持当前筛选
-    if (sortSelect) {
-      sortSelect.addEventListener('change', function() {
-        const url = new URL(window.location.href);
-        url.searchParams.set('sort', this.value);
-        window.location.href = url.toString();
+    let currentTopic = 'all';
+    
+    // 筛选功能（在分页页面中，筛选会重定向到首页）
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const filterValue = this.dataset.filter;
+        // 重定向到首页，并在URL中加入筛选参数
+        window.location.href = `/podcasts?filter=${filterValue}`;
       });
+    });
+    
+    // 排序功能
+    sortSelect.addEventListener('change', function() {
+      const sortValue = this.value;
+      const url = new URL(window.location.href);
+      url.searchParams.set('sort', sortValue);
+      window.location.href = url.toString();
+    });
+    
+    // 从URL参数中恢复排序状态
+    const urlParams = new URLSearchParams(window.location.search);
+    const sortParam = urlParams.get('sort');
+    if (sortParam && sortSelect) {
+      sortSelect.value = sortParam;
     }
   });
 </script>
