@@ -1,5 +1,4 @@
 import type { APIRoute } from 'astro';
-import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 // Types
@@ -22,7 +21,7 @@ const mockUsers: User[] = [
     id: '1',
     username: 'demo_user',
     email: 'demo@example.com',
-    password_hash: '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+    password_hash: 'demo_hash', // This is just for mock data, not used in update-username
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
   }
