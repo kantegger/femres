@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
+import ArticleCard2 from '../../components/ArticleCard2.astro';
 
 const articles = await getCollection('articles');
 const publishedArticles = articles.filter(article => article.data.status === 'published');
@@ -14,11 +15,22 @@ const sortedArticles = publishedArticles.sort((a, b) => {
 // 获取所有主题标签
 const allTopics = [...new Set(publishedArticles.flatMap(article => article.data.topics))].sort();
 
-// 统计信息
+// 分页设置
+const ARTICLES_PER_PAGE = 12;
 const totalArticles = publishedArticles.length;
+const totalPages = Math.ceil(totalArticles / ARTICLES_PER_PAGE);
 
-// 为文章添加类型标记
-const enrichedArticles = sortedArticles.map(article => {
+// 获取当前页码 (从URL参数获取，默认为1)
+const currentPage = Number(Astro.url.searchParams.get('page') || '1');
+const validPage = Math.max(1, Math.min(currentPage, totalPages));
+
+// 计算当前页的文章
+const startIndex = (validPage - 1) * ARTICLES_PER_PAGE;
+const endIndex = startIndex + ARTICLES_PER_PAGE;
+const currentPageArticles = sortedArticles.slice(startIndex, endIndex);
+
+// 为当前页文章添加类型标记
+const enrichedArticles = currentPageArticles.map(article => {
   let articleType: 'news' | 'blog' | 'research' | 'opinion' | 'analysis' = 'blog';
   if (article.data.title.includes('报告') || article.data.title.includes('数据')) {
     articleType = 'analysis';
@@ -27,6 +39,16 @@ const enrichedArticles = sortedArticles.map(article => {
   }
   return { ...article, articleType };
 });
+
+// 生成页码数组
+const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+// 生成中间页码数组
+const middlePages = pageNumbers.filter(num =>
+  num !== 1 &&
+  num !== totalPages &&
+  Math.abs(num - validPage) <= 1
+);
 ---
 
 <Layout 
@@ -123,24 +145,137 @@ const enrichedArticles = sortedArticles.map(article => {
           </div>
         </div>
         
-        <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {enrichedArticles.map(article => (
-            <div class="article-item" data-topics={JSON.stringify(article.data.topics)} data-title={article.data.title} data-date={article.data.publishDate.toISOString()} data-reading-time={article.data.readingTime || 5}>
-              <ArticleCard
-                title={article.data.title}
-                author={article.data.author}
-                description={article.data.description}
-                featuredImage={article.data.featuredImage}
-                publishDate={article.data.publishDate}
-                readingTime={article.data.readingTime}
-                sourceUrl={article.data.sourceUrl}
-                slug={article.slug}
-                topics={article.data.topics}
-                articleType={article.articleType}
-              />
+        <div id="articles-grid" class="space-y-6">
+          <!-- 前2篇文章使用大卡片 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {enrichedArticles.slice(0, 2).map(article => (
+              <div class="article-item" data-topics={JSON.stringify(article.data.topics)} data-title={article.data.title} data-date={article.data.publishDate.toISOString()} data-reading-time={article.data.readingTime || 5}>
+                <ArticleCard
+                  title={article.data.title}
+                  author={article.data.author}
+                  description={article.data.description}
+                  featuredImage={article.data.featuredImage}
+                  publishDate={article.data.publishDate}
+                  readingTime={article.data.readingTime}
+                  sourceUrl={article.data.sourceUrl}
+                  slug={article.slug}
+                  topics={article.data.topics}
+                  articleType={article.articleType}
+                />
+              </div>
+            ))}
+          </div>
+
+          <!-- 第3篇开始使用紧凑卡片 -->
+          {enrichedArticles.length > 2 && (
+            <div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {enrichedArticles.slice(2).map(article => (
+                  <div class="article-item" data-topics={JSON.stringify(article.data.topics)} data-title={article.data.title} data-date={article.data.publishDate.toISOString()} data-reading-time={article.data.readingTime || 5}>
+                    <ArticleCard2
+                      title={article.data.title}
+                      author={article.data.author}
+                      description={article.data.description}
+                      featuredImage={article.data.featuredImage}
+                      publishDate={article.data.publishDate}
+                      readingTime={article.data.readingTime}
+                      sourceUrl={article.data.sourceUrl}
+                      slug={article.slug}
+                      topics={article.data.topics}
+                      articleType={article.articleType}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+          )}
         </div>
+
+        <!-- 分页组件 -->
+        {totalPages > 1 && (
+          <div class="mt-12 flex justify-center">
+            <nav class="flex items-center space-x-2" aria-label="分页导航">
+              <!-- 上一页按钮 -->
+              {validPage > 1 ? (
+                <a
+                  href={`/articles?page=${validPage - 1}`}
+                  class="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                  aria-label="上一页"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                </a>
+              ) : (
+                <span class="px-3 py-2 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg opacity-50 cursor-not-allowed">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                </span>
+              )}
+
+              <!-- 页码按钮 -->
+              <div class="flex items-center space-x-2">
+                {/* 第一页 */}
+                {validPage === 1 ? (
+                  <span class="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium">1</span>
+                ) : (
+                  <a href="/articles?page=1" class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">1</a>
+                )}
+
+                {/* 左侧省略号 */}
+                {validPage > 3 && <span class="px-2 text-gray-500">...</span>}
+
+                {/* 中间页码 */}
+                {middlePages.map(pageNum =>
+                  pageNum === validPage ? (
+                    <span class="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium">
+                      {pageNum}
+                    </span>
+                  ) : (
+                    <a
+                      href={`/articles?page=${pageNum}`}
+                      class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                    >
+                      {pageNum}
+                    </a>
+                  )
+                )}
+
+                {/* 右侧省略号 */}
+                {validPage < totalPages - 2 && <span class="px-2 text-gray-500">...</span>}
+
+                {/* 最后一页 */}
+                {totalPages > 1 && (
+                  validPage === totalPages ? (
+                    <span class="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium">{totalPages}</span>
+                  ) : (
+                    <a href={`/articles?page=${totalPages}`} class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">{totalPages}</a>
+                  )
+                )}
+              </div>
+
+              <!-- 下一页按钮 -->
+              {validPage < totalPages ? (
+                <a
+                  href={`/articles?page=${validPage + 1}`}
+                  class="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                  aria-label="下一页"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              ) : (
+                <span class="px-3 py-2 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg opacity-50 cursor-not-allowed">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </span>
+              )}
+            </nav>
+          </div>
+        )}
       </div>
 
       <!-- 空状态 -->
@@ -224,14 +359,29 @@ const enrichedArticles = sortedArticles.map(article => {
         }
       });
     }
-    
+
     let currentTopic = 'all';
+    const ARTICLES_PER_PAGE = 12;
+    let currentPage = 1;
+    let allArticleItems = [];
+
+    // 保存所有文章项目
+    allArticleItems = Array.from(document.querySelectorAll('.article-item')).map(item => {
+      return {
+        element: item.cloneNode(true),
+        topics: JSON.parse(item.dataset.topics),
+        title: item.dataset.title,
+        date: item.dataset.date,
+        readingTime: parseInt(item.dataset.readingTime)
+      };
+    });
     
     // 筛选功能
     filterButtons.forEach(button => {
       button.addEventListener('click', function() {
         const filterValue = this.dataset.filter;
         currentTopic = filterValue;
+        currentPage = 1;
         
         // 更新按钮样式
         filterButtons.forEach(btn => {
@@ -252,6 +402,7 @@ const enrichedArticles = sortedArticles.map(article => {
     
     // 排序功能
     sortSelect.addEventListener('change', function() {
+      currentPage = 1;
       filterAndSort();
     });
     
