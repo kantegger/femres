@@ -6,7 +6,7 @@ interface ContentItem {
   title: string;
   author: string;
   description: string;
-  type: 'book' | 'article' | 'video' | 'podcast' | 'paper';
+  type: 'book' | 'article' | 'video' | 'podcast' | 'paper' | 'film';
   slug: string;
   coverImage?: string;
   publishDate: string;
@@ -38,7 +38,42 @@ export default function UserContentList({ type }: UserContentListProps) {
         
         // Simulate fetching content from different collections
         try {
-          if (contentType === 'book' && slug) {
+          if (contentType === 'film' && slug) {
+            // Map known film slugs to their actual titles
+            const filmTitles: Record<string, {title: string, author: string, description: string}> = {
+              'the-handmaids-tale': {
+                title: '《使女的故事》',
+                author: '玛格丽特·阿特伍德',
+                description: '反乌托邦小说改编，探讨女性权利与身体自主权的经典作品。'
+              },
+              'little-women': {
+                title: '《小妇人》',
+                author: '路易莎·梅·奥尔科特',
+                description: '描绘19世纪美国女性成长与独立精神的经典文学改编。'
+              },
+              'hidden-figures': {
+                title: '《隐藏人物》',
+                author: '玛戈·李·谢特利',
+                description: '讲述NASA黑人女性数学家为太空计划做出贡献的真实故事。'
+              }
+            };
+            
+            const filmInfo = filmTitles[slug] || {
+              title: `《${slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}》`,
+              author: '导演信息',
+              description: '这部电影探讨了女性主义相关的重要议题...'
+            };
+            
+            return {
+              id,
+              title: filmInfo.title,
+              author: filmInfo.author,
+              description: filmInfo.description,
+              type: 'film' as const,
+              slug,
+              publishDate: new Date().toISOString()
+            };
+          } else if (contentType === 'book' && slug) {
             // Map known book slugs to their actual titles
             const bookTitles: Record<string, {title: string, author: string, description: string}> = {
               'the-second-sex': {
@@ -169,6 +204,7 @@ export default function UserContentList({ type }: UserContentListProps) {
       case 'video': return '🎥';
       case 'podcast': return '🎧';
       case 'paper': return '📄';
+      case 'film': return '🎬';
       default: return '📝';
     }
   };
@@ -180,6 +216,7 @@ export default function UserContentList({ type }: UserContentListProps) {
       case 'video': return '视频';
       case 'podcast': return '播客';
       case 'paper': return '论文';
+      case 'film': return '电影';
       default: return '内容';
     }
   };
@@ -191,6 +228,7 @@ export default function UserContentList({ type }: UserContentListProps) {
       case 'video': return `/videos/${item.slug}`;
       case 'podcast': return `/podcasts/${item.slug}`;
       case 'paper': return `/papers/${item.slug}`;
+      case 'film': return `/films/${item.slug}`;
       default: return '#';
     }
   };
