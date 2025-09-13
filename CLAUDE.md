@@ -29,11 +29,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Runtime**: Cloudflare Workers (serverless)
 - **Architecture**: Full-stack with edge computing
 - **Database**: Cloudflare D1 (SQLite at the edge)
-- **Authentication**: JWT tokens + bcrypt password encryption
+- **Authentication**: JWT tokens + Web Crypto API password encryption (Cloudflare compatible)
 - **Deployment**: Cloudflare Pages (global CDN)
 
 ### Key Features (Implemented)
 - **User Authentication**: Complete registration, login, and session management
+- **Simplified Login**: Email + password only (username removed from login form)
+- **Username Editing**: Inline username editing in user profile with real-time API
 - **Discussion System**: Real-time comments with nested replies and likes
 - **Content Interaction**: Like and bookmark functionality with user-specific tracking
 - **Real-time Like Counts**: API-driven like counts that update dynamically via `/api/likes/count`
@@ -41,7 +43,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Mixed Article Layout**: First 2 articles use ArticleCard, remainder use compact ArticleCard2
 - **Hover Interactions**: Video play buttons and podcast audio waves show only on hover
 - **Topic Collapse**: Automatic collapse for topic lists with > 20 items
-- **API Layer**: RESTful APIs for auth, comments, and user interactions
+- **Compact UI**: Login button uses icon-only design to save space
+- **API Layer**: RESTful APIs for auth, comments, user interactions, and profile updates
 - **Database**: Fully normalized schema with users, comments, likes, and interactions
 
 ## Project Structure (Current)
@@ -82,6 +85,10 @@ src/
 │   │   └── register.astro # Registration page
 │   └── api/             # API endpoints
 │       ├── auth/        # Authentication APIs
+│       │   ├── login.ts    # User login
+│       │   ├── register.ts # User registration
+│       │   ├── me.ts       # Get current user
+│       │   └── update-username.ts # Update username
 │       ├── comments/    # Comment system APIs
 │       └── likes/       # Real-time like count APIs
 ├── content/             # Content collections (Markdown)
@@ -183,6 +190,7 @@ src/
 - **Look up latest syntax and usage** via WebSearch for external libraries to ensure current patterns
 - **Debug and fix library issues** rather than skipping or switching libraries
 - **When user specifies a library**, persist with debugging rather than suggesting alternatives
+- **Cloudflare Workers Compatibility**: Always use Web APIs instead of Node.js-specific libraries (e.g., Web Crypto API instead of bcryptjs)
 
 ### Problem Solving
 - **Identify root causes** when facing repeated issues rather than trying random solutions
