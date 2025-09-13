@@ -236,56 +236,71 @@ const getLanguageName = (code: string) => {
             </div>
           )}
           
-          <!-- Source Links -->
+          <!-- Ratings & Links -->
           <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 shadow-sm border border-blue-200 dark:border-blue-800/30">
             <h3 class="font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
-              <span class="text-blue-600 dark:text-blue-400 mr-2">🔗</span>
-              相关链接
+              <span class="text-blue-600 dark:text-blue-400 mr-2">⭐</span>
+              评分与链接
             </h3>
-            {film.data.sourceUrl && film.data.sourceUrl.length > 0 ? (
-              <div class="space-y-3">
-                {film.data.sourceUrl.map(link => (
-                  <a 
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="block w-full px-4 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border border-blue-300 dark:border-blue-700 text-blue-700 dark:text-blue-300 font-medium rounded-lg transition-all duration-200 text-center"
-                  >
-                    {link.platform}
-                  </a>
-                ))}
-              </div>
-            ) : (
-              <p class="text-sm text-gray-600 dark:text-gray-400">
-                暂无相关链接
-              </p>
-            )}
-          </div>
-          
-          <!-- IMDB/Douban Rating -->
-          {(film.data.imdbRating || film.data.doubanRating) && (
-            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
-              <h3 class="font-semibold text-gray-900 dark:text-white mb-4">评分</h3>
-              <div class="space-y-3">
-                {film.data.imdbRating && (
+            <div class="space-y-3">
+              {/* IMDB Rating & Link */}
+              {film.data.sourceUrl?.find(link => link.platform === 'IMDB') && (
+                <a 
+                  href={film.data.sourceUrl.find(link => link.platform === 'IMDB').url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block w-full px-4 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border border-blue-300 dark:border-blue-700 rounded-lg transition-all duration-200"
+                >
                   <div class="flex justify-between items-center">
-                    <span class="text-gray-600 dark:text-gray-400">IMDB</span>
-                    <span class="font-bold text-lg text-yellow-600 dark:text-yellow-400">
-                      ⭐ {film.data.imdbRating}
-                    </span>
+                    <span class="text-blue-700 dark:text-blue-300 font-medium">IMDB</span>
+                    {film.data.imdbRating && (
+                      <span class="font-bold text-lg text-yellow-600 dark:text-yellow-400">
+                        ⭐ {film.data.imdbRating}/10
+                      </span>
+                    )}
                   </div>
-                )}
-                {film.data.doubanRating && (
+                </a>
+              )}
+              
+              {/* Douban Rating & Link */}
+              {film.data.sourceUrl?.find(link => link.platform === '豆瓣') && (
+                <a 
+                  href={film.data.sourceUrl.find(link => link.platform === '豆瓣').url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block w-full px-4 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border border-blue-300 dark:border-blue-700 rounded-lg transition-all duration-200"
+                >
                   <div class="flex justify-between items-center">
-                    <span class="text-gray-600 dark:text-gray-400">豆瓣</span>
-                    <span class="font-bold text-lg text-green-600 dark:text-green-400">
-                      ⭐ {film.data.doubanRating}
-                    </span>
+                    <span class="text-blue-700 dark:text-blue-300 font-medium">豆瓣</span>
+                    {film.data.doubanRating && (
+                      <span class="font-bold text-lg text-green-600 dark:text-green-400">
+                        ⭐ {film.data.doubanRating}/10
+                      </span>
+                    )}
                   </div>
-                )}
-              </div>
+                </a>
+              )}
+              
+              {/* Other Links without ratings */}
+              {film.data.sourceUrl?.filter(link => link.platform !== 'IMDB' && link.platform !== '豆瓣').map(link => (
+                <a 
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block w-full px-4 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border border-blue-300 dark:border-blue-700 text-blue-700 dark:text-blue-300 font-medium rounded-lg transition-all duration-200 text-center"
+                >
+                  {link.platform}
+                </a>
+              ))}
+              
+              {/* If no source links at all */}
+              {(!film.data.sourceUrl || film.data.sourceUrl.length === 0) && (
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  暂无相关链接
+                </p>
+              )}
             </div>
-          )}
+          </div>
           
           <!-- Support Us -->
           <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-6 shadow-sm border border-purple-200 dark:border-purple-800/30">
@@ -297,7 +312,7 @@ const getLanguageName = (code: string) => {
               href="https://buymeacoffee.com/femres" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="block w-full px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg transition-all duration-200 text-center"
+              class="block w-full px-4 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white font-semibold rounded-lg transition-all duration-200 text-center"
             >
               ☕ Buy me a coffee
             </a>
