@@ -163,11 +163,10 @@ const getAuthorColor = (author: string) => {
       <!-- Actions -->
       <div class="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
         <div onclick="event.stopPropagation(); event.preventDefault();">
-          <InteractionButtons 
-            contentId={`article-${slug}`} 
+          <InteractionButtons
+            contentId={`article-${slug}`}
             contentType="article"
-            initialLikes={0}
-            client:visible 
+            client:visible
           />
         </div>
 

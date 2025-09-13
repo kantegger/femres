@@ -97,11 +97,10 @@ const formatYear = (date: Date) => {
 
         <!-- Action Row -->
         <div class="flex justify-end pt-3 border-t border-gray-100 dark:border-gray-700">
-          <InteractionButtons 
-            contentId={`book-${slug}`} 
+          <InteractionButtons
+            contentId={`book-${slug}`}
             contentType="book"
-            initialLikes={0}
-            client:visible 
+            client:visible
           />
         </div>
       </div>

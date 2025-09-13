@@ -102,11 +102,10 @@ const formatDate = (date: Date) => {
           )}
           
           <div onclick="event.stopPropagation(); event.preventDefault();">
-            <InteractionButtons 
-              contentId={`paper-${slug}`} 
+            <InteractionButtons
+              contentId={`paper-${slug}`}
               contentType="paper"
-              initialLikes={0}
-              client:visible 
+              client:visible
             />
           </div>
         </div>

@@ -189,11 +189,10 @@ const getLanguageName = (code: string) => {
           
           <!-- Interaction Buttons -->
           <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
-            <InteractionButtons 
-              contentId={`film-${film.slug}`} 
+            <InteractionButtons
+              contentId={`film-${film.slug}`}
               contentType="film"
-              initialLikes={0}
-              client:load 
+              client:load
             />
           </div>
         </div>

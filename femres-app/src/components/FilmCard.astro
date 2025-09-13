@@ -117,11 +117,10 @@ const formatYear = (date: Date) => {
     
     <!-- Interaction Buttons -->
     <div class="pt-3 border-t border-gray-100 dark:border-gray-700">
-      <InteractionButtons 
-        contentId={`film-${slug}`} 
+      <InteractionButtons
+        contentId={`film-${slug}`}
         contentType="film"
-        initialLikes={0}
-        client:visible 
+        client:visible
       />
     </div>
   </div>

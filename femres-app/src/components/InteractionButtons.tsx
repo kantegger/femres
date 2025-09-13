@@ -13,24 +13,54 @@ export default function InteractionButtons({ contentId, contentType, initialLike
   const [liked, setLiked] = useState(false);
   const [bookmarked, setBookmarked] = useState(false);
   const [likeCount, setLikeCount] = useState(initialLikes);
+  const [totalLikes, setTotalLikes] = useState(initialLikes);
+  const [loadingLikes, setLoadingLikes] = useState(true);
   const [showLoginPrompt, setShowLoginPrompt] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  // 获取总点赞数
+  useEffect(() => {
+    const fetchTotalLikes = async () => {
+      try {
+        const response = await fetch(`/api/likes/count?contentId=${encodeURIComponent(contentId)}`);
+        if (response.ok) {
+          const data = await response.json();
+          setTotalLikes(data.count || 0);
+        }
+      } catch (error) {
+        console.error('Error fetching total likes:', error);
+        // 保持初始值
+      } finally {
+        setLoadingLikes(false);
+      }
+    };
+
+    fetchTotalLikes();
+  }, [contentId]);
+
+  // 处理用户个人状态
   useEffect(() => {
     if (isAuthenticated) {
       const isCurrentlyLiked = isLiked(contentId);
       const isCurrentlyBookmarked = isBookmarked(contentId);
       setLiked(isCurrentlyLiked);
       setBookmarked(isCurrentlyBookmarked);
-      
-      // Calculate actual like count based on current state
-      setLikeCount(initialLikes + (isCurrentlyLiked ? 1 : 0));
     } else {
       setLiked(false);
       setBookmarked(false);
-      setLikeCount(initialLikes);
     }
-  }, [contentId, isAuthenticated, isLiked, isBookmarked, interactions, initialLikes]);
+  }, [contentId, isAuthenticated, isLiked, isBookmarked, interactions]);
+
+  // 计算显示的点赞数（总数 + 当前用户的增量）
+  useEffect(() => {
+    if (isAuthenticated) {
+      const currentUserLiked = isLiked(contentId);
+      const userIncrement = currentUserLiked ? 1 : 0;
+      setLikeCount(totalLikes + userIncrement);
+    } else {
+      setLikeCount(totalLikes);
+    }
+  }, [totalLikes, isAuthenticated, isLiked, contentId, interactions]);
 
   const handleLike = async () => {
     if (!isAuthenticated) {
@@ -42,11 +72,11 @@ export default function InteractionButtons({ contentId, contentType, initialLike
 
     setIsLoading(true);
     const wasLiked = liked;
-    
+
     // Optimistic update
     setLiked(!wasLiked);
     setLikeCount(prev => wasLiked ? prev - 1 : prev + 1);
-    
+
     try {
       await toggleLike(contentId, contentType);
     } catch (error) {
@@ -108,7 +138,11 @@ export default function InteractionButtons({ contentId, contentType, initialLike
             d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" 
           />
         </svg>
-        <span className="text-sm font-medium">{likeCount}</span>
+        {loadingLikes ? (
+          <span className="text-sm font-medium animate-pulse w-6 h-4 bg-gray-300 dark:bg-gray-600 rounded"></span>
+        ) : (
+          <span className="text-sm font-medium">{likeCount}</span>
+        )}
       </button>
 
       <button
