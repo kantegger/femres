@@ -25,6 +25,7 @@ interface AuthState {
   // API methods
   register: (username: string, email: string, password: string) => Promise<{ success: boolean; error?: string }>;
   login: (identifier: string, password: string) => Promise<{ success: boolean; error?: string }>;
+  updateUsername: (username: string) => Promise<{ success: boolean; error?: string }>;
   logout: () => void;
   refreshUser: () => Promise<void>;
   fetchInteractions: () => Promise<void>;
@@ -150,6 +151,52 @@ export const useAuthStore = create<AuthState>()(
           // Fetch user interactions
           await get().fetchInteractions();
           
+          return { success: true };
+        } catch (error) {
+          set({ isLoading: false });
+          return { success: false, error: `Network error: ${error.message || error}` };
+        }
+      },
+
+      updateUsername: async (username: string) => {
+        const { getAuthHeaders } = get();
+        set({ isLoading: true });
+
+        try {
+          const response = await fetch(apiUrl('/auth/update-username'), {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              ...getAuthHeaders()
+            },
+            body: JSON.stringify({ username })
+          });
+
+          if (!response.ok) {
+            let errorMessage = `HTTP ${response.status}`;
+            try {
+              const text = await response.text();
+              if (text) {
+                try {
+                  const data = JSON.parse(text);
+                  errorMessage = data.error || errorMessage;
+                } catch (e) {
+                  errorMessage = text || errorMessage;
+                }
+              }
+            } catch (e) {
+            }
+            set({ isLoading: false });
+            return { success: false, error: errorMessage };
+          }
+
+          const data = await response.json();
+
+          set({
+            user: data.user,
+            isLoading: false
+          });
+
           return { success: true };
         } catch (error) {
           set({ isLoading: false });

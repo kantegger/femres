@@ -23,10 +23,19 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
     setError('');
     setIsLoading(true);
 
-    if (!username || !email || !password) {
-      setError('请填写所有字段');
-      setIsLoading(false);
-      return;
+    // Check required fields based on mode
+    if (isLoginMode) {
+      if (!email || !password) {
+        setError('请填写邮箱和密码');
+        setIsLoading(false);
+        return;
+      }
+    } else {
+      if (!username || !email || !password) {
+        setError('请填写所有字段');
+        setIsLoading(false);
+        return;
+      }
     }
 
     if (!isLoginMode && password !== confirmPassword) {
@@ -97,18 +106,20 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              用户名
-            </label>
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-              placeholder="输入用户名"
-            />
-          </div>
+          {!isLoginMode && (
+            <div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                用户名
+              </label>
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                placeholder="输入用户名"
+              />
+            </div>
+          )}
 
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">

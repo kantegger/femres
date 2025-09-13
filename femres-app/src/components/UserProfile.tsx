@@ -1,9 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthStore } from '../store/authStore';
 import UserAvatar from './UserAvatar';
 
 export default function UserProfile() {
-  const { user, isAuthenticated, interactions, logout } = useAuthStore();
+  const { user, isAuthenticated, interactions, logout, updateUsername, isLoading } = useAuthStore();
+  const [isEditingUsername, setIsEditingUsername] = useState(false);
+  const [newUsername, setNewUsername] = useState(user?.username || '');
+  const [error, setError] = useState('');
+
+  const handleUsernameEdit = () => {
+    setIsEditingUsername(true);
+    setNewUsername(user?.username || '');
+    setError('');
+  };
+
+  const handleUsernameCancel = () => {
+    setIsEditingUsername(false);
+    setNewUsername(user?.username || '');
+    setError('');
+  };
+
+  const handleUsernameSave = async () => {
+    if (!newUsername.trim()) {
+      setError('用户名不能为空');
+      return;
+    }
+
+    if (newUsername.trim() === user?.username) {
+      setIsEditingUsername(false);
+      return;
+    }
+
+    const result = await updateUsername(newUsername.trim());
+
+    if (result.success) {
+      setIsEditingUsername(false);
+      setError('');
+    } else {
+      setError(result.error || '更新失败');
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleUsernameSave();
+    } else if (e.key === 'Escape') {
+      handleUsernameCancel();
+    }
+  };
 
   if (!isAuthenticated) {
     return (
@@ -40,9 +84,56 @@ export default function UserProfile() {
             <UserAvatar name={user?.username || ''} size="lg" />
           </div>
           <div className="flex-1 text-center sm:text-left">
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-              {user?.username}
-            </h1>
+            <div className="flex items-center justify-center sm:justify-start mb-2">
+              {isEditingUsername ? (
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="text"
+                    value={newUsername}
+                    onChange={(e) => setNewUsername(e.target.value)}
+                    onKeyDown={handleKeyPress}
+                    className="text-2xl font-bold bg-transparent border-b-2 border-purple-500 focus:outline-none text-gray-900 dark:text-white min-w-0"
+                    style={{ width: `${Math.max(newUsername.length, 8)}ch` }}
+                    autoFocus
+                  />
+                  <button
+                    onClick={handleUsernameSave}
+                    disabled={isLoading}
+                    className="p-1 text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300 disabled:opacity-50"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={handleUsernameCancel}
+                    className="p-1 text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+              ) : (
+                <div className="flex items-center space-x-2">
+                  <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    {user?.username}
+                  </h1>
+                  <button
+                    onClick={handleUsernameEdit}
+                    className="p-1 text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                    title="编辑用户名"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
+                  </button>
+                </div>
+              )}
+            </div>
+            {error && (
+              <p className="text-red-500 text-sm mb-2">{error}</p>
+            )}
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               {user?.email}
             </p>

@@ -36,6 +36,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **User Authentication**: Complete registration, login, and session management
 - **Discussion System**: Real-time comments with nested replies and likes
 - **Content Interaction**: Like and bookmark functionality with user-specific tracking
+- **Real-time Like Counts**: API-driven like counts that update dynamically via `/api/likes/count`
+- **Pagination System**: Server-side and client-side pagination for books (12/page) and articles (12/page)
+- **Mixed Article Layout**: First 2 articles use ArticleCard, remainder use compact ArticleCard2
+- **Hover Interactions**: Video play buttons and podcast audio waves show only on hover
+- **Topic Collapse**: Automatic collapse for topic lists with > 20 items
 - **API Layer**: RESTful APIs for auth, comments, and user interactions
 - **Database**: Fully normalized schema with users, comments, likes, and interactions
 
@@ -43,18 +48,49 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```
 src/
 ├── components/           # Astro/React components
-│   ├── ContentCard.astro # Content display components
+│   ├── ArticleCard.astro # Full-featured article display
+│   ├── ArticleCard2.astro # Compact horizontal article layout
+│   ├── BookCard.astro    # Book display with ratings
+│   ├── VideoCard.astro   # Video display with hover play button
+│   ├── PodcastCard.astro # Podcast display with hover audio waves
+│   ├── FilmCard.astro    # Film display with ratings
+│   ├── InteractionButtons.tsx # Like/bookmark functionality (React)
 │   ├── SearchBox.tsx     # Search functionality (React island)
+│   ├── UserContentList.tsx # User's liked/bookmarked content
 │   └── Layout.astro      # Page layouts
 ├── pages/               # Route pages
-│   ├── index.astro      # Homepage
-│   ├── search.astro     # Search page
-│   ├── topics/          # Topic pages
+│   ├── index.astro      # Homepage with featured content
+│   ├── books/           # Books section
+│   │   ├── index.astro  # Books listing with pagination (12/page)
+│   │   └── [slug].astro # Individual book pages
+│   ├── articles/        # Articles section
+│   │   ├── index.astro  # Articles with mixed layout + pagination
+│   │   └── [slug].astro # Individual article pages
+│   ├── films/           # Films section
+│   │   ├── index.astro  # Films listing with topic collapse
+│   │   └── [slug].astro # Individual film pages
+│   ├── podcasts/        # Podcasts section
+│   │   ├── index.astro  # Podcasts listing
+│   │   └── [slug].astro # Individual podcast pages
+│   ├── videos/          # Videos section
+│   │   ├── index.astro  # Videos listing
+│   │   └── [slug].astro # Individual video pages
+│   ├── search.astro     # Search page with filters
+│   ├── topics/          # Topic-based browsing
+│   ├── auth/            # Authentication pages
+│   │   ├── login.astro  # Login page
+│   │   └── register.astro # Registration page
 │   └── api/             # API endpoints
-├── content/             # Content collections
-│   ├── books/           # Book content
-│   └── articles/        # Article content
-└── styles/              # Styling files
+│       ├── auth/        # Authentication APIs
+│       ├── comments/    # Comment system APIs
+│       └── likes/       # Real-time like count APIs
+├── content/             # Content collections (Markdown)
+│   ├── books/           # Book analyses and reviews
+│   ├── articles/        # Article content
+│   ├── films/           # Film analyses (Barbie, Promising Young Woman)
+│   ├── podcasts/        # Podcast content
+│   └── videos/          # Video content
+└── styles/              # Global styling files
 ```
 
 ## Feminist Theme Categories
@@ -197,7 +233,9 @@ src/
 - Repetitive structural patterns across different books
 - Oversimplification of complex theoretical concepts
 
-### Verified Books Added (with search confirmation):
+### Verified Content Added (with search confirmation):
+
+#### Books:
 - **Bloodchild** by Octavia Butler (1984) - Verified as Hugo and Nebula Award-winning short story, key work in feminist science fiction exploring gender roles, male pregnancy, and power dynamics. Part of "Bloodchild and Other Stories" collection.
 - **Men Explain Things to Me** by Rebecca Solnit (2014) - Verified as influential essay collection that coined the term "mansplaining". Explores gender, power, and voice in contemporary society. Published by Haymarket Books, ISBN: 9781608464661.
 - **The Female Eunuch** by Germaine Greer (1970) - Verified as groundbreaking Second Wave feminist text analyzing women's oppression in patriarchal society. Published by MacGibbon & Kee, remains influential in feminist theory. ISBN: 9780007205011.
@@ -205,13 +243,28 @@ src/
 - **The Politics of Reality** by Marilyn Frye (1983) - Verified as classic of radical feminist philosophy. Collection of 9 influential essays analyzing oppression, sexism, and feminist theory from philosophical perspective. Published by The Crossing Press. ISBN: 9780895940995.
 - **Whipping Girl** by Julia Serano (2007) - Verified as foundational transgender feminist manifesto analyzing transphobia as rooted in sexism. Explores transmisogyny and critiques traditional feminist exclusion of trans women. Published by Seal Press. ISBN: 9781580056229.
 
+#### Films:
+- **Barbie (2023)** by Greta Gerwig - Verified as major commercial and cultural phenomenon exploring postmodern feminism, beauty standards, and patriarchal critique. Starred Margot Robbie and Ryan Gosling. IMDB: 6.8, Douban: 8.0. Topics: 后现代女性主义, 美丽标准批判, 父权制批判, 消费文化批判.
+- **Promising Young Woman (2020)** by Emerald Fennell - Verified as Academy Award-winning (Best Original Screenplay) feminist thriller addressing rape culture and bystander responsibility. Starred Carey Mulligan. IMDB: 7.5, Douban: 7.7. Topics: 反性暴力, 强奸文化批判, 旁观者责任, MeToo运动.
+
 ## Development Commands
 
-*To be added when project structure is established. Will likely include:*
-- `npm run dev` - Development server
-- `npm run build` - Production build
-- `npm run lint` - Code linting
-- `npm test` - Run tests
+All commands are run from the `femres-app/` directory:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build production site to `./dist/`               |
+| `npm run preview`         | Preview build locally before deploying          |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+### Development Workflow Commands
+- **Content Updates**: Add new `.md` files to respective `src/content/` folders
+- **Component Updates**: Modify components in `src/components/`
+- **API Development**: Add endpoints in `src/pages/api/`
+- **Testing**: Manual testing via development server
 
 ## Key Considerations
 
