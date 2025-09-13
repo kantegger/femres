@@ -79,26 +79,26 @@ const formatDate = (date: Date) => {
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <!-- Audio Wave Overlay -->
-              <div class="absolute inset-0 flex items-end justify-center pb-2">
+              <div class="absolute inset-0 flex items-end justify-center pb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div class="flex items-center gap-1">
-                  <div class="w-1 bg-white/90 rounded-full animate-pulse shadow-sm" style="height: 8px; animation-delay: 0ms;"></div>
-                  <div class="w-1 bg-white/80 rounded-full animate-pulse shadow-sm" style="height: 12px; animation-delay: 150ms;"></div>
-                  <div class="w-1 bg-white/90 rounded-full animate-pulse shadow-sm" style="height: 6px; animation-delay: 300ms;"></div>
-                  <div class="w-1 bg-white rounded-full animate-pulse shadow-sm" style="height: 14px; animation-delay: 450ms;"></div>
-                  <div class="w-1 bg-white/80 rounded-full animate-pulse shadow-sm" style="height: 10px; animation-delay: 600ms;"></div>
+                  <div class="w-1 bg-white/90 rounded-full group-hover:animate-pulse shadow-sm" style="height: 8px; animation-delay: 0ms;"></div>
+                  <div class="w-1 bg-white/80 rounded-full group-hover:animate-pulse shadow-sm" style="height: 12px; animation-delay: 150ms;"></div>
+                  <div class="w-1 bg-white/90 rounded-full group-hover:animate-pulse shadow-sm" style="height: 6px; animation-delay: 300ms;"></div>
+                  <div class="w-1 bg-white rounded-full group-hover:animate-pulse shadow-sm" style="height: 14px; animation-delay: 450ms;"></div>
+                  <div class="w-1 bg-white/80 rounded-full group-hover:animate-pulse shadow-sm" style="height: 10px; animation-delay: 600ms;"></div>
                 </div>
               </div>
             </div>
           ) : (
             <div class="w-20 h-20 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center relative overflow-hidden">
               <!-- Background Audio Waves -->
-              <div class="absolute inset-0 opacity-30">
+              <div class="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300">
                 <div class="flex items-center justify-center h-full gap-1">
-                  <div class="w-1 bg-white rounded-full animate-pulse" style="height: 12px; animation-delay: 0ms;"></div>
-                  <div class="w-1 bg-white rounded-full animate-pulse" style="height: 18px; animation-delay: 150ms;"></div>
-                  <div class="w-1 bg-white rounded-full animate-pulse" style="height: 8px; animation-delay: 300ms;"></div>
-                  <div class="w-1 bg-white rounded-full animate-pulse" style="height: 22px; animation-delay: 450ms;"></div>
-                  <div class="w-1 bg-white rounded-full animate-pulse" style="height: 14px; animation-delay: 600ms;"></div>
+                  <div class="w-1 bg-white rounded-full group-hover:animate-pulse" style="height: 12px; animation-delay: 0ms;"></div>
+                  <div class="w-1 bg-white rounded-full group-hover:animate-pulse" style="height: 18px; animation-delay: 150ms;"></div>
+                  <div class="w-1 bg-white rounded-full group-hover:animate-pulse" style="height: 8px; animation-delay: 300ms;"></div>
+                  <div class="w-1 bg-white rounded-full group-hover:animate-pulse" style="height: 22px; animation-delay: 450ms;"></div>
+                  <div class="w-1 bg-white rounded-full group-hover:animate-pulse" style="height: 14px; animation-delay: 600ms;"></div>
                 </div>
               </div>
               <!-- Play Icon -->
