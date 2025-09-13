@@ -1,0 +1,558 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import FilmCard from '../../components/FilmCard.astro';
+
+const films = await getCollection('films');
+const publishedFilms = films.filter(film => film.data.status === 'published');
+
+// 按发布日期排序
+const sortedFilms = publishedFilms.sort((a, b) => {
+  return new Date(b.data.releaseDate).getTime() - new Date(a.data.releaseDate).getTime();
+});
+
+// 获取所有主题标签
+const allTopics = [...new Set(publishedFilms.flatMap(film => film.data.topics))].sort();
+
+// 获取所有国家/地区
+const allCountries = [...new Set(publishedFilms.map(film => film.data.country))].sort();
+
+// 获取所有类型
+const allGenres = [...new Set(publishedFilms.flatMap(film => film.data.genre || []))].sort();
+
+// 分页设置
+const FILMS_PER_PAGE = 12;
+const totalFilms = publishedFilms.length;
+const totalPages = Math.ceil(totalFilms / FILMS_PER_PAGE);
+
+// 获取当前页码 (从URL参数获取，默认为1)
+const currentPage = Number(Astro.url.searchParams.get('page') || '1');
+const validPage = Math.max(1, Math.min(currentPage, totalPages));
+
+// 计算当前页的电影
+const startIndex = (validPage - 1) * FILMS_PER_PAGE;
+const endIndex = startIndex + FILMS_PER_PAGE;
+const currentPageFilms = sortedFilms.slice(startIndex, endIndex);
+
+// 生成页码数组
+const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+// 生成中间页码数组
+const middlePages = pageNumbers.filter(num => 
+  num !== 1 && 
+  num !== totalPages && 
+  Math.abs(num - validPage) <= 1
+);
+---
+
+<Layout 
+  title="电影 - FemRes"
+  description="精选女性主义相关电影，通过影像探索性别议题、女性故事与社会批判，为观影提供多元视角。"
+>
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            🎬 电影推荐
+          </h1>
+          <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+            透过镜头审视性别议题，用影像记录女性故事，以电影激发社会思考
+          </p>
+          
+          <!-- 统计信息 -->
+          <div class="flex flex-wrap justify-center gap-6 text-sm">
+            <div class="flex items-center bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+              <span class="mr-2">🎞️</span>
+              <span>共 {totalFilms} 部电影</span>
+            </div>
+            <div class="flex items-center bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+              <span class="mr-2">🌍</span>
+              <span>{allCountries.length} 个国家/地区</span>
+            </div>
+            <div class="flex items-center bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+              <span class="mr-2">🎭</span>
+              <span>{allGenres.length} 种类型</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      
+      <!-- 筛选区域 -->
+      <div class="mb-12 space-y-6">
+        <!-- 主题标签筛选 -->
+        <div>
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">主题分类</h2>
+          <div class="flex flex-wrap gap-3">
+            <button 
+              class="filter-btn inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium"
+              data-filter="all"
+              data-filter-type="topic"
+            >
+              全部主题
+            </button>
+            {allTopics.map(topic => (
+              <button 
+                class="filter-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-sm"
+                data-filter={topic}
+                data-filter-type="topic"
+              >
+                {topic}
+              </button>
+            ))}
+          </div>
+        </div>
+        
+        <!-- 国家/地区筛选 -->
+        <div>
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">国家/地区</h2>
+          <div class="flex flex-wrap gap-3">
+            <button 
+              class="country-btn inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+              data-country="all"
+            >
+              全部地区
+            </button>
+            {allCountries.map(country => (
+              <button 
+                class="country-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm"
+                data-country={country}
+              >
+                {country}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- 电影网格 -->
+      <div class="mb-8">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            <span id="current-filter">全部电影</span>
+            <span id="film-count" class="text-base font-normal text-gray-600 dark:text-gray-400 ml-2">
+              ({totalFilms} 部)
+            </span>
+          </h2>
+          <div class="flex items-center gap-4">
+            <select id="sort-select" class="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-sm text-gray-900 dark:text-white">
+              <option value="date-desc">最新上映</option>
+              <option value="date-asc">最早上映</option>
+              <option value="title-asc">片名 A-Z</option>
+              <option value="title-desc">片名 Z-A</option>
+              <option value="year-desc">年份倒序</option>
+              <option value="year-asc">年份顺序</option>
+            </select>
+          </div>
+        </div>
+        
+        <div id="films-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {currentPageFilms.map(film => (
+            <div class="film-item" 
+              data-topics={JSON.stringify(film.data.topics)} 
+              data-title={film.data.title} 
+              data-date={film.data.releaseDate.toISOString()}
+              data-country={film.data.country}
+              data-year={film.data.year}
+            >
+              <FilmCard 
+                title={film.data.title}
+                director={film.data.director}
+                description={film.data.description}
+                slug={film.slug}
+                posterImage={film.data.posterImage}
+                releaseDate={film.data.releaseDate}
+                topics={film.data.topics}
+                year={film.data.year}
+                country={film.data.country}
+                duration={film.data.duration}
+                genre={film.data.genre}
+              />
+            </div>
+          ))}
+        </div>
+        
+        <!-- 分页组件 -->
+        {totalPages > 1 && (
+          <div class="mt-12 flex justify-center">
+            <nav class="flex items-center space-x-2" aria-label="分页导航">
+              <!-- 上一页按钮 -->
+              {validPage > 1 ? (
+                <a 
+                  href={`/films?page=${validPage - 1}`}
+                  class="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                  aria-label="上一页"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                </a>
+              ) : (
+                <span class="px-3 py-2 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg opacity-50 cursor-not-allowed">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                </span>
+              )}
+              
+              <!-- 页码按钮 -->
+              <div class="flex items-center space-x-2">
+                {/* 第一页 */}
+                {validPage === 1 ? (
+                  <span class="px-4 py-2 bg-purple-600 text-white rounded-lg font-medium">1</span>
+                ) : (
+                  <a href="/films?page=1" class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">1</a>
+                )}
+                
+                {/* 左侧省略号 */}
+                {validPage > 3 && <span class="px-2 text-gray-500">...</span>}
+                
+                {/* 中间页码 */}
+                {middlePages.map(pageNum => 
+                  pageNum === validPage ? (
+                    <span class="px-4 py-2 bg-purple-600 text-white rounded-lg font-medium">
+                      {pageNum}
+                    </span>
+                  ) : (
+                    <a 
+                      href={`/films?page=${pageNum}`}
+                      class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                    >
+                      {pageNum}
+                    </a>
+                  )
+                )}
+                
+                {/* 右侧省略号 */}
+                {validPage < totalPages - 2 && <span class="px-2 text-gray-500">...</span>}
+                
+                {/* 最后一页 */}
+                {totalPages > 1 && (
+                  validPage === totalPages ? (
+                    <span class="px-4 py-2 bg-purple-600 text-white rounded-lg font-medium">{totalPages}</span>
+                  ) : (
+                    <a href={`/films?page=${totalPages}`} class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">{totalPages}</a>
+                  )
+                )}
+              </div>
+              
+              <!-- 下一页按钮 -->
+              {validPage < totalPages ? (
+                <a 
+                  href={`/films?page=${validPage + 1}`}
+                  class="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                  aria-label="下一页"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              ) : (
+                <span class="px-3 py-2 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg opacity-50 cursor-not-allowed">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </span>
+              )}
+            </nav>
+          </div>
+        )}
+      </div>
+
+      <!-- 空状态 -->
+      {sortedFilms.length === 0 && (
+        <div class="text-center py-16">
+          <div class="text-6xl mb-4">🎬</div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            暂无电影内容
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            我们正在努力添加更多优质的女性主义电影推荐
+          </p>
+        </div>
+      )}
+
+      <!-- 观影指南 -->
+      <div class="mt-16 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-2xl p-8">
+        <div class="text-center">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            🎞️ 观影建议
+          </h2>
+          <div class="grid md:grid-cols-3 gap-6 text-left mt-8">
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">👁️</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">批判性观看</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                带着性别视角审视电影中的人物塑造、叙事方式和价值观传递
+              </p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">💭</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">深度思考</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                观影后思考影片反映的社会议题，与现实生活建立联系
+              </p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">💬</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">交流讨论</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                与朋友分享观影感受，在讨论中碰撞思想，深化理解
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const countryButtons = document.querySelectorAll('.country-btn');
+    const sortSelect = document.getElementById('sort-select');
+    const filmsGrid = document.getElementById('films-grid');
+    const currentFilter = document.getElementById('current-filter');
+    const filmCount = document.getElementById('film-count');
+    
+    let currentTopic = 'all';
+    let currentCountry = 'all';
+    const FILMS_PER_PAGE = 12;
+    let currentPage = 1;
+    let allFilmItems = [];
+    
+    // 保存所有电影项目
+    allFilmItems = Array.from(document.querySelectorAll('.film-item')).map(item => {
+      return {
+        element: item.cloneNode(true),
+        topics: JSON.parse(item.dataset.topics),
+        title: item.dataset.title,
+        date: item.dataset.date,
+        country: item.dataset.country,
+        year: parseInt(item.dataset.year)
+      };
+    });
+    
+    // 主题筛选功能
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const filterValue = this.dataset.filter;
+        currentTopic = filterValue;
+        currentPage = 1;
+        
+        // 更新按钮样式
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-purple-600', 'text-white');
+          btn.classList.add('bg-white', 'dark:bg-gray-800', 'border', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+        });
+        
+        this.classList.remove('bg-white', 'dark:bg-gray-800', 'border', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+        this.classList.add('bg-purple-600', 'text-white');
+        
+        updateFilterTitle();
+        filterAndSort();
+      });
+    });
+    
+    // 国家/地区筛选功能
+    countryButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const countryValue = this.dataset.country;
+        currentCountry = countryValue;
+        currentPage = 1;
+        
+        // 更新按钮样式
+        countryButtons.forEach(btn => {
+          btn.classList.remove('bg-blue-600', 'text-white');
+          btn.classList.add('bg-white', 'dark:bg-gray-800', 'border', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+        });
+        
+        this.classList.remove('bg-white', 'dark:bg-gray-800', 'border', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+        this.classList.add('bg-blue-600', 'text-white');
+        
+        updateFilterTitle();
+        filterAndSort();
+      });
+    });
+    
+    // 排序功能
+    sortSelect.addEventListener('change', function() {
+      currentPage = 1;
+      filterAndSort();
+    });
+    
+    function updateFilterTitle() {
+      let title = '';
+      if (currentTopic !== 'all' && currentCountry !== 'all') {
+        title = `${currentTopic} · ${currentCountry}`;
+      } else if (currentTopic !== 'all') {
+        title = currentTopic;
+      } else if (currentCountry !== 'all') {
+        title = currentCountry;
+      } else {
+        title = '全部电影';
+      }
+      currentFilter.textContent = title;
+    }
+    
+    function filterAndSort() {
+      const sortValue = sortSelect.value;
+      
+      // 筛选
+      let filteredFilms = allFilmItems.filter(item => {
+        const topicMatch = currentTopic === 'all' || item.topics.includes(currentTopic);
+        const countryMatch = currentCountry === 'all' || item.country === currentCountry;
+        return topicMatch && countryMatch;
+      });
+      
+      // 排序
+      filteredFilms.sort((a, b) => {
+        switch (sortValue) {
+          case 'date-desc':
+            return new Date(b.date).getTime() - new Date(a.date).getTime();
+          case 'date-asc':
+            return new Date(a.date).getTime() - new Date(b.date).getTime();
+          case 'title-asc':
+            return a.title.localeCompare(b.title);
+          case 'title-desc':
+            return b.title.localeCompare(a.title);
+          case 'year-desc':
+            return b.year - a.year;
+          case 'year-asc':
+            return a.year - b.year;
+          default:
+            return 0;
+        }
+      });
+      
+      // 清空网格
+      filmsGrid.innerHTML = '';
+      
+      // 计算分页
+      const totalFiltered = filteredFilms.length;
+      const totalPages = Math.ceil(totalFiltered / FILMS_PER_PAGE);
+      const startIndex = (currentPage - 1) * FILMS_PER_PAGE;
+      const endIndex = startIndex + FILMS_PER_PAGE;
+      const currentPageFilms = filteredFilms.slice(startIndex, endIndex);
+      
+      // 显示当前页的电影
+      currentPageFilms.forEach(item => {
+        filmsGrid.appendChild(item.element.cloneNode(true));
+      });
+      
+      // 更新计数
+      filmCount.textContent = `(${totalFiltered} 部)`;
+      
+      // 创建或更新分页控件
+      updatePagination(totalPages, totalFiltered);
+      
+      // 如果没有结果，显示空状态
+      if (filteredFilms.length === 0) {
+        const emptyDiv = document.createElement('div');
+        emptyDiv.id = 'empty-state';
+        emptyDiv.className = 'col-span-full text-center py-16';
+        emptyDiv.innerHTML = `
+          <div class="text-6xl mb-6">🎬</div>
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            暂无相关电影
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            该筛选条件下暂无电影，试试其他条件或查看全部电影
+          </p>
+        `;
+        filmsGrid.appendChild(emptyDiv);
+      }
+    }
+    
+    function updatePagination(totalPages, totalItems) {
+      // 移除现有的分页控件
+      const existingPagination = document.getElementById('filter-pagination');
+      if (existingPagination) {
+        existingPagination.remove();
+      }
+      
+      // 如果总页数大于1，添加分页控件
+      if (totalPages > 1) {
+        const paginationHTML = `
+          <div id="filter-pagination" class="mt-12 flex justify-center">
+            <nav class="flex items-center space-x-2" aria-label="分页导航">
+              <button 
+                class="pagination-prev px-3 py-2 ${currentPage > 1 ? 'bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700' : 'bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 opacity-50 cursor-not-allowed'} rounded-lg transition-colors"
+                ${currentPage <= 1 ? 'disabled' : ''}
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              
+              <div class="flex items-center space-x-2" id="page-numbers">
+                ${generatePageNumbers(totalPages)}
+              </div>
+              
+              <button 
+                class="pagination-next px-3 py-2 ${currentPage < totalPages ? 'bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700' : 'bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 opacity-50 cursor-not-allowed'} rounded-lg transition-colors"
+                ${currentPage >= totalPages ? 'disabled' : ''}
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </nav>
+          </div>
+        `;
+        
+        filmsGrid.insertAdjacentHTML('afterend', paginationHTML);
+        
+        // 添加分页事件监听器
+        document.querySelector('.pagination-prev')?.addEventListener('click', () => {
+          if (currentPage > 1) {
+            currentPage--;
+            filterAndSort();
+          }
+        });
+        
+        document.querySelector('.pagination-next')?.addEventListener('click', () => {
+          if (currentPage < totalPages) {
+            currentPage++;
+            filterAndSort();
+          }
+        });
+        
+        document.querySelectorAll('.page-number').forEach(btn => {
+          btn.addEventListener('click', function() {
+            currentPage = parseInt(this.dataset.page);
+            filterAndSort();
+          });
+        });
+      }
+    }
+    
+    function generatePageNumbers(totalPages) {
+      let html = '';
+      for (let i = 1; i <= totalPages; i++) {
+        const showPage = i === 1 || 
+                        i === totalPages || 
+                        Math.abs(i - currentPage) <= 1;
+        
+        if (showPage) {
+          if (i === currentPage) {
+            html += `<span class="px-4 py-2 bg-purple-600 text-white rounded-lg font-medium">${i}</span>`;
+          } else {
+            html += `<button class="page-number px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors" data-page="${i}">${i}</button>`;
+          }
+        } else if (i === 2 && currentPage > 4) {
+          html += `<span class="px-2 text-gray-500">...</span>`;
+        } else if (i === totalPages - 1 && currentPage < totalPages - 3) {
+          html += `<span class="px-2 text-gray-500">...</span>`;
+        }
+      }
+      return html;
+    }
+  });
+</script>

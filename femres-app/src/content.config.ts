@@ -10,7 +10,7 @@ const books = defineCollection({
     description: z.string(),
     publishDate: z.date(),
     isbn: z.string().optional(),
-    language: z.enum(['zh-CN', 'en', 'zh-TW']).default('zh-CN'),
+    language: z.enum(['zh-CN', 'en', 'zh-TW', 'fr', 'de', 'es', 'it', 'ja', 'ko', 'pt', 'ru']).default('zh-CN'),
     topics: z.array(z.string()),
     sourceUrl: z.string().url().optional(),
     coverImage: z.string().optional(),
@@ -25,7 +25,7 @@ const articles = defineCollection({
     author: z.string(),
     description: z.string(),
     publishDate: z.date(),
-    language: z.enum(['zh-CN', 'en', 'zh-TW']).default('zh-CN'),
+    language: z.enum(['zh-CN', 'en', 'zh-TW', 'fr', 'de', 'es', 'it', 'ja', 'ko', 'pt', 'ru']).default('zh-CN'),
     topics: z.array(z.string()),
     sourceUrl: z.string().url(),
     readingTime: z.number().optional(),
@@ -41,7 +41,7 @@ const videos = defineCollection({
     author: z.string(),
     description: z.string(),
     publishDate: z.date(),
-    language: z.enum(['zh-CN', 'en', 'zh-TW']).default('zh-CN'),
+    language: z.enum(['zh-CN', 'en', 'zh-TW', 'fr', 'de', 'es', 'it', 'ja', 'ko', 'pt', 'ru']).default('zh-CN'),
     topics: z.array(z.string()),
     sourceUrl: z.string().url(),
     embedUrl: z.string().url().optional(),
@@ -58,7 +58,7 @@ const podcasts = defineCollection({
     author: z.string(),
     description: z.string(),
     publishDate: z.date(),
-    language: z.enum(['zh-CN', 'en', 'zh-TW']).default('zh-CN'),
+    language: z.enum(['zh-CN', 'en', 'zh-TW', 'fr', 'de', 'es', 'it', 'ja', 'ko', 'pt', 'ru']).default('zh-CN'),
     topics: z.array(z.string()),
     sourceUrl: z.string().url(),
     audioUrl: z.string().url().optional(),
@@ -79,7 +79,7 @@ const papers = defineCollection({
     author: z.string(),
     description: z.string(),
     publishDate: z.date(),
-    language: z.enum(['zh-CN', 'en', 'zh-TW']).default('zh-CN'),
+    language: z.enum(['zh-CN', 'en', 'zh-TW', 'fr', 'de', 'es', 'it', 'ja', 'ko', 'pt', 'ru']).default('zh-CN'),
     topics: z.array(z.string()),
     sourceUrl: z.string().url(),
     doi: z.string().optional(),
@@ -92,11 +92,39 @@ const papers = defineCollection({
   })
 });
 
+const films = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    originalTitle: z.string().optional(),
+    director: z.string(),
+    description: z.string(),
+    releaseDate: z.date(),
+    year: z.number(),
+    country: z.string(),
+    duration: z.string().optional(),
+    language: z.enum(['zh-CN', 'en', 'zh-TW', 'fr', 'de', 'es', 'it', 'ja', 'ko', 'pt', 'ru']).default('zh-CN'),
+    genre: z.array(z.string()).optional(),
+    cast: z.array(z.string()).optional(),
+    topics: z.array(z.string()),
+    sourceUrl: z.array(z.object({
+      platform: z.string(),
+      url: z.string().url()
+    })).optional(),
+    posterImage: z.string().optional(),
+    awards: z.array(z.string()).optional(),
+    imdbRating: z.string().optional(),
+    doubanRating: z.string().optional(),
+    status: z.enum(['published', 'draft']).default('published')
+  })
+});
+
 // 导出内容集合
 export const collections = {
   books,
   articles,
   videos,
   podcasts,
-  papers
+  papers,
+  films
 };

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import BookCard from '../components/BookCard.astro';
+import FilmCard from '../components/FilmCard.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import VideoCard from '../components/VideoCard.astro';
 import PodcastCard from '../components/PodcastCard.astro';
@@ -9,6 +10,7 @@ import { getCollection } from 'astro:content';
 
 // 获取所有内容
 const books = await getCollection('books');
+const films = await getCollection('films');
 const articles = await getCollection('articles');
 const videos = await getCollection('videos');
 const podcasts = await getCollection('podcasts');
@@ -17,15 +19,17 @@ const papers = await getCollection('papers');
 // 合并所有内容并按发布时间排序
 const allContent = [
   ...books.map(item => ({ ...item, contentType: 'book' as const })),
+  ...films.map(item => ({ ...item, contentType: 'film' as const })),
   ...articles.map(item => ({ ...item, contentType: 'article' as const })),
   ...videos.map(item => ({ ...item, contentType: 'video' as const })),
   ...podcasts.map(item => ({ ...item, contentType: 'podcast' as const })),
   ...papers.map(item => ({ ...item, contentType: 'paper' as const }))
-].sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
+].sort((a, b) => new Date(b.data.releaseDate || b.data.publishDate).getTime() - new Date(a.data.releaseDate || a.data.publishDate).getTime());
 
 
 // 获取最新内容（分类型）
 const latestBooks = books.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 3);
+const latestFilms = films.sort((a, b) => new Date(b.data.releaseDate).getTime() - new Date(a.data.releaseDate).getTime()).slice(0, 3);
 const latestArticles = articles.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 2);
 const latestVideos = videos.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 2);
 const latestPodcasts = podcasts.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 4);
@@ -220,7 +224,7 @@ const enrichedArticles = articles.map(article => {
           <div class="flex items-center justify-between mb-6">
             <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
               <span class="text-3xl mr-3">📚</span>
-              最新书籍
+              最新收录书籍
             </h3>
             <a 
               href="/books" 
@@ -249,13 +253,51 @@ const enrichedArticles = articles.map(article => {
         </div>
       )}
 
+      <!-- Latest Films -->
+      {latestFilms.length > 0 && (
+        <div class="mb-12">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
+              <span class="text-3xl mr-3">🎬</span>
+              最新收录电影
+            </h3>
+            <a 
+              href="/films" 
+              class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium text-sm transition-colors"
+            >
+              查看全部
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+            {latestFilms.map(film => (
+              <FilmCard
+                title={film.data.title}
+                director={film.data.director}
+                description={film.data.description}
+                posterImage={film.data.posterImage}
+                releaseDate={film.data.releaseDate}
+                slug={film.slug}
+                topics={film.data.topics}
+                year={film.data.year}
+                country={film.data.country}
+                duration={film.data.duration}
+                genre={film.data.genre}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
       <!-- Latest Articles -->
       {latestArticles.length > 0 && (
         <div class="mb-12">
           <div class="flex items-center justify-between mb-6">
             <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
               <span class="text-3xl mr-3">📰</span>
-              最新文章
+              最新收录文章
             </h3>
             <a 
               href="/articles" 
@@ -292,7 +334,7 @@ const enrichedArticles = articles.map(article => {
           <div class="flex items-center justify-between mb-6">
             <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
               <span class="text-3xl mr-3">🎥</span>
-              最新视频
+              最新收录视频
             </h3>
             <a 
               href="/videos" 
@@ -328,7 +370,7 @@ const enrichedArticles = articles.map(article => {
           <div class="flex items-center justify-between mb-6">
             <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
               <span class="text-3xl mr-3">🎧</span>
-              最新播客
+              最新收录播客
             </h3>
             <a 
               href="/podcasts" 
@@ -365,7 +407,7 @@ const enrichedArticles = articles.map(article => {
           <div class="flex items-center justify-between mb-6">
             <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
               <span class="text-3xl mr-3">📄</span>
-              最新论文
+              最新收录论文
             </h3>
             <a 
               href="/papers" 
