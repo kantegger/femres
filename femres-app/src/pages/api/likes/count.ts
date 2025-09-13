@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 
-export const GET: APIRoute = async ({ url }) => {
+export const GET: APIRoute = async ({ url, locals }) => {
   try {
     const contentId = url.searchParams.get('contentId');
 
@@ -13,8 +13,8 @@ export const GET: APIRoute = async ({ url }) => {
       });
     }
 
-    // 获取D1数据库实例
-    const DB = (globalThis as any).DB || (globalThis as any).cloudflare?.env?.DB;
+    // 获取D1数据库实例 - 使用正确的方式
+    const DB = locals.runtime?.env?.DB;
 
     if (!DB) {
       // 开发环境返回模拟数据
