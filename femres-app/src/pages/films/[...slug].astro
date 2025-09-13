@@ -251,7 +251,7 @@ const getLanguageName = (code: string) => {
                     <span class="text-blue-700 dark:text-blue-300 font-medium">IMDB</span>
                     {film.data.imdbRating && (
                       <span class="font-bold text-lg text-yellow-600 dark:text-yellow-400">
-                        ⭐ {film.data.imdbRating}/10
+                        {film.data.imdbRating}/10
                       </span>
                     )}
                   </div>
@@ -270,7 +270,7 @@ const getLanguageName = (code: string) => {
                     <span class="text-blue-700 dark:text-blue-300 font-medium">豆瓣</span>
                     {film.data.doubanRating && (
                       <span class="font-bold text-lg text-green-600 dark:text-green-400">
-                        ⭐ {film.data.doubanRating}/10
+                        {film.data.doubanRating}/10
                       </span>
                     )}
                   </div>
