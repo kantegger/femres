@@ -6,7 +6,7 @@ description: "In the seemingly perfect world of Barbieland, Barbie begins to que
 posterImage: "/images/films/barbie-2023.jpg"
 releaseDate: 2023-07-21
 year: 2023
-country: "United States"
+country: "USA"
 duration: "114 minutes"
 language: "en"
 genre: ["Comedy", "Fantasy", "Adventure"]

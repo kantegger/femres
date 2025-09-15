@@ -26,6 +26,9 @@ const sortedFilms = publishedFilms.sort((a, b) => {
 // 获取所有主题标签
 const allTopics = [...new Set(publishedFilms.flatMap(film => film.data.topics))].sort();
 
+// 获取所有国家/地区
+const allCountries = [...new Set(publishedFilms.map(film => film.data.country))].sort();
+
 // 分页设置
 const FILMS_PER_PAGE = 12;
 const totalFilms = publishedFilms.length;
@@ -47,25 +50,40 @@ const currentPageFilms = sortedFilms.slice(startIndex, endIndex);
 >
   <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
     <!-- Header -->
-    <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="text-center">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            🎬 {t('nav.films')}
-          </h1>
-          <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-            Explore powerful cinema that challenges perspectives and illuminates the feminist experience through storytelling
-          </p>
+    <div class="relative overflow-hidden text-white border-b border-white/20">
+      <!-- Gradient Background Layer -->
+      <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600" style="filter: saturate(1.3) contrast(1.15);"></div>
+      <!-- Coarse frosted texture layer -->
+      <div class="absolute inset-0 opacity-65" style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.5) 1px, transparent 0); background-size: 12px 12px;"></div>
+      <!-- Medium frosted texture layer -->
+      <div class="absolute inset-0 opacity-45" style="background-image: radial-gradient(circle at 0.8px 0.8px, rgba(255,255,255,0.7) 0.8px, transparent 0); background-size: 6px 6px;"></div>
+      <!-- Fine frosted texture layer -->
+      <div class="absolute inset-0 opacity-35" style="background-image: radial-gradient(circle at 0.3px 0.3px, rgba(255,255,255,0.8) 0.3px, transparent 0); background-size: 3px 3px;"></div>
+      <!-- Keep existing glass overlays -->
+      <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.1),transparent)]"></div>
+      <div class="relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div class="relative backdrop-blur-sm">
+            <div class="text-center">
+              <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                🎬 {t('nav.films')}
+              </h1>
+              <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+                Explore powerful cinema that challenges perspectives and illuminates the feminist experience through storytelling
+              </p>
 
-          <!-- 统计信息 -->
-          <div class="flex flex-wrap justify-center gap-6 text-sm">
-            <div class="flex items-center bg-purple-50 dark:bg-purple-900/20 px-4 py-2 rounded-full">
-              <span class="text-purple-600 dark:text-purple-400 mr-2">🎥</span>
-              <span class="text-purple-800 dark:text-purple-200">{totalFilms} films total</span>
-            </div>
-            <div class="flex items-center bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-full">
-              <span class="text-blue-600 dark:text-blue-400 mr-2">🏷️</span>
-              <span class="text-blue-800 dark:text-blue-200">{allTopics.length} topic categories</span>
+              <!-- 统计信息 -->
+              <div class="flex flex-wrap justify-center gap-6 text-sm">
+                <div class="flex items-center bg-white/15 backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 px-4 py-2 rounded-full">
+                  <span class="text-white mr-2">🎥</span>
+                  <span class="text-white">{totalFilms} films total</span>
+                </div>
+                <div class="flex items-center bg-white/15 backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 px-4 py-2 rounded-full">
+                  <span class="text-white mr-2">🏷️</span>
+                  <span class="text-white">{allTopics.length} topic categories</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -116,16 +134,49 @@ const currentPageFilms = sortedFilms.slice(startIndex, endIndex);
             </div>
           )}
         </div>
+
+        <!-- Country/Region Filter -->
+        <div>
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Country/Region</h2>
+          <div class="flex flex-wrap gap-3">
+            <button
+              class="country-btn inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+              data-country="all"
+            >
+              All Regions
+            </button>
+            {allCountries.map(country => (
+              <button
+                class="country-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm"
+                data-country={country}
+              >
+                {country}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
       <!-- 电影列表 -->
       <div class="mb-12">
         <div class="flex items-center justify-between mb-8">
           <div>
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Latest Films</h2>
-            <p class="text-gray-600 dark:text-gray-400 mt-2">
-              Showing {currentPageFilms.length} of {totalFilms} films (Page {validPage} of {totalPages})
-            </p>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+              All Films
+              <span class="text-base font-normal text-gray-600 dark:text-gray-400 ml-2">
+                ({totalFilms} films)
+              </span>
+            </h2>
+          </div>
+          <div class="flex items-center gap-4">
+            <select id="sort-select" class="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-sm text-gray-900 dark:text-white">
+              <option value="date-desc">Latest Release</option>
+              <option value="date-asc">Earliest Release</option>
+              <option value="title-asc">Title A-Z</option>
+              <option value="title-desc">Title Z-A</option>
+              <option value="year-desc">Year (Newest)</option>
+              <option value="year-asc">Year (Oldest)</option>
+            </select>
           </div>
         </div>
 
@@ -163,18 +214,69 @@ const currentPageFilms = sortedFilms.slice(startIndex, endIndex);
           </div>
         )}
       </div>
+
+      <!-- Empty state -->
+      {currentPageFilms.length === 0 && (
+        <div class="text-center py-16">
+          <div class="text-6xl mb-4">🎬</div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            No film content available
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            We are working hard to add more high-quality feminist film recommendations
+          </p>
+        </div>
+      )}
+
+      <!-- Viewing Guide -->
+      <div class="mt-16 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-2xl p-8">
+        <div class="text-center">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            🎞️ Viewing Guide
+          </h2>
+          <div class="grid md:grid-cols-3 gap-6 text-left mt-8">
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">👁️</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Critical Viewing</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                Watch films with a gender perspective, examining character development, narrative approaches, and value transmission
+              </p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">💭</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Deep Reflection</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                After viewing, think about the social issues reflected in the film and connect them to real life
+              </p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">💬</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Discussion</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                Share your viewing experience with friends and deepen understanding through thoughtful discussion
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <script>
-    // 主题筛选和折叠功能
+    // 主题筛选、国家筛选和折叠功能
     document.addEventListener('DOMContentLoaded', function() {
       const filterBtns = document.querySelectorAll('.filter-btn');
+      const countryBtns = document.querySelectorAll('.country-btn');
       const filmItems = document.querySelectorAll('.film-item');
 
+      let currentTopic = 'all';
+      let currentCountry = 'all';
+
+      // 主题筛选功能
       filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
           const filter = this.getAttribute('data-filter');
+          currentTopic = filter;
 
           filterBtns.forEach(b => {
             b.classList.remove('bg-purple-600', 'text-white');
@@ -184,20 +286,44 @@ const currentPageFilms = sortedFilms.slice(startIndex, endIndex);
           this.classList.add('bg-purple-600', 'text-white');
           this.classList.remove('bg-white', 'dark:bg-gray-800', 'border', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
 
-          filmItems.forEach(item => {
-            if (filter === 'all') {
-              item.style.display = 'block';
-            } else {
-              const itemTopics = item.getAttribute('data-topics').split(',');
-              if (itemTopics.includes(filter)) {
-                item.style.display = 'block';
-              } else {
-                item.style.display = 'none';
-              }
-            }
-          });
+          applyFilters();
         });
       });
+
+      // 国家筛选功能
+      countryBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const country = this.getAttribute('data-country');
+          currentCountry = country;
+
+          countryBtns.forEach(b => {
+            b.classList.remove('bg-blue-600', 'text-white');
+            b.classList.add('bg-white', 'dark:bg-gray-800', 'border', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+          });
+
+          this.classList.add('bg-blue-600', 'text-white');
+          this.classList.remove('bg-white', 'dark:bg-gray-800', 'border', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+
+          applyFilters();
+        });
+      });
+
+      // 应用筛选条件
+      function applyFilters() {
+        filmItems.forEach(item => {
+          const itemTopics = item.getAttribute('data-topics').split(',');
+          const itemCountry = item.getAttribute('data-country');
+
+          const topicMatch = currentTopic === 'all' || itemTopics.includes(currentTopic);
+          const countryMatch = currentCountry === 'all' || itemCountry === currentCountry;
+
+          if (topicMatch && countryMatch) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      }
 
       // 展开/折叠主题标签
       const toggleBtn = document.getElementById('toggle-topics');

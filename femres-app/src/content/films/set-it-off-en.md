@@ -8,7 +8,7 @@ descriptionEn: "A crime action film about four African American women from Los A
 posterImage: "/images/films/set-it-off.jpg"
 releaseDate: 1996-11-06
 year: 1996
-country: "United States"
+country: "USA"
 duration: "123 minutes"
 language: "en"
 genre: ["Crime", "Action", "Drama", "Thriller"]

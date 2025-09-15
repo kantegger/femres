@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import PodcastCard from '../../components/PodcastCard.astro';
 import Pagination from '../../components/Pagination.astro';
+import { createT } from '../../i18n';
+import { getTopicTranslation, findTopicByName } from '../../i18n/topicsUtils';
 
 const podcasts = await getCollection('podcasts');
 // 中文界面显示不带-en后缀的播客
@@ -54,6 +56,10 @@ const currentPodcasts = sortedPodcasts.slice(0, PODCASTS_PER_PAGE);
 // 获取所有主题标签
 const allTopics = [...new Set(publishedPodcasts.flatMap(podcast => podcast.data.topics))].sort();
 
+// 设置当前语言和翻译函数
+const currentLocale = 'zh-CN';
+const t = createT(currentLocale);
+
 // 格式化总时长
 const formatTotalDuration = (minutes: number) => {
   const hours = Math.floor(minutes / 60);
@@ -70,32 +76,47 @@ const formatTotalDuration = (minutes: number) => {
 >
   <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
     <!-- Header -->
-    <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="text-center">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            🎧 播客频道
-          </h1>
-          <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-            聆听全球女性主义学者、活动家和思想家的声音，在对话中启发思考
-          </p>
-          
-          <!-- 统计信息 -->
-          <div class="flex flex-wrap justify-center gap-6 text-sm">
-            <div class="flex items-center bg-purple-50 dark:bg-purple-900/20 px-4 py-2 rounded-full">
-              <span class="text-purple-600 dark:text-purple-400 mr-2">🎙️</span>
-              <span class="text-purple-800 dark:text-purple-200">共 {publishedPodcasts.length} 档播客</span>
-            </div>
-            <div class="flex items-center bg-orange-50 dark:bg-orange-900/20 px-4 py-2 rounded-full">
-              <span class="text-orange-600 dark:text-orange-400 mr-2">🏷️</span>
-              <span class="text-orange-800 dark:text-orange-200">{allTopics.length} 个主题分类</span>
-            </div>
-            {filterParam !== 'all' && (
-              <div class="flex items-center bg-green-50 dark:bg-green-900/20 px-4 py-2 rounded-full">
-                <span class="text-green-600 dark:text-green-400 mr-2">🔍</span>
-                <span class="text-green-800 dark:text-green-200">筛选显示 {totalPodcasts} 档</span>
+    <div class="relative overflow-hidden text-white border-b border-white/20">
+      <!-- Gradient Background Layer -->
+      <div class="absolute inset-0 bg-gradient-to-r from-violet-600 to-purple-600" style="filter: saturate(1.3) contrast(1.15);"></div>
+      <!-- 粗磨砂纹理层 -->
+      <div class="absolute inset-0 opacity-65" style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.5) 1px, transparent 0); background-size: 12px 12px;"></div>
+      <!-- 中等磨砂纹理层 -->
+      <div class="absolute inset-0 opacity-45" style="background-image: radial-gradient(circle at 0.8px 0.8px, rgba(255,255,255,0.7) 0.8px, transparent 0); background-size: 6px 6px;"></div>
+      <!-- 细磨砂纹理层 -->
+      <div class="absolute inset-0 opacity-35" style="background-image: radial-gradient(circle at 0.3px 0.3px, rgba(255,255,255,0.8) 0.3px, transparent 0); background-size: 3px 3px;"></div>
+      <!-- 保持现有的玻璃叠加层 -->
+      <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.1),transparent)]"></div>
+      <div class="relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div class="relative backdrop-blur-sm">
+            <div class="text-center">
+              <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                🎧 播客频道
+              </h1>
+              <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+                聆听全球女性主义学者、活动家和思想家的声音，在对话中启发思考
+              </p>
+
+              <!-- 统计信息 -->
+              <div class="flex flex-wrap justify-center gap-6 text-sm">
+                <div class="flex items-center bg-white/15 backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 px-4 py-2 rounded-full">
+                  <span class="text-white mr-2">🎙️</span>
+                  <span class="text-white">共 {publishedPodcasts.length} 档播客</span>
+                </div>
+                <div class="flex items-center bg-white/15 backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 px-4 py-2 rounded-full">
+                  <span class="text-white mr-2">🏷️</span>
+                  <span class="text-white">{allTopics.length} 个主题分类</span>
+                </div>
+                {filterParam !== 'all' && (
+                  <div class="flex items-center bg-white/15 backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 px-4 py-2 rounded-full">
+                    <span class="text-white mr-2">🔍</span>
+                    <span class="text-white">筛选显示 {totalPodcasts} 档</span>
+                  </div>
+                )}
               </div>
-            )}
+            </div>
           </div>
         </div>
       </div>
@@ -120,18 +141,24 @@ const formatTotalDuration = (minutes: number) => {
             >
               全部播客
             </a>
-            {allTopics.map(topic => (
-              <a 
-                href={`/podcasts?filter=${topic}`}
-                class={`inline-flex items-center px-4 py-2 rounded-lg transition-colors text-sm ${
-                  filterParam === topic 
-                    ? 'bg-purple-600 text-white' 
-                    : 'bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400'
-                }`}
-              >
-                {topic}
-              </a>
-            ))}
+            {allTopics.map(topic => {
+              const topicInfo = findTopicByName(topic);
+              const translatedTopic = topicInfo
+                ? getTopicTranslation(topic, currentLocale as 'zh-CN' | 'en')
+                : topic;
+              return (
+                <a
+                  href={`/podcasts?filter=${topic}`}
+                  class={`inline-flex items-center px-4 py-2 rounded-lg transition-colors text-sm ${
+                    filterParam === topic
+                      ? 'bg-purple-600 text-white'
+                      : 'bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400'
+                  }`}
+                >
+                  {translatedTopic}
+                </a>
+              );
+            })}
           </div>
           
           <!-- 展开/折叠按钮 - 只在需要时显示 -->

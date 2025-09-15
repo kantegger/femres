@@ -8,7 +8,7 @@ descriptionEn: "A bold and provocative thriller that confronts rape culture thro
 posterImage: "/images/films/promising-young-woman.jpg"
 releaseDate: 2020-12-25
 year: 2020
-country: "United States"
+country: "USA"
 duration: "113 minutes"
 language: "en"
 genre: ["Thriller", "Drama", "Dark Comedy"]

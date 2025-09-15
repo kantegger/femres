@@ -8,7 +8,7 @@ descriptionEn: "Directed by Chloé Zhao, 'Nomadland' tells the story of Fern, a 
 posterImage: "/images/films/nomadland.jpg"
 releaseDate: 2020-09-11
 year: 2020
-country: "United States"
+country: "USA"
 duration: "107 minutes"
 language: "en"
 genre: ["Drama", "Road Movie"]

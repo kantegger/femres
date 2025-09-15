@@ -8,7 +8,7 @@ descriptionEn: "Disney's animated classic 'Mulan' tells the story of ancient Chi
 posterImage: "/images/films/mulan-1998.jpg"
 releaseDate: 1998-06-19
 year: 1998
-country: "United States"
+country: "USA"
 duration: "88 minutes"
 language: "en"
 genre: ["Animation", "Family", "Adventure", "Musical"]

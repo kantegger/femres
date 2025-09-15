@@ -8,7 +8,7 @@ descriptionEn: "Based on Margaret Atwood's novel of the same name, the film tell
 posterImage: "/images/films/the-handmaids-tale.jpg"
 releaseDate: 1990-03-09
 year: 1990
-country: "Germany/United States"
+country: "Germany/USA"
 duration: "109 minutes"
 language: "en"
 genre: ["Drama", "Science Fiction", "Thriller"]

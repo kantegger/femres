@@ -113,7 +113,9 @@ const formatDate = (date: Date) => {
               <span class="text-purple-600 dark:text-purple-400 mr-3">📝</span>
               {t('book.review')}
             </h2>
-            <div class="prose prose-lg dark:prose-invert max-w-none mb-12">
+            <div class="prose prose-lg dark:prose-invert max-w-none mb-12 hyphens-auto text-justify"
+                 style="hyphens: auto; -webkit-hyphens: auto; -ms-hyphens: auto;"
+                 lang="en">
               <Content />
             </div>
 

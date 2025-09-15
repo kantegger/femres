@@ -9,6 +9,10 @@ import { getTopicTranslation, findTopicByName } from '../../../i18n/topicsUtils'
 const currentLocale = 'en';
 const t = createT(currentLocale);
 
+// 获取URL参数
+const filterParam = Astro.url.searchParams.get('filter') || 'all';
+const sortParam = Astro.url.searchParams.get('sort') || 'date-desc';
+
 const videos = await getCollection('videos');
 // 英文界面只显示带-en后缀的视频
 const publishedVideos = videos.filter(video => {
@@ -17,14 +21,26 @@ const publishedVideos = videos.filter(video => {
   return video.slug.endsWith('-en');
 });
 
-const sortedVideos = publishedVideos.sort((a, b) => {
+// 主题筛选
+let filteredVideos = publishedVideos;
+if (filterParam !== 'all') {
+  filteredVideos = publishedVideos.filter(video =>
+    video.data.topics.includes(filterParam)
+  );
+}
+
+// 排序
+const sortedVideos = filteredVideos.sort((a, b) => {
+  if (sortParam === 'date-asc') {
+    return new Date(a.data.publishDate).getTime() - new Date(b.data.publishDate).getTime();
+  }
   return new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime();
 });
 
 const allTopics = [...new Set(publishedVideos.flatMap(video => video.data.topics))].sort();
 
 const VIDEOS_PER_PAGE = 12;
-const totalVideos = publishedVideos.length;
+const totalVideos = filteredVideos.length;
 const totalPages = Math.ceil(totalVideos / VIDEOS_PER_PAGE);
 
 const currentPage = Number(Astro.url.searchParams.get('page') || '1');
@@ -40,24 +56,40 @@ const currentPageVideos = sortedVideos.slice(startIndex, endIndex);
   description="Curated collection of feminist videos featuring lectures, documentaries, interviews, and educational content from global voices."
 >
   <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
-    <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="text-center">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            🎥 {t('nav.videos')}
-          </h1>
-          <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-            Watch insightful videos featuring feminist scholars, activists, and thought leaders sharing knowledge and perspectives
-          </p>
+    <!-- Header -->
+    <div class="relative text-white border-b border-white/20">
+      <!-- Gradient Background Layer -->
+      <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-orange-600" style="filter: saturate(1.3) contrast(1.15);"></div>
+      <!-- Coarse frosted texture layer -->
+      <div class="absolute inset-0 opacity-65" style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.5) 1px, transparent 0); background-size: 12px 12px;"></div>
+      <!-- Medium frosted texture layer -->
+      <div class="absolute inset-0 opacity-45" style="background-image: radial-gradient(circle at 0.8px 0.8px, rgba(255,255,255,0.7) 0.8px, transparent 0); background-size: 6px 6px;"></div>
+      <!-- Fine frosted texture layer -->
+      <div class="absolute inset-0 opacity-35" style="background-image: radial-gradient(circle at 0.3px 0.3px, rgba(255,255,255,0.8) 0.3px, transparent 0); background-size: 3px 3px;"></div>
+      <!-- Keep existing glass overlays -->
+      <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.1),transparent)]"></div>
+      <div class="relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div class="relative backdrop-blur-sm">
+            <div class="text-center">
+              <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                🎥 {t('nav.videos')}
+              </h1>
+              <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+                Watch insightful videos featuring feminist scholars, activists, and thought leaders sharing knowledge and perspectives
+              </p>
 
-          <div class="flex flex-wrap justify-center gap-6 text-sm">
-            <div class="flex items-center bg-purple-50 dark:bg-purple-900/20 px-4 py-2 rounded-full">
-              <span class="text-purple-600 dark:text-purple-400 mr-2">📹</span>
-              <span class="text-purple-800 dark:text-purple-200">{totalVideos} videos total</span>
-            </div>
-            <div class="flex items-center bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-full">
-              <span class="text-blue-600 dark:text-blue-400 mr-2">🏷️</span>
-              <span class="text-blue-800 dark:text-blue-200">{allTopics.length} topic categories</span>
+              <div class="flex flex-wrap justify-center gap-6 text-sm">
+                <div class="flex items-center bg-white/15 backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 px-4 py-2 rounded-full">
+                  <span class="text-white mr-2">📹</span>
+                  <span class="text-white">{totalVideos} videos total</span>
+                </div>
+                <div class="flex items-center bg-white/15 backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 px-4 py-2 rounded-full">
+                  <span class="text-white mr-2">🏷️</span>
+                  <span class="text-white">{allTopics.length} topic categories</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -69,31 +101,74 @@ const currentPageVideos = sortedVideos.slice(startIndex, endIndex);
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Topic Categories</h2>
         <div class="relative">
           <div id="topics-container" class="flex flex-wrap gap-3 overflow-hidden transition-all duration-300" style="max-height: 90px;">
-            <button class="filter-btn inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium" data-filter="all">
+            <a
+              href="/en/videos"
+              class={`inline-flex items-center px-4 py-2 rounded-lg transition-colors text-sm font-medium ${
+                filterParam === 'all'
+                  ? 'bg-purple-600 text-white'
+                  : 'bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400'
+              }`}
+            >
               All Videos
-            </button>
+            </a>
             {allTopics.map(topic => {
               const topicInfo = findTopicByName(topic);
               const translatedTopic = topicInfo
                 ? getTopicTranslation(topic, currentLocale as 'zh-CN' | 'en')
                 : topic;
               return (
-                <button class="filter-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-sm" data-filter={topic}>
+                <a
+                  href={`/en/videos?filter=${encodeURIComponent(topic)}`}
+                  class={`inline-flex items-center px-4 py-2 rounded-lg transition-colors text-sm ${
+                    filterParam === topic
+                      ? 'bg-purple-600 text-white'
+                      : 'bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400'
+                  }`}
+                >
                   {translatedTopic}
-                </button>
+                </a>
               );
             })}
           </div>
+
+          {allTopics.length > 20 && (
+            <div class="text-center mt-4">
+              <button
+                id="toggle-topics"
+                class="inline-flex items-center px-4 py-2 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-200 transition-colors text-sm font-medium"
+              >
+                <span id="toggle-text">Show More</span>
+                <svg id="toggle-icon" class="ml-2 w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
       <div class="mb-12">
         <div class="flex items-center justify-between mb-8">
           <div>
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Latest Videos</h2>
-            <p class="text-gray-600 dark:text-gray-400 mt-2">
-              Showing {currentPageVideos.length} of {totalVideos} videos (Page {validPage} of {totalPages})
-            </p>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+              {filterParam === 'all' ? 'All Videos' : getTopicTranslation(filterParam, currentLocale as 'zh-CN' | 'en')}
+              <span class="text-base font-normal text-gray-600 dark:text-gray-400 ml-2">
+                ({totalVideos} videos)
+              </span>
+            </h2>
+          </div>
+          <div class="flex items-center gap-4">
+            <select
+              id="sort-select"
+              class="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-sm text-gray-900 dark:text-white"
+            >
+              <option value="date-desc" selected={sortParam === 'date-desc'}>Latest First</option>
+              <option value="date-asc" selected={sortParam === 'date-asc'}>Oldest First</option>
+              <option value="title-asc" selected={sortParam === 'title-asc'}>Title A-Z</option>
+              <option value="title-desc" selected={sortParam === 'title-desc'}>Title Z-A</option>
+              <option value="duration-asc" selected={sortParam === 'duration-asc'}>Duration (Short)</option>
+              <option value="duration-desc" selected={sortParam === 'duration-desc'}>Duration (Long)</option>
+            </select>
           </div>
         </div>
 
@@ -121,12 +196,93 @@ const currentPageVideos = sortedVideos.slice(startIndex, endIndex);
             <Pagination
               currentPage={validPage}
               totalPages={totalPages}
-              baseUrl="/en/videos"
+              baseUrl={filterParam === 'all' ? '/en/videos' : `/en/videos?filter=${encodeURIComponent(filterParam)}`}
               locale={currentLocale}
             />
           </div>
         )}
       </div>
+
+      <!-- Empty state -->
+      {currentPageVideos.length === 0 && (
+        <div class="text-center py-16">
+          <div class="text-6xl mb-4">🎬</div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            No video content available
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            We are working hard to add more high-quality feminist video resources
+          </p>
+        </div>
+      )}
+
+      <!-- Viewing Guide -->
+      <div class="mt-16 bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 rounded-2xl p-8">
+        <div class="text-center">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            🎯 Viewing Guide
+          </h2>
+          <div class="grid md:grid-cols-3 gap-6 text-left mt-8">
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">📽️</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Documentaries First</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                Start with classic feminist documentaries like "RBG" to understand historical figures and important events
+              </p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">🎤</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Talks & Interviews</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                Watch speeches and interviews by scholars and activists to understand diverse feminist perspectives
+              </p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+              <div class="text-2xl mb-3">💭</div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Critical Thinking</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                After watching, reflect on your personal experiences and current situations to form independent judgments
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sortSelect = document.getElementById('sort-select');
+
+    // Topic expand/collapse functionality
+    const toggleBtn = document.getElementById('toggle-topics');
+    const container = document.getElementById('topics-container');
+    const toggleText = document.getElementById('toggle-text');
+    const toggleIcon = document.getElementById('toggle-icon');
+    if (toggleBtn && container) {
+      let isExpanded = false;
+      toggleBtn.addEventListener('click', function() {
+        isExpanded = !isExpanded;
+        if (isExpanded) {
+          container.style.maxHeight = 'none';
+          toggleText.textContent = 'Show Less';
+          toggleIcon.style.transform = 'rotate(180deg)';
+        } else {
+          container.style.maxHeight = '90px';
+          toggleText.textContent = 'Show More';
+          toggleIcon.style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+
+    // Sorting functionality - reload page while keeping current filter
+    if (sortSelect) {
+      sortSelect.addEventListener('change', function() {
+        const url = new URL(window.location.href);
+        url.searchParams.set('sort', this.value);
+        window.location.href = url.toString();
+      });
+    }
+  });
+</script>

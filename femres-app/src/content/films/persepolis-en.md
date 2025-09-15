@@ -8,7 +8,7 @@ descriptionEn: "Based on Marjane Satrapi's autobiographical graphic novel, this 
 posterImage: "/images/films/persepolis.jpg"
 releaseDate: 2007-06-27
 year: 2007
-country: "France/United States"
+country: "France/USA"
 duration: "96 minutes"
 language: "fr"
 genre: ["Animation", "Biography", "Drama", "History"]

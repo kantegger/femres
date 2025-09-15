@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import VideoCard from '../../components/VideoCard.astro';
+import { createT } from '../../i18n';
+import { getTopicTranslation, findTopicByName } from '../../i18n/topicsUtils';
 
 const videos = await getCollection('videos');
 // 中文界面显示不带-en后缀的视频
@@ -18,6 +20,10 @@ const sortedVideos = publishedVideos.sort((a, b) => {
 
 // 获取所有主题标签
 const allTopics = [...new Set(publishedVideos.flatMap(video => video.data.topics))].sort();
+
+// 设置当前语言和翻译函数
+const currentLocale = 'zh-CN';
+const t = createT(currentLocale);
 
 // 统计信息
 const totalVideos = publishedVideos.length;
@@ -39,29 +45,44 @@ const formatTotalDuration = (minutes: number) => {
 >
   <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
     <!-- Header -->
-    <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="text-center">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            🎬 视频资源
-          </h1>
-          <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-            汇集女性主义纪录片、演讲、访谈等优质视频内容，用影像传递思想力量
-          </p>
-          
-          <!-- 统计信息 -->
-          <div class="flex flex-wrap justify-center gap-6 text-sm">
-            <div class="flex items-center bg-red-50 dark:bg-red-900/20 px-4 py-2 rounded-full">
-              <span class="text-red-600 dark:text-red-400 mr-2">🎥</span>
-              <span class="text-red-800 dark:text-red-200">共 {totalVideos} 个视频</span>
-            </div>
-            <div class="flex items-center bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-full">
-              <span class="text-blue-600 dark:text-blue-400 mr-2">🕒</span>
-              <span class="text-blue-800 dark:text-blue-200">总时长 {formatTotalDuration(totalDuration)}</span>
-            </div>
-            <div class="flex items-center bg-green-50 dark:bg-green-900/20 px-4 py-2 rounded-full">
-              <span class="text-green-600 dark:text-green-400 mr-2">🏷️</span>
-              <span class="text-green-800 dark:text-green-200">{allTopics.length} 个主题分类</span>
+    <div class="relative overflow-hidden text-white border-b border-white/20">
+      <!-- Gradient Background Layer -->
+      <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-orange-600" style="filter: saturate(1.3) contrast(1.15);"></div>
+      <!-- 粗磨砂纹理层 -->
+      <div class="absolute inset-0 opacity-65" style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.5) 1px, transparent 0); background-size: 12px 12px;"></div>
+      <!-- 中等磨砂纹理层 -->
+      <div class="absolute inset-0 opacity-45" style="background-image: radial-gradient(circle at 0.8px 0.8px, rgba(255,255,255,0.7) 0.8px, transparent 0); background-size: 6px 6px;"></div>
+      <!-- 细磨砂纹理层 -->
+      <div class="absolute inset-0 opacity-35" style="background-image: radial-gradient(circle at 0.3px 0.3px, rgba(255,255,255,0.8) 0.3px, transparent 0); background-size: 3px 3px;"></div>
+      <!-- 保持现有的玻璃叠加层 -->
+      <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.1),transparent)]"></div>
+      <div class="relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div class="relative backdrop-blur-sm">
+            <div class="text-center">
+              <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                🎬 视频资源
+              </h1>
+              <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+                汇集女性主义纪录片、演讲、访谈等优质视频内容，用影像传递思想力量
+              </p>
+
+              <!-- 统计信息 -->
+              <div class="flex flex-wrap justify-center gap-6 text-sm">
+                <div class="flex items-center bg-white/15 backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 px-4 py-2 rounded-full">
+                  <span class="text-white mr-2">🎥</span>
+                  <span class="text-white">共 {totalVideos} 个视频</span>
+                </div>
+                <div class="flex items-center bg-white/15 backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 px-4 py-2 rounded-full">
+                  <span class="text-white mr-2">🕒</span>
+                  <span class="text-white">总时长 {formatTotalDuration(totalDuration)}</span>
+                </div>
+                <div class="flex items-center bg-white/15 backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 px-4 py-2 rounded-full">
+                  <span class="text-white mr-2">🏷️</span>
+                  <span class="text-white">{allTopics.length} 个主题分类</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -83,14 +104,20 @@ const formatTotalDuration = (minutes: number) => {
             >
               全部视频
             </button>
-            {allTopics.map(topic => (
-              <button 
-                class="filter-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-red-500 dark:hover:border-red-400 hover:text-red-600 dark:hover:text-red-400 transition-colors text-sm"
-                data-filter={topic}
-              >
-                {topic}
-              </button>
-            ))}
+            {allTopics.map(topic => {
+              const topicInfo = findTopicByName(topic);
+              const translatedTopic = topicInfo
+                ? getTopicTranslation(topic, currentLocale as 'zh-CN' | 'en')
+                : topic;
+              return (
+                <button
+                  class="filter-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-red-500 dark:hover:border-red-400 hover:text-red-600 dark:hover:text-red-400 transition-colors text-sm"
+                  data-filter={topic}
+                >
+                  {translatedTopic}
+                </button>
+              );
+            })}
           </div>
           
           <!-- 展开/折叠按钮 - 只在需要时显示 -->

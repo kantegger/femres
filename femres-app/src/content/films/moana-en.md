@@ -8,7 +8,7 @@ descriptionEn: "Disney's 2016 animated masterpiece tells the adventure story of 
 posterImage: "/images/films/moana.jpg"
 releaseDate: 2016-11-23
 year: 2016
-country: "United States"
+country: "USA"
 duration: "107 minutes"
 language: "en"
 genre: ["Animation", "Adventure", "Musical"]

@@ -8,7 +8,7 @@ descriptionEn: "A comedy film about three middle-aged women who team up for reve
 posterImage: "/images/films/the-first-wives-club.jpg"
 releaseDate: 1996-09-20
 year: 1996
-country: "United States"
+country: "USA"
 duration: "102 minutes"
 language: "en"
 genre: ["Comedy", "Drama"]

@@ -47,16 +47,10 @@ export default function LanguageSwitcher({ currentLocale, currentPath }: Props) 
       if (basePath.startsWith(`/${contentType}/`)) {
         const contentSlug = basePath.replace(`/${contentType}/`, '');
 
-        if (currentLocale === 'zh-CN' && targetLocale === 'en') {
-          // 中文 -> 英文：添加-en后缀
-          const englishSlug = `${contentSlug}-en`;
-          return getLocalizedPath(`${contentType}/${englishSlug}`, targetLocale);
-        } else if (currentLocale === 'en' && targetLocale === 'zh-CN') {
-          // 英文 -> 中文：移除-en后缀
-          const chineseSlug = contentSlug.endsWith('-en') ? contentSlug.slice(0, -3) : contentSlug;
-          return getLocalizedPath(`${contentType}/${chineseSlug}`, targetLocale);
-        }
-        break; // 找到匹配的内容类型后跳出循环
+        // 对于内容详情页，中英文页面使用相同的URL slug
+        // 因为英文文件 (xxx-en.md) 生成的路由是 xxx，与中文文件 (xxx.md) 相同
+        // 所以语言切换时URL保持不变，只是切换到不同的语言版本
+        return getLocalizedPath(`${contentType}/${contentSlug}`, targetLocale);
       }
     }
 
