@@ -1,9 +1,7 @@
 ---
 title: "What is Feminism?: From Beauvoir to Contemporary Controversies"
-titleEn: "What is Feminism?: From Beauvoir to Contemporary Controversies"
 author: "野生的琥珀小姐 (Wild Amber Miss)"
 description: "In this episode 'What is Feminism?', Bilibili creator Wild Amber Miss traces the development of feminism in an accessible way, starting from Simone de Beauvoir's philosophical thought to explore core feminist issues, social misunderstandings, and contemporary controversies. The video combines book reviews, cultural critique, and personal reflection, representing one of the key introductory feminist content pieces in the Chinese context."
-descriptionEn: "In this episode 'What is Feminism?', Bilibili creator Wild Amber Miss traces the development of feminism in an accessible way, starting from Simone de Beauvoir's philosophical thought to explore core feminist issues, social misunderstandings, and contemporary controversies. The video combines book reviews, cultural critique, and personal reflection, representing one of the key introductory feminist content pieces in the Chinese context."
 publishDate: 2023-08-05
 language: "zh-CN"
 topics: ["Introduction to Feminism", "Cultural Critique", "Gender Politics", "Patriarchy Critique"]

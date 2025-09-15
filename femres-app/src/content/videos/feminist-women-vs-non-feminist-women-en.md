@@ -1,9 +1,7 @@
 ---
 title: "Debate: Feminist Women vs Non-Feminist Women"
-titleEn: "Debate: Feminist Women vs Non-Feminist Women"
 author: "The Diary Of A CEO"
 description: "This is a debate hosted by 'The Diary Of A CEO' featuring three women representing different perspectives on women's social issues, feminism, sexual liberation, and gender roles. The discussion focuses on the impact of sexual liberation and second-wave feminism on women's freedom, mental health, and interpersonal relationships, as well as the far-reaching consequences of modern feminism on gender roles."
-descriptionEn: "This is a debate hosted by 'The Diary Of A CEO' featuring three women representing different perspectives on women's social issues, feminism, sexual liberation, and gender roles. The discussion focuses on the impact of sexual liberation and second-wave feminism on women's freedom, mental health, and interpersonal relationships, as well as the far-reaching consequences of modern feminism on gender roles."
 publishDate: 2025-06-19
 language: "en"
 topics: ["Second Wave Feminism", "Radical Feminism", "Anti-Feminism Studies", "Cultural Critique"]

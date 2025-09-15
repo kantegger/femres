@@ -1,9 +1,7 @@
 ---
 title: "The Feminism Debate: Can Women Really Have It All?"
-titleEn: "The Feminism Debate: Can Women Really Have It All?"
 author: "Jordan B. Peterson & Megyn Kelly"
 description: "In this episode of 'The Feminism Debate,' psychologist Jordan Peterson and news anchor Megyn Kelly engage in an in-depth dialogue exploring the cultural and psychological impacts of modern feminism, particularly the decline in women's happiness, the suppression of traditional masculinity, and the tension between motherhood and career."
-descriptionEn: "In this episode of 'The Feminism Debate,' psychologist Jordan Peterson and news anchor Megyn Kelly engage in an in-depth dialogue exploring the cultural and psychological impacts of modern feminism, particularly the decline in women's happiness, the suppression of traditional masculinity, and the tension between motherhood and career."
 publishDate: 2025-06-02
 language: "en"
 topics: ["Patriarchy Critique", "Media Representation Critique", "Anti-Feminism Studies"]
