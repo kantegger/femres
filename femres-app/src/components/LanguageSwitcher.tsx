@@ -40,18 +40,23 @@ export default function LanguageSwitcher({ currentLocale, currentPath }: Props) 
     // 从当前路径移除语言前缀，得到基础路径
     const basePath = removeLocaleFromPath(currentPath);
 
-    // 特殊处理书籍详情页的slug映射
-    if (basePath.startsWith('/books/')) {
-      const bookSlug = basePath.replace('/books/', '');
+    // 特殊处理内容详情页的slug映射
+    const contentTypes = ['books', 'films', 'articles', 'videos', 'podcasts', 'papers'];
 
-      if (currentLocale === 'zh-CN' && targetLocale === 'en') {
-        // 中文 -> 英文：添加-en后缀
-        const englishSlug = `${bookSlug}-en`;
-        return getLocalizedPath(`books/${englishSlug}`, targetLocale);
-      } else if (currentLocale === 'en' && targetLocale === 'zh-CN') {
-        // 英文 -> 中文：移除-en后缀
-        const chineseSlug = bookSlug.endsWith('-en') ? bookSlug.slice(0, -3) : bookSlug;
-        return getLocalizedPath(`books/${chineseSlug}`, targetLocale);
+    for (const contentType of contentTypes) {
+      if (basePath.startsWith(`/${contentType}/`)) {
+        const contentSlug = basePath.replace(`/${contentType}/`, '');
+
+        if (currentLocale === 'zh-CN' && targetLocale === 'en') {
+          // 中文 -> 英文：添加-en后缀
+          const englishSlug = `${contentSlug}-en`;
+          return getLocalizedPath(`${contentType}/${englishSlug}`, targetLocale);
+        } else if (currentLocale === 'en' && targetLocale === 'zh-CN') {
+          // 英文 -> 中文：移除-en后缀
+          const chineseSlug = contentSlug.endsWith('-en') ? contentSlug.slice(0, -3) : contentSlug;
+          return getLocalizedPath(`${contentType}/${chineseSlug}`, targetLocale);
+        }
+        break; // 找到匹配的内容类型后跳出循环
       }
     }
 
