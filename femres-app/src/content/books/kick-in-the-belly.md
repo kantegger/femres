@@ -6,7 +6,7 @@ description: "揭示被遗忘的奴隶女性历史，重现她们在加勒比地
 publishDate: 2020-10-01
 isbn: "9781788738842"
 language: "en"
-topics: ["黑人女性主义", "去殖民女性主义", "种族与性别", "文化批判"]
+topics: ["Black Feminism", "Decolonial Feminism", "Race and Gender", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=kick+in+the+belly+stella+dadzie&tag=inkrupt-22"
 coverImage: "/images/books/kick-in-the-belly.jpg"
 status: published

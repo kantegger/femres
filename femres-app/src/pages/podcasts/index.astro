@@ -5,7 +5,12 @@ import PodcastCard from '../../components/PodcastCard.astro';
 import Pagination from '../../components/Pagination.astro';
 
 const podcasts = await getCollection('podcasts');
-const publishedPodcasts = podcasts.filter(podcast => podcast.data.status === 'published');
+// 中文界面显示不带-en后缀的播客
+const publishedPodcasts = podcasts.filter(podcast => {
+  const isPublished = podcast.data.status === 'published';
+  if (!isPublished) return false;
+  return !podcast.slug.endsWith('-en');
+});
 
 // 获取URL参数
 const url = Astro.url;

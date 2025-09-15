@@ -4,7 +4,7 @@ author: "Kate Willett & Julia Claire"
 description: "《Reply Guys》是一档由 Kate Willett 与 Julia Claire 主持的女性主义政治评论播客，以幽默、讽刺与左翼视角探讨美国政治、性别议题与媒体现象。节目聚焦堕胎权、工人运动、选举政治与网络性别暴力，常邀请记者、活动家与政治候选人参与讨论。风格融合脱口秀与批判性分析，强调女性在进步政治中的声音与行动。Spotify 评分为 4.8（120 条评论），在左翼女性主义播客圈中具有代表性。"
 publishDate: 2025-09-11
 language: en
-topics: ["堕胎权", "政治参与", "媒体表征批判"]
+topics: ["Abortion Rights", "Political Participation", "Media Representation Critique"]
 sourceUrl: "https://open.spotify.com/show/6rUuYvZrZKZzXjZQvZK1vA"
 embedUrl: "https://open.spotify.com/embed/show/6rUuYvZrZKZzXjZQvZK1vA"
 thumbnail: "/images/podcasts/reply-guys.jpg"

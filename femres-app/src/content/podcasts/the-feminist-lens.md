@@ -4,7 +4,7 @@ author: "Peris Thuo & Nina de Ayala Parker"
 description: "《The Feminist Lens》是一档由女性权利组织 Women For Wanawake 创办人 Peris Thuo 与 Nina de Ayala Parker 主持的播客，聚焦从女性主义视角审视当代英国社会与文化议题。节目内容涵盖堕胎权、种族主义、性骚扰、儿童贫困与女性主义媒体实践，强调交叉性、行动主义与公共话语权的重塑。风格直接、倡导性强，是英国女性主义播客中的新兴声音。"
 publishDate: 2025-09-12
 language: en
-topics: ["堕胎权", "反性暴力", "种族与性别", "政治参与", "媒体表征批判"]
+topics: ["Abortion Rights", "Anti-Sexual Violence", "Race and Gender", "Political Participation", "Media Representation Critique"]
 sourceUrl: "https://open.spotify.com/show/16e5Tw58T1bDhoueiCKeQF"
 embedUrl: "https://open.spotify.com/embed/show/16e5Tw58T1bDhoueiCKeQF"
 thumbnail: "/images/podcasts/the-feminist-lens.jpg"

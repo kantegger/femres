@@ -4,7 +4,7 @@ author: "Ainslie Young"
 description: "《Feminine Business School》是一档由 Ainslie Young 主持的播客，聚焦如何在不牺牲健康与价值的前提下建立可持续的线上事业。节目强调女性周期智慧、愉悦导向的商业策略与原型能量的实践，内容涵盖压力管理、创伤修复、祖先能量、阴性领导力与去父权化的商业模式。风格温柔、灵性且具批判性，适合关注身体政治与女性主义商业实践的听众。"
 publishDate: 2025-09-12
 language: en
-topics: ["身体自主", "性别政治", "去父权商业", "灵性女性主义"]
+topics: ["Bodily Autonomy", "Gender Politics", "Depatriarchal Business", "Spiritual Feminism"]
 sourceUrl: "https://open.spotify.com/show/5sC6EnSLDKG8lbxm2kXLBw"
 embedUrl: "https://open.spotify.com/embed/show/5sC6EnSLDKG8lbxm2kXLBw"
 thumbnail: "/images/podcasts/feminine-business-school.jpg"

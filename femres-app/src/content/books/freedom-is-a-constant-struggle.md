@@ -6,7 +6,7 @@ description: "连接不同时代和地域的解放运动，从废奴到巴勒斯
 publishDate: 2016-02-01
 isbn: "9781608465644"
 language: "en"
-topics: ["交叉女性主义", "黑人女性主义", "反女性主义研究", "政治参与", "种族与性别"]
+topics: ["Intersectional Feminism", "Black Feminism", "Anti-Feminism Studies", "Political Participation", "Race and Gender"]
 sourceUrl: "https://www.amazon.sg/s?k=freedom+is+a+constant+struggle+angela+davis&tag=inkrupt-22"
 coverImage: "/images/books/freedom-is-a-constant-struggle.jpg"
 status: "published"

@@ -6,7 +6,7 @@ description: "由性工作者本人撰写的开创性著作，直接挑战主流
 publishDate: 2018-11-06
 isbn: "9781786633606"
 language: "en"
-topics: ["激进女性主义", "交叉女性主义", "身体自主", "经济赋权"]
+topics: ["Radical Feminism", "Intersectional Feminism", "Bodily Autonomy", "Economic Empowerment"]
 sourceUrl: "https://www.amazon.sg/s?k=revolting+prostitutes+juno+mac+molly+smith&tag=inkrupt-22"
 coverImage: "/images/books/revolting-prostitutes.jpg"
 status: published

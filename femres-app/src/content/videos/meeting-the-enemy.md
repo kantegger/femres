@@ -4,7 +4,7 @@ author: "卡西·杰伊 (Cassie Jaye)"
 description: "通过纪录片《会见敌人》的镜头，本文探讨了电影制作人卡西·杰伊与男性权利运动的对话之旅，以及她如何从偏见到理解，最终反思性别平等运动的本质。"
 publishDate: 2017-10-19
 language: "en"
-topics: ["反女性主义研究", "男权运动批判", "第四波女性主义"]
+topics: ["Anti-Feminism Studies", "Men's Rights Movement Critique", "Fourth Wave Feminism"]
 sourceUrl: "https://youtu.be/3WMuzhQXJoY?si=knmsDJpJ1Jd31Sie"
 embedUrl: "https://www.youtube.com/embed/3WMuzhQXJoY?si=oa1v-3lLBkTbYo31"
 duration: 888

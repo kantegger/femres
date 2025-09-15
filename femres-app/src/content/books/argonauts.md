@@ -6,7 +6,7 @@ description: "当代回忆录与理论融合的女王玛吉·尼尔森将镜头�
 publishDate: 2015-01-01
 isbn: "9781555977351"
 language: "en"
-topics: ["酷儿理论", "跨性别女性主义", "情绪劳动", "女性写作"]
+topics: ["Queer Theory", "Trans Feminism", "Emotional Labor", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=argonauts+maggie+nelson&tag=inkrupt-22"
 coverImage: "/images/books/argonauts.jpg"
 status: published

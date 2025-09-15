@@ -2,17 +2,23 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import '../i18n/translations';
+import { getLocaleFromUrl, createT, getLocalizedPath } from '../i18n/index';
 
 export interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description = "FemRes - 女性主义内容聚合平台，汇聚全球优质女性主义内容" } = Astro.props;
+// 获取当前语言和翻译函数
+const locale = getLocaleFromUrl(Astro.url);
+const t = createT(locale);
+
+const { title, description = t('common.siteDescription') } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="zh-CN">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -20,23 +26,29 @@ const { title, description = "FemRes - 女性主义内容聚合平台，汇聚�
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    
+
+    <!-- Alternate language links -->
+    <link rel="alternate" hreflang="zh-CN" href={getLocalizedPath(Astro.url.pathname, 'zh-CN')} />
+    <link rel="alternate" hreflang="en" href={getLocalizedPath(Astro.url.pathname, 'en')} />
+    <link rel="alternate" hreflang="x-default" href={getLocalizedPath(Astro.url.pathname, 'zh-CN')} />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    
+    <meta property="og:locale" content={locale === 'zh-CN' ? 'zh_CN' : 'en_US'} />
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
   </head>
   <body class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors flex flex-col">
-    <Header />
+    <Header locale={locale} />
     <main class="flex-1">
       <slot />
     </main>
-    <Footer />
+    <Footer locale={locale} />
   </body>
 </html>
 

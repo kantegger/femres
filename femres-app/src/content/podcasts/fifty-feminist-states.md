@@ -4,7 +4,7 @@ author: "Amelia Hruby"
 description: "《Fifty Feminist States》是一档由 Amelia Hruby 主持的播客，以公路旅行形式走访美国五十州，采访当地女性主义艺术家与倡导者。节目强调交叉性与跨地域视角，内容涵盖生育正义、黑人女性主义、媒体代表性、心理健康与社群组织，是一部结合口述历史与文化批判的女性主义档案。节目已于 2021 年完结，但所有集数仍可访问。"
 publishDate: 2025-09-12
 language: en
-topics: ["交叉女性主义", "生育自主", "黑人女性主义", "文化批判"]
+topics: ["Intersectional Feminism", "Reproductive Autonomy", "Black Feminism", "Cultural Critique"]
 sourceUrl: "https://open.spotify.com/show/7JC4EPFBricXpPA0hkMykz"
 embedUrl: "https://open.spotify.com/embed/show/7JC4EPFBricXpPA0hkMykz"
 thumbnail: "/images/podcasts/fifty-feminist-states.jpg"

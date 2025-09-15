@@ -4,7 +4,7 @@ author: "Aruna Rao & Joanne Sandler"
 description: "《The Gender at Work Podcast》由 Aruna Rao 与 Joanne Sandler 主持，聚焦全球女性主义行动者、学者与社区实践者的对话。节目以批判性视角探讨爱、政策、战争与跨文化联盟等议题，强调去殖民、反军事化与情感政治的交汇。风格融合理论深度与跨区域经验，Spotify 评分为 4.2（6 条评论），在国际女性主义社群中具有影响力。"
 publishDate: 2025-09-12
 language: en
-topics: ["去殖民女性主义", "反性暴力", "父权制批判", "情绪劳动", "跨性别女性主义"]
+topics: ["Decolonial Feminism", "Anti-Sexual Violence", "Patriarchy Critique", "Emotional Labor", "Trans Feminism"]
 sourceUrl: "https://open.spotify.com/show/7db4regaxI7a8FigMrGOQJ"
 embedUrl: "https://open.spotify.com/embed/show/7db4regaxI7a8FigMrGOQJ"
 thumbnail: "/images/podcasts/gender-at-work.jpg"

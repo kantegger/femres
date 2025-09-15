@@ -1,10 +1,15 @@
 ---
 import InteractionButtons from './InteractionButtons';
+import '../i18n/translations';
+import { createT, getLocalizedPath, getLocaleFromUrl, formatDate } from '../i18n/index';
+import { getTopicTranslation } from '../i18n/topicsUtils';
 
 export interface Props {
   title: string;
+  titleEn?: string;
   author: string;
   description: string;
+  descriptionEn?: string;
   featuredImage?: string;
   publishDate: Date;
   readingTime?: number;
@@ -12,37 +17,51 @@ export interface Props {
   slug: string;
   topics: string[];
   articleType?: 'news' | 'blog' | 'research' | 'opinion' | 'analysis';
+  locale?: string;
 }
 
 const {
   title,
+  titleEn,
   author,
   description,
+  descriptionEn,
   featuredImage,
   publishDate,
   readingTime,
   sourceUrl,
   slug,
   topics,
-  articleType = 'blog'
+  articleType = 'blog',
+  locale
 } = Astro.props;
+
+// 获取当前语言
+const currentLocale = locale || getLocaleFromUrl(Astro.url);
+const t = createT(currentLocale);
+
+// 根据语言选择显示内容
+const displayTitle = (currentLocale === 'en' && titleEn) ? titleEn : title;
+const displayDescription = (currentLocale === 'en' && descriptionEn) ? descriptionEn : description;
+
+// 生成本地化链接
+// 移除语言后缀以生成干净的URL路径
+const cleanSlug = slug.endsWith('-en') ? slug.slice(0, -3) : slug;
+const articleLink = getLocalizedPath(`articles/${cleanSlug}`, currentLocale);
 
 // 文章类型配置
 const typeConfig = {
-  news: { label: '新闻', icon: '📰', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' },
-  blog: { label: '博客', icon: '✍️', color: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' },
-  research: { label: '研究', icon: '🔬', color: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200' },
-  opinion: { label: '观点', icon: '💭', color: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200' },
-  analysis: { label: '分析', icon: '📊', color: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200' }
+  news: { label: t('common.articleTypes.news'), icon: '📰', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' },
+  blog: { label: t('common.articleTypes.blog'), icon: '✍️', color: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' },
+  research: { label: t('common.articleTypes.research'), icon: '🔬', color: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200' },
+  opinion: { label: t('common.articleTypes.opinion'), icon: '💭', color: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200' },
+  analysis: { label: t('common.articleTypes.analysis'), icon: '📊', color: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200' }
 };
 
 const config = typeConfig[articleType];
 
-const formatDate = (date: Date) => {
-  return date.toLocaleDateString('zh-CN', {
-    month: 'short',
-    day: 'numeric'
-  });
+const formatDateLocal = (date: Date) => {
+  return formatDate(date, currentLocale);
 };
 
 // 判断是否为近期文章
@@ -79,7 +98,7 @@ const getAuthorColor = (author: string) => {
 ---
 
 <article class="group relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-purple-200 dark:hover:border-purple-700 hover:shadow-lg transition-all duration-300 rounded-lg overflow-hidden">
-  <a href={`/articles/${slug}`} class="block">
+  <a href={articleLink} class="block">
     <div class="p-5">
       <div class="flex gap-3">
         <!-- 缩略图或类型指示器 -->
@@ -88,7 +107,7 @@ const getAuthorColor = (author: string) => {
             <div class="w-20 h-20 rounded-lg overflow-hidden">
               <img
                 src={featuredImage}
-                alt={title}
+                alt={displayTitle}
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -103,7 +122,7 @@ const getAuthorColor = (author: string) => {
         <div class="flex-1 min-w-0">
           <!-- 标题 -->
           <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors leading-snug">
-            {title}
+            {displayTitle}
           </h3>
 
           <!-- 元信息行 -->
@@ -116,19 +135,19 @@ const getAuthorColor = (author: string) => {
             </div>
             <span class="mx-1.5">·</span>
             <time datetime={publishDate.toISOString()}>
-              {formatDate(publishDate)}
+              {formatDateLocal(publishDate)}
             </time>
             {readingTime && (
               <>
                 <span class="mx-1.5">·</span>
-                <span>{readingTime}分钟</span>
+                <span>{readingTime} {t('common.minutes')}</span>
               </>
             )}
             {isRecent(publishDate) && (
               <>
                 <span class="mx-1.5">·</span>
                 <span class="bg-red-100 text-red-600 dark:bg-red-900 dark:text-red-300 px-1.5 py-0.5 rounded text-xs font-medium">
-                  🔥 最新
+                  🔥 {currentLocale === 'zh-CN' ? '最新' : 'New'}
                 </span>
               </>
             )}
@@ -136,7 +155,7 @@ const getAuthorColor = (author: string) => {
 
           <!-- 描述（2行） -->
           <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-3 leading-relaxed">
-            {description}
+            {displayDescription}
           </p>
 
           <!-- 紧凑的标签和操作行 -->
@@ -146,11 +165,14 @@ const getAuthorColor = (author: string) => {
               <span class={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${config.color}`}>
                 {config.label}
               </span>
-              {topics.slice(0, 3).map(topic => (
-                <span class="inline-block px-1.5 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded">
-                  #{topic}
-                </span>
-              ))}
+              {topics.slice(0, 3).map(topic => {
+                const translatedTopic = getTopicTranslation(topic, currentLocale as 'zh-CN' | 'en');
+                return (
+                  <span class="inline-block px-1.5 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded">
+                    #{translatedTopic}
+                  </span>
+                );
+              })}
               {topics.length > 3 && (
                 <span class="text-xs text-gray-400">+{topics.length - 3}</span>
               )}

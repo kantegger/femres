@@ -6,7 +6,7 @@ description: "第二波女性主义的开创性作品，格里尔以激进而犀
 publishDate: 1970-10-01
 isbn: "9780007205011"
 language: "en"
-topics: ["激进女性主义", "第二波女性主义", "身体自主", "父权制批判"]
+topics: ["Radical Feminism", "Second Wave Feminism", "Bodily Autonomy", "Patriarchy Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=the+female+eunuch+germaine+greer&tag=inkrupt-22"
 coverImage: "/images/books/the-female-eunuch.jpg"
 status: "published"

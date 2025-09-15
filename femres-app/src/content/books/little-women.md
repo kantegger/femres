@@ -6,7 +6,7 @@ description: "经典成长小说，通过马奇家四姐妹的成长历程，展
 publishDate: 1868-09-30
 isbn: "9780147514011"
 language: "en"
-topics: ["第一波女性主义", "女性文学", "女性写作", "经济赋权"]
+topics: ["First Wave Feminism", "Women's Literature", "Women's Writing", "Economic Empowerment"]
 sourceUrl: "https://www.amazon.sg/s?k=little+women+louisa+may+alcott&tag=inkrupt-22"
 coverImage: "/images/books/little-women.jpg"
 status: published

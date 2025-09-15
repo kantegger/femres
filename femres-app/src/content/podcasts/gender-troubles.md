@@ -4,7 +4,7 @@ author: "Emma Austin & Eva Espenshade"
 description: "《Gender Troubles》是一档由 Emma Austin 与 Eva Espenshade 主持的播客，致力于解构女性主义学术话语，以批判性左翼视角重新审视性别理论与文化现象。节目内容涵盖色情平台化、性战争、堕胎权、伦理消费与女性主义经典文本重读，强调知识民主化与批判性思维。风格犀利、理论密集，适合对女性主义理论与性别政治有深入兴趣的听众。Spotify 评分为 4.0（71 条评论），为学术女性主义播客中的重要声音。"
 publishDate: 2025-09-12
 language: en
-topics: ["激进女性主义", "资本主义批判", "反性暴力", "媒体表征批判", "性别政治"]
+topics: ["Radical Feminism", "Capitalism Critique", "Anti-Sexual Violence", "Media Representation Critique", "Gender Politics"]
 sourceUrl: "https://open.spotify.com/show/2m9RT5JSC7KTAN7O4m5GHP"
 embedUrl: "https://open.spotify.com/embed/show/2m9RT5JSC7KTAN7O4m5GHP"
 thumbnail: "/images/podcasts/gender-troubles.jpg"

@@ -11,7 +11,7 @@ duration: "109分钟"
 language: "en"
 genre: ["剧情", "科幻", "惊悚"]
 cast: ["娜塔莎·理查德森", "费·唐纳薇", "艾丹·奎因", "伊丽莎白·麦戈文"]
-topics: ["激进女性主义", "身体自主", "生育自主", "父权制批判"]
+topics: ["Radical Feminism", "Bodily Autonomy", "Reproductive Autonomy", "Patriarchy Critique"]
 status: "published"
 awards: ["柏林国际电影节金熊奖提名", "德国电影奖最佳导演提名"]
 imdbRating: "6.0"

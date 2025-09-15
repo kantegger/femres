@@ -1,11 +1,17 @@
 ---
+import { createT, getLocalizedPath, getLocaleFromUrl } from '../i18n/index';
+
 export interface Props {
   currentPage: number;
   totalPages: number;
   baseUrl: string;
+  locale?: string;
 }
 
-const { currentPage, totalPages, baseUrl } = Astro.props;
+const { currentPage, totalPages, baseUrl, locale } = Astro.props;
+
+const currentLocale = locale || getLocaleFromUrl(Astro.url);
+const t = createT(currentLocale);
 
 // 生成分页数字数组
 const generatePageNumbers = (current: number, total: number) => {
@@ -46,27 +52,39 @@ const generatePageNumbers = (current: number, total: number) => {
 
 const pageNumbers = generatePageNumbers(currentPage, totalPages);
 
-// 处理包含查询参数的baseUrl
+// 处理包含查询参数的baseUrl并生成本地化链接
 const hasQueryParams = baseUrl.includes('?');
 const separator = hasQueryParams ? '&' : '?';
 const buildPageUrl = (page: number) => {
   if (page === 1) {
-    return baseUrl;
+    return getLocalizedPath(baseUrl, currentLocale);
   }
-  return hasQueryParams 
-    ? `${baseUrl}&page=${page}`
-    : `/podcasts/page/${page}`;
+
+  // 提取基础路径 (移除语言前缀如果存在)
+  let basePath = baseUrl;
+  if (basePath.startsWith(`/${currentLocale}/`)) {
+    basePath = basePath.substring(`/${currentLocale}`.length);
+  }
+  if (basePath.startsWith('/')) {
+    basePath = basePath.substring(1);
+  }
+
+  const pageUrl = hasQueryParams
+    ? `${basePath}&page=${page}`
+    : `${basePath}/page/${page}`;
+
+  return getLocalizedPath(pageUrl, currentLocale);
 };
 ---
 
 {totalPages > 1 && (
-  <nav class="flex items-center justify-center space-x-2" aria-label="分页导航">
+  <nav class="flex items-center justify-center space-x-2" aria-label={t('common.pagination.navigation')}>
     <!-- 上一页按钮 -->
     {currentPage > 1 ? (
       <a
         href={buildPageUrl(currentPage - 1)}
         class="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-        aria-label="上一页"
+        aria-label={t('common.pagination.previous')}
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -108,7 +126,7 @@ const buildPageUrl = (page: number) => {
       <a
         href={buildPageUrl(currentPage + 1)}
         class="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-        aria-label="下一页"
+        aria-label={t('common.pagination.next')}
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>

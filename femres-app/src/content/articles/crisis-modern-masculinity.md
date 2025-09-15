@@ -4,16 +4,7 @@ author: "Pankaj Mishra"
 description: "本文追溯了现代男性气质的历史演变，揭示了全球范围内对‘强壮男性’幻想的政治化与病态化表现，并批判了父权制如何塑造了男性与女性的压迫性角色。"
 publishDate: 2018-03-17
 language: "en"
-topics: [
-  "父权制批判",
-  "反女性主义研究",
-  "文化批判",
-  "男性权运动批判",
-  "种族与性别",
-  "女性主义心理学",
-  "政治参与",
-  "媒体表征批判"
-]
+topics: ["Patriarchy Critique", "Anti-Feminism Studies", "Cultural Critique", "Men's Rights Movement Critique", "Race and Gender", "Feminist Psychology", "Political Participation", "Media Representation Critique"]
 sourceUrl: "https://www.theguardian.com/books/2018/mar/17/the-crisis-in-modern-masculinity?ref=refind"
 readingTime: 15
 featuredImage: "/images/articles/crisis-modern-masculinity.jpg"

@@ -4,7 +4,7 @@ author: "Stephanie Heck & Lois Volta"
 description: "《The Everyday Feminist》是一档由 Stephanie Heck 与 Lois Volta 主持的播客，聚焦日常生活中的女性主义实践，强调家庭、关系与自我意识中的性别政治。节目融合心理学、社会批判与文化分析，内容涵盖家务劳动、婚姻制度、沉默机制、节日文化与音乐中的女性主义表达。风格亲密、哲学性强，是将女性主义带入日常细节的重要平台。"
 publishDate: 2025-09-12
 language: en
-topics: ["性别政治", "父权制批判", "文化批判", "身体自主", "艺术与表演"]
+topics: ["Gender Politics", "Patriarchy Critique", "Cultural Critique", "Bodily Autonomy", "Arts and Performance"]
 sourceUrl: "https://open.spotify.com/show/6pOO50UTFv14HYltpbzBCK"
 embedUrl: "https://open.spotify.com/embed/show/6pOO50UTFv14HYltpbzBCK"
 thumbnail: "/images/podcasts/the-everyday-feminist.jpg"

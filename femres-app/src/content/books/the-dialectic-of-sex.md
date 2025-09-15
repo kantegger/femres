@@ -6,7 +6,7 @@ description: "激进女性主义的代表作，提出了生育控制的技术革
 publishDate: 1970-01-01
 isbn: "9780374527877"
 language: "en"
-topics: ["激进女性主义", "马克思主义女性主义", "生育自主"]
+topics: ["Radical Feminism", "Marxist Feminism", "Reproductive Autonomy"]
 sourceUrl: "https://www.amazon.sg/s?k=dialectic+of+sex+shulamith+firestone&tag=inkrupt-22"
 coverImage: "/images/books/dialectic-of-sex.jpg"
 status: "published"

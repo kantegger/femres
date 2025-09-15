@@ -6,7 +6,7 @@ description: "散文与诗歌的混合体，克劳迪娅·兰金的回忆录式�
 publishDate: 2014-01-01
 isbn: "9781555976903"
 language: "en"
-topics: ["黑人女性主义", "种族与性别", "文化批判", "女性写作"]
+topics: ["Black Feminism", "Race and Gender", "Cultural Critique", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=citizen+american+lyric+claudia+rankine&tag=inkrupt-22"
 coverImage: "/images/books/citizen-american-lyric.jpg"
 status: published

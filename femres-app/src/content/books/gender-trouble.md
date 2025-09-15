@@ -6,7 +6,7 @@ description: "后现代女性主义的经典著作，提出了性别表演理论
 publishDate: 1990-01-01
 isbn: "9787532757077"
 language: "en"
-topics: ["后现代女性主义", "跨性别女性主义", "文化批判", "酷儿理论"]
+topics: ["Postmodern Feminism", "Trans Feminism", "Cultural Critique", "Queer Theory"]
 sourceUrl: "https://www.amazon.sg/s?k=gender+trouble+judith+butler&tag=inkrupt-22"
 coverImage: "/images/books/gender-trouble.jpg"
 status: "published"

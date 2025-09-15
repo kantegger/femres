@@ -4,7 +4,7 @@ author: "Lizz Winstead & Moji Alawode-El"
 description: "《Feminist Buzzkills》是由 Lizz Winstead 与 Moji Alawode-El 主持的女性主义播客，隶属于 Abortion Access Front。节目以讽刺、愤怒与行动主义为基调，聚焦堕胎权、医疗正义、跨性别关怀与反父权斗争。内容涵盖最高法院判例分析、禁书法案、虚假诊所揭露、跨性别医疗倡导与反堕胎立法批判。节目常邀请法律专家、活动家与艺术家共同探讨生殖权利与社会变革。Spotify 评分为 4.9（68 条评论），在激进女性主义播客圈中影响力显著。"
 publishDate: 2025-09-11
 language: en
-topics: ["堕胎权", "跨性别女性主义", "父权制批判"]
+topics: ["Abortion Rights", "Trans Feminism", "Patriarchy Critique"]
 sourceUrl: "https://open.spotify.com/show/2N7u35AgzU3brTviftfm0a"
 embedUrl: "https://open.spotify.com/embed/show/2N7u35AgzU3brTviftfm0a"
 thumbnail: "/images/podcasts/feminist-buzzkills.jpg"

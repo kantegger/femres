@@ -4,7 +4,7 @@ author: "Isabella Anzideo"
 description: "《Feminist Fight Club》是一档由 Isabella Anzideo 主持的教育型播客，以通俗方式介绍女性主义历史与当代议题。节目内容涵盖美国女性参政史、第二波女性主义、哲学中的性别偏见、性暴力统计与幸存者支持，以及跨性别女性的历史。风格亲切、面向 Gen Z，适合女性主义入门者与青少年听众。Spotify 评分为 5.0（1 条评论），为教育型女性主义播客中的新兴声音。"
 publishDate: 2025-09-12
 language: en
-topics: ["第二波女性主义", "反性暴力", "政治参与", "口述历史", "性别政治"]
+topics: ["Second Wave Feminism", "Anti-Sexual Violence", "Political Participation", "Oral History", "Gender Politics"]
 sourceUrl: "https://open.spotify.com/show/4EWfnGAnoHDN9ocvJKuHeT"
 embedUrl: "https://open.spotify.com/embed/show/4EWfnGAnoHDN9ocvJKuHeT"
 thumbnail: "/images/podcasts/feminist-fight-club.jpg"

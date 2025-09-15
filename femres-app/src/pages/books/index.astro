@@ -2,9 +2,17 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import BookCard from '../../components/BookCard.astro';
+import { getLocaleFromUrl } from '../../i18n';
 
 const books = await getCollection('books');
-const publishedBooks = books.filter(book => book.data.status === 'published');
+
+// 中文界面显示不带-en后缀的书籍
+const publishedBooks = books.filter(book => {
+  const isPublished = book.data.status === 'published';
+  if (!isPublished) return false;
+
+  return !book.slug.endsWith('-en');
+});
 
 // 按发布日期排序
 const sortedBooks = publishedBooks.sort((a, b) => {

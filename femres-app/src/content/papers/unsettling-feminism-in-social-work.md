@@ -5,7 +5,7 @@ author: "Autumn Asher BlackDeer"
 description: "本研究批判性地审视了女性主义与社会工作在历史上如何共同参与殖民项目，并延续白人至上主义的结构性暴力。作者提出一种原住民去殖民女性主义框架，强调社会工作应重新定位其正义目标，以实现原住民的集体解放与主权。"
 publishDate: 2023-08-01
 language: en
-topics: ["去殖民女性主义", "原住民女性主义", "反性暴力"]
+topics: ["Decolonial Feminism", "Indigenous Feminism", "Anti-Sexual Violence"]
 sourceUrl: "https://journals.sagepub.com/doi/10.1177/08861099231193617"
 doi: "10.1177/08861099231193617"
 journal: "Affilia: Feminist Inquiry in Social Work"

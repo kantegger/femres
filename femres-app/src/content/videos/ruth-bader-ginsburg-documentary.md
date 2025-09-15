@@ -3,8 +3,8 @@ title: "RBG：鲁思·巴德·金斯堡传记纪录片（预告片）"
 author: "Betsy West & Julie Cohen"
 description: "这部获得艾美奖的纪录片讲述了美国最高法院大法官鲁思·巴德·金斯堡为性别平等而奋斗的传奇人生，展现了她作为法律先驱和女权活动家的卓越贡献。"
 publishDate: 2018-05-04
-language: "en"
-topics: ["第二波女性主义", "法律平等", "政治参与"]
+contentLanguage: "en"
+topics: ["Second Wave Feminism", "Legal Equality", "Political Participation"]
 sourceUrl: "https://youtu.be/biIRlcQqmOc"
 embedUrl: "https://www.youtube.com/embed/biIRlcQqmOc"
 duration: 157

@@ -4,7 +4,7 @@ author: "Raquel Howard & Jennifer Bolanos"
 description: "《Madness Cafe》是一档由 Raquel Howard 与 Jennifer Bolanos 主持的女性主义时事评论播客，聚焦政治、健康、文化与女性权利议题。节目风格坦率、亲密且批判性强，内容涵盖更年期、性觉醒、婚姻制度批判、禁书运动、心理创伤与社会结构的交织。主持人常邀请作家、治疗师与活动家共同探讨女性在中年、创伤恢复与社会变革中的经验。Spotify 评分为 5.0（8 条评论），在女性主义播客圈中口碑极佳。"
 publishDate: 2025-09-11
 language: en
-topics: ["女性主义心理学", "父权制批判", "情绪劳动"]
+topics: ["Feminist Psychology", "Patriarchy Critique", "Emotional Labor"]
 sourceUrl: "https://open.spotify.com/show/02hhFKCkOt1sM2Os2HIVNX"
 embedUrl: "https://open.spotify.com/embed/show/02hhFKCkOt1sM2Os2HIVNX"
 thumbnail: "/images/podcasts/madness-cafe.jpg"

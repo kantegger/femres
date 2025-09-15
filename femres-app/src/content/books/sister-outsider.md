@@ -6,7 +6,7 @@ description: "交叉女性主义理论的奠基之作。洛德通过十五篇散
 publishDate: 1984-01-01
 isbn: "9781580911863"
 language: "en"
-topics: ["交叉女性主义", "黑人女性主义", "酷儿理论", "种族与性别"]
+topics: ["Intersectional Feminism", "Black Feminism", "Queer Theory", "Race and Gender"]
 sourceUrl: "https://www.amazon.sg/s?k=sister+outsider+audre+lorde&tag=inkrupt-22"
 coverImage: "/images/books/sister-outsider.jpg"
 status: "published"

@@ -11,7 +11,7 @@ duration: "111分钟"
 language: "en"
 genre: ["传记", "剧情", "历史"]
 cast: ["凯拉·奈特莉", "多米尼克·韦斯特", "埃莉诺·汤姆林森", "丹妮丝·高夫"]
-topics: ["女性写作", "经济赋权", "女性文学", "酷儿身份", "父权制批判", "女性主义艺术", "第一波女性主义"]
+topics: ["Women's Writing", "Economic Empowerment", "Women's Literature", "Queer Identity", "Patriarchy Critique", "Feminist Art", "First Wave Feminism"]
 status: "published"
 awards: ["好莱坞电影奖突破表演奖提名（凯拉·奈特莉）", "金球奖最佳女主角提名（凯拉·奈特莉）"]
 imdbRating: "6.7"

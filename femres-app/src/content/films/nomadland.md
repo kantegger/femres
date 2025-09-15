@@ -11,7 +11,7 @@ duration: "107分钟"
 language: "en"
 genre: ["剧情", "公路"]
 cast: ["弗兰西斯·麦克多蒙德", "大卫·斯特拉森", "琳达·梅"]
-topics: ["经济赋权", "资本主义批判"]
+topics: ["Economic Empowerment", "Capitalism Critique"]
 status: "published"
 awards: ["第93届奥斯卡最佳影片奖", "第78届金球奖最佳剧情片", "威尼斯电影节金狮奖"]
 imdbRating: "7.3"

@@ -4,7 +4,7 @@ author: "The Diary Of A CEO"
 description: "这是一场由《CEO日记》主持的辩论，邀请了三位女性，她们分别代表了对女性社会问题、女性主义、性解放以及性别角色不同的观点。讨论核心聚焦于性解放和第二波女性主义对女性自由、心理健康和人际关系的影响，以及现代女性主义对性别角色的深远后果。"
 publishDate: 2025-06-19
 language: "en"
-topics:  ["第二波女性主义", "激进女性主义", "反女性主义研究", "文化批判"] 
+topics: ["Second Wave Feminism", "Radical Feminism", "Anti-Feminism Studies", "Cultural Critique"] 
 sourceUrl: "https://www.youtube.com/watch?v=ZHuZ_8VYCWA"
 embedUrl: "https://www.youtube.com/embed/ZHuZ_8VYCWA"
 duration: 8853

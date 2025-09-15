@@ -6,7 +6,7 @@ description: "深入分析父权制如何伤害男性，探讨男性如何参与
 publishDate: 2004-01-01
 isbn: "9780743456081"
 language: "en"
-topics: ["父权制批判", "男权运动批判", "关怀伦理", "情绪劳动", "黑人女性主义"]
+topics: ["Patriarchy Critique", "Men's Rights Movement Critique", "Ethics of Care", "Emotional Labor", "Black Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=will+to+change+bell+hooks&tag=inkrupt-22"
 coverImage: "/images/books/the-will-to-change.jpg"
 status: "published"

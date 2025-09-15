@@ -6,7 +6,7 @@ description: "批判主流女性主义忽视边缘化女性的基本需求，倡
 publishDate: 2020-02-01
 isbn: "9780525560548"
 language: "en"
-topics: ["交叉女性主义", "黑人女性主义", "经济赋权", "阶级分析", "种族与性别"]
+topics: ["Intersectional Feminism", "Black Feminism", "Economic Empowerment", "Class Analysis", "Race and Gender"]
 sourceUrl: "https://www.amazon.sg/s?k=hood+feminism+mikki+kendall&tag=inkrupt-22"
 coverImage: "/images/books/hood-feminism.jpg"
 status: "published"

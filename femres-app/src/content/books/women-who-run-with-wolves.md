@@ -6,7 +6,7 @@ description: "野性女人的神话存在于各种文化中，从童话到民间
 publishDate: 1992-01-01
 isbn: "9780345409874"
 language: "en"
-topics: ["女性主义心理学", "灵性女性主义", "文化批判", "情绪劳动", "关怀伦理"]
+topics: ["Feminist Psychology", "Spiritual Feminism", "Cultural Critique", "Emotional Labor", "Ethics of Care"]
 sourceUrl: "https://www.amazon.sg/s?k=women+who+run+wolves+clarissa+pinkola+estes&tag=inkrupt-22"
 coverImage: "/images/books/women-who-run-with-wolves.jpg"
 status: published

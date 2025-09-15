@@ -4,7 +4,7 @@ author: "Robin Morgan"
 description: "《Women's Media Center Live》是由资深女性主义作家与活动家 Robin Morgan 主持的播客，隶属于 Women's Media Center。节目以全球视野探讨女性主义政治、文化与社会议题，内容涵盖堕胎权、媒体批判、气候危机、移民政策与文学创作。Robin 以其深厚的第二波女性主义背景与批判性语言，与各领域女性专家展开深入对话。节目在全球 110 个国家播出，Spotify 页面暂无评分，但在国际女性主义播客中具有高度影响力。"
 publishDate: 2025-09-11
 language: en
-topics: ["堕胎权", "媒体表征批判", "政治参与"]
+topics: ["Abortion Rights", "Media Representation Critique", "Political Participation"]
 sourceUrl: "https://open.spotify.com/show/0aDv5vw4F3A42bFZqOhBHv"
 embedUrl: "https://open.spotify.com/embed/show/0aDv5vw4F3A42bFZqOhBHv"
 thumbnail: "/images/podcasts/wmc-live.jpg"

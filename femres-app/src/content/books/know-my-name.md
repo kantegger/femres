@@ -6,7 +6,7 @@ description: "2015年，当斯坦福大学学生布洛克·特纳性侵一名被
 publishDate: 2019-09-24
 isbn: "9780735223707"
 language: "en"
-topics: ["反性暴力", "身体自主", "媒体表征批判", "MeToo运动", "女性写作"]
+topics: ["Anti-Sexual Violence", "Bodily Autonomy", "Media Representation Critique", "MeToo Movement", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=know+my+name+chanel+miller&tag=inkrupt-22"
 coverImage: "/images/books/know-my-name.jpg"
 status: published

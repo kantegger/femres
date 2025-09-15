@@ -4,7 +4,7 @@ author: "凯特·M·奥特"
 description: "通过一场虚构的圆桌对话，本文探讨了女性主义的多样化视角、内部的张力，以及种族、阶级、性别认同等议题对当代女性主义的深刻影响。" 
 publishDate: 2011-01-01
 language: "en" 
-topics: ["女性主义", "性别平等", "酷儿理论", "种族与阶级"] 
+topics: ["Feminism", "Gender Equality", "Queer Theory", "Race and Class"] 
 sourceUrl: "https://reflections.yale.edu/article/womens-journeys-progress-and-peril/thinking-out-loud-about-feminism" 
 readingTime: 5
 featuredImage: "/images/articles/thinking-out-loud-about-feminism.jpg" 

@@ -6,7 +6,7 @@ description: "探讨如何在日常生活中践行女性主义，分析了女性
 publishDate: 2017-02-01
 isbn: "9780822363194"
 language: "en"
-topics: ["女性主义心理学", "情绪劳动", "交叉女性主义", "酷儿理论", "日常生活实践"]
+topics: ["Feminist Psychology", "Emotional Labor", "Intersectional Feminism", "Queer Theory", "Everyday Life Practices"]
 sourceUrl: "https://www.amazon.sg/s?k=living+a+feminist+life+sara+ahmed&tag=inkrupt-22"
 coverImage: "/images/books/living-a-feminist-life.jpg"
 status: "published"

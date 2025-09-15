@@ -4,7 +4,7 @@ author: "Ceryn Rowntree"
 description: "《The Divine Feminist》由 Ceryn Rowntree 主持，是一档融合女性主义与灵性探索的播客，强调自我重连、能量平衡与去父权化的生活方式。节目围绕“十三把钥匙”展开，探讨边界、野性、美、死亡与连接等主题，风格哲思、疗愈且富有行动力。曾邀请 Laura Bates 等嘉宾参与对谈，Spotify 评分为 5.0（9 条评论），在灵性女性主义与心理成长社群中具有深度影响力。"
 publishDate: 2025-09-12
 language: en
-topics: ["灵性女性主义", "女性主义心理学", "身体政治", "去父权化"]
+topics: ["Spiritual Feminism", "Feminist Psychology", "Body Politics", "Depatriarchalization"]
 sourceUrl: "https://open.spotify.com/show/5nvT62FToMzkujkhGvDDZY"
 embedUrl: "https://open.spotify.com/embed/show/5nvT62FToMzkujkhGvDDZY"
 thumbnail: "/images/podcasts/divine-feminist.jpg"

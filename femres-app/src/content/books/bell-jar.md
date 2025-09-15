@@ -6,7 +6,7 @@ description: "20世纪女性主义文学经典，通过半自传体叙述揭示1
 publishDate: 1963-01-14
 isbn: "9780060837020"
 language: "en"
-topics: ["女性文学", "第二波女性主义", "父权制批判", "女性写作"]
+topics: ["Women's Literature", "Second Wave Feminism", "Patriarchy Critique", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=bell+jar+sylvia+plath&tag=inkrupt-22"
 coverImage: "/images/books/bell-jar.jpg"
 status: published

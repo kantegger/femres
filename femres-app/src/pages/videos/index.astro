@@ -4,7 +4,12 @@ import Layout from '../../layouts/Layout.astro';
 import VideoCard from '../../components/VideoCard.astro';
 
 const videos = await getCollection('videos');
-const publishedVideos = videos.filter(video => video.data.status === 'published');
+// 中文界面显示不带-en后缀的视频
+const publishedVideos = videos.filter(video => {
+  const isPublished = video.data.status === 'published';
+  if (!isPublished) return false;
+  return !video.slug.endsWith('-en');
+});
 
 // 按发布日期排序
 const sortedVideos = publishedVideos.sort((a, b) => {

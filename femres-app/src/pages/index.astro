@@ -7,6 +7,11 @@ import VideoCard from '../components/VideoCard.astro';
 import PodcastCard from '../components/PodcastCard.astro';
 import PaperCard from '../components/PaperCard.astro';
 import { getCollection } from 'astro:content';
+import { createT, getLocalizedPath, getLocaleFromUrl } from '../i18n/index';
+
+// Set current locale
+const currentLocale = getLocaleFromUrl(Astro.url);
+const t = createT(currentLocale);
 
 // 获取所有内容
 const books = await getCollection('books');
@@ -16,24 +21,73 @@ const videos = await getCollection('videos');
 const podcasts = await getCollection('podcasts');
 const papers = await getCollection('papers');
 
+// 根据界面语言过滤所有内容类型
+const filteredBooks = books.filter(book => {
+  if (currentLocale === 'en') {
+    return book.slug.endsWith('-en');
+  } else {
+    return !book.slug.endsWith('-en');
+  }
+});
+
+const filteredArticles = articles.filter(article => {
+  if (currentLocale === 'en') {
+    return article.slug.endsWith('-en');
+  } else {
+    return !article.slug.endsWith('-en');
+  }
+});
+
+const filteredFilms = films.filter(film => {
+  if (currentLocale === 'en') {
+    return film.slug.endsWith('-en');
+  } else {
+    return !film.slug.endsWith('-en');
+  }
+});
+
+const filteredVideos = videos.filter(video => {
+  if (currentLocale === 'en') {
+    return video.slug.endsWith('-en');
+  } else {
+    return !video.slug.endsWith('-en');
+  }
+});
+
+const filteredPodcasts = podcasts.filter(podcast => {
+  if (currentLocale === 'en') {
+    return podcast.slug.endsWith('-en');
+  } else {
+    return !podcast.slug.endsWith('-en');
+  }
+});
+
+const filteredPapers = papers.filter(paper => {
+  if (currentLocale === 'en') {
+    return paper.slug.endsWith('-en');
+  } else {
+    return !paper.slug.endsWith('-en');
+  }
+});
+
 // 合并所有内容并按发布时间排序
 const allContent = [
-  ...books.map(item => ({ ...item, contentType: 'book' as const })),
-  ...films.map(item => ({ ...item, contentType: 'film' as const })),
-  ...articles.map(item => ({ ...item, contentType: 'article' as const })),
-  ...videos.map(item => ({ ...item, contentType: 'video' as const })),
-  ...podcasts.map(item => ({ ...item, contentType: 'podcast' as const })),
-  ...papers.map(item => ({ ...item, contentType: 'paper' as const }))
+  ...filteredBooks.map(item => ({ ...item, contentType: 'book' as const })),
+  ...filteredFilms.map(item => ({ ...item, contentType: 'film' as const })),
+  ...filteredArticles.map(item => ({ ...item, contentType: 'article' as const })),
+  ...filteredVideos.map(item => ({ ...item, contentType: 'video' as const })),
+  ...filteredPodcasts.map(item => ({ ...item, contentType: 'podcast' as const })),
+  ...filteredPapers.map(item => ({ ...item, contentType: 'paper' as const }))
 ].sort((a, b) => new Date(b.data.releaseDate || b.data.publishDate).getTime() - new Date(a.data.releaseDate || a.data.publishDate).getTime());
 
 
 // 获取最新内容（分类型）
-const latestBooks = books.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 3);
-const latestFilms = films.sort((a, b) => new Date(b.data.releaseDate).getTime() - new Date(a.data.releaseDate).getTime()).slice(0, 3);
-const latestArticles = articles.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 2);
-const latestVideos = videos.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 2);
-const latestPodcasts = podcasts.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 4);
-const latestPapers = papers.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 3);
+const latestBooks = filteredBooks.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 3);
+const latestFilms = filteredFilms.sort((a, b) => new Date(b.data.releaseDate).getTime() - new Date(a.data.releaseDate).getTime()).slice(0, 3);
+const latestArticles = filteredArticles.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 2);
+const latestVideos = filteredVideos.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 2);
+const latestPodcasts = filteredPodcasts.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 4);
+const latestPapers = filteredPapers.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()).slice(0, 3);
 
 // 获取热门主题
 const allTopics = allContent.flatMap(item => item.data.topics);
@@ -113,9 +167,20 @@ const enrichedArticles = articles.map(article => {
   }
   return { ...article, articleType };
 });
+
+// Generate localized URLs
+const booksLink = getLocalizedPath('books', currentLocale);
+const filmsLink = getLocalizedPath('films', currentLocale);
+const articlesLink = getLocalizedPath('articles', currentLocale);
+const videosLink = getLocalizedPath('videos', currentLocale);
+const podcastsLink = getLocalizedPath('podcasts', currentLocale);
+const papersLink = getLocalizedPath('papers', currentLocale);
+const topicsLink = getLocalizedPath('topics', currentLocale);
+const aboutLink = getLocalizedPath('about', currentLocale);
+const contributeLink = getLocalizedPath('contribute', currentLocale);
 ---
 
-<Layout title="FemRes - 女性主义内容聚合平台">
+<Layout title={`FemRes - ${t('common.siteDescription')}`}>
   <!-- Full screen Hero Section -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
     <!-- Background decorative elements -->
@@ -129,23 +194,21 @@ const enrichedArticles = articles.map(article => {
       <!-- Badge -->
       <div class="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-sm font-medium mb-8">
         <span class="mr-2">🌟</span>
-        汇聚全球优质女性主义内容
+{t('homepage.hero.badge')}
       </div>
 
       <!-- Main heading -->
       <h1 class="text-6xl md:text-8xl font-bold text-gray-900 dark:text-white mb-8 leading-tight">
-        发现
+        {t('homepage.hero.title')}
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 relative">
-          女性主义
+          {t('homepage.hero.titleHighlight')}
           <div class="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 opacity-20 blur-lg -z-10"></div>
         </span>
-        的力量
+        {t('homepage.hero.titleEnd')}
       </h1>
       
       <!-- Subtitle -->
-      <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
-        探索书籍、文章、视频、播客和学术论文<br/>
-        深入了解性别平等的理论与实践，推动社会进步
+      <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto" set:html={t('homepage.hero.subtitle')}>
       </p>
 
       <!-- Action buttons -->
@@ -155,13 +218,13 @@ const enrichedArticles = articles.map(article => {
           onclick="const element = document.getElementById('content-section'); const elementPosition = element.offsetTop; const offsetPosition = elementPosition - 80; window.scrollTo({ top: offsetPosition, behavior: 'smooth' }); return false;"
           class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-xl text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 cursor-pointer"
         >
-          开始探索
+          {t('homepage.hero.startExploring')}
         </a>
-        <a 
-          href="/about" 
+        <a
+          href={aboutLink}
           class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-xl border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-200"
         >
-          了解项目
+          {t('homepage.hero.learnMore')}
         </a>
       </div>
 
@@ -171,22 +234,22 @@ const enrichedArticles = articles.map(article => {
           <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
             <span class="text-2xl">📚</span>
           </div>
-          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">丰富内容</h3>
-          <p class="text-gray-600 dark:text-gray-400 text-sm">涵盖书籍、文章、视频等多种优质内容</p>
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">{t('homepage.features.richContent.title')}</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">{t('homepage.features.richContent.description')}</p>
         </div>
         <div class="text-center">
           <div class="w-16 h-16 bg-pink-100 dark:bg-pink-900 rounded-full flex items-center justify-center mx-auto mb-4">
             <span class="text-2xl">🔍</span>
           </div>
-          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">智能分类</h3>
-          <p class="text-gray-600 dark:text-gray-400 text-sm">按主题和类型精准分类，快速找到所需内容</p>
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">{t('homepage.features.smartCategories.title')}</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">{t('homepage.features.smartCategories.description')}</p>
         </div>
         <div class="text-center">
           <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center mx-auto mb-4">
             <span class="text-2xl">🌍</span>
           </div>
-          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">全球视角</h3>
-          <p class="text-gray-600 dark:text-gray-400 text-sm">汇聚全球女性主义学者和活动家的观点</p>
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">{t('homepage.features.globalPerspective.title')}</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">{t('homepage.features.globalPerspective.description')}</p>
         </div>
       </div>
     </div>
@@ -214,7 +277,7 @@ const enrichedArticles = articles.map(article => {
     <!-- Latest Content Section -->
     <section class="mb-20">
       <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">精选内容</h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">{t('homepage.sections.featured')}</h2>
         <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">探索最新的女性主义思想、研究与实践，汇聚全球优质内容</p>
       </div>
 
@@ -224,13 +287,13 @@ const enrichedArticles = articles.map(article => {
           <div class="flex items-center justify-between mb-6">
             <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
               <span class="text-3xl mr-3">📚</span>
-              最新收录书籍
+              {t('homepage.sections.latestBooks')}
             </h3>
-            <a 
-              href="/books" 
+            <a
+              href={booksLink}
               class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium text-sm transition-colors"
             >
-              查看全部
+              {t('common.viewAll')}
               <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
@@ -247,6 +310,7 @@ const enrichedArticles = articles.map(article => {
                 slug={book.slug}
                 topics={book.data.topics}
                 isbn={book.data.isbn}
+                locale={currentLocale}
               />
             ))}
           </div>
@@ -259,13 +323,13 @@ const enrichedArticles = articles.map(article => {
           <div class="flex items-center justify-between mb-6">
             <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
               <span class="text-3xl mr-3">🎬</span>
-              最新收录电影
+              {t('homepage.sections.latestFilms')}
             </h3>
             <a 
-              href="/films" 
+              href={filmsLink} 
               class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium text-sm transition-colors"
             >
-              查看全部
+              {t('common.viewAll')}
               <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
@@ -285,6 +349,7 @@ const enrichedArticles = articles.map(article => {
                 country={film.data.country}
                 duration={film.data.duration}
                 genre={film.data.genre}
+                locale={currentLocale}
               />
             ))}
           </div>
@@ -297,13 +362,13 @@ const enrichedArticles = articles.map(article => {
           <div class="flex items-center justify-between mb-6">
             <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
               <span class="text-3xl mr-3">📰</span>
-              最新收录文章
+              {t('homepage.sections.latestArticles')}
             </h3>
             <a 
-              href="/articles" 
+              href={articlesLink} 
               class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium text-sm transition-colors"
             >
-              查看全部
+              {t('common.viewAll')}
               <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
@@ -322,6 +387,7 @@ const enrichedArticles = articles.map(article => {
                 slug={article.slug}
                 topics={article.data.topics}
                 articleType={article.articleType}
+                locale={currentLocale}
               />
             ))}
           </div>
@@ -334,13 +400,13 @@ const enrichedArticles = articles.map(article => {
           <div class="flex items-center justify-between mb-6">
             <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
               <span class="text-3xl mr-3">🎥</span>
-              最新收录视频
+              {t('homepage.sections.latestVideos')}
             </h3>
             <a 
-              href="/videos" 
+              href={videosLink} 
               class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium text-sm transition-colors"
             >
-              查看全部
+              {t('common.viewAll')}
               <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
@@ -358,6 +424,7 @@ const enrichedArticles = articles.map(article => {
                 sourceUrl={video.data.sourceUrl}
                 slug={video.slug}
                 topics={video.data.topics}
+                locale={currentLocale}
               />
             ))}
           </div>
@@ -370,13 +437,13 @@ const enrichedArticles = articles.map(article => {
           <div class="flex items-center justify-between mb-6">
             <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
               <span class="text-3xl mr-3">🎧</span>
-              最新收录播客
+              {t('homepage.sections.latestPodcasts')}
             </h3>
             <a 
-              href="/podcasts" 
+              href={podcastsLink} 
               class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium text-sm transition-colors"
             >
-              查看全部
+              {t('common.viewAll')}
               <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
@@ -395,6 +462,7 @@ const enrichedArticles = articles.map(article => {
                 slug={podcast.slug}
                 topics={podcast.data.topics}
                 episodeNumber={podcast.data.episodeNumber}
+                locale={currentLocale}
               />
             ))}
           </div>
@@ -407,13 +475,13 @@ const enrichedArticles = articles.map(article => {
           <div class="flex items-center justify-between mb-6">
             <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
               <span class="text-3xl mr-3">📄</span>
-              最新收录论文
+              {t('homepage.sections.latestPapers')}
             </h3>
             <a 
-              href="/papers" 
+              href={papersLink} 
               class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium text-sm transition-colors"
             >
-              查看全部
+              {t('common.viewAll')}
               <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
@@ -432,6 +500,7 @@ const enrichedArticles = articles.map(article => {
                 doi={paper.data.doi}
                 citationCount={paper.data.citationCount}
                 paperType={paper.data.paperType}
+                locale={currentLocale}
               />
             ))}
           </div>
@@ -442,7 +511,7 @@ const enrichedArticles = articles.map(article => {
     <!-- Featured Topics -->
     <section class="mb-20">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">热门主题</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">{t('homepage.sections.popularTopics')}</h2>
         <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">探索最受关注的女性主义话题，深入了解各个领域的发展现状</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -461,7 +530,7 @@ const enrichedArticles = articles.map(article => {
           
           return (
             <a 
-              href={`/topics/${encodeURIComponent(topic)}`}
+              href={getLocalizedPath(`topics/${encodeURIComponent(topic)}`, currentLocale)}
               class="group relative overflow-hidden p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center"
             >
               <!-- Background gradient on hover -->
@@ -480,7 +549,7 @@ const enrichedArticles = articles.map(article => {
                   {topic}
                 </h3>
                 <p class="text-gray-600 dark:text-gray-400 mb-4">
-                  {count} 个精选内容
+                  {count} {currentLocale === 'zh-CN' ? '个精选内容' : 'featured content'}
                 </p>
                 
                 <!-- Progress bar -->
@@ -505,10 +574,10 @@ const enrichedArticles = articles.map(article => {
       <!-- View all topics button -->
       <div class="text-center mt-12">
         <a 
-          href="/topics"
+          href={topicsLink}
           class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800 text-white font-semibold rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
         >
-          查看所有主题
+          {t('common.viewAll')} {t('nav.topics')}
           <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
           </svg>
@@ -521,23 +590,23 @@ const enrichedArticles = articles.map(article => {
     <section class="text-center py-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl text-white">
       <div class="max-w-2xl mx-auto px-6">
         <h2 class="text-3xl font-bold mb-4">
-          一起推动性别平等事业
+          {t('homepage.cta.title')}
         </h2>
         <p class="text-xl mb-8 opacity-90">
-          加入我们的社区，分享你的见解，发现更多优质内容
+          {t('homepage.cta.description')}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a 
-            href="/contribute" 
+            href={contributeLink} 
             class="inline-flex items-center justify-center px-8 py-3 border border-white/30 text-base font-medium rounded-md text-white bg-white/10 hover:bg-white/20 transition-colors backdrop-blur"
           >
-            贡献内容
+            {t('homepage.cta.contribute')}
           </a>
           <a 
-            href="/about" 
+            href={aboutLink} 
             class="inline-flex items-center justify-center px-8 py-3 border border-white text-base font-medium rounded-md text-purple-600 bg-white hover:bg-gray-50 transition-colors"
           >
-            了解更多
+            {t('homepage.cta.aboutUs')}
           </a>
         </div>
       </div>

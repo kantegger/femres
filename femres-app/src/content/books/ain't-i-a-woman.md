@@ -6,7 +6,7 @@ description: "深刻分析了黑人女性在种族主义和性别歧视双重压
 publishDate: 1981-01-01
 isbn: "9780896081307"
 language: "en"
-topics: ["黑人女性主义", "交叉女性主义", "种族与性别", "反女性主义研究"]
+topics: ["Black Feminism", "Intersectional Feminism", "Race and Gender", "Anti-Feminism Studies"]
 sourceUrl: "https://www.amazon.sg/s?k=ain%27t+i+woman+black+women+feminism+bell+hooks&tag=inkrupt-22"
 coverImage: "/images/books/aint-i-a-woman.jpg"
 status: "published"

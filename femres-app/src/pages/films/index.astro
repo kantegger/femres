@@ -4,7 +4,13 @@ import Layout from '../../layouts/Layout.astro';
 import FilmCard from '../../components/FilmCard.astro';
 
 const films = await getCollection('films');
-const publishedFilms = films.filter(film => film.data.status === 'published');
+
+// 中文界面显示不带-en后缀的电影
+const publishedFilms = films.filter(film => {
+  const isPublished = film.data.status === 'published';
+  if (!isPublished) return false;
+  return !film.slug.endsWith('-en');
+});
 
 // 按发布日期排序
 const sortedFilms = publishedFilms.sort((a, b) => {

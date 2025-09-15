@@ -5,7 +5,13 @@ import ArticleCard from '../../components/ArticleCard.astro';
 import ArticleCard2 from '../../components/ArticleCard2.astro';
 
 const articles = await getCollection('articles');
-const publishedArticles = articles.filter(article => article.data.status === 'published');
+
+// 中文界面显示不带-en后缀的文章
+const publishedArticles = articles.filter(article => {
+  const isPublished = article.data.status === 'published';
+  if (!isPublished) return false;
+  return !article.slug.endsWith('-en');
+});
 
 // 按发布日期排序
 const sortedArticles = publishedArticles.sort((a, b) => {

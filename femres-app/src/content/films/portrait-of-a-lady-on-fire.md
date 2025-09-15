@@ -11,7 +11,7 @@ duration: "122分钟"
 language: "fr"
 genre: ["剧情", "爱情", "历史"]
 cast: ["诺米·梅兰特", "阿黛拉·哈内尔", "卢安娜·巴拉米", "瓦莱丽亚·戈利诺"]
-topics: ["女性主义艺术", "酷儿身份", "身体自主", "媒体表征批判", "女性友谊"]
+topics: ["Feminist Art", "Queer Identity", "Bodily Autonomy", "Media Representation Critique", "Female Friendship"]
 status: "published"
 awards: ["第72届戛纳电影节最佳编剧奖", "第45届凯撒奖最佳摄影奖"]
 imdbRating: "8.0"

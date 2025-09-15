@@ -6,7 +6,7 @@ description: "从女性主义视角重新审视资本主义原始积累，揭示
 publishDate: 2004-01-01
 isbn: "9781570270598"
 language: "en"
-topics: ["马克思主义女性主义", "资本主义批判", "历史脉络", "身体自主", "父权制批判"]
+topics: ["Marxist Feminism", "Capitalism Critique", "Historical Context", "Bodily Autonomy", "Patriarchy Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=caliban+and+the+witch+silvia+federici&tag=inkrupt-22"
 coverImage: "/images/books/caliban-and-the-witch.jpg"
 status: "published"

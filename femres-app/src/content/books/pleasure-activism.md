@@ -6,7 +6,7 @@ description: "探索愉悦和快乐如何成为社会正义工作的核心，倡
 publishDate: 2019-03-01
 isbn: "9781849353267"
 language: "en"
-topics: ["身体自主", "黑人女性主义", "酷儿理论", "情绪劳动", "性解放"]
+topics: ["Bodily Autonomy", "Black Feminism", "Queer Theory", "Emotional Labor", "Sexual Liberation"]
 sourceUrl: "https://www.amazon.sg/s?k=pleasure+activism+adrienne+maree+brown&tag=inkrupt-22"
 coverImage: "/images/books/pleasure-activism.jpg"
 status: "published"

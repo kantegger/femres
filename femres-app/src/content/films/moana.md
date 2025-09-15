@@ -11,7 +11,7 @@ duration: "107分钟"
 language: "en"
 genre: ["动画", "冒险", "音乐剧"]
 cast: ["奥丽伊·卡瑞瓦洛", "道恩·强森", "瑞切尔·豪斯", "特穆拉·莫里森", "杰梅奈·克莱门特"]
-topics: ["文化认同", "生态女性主义", "家庭解放", "女性主义艺术"]
+topics: ["Cultural Identity", "Ecofeminism", "Family Liberation", "Feminist Art"]
 status: "published"
 awards: ["奥斯卡最佳动画长片提名", "奥斯卡最佳原创歌曲提名", "金球奖最佳动画电影提名", "安妮奖最佳动画电影"]
 imdbRating: "7.6"

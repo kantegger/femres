@@ -6,7 +6,7 @@ description: "现代女权运动的奠基之作，深刻揭示了20世纪中期�
 publishDate: 1963-02-19
 isbn: "9787020116249"
 language: "en"
-topics: ["第二波女性主义", "家庭解放", "自由主义女性主义"]
+topics: ["Second Wave Feminism", "Family Liberation", "Liberal Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=feminine+mystique+betty+friedan&tag=inkrupt-22"
 coverImage: "/images/books/feminine-mystique.jpg"
 status: "published"

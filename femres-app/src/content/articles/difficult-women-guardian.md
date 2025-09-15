@@ -4,16 +4,7 @@ author: "Helen Lewis"
 description: "本文批判了当代女性主义中对‘完美’与‘可爱’的期待，呼吁正视女性主义内部的复杂性与矛盾，接纳那些不合群、难以归类但推动变革的‘棘手女性’。"
 publishDate: 2020-02-15
 language: "en"
-topics: [
-  "第四波女性主义",
-  "父权制批判",
-  "反女性主义研究",
-  "媒体表征批判",
-  "政治参与",
-  "身体自主",
-  "情绪劳动",
-  "女性主义心理学"
-]
+topics: ["Fourth Wave Feminism", "Patriarchy Critique", "Anti-Feminism Studies", "Media Representation Critique", "Political Participation", "Bodily Autonomy", "Emotional Labor", "Feminist Psychology"]
 sourceUrl: "https://www.theguardian.com/books/2020/feb/15/feminism-feminists-tyranny-niceness-complexity?ref=refind"
 readingTime: 10
 featuredImage: "/images/articles/difficult-women-guardian.jpg"

@@ -4,7 +4,7 @@ author: "Katie Breen"
 description: "《Femtastic Podcast》由 Katie Breen 主持，聚焦生育正义、交叉女性主义与公共政策。节目邀请研究者、倡导者与幸存者，探讨堕胎权、危机怀孕中心、枪支暴力与制度性压迫，强调数据驱动与行动导向。风格清晰、信息密集，适合关注美国生育政治与性别正义的听众。Spotify 评分为 5.0（6 条评论），在倡导型女性主义播客中具有代表性。"
 publishDate: 2025-09-12
 language: en
-topics: ["交叉女性主义", "生育自主", "反性暴力", "父权制批判", "政治参与"]
+topics: ["Intersectional Feminism", "Reproductive Autonomy", "Anti-Sexual Violence", "Patriarchy Critique", "Political Participation"]
 sourceUrl: "https://open.spotify.com/show/3MrA43E4GXvHaQRC97Ck3W"
 embedUrl: "https://open.spotify.com/embed/show/3MrA43E4GXvHaQRC97Ck3W"
 thumbnail: "/images/podcasts/femtastic.jpg"

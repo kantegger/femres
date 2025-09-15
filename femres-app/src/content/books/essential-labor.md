@@ -6,7 +6,7 @@ description: "第一代菲律宾裔美国作家加尔贝斯结合回忆录与文
 publishDate: 2022-08-16
 isbn: "9780062938091"
 language: "en"
-topics: ["情绪劳动", "关怀伦理", "交叉女性主义", "经济赋权"]
+topics: ["Emotional Labor", "Ethics of Care", "Intersectional Feminism", "Economic Empowerment"]
 sourceUrl: "https://www.amazon.sg/s?k=essential+labor+angela+garbes&tag=inkrupt-22"
 coverImage: "/images/books/essential-labor.jpg"
 status: "published"

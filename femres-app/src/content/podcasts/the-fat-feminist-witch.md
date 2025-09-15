@@ -4,7 +4,7 @@ author: "Paige Vanderbeck"
 description: "《The Fat Feminist Witch》是一档由 Paige Vanderbeck 主持的女性主义灵性播客，以肥胖倡议、女巫实践与文化批判为核心，探索身体政治与现代巫术的交汇。节目风格幽默、坦率且富有批判性，内容涵盖巫术历史、女权主义魔法、宗教批判与大麻文化。Spotify 评分为 4.9（186 条评论），在另类女性主义与灵性播客圈中具有鲜明特色。"
 publishDate: 2025-09-11
 language: en
-topics: ["身体自主", "宗教父权批判", "文化批判"]
+topics: ["Bodily Autonomy", "Religious Patriarchy Critique", "Cultural Critique"]
 sourceUrl: "https://open.spotify.com/show/4TIu8rGpu17Kzo0qPg1xyG"
 embedUrl: "https://open.spotify.com/embed/show/4TIu8rGpu17Kzo0qPg1xyG"
 thumbnail: "/images/podcasts/fat-feminist-witch.jpg"

@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import InteractionButtons from '../../components/InteractionButtons';
 import Discussion from '../../components/Discussion';
+import { getTopicTranslation } from '../../i18n/topicsUtils';
 
 export async function getStaticPaths() {
   const podcasts = await getCollection('podcasts');
@@ -203,7 +204,7 @@ const getPodcastEmbed = (embedUrl: string) => {
                 href={`/topics/${encodeURIComponent(topic)}`}
                 class="inline-block px-3 py-1 bg-purple-50 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-700 text-purple-700 dark:text-purple-300 rounded-full text-sm hover:bg-purple-100 dark:hover:bg-purple-900/50 transition-colors"
               >
-                #{topic}
+                #{getTopicTranslation(topic, 'zh-CN')}
               </a>
             ))}
           </div>
@@ -293,11 +294,6 @@ const getPodcastEmbed = (embedUrl: string) => {
               )}
             </div>
 
-            <div class="border-t border-gray-200 dark:border-gray-600 pt-4 mt-6">
-              <button class="w-full px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200">
-                添加到播放列表
-              </button>
-            </div>
           </div>
 
           <!-- Related Podcasts -->

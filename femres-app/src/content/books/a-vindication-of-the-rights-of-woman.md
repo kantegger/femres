@@ -6,7 +6,7 @@ description: "女性主义思想史上的开创性作品，最早系统地为女
 publishDate: 1792-01-01
 isbn: "9787100093200"
 language: "en"
-topics: ["第一波女性主义", "教育平等", "法律平等"]
+topics: ["First Wave Feminism", "Education Equality", "Legal Equality"]
 sourceUrl: "https://www.amazon.sg/s?k=vindication+rights+woman+mary+wollstonecraft&tag=inkrupt-22"
 coverImage: "/images/books/vindication-rights-woman.jpg"
 status: "published"

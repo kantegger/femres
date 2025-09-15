@@ -11,7 +11,7 @@ duration: "113分钟"
 language: "en"
 genre: ["惊悚", "剧情", "犯罪"]
 cast: ["凯莉·穆里根", "博·伯纳姆", "艾莉森·布里", "克兰西·布朗", "詹妮弗·库里奇"]
-topics: ["反性暴力", "MeToo运动"]
+topics: ["Anti-Sexual Violence", "MeToo Movement"]
 status: "published"
 awards: ["第93届奥斯卡最佳原创剧本", "第78届金球奖最佳女主角提名", "第74届英国电影学院奖最佳原创剧本", "第32届美国制片人工会奖最佳影片提名"]
 imdbRating: "7.5"

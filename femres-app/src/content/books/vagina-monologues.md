@@ -6,7 +6,7 @@ description: "革命性的女性主义戏剧作品，通过女性身体经验的
 publishDate: 1996-01-01
 isbn: "9781860499265"
 language: "en"
-topics: ["身体自主", "反性暴力", "女性文学", "文化批判"]
+topics: ["Bodily Autonomy", "Anti-Sexual Violence", "Women's Literature", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=vagina+monologues+eve+ensler&tag=inkrupt-22"
 coverImage: "/images/books/vagina-monologues.jpg"
 status: published

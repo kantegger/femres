@@ -11,7 +11,7 @@ duration: "102分钟"
 language: "en"
 genre: ["喜剧", "剧情"]
 cast: ["贝蒂·米德勒", "戈尔迪·霍恩", "黛安·基顿", "玛吉·史密斯", "萨拉·杰西卡·帕克"]
-topics: ["女性友谊", "经济赋权", "家庭解放", "父权制批判"]
+topics: ["Female Friendship", "Economic Empowerment", "Family Liberation", "Patriarchy Critique"]
 status: "published"
 awards: ["人民选择奖最受欢迎喜剧电影", "MTV电影奖最佳喜剧表演提名（贝蒂·米德勒）", "青少年选择奖最佳喜剧电影提名"]
 imdbRating: "6.5"

@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+
+const books = await getCollection('books');
+const publishedBooks = books.filter(book => book.data.status === 'published');
+const testBook = publishedBooks.find(book => book.slug === 'test-book') || publishedBooks[0];
+---
+
+<html>
+<head>
+    <title>Debug</title>
+</head>
+<body>
+    <h1>Debug Book Data for {testBook.slug}</h1>
+    <pre>{JSON.stringify(testBook.data, null, 2)}</pre>
+
+    <h2>Title Logic Test</h2>
+    <p>Original title: {testBook.data.title}</p>
+    <p>englishTitle exists: {testBook.data.englishTitle ? 'YES' : 'NO'}</p>
+    <p>englishTitle value: {testBook.data.englishTitle || 'undefined'}</p>
+    <p>englishTitle type: {typeof testBook.data.englishTitle}</p>
+
+    <h2>Display Logic (currentLocale = 'en')</h2>
+    <p>Display title (EN logic): {('en' === 'en' && testBook.data.englishTitle) ? testBook.data.englishTitle : testBook.data.title}</p>
+    <p>Display title (Simplified): {testBook.data.englishTitle || testBook.data.title}</p>
+
+    <h2>Description Logic Test</h2>
+    <p>Original description: {testBook.data.description}</p>
+    <p>description_en exists: {testBook.data.description_en ? 'YES' : 'NO'}</p>
+    <p>description_en value: {testBook.data.description_en || 'undefined'}</p>
+</body>
+</html>

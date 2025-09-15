@@ -6,7 +6,7 @@ description: "以幽默和诚实的方式探讨了当代女性主义的复杂性
 publishDate: 2014-08-05
 isbn: "9780062282712"
 language: "en"
-topics: ["第四波女性主义", "流行文化女性主义", "交叉女性主义", "媒体表征批判", "女性文学批评"]
+topics: ["Fourth Wave Feminism", "Pop Culture Feminism", "Intersectional Feminism", "Media Representation Critique", "Feminist Literary Criticism"]
 sourceUrl: "https://www.amazon.sg/s?k=bad+feminist+roxane+gay&tag=inkrupt-22"
 coverImage: "/images/books/bad-feminist.jpg"
 status: "published"

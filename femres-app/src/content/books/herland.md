@@ -6,7 +6,7 @@ description: "1915年发表的开创性女性主义乌托邦小说，构想了�
 publishDate: 1915-01-01
 isbn: "9780394736655"
 language: "en"
-topics: ["第一波女性主义", "激进女性主义", "女性文学", "文化批判"]
+topics: ["First Wave Feminism", "Radical Feminism", "Women's Literature", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=herland+charlotte+perkins+gilman&tag=inkrupt-22"
 coverImage: "/images/books/herland.jpg"
 status: published

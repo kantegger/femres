@@ -4,7 +4,7 @@ author: "Teri Yuan"
 description: "《en(gender)ed》是一档由 Teri Yuan 主持的播客，聚焦性别暴力、压迫机制与制度性解决方案。节目以幸存者、倡导者与政策制定者的声音为核心，探讨强制控制、家庭暴力、校园性侵、枪支暴力与媒体偏见等议题，强调交叉性视角与文化识读。风格深刻、系统性强，是性别正义领域的重要知识平台。Spotify 评分为 5.0（3 条评论），在性别暴力研究与倡导播客中具有代表性。"
 publishDate: 2025-09-12
 language: en
-topics: ["反性暴力", "父权制批判", "政治参与", "情绪劳动", "交叉女性主义"]
+topics: ["Anti-Sexual Violence", "Patriarchy Critique", "Political Participation", "Emotional Labor", "Intersectional Feminism"]
 sourceUrl: "https://open.spotify.com/show/1VzHalW5seEmPv1q6dOUtp"
 embedUrl: "https://open.spotify.com/embed/show/1VzHalW5seEmPv1q6dOUtp"
 thumbnail: "/images/podcasts/engendered.jpg"

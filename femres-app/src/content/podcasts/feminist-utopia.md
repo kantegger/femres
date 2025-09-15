@@ -4,7 +4,7 @@ author: "Benita & Debby"
 description: "《Feminist Utopia》是一档由 Benita 与 Debby 主持的播客，聚焦女性主义如何推动尊严、团结与社会正义。节目以美国政治事件为切入点，探讨堕胎权、最高法院政治化、抗议行动与道德话语权，强调跨性别、种族、阶级与宗教交叉性。风格直接、批判性强，适合关注当代美国女性主义政治的听众。"
 publishDate: 2025-09-12
 language: en
-topics: ["政治参与", "堕胎权", "性别政治", "文化批判", "交叉女性主义"]
+topics: ["Political Participation", "Abortion Rights", "Gender Politics", "Cultural Critique", "Intersectional Feminism"]
 sourceUrl: "https://open.spotify.com/show/5QN6cNdpPIxqoG1IBAggxF"
 embedUrl: "https://open.spotify.com/embed/show/5QN6cNdpPIxqoG1IBAggxF"
 thumbnail: "/images/podcasts/feminist-utopia.jpg"

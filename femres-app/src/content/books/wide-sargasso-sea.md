@@ -6,7 +6,7 @@ description: "在夏洛蒂·勃朗特的《简·爱》出版近200年后，它�
 publishDate: 1966-01-01
 isbn: "9780393308815"
 language: "en"
-topics: ["去殖民女性主义", "种族与性别", "女性文学", "文化批判"]
+topics: ["Decolonial Feminism", "Race and Gender", "Women's Literature", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=wide+sargasso+sea+jean+rhys&tag=inkrupt-22"
 coverImage: "/images/books/wide-sargasso-sea.jpg"
 status: published

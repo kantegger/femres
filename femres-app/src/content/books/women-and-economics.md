@@ -6,7 +6,7 @@ description: "1898年出版的开创性女性主义经济学著作，系统分�
 publishDate: 1898-01-01
 isbn: "9781602060340"
 language: "en"
-topics: ["第一波女性主义", "经济赋权", "马克思主义女性主义", "文化批判"]
+topics: ["First Wave Feminism", "Economic Empowerment", "Marxist Feminism", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=women+and+economics+charlotte+perkins+gilman&tag=inkrupt-22"
 coverImage: "/images/books/women-and-economics.jpg"
 status: published

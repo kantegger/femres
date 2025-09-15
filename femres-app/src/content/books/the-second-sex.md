@@ -6,7 +6,7 @@ description: "现代女性主义的奠基之作，深刻分析了女性在社会
 publishDate: 1949-06-01
 isbn: "9787020035816"
 language: "en"
-topics: ["存在主义女性主义", "第二波女性主义", "父权制批判", "女性文学批评"]
+topics: ["Existentialist Feminism", "Second Wave Feminism", "Patriarchy Critique", "Feminist Literary Criticism"]
 sourceUrl: "https://www.amazon.sg/s?k=second+sex+simone+de+beauvoir&tag=inkrupt-22"
 coverImage: "/images/books/the-second-sex.jpg"
 status: "published"

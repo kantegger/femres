@@ -7,6 +7,11 @@ import BookCard from '../../components/BookCard.astro';
 import PodcastCard from '../../components/PodcastCard.astro';
 import VideoCard from '../../components/VideoCard.astro';
 import { getCollection } from 'astro:content';
+import { createT, getLocalizedPath, getLocaleFromUrl } from '../../i18n/index';
+import { getTopicIcon, getTopicTranslation } from '../../i18n/topicsUtils';
+
+const currentLocale = getLocaleFromUrl(Astro.url) || 'zh-CN';
+const t = createT(currentLocale);
 
 export async function getStaticPaths() {
   const books = await getCollection('books');
@@ -33,12 +38,24 @@ export async function getStaticPaths() {
 }
 
 const { topic, allContent } = Astro.props;
-const decodedTopic = topic;
+const decodedTopic = decodeURIComponent(topic);
+const translatedTopic = getTopicTranslation(decodedTopic, currentLocale as 'zh-CN' | 'en');
 
-// 筛选包含该主题的内容
-const topicContent = allContent.filter(item => 
-  item.data.topics.includes(decodedTopic)
-).sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
+// 筛选包含该主题的内容，并根据当前语言过滤
+const topicContent = allContent.filter(item => {
+  // 检查是否包含该主题
+  if (!item.data.topics.includes(decodedTopic)) return false;
+
+  // 根据当前语言过滤内容
+  // 中文界面：显示不带-en后缀的内容
+  // 英文界面：显示带-en后缀的内容
+  const isEnglishContent = item.slug.endsWith('-en');
+  if (currentLocale === 'en') {
+    return isEnglishContent;
+  } else {
+    return !isEnglishContent;
+  }
+}).sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
 
 // 获取相关主题（与当前主题经常一起出现的其他主题）
 const relatedTopics = topicContent
@@ -68,85 +85,11 @@ const contentTypeLabels = {
   paper: '论文'
 };
 
-// 主题图标映射
-const topicIcons: Record<string, string> = {
-  // 理论流派
-  '交叉女性主义': '🌐',
-  '马克思主义女性主义': '⚒️',
-  '去殖民女性主义': '🌍',
-  '存在主义女性主义': '🤔',
-  '自由主义女性主义': '🗽',
-  '激进女性主义': '⚡',
-  '黑人女性主义': '✊🏿',
-  '原住民女性主义': '🪶',
-  '跨性别女性主义': '🏳️‍⚧️',
-  '生态女性主义': '🌱',
-  '后现代女性主义': '🎭',
-  
-  // 运动议题
-  '职场平等': '💼',
-  '同工同酬': '💰',
-  '玻璃天花板': '🔝',
-  '生育自主': '🤱',
-  '堕胎权': '⚕️',
-  '反性暴力': '🛡️',
-  '政治参与': '🗳️',
-  '法律平等': '⚖️',
-  '经济赋权': '📈',
-  '教育平等': '📚',
-  '家庭解放': '🏠',
-  '体育平等': '⚽',
-  '身体自主': '💪',
-  
-  // 批判领域
-  '父权制批判': '👑',
-  '资本主义批判': '🏭',
-  '媒体表征批判': '📺',
-  '宗教父权批判': '⛪',
-  '男权运动批判': '🚫',
-  '文化批判': '🎨',
-  '反女性主义研究': '🔍',
-  
-  // 历史脉络
-  '第一波女性主义': '1️⃣',
-  '第二波女性主义': '2️⃣',
-  '第三波女性主义': '3️⃣',
-  '第四波女性主义': '4️⃣',
-  'MeToo运动': '#️⃣',
-  '中国女权运动': '🇨🇳',
-  '流行文化女性主义': '🎬',
-  '基督教女性主义': '✝️',
-  '灵性女性主义': '🔮',
-  
-  // 文学与创作
-  '女性文学': '📖',
-  '女性写作': '✍️',
-  '女性文学批评': '📝',
-  '翻译女性主义': '🌐',
-  '女性叙事学': '📚',
-  
-  // 特殊概念
-  '情绪劳动': '💭',
-  '关怀伦理': '❤️',
-  '女性主义心理学': '🧠',
-  '女性主义艺术': '🎨',
-  '种族与性别': '🌈',
-  
-  // 新增批判领域
-  '学术父权批判': '🎓',
-  '语言性别歧视': '💬',
-  '翻译政治': '🔄',
-  '知识殖民批判': '📚',
-  
-  // 新增运动议题
-  '数字女性主义': '💻',
-  '气候正义': '🌍'
-};
 ---
 
 <Layout 
-  title={`${decodedTopic} - 主题页面 - FemRes`} 
-  description={`探索关于${decodedTopic}的优质女性主义内容，包括书籍、文章、视频等资源`}
+  title={`${translatedTopic} - 主题页面 - FemRes`}
+  description={`探索关于${translatedTopic}的优质女性主义内容，包括书籍、文章、视频等资源`}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     
@@ -154,12 +97,12 @@ const topicIcons: Record<string, string> = {
     <div class="text-center mb-16">
       <div class="inline-flex items-center justify-center w-24 h-24 bg-purple-100 dark:bg-purple-900 rounded-full mb-6">
         <span class="text-4xl">
-          {topicIcons[decodedTopic] || '📋'}
+          {getTopicIcon(decodedTopic)}
         </span>
       </div>
       
       <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-        {decodedTopic}
+        {translatedTopic}
       </h1>
       
       <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
@@ -169,11 +112,11 @@ const topicIcons: Record<string, string> = {
       <!-- Breadcrumb -->
       <nav class="flex justify-center mb-8">
         <ol class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <li><a href="/" class="hover:text-purple-600 dark:hover:text-purple-400">首页</a></li>
+          <li><a href={getLocalizedPath('/', currentLocale)} class="hover:text-purple-600 dark:hover:text-purple-400">{t('nav.home')}</a></li>
           <li><span class="mx-2">/</span></li>
-          <li><a href="/topics" class="hover:text-purple-600 dark:hover:text-purple-400">主题</a></li>
+          <li><a href={getLocalizedPath('topics', currentLocale)} class="hover:text-purple-600 dark:hover:text-purple-400">{t('nav.topics')}</a></li>
           <li><span class="mx-2">/</span></li>
-          <li class="text-gray-900 dark:text-white font-medium">{decodedTopic}</li>
+          <li class="text-gray-900 dark:text-white font-medium">{translatedTopic}</li>
         </ol>
       </nav>
     </div>
@@ -188,7 +131,7 @@ const topicIcons: Record<string, string> = {
             <div class="flex items-center mb-6">
               <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
                 <span class="text-3xl mr-3">📚</span>
-                书籍
+                {t('nav.books')}
                 <span class="ml-2 px-2 py-1 text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
                   {topicContent.filter(item => item.contentType === 'book').length}
                 </span>
@@ -203,6 +146,7 @@ const topicIcons: Record<string, string> = {
                   coverImage={item.data.coverImage}
                   publishDate={item.data.publishDate}
                   slug={item.slug}
+                  locale={currentLocale}
                   topics={item.data.topics}
                   isbn={item.data.isbn}
                 />
@@ -217,7 +161,7 @@ const topicIcons: Record<string, string> = {
             <div class="flex items-center mb-6">
               <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
                 <span class="text-3xl mr-3">📰</span>
-                文章
+                {t('nav.articles')}
                 <span class="ml-2 px-2 py-1 text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
                   {topicContent.filter(item => item.contentType === 'article').length}
                 </span>
@@ -234,6 +178,7 @@ const topicIcons: Record<string, string> = {
                   publishDate={item.data.publishDate}
                   sourceUrl={item.data.sourceUrl}
                   slug={item.slug}
+                  locale={currentLocale}
                   readingTime={item.data.readingTime}
                   duration={item.data.duration}
                 />
@@ -248,7 +193,7 @@ const topicIcons: Record<string, string> = {
             <div class="flex items-center mb-6">
               <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
                 <span class="text-3xl mr-3">🎥</span>
-                视频
+                {t('nav.videos')}
                 <span class="ml-2 px-2 py-1 text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
                   {topicContent.filter(item => item.contentType === 'video').length}
                 </span>
@@ -261,6 +206,7 @@ const topicIcons: Record<string, string> = {
                   author={item.data.author}
                   description={item.data.description}
                   slug={item.slug}
+                  locale={currentLocale}
                   thumbnail={item.data.thumbnail}
                   publishDate={item.data.publishDate}
                   duration={item.data.duration}
@@ -278,7 +224,7 @@ const topicIcons: Record<string, string> = {
             <div class="flex items-center mb-6">
               <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
                 <span class="text-3xl mr-3">🎧</span>
-                播客
+                {t('nav.podcasts')}
                 <span class="ml-2 px-2 py-1 text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
                   {topicContent.filter(item => item.contentType === 'podcast').length}
                 </span>
@@ -291,6 +237,7 @@ const topicIcons: Record<string, string> = {
                   author={item.data.author}
                   description={item.data.description}
                   slug={item.slug}
+                  locale={currentLocale}
                   thumbnail={item.data.thumbnail}
                   publishDate={item.data.publishDate}
                   duration={item.data.duration}
@@ -309,7 +256,7 @@ const topicIcons: Record<string, string> = {
             <div class="flex items-center mb-6">
               <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
                 <span class="text-3xl mr-3">📄</span>
-                论文
+                {t('nav.papers')}
                 <span class="ml-2 px-2 py-1 text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
                   {topicContent.filter(item => item.contentType === 'paper').length}
                 </span>
@@ -326,6 +273,7 @@ const topicIcons: Record<string, string> = {
                   publishDate={item.data.publishDate}
                   sourceUrl={item.data.sourceUrl}
                   slug={item.slug}
+                  locale={currentLocale}
                   readingTime={item.data.readingTime}
                   duration={item.data.duration}
                 />
@@ -342,10 +290,10 @@ const topicIcons: Record<string, string> = {
             暂无相关内容
           </h2>
           <p class="text-gray-600 dark:text-gray-400 mb-8">
-            我们正在努力收集关于"{decodedTopic}"的优质内容，敬请期待！
+            我们正在努力收集关于"{translatedTopic}"的优质内容，敬请期待！
           </p>
           <a 
-            href="/topics"
+            href={getLocalizedPath('topics', currentLocale)}
             class="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-md transition-colors"
           >
             浏览其他主题
@@ -363,14 +311,14 @@ const topicIcons: Record<string, string> = {
         <div class="flex flex-wrap justify-center gap-3">
           {topRelatedTopics.map(relatedTopic => (
             <a 
-              href={`/topics/${relatedTopic}`}
+              href={getLocalizedPath(`topics/${encodeURIComponent(relatedTopic)}`, currentLocale)}
               class="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-full hover:border-purple-500 dark:hover:border-purple-400 hover:shadow-md transition-all duration-200 group"
             >
               <span class="text-xl mr-2">
-                {topicIcons[relatedTopic] || '🔗'}
+                {getTopicIcon(relatedTopic)}
               </span>
               <span class="font-medium text-gray-700 dark:text-gray-300 group-hover:text-purple-600 dark:group-hover:text-purple-400">
-                {relatedTopic}
+                {getTopicTranslation(relatedTopic, currentLocale as 'zh-CN' | 'en')}
               </span>
               <span class="ml-2 px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-full">
                 {relatedTopics[relatedTopic]}
@@ -392,7 +340,7 @@ const topicIcons: Record<string, string> = {
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a 
-            href="/search"
+            href={getLocalizedPath('search', currentLocale)}
             class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-md transition-colors"
           >
             搜索内容
@@ -401,7 +349,7 @@ const topicIcons: Record<string, string> = {
             </svg>
           </a>
           <a 
-            href="/topics"
+            href={getLocalizedPath('topics', currentLocale)}
             class="inline-flex items-center justify-center px-6 py-3 border border-purple-600 text-purple-600 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20 font-medium rounded-md transition-colors"
           >
             浏览所有主题

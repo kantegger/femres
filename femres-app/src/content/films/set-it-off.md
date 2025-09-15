@@ -11,7 +11,7 @@ duration: "123分钟"
 language: "en"
 genre: ["犯罪", "动作", "剧情", "惊悚"]
 cast: ["杰达·萍克史密斯", "奎恩·拉提法", "薇薇卡·福克斯", "金伯利·艾丽斯", "布莱尔·安德伍德"]
-topics: ["黑人女性主义", "女性友谊", "经济赋权", "种族与性别", "酷儿身份", "资本主义批判"]
+topics: ["Black Feminism", "Female Friendship", "Economic Empowerment", "Race and Gender", "Queer Identity", "Capitalism Critique"]
 status: "published"
 awards: ["NAACP形象奖最佳电影", "MTV电影奖最佳女演员提名（杰达·萍克史密斯）", "独立精神奖最佳新人表演（金伯利·艾丽斯）"]
 imdbRating: "6.9"

@@ -4,16 +4,7 @@ author: "Ginevra Davis"
 description: "本文以身体经验为出发点，批判了当代女性主义对‘性别’的过度抽象，探讨了女性身体的不可规避性、性别理论的困境，以及女性在自由与自我耗损之间的张力。"
 publishDate: 2024-02-01
 language: "en"
-topics: [
-  "父权制批判",
-  "跨性别女性主义",
-  "女性主义心理学",
-  "身体自主",
-  "反女性主义研究",
-  "第四波女性主义",
-  "存在主义女性主义",
-  "语言性别歧视"
-]
+topics: ["Patriarchy Critique", "Trans Feminism", "Feminist Psychology", "Bodily Autonomy", "Anti-Feminism Studies", "Fourth Wave Feminism", "Existentialist Feminism", "Linguistic Sexism"]
 sourceUrl: "https://americanaffairsjournal.org/2024/02/how-feminism-ends/?ref=refind"
 readingTime: 20
 featuredImage: "/images/articles/how-feminism-ends.jpg"

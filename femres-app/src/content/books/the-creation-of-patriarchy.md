@@ -6,7 +6,7 @@ description: "从历史学角度追溯父权制的起源和发展，是理解性
 publishDate: 1986-01-01
 isbn: "9780195051858"
 language: "en"
-topics: ["父权制批判", "历史脉络", "激进女性主义"]
+topics: ["Patriarchy Critique", "Historical Context", "Radical Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=creation+of+patriarchy+gerda+lerner&tag=inkrupt-22"
 coverImage: "/images/books/creation-of-patriarchy.jpg"
 status: "published"

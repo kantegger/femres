@@ -5,10 +5,18 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import InteractionButtons from '../../components/InteractionButtons';
 import Discussion from '../../components/Discussion';
+import BookCard from '../../components/BookCard.astro';
+import { createT, getLocalizedPath, getLocaleFromUrl } from '../../i18n/index';
+import { getTopicTranslation } from '../../i18n/topicsUtils';
+
+const currentLocale = getLocaleFromUrl(Astro.url) || 'zh-CN';
+const t = createT(currentLocale);
 
 export async function getStaticPaths() {
   const books = await getCollection('books');
-  return books.map((book) => ({
+  // 中文界面：为所有不带-en后缀的书籍生成页面
+  const chineseInterfaceBooks = books.filter(book => !book.slug.endsWith('-en'));
+  return chineseInterfaceBooks.map((book) => ({
     params: { slug: book.slug },
     props: book,
   }));
@@ -45,9 +53,9 @@ const formatDate = (date: Date) => {
     <!-- Breadcrumb -->
     <nav class="mb-8">
       <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
-        <a href="/" class="hover:text-purple-600 dark:hover:text-purple-400">首页</a>
+        <a href={getLocalizedPath('/', currentLocale)} class="hover:text-purple-600 dark:hover:text-purple-400">{t('nav.home')}</a>
         <span>/</span>
-        <a href="/books" class="hover:text-purple-600 dark:hover:text-purple-400">书籍</a>
+        <a href={getLocalizedPath('books', currentLocale)} class="hover:text-purple-600 dark:hover:text-purple-400">{t('nav.books')}</a>
         <span>/</span>
         <span class="text-gray-900 dark:text-white">{book.data.title}</span>
       </div>
@@ -103,10 +111,31 @@ const formatDate = (date: Date) => {
             
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
               <span class="text-purple-600 dark:text-purple-400 mr-3">📝</span>
-              书评导读
+              {t('book.review')}
             </h2>
-            <div class="prose prose-lg max-w-none">
+            <div class="prose prose-lg dark:prose-invert max-w-none mb-12">
               <Content />
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center justify-between py-6 border-y border-gray-200 dark:border-gray-700 mb-8">
+              <div class="flex items-center">
+                <InteractionButtons
+                  contentId={`book-${book.slug}`}
+                  contentType="book"
+                  client:visible
+                />
+              </div>
+            </div>
+
+            <!-- Discussion Section -->
+            <div class="mt-12 pt-12 border-t border-gray-200 dark:border-gray-700">
+              <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">{t('common.discussion')}</h2>
+              <Discussion
+                contentId={`book-${book.slug}`}
+                contentType="book"
+                client:visible
+              />
             </div>
           </div>
         </div>
@@ -117,20 +146,20 @@ const formatDate = (date: Date) => {
         <div class="sticky top-20 space-y-6">
           <!-- Book Stats -->
           <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-4">书籍信息</h3>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-4">{t('book.info')}</h3>
             <div class="space-y-3 text-sm">
               {book.data.originalTitle && (
                 <div class="flex">
-                  <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">原名:</span>
+                  <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">{t('book.originalTitle')}:</span>
                   <span class="font-medium flex-1 text-right text-gray-900 dark:text-white">{book.data.originalTitle}</span>
                 </div>
               )}
               <div class="flex">
-                <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">作者:</span>
+                <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">{t('book.author')}:</span>
                 <span class="font-medium flex-1 text-right text-gray-900 dark:text-white">{book.data.author}</span>
               </div>
               <div class="flex">
-                <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">出版:</span>
+                <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">{t('book.published')}:</span>
                 <span class="flex-1 text-right text-gray-900 dark:text-white">{formatDate(book.data.publishDate)}</span>
               </div>
               {book.data.isbn && (
@@ -139,19 +168,25 @@ const formatDate = (date: Date) => {
                   <span class="font-mono text-xs flex-1 text-right text-gray-900 dark:text-white">{book.data.isbn}</span>
                 </div>
               )}
+              {book.data.contentLanguage && (
+                <div class="flex">
+                  <span class="text-gray-500 dark:text-gray-400 w-16 flex-shrink-0">{t('common.language')}:</span>
+                  <span class="flex-1 text-right text-gray-900 dark:text-white">{book.data.contentLanguage === 'zh' ? '中文' : book.data.contentLanguage === 'en' ? '英文' : book.data.contentLanguage}</span>
+                </div>
+              )}
             </div>
           </div>
 
           <!-- Topics -->
           <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-4">相关主题</h3>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-4">{t('common.topics')}</h3>
             <div class="flex flex-wrap gap-2">
               {book.data.topics.map(topic => (
-                <a 
-                  href={`/topics/${encodeURIComponent(topic)}`}
+                <a
+                  href={getLocalizedPath(`topics/${encodeURIComponent(topic)}`, currentLocale)}
                   class="inline-flex items-center px-3 py-1 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border border-purple-200 dark:border-purple-700 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium hover:from-purple-100 hover:to-pink-100 dark:hover:from-purple-900/40 dark:hover:to-pink-900/40 hover:border-purple-300 dark:hover:border-purple-600 hover:shadow-sm transition-all duration-200"
                 >
-                  #{topic}
+                  #{getTopicTranslation(topic, currentLocale as 'zh-CN' | 'en')}
                 </a>
               ))}
             </div>
@@ -161,7 +196,7 @@ const formatDate = (date: Date) => {
           <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 shadow-sm border border-blue-200 dark:border-blue-800/30">
             <h3 class="font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
               <span class="text-blue-600 dark:text-blue-400 mr-2">🛒</span>
-              购买本书
+              {t('book.purchase')}
             </h3>
             <a 
               href={book.data.sourceUrl}
@@ -175,21 +210,21 @@ const formatDate = (date: Date) => {
                   alt="Amazon" 
                   class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform filter brightness-0 invert"
                 />
-                在亚马逊购买
+                {t('book.buyOnAmazon')}
               </span>
             </a>
             <div class="mt-4">
               <div class="text-xs text-gray-500 dark:text-gray-400 text-center px-2 leading-relaxed">
-                通过此链接购买，本站将获得少量佣金，不影响您的购买价格。感谢您的支持！
+                {t('book.affiliateNotice')}
               </div>
             </div>
           </div>
 
           <!-- Buy Me a Coffee -->
           <div class="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-xl p-6 shadow-sm border border-yellow-200 dark:border-yellow-800/30">
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-3 text-center">支持我们</h3>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-3 text-center">{t('common.support')}</h3>
             <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 text-center">
-              如果这些内容对您有帮助
+              {t('common.supportMessage')}
             </p>
             <a 
               href="https://buymeacoffee.com/femres" 
@@ -207,36 +242,20 @@ const formatDate = (date: Date) => {
     <!-- Related Books -->
     {relatedBooks.length > 0 && (
       <section class="border-t border-gray-200 dark:border-gray-700 pt-12 mt-16">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">相关推荐</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">{t('book.relatedBooks')}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {relatedBooks.map(relatedBook => (
-            <a 
-              href={`/books/${relatedBook.slug}`}
-              class="group block bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
-            >
-              <div class="aspect-[4/3] bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 to-pink-900 flex items-center justify-center">
-                {relatedBook.data.coverImage ? (
-                  <img 
-                    src={relatedBook.data.coverImage} 
-                    alt={relatedBook.data.title}
-                    class="w-full h-full object-cover"
-                  />
-                ) : (
-                  <span class="text-4xl">📚</span>
-                )}
-              </div>
-              <div class="p-6">
-                <h3 class="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors line-clamp-2">
-                  {relatedBook.data.title}
-                </h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">
-                  {relatedBook.data.author}
-                </p>
-                <p class="text-gray-500 dark:text-gray-500 text-sm line-clamp-3">
-                  {relatedBook.data.description}
-                </p>
-              </div>
-            </a>
+            <BookCard
+              title={relatedBook.data.title}
+              author={relatedBook.data.author}
+              description={relatedBook.data.description}
+              coverImage={relatedBook.data.coverImage}
+              publishDate={relatedBook.data.publishDate}
+              slug={relatedBook.slug}
+              topics={relatedBook.data.topics}
+              isbn={relatedBook.data.isbn}
+              locale={currentLocale}
+            />
           ))}
         </div>
       </section>

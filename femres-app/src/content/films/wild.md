@@ -11,7 +11,7 @@ duration: "115分钟"
 language: "en"
 genre: ["剧情", "传记", "冒险"]
 cast: ["瑞茜·威瑟斯彭", "劳拉·邓恩", "托马斯·萨多斯基", "米歇尔·休斯曼", "加比·霍夫曼"]
-topics: ["母女关系", "身体自主", "反性暴力", "生态女性主义"]
+topics: ["Mother-Daughter Relationships", "Bodily Autonomy", "Anti-Sexual Violence", "Ecofeminism"]
 status: "published"
 awards: ["奥斯卡最佳女主角提名（瑞茜·威瑟斯彭）", "奥斯卡最佳女配角提名（劳拉·邓恩）", "金球奖最佳女主角提名", "英国电影学院奖最佳女主角提名"]
 imdbRating: "7.1"

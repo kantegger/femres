@@ -11,7 +11,7 @@ duration: "131分钟"
 language: "en"
 genre: ["剧情", "传记"]
 cast: ["朱莉娅·罗伯茨", "阿尔伯特·芬尼", "阿伦·艾克哈特", "玛格·海根柏格", "凯瑞-安·莫斯"]
-topics: ["经济赋权", "职场平等", "法律平等", "气候正义"]
+topics: ["Economic Empowerment", "Workplace Equality", "Legal Equality", "Climate Justice"]
 status: "published"
 awards: ["第73届奥斯卡最佳女主角奖", "第58届金球奖最佳女主角奖", "第54届英国电影学院奖最佳女主角奖"]
 imdbRating: "7.4"

@@ -11,7 +11,7 @@ duration: "112分钟"
 language: "en"
 genre: ["喜剧", "剧情", "体育"]
 cast: ["帕敏德·纳格拉", "凯拉·奈特莉", "乔纳森·莱斯·梅耶斯", "阿奴潘·凯尔", "朱丽叶·史蒂文森"]
-topics: ["体育平等", "文化认同", "移民身份认同", "父权制批判", "家庭解放", "女性友谊", "酷儿身份", "跨文化女性主义"]
+topics: ["Sports Equality", "Cultural Identity", "Immigrant Identity", "Patriarchy Critique", "Family Liberation", "Female Friendship", "Queer Identity", "Cross-Cultural Feminism"]
 status: "published"
 awards: ["英国独立电影奖最佳新人导演", "帝国奖最佳新人女演员（帕敏德·纳格拉）", "青少年选择奖最佳喜剧电影"]
 imdbRating: "6.7"

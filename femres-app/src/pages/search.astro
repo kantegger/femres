@@ -237,7 +237,7 @@ const enrichedArticles = articles.map(article => {
       <div id="searchResults" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         <!-- 书籍结果 -->
         {books.map(book => (
-          <div class="search-item" data-type="book" data-title={book.data.title.toLowerCase()} data-author={book.data.author.toLowerCase()} data-description={book.data.description.toLowerCase()} data-topics={book.data.topics.join(' ').toLowerCase()} data-language={book.data.language} data-date={book.data.publishDate.getTime()}>
+          <div class="search-item" data-type="book" data-title={book.data.title.toLowerCase()} data-author={book.data.author.toLowerCase()} data-description={book.data.description.toLowerCase()} data-topics={book.data.topics.join(' ').toLowerCase()} data-language={book.data.contentLanguage} data-date={book.data.publishDate.getTime()}>
             <BookCard
               title={book.data.title}
               author={book.data.author}

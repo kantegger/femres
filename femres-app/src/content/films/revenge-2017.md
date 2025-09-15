@@ -11,7 +11,7 @@ duration: "108分钟"
 language: "en"
 genre: ["动作", "惊悚", "恐怖"]
 cast: ["玛蒂尔达·卢茨", "凯文·詹森斯", "文森特·科隆贝", "纪尧姆·布谢德"]
-topics: ["激进女性主义", "反性暴力", "身体自主", "媒体表征批判", "第四波女性主义"]
+topics: ["Radical Feminism", "Anti-Sexual Violence", "Bodily Autonomy", "Media Representation Critique", "Fourth Wave Feminism"]
 status: "published"
 awards: ["CinEuphoria Awards年度十佳观众奖", "布川国际奇幻电影节最佳故事片", "多伦多国际电影节午夜疯狂单元"]
 imdbRating: "6.4"

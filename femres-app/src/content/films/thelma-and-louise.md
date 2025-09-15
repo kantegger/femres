@@ -11,7 +11,7 @@ duration: "130分钟"
 language: "en"
 genre: ["剧情", "犯罪", "冒险"]
 cast: ["吉娜·戴维斯", "苏珊·萨兰登", "哈威·凯特尔", "迈克尔·马德森", "布拉德·皮特"]
-topics: ["激进女性主义", "反性暴力", "身体自主", "父权制批判", "女性友谊"]
+topics: ["Radical Feminism", "Anti-Sexual Violence", "Bodily Autonomy", "Patriarchy Critique", "Female Friendship"]
 status: "published"
 awards: ["第64届奥斯卡最佳原创剧本奖", "第49届金球奖最佳女主角提名"]
 imdbRating: "7.6"

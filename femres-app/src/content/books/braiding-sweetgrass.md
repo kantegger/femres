@@ -6,7 +6,7 @@ description: "结合原住民智慧与科学知识，探讨人与自然的关系
 publishDate: 2013-10-01
 isbn: "9781571313355"
 language: "en"
-topics: ["生态女性主义", "原住民女性主义", "气候正义", "灵性女性主义", "去殖民女性主义"]
+topics: ["Ecofeminism", "Indigenous Feminism", "Climate Justice", "Spiritual Feminism", "Decolonial Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=braiding+sweetgrass+robin+wall+kimmerer&tag=inkrupt-22"
 coverImage: "/images/books/braiding-sweetgrass.jpg"
 status: "published"

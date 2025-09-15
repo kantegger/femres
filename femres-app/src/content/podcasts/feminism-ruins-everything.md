@@ -4,7 +4,7 @@ author: "Millicent Sarre & Ellis Dolan"
 description: "《Feminism Ruins Everything》是一档由 Millicent Sarre 与 Ellis Dolan 主持的播客，以女性主义视角批判影视、音乐剧与流行文化作品。节目风格幽默、批判性强，强调“友善女性主义”与文化解构，内容涵盖酷儿代表性、性别刻板印象、艺术哲学与媒体再叙述，是澳大利亚语境下的文化女性主义声音之一。"
 publishDate: 2025-09-12
 language: en
-topics: ["媒体表征批判", "性别政治", "酷儿女性主义", "文化批判"]
+topics: ["Media Representation Critique", "Gender Politics", "Queer Feminism", "Cultural Critique"]
 sourceUrl: "https://open.spotify.com/show/2KbDKv7cxYXFQpNnnoUd9f"
 embedUrl: "https://open.spotify.com/embed/show/2KbDKv7cxYXFQpNnnoUd9f"
 thumbnail: "/images/podcasts/feminism-ruins-everything.jpg"

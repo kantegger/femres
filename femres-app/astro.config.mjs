@@ -21,6 +21,15 @@ export default defineConfig({
   }),
   trailingSlash: 'ignore',
 
+  i18n: {
+    defaultLocale: "zh-CN",
+    locales: ["zh-CN", "en"],
+    routing: {
+      prefixDefaultLocale: false,  // 中文无前缀: /books
+      fallbackType: "redirect"     // 英文有前缀: /en/books
+    }
+  },
+
   build: {
     inlineStylesheets: 'auto'
   },

@@ -11,7 +11,7 @@ duration: "88分钟"
 language: "en"
 genre: ["动画", "家庭", "冒险", "音乐"]
 cast: ["温明娜", "艾迪·墨菲", "李保罗", "哈维·费斯坦", "弗兰克·韦尔克"]
-topics: ["女性主义艺术", "身体自主", "父权制批判", "中国女权运动", "酷儿身份"]
+topics: ["Feminist Art", "Bodily Autonomy", "Patriarchy Critique", "Chinese Feminist Movement", "Queer Identity"]
 status: "published"
 awards: ["安妮奖最佳动画长片", "金球奖最佳原创歌曲提名", "奥斯卡最佳原创配乐提名"]
 imdbRating: "7.7"

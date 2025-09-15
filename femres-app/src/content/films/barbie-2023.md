@@ -11,7 +11,7 @@ duration: "114分钟"
 language: "en"
 genre: ["喜剧", "奇幻", "冒险"]
 cast: ["玛格特·罗比", "瑞恩·高斯林", "艾美莉卡·费雷拉", "凯特·麦金农", "伊萨·雷"]
-topics: ["后现代女性主义", "媒体表征批判", "父权制批判", "资本主义批判", "身体自主", "流行文化女性主义"]
+topics: ["Postmodern Feminism", "Media Representation Critique", "Patriarchy Critique", "Capitalism Critique", "Bodily Autonomy", "Pop Culture Feminism"]
 status: "published"
 awards: ["第96届奥斯卡最佳改编剧本提名", "第81届金球奖最佳影片音乐/喜剧类提名", "第76届英国电影学院奖最佳改编剧本提名"]
 imdbRating: "6.8"

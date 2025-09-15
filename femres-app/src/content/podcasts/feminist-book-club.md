@@ -4,7 +4,7 @@ author: "Renee Powers & Team"
 description: "《Feminist Book Club: The Podcast》是由 Renee Powers 与其团队主持的交叉女性主义播客，围绕书籍展开社会正义对话。节目以阅读为行动主义工具，探讨性别、种族、欲望与文化表征等议题。内容涵盖女性主义文学批评、跨性别经验、媒体性别政治与情欲商品化等主题，风格融合批判性分析与亲密对话。Spotify 评分为 4.8（25 条评论），在女性主义阅读社群中广受欢迎。"
 publishDate: 2025-09-11
 language: en
-topics: ["交叉女性主义", "媒体表征批判", "情绪劳动"]
+topics: ["Intersectional Feminism", "Media Representation Critique", "Emotional Labor"]
 sourceUrl: "https://open.spotify.com/show/3I6NcL1My0SLo1JJjCkNaN"
 embedUrl: "https://open.spotify.com/embed/show/3I6NcL1My0SLo1JJjCkNaN"
 thumbnail: "/images/podcasts/feminist-book-club.jpg"

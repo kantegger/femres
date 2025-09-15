@@ -11,7 +11,7 @@ duration: "94分钟"
 language: "en"
 genre: ["剧情", "喜剧", "成长"]
 cast: ["西尔莎·罗南", "劳里·梅特卡夫", "崔西·莱茨", "卢卡斯·赫奇斯", "蒂莫西·柴勒梅德"]
-topics: ["母女关系", "经济赋权", "教育平等", "身体自主"]
+topics: ["Mother-Daughter Relationships", "Economic Empowerment", "Education Equality", "Bodily Autonomy"]
 status: "published"
 awards: ["第90届奥斯卡最佳影片提名", "第75届金球奖最佳影片音乐/喜剧类", "第71届英国电影学院奖最佳女主角提名"]
 imdbRating: "7.4"

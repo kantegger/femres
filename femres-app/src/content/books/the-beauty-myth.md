@@ -6,7 +6,7 @@ description: "揭露了美貌标准如何成为控制女性的新工具，分析
 publishDate: 1990-01-01
 isbn: "9780060512187"
 language: "en"
-topics: ["第三波女性主义", "媒体表征批判", "身体自主", "文化批判"]
+topics: ["Third Wave Feminism", "Media Representation Critique", "Bodily Autonomy", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=beauty+myth+naomi+wolf&tag=inkrupt-22"
 coverImage: "/images/books/beauty-myth.jpg"
 status: "published"

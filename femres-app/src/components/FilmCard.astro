@@ -1,5 +1,8 @@
 ---
 import InteractionButtons from './InteractionButtons';
+import '../i18n/translations';
+import { createT, getLocalizedPath, getLocaleFromUrl } from '../i18n/index';
+import { getTopicTranslation } from '../i18n/topicsUtils';
 
 export interface Props {
   title: string;
@@ -13,9 +16,16 @@ export interface Props {
   country: string;
   duration?: string;
   genre?: string[];
+  locale?: string;
 }
 
-const { title, director, description, posterImage, releaseDate, slug, topics, year, country, duration, genre } = Astro.props;
+const { title, director, description, posterImage, releaseDate, slug, topics, year, country, duration, genre, locale } = Astro.props;
+
+const currentLocale = locale || getLocaleFromUrl(Astro.url);
+const t = createT(currentLocale);
+// 移除语言后缀以生成干净的URL路径（与路由设置保持一致）
+const cleanSlug = slug.endsWith('-en') ? slug.slice(0, -3) : slug;
+const filmLink = getLocalizedPath(`films/${cleanSlug}`, currentLocale);
 
 const formatYear = (date: Date) => {
   return date.getFullYear();
@@ -25,7 +35,7 @@ const formatYear = (date: Date) => {
 <article class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden">
   <!-- Film Poster with Overlay -->
   <div class="relative aspect-[2/3] overflow-hidden bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900">
-    <a href={`/films/${slug}`} class="block w-full h-full">
+    <a href={filmLink} class="block w-full h-full">
       {posterImage ? (
         <img 
           src={posterImage} 
@@ -36,7 +46,7 @@ const formatYear = (date: Date) => {
         <div class="w-full h-full flex items-center justify-center">
           <div class="text-center p-6">
             <span class="text-6xl mb-3 block">🎬</span>
-            <p class="text-sm text-gray-600 dark:text-gray-400 font-medium">海报加载中</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 font-medium">{t('common.loading')}</p>
           </div>
         </div>
       )}
@@ -103,11 +113,14 @@ const formatYear = (date: Date) => {
     
     <!-- Topics -->
     <div class="flex flex-wrap gap-1 mb-3">
-      {topics.slice(0, 2).map(topic => (
-        <span class="inline-block px-2 py-1 text-xs bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded">
-          {topic}
-        </span>
-      ))}
+      {topics.slice(0, 2).map(topic => {
+        const translatedTopic = getTopicTranslation(topic, currentLocale as 'zh-CN' | 'en');
+        return (
+          <span class="inline-block px-2 py-1 text-xs bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded">
+            {translatedTopic}
+          </span>
+        );
+      })}
       {topics.length > 2 && (
         <span class="inline-block px-2 py-1 text-xs text-gray-500 dark:text-gray-500">
           +{topics.length - 2}

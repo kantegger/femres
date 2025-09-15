@@ -4,7 +4,7 @@ author: "Amanda Elliott & Sarah Curran"
 description: "《Not Your Average Feminist》是一档由 Amanda Elliott 与 Sarah Curran 主持的播客，以保守女性主义视角探讨当代性别与政治议题。节目批判主流女性主义的进步政策立场，强调个人责任、传统价值与自由市场逻辑。内容涵盖最高法院听证会、跨性别运动、平等薪酬日、职场文化与媒体事件评论，风格犀利、讽刺，在保守派女性听众中具有一定影响力。Spotify 评分为 5.0（3 条评论），定位为另类女性主义声音。"
 publishDate: 2025-09-12
 language: en
-topics: ["自由主义女性主义", "政治参与", "媒体表征批判"]
+topics: ["Liberal Feminism", "Political Participation", "Media Representation Critique"]
 sourceUrl: "https://open.spotify.com/show/7B2nQuHWe4IfpcUMSzodyU"
 embedUrl: "https://open.spotify.com/embed/show/7B2nQuHWe4IfpcUMSzodyU"
 thumbnail: "/images/podcasts/not-your-average-feminist.jpg"

@@ -6,7 +6,7 @@ description: "超模转身作家的深刻自省，通过亲身经历剖析女性
 publishDate: 2021-11-09
 isbn: "9781250817860"
 language: "en"
-topics: ["身体自主", "第四波女性主义", "文化批判", "女性写作"]
+topics: ["Bodily Autonomy", "Fourth Wave Feminism", "Cultural Critique", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=my+body+emily+ratajkowski&tag=inkrupt-22"
 coverImage: "/images/books/my-body.jpg"
 status: published

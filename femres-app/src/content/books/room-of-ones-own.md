@@ -6,7 +6,7 @@ description: "女性主义文学批评的奠基之作，以诗意而犀利的笔
 publishDate: 1929-10-24
 isbn: "9781101908501"
 language: "en"
-topics: ["女性文学", "女性文学批评", "女性写作", "经济赋权"]
+topics: ["Women's Literature", "Feminist Literary Criticism", "Women's Writing", "Economic Empowerment"]
 sourceUrl: "https://www.amazon.sg/s?k=room+of+ones+own+virginia+woolf&tag=inkrupt-22"
 coverImage: "/images/books/room-of-ones-own.jpg"
 status: published

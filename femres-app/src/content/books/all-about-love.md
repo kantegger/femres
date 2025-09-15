@@ -6,7 +6,7 @@ description: "重新定义爱的含义，探讨爱如何成为抵抗压迫和建
 publishDate: 2000-01-01
 isbn: "9780060959470"
 language: "en"
-topics: ["黑人女性主义", "关怀伦理", "情绪劳动", "灵性女性主义"]
+topics: ["Black Feminism", "Ethics of Care", "Emotional Labor", "Spiritual Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=all+about+love+bell+hooks&tag=inkrupt-22"
 coverImage: "/images/books/all-about-love.jpg"
 status: "published"

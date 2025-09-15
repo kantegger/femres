@@ -1,5 +1,20 @@
 ---
 // Footer component
+import '../i18n/translations';
+import { createT, getLocalizedPath, type Locale } from '../i18n/index';
+
+export interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = createT(locale);
+
+// 生成本地化链接的辅助函数
+const localizedLink = (path: string) => {
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return getLocalizedPath(cleanPath, locale);
+};
 ---
 
 <footer class="bg-gray-900 dark:bg-black text-white">
@@ -11,31 +26,31 @@
           <span class="text-2xl font-bold text-purple-400">FemRes</span>
         </div>
         <p class="text-gray-400 max-w-md">
-          女性主义内容聚合平台，致力于推动性别平等事业发展，汇聚全球优质女性主义内容。
+          {t('footer.description')}
         </p>
       </div>
 
       <!-- Resource Types -->
       <div class="col-span-1">
-        <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase mb-4">资源类型</h3>
+        <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase mb-4">{t('footer.resourceTypes')}</h3>
         <ul class="space-y-3">
-          <li><a href="/books" class="text-gray-400 hover:text-white transition-colors">📚 书籍推荐</a></li>
-          <li><a href="/articles" class="text-gray-400 hover:text-white transition-colors">📰 文章精选</a></li>
-          <li><a href="/videos" class="text-gray-400 hover:text-white transition-colors">🎬 视频资源</a></li>
-          <li><a href="/podcasts" class="text-gray-400 hover:text-white transition-colors">🎧 播客频道</a></li>
-          <li><a href="/papers" class="text-gray-400 hover:text-white transition-colors">📄 学术论文</a></li>
+          <li><a href={localizedLink('/books')} class="text-gray-400 hover:text-white transition-colors">{t('footer.links.books')}</a></li>
+          <li><a href={localizedLink('/articles')} class="text-gray-400 hover:text-white transition-colors">{t('footer.links.articles')}</a></li>
+          <li><a href={localizedLink('/videos')} class="text-gray-400 hover:text-white transition-colors">{t('footer.links.videos')}</a></li>
+          <li><a href={localizedLink('/podcasts')} class="text-gray-400 hover:text-white transition-colors">{t('footer.links.podcasts')}</a></li>
+          <li><a href={localizedLink('/papers')} class="text-gray-400 hover:text-white transition-colors">{t('footer.links.papers')}</a></li>
         </ul>
       </div>
 
       <!-- Community -->
       <div class="col-span-1">
-        <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase mb-4">社区参与</h3>
+        <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase mb-4">{t('footer.community')}</h3>
         <ul class="space-y-3">
-          <li><a href="/about" class="text-gray-400 hover:text-white transition-colors">📋 关于我们</a></li>
-          <li><a href="/contact" class="text-gray-400 hover:text-white transition-colors">📧 联系我们</a></li>
-          <li><a href="/contribute" class="text-gray-400 hover:text-white transition-colors">💡 贡献内容</a></li>
-          <li><a href="https://github.com/kantegger/femhub/issues" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">🐛 反馈建议</a></li>
-          <li><a href="https://github.com/kantegger/femhub" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">⭐ 项目源码</a></li>
+          <li><a href={localizedLink('/about')} class="text-gray-400 hover:text-white transition-colors">{t('footer.links.about')}</a></li>
+          <li><a href={localizedLink('/contact')} class="text-gray-400 hover:text-white transition-colors">{t('footer.links.contact')}</a></li>
+          <li><a href={localizedLink('/contribute')} class="text-gray-400 hover:text-white transition-colors">{t('footer.links.contribute')}</a></li>
+          <li><a href="https://github.com/kantegger/femhub/issues" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">{t('footer.links.feedback')}</a></li>
+          <li><a href="https://github.com/kantegger/femhub" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">{t('footer.links.source')}</a></li>
         </ul>
       </div>
     </div>
@@ -43,11 +58,11 @@
     <div class="mt-8 pt-8 border-t border-gray-800">
       <div class="flex items-center justify-between">
         <p class="text-gray-400 text-sm">
-          © 2025 FemRes. All rights reserved.
+          {t('footer.copyright')}
         </p>
         <div class="flex space-x-6">
-          <a href="/privacy" class="text-gray-400 hover:text-white text-sm transition-colors">隐私政策</a>
-          <a href="/terms" class="text-gray-400 hover:text-white text-sm transition-colors">使用条款</a>
+          <a href={localizedLink('/privacy')} class="text-gray-400 hover:text-white text-sm transition-colors">{t('footer.links.privacy')}</a>
+          <a href={localizedLink('/terms')} class="text-gray-400 hover:text-white text-sm transition-colors">{t('footer.links.terms')}</a>
         </div>
       </div>
     </div>

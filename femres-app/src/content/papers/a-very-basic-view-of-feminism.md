@@ -5,7 +5,7 @@ author: "苏·杰克逊 (Sue Jackson)"
 description: "本文探讨了年轻女性对女权主义的理解，特别是她们如何看待名人女权主义。研究发现，尽管名人女权主义常被批判为肤浅、缺乏交集性视角，但它在吸引和引导年轻女孩接触并深入了解女权主义方面，扮演了“入门”或“启动点”的重要角色。"
 publishDate: 2020-05-19
 language: en
-topics: ["第四波女性主义", "媒体表征批判", "流行文化女性主义"]
+topics: ["Fourth Wave Feminism", "Media Representation Critique", "Pop Culture Feminism"]
 sourceUrl: "https://doi.org/10.1080/14680777.2020.1762236"
 doi: "10.1080/14680777.2020.1762236"
 journal: "Feminist Media Studies"

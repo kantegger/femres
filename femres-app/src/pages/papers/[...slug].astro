@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import InteractionButtons from '../../components/InteractionButtons';
 import Discussion from '../../components/Discussion';
+import { getTopicTranslation } from '../../i18n/topicsUtils';
 
 export async function getStaticPaths() {
   const papers = await getCollection('papers');
@@ -189,7 +190,7 @@ const getPaperTypeIcon = (type?: string) => {
                     href={`/topics/${encodeURIComponent(topic)}`}
                     class="inline-block px-3 py-1 bg-purple-50 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-700 text-purple-700 dark:text-purple-300 rounded-full text-sm hover:bg-purple-100 dark:hover:bg-purple-900/50 transition-colors"
                   >
-                    #{topic}
+                    #{getTopicTranslation(topic, 'zh-CN')}
                   </a>
                 ))}
               </div>

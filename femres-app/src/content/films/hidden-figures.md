@@ -11,7 +11,7 @@ duration: "127分钟"
 language: "en"
 genre: ["剧情", "传记", "历史"]
 cast: ["塔拉吉·P·汉森", "奥克塔维亚·斯宾瑟", "加奈儿·梦奈", "凯文·科斯特纳", "克斯汀·邓斯特"]
-topics: ["交叉女性主义", "黑人女性主义", "职场平等", "同工同酬", "玻璃天花板", "教育平等", "种族与性别"]
+topics: ["Intersectional Feminism", "Black Feminism", "Workplace Equality", "Equal Pay", "Glass Ceiling", "Education Equality", "Race and Gender"]
 status: "published"
 awards: ["第89届奥斯卡最佳影片提名", "第74届金球奖最佳女配角提名", "美国演员工会奖最佳群戏"]
 imdbRating: "7.8"

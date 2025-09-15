@@ -4,7 +4,7 @@ author: "Tonii"
 description: "《Feminist Lifestyle Blog》是一档由 Tonii 主持的个人播客，以轻松对话形式探讨女性主义生活方式、性别议题与社交关系。节目融合个人经验与社会观察，涵盖独居女性的社会观感、宗教与教育冲突、亲密关系中的排他性、女性职业挑战与情绪表达等内容。风格亲切、反思性强，适合年轻听众与女性主义入门者。Spotify 评分为 5.0（1 条评论），为尼日利亚语境下的女性主义播客提供独特视角。"
 publishDate: 2025-09-12
 language: en
-topics: ["女性写作", "政治参与", "文化批判", "情绪劳动"]
+topics: ["Women's Writing", "Political Participation", "Cultural Critique", "Emotional Labor"]
 sourceUrl: "https://open.spotify.com/show/1jR7vX3ivki2TQFJJ2nW4i"
 embedUrl: "https://open.spotify.com/embed/show/1jR7vX3ivki2TQFJJ2nW4i"
 thumbnail: "/images/podcasts/feminist-lifestyle-blog.jpg"

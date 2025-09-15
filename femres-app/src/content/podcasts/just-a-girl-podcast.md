@@ -4,7 +4,7 @@ author: "Just A Girl Podcast Team"
 description: "《Just A Girl Podcast》是一档由两位女性主持的轻松女性主义播客，以音乐、职场与日常生活为切入点，探讨性别不平等、父权制文化与微型反抗。节目风格亲密、幽默且带有讽刺色彩，内容涵盖职场性别歧视、女性主义歌词分析、节日文化批判与日常微女性主义实践。Spotify 评分为 4.9（32 条评论），在年轻世代女性主义播客中颇具人气。"
 publishDate: 2025-09-11
 language: en
-topics: ["父权制批判", "媒体表征批判", "情绪劳动"]
+topics: ["Patriarchy Critique", "Media Representation Critique", "Emotional Labor"]
 sourceUrl: "https://open.spotify.com/show/53XjocC3lre3QZLR1Z60TF"
 embedUrl: "https://open.spotify.com/embed/show/53XjocC3lre3QZLR1Z60TF"
 thumbnail: "/images/podcasts/just-a-girl.jpg"
