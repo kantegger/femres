@@ -277,6 +277,12 @@
   @apply outline-2 outline-purple-500 outline-offset-2;
 }
 
+/* Remove purple focus outline for form elements */
+select:focus-visible,
+input:focus-visible {
+  @apply outline-0;
+}
+
 /* Smooth transitions for dark mode */
 * {
   transition-property: color, background-color, border-color;
