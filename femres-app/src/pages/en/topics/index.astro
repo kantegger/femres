@@ -1,0 +1,342 @@
+---
+export const prerender = true;
+
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { createT, getLocalizedPath } from '../../../i18n/index';
+import { findTopicByName, getTopicIcon } from '../../../i18n/topicsUtils';
+
+const currentLocale = 'en';
+const t = createT(currentLocale);
+
+// Get all content to count topics
+const books = await getCollection('books');
+const articles = await getCollection('articles');
+const videos = await getCollection('videos');
+const podcasts = await getCollection('podcasts');
+const papers = await getCollection('papers');
+
+const allContent = [
+  ...books.map(item => ({ ...item, contentType: 'book' as const })),
+  ...articles.map(item => ({ ...item, contentType: 'article' as const })),
+  ...videos.map(item => ({ ...item, contentType: 'video' as const })),
+  ...podcasts.map(item => ({ ...item, contentType: 'podcast' as const })),
+  ...papers.map(item => ({ ...item, contentType: 'paper' as const }))
+];
+
+// Count content for each topic
+const topicCounts = allContent.reduce((acc, item) => {
+  item.data.topics.forEach(topic => {
+    acc[topic] = (acc[topic] || 0) + 1;
+  });
+  return acc;
+}, {} as Record<string, number>);
+
+// Topic categories definition in English
+const topicCategories = {
+  'Theoretical Schools': {
+    topics: [
+      '交叉女性主义',
+      '马克思主义女性主义',
+      '去殖民女性主义',
+      '存在主义女性主义',
+      '自由主义女性主义',
+      '激进女性主义',
+      '黑人女性主义',
+      '原住民女性主义',
+      '跨性别女性主义',
+      '生态女性主义',
+      '后现代女性主义'
+    ],
+    icon: '🧩',
+    description: 'Theoretical schools and intellectual streams of feminism'
+  },
+  'Movement Issues': {
+    topics: [
+      '职场平等',
+      '同工同酬',
+      '玻璃天花板',
+      '生育自主',
+      '堕胎权',
+      '反性暴力',
+      '政治参与',
+      '法律平等',
+      '经济赋权',
+      '教育平等',
+      '家庭解放',
+      '体育平等',
+      '身体自主',
+      '数字女性主义',
+      '气候正义'
+    ],
+    icon: '✊',
+    description: 'Specific social issues that feminism focuses on'
+  },
+  'Critical Domains': {
+    topics: [
+      '父权制批判',
+      '资本主义批判',
+      '媒体表征批判',
+      '宗教父权批判',
+      '男权运动批判',
+      '文化批判',
+      '反女性主义研究',
+      '学术父权批判',
+      '语言性别歧视',
+      '翻译政治',
+      '知识殖民批判'
+    ],
+    icon: '🔍',
+    description: 'Key areas of feminist critique and analysis'
+  },
+  'Historical Context': {
+    topics: [
+      '第一波女性主义',
+      '第二波女性主义',
+      '第三波女性主义',
+      '第四波女性主义',
+      'MeToo运动',
+      '中国女权运动',
+      '流行文化女性主义',
+      '基督教女性主义',
+      '灵性女性主义'
+    ],
+    icon: '📚',
+    description: 'Historical development and temporal contexts of feminism'
+  },
+  'Literature & Creation': {
+    topics: [
+      '女性文学',
+      '女性写作',
+      '女性文学批评',
+      '翻译女性主义',
+      '女性叙事学'
+    ],
+    icon: '✍️',
+    description: 'Feminist literary theory and creative practices'
+  },
+  'Special Concepts': {
+    topics: [
+      '情绪劳动',
+      '关怀伦理',
+      '女性主义心理学',
+      '女性主义艺术',
+      '种族与性别'
+    ],
+    icon: '💡',
+    description: 'Unique concepts and theories in feminism'
+  }
+};
+
+// Add statistics for each category
+const enrichedCategories = Object.entries(topicCategories).map(([categoryName, category]) => ({
+  name: categoryName,
+  ...category,
+  totalContent: category.topics.reduce((sum, topic) => sum + (topicCounts[topic] || 0), 0),
+  topics: category.topics.map(topic => {
+    const topicInfo = findTopicByName(topic);
+    return {
+      chineseName: topic,
+      englishName: topicInfo ? topicInfo.enName : topic,
+      count: topicCounts[topic] || 0,
+      icon: getTopicIcon(topic)
+    };
+  })
+}));
+
+// Get popular topics (sorted by content count)
+const popularTopics = Object.entries(topicCounts)
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 12)
+  .map(([topic, count]) => {
+    const topicInfo = findTopicByName(topic);
+    return {
+      chineseName: topic,
+      englishName: topicInfo ? topicInfo.enName : topic,
+      count,
+      icon: getTopicIcon(topic)
+    };
+  });
+---
+
+<Layout
+  title="Topic Categories - FemRes"
+  description="Explore feminist topic categories including theoretical schools, movement issues, critical domains and more"
+>
+  <!-- Hero Section -->
+  <section class="relative py-12 sm:py-16 lg:py-20 overflow-hidden">
+    <!-- Background decorative elements -->
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-20 left-20 w-32 sm:w-48 lg:w-72 h-32 sm:h-48 lg:h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+      <div class="absolute top-10 right-10 w-32 sm:w-48 lg:w-72 h-32 sm:h-48 lg:h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div class="absolute bottom-20 left-1/3 w-32 sm:w-48 lg:w-72 h-32 sm:h-48 lg:h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
+          Feminist
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Topic Categories</span>
+        </h1>
+        <p class="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
+          Discover the rich diversity of feminist content from theory to practice
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+
+    <!-- Popular Topics -->
+    <section class="mb-16 sm:mb-20">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Popular Topics
+        </h2>
+        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          The most discussed feminist topics
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+        {popularTopics.map((topic) => (
+          <a
+            href={getLocalizedPath(`topics/${encodeURIComponent(topic.englishName)}`, currentLocale)}
+            class="group bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 hover:-translate-y-1"
+          >
+            <div class="text-center">
+              <div class="text-4xl mb-3">
+                {topic.icon}
+              </div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                {topic.englishName}
+              </h3>
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">
+                {topic.count} items
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Topic Categories -->
+    {enrichedCategories.map(category => (
+      <section class="mb-16 sm:mb-20">
+        <div class="flex items-center mb-8">
+          <div class="flex items-center">
+            <span class="text-3xl mr-4">
+              {category.icon}
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+              {category.name}
+            </h2>
+            <span class="ml-4 px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-full">
+              {category.topics.filter(topic => topic.count > 0).length} topics
+            </span>
+          </div>
+        </div>
+
+        <div class="mb-4 p-4 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl">
+          <p class="text-gray-700 dark:text-gray-300 mb-2">{category.description}</p>
+          <div class="flex items-center text-sm text-purple-600 dark:text-purple-400">
+            <span class="font-semibold">Total content: {category.totalContent}</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+          {category.topics.map(topic => (
+            <div class="group">
+              {topic.count > 0 ? (
+                <a
+                  href={getLocalizedPath(`topics/${encodeURIComponent(topic.englishName)}`, currentLocale)}
+                  class="block bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-200 hover:-translate-y-0.5"
+                >
+                  <div class="flex items-center">
+                    <span class="text-2xl mr-3">
+                      {topic.icon}
+                    </span>
+                    <div class="flex-1 min-w-0">
+                      <h3 class="font-medium text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors truncate">
+                        {topic.englishName}
+                      </h3>
+                      <span class="text-sm text-gray-500 dark:text-gray-400">
+                        {topic.count} items
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              ) : (
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-5 border border-gray-200 dark:border-gray-700 opacity-60">
+                  <div class="flex items-center">
+                    <span class="text-2xl mr-3 grayscale">
+                      {topic.icon}
+                    </span>
+                    <div class="flex-1 min-w-0">
+                      <h3 class="font-medium text-gray-500 dark:text-gray-400 truncate">
+                        {topic.englishName}
+                      </h3>
+                      <span class="text-sm text-gray-400 dark:text-gray-500">
+                        Coming Soon
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <!-- Call to Action -->
+    <section class="text-center">
+      <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 sm:p-12">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Contribute New Content
+        </h2>
+        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+          If you have quality feminist-related content, we welcome you to share it with us
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href={getLocalizedPath('contribute', currentLocale)}
+            class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+          >
+            Submit Content
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+            </svg>
+          </a>
+          <a
+            href={getLocalizedPath('search', currentLocale)}
+            class="inline-flex items-center justify-center px-8 py-4 border border-purple-600 text-purple-600 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20 font-semibold rounded-xl transition-all duration-200"
+          >
+            Search Content
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <style>
+    @keyframes blob {
+      0% { transform: translate(0px, 0px) scale(1); }
+      33% { transform: translate(30px, -50px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+      100% { transform: translate(0px, 0px) scale(1); }
+    }
+    .animate-blob {
+      animation: blob 7s infinite;
+    }
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
+  </style>
+</Layout>

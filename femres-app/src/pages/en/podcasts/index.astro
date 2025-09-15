@@ -1,0 +1,133 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import PodcastCard from '../../../components/PodcastCard.astro';
+import Pagination from '../../../components/Pagination.astro';
+import { createT } from '../../../i18n/index';
+import { getTopicTranslation, findTopicByName } from '../../../i18n/topicsUtils';
+
+const currentLocale = 'en';
+const t = createT(currentLocale);
+
+const podcasts = await getCollection('podcasts');
+// 英文界面只显示带-en后缀的播客
+const publishedPodcasts = podcasts.filter(podcast => {
+  const isPublished = podcast.data.status === 'published';
+  if (!isPublished) return false;
+  return podcast.slug.endsWith('-en');
+});
+
+const sortedPodcasts = publishedPodcasts.sort((a, b) => {
+  return new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime();
+});
+
+const allTopics = [...new Set(publishedPodcasts.flatMap(podcast => podcast.data.topics))].sort();
+
+const PODCASTS_PER_PAGE = 12;
+const totalPodcasts = publishedPodcasts.length;
+const totalPages = Math.ceil(totalPodcasts / PODCASTS_PER_PAGE);
+
+const currentPage = Number(Astro.url.searchParams.get('page') || '1');
+const validPage = Math.max(1, Math.min(currentPage, totalPages));
+
+const startIndex = (validPage - 1) * PODCASTS_PER_PAGE;
+const endIndex = startIndex + PODCASTS_PER_PAGE;
+const currentPagePodcasts = sortedPodcasts.slice(startIndex, endIndex);
+---
+
+<Layout
+  title={`${t('nav.podcasts')} - FemRes`}
+  description="Listen to engaging feminist podcasts featuring conversations with experts, activists, and scholars on contemporary issues."
+>
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            🎧 {t('nav.podcasts')}
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+            Listen to thought-provoking conversations with feminist voices from around the world on contemporary issues and ideas
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-6 text-sm">
+            <div class="flex items-center bg-purple-50 dark:bg-purple-900/20 px-4 py-2 rounded-full">
+              <span class="text-purple-600 dark:text-purple-400 mr-2">🎙️</span>
+              <span class="text-purple-800 dark:text-purple-200">{totalPodcasts} episodes total</span>
+            </div>
+            <div class="flex items-center bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-full">
+              <span class="text-blue-600 dark:text-blue-400 mr-2">🏷️</span>
+              <span class="text-blue-800 dark:text-blue-200">{allTopics.length} topic categories</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Topic Categories</h2>
+        <div class="relative">
+          <div id="topics-container" class="flex flex-wrap gap-3 overflow-hidden transition-all duration-300" style="max-height: 90px;">
+            <button class="filter-btn inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium" data-filter="all">
+              All Podcasts
+            </button>
+            {allTopics.map(topic => {
+              const topicInfo = findTopicByName(topic);
+              const translatedTopic = topicInfo
+                ? getTopicTranslation(topic, currentLocale as 'zh-CN' | 'en')
+                : topic;
+              return (
+                <button class="filter-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-sm" data-filter={topic}>
+                  {translatedTopic}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Latest Episodes</h2>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">
+              Showing {currentPagePodcasts.length} of {totalPodcasts} episodes (Page {validPage} of {totalPages})
+            </p>
+          </div>
+        </div>
+
+        <div id="podcasts-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {currentPagePodcasts.map(podcast => (
+            <div class="podcast-item" data-topics={podcast.data.topics.join(',')}>
+              <PodcastCard
+                title={podcast.data.title}
+                author={podcast.data.author}
+                description={podcast.data.description}
+                thumbnail={podcast.data.thumbnail}
+                publishDate={podcast.data.publishDate}
+                duration={podcast.data.duration}
+                sourceUrl={podcast.data.sourceUrl}
+                slug={podcast.slug.replace('-en', '')}
+                topics={podcast.data.topics}
+                episodeNumber={podcast.data.episodeNumber}
+                locale={currentLocale}
+              />
+            </div>
+          ))}
+        </div>
+
+        {totalPages > 1 && (
+          <div class="flex justify-center mt-12">
+            <Pagination
+              currentPage={validPage}
+              totalPages={totalPages}
+              baseUrl="/en/podcasts"
+              locale={currentLocale}
+            />
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</Layout>

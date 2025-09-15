@@ -1,0 +1,557 @@
+{
+  "Intersectional Feminism": {
+    "en": "Intersectional Feminism",
+    "zh-CN": "交叉女性主义",
+    "icon": "🌐"
+  },
+  "Marxist Feminism": {
+    "en": "Marxist Feminism",
+    "zh-CN": "马克思主义女性主义",
+    "icon": "⚒️"
+  },
+  "Decolonial Feminism": {
+    "en": "Decolonial Feminism",
+    "zh-CN": "去殖民女性主义",
+    "icon": "🌍"
+  },
+  "Existentialist Feminism": {
+    "en": "Existentialist Feminism",
+    "zh-CN": "存在主义女性主义",
+    "icon": "🤔"
+  },
+  "Liberal Feminism": {
+    "en": "Liberal Feminism",
+    "zh-CN": "自由主义女性主义",
+    "icon": "🗽"
+  },
+  "Radical Feminism": {
+    "en": "Radical Feminism",
+    "zh-CN": "激进女性主义",
+    "icon": "⚡"
+  },
+  "Black Feminism": {
+    "en": "Black Feminism",
+    "zh-CN": "黑人女性主义",
+    "icon": "✊🏿"
+  },
+  "Indigenous Feminism": {
+    "en": "Indigenous Feminism",
+    "zh-CN": "原住民女性主义",
+    "icon": "🪶"
+  },
+  "Trans Feminism": {
+    "en": "Trans Feminism",
+    "zh-CN": "跨性别女性主义",
+    "icon": "🏳️‍⚧️"
+  },
+  "Ecofeminism": {
+    "en": "Ecofeminism",
+    "zh-CN": "生态女性主义",
+    "icon": "🌱"
+  },
+  "Postmodern Feminism": {
+    "en": "Postmodern Feminism",
+    "zh-CN": "后现代女性主义",
+    "icon": "🎭"
+  },
+  "Workplace Equality": {
+    "en": "Workplace Equality",
+    "zh-CN": "职场平等",
+    "icon": "💼"
+  },
+  "Equal Pay": {
+    "en": "Equal Pay",
+    "zh-CN": "同工同酬",
+    "icon": "💰"
+  },
+  "Glass Ceiling": {
+    "en": "Glass Ceiling",
+    "zh-CN": "玻璃天花板",
+    "icon": "🔝"
+  },
+  "Reproductive Autonomy": {
+    "en": "Reproductive Autonomy",
+    "zh-CN": "生育自主",
+    "icon": "🤱"
+  },
+  "Abortion Rights": {
+    "en": "Abortion Rights",
+    "zh-CN": "堕胎权",
+    "icon": "⚕️"
+  },
+  "Anti-Sexual Violence": {
+    "en": "Anti-Sexual Violence",
+    "zh-CN": "反性暴力",
+    "icon": "🛡️"
+  },
+  "Political Participation": {
+    "en": "Political Participation",
+    "zh-CN": "政治参与",
+    "icon": "🗳️"
+  },
+  "Legal Equality": {
+    "en": "Legal Equality",
+    "zh-CN": "法律平等",
+    "icon": "⚖️"
+  },
+  "Economic Empowerment": {
+    "en": "Economic Empowerment",
+    "zh-CN": "经济赋权",
+    "icon": "📈"
+  },
+  "Education Equality": {
+    "en": "Education Equality",
+    "zh-CN": "教育平等",
+    "icon": "📚"
+  },
+  "Family Liberation": {
+    "en": "Family Liberation",
+    "zh-CN": "家庭解放",
+    "icon": "🏠"
+  },
+  "Sports Equality": {
+    "en": "Sports Equality",
+    "zh-CN": "体育平等",
+    "icon": "⚽"
+  },
+  "Bodily Autonomy": {
+    "en": "Bodily Autonomy",
+    "zh-CN": "身体自主",
+    "icon": "💪"
+  },
+  "Patriarchy Critique": {
+    "en": "Patriarchy Critique",
+    "zh-CN": "父权制批判",
+    "icon": "👑"
+  },
+  "Capitalism Critique": {
+    "en": "Capitalism Critique",
+    "zh-CN": "资本主义批判",
+    "icon": "🏭"
+  },
+  "Media Representation Critique": {
+    "en": "Media Representation Critique",
+    "zh-CN": "媒体表征批判",
+    "icon": "📺"
+  },
+  "Religious Patriarchy Critique": {
+    "en": "Religious Patriarchy Critique",
+    "zh-CN": "宗教父权批判",
+    "icon": "⛪"
+  },
+  "Men's Rights Movement Critique": {
+    "en": "Men's Rights Movement Critique",
+    "zh-CN": "男权运动批判",
+    "icon": "🚫"
+  },
+  "Cultural Critique": {
+    "en": "Cultural Critique",
+    "zh-CN": "文化批判",
+    "icon": "🎨"
+  },
+  "Anti-Feminism Studies": {
+    "en": "Anti-Feminism Studies",
+    "zh-CN": "反女性主义研究",
+    "icon": "🔍"
+  },
+  "Academic Patriarchy Critique": {
+    "en": "Academic Patriarchy Critique",
+    "zh-CN": "学术父权批判",
+    "icon": "🎓"
+  },
+  "Linguistic Sexism": {
+    "en": "Linguistic Sexism",
+    "zh-CN": "语言性别歧视",
+    "icon": "💬"
+  },
+  "Politics of Translation": {
+    "en": "Politics of Translation",
+    "zh-CN": "翻译政治",
+    "icon": "🔄"
+  },
+  "Epistemic Colonialism Critique": {
+    "en": "Epistemic Colonialism Critique",
+    "zh-CN": "知识殖民批判",
+    "icon": "📚"
+  },
+  "First Wave Feminism": {
+    "en": "First Wave Feminism",
+    "zh-CN": "第一波女性主义",
+    "icon": "1️⃣"
+  },
+  "Second Wave Feminism": {
+    "en": "Second Wave Feminism",
+    "zh-CN": "第二波女性主义",
+    "icon": "2️⃣"
+  },
+  "Third Wave Feminism": {
+    "en": "Third Wave Feminism",
+    "zh-CN": "第三波女性主义",
+    "icon": "3️⃣"
+  },
+  "Fourth Wave Feminism": {
+    "en": "Fourth Wave Feminism",
+    "zh-CN": "第四波女性主义",
+    "icon": "4️⃣"
+  },
+  "MeToo Movement": {
+    "en": "MeToo Movement",
+    "zh-CN": "MeToo运动",
+    "icon": "#️⃣"
+  },
+  "Chinese Feminist Movement": {
+    "en": "Chinese Feminist Movement",
+    "zh-CN": "中国女权运动",
+    "icon": "🇨🇳"
+  },
+  "Pop Culture Feminism": {
+    "en": "Pop Culture Feminism",
+    "zh-CN": "流行文化女性主义",
+    "icon": "🎬"
+  },
+  "Christian Feminism": {
+    "en": "Christian Feminism",
+    "zh-CN": "基督教女性主义",
+    "icon": "✝️"
+  },
+  "Spiritual Feminism": {
+    "en": "Spiritual Feminism",
+    "zh-CN": "灵性女性主义",
+    "icon": "🔮"
+  },
+  "Women's Literature": {
+    "en": "Women's Literature",
+    "zh-CN": "女性文学",
+    "icon": "📖"
+  },
+  "Women's Writing": {
+    "en": "Women's Writing",
+    "zh-CN": "女性写作",
+    "icon": "✍️"
+  },
+  "Feminist Literary Criticism": {
+    "en": "Feminist Literary Criticism",
+    "zh-CN": "女性文学批评",
+    "icon": "📝"
+  },
+  "Feminist Translation Studies": {
+    "en": "Feminist Translation Studies",
+    "zh-CN": "翻译女性主义",
+    "icon": "🌐"
+  },
+  "Feminist Narratology": {
+    "en": "Feminist Narratology",
+    "zh-CN": "女性叙事学",
+    "icon": "📚"
+  },
+  "Emotional Labor": {
+    "en": "Emotional Labor",
+    "zh-CN": "情绪劳动",
+    "icon": "💭"
+  },
+  "Ethics of Care": {
+    "en": "Ethics of Care",
+    "zh-CN": "关怀伦理",
+    "icon": "❤️"
+  },
+  "Feminist Psychology": {
+    "en": "Feminist Psychology",
+    "zh-CN": "女性主义心理学",
+    "icon": "🧠"
+  },
+  "Feminist Art": {
+    "en": "Feminist Art",
+    "zh-CN": "女性主义艺术",
+    "icon": "🎨"
+  },
+  "Race and Gender": {
+    "en": "Race and Gender",
+    "zh-CN": "种族与性别",
+    "icon": "🌈"
+  },
+  "Digital Feminism": {
+    "en": "Digital Feminism",
+    "zh-CN": "数字女性主义",
+    "icon": "💻"
+  },
+  "Climate Justice": {
+    "en": "Climate Justice",
+    "zh-CN": "气候正义",
+    "icon": "🌍"
+  },
+  "AI Ethics": {
+    "en": "AI Ethics",
+    "zh-CN": "人工智能伦理",
+    "icon": "🤖"
+  },
+  "Historical Context": {
+    "en": "Historical Context",
+    "zh-CN": "历史脉络",
+    "icon": "📜"
+  },
+  "Feminism": {
+    "en": "Feminism",
+    "zh-CN": "女性主义",
+    "icon": "✊"
+  },
+  "Introduction to Feminism": {
+    "en": "Introduction to Feminism",
+    "zh-CN": "女性主义入门",
+    "icon": "📚"
+  },
+  "Gender Equality": {
+    "en": "Gender Equality",
+    "zh-CN": "性别平等",
+    "icon": "⚖️"
+  },
+  "Gender Diversity": {
+    "en": "Gender Diversity",
+    "zh-CN": "性别多样性",
+    "icon": "🌈"
+  },
+  "Sexual Liberation": {
+    "en": "Sexual Liberation",
+    "zh-CN": "性解放",
+    "icon": "🔓"
+  },
+  "Socialist Feminism": {
+    "en": "Socialist Feminism",
+    "zh-CN": "社会主义女性主义",
+    "icon": "🚩"
+  },
+  "Queer Feminism": {
+    "en": "Queer Feminism",
+    "zh-CN": "酷儿女性主义",
+    "icon": "🏳️‍🌈"
+  },
+  "Queer Theory": {
+    "en": "Queer Theory",
+    "zh-CN": "酷儿理论",
+    "icon": "🏳️‍🌈"
+  },
+  "Queer Identity": {
+    "en": "Queer Identity",
+    "zh-CN": "酷儿身份",
+    "icon": "🏳️‍🌈"
+  },
+  "Arab Feminism": {
+    "en": "Arab Feminism",
+    "zh-CN": "阿拉伯女性主义",
+    "icon": "🕌"
+  },
+  "Class Analysis": {
+    "en": "Class Analysis",
+    "zh-CN": "阶级分析",
+    "icon": "⚖️"
+  },
+  "Race and Class": {
+    "en": "Race and Class",
+    "zh-CN": "种族与阶级",
+    "icon": "🤝"
+  },
+  "Female Friendship": {
+    "en": "Female Friendship",
+    "zh-CN": "女性友谊",
+    "icon": "👭"
+  },
+  "Mother-Daughter Relationships": {
+    "en": "Mother-Daughter Relationships",
+    "zh-CN": "母女关系",
+    "icon": "👩‍👧"
+  },
+  "Internet Culture": {
+    "en": "Internet Culture",
+    "zh-CN": "网络文化",
+    "icon": "🌐"
+  },
+  "Technology Critique": {
+    "en": "Technology Critique",
+    "zh-CN": "科技批判",
+    "icon": "💻"
+  },
+  "Cultural Identity": {
+    "en": "Cultural Identity",
+    "zh-CN": "文化认同",
+    "icon": "🏛️"
+  },
+  "Immigrant Identity": {
+    "en": "Immigrant Identity",
+    "zh-CN": "移民身份认同",
+    "icon": "🌍"
+  },
+  "Cross-Cultural Feminism": {
+    "en": "Cross-Cultural Feminism",
+    "zh-CN": "跨文化女性主义",
+    "icon": "🌏"
+  },
+  "Everyday Life Practices": {
+    "en": "Everyday Life Practices",
+    "zh-CN": "日常生活实践",
+    "icon": "🏠"
+  },
+  "Mental Health": {
+    "en": "Mental Health",
+    "zh-CN": "心理健康",
+    "icon": "🧠"
+  },
+  "Mental Resilience": {
+    "en": "Mental Resilience",
+    "zh-CN": "心理韧性",
+    "icon": "💪"
+  },
+  "Depatriarchalization": {
+    "en": "Depatriarchalization",
+    "zh-CN": "去父权化",
+    "icon": "🔓"
+  },
+  "Depatriarchal Business": {
+    "en": "Depatriarchal Business",
+    "zh-CN": "去父权商业",
+    "icon": "💼"
+  },
+  "Oral History": {
+    "en": "Oral History",
+    "zh-CN": "口述历史",
+    "icon": "🎙️"
+  },
+  "Feminist Film Criticism": {
+    "en": "Feminist Film Criticism",
+    "zh-CN": "女性主义电影批评",
+    "icon": "🎬"
+  },
+  "Feminist Theology": {
+    "en": "Feminist Theology",
+    "zh-CN": "女性主义神学",
+    "icon": "⛪"
+  },
+  "Feminist Self-Help": {
+    "en": "Feminist Self-Help",
+    "zh-CN": "女性主义自助",
+    "icon": "💪"
+  },
+  "Female Desire": {
+    "en": "Female Desire",
+    "zh-CN": "女性欲望",
+    "icon": "💋"
+  },
+  "Women's Economic Rights": {
+    "en": "Women's Economic Rights",
+    "zh-CN": "女性经济权",
+    "icon": "💰"
+  },
+  "Women's Rights": {
+    "en": "Women's Rights",
+    "zh-CN": "妇女权利",
+    "icon": "✊"
+  },
+  "Academic Feminism": {
+    "en": "Academic Feminism",
+    "zh-CN": "学术女性主义",
+    "icon": "🎓"
+  },
+  "Gender Politics": {
+    "en": "Gender Politics",
+    "zh-CN": "性别政治",
+    "icon": "🏛️"
+  },
+  "Gender Discrimination": {
+    "en": "Gender Discrimination",
+    "zh-CN": "性别歧视",
+    "icon": "⚠️"
+  },
+  "Gender Socialization": {
+    "en": "Gender Socialization",
+    "zh-CN": "性别社会化",
+    "icon": "👶"
+  },
+  "Gender Norms": {
+    "en": "Gender Norms",
+    "zh-CN": "性别规范",
+    "icon": "📏"
+  },
+  "Sex Worker Rights": {
+    "en": "Sex Worker Rights",
+    "zh-CN": "性工作权利",
+    "icon": "✊"
+  },
+  "History of Sex Education": {
+    "en": "History of Sex Education",
+    "zh-CN": "性教育史",
+    "icon": "📚"
+  },
+  "Cultural Taboos": {
+    "en": "Cultural Taboos",
+    "zh-CN": "文化禁忌",
+    "icon": "🚫"
+  },
+  "Motherhood Critique": {
+    "en": "Motherhood Critique",
+    "zh-CN": "母职批判",
+    "icon": "👩‍👧"
+  },
+  "Social Movements": {
+    "en": "Social Movements",
+    "zh-CN": "社会运动",
+    "icon": "✊"
+  },
+  "Career Development": {
+    "en": "Career Development",
+    "zh-CN": "职业发展",
+    "icon": "📈"
+  },
+  "Arts and Performance": {
+    "en": "Arts and Performance",
+    "zh-CN": "艺术与表演",
+    "icon": "🎭"
+  },
+  "Cognitive Behavioral Training": {
+    "en": "Cognitive Behavioral Training",
+    "zh-CN": "认知行为训练",
+    "icon": "🧠"
+  },
+  "Body Politics": {
+    "en": "Body Politics",
+    "zh-CN": "身体政治",
+    "icon": "👤"
+  },
+  "Men's Rights Movement Critique": {
+    "en": "Men's Rights Movement Critique",
+    "zh-CN": "男权运动批判",
+    "icon": "🚫"
+  },
+  "Rape Culture Critique": {
+    "en": "Rape Culture Critique",
+    "zh-CN": "强奸文化批判",
+    "icon": "🛡️"
+  },
+  "Bystander Responsibility": {
+    "en": "Bystander Responsibility",
+    "zh-CN": "旁观者责任",
+    "icon": "👥"
+  },
+  "Gender Pay Gap": {
+    "en": "Gender Pay Gap",
+    "zh-CN": "性别薪酬差距",
+    "icon": "💸"
+  },
+  "Gender Identity": {
+    "en": "Gender Identity",
+    "zh-CN": "性别认同",
+    "icon": "🆔"
+  },
+  "Feminist Theory": {
+    "en": "Feminist Theory",
+    "zh-CN": "女性主义理论",
+    "icon": "📚"
+  },
+  "Political Consciousness": {
+    "en": "Political Consciousness",
+    "zh-CN": "政治意识",
+    "icon": "🧠"
+  },
+  "Identity Formation": {
+    "en": "Identity Formation",
+    "zh-CN": "身份认同形成",
+    "icon": "🔄"
+  }
+}

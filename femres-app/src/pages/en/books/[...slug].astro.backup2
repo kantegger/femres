@@ -1,0 +1,224 @@
+---
+export const prerender = true;
+
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import InteractionButtons from '../../../components/InteractionButtons';
+import Discussion from '../../../components/Discussion';
+import BookCard from '../../../components/BookCard.astro';
+import { createT, getLocalizedPath } from '../../../i18n/index';
+
+const currentLocale = 'en';
+const t = createT(currentLocale);
+
+export async function getStaticPaths() {
+  const books = await getCollection('books');
+  return books.map((book) => ({
+    params: { slug: book.slug },
+    props: book,
+  }));
+}
+
+const book = Astro.props;
+const { Content } = await book.render();
+
+// 获取相关书籍（相同主题的其他书籍）
+const allBooks = await getCollection('books');
+const relatedBooks = allBooks
+  .filter(b =>
+    b.slug !== book.slug &&
+    b.data.topics.some(topic => book.data.topics.includes(topic))
+  )
+  .slice(0, 3);
+
+// 格式化日期
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+
+// Generate localized URLs
+const homeLink = getLocalizedPath('/', currentLocale);
+const booksLink = getLocalizedPath('books', currentLocale);
+---
+
+<Layout
+  title={`${book.data.title} - ${book.data.author} - FemRes`}
+  description={book.data.description}
+>
+  <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Breadcrumb -->
+    <nav class="mb-8">
+      <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+        <a href={homeLink} class="hover:text-purple-600 dark:hover:text-purple-400">Home</a>
+        <span>/</span>
+        <a href={booksLink} class="hover:text-purple-600 dark:hover:text-purple-400">{t('nav.books')}</a>
+        <span>/</span>
+        <span class="text-gray-900 dark:text-white">{book.data.title}</span>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="mb-12">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+        {book.data.title}
+      </h1>
+
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-lg text-gray-700 dark:text-gray-300">
+            By <span class="font-semibold text-gray-900 dark:text-white">{book.data.author}</span>
+          </span>
+          <span class="text-gray-400">•</span>
+          <time class="text-gray-600 dark:text-gray-400">
+            {formatDate(book.data.publishDate)}
+          </time>
+        </div>
+
+        <!-- Interaction Buttons -->
+        <div class="flex items-center space-x-4">
+          <InteractionButtons
+            contentId={`book-${book.slug}`}
+            contentType="book"
+            client:visible
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+      <!-- Left Column: Book Info -->
+      <aside class="lg:col-span-1">
+        <!-- Book Cover -->
+        {book.data.coverImage && (
+          <div class="mb-8">
+            <img
+              src={book.data.coverImage}
+              alt={book.data.title}
+              class="w-full rounded-lg shadow-lg"
+            />
+          </div>
+        )}
+
+        <!-- Book Details -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-gray-700">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Book Details</h3>
+          <dl class="space-y-3">
+            {book.data.isbn && (
+              <>
+                <dt class="text-sm text-gray-600 dark:text-gray-400">ISBN</dt>
+                <dd class="text-sm font-medium text-gray-900 dark:text-white">{book.data.isbn}</dd>
+              </>
+            )}
+            {book.data.publisher && (
+              <>
+                <dt class="text-sm text-gray-600 dark:text-gray-400">Publisher</dt>
+                <dd class="text-sm font-medium text-gray-900 dark:text-white">{book.data.publisher}</dd>
+              </>
+            )}
+            {book.data.pages && (
+              <>
+                <dt class="text-sm text-gray-600 dark:text-gray-400">Pages</dt>
+                <dd class="text-sm font-medium text-gray-900 dark:text-white">{book.data.pages} pages</dd>
+              </>
+            )}
+            {book.data.language && (
+              <>
+                <dt class="text-sm text-gray-600 dark:text-gray-400">{t('common.language')}</dt>
+                <dd class="text-sm font-medium text-gray-900 dark:text-white">{book.data.language === 'en' ? 'English' : book.data.language}</dd>
+              </>
+            )}
+          </dl>
+        </div>
+
+        <!-- Topics -->
+        <div class="mt-6">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Topics</h3>
+          <div class="flex flex-wrap gap-2">
+            {book.data.topics.map((topic: string) => (
+              <a
+                href={getLocalizedPath(`topics/${encodeURIComponent(topic)}`, currentLocale)}
+                class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors"
+              >
+                {topic}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Purchase Links -->
+        {book.data.purchaseLinks && book.data.purchaseLinks.length > 0 && (
+          <div class="mt-8">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Where to Buy</h3>
+            <div class="space-y-2">
+              {book.data.purchaseLinks.map((link: any) => (
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-center"
+                >
+                  Buy from {link.vendor}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </aside>
+
+      <!-- Right Column: Main Content -->
+      <div class="lg:col-span-2">
+        <!-- Description -->
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About This Book</h2>
+          <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            {book.data.description}
+          </p>
+        </div>
+
+        <!-- Content -->
+        <div class="prose prose-lg dark:prose-invert max-w-none mb-12">
+          <Content />
+        </div>
+
+        <!-- Discussion Section -->
+        <div class="mt-12 pt-12 border-t border-gray-200 dark:border-gray-700">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">Discussion</h2>
+          <Discussion
+            contentId={`book-${book.slug}`}
+            contentType="book"
+            client:visible
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Books -->
+    {relatedBooks.length > 0 && (
+      <section class="mt-16 pt-12 border-t border-gray-200 dark:border-gray-700">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">Related Books</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {relatedBooks.map(relatedBook => (
+            <BookCard
+              title={relatedBook.data.title}
+              author={relatedBook.data.author}
+              description={relatedBook.data.description}
+              coverImage={relatedBook.data.coverImage}
+              publishDate={relatedBook.data.publishDate}
+              slug={relatedBook.slug}
+              topics={relatedBook.data.topics}
+              isbn={relatedBook.data.isbn}
+              locale={currentLocale}
+            />
+          ))}
+        </div>
+      </section>
+    )}
+  </article>
+</Layout>

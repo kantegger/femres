@@ -1,63 +1,70 @@
-# 贡献指南
+# Contribution Guide | 贡献指南
+
+Thank you for your interest in the FemRes project! We welcome all forms of contributions, whether you're a developer, designer, content editor, or feminist researcher.
 
 感谢您对 FemRes 项目的关注！我们欢迎所有形式的贡献，无论您是开发者、设计师、内容编辑还是女性主义研究者。
 
-## 🌟 贡献方式
+## 🌟 Ways to Contribute | 贡献方式
 
-### 1. 内容贡献
+### 1. Content Contribution | 内容贡献
 
-#### 推荐内容
-- 发送邮件至 submissions@femres.org
-- 包含以下信息：
-  - 内容标题
-  - 作者信息
-  - 内容简介
-  - 相关链接
-  - 推荐理由
-  - 所属主题分类
+#### Recommend Content | 推荐内容
+- Send email to / 发送邮件至 submissions@femres.org
+- Include the following / 包含以下信息：
+  - Content title / 内容标题
+  - Author information / 作者信息
+  - Content summary / 内容简介
+  - Related links / 相关链接
+  - Reason for recommendation / 推荐理由
+  - Topic category / 所属主题分类
 
-#### 内容质量标准
-- **权威性**: 来自可信的学者、机构或组织
-- **相关性**: 与女性主义、性别平等主题相关
-- **多样性**: 体现不同文化背景和观点
-- **时效性**: 内容具有现实意义
-- **可访问性**: 内容易于获取和理解
+#### Content Quality Standards | 内容质量标准
+- **Authority | 权威性**: From credible scholars, institutions, or organizations / 来自可信的学者、机构或组织
+- **Relevance | 相关性**: Related to feminism and gender equality / 与女性主义、性别平等主题相关
+- **Diversity | 多样性**: Reflects different cultural backgrounds and perspectives / 体现不同文化背景和观点
+- **Timeliness | 时效性**: Content has contemporary significance / 内容具有现实意义
+- **Accessibility | 可访问性**: Content is easy to access and understand / 内容易于获取和理解
 
-### 2. 代码贡献
+#### Bilingual Content | 双语内容
+- **Creating English Versions | 创建英文版本**: Help translate Chinese content to English / 帮助将中文内容翻译成英文
+- **File Naming | 文件命名**: Use `-en.md` suffix for English versions / 英文版本使用 `-en.md` 后缀
+- **Content Structure | 内容结构**: Maintain same format and metadata as Chinese version / 保持与中文版本相同的格式和元数据
 
-#### 开发环境设置
+### 2. Code Contribution | 代码贡献
 
-1. Fork 项目到您的 GitHub 账户
-2. 克隆项目到本地：
+#### Development Environment Setup | 开发环境设置
+
+1. Fork the project to your GitHub account / Fork 项目到您的 GitHub 账户
+2. Clone project locally / 克隆项目到本地：
    ```bash
    git clone https://github.com/YOUR_USERNAME/femres.git
    cd femres/femres-app
    ```
-3. 安装依赖：
+3. Install dependencies / 安装依赖：
    ```bash
    npm install
-   npm install -g wrangler  # 如需完整后端功能
+   npm install -g wrangler  # For full backend features / 如需完整后端功能
    ```
-4. 启动开发服务器：
+4. Start development server / 启动开发服务器：
    ```bash
-   # 基础开发模式（静态内容）
+   # Basic development mode (static content) / 基础开发模式（静态内容）
    npm run dev
-   
-   # 完整功能模式（需要 Cloudflare 设置）
+
+   # Full feature mode (requires Cloudflare setup) / 完整功能模式（需要 Cloudflare 设置）
    wrangler pages dev dist/ --d1=DB=your-db-name
    ```
-5. 如需测试完整功能（用户认证、评论系统等）：
-   - 参考 `DEPLOYMENT.md` 设置 Cloudflare D1 数据库
-   - 运行 `npm run build` 构建项目
-   - 使用 wrangler 本地开发环境
+5. To test full features (user auth, comments, etc.) / 如需测试完整功能（用户认证、评论系统等）：
+   - Refer to `DEPLOYMENT.md` for Cloudflare D1 setup / 参考 `DEPLOYMENT.md` 设置 Cloudflare D1 数据库
+   - Run `npm run build` to build project / 运行 `npm run build` 构建项目
+   - Use wrangler local development environment / 使用 wrangler 本地开发环境
 
-#### 代码规范
+#### Code Standards | 代码规范
 
-- **TypeScript**: 使用 TypeScript 进行开发，确保类型安全
-- **ESLint**: 遵循项目的 ESLint 配置
-- **Prettier**: 使用 Prettier 进行代码格式化
-- **命名规范**: 使用有意义的变量和函数名
-- **注释**: 为复杂逻辑添加必要的注释
+- **TypeScript**: Use TypeScript for development, ensure type safety / 使用 TypeScript 进行开发，确保类型安全
+- **ESLint**: Follow project's ESLint configuration / 遵循项目的 ESLint 配置
+- **Prettier**: Use Prettier for code formatting / 使用 Prettier 进行代码格式化
+- **Naming Convention | 命名规范**: Use meaningful variable and function names / 使用有意义的变量和函数名
+- **Comments | 注释**: Add necessary comments for complex logic / 为复杂逻辑添加必要的注释
 
 #### 新架构特性
 
@@ -132,24 +139,38 @@ Closes #123
 - 插图和图形素材
 - 品牌指南制定
 
-### 4. 翻译贡献
+### 4. Translation Contribution | 翻译贡献
+
+We are working to make FemRes support more languages:
 
 我们正在努力让 FemRes 支持更多语言：
 
-- 英语 (English)
-- 简体中文 (简体中文)
-- 繁体中文 (繁體中文)
-- 其他语言欢迎贡献
+- **English** - Complete bilingual support / 完整双语支持
+- **简体中文 (Simplified Chinese)** - Native support / 原生支持
+- **繁体中文 (Traditional Chinese)** - Welcome contributions / 欢迎贡献
+- **Other languages** - Welcome contributions / 其他语言欢迎贡献
 
-## 🚀 开发流程
+#### Current Bilingual Implementation | 当前双语实现
 
-### 分支策略
+**Content Structure | 内容结构:**
+- Chinese files: `filename.md` / 中文文件：`filename.md`
+- English files: `filename-en.md` / 英文文件：`filename-en.md`
+- All 164 content files have both versions / 所有164个内容文件都有中英文版本
 
-- `main`: 主分支，包含稳定的生产代码
-- `develop`: 开发分支，包含最新的开发代码
-- `feature/*`: 功能分支，用于开发新功能
-- `fix/*`: 修复分支，用于修复bug
-- `hotfix/*`: 热修复分支，用于紧急修复
+**Page Structure | 页面结构:**
+- Chinese pages: `/path/` / 中文页面：`/path/`
+- English pages: `/en/path/` / 英文页面：`/en/path/`
+- Privacy & Terms available in both languages / 隐私政策和使用条款双语支持
+
+## 🚀 Development Workflow | 开发流程
+
+### Branch Strategy | 分支策略
+
+- `main`: Main branch with stable production code / 主分支，包含稳定的生产代码
+- `develop`: Development branch with latest dev code / 开发分支，包含最新的开发代码
+- `feature/*`: Feature branches for new features / 功能分支，用于开发新功能
+- `fix/*`: Fix branches for bug fixes / 修复分支，用于修复bug
+- `hotfix/*`: Hotfix branches for urgent fixes / 热修复分支，用于紧急修复
 
 ### Pull Request 流程
 

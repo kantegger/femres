@@ -1,0 +1,132 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import VideoCard from '../../../components/VideoCard.astro';
+import Pagination from '../../../components/Pagination.astro';
+import { createT } from '../../../i18n/index';
+import { getTopicTranslation, findTopicByName } from '../../../i18n/topicsUtils';
+
+const currentLocale = 'en';
+const t = createT(currentLocale);
+
+const videos = await getCollection('videos');
+// 英文界面只显示带-en后缀的视频
+const publishedVideos = videos.filter(video => {
+  const isPublished = video.data.status === 'published';
+  if (!isPublished) return false;
+  return video.slug.endsWith('-en');
+});
+
+const sortedVideos = publishedVideos.sort((a, b) => {
+  return new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime();
+});
+
+const allTopics = [...new Set(publishedVideos.flatMap(video => video.data.topics))].sort();
+
+const VIDEOS_PER_PAGE = 12;
+const totalVideos = publishedVideos.length;
+const totalPages = Math.ceil(totalVideos / VIDEOS_PER_PAGE);
+
+const currentPage = Number(Astro.url.searchParams.get('page') || '1');
+const validPage = Math.max(1, Math.min(currentPage, totalPages));
+
+const startIndex = (validPage - 1) * VIDEOS_PER_PAGE;
+const endIndex = startIndex + VIDEOS_PER_PAGE;
+const currentPageVideos = sortedVideos.slice(startIndex, endIndex);
+---
+
+<Layout
+  title={`${t('nav.videos')} - FemRes`}
+  description="Curated collection of feminist videos featuring lectures, documentaries, interviews, and educational content from global voices."
+>
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            🎥 {t('nav.videos')}
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+            Watch insightful videos featuring feminist scholars, activists, and thought leaders sharing knowledge and perspectives
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-6 text-sm">
+            <div class="flex items-center bg-purple-50 dark:bg-purple-900/20 px-4 py-2 rounded-full">
+              <span class="text-purple-600 dark:text-purple-400 mr-2">📹</span>
+              <span class="text-purple-800 dark:text-purple-200">{totalVideos} videos total</span>
+            </div>
+            <div class="flex items-center bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-full">
+              <span class="text-blue-600 dark:text-blue-400 mr-2">🏷️</span>
+              <span class="text-blue-800 dark:text-blue-200">{allTopics.length} topic categories</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Topic Categories</h2>
+        <div class="relative">
+          <div id="topics-container" class="flex flex-wrap gap-3 overflow-hidden transition-all duration-300" style="max-height: 90px;">
+            <button class="filter-btn inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium" data-filter="all">
+              All Videos
+            </button>
+            {allTopics.map(topic => {
+              const topicInfo = findTopicByName(topic);
+              const translatedTopic = topicInfo
+                ? getTopicTranslation(topic, currentLocale as 'zh-CN' | 'en')
+                : topic;
+              return (
+                <button class="filter-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-sm" data-filter={topic}>
+                  {translatedTopic}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Latest Videos</h2>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">
+              Showing {currentPageVideos.length} of {totalVideos} videos (Page {validPage} of {totalPages})
+            </p>
+          </div>
+        </div>
+
+        <div id="videos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {currentPageVideos.map(video => (
+            <div class="video-item" data-topics={video.data.topics.join(',')}>
+              <VideoCard
+                title={video.data.title}
+                author={video.data.author}
+                description={video.data.description}
+                thumbnail={video.data.thumbnail}
+                publishDate={video.data.publishDate}
+                duration={video.data.duration}
+                sourceUrl={video.data.sourceUrl}
+                slug={video.slug}
+                topics={video.data.topics}
+                locale={currentLocale}
+              />
+            </div>
+          ))}
+        </div>
+
+        {totalPages > 1 && (
+          <div class="flex justify-center mt-12">
+            <Pagination
+              currentPage={validPage}
+              totalPages={totalPages}
+              baseUrl="/en/videos"
+              locale={currentLocale}
+            />
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</Layout>

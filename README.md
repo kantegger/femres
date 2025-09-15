@@ -1,9 +1,12 @@
-# FemRes - 女性主义内容聚合平台
+# FemRes - Feminist Content Aggregation Platform | 女性主义内容聚合平台
 
 <div align="center">
   <h1>🌸 FemRes</h1>
-  <p>汇聚全球女性主义声音，推动性别平等事业发展</p>
-  <p><strong>🌍 访问网站：<a href="https://femres.org">femres.org</a></strong></p>
+  <p>
+    <strong>EN:</strong> Gathering Global Feminist Voices, Advancing Gender Equality<br>
+    <strong>中文:</strong> 汇聚全球女性主义声音，推动性别平等事业发展
+  </p>
+  <p><strong>🌍 Visit | 访问网站：<a href="https://femres.org">femres.org</a></strong></p>
   
   [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
   [![Astro](https://img.shields.io/badge/Astro-5.13-orange.svg)](https://astro.build/)
@@ -13,71 +16,88 @@
   [![React](https://img.shields.io/badge/React-18.3-61DAFB.svg)](https://reactjs.org/)
 </div>
 
-## 📖 项目简介
+## 📖 Project Introduction | 项目简介
+
+**[English](#english) | [中文](#chinese)**
+
+<div id="english">
+
+### English
+
+FemRes is an open-source feminist content aggregation platform dedicated to gathering high-quality feminist content globally, including books, articles, videos, podcasts, and academic papers. Now upgraded to a **complete full-stack application** with user authentication, real-time comments, and community interaction features.
+
+</div>
+
+<div id="chinese">
+
+### 中文
 
 FemRes 是一个开源的女性主义内容聚合平台，致力于汇聚全球优质女性主义内容，包括书籍、文章、视频、播客和学术论文。现已升级为**完整的全栈应用**，支持用户认证、实时评论和社区互动功能。
 
-### ✨ 核心特色
+</div>
 
-- **🎯 智能内容聚合** - AI技术与人工审核相结合，筛选高质量内容
-- **🏷️ 精准分类体系** - 8大核心主题，多维度标签系统
-- **🌐 多元内容形式** - 涵盖书籍、文章、视频、播客、电影分析
-- **👤 用户系统** - 完整的注册、登录、个人资料功能
-- **💬 实时评论** - 支持多层回复和点赞的讨论系统
-- **⭐ 内容互动** - 实时点赞计数、收藏、书签等个性化功能
-- **📄 智能分页** - 书籍、文章等内容支持优化的分页浏览（12项/页）
-- **🎬 混合布局** - 文章页面采用混合卡片布局，提升阅读体验
-- **🎭 悬浮交互** - 视频播放按钮、播客音频波形等仅悬浮时显示
-- **📱 响应式设计** - 完美适配桌面端和移动端
-- **🌙 深色模式支持** - 提供舒适的阅读体验
-- **⚡ 高性能部署** - 基于 Cloudflare Pages + D1 数据库的全栈架构
+### ✨ Core Features | 核心特色
 
-### 🎯 核心主题
+- **🎯 Smart Content Aggregation | 智能内容聚合** - AI + Manual Review / AI技术与人工审核相结合
+- **🌍 Bilingual Support | 双语支持** - Full English & Chinese Content / 完整的中英文内容支持
+- **🏷️ Precise Classification | 精准分类体系** - 8 Core Topics / 8大核心主题，多维度标签系统
+- **🌐 Diverse Content | 多元内容形式** - Books, Articles, Videos, Podcasts, Films / 书籍、文章、视频、播客、电影
+- **👤 User System | 用户系统** - Complete Authentication / 完整的注册、登录、个人资料功能
+- **💬 Real-time Comments | 实时评论** - Multi-layer Discussion / 支持多层回复和点赞的讨论系统
+- **⭐ Content Interaction | 内容互动** - Real-time Likes & Bookmarks / 实时点赞计数、收藏、书签
+- **📄 Smart Pagination | 智能分页** - Optimized Browsing (12/page) / 优化的分页浏览（12项/页）
+- **🎬 Mixed Layout | 混合布局** - Enhanced Reading Experience / 混合卡片布局，提升阅读体验
+- **🎭 Hover Interactions | 悬浮交互** - Contextual UI Elements / 视频播放按钮、播客音频波形等仅悬浮时显示
+- **📱 Responsive Design | 响应式设计** - Desktop & Mobile / 完美适配桌面端和移动端
+- **🌙 Dark Mode | 深色模式** - Comfortable Reading / 提供舒适的阅读体验
+- **⚡ High Performance | 高性能部署** - Cloudflare Pages + D1 Database / 基于 Cloudflare 的全栈架构
 
-- 💼 **职场平等** - 消除职场性别歧视，推动同工同酬
-- 🌸 **身体自主** - 维护女性对自己身体的决定权
-- 📚 **教育权利** - 确保所有性别平等接受教育的机会
-- 🗳️ **政治参与** - 提高女性在政治决策中的代表性
-- 👨‍👩‍👧‍👦 **家庭角色** - 重新定义家庭责任分配
-- 🛡️ **性别暴力** - 关注并制止各种形式的性别暴力
-- 📺 **媒体表征** - 批判媒体中的性别刻板印象
-- 👩‍🎓 **历史人物** - 重新发现历史上的杰出女性
+### 🎯 Core Topics | 核心主题
 
-## 🚀 快速开始
+- 💼 **Workplace Equality | 职场平等** - Eliminating gender discrimination / 消除职场性别歧视
+- 🌸 **Bodily Autonomy | 身体自主** - Women's right to choose / 维护女性对自己身体的决定权
+- 📚 **Education Rights | 教育权利** - Equal access to education / 确保所有性别平等接受教育
+- 🗳️ **Political Participation | 政治参与** - Women's representation / 提高女性在政治决策中的代表性
+- 👨‍👩‍👧‍👦 **Family Roles | 家庭角色** - Redefining responsibilities / 重新定义家庭责任分配
+- 🛡️ **Gender Violence | 性别暴力** - Addressing all forms / 关注并制止各种形式的性别暴力
+- 📺 **Media Representation | 媒体表征** - Critiquing stereotypes / 批判媒体中的性别刻板印象
+- 👩‍🎓 **Historical Figures | 历史人物** - Rediscovering women / 重新发现历史上的杰出女性
 
-### 前置要求
+## 🚀 Quick Start | 快速开始
 
-- Node.js 18+ 
-- npm 或 yarn
-- Cloudflare 账户（用于完整部署）
+### Prerequisites | 前置要求
 
-### 本地开发
+- Node.js 18+
+- npm or yarn / npm 或 yarn
+- Cloudflare account (for full deployment) / Cloudflare 账户（用于完整部署）
 
-1. **克隆项目**
+### Local Development | 本地开发
+
+1. **Clone Project | 克隆项目**
    ```bash
    git clone https://github.com/kantegger/femres.git
    cd femres/femres-app
    ```
 
-2. **安装依赖**
+2. **Install Dependencies | 安装依赖**
    ```bash
    npm install
-   npm install -g wrangler  # 用于 Cloudflare 开发
+   npm install -g wrangler  # For Cloudflare development / 用于 Cloudflare 开发
    ```
 
-3. **启动开发服务器**
+3. **Start Development Server | 启动开发服务器**
    ```bash
-   # 基础开发模式（无后端功能）
+   # Basic development mode (no backend) / 基础开发模式（无后端功能）
    npm run dev
-   
-   # 或使用 Cloudflare 本地环境（完整功能）
-   npm run build  # 先构建
+
+   # Or use Cloudflare local environment (full features) / 或使用 Cloudflare 本地环境（完整功能）
+   npm run build  # Build first / 先构建
    wrangler pages dev dist/ --d1=DB=your-db-name --compatibility-date=2025-09-11 --compatibility-flag=nodejs_compat
    ```
 
-4. **访问应用**
-   
-   打开浏览器访问 `http://localhost:4321` 或 `http://localhost:8788`
+4. **Access Application | 访问应用**
+
+   Open browser and visit / 打开浏览器访问 `http://localhost:4321` or / 或 `http://localhost:8788`
 
 ### 🌐 完整部署
 
@@ -194,63 +214,72 @@ femres-app/
 └── astro.config.mjs         # Astro 配置
 ```
 
-## 🤝 如何贡献
+## 🤝 How to Contribute | 如何贡献
+
+We welcome all forms of contributions! Whether you're a developer, designer, content editor, or feminist researcher, you can contribute to this project.
 
 我们欢迎所有形式的贡献！无论你是开发者、设计师、内容编辑还是女性主义研究者，都可以为这个项目贡献力量。
 
-### 贡献方式
+### Ways to Contribute | 贡献方式
 
-1. **内容贡献** - 推荐优质女性主义内容
-2. **代码贡献** - 修复bug、添加新功能
-3. **设计贡献** - 改进用户界面和用户体验
-4. **文档贡献** - 完善项目文档
-5. **翻译贡献** - 帮助项目国际化
+1. **Content Contribution | 内容贡献** - Recommend quality feminist content / 推荐优质女性主义内容
+2. **Code Contribution | 代码贡献** - Fix bugs, add new features / 修复bug、添加新功能
+3. **Design Contribution | 设计贡献** - Improve UI/UX / 改进用户界面和用户体验
+4. **Documentation | 文档贡献** - Improve project docs / 完善项目文档
+5. **Translation | 翻译贡献** - Help with internationalization / 帮助项目国际化
+6. **Bilingual Content | 双语内容** - Create English versions of Chinese content / 创建中文内容的英文版本
 
-### 贡献流程
+### Contribution Process | 贡献流程
 
-1. Fork 这个项目
-2. 创建你的特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交你的修改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 创建一个 Pull Request
+1. Fork this project / Fork 这个项目
+2. Create your feature branch / 创建你的特性分支 (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes / 提交你的修改 (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch / 推送到分支 (`git push origin feature/AmazingFeature`)
+5. Create a Pull Request / 创建一个 Pull Request
 
-详细的贡献指南请查看 [CONTRIBUTING.md](CONTRIBUTING.md)
+For detailed contribution guidelines, see / 详细的贡献指南请查看 [CONTRIBUTING.md](CONTRIBUTING.md)
 
-## 📧 联系我们
+## 📧 Contact Us | 联系我们
 
-- **通用咨询**: info@femres.org
-- **内容投稿**: submissions@femres.org
-- **合作事宜**: partnership@femres.org
-- **志愿者申请**: volunteer@femres.org
-- **项目网站**: [femres.org](https://femres.org)
+- **General Inquiries | 通用咨询**: info@femres.org
+- **Content Submissions | 内容投稿**: submissions@femres.org
+- **Partnerships | 合作事宜**: partnership@femres.org
+- **Volunteer Applications | 志愿者申请**: volunteer@femres.org
+- **Project Website | 项目网站**: [femres.org](https://femres.org)
 
-## 📄 开源协议
+## 📄 License | 开源协议
+
+This project is open source under the [MIT License](LICENSE), which means you can freely use, modify, and distribute this project.
 
 本项目基于 [MIT 协议](LICENSE) 开源，这意味着你可以自由地使用、修改和分发这个项目。
 
-## 🙏 致谢
+## 🙏 Acknowledgments | 致谢
+
+Thanks to everyone contributing to gender equality, especially:
 
 感谢所有为性别平等事业做出贡献的人们，特别是：
 
-- 所有贡献内容和代码的志愿者
-- 女性主义学者和活动家们
-- 开源社区的支持
-- 所有使用和推广这个平台的用户
+- All volunteers contributing content and code / 所有贡献内容和代码的志愿者
+- Feminist scholars and activists / 女性主义学者和活动家们
+- Open source community support / 开源社区的支持
+- All users and promoters of this platform / 所有使用和推广这个平台的用户
 
-## 🌟 支持项目
+## 🌟 Support the Project | 支持项目
+
+If this project helps you, please give us a ⭐️!
 
 如果这个项目对你有帮助，请给我们一个 ⭐️！
 
-你也可以通过以下方式支持我们：
+You can also support us by / 你也可以通过以下方式支持我们：
 
-- 🐦 关注我们的 [Twitter](https://x.com/FeministR32240)
-- 📧 订阅我们的邮件列表
-- 📢 向朋友推荐这个平台
-- 💡 提出改进建议
-- 🤝 成为项目贡献者
+- 🐦 Follow us on / 关注我们的 [Twitter](https://x.com/FeministR32240)
+- 📧 Subscribe to our mailing list / 订阅我们的邮件列表
+- 📢 Recommend this platform to friends / 向朋友推荐这个平台
+- 💡 Suggest improvements / 提出改进建议
+- 🤝 Become a contributor / 成为项目贡献者
 
 ---
 
 <div align="center">
-  <strong>让我们一起为性别平等而努力 💪</strong>
+  <strong>Together for Gender Equality | 让我们一起为性别平等而努力 💪</strong>
 </div>

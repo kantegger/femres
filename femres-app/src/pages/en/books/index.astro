@@ -1,0 +1,242 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import BookCard from '../../../components/BookCard.astro';
+import Pagination from '../../../components/Pagination.astro';
+import { createT } from '../../../i18n/index';
+import { getTopicTranslation, findTopicByName } from '../../../i18n/topicsUtils';
+
+// Set current locale
+const currentLocale = 'en';
+const t = createT(currentLocale);
+
+const books = await getCollection('books');
+
+// 英文界面只显示带-en后缀的书籍
+const publishedBooks = books.filter(book => {
+  const isPublished = book.data.status === 'published';
+  if (!isPublished) return false;
+
+  return book.slug.endsWith('-en');
+});
+
+// 按发布日期排序
+const sortedBooks = publishedBooks.sort((a, b) => {
+  return new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime();
+});
+
+// 获取所有主题标签
+const allTopics = [...new Set(publishedBooks.flatMap(book => book.data.topics))].sort();
+
+// 分页设置
+const BOOKS_PER_PAGE = 15;
+const totalBooks = publishedBooks.length;
+const totalPages = Math.ceil(totalBooks / BOOKS_PER_PAGE);
+
+// 获取当前页码 (从URL参数获取，默认为1)
+const currentPage = Number(Astro.url.searchParams.get('page') || '1');
+const validPage = Math.max(1, Math.min(currentPage, totalPages));
+
+// 计算当前页的书籍
+const startIndex = (validPage - 1) * BOOKS_PER_PAGE;
+const endIndex = startIndex + BOOKS_PER_PAGE;
+const currentPageBooks = sortedBooks.slice(startIndex, endIndex);
+
+// 生成页码数组
+const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+// 生成中间页码数组
+const middlePages = pageNumbers.filter(num =>
+  num !== 1 &&
+  num !== totalPages &&
+  Math.abs(num - validPage) <= 1
+);
+---
+
+<Layout
+  title={`${t('nav.books')} - FemRes`}
+  description="Selected collection of feminist books covering theory, practice, history and more, providing quality reading resources for feminist learning."
+>
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <!-- Header -->
+    <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            📚 {t('nav.books')}
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+            Selected feminist classics and contemporary masterpieces, from theory to practice, providing depth and breadth for thinking
+          </p>
+
+          <!-- 统计信息 -->
+          <div class="flex flex-wrap justify-center gap-6 text-sm">
+            <div class="flex items-center bg-purple-50 dark:bg-purple-900/20 px-4 py-2 rounded-full">
+              <span class="text-purple-600 dark:text-purple-400 mr-2">📖</span>
+              <span class="text-purple-800 dark:text-purple-200">{totalBooks} books total</span>
+            </div>
+            <div class="flex items-center bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-full">
+              <span class="text-blue-600 dark:text-blue-400 mr-2">🏷️</span>
+              <span class="text-blue-800 dark:text-blue-200">{allTopics.length} topic categories</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+      <!-- 主题标签筛选 -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Topic Categories</h2>
+        <div class="relative">
+          <!-- 主题标签容器 -->
+          <div id="topics-container" class="flex flex-wrap gap-3 overflow-hidden transition-all duration-300" style="max-height: 90px;">
+            <button
+              class="filter-btn inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium"
+              data-filter="all"
+            >
+              All Books
+            </button>
+            {allTopics.map(topic => {
+              const topicInfo = findTopicByName(topic);
+              const translatedTopic = topicInfo
+                ? getTopicTranslation(topic, currentLocale as 'zh-CN' | 'en')
+                : topic;
+              return (
+                <button
+                  class="filter-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-sm"
+                  data-filter={topic}
+                >
+                  {translatedTopic}
+                </button>
+              );
+            })}
+          </div>
+
+          <!-- 展开/折叠按钮 - 只在需要时显示 -->
+          {allTopics.length > 20 && (
+            <div class="text-center mt-4">
+              <button
+                id="toggle-topics"
+                class="inline-flex items-center px-4 py-2 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-200 transition-colors text-sm font-medium"
+              >
+                <span id="toggle-text">Show More</span>
+                <svg id="toggle-icon" class="ml-2 w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <!-- 书籍列表 -->
+      <div class="mb-12">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Latest Books</h2>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">
+              Showing {currentPageBooks.length} of {totalBooks} books (Page {validPage} of {totalPages})
+            </p>
+          </div>
+        </div>
+
+        <!-- 书籍网格 -->
+        <div id="books-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {currentPageBooks.map(book => (
+            <div class="book-item" data-topics={book.data.topics.join(',')}>
+              <BookCard
+                title={book.data.title}
+                titleEn={book.data.titleEn}
+                author={book.data.author}
+                description={book.data.description}
+                descriptionEn={book.data.descriptionEn}
+                coverImage={book.data.coverImage}
+                publishDate={book.data.publishDate}
+                slug={book.slug}
+                topics={book.data.topics}
+                isbn={book.data.isbn}
+                locale={currentLocale}
+              />
+            </div>
+          ))}
+        </div>
+
+        <!-- 分页 -->
+        {totalPages > 1 && (
+          <div class="flex justify-center mt-12">
+            <Pagination
+              currentPage={validPage}
+              totalPages={totalPages}
+              baseUrl="/en/books"
+              locale={currentLocale}
+            />
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 主题筛选功能
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const bookItems = document.querySelectorAll('.book-item');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const filter = this.getAttribute('data-filter');
+
+          // 更新按钮状态
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-purple-600', 'text-white');
+            b.classList.add('bg-white', 'dark:bg-gray-800', 'border', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+          });
+
+          this.classList.add('bg-purple-600', 'text-white');
+          this.classList.remove('bg-white', 'dark:bg-gray-800', 'border', 'border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+
+          // 筛选书籍
+          bookItems.forEach(item => {
+            if (filter === 'all') {
+              item.style.display = 'block';
+            } else {
+              const itemTopics = item.getAttribute('data-topics').split(',');
+              if (itemTopics.includes(filter)) {
+                item.style.display = 'block';
+              } else {
+                item.style.display = 'none';
+              }
+            }
+          });
+        });
+      });
+
+      // 展开/折叠主题标签
+      const toggleBtn = document.getElementById('toggle-topics');
+      const container = document.getElementById('topics-container');
+      const toggleText = document.getElementById('toggle-text');
+      const toggleIcon = document.getElementById('toggle-icon');
+
+      if (toggleBtn && container) {
+        let isExpanded = false;
+
+        toggleBtn.addEventListener('click', function() {
+          isExpanded = !isExpanded;
+
+          if (isExpanded) {
+            container.style.maxHeight = 'none';
+            toggleText.textContent = 'Show Less';
+            toggleIcon.style.transform = 'rotate(180deg)';
+          } else {
+            container.style.maxHeight = '90px';
+            toggleText.textContent = 'Show More';
+            toggleIcon.style.transform = 'rotate(0deg)';
+          }
+        });
+      }
+    });
+  </script>
+</Layout>

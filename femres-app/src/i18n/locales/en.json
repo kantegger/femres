@@ -1,0 +1,600 @@
+{
+  "nav": {
+    "home": "Home",
+    "content": "Content",
+    "books": "Books",
+    "articles": "Articles",
+    "films": "Films",
+    "videos": "Videos",
+    "podcasts": "Podcasts",
+    "papers": "Papers",
+    "topics": "Topics",
+    "search": "Search",
+    "contribute": "Contribute"
+  },
+  "common": {
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "loading": "Loading...",
+    "language": "Language",
+    "publishDate": "Published",
+    "author": "Author",
+    "director": "Director",
+    "duration": "Duration",
+    "pages": "Pages",
+    "siteDescription": "FemRes - A feminist content aggregation platform bringing together high-quality feminist content from around the world",
+    "toggleTheme": "Toggle dark mode",
+    "toggleMenu": "Open main menu",
+    "year": "Year",
+    "country": "Country",
+    "genre": "Genre",
+    "cast": "Cast",
+    "rating": "Rating",
+    "readTime": "Read Time",
+    "minutes": "min",
+    "episode": "Episode {number}",
+    "journal": "Journal",
+    "citations": "Citations",
+    "type": "Type",
+    "articleTypes": {
+      "news": "News",
+      "blog": "Blog",
+      "research": "Research",
+      "opinion": "Opinion",
+      "analysis": "Analysis"
+    },
+    "readFull": "Read Full Article",
+    "pagination": {
+      "navigation": "Pagination navigation",
+      "previous": "Previous",
+      "next": "Next",
+      "page": "Page {number}"
+    },
+    "breadcrumb": {
+      "navigation": "Breadcrumb navigation",
+      "topics": "Topics",
+      "topicCategories": {
+        "权利与法律": "Rights & Law",
+        "社会与文化": "Society & Culture",
+        "安全与保护": "Safety & Protection",
+        "历史与理论": "History & Theory"
+      }
+    },
+    "topicFilter": {
+      "title": "Topic Filter",
+      "currentTopic": "Current Topic",
+      "otherTopics": "Other Topics",
+      "viewAllTopics": "View All Topics",
+      "topicGroups": {
+        "权利法律": "Rights & Law",
+        "社会文化": "Society & Culture",
+        "安全保护": "Safety & Protection",
+        "学术理论": "Academic Theory"
+      }
+    },
+    "contentTypes": {
+      "book": "Books",
+      "article": "Articles",
+      "video": "Videos",
+      "podcast": "Podcasts",
+      "paper": "Papers"
+    },
+    "topics": "Related Topics",
+    "support": "Support Us",
+    "supportMessage": "If this content helps you",
+    "discussion": "Discussion"
+  },
+  "languages": {
+    "en": "English",
+    "zh-CN": "Chinese",
+    "zh": "Chinese"
+  },
+  "homepage": {
+    "hero": {
+      "badge": "Curating quality feminist content worldwide",
+      "title": "Discover the",
+      "titleHighlight": "Power of Feminism",
+      "titleEnd": "",
+      "subtitle": "Explore books, articles, videos, podcasts, and academic papers<br/>Dive deep into gender equality theory and practice, driving social progress",
+      "startExploring": "Start Exploring",
+      "learnMore": "Learn About Project"
+    },
+    "features": {
+      "richContent": {
+        "title": "Rich Content",
+        "description": "Covering books, articles, videos and other high-quality content"
+      },
+      "smartCategories": {
+        "title": "Smart Classification",
+        "description": "Precisely categorized by topics and types for quick content discovery"
+      },
+      "globalPerspective": {
+        "title": "Global Perspective",
+        "description": "Bringing together insights from feminist scholars and activists worldwide"
+      }
+    },
+    "sections": {
+      "featured": "Featured Content",
+      "latestBooks": "Latest Updated Books",
+      "latestFilms": "Latest Updated Films",
+      "latestArticles": "Latest Updated Articles",
+      "latestVideos": "Latest Updated Videos",
+      "latestPodcasts": "Latest Updated Podcasts",
+      "latestPapers": "Latest Updated Papers",
+      "popularTopics": "Popular Topics"
+    },
+    "cta": {
+      "title": "Join the Movement for Gender Equality",
+      "description": "Join our community, share your insights, and discover more quality content",
+      "contribute": "Contribute Content",
+      "aboutUs": "Learn More"
+    }
+  },
+  "book": {
+    "review": "Book Review",
+    "info": "Book Info",
+    "originalTitle": "Original Title",
+    "author": "Author",
+    "published": "Published",
+    "purchase": "Get This Book",
+    "buyOnAmazon": "Buy on Amazon",
+    "affiliateNotice": "By purchasing through this link, we may earn a small commission at no extra cost to you. Thank you for your support!",
+    "relatedBooks": "Related Books"
+  },
+  "about": {
+    "title": "About FemRes",
+    "subtitle": "Bringing together feminist voices from around the world to advance gender equality",
+    "mission": {
+      "title": "Our Mission",
+      "description1": "FemRes is committed to becoming the world's premier feminist content aggregation platform. We believe in the power of knowledge and information to drive social change, bringing together feminist thought, research, and practice from around the world to provide rich learning resources for everyone concerned with gender equality.",
+      "description2": "In an era of information fragmentation, we use intelligent content screening and classification to ensure that every piece of recommended content undergoes rigorous quality control, enabling users to efficiently access valuable information and gain deep insights into diverse feminist perspectives.",
+      "globalPerspective": "Global Perspective",
+      "globalDescription": "Multicultural background",
+      "curatedContent": "Curated Content",
+      "curatedDescription": "Rigorous quality control",
+      "values": "Equality · Diversity · Inclusion",
+      "buildBetter": "Building a more just world"
+    },
+    "coreValues": {
+      "title": "Core Values",
+      "subtitle": "The fundamental principles that guide our progress",
+      "genderEquality": {
+        "title": "Gender Equality",
+        "description": "Advocating for all genders to enjoy equal rights, opportunities, and dignity in political, economic, social, and cultural spheres"
+      },
+      "intersectionality": {
+        "title": "Intersectional Perspective",
+        "description": "Recognizing the intersectional impacts of gender with race, class, sexual orientation, disability, and other identities, pursuing comprehensive social justice"
+      },
+      "knowledgeEmpowerment": {
+        "title": "Knowledge Empowerment",
+        "description": "Believing that education and knowledge dissemination are important pathways to achieving gender equality, committed to helping more people understand feminism"
+      },
+      "openInclusion": {
+        "title": "Open Inclusion",
+        "description": "Welcoming people of different backgrounds, perspectives, and experiences to participate in dialogue, seeking consensus in diversity and promoting understanding through differences"
+      }
+    },
+    "features": {
+      "title": "Platform Features",
+      "subtitle": "Providing you with the highest quality content experience",
+      "smartAggregation": {
+        "title": "Smart Content Aggregation",
+        "description": "Through advanced AI technology combined with manual review, screening high-quality feminist content from massive information",
+        "features": ["Multi-source content collection", "Quality scoring algorithm", "Real-time update mechanism"]
+      },
+      "preciseClassification": {
+        "title": "Precise Classification System",
+        "description": "Establishing a comprehensive topic classification system to help users quickly locate content areas of interest",
+        "features": ["8 core topics", "Multi-dimensional tags", "Cross-reference functionality"]
+      },
+      "diverseContent": {
+        "title": "Diverse Content Forms",
+        "description": "Covering books, articles, videos, podcasts, academic papers and other content forms to meet different learning preferences",
+        "features": ["5 content types", "Global resources", "Multimedia presentation"]
+      }
+    },
+    "contentTypes": {
+      "title": "Content Types",
+      "subtitle": "Diverse content forms to meet different learning needs",
+      "books": {
+        "title": "Books",
+        "description": "Classics and new releases"
+      },
+      "articles": {
+        "title": "Articles",
+        "description": "In-depth analysis"
+      },
+      "videos": {
+        "title": "Videos",
+        "description": "Visual presentation"
+      },
+      "podcasts": {
+        "title": "Podcasts",
+        "description": "Audio delivery"
+      },
+      "papers": {
+        "title": "Papers",
+        "description": "Academic research"
+      }
+    },
+    "coreTopics": {
+      "title": "Core Topics",
+      "subtitle": "Covering various important areas of feminist concern",
+      "workplaceEquality": {
+        "title": "Workplace Equality",
+        "description": "Eliminating workplace gender discrimination, promoting equal pay, breaking the glass ceiling"
+      },
+      "bodilyAutonomy": {
+        "title": "Bodily Autonomy",
+        "description": "Protecting women's decision-making power over their own bodies, including reproductive and health rights"
+      },
+      "educationRights": {
+        "title": "Education Rights",
+        "description": "Ensuring equal educational opportunities for all genders, eliminating bias in education"
+      },
+      "politicalParticipation": {
+        "title": "Political Participation",
+        "description": "Increasing women's representation and participation in political decision-making"
+      },
+      "familyRoles": {
+        "title": "Family Roles",
+        "description": "Redefining family responsibility allocation, breaking traditional gender role constraints"
+      },
+      "genderViolence": {
+        "title": "Gender Violence",
+        "description": "Addressing and stopping all forms of gender-based violence, protecting victims' rights"
+      },
+      "mediaRepresentation": {
+        "title": "Media Representation",
+        "description": "Critiquing gender stereotypes in media, promoting diverse expression"
+      },
+      "historicalFigures": {
+        "title": "Historical Figures",
+        "description": "Rediscovering and recognizing outstanding women in history and their contributions"
+      }
+    },
+    "team": {
+      "title": "Team Philosophy",
+      "subtitle": "Jointly maintained by volunteers passionate about the feminist cause",
+      "description": "FemRes is an open-source project driven by volunteers. Our team members come from different backgrounds, including technical developers, content editors, feminist researchers, and social activists. We come together because of a shared belief: in the power of knowledge and in a future of gender equality.",
+      "openSource": {
+        "title": "Open Source Transparency",
+        "description": "Code and content strategies are completely open"
+      },
+      "communityDriven": {
+        "title": "Community Driven",
+        "description": "Everyone is welcome to participate and contribute"
+      },
+      "nonProfit": {
+        "title": "Non-profit",
+        "description": "Purely working to promote equality"
+      }
+    },
+    "joinUs": {
+      "title": "Join Us, Grow Together",
+      "description": "Whether you are a content creator, technical developer, research scholar, or enthusiastic reader, you are welcome to join the FemRes community and contribute to the cause of gender equality together",
+      "contributeContent": "Contribute Content",
+      "githubProject": "GitHub Project"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "If you have any questions, suggestions, or collaboration intentions, please feel free to contact us through the following methods"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We value every feedback and look forward to connecting with you",
+    "options": {
+      "generalInquiry": {
+        "title": "General Inquiry",
+        "description": "Have any questions about FemRes? We're happy to help"
+      },
+      "contentSubmission": {
+        "title": "Content Submission",
+        "description": "Have quality content to share? We welcome your submissions"
+      },
+      "partnership": {
+        "title": "Partnership",
+        "description": "Looking for collaboration opportunities? Let's work together to promote gender equality"
+      },
+      "volunteer": {
+        "title": "Volunteer Recruitment",
+        "description": "Want to join our volunteer team? We welcome your participation"
+      }
+    },
+    "form": {
+      "title": "Leave Us a Message",
+      "subtitle": "Fill out the form below and we'll get back to you soon",
+      "name": "Your Name",
+      "namePlaceholder": "Please enter your name",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "Please select a subject",
+      "message": "Message",
+      "messagePlaceholder": "Please describe your needs or questions in detail...",
+      "privacy": "I have read and agree to the Privacy Policy and Terms of Service",
+      "send": "Send Message",
+      "required": "*",
+      "subjects": {
+        "general": "General Inquiry",
+        "content": "Content Submission",
+        "partnership": "Partnership",
+        "volunteer": "Volunteer Application",
+        "feedback": "Feedback",
+        "other": "Other"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Here are answers to some common questions",
+      "howToSubmit": {
+        "question": "How to submit content to FemRes?",
+        "answer": "You can submit content by sending an email to submissions@femres.org. Please include the content title, author, description, relevant links, and other information in your email. Our editorial team will carefully review each submission and respond within 7 business days."
+      },
+      "howToFilter": {
+        "question": "How does FemRes filter content?",
+        "answer": "We use a combination of AI technology and manual review. First, algorithms screen high-quality content, then professional editorial teams conduct secondary reviews to ensure content accuracy, relevance, and value. We particularly focus on content diversity and inclusivity."
+      },
+      "howToVolunteer": {
+        "question": "How to become a FemRes volunteer?",
+        "answer": "We welcome volunteers from all fields! Please send an email to volunteer@femres.org, introducing your background, expertise, and areas you'd like to contribute to. We need various types of volunteers including content editors, technical developers, designers, and translators."
+      },
+      "donations": {
+        "question": "Does FemRes accept donations?",
+        "answer": "As a non-profit project, we rely on volunteers and community support to operate. If you wish to support our work through donations, please contact partnership@femres.org for details. All donations will be used for platform maintenance and content development."
+      },
+      "reportIssues": {
+        "question": "How to report content issues or errors?",
+        "answer": "If you find any content errors, broken links, or inappropriate content, please contact us immediately at info@femres.org. Please provide specific page links and problem descriptions, and we will handle them as soon as possible."
+      }
+    },
+    "info": {
+      "title": "Contact Information",
+      "email": "Main Email: contact@femres.org",
+      "responseTime": "Response Time: Weekdays 9:00 - 18:00 (UTC+8)",
+      "serviceScope": "Service Scope: Global",
+      "note": "FemRes is an open-source project operated by volunteers, and we strive to respond to all inquiries within 48 hours"
+    }
+  },
+  "contribute": {
+    "title": "Contribute Content",
+    "subtitle": "Your contributions will help more people understand feminism and jointly promote gender equality",
+    "types": {
+      "title": "What can you contribute?",
+      "subtitle": "FemRes welcomes various forms of high-quality content contributions",
+      "books": {
+        "title": "Book Recommendations",
+        "description": "Recommend excellent feminist-related books, including theoretical works, literary works, biographies, etc.",
+        "requirements": [
+          "Books must be related to feminism or gender studies",
+          "Provide detailed book information and reasons for recommendation",
+          "Ensure book information is accurate"
+        ]
+      },
+      "articles": {
+        "title": "Article Sharing",
+        "description": "Share high-quality articles, including academic papers, commentary articles, news reports, etc.",
+        "requirements": [
+          "Articles must be authoritative and credible",
+          "Provide article source and link",
+          "Content must be related to feminist issues"
+        ]
+      },
+      "videos": {
+        "title": "Video Content",
+        "description": "Recommend or create educational videos, including lectures, documentaries, interviews, etc.",
+        "requirements": [
+          "Video content must be educational",
+          "Provide complete video information",
+          "Ensure video and audio quality"
+        ]
+      },
+      "podcasts": {
+        "title": "Podcast Content",
+        "description": "Share feminist-related podcast programs and audio content",
+        "requirements": [
+          "Podcast content must be relevant to the theme",
+          "Provide podcast platform links",
+          "Note podcast language and duration"
+        ]
+      },
+      "academic": {
+        "title": "Academic Papers",
+        "description": "Share peer-reviewed academic research and papers",
+        "requirements": [
+          "Must be peer-reviewed academic papers",
+          "Provide complete citation information",
+          "Ensure papers are publicly accessible"
+        ]
+      },
+      "translation": {
+        "title": "Translation Work",
+        "description": "Help translate quality content to give more people learning opportunities",
+        "requirements": [
+          "Possess relevant language skills",
+          "Ensure translation quality and accuracy",
+          "Respect original work copyright"
+        ]
+      }
+    },
+    "process": {
+      "title": "Contribution Process",
+      "subtitle": "Simple steps to easily share your content",
+      "steps": [
+        {
+          "title": "Submit Content",
+          "description": "Submit your content suggestions through forms or GitHub",
+          "icon": "📧"
+        },
+        {
+          "title": "Quality Review",
+          "description": "Our team will carefully review content quality and relevance",
+          "icon": "🔍"
+        },
+        {
+          "title": "Publish & Share",
+          "description": "Approved content will be officially published on the platform",
+          "icon": "🚀"
+        }
+      ]
+    },
+    "guidelines": {
+      "title": "Contribution Guidelines",
+      "subtitle": "Please follow these guidelines to ensure content quality",
+      "rules": [
+        {
+          "title": "Content Relevance",
+          "description": "All content must be directly related to feminism, gender studies, or related topics"
+        },
+        {
+          "title": "Quality Standards",
+          "description": "Ensure content has educational value, accuracy, and credibility"
+        },
+        {
+          "title": "Copyright Respect",
+          "description": "Respect intellectual property and ensure shared content doesn't infringe on others' copyrights"
+        },
+        {
+          "title": "Inclusivity",
+          "description": "Welcome diverse perspectives, but do not accept discriminatory or hate speech"
+        }
+      ]
+    },
+    "recognition": {
+      "title": "Contributor Recognition",
+      "subtitle": "Thank you to every friend who contributes to FemRes",
+      "benefits": [
+        "Credit contributor information on relevant content pages",
+        "Receive FemRes community recognition badges",
+        "Priority access to platform feature testing",
+        "Invitations to online/offline events",
+        "Exclusive contributor newsletter"
+      ]
+    },
+    "submission": {
+      "title": "Start Contributing",
+      "subtitle": "Fill out the form below to submit your content to us",
+      "form": {
+        "name": "Your Name",
+        "namePlaceholder": "Please enter your name",
+        "email": "Email Address",
+        "emailPlaceholder": "your@email.com",
+        "contentType": "Content Type",
+        "contentTypePlaceholder": "Please select content type",
+        "contentTypes": {
+          "book": "Book Recommendation",
+          "article": "Article Sharing",
+          "video": "Video Resource",
+          "podcast": "Podcast Program",
+          "paper": "Academic Paper",
+          "original": "Original Content"
+        },
+        "title": "Content Title",
+        "titlePlaceholder": "Please enter content title",
+        "link": "Related Link (if any)",
+        "linkPlaceholder": "https://example.com",
+        "topics": "Related Topics (multiple selection allowed)",
+        "topicCategories": {
+          "theoretical": "Theoretical Schools",
+          "movement": "Movement Issues",
+          "critique": "Critical Domains",
+          "historical": "Historical Context",
+          "special": "Special Concepts"
+        },
+        "topicsList": {
+          "intersectional": "Intersectional Feminism",
+          "marxist": "Marxist Feminism",
+          "decolonial": "Decolonial Feminism",
+          "radical": "Radical Feminism",
+          "liberal": "Liberal Feminism",
+          "black": "Black Feminism",
+          "trans": "Trans Feminism",
+          "eco": "Ecofeminism",
+          "workplace": "Workplace Equality",
+          "equalPay": "Equal Pay",
+          "reproductive": "Reproductive Autonomy",
+          "abortion": "Abortion Rights",
+          "antiViolence": "Anti-Sexual Violence",
+          "political": "Political Participation",
+          "education": "Education Equality",
+          "family": "Family Liberation",
+          "sports": "Sports Equality",
+          "economic": "Economic Empowerment",
+          "patriarchy": "Patriarchy Critique",
+          "capitalism": "Capitalism Critique",
+          "media": "Media Representation Critique",
+          "religious": "Religious Patriarchy Critique",
+          "cultural": "Cultural Critique",
+          "secondWave": "Second Wave Feminism",
+          "thirdWave": "Third Wave Feminism",
+          "fourthWave": "Fourth Wave Feminism",
+          "metoo": "MeToo Movement",
+          "chinese": "Chinese Feminist Movement",
+          "emotional": "Emotional Labor",
+          "care": "Ethics of Care",
+          "psychology": "Feminist Psychology",
+          "art": "Feminist Art"
+        },
+        "customTopics": "Other Topics (custom input)",
+        "customTopicsPlaceholder": "If there are other topics, please separate with commas",
+        "description": "Content Description",
+        "descriptionPlaceholder": "Please describe the content in detail, including main points, reasons for recommendation, etc...",
+        "terms": "I confirm that the submitted content is authentic and valid, and I agree to FemRes's",
+        "termsLink": "submission terms",
+        "submit": "Submit Contribution"
+      }
+    },
+    "github": {
+      "title": "Contribute via GitHub",
+      "subtitle": "FemRes is an open-source project, you can also directly submit content or improve code through GitHub",
+      "visitRepo": "Visit GitHub Repository",
+      "viewGuide": "View Contribution Guide"
+    },
+    "support": {
+      "title": "Support Us Through Donations",
+      "subtitle": "If you find FemRes content valuable, please consider buying us a coffee. Your support will help us:",
+      "benefits": [
+        {
+          "title": "Discover More Content",
+          "description": "Invest more time in curating high-quality resources",
+          "icon": "🔍"
+        },
+        {
+          "title": "Improve Platform Features",
+          "description": "Develop new features and enhance user experience",
+          "icon": "⚡"
+        },
+        {
+          "title": "Keep Project Free",
+          "description": "Ensure all users can access these resources for free",
+          "icon": "💝"
+        }
+      ],
+      "button": "☕ Buy me a coffee",
+      "thankYou": "Any amount of support will warm our hearts 💝"
+    }
+  },
+  "footer": {
+    "description": "A feminist content aggregation platform dedicated to advancing gender equality and bringing together high-quality feminist content from around the world.",
+    "resourceTypes": "Resource Types",
+    "community": "Community",
+    "links": {
+      "books": "📚 Book Recommendations",
+      "articles": "📰 Featured Articles",
+      "videos": "🎬 Video Resources",
+      "films": "🎬 Film Analysis",
+      "podcasts": "🎧 Podcast Channels",
+      "papers": "📄 Academic Papers",
+      "about": "📋 About Us",
+      "contact": "📧 Contact Us",
+      "contribute": "💡 Contribute Content",
+      "feedback": "🐛 Feedback & Suggestions",
+      "source": "⭐ Source Code",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "copyright": "© 2025 FemRes. All rights reserved."
+  }
+}

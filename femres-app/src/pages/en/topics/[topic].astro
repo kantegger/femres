@@ -1,0 +1,359 @@
+---
+export const prerender = true;
+
+import Layout from '../../../layouts/Layout.astro';
+import ContentCard from '../../../components/ContentCard.astro';
+import BookCard from '../../../components/BookCard.astro';
+import PodcastCard from '../../../components/PodcastCard.astro';
+import VideoCard from '../../../components/VideoCard.astro';
+import { getCollection } from 'astro:content';
+import { createT, getLocalizedPath } from '../../../i18n/index';
+import {
+  getTopicTranslation,
+  getTopicIcon
+} from '../../../i18n/topicsUtils';
+
+const currentLocale = 'en';
+const t = createT(currentLocale);
+
+export async function getStaticPaths() {
+  const books = await getCollection('books');
+  const articles = await getCollection('articles');
+  const videos = await getCollection('videos');
+  const podcasts = await getCollection('podcasts');
+  const papers = await getCollection('papers');
+
+  const allContent = [
+    ...books.map(item => ({ ...item, contentType: 'book' as const })),
+    ...articles.map(item => ({ ...item, contentType: 'article' as const })),
+    ...videos.map(item => ({ ...item, contentType: 'video' as const })),
+    ...podcasts.map(item => ({ ...item, contentType: 'podcast' as const })),
+    ...papers.map(item => ({ ...item, contentType: 'paper' as const }))
+  ];
+
+  // 获取所有唯一的主题（现在都是英文标识符）
+  const allTopics = [...new Set(allContent.flatMap(item => item.data.topics))];
+
+  return allTopics.map(topic => ({
+    params: { topic: topic },
+    props: { topic, allContent }
+  }));
+}
+
+const { topic, allContent } = Astro.props;
+const decodedTopic = decodeURIComponent(topic);
+const translatedTopic = getTopicTranslation(decodedTopic, 'en');
+
+// 筛选包含该主题的内容，只显示英文内容
+const topicContent = allContent.filter(item => {
+  // 检查是否包含该主题
+  if (!item.data.topics.includes(decodedTopic)) return false;
+
+  // 只显示英文内容（带-en后缀）
+  return item.slug.endsWith('-en');
+}).sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
+
+// 获取相关主题（与当前主题经常一起出现的其他主题）
+const relatedTopics = topicContent
+  .flatMap(item => item.data.topics)
+  .filter(t => t !== decodedTopic)
+  .reduce((acc, t) => {
+    acc[t] = (acc[t] || 0) + 1;
+    return acc;
+  }, {} as Record<string, number>);
+
+const topRelatedTopics = Object.entries(relatedTopics)
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 6)
+  .map(([topic]) => topic);
+
+// 统计信息
+const contentTypeStats = topicContent.reduce((acc, item) => {
+  acc[item.contentType] = (acc[item.contentType] || 0) + 1;
+  return acc;
+}, {} as Record<string, number>);
+
+const contentTypeLabels = {
+  book: 'Books',
+  article: 'Articles',
+  video: 'Videos',
+  podcast: 'Podcasts',
+  paper: 'Papers'
+};
+
+// Generate localized URLs
+const homeLink = getLocalizedPath('/', currentLocale);
+---
+
+<Layout
+  title={`${translatedTopic} - Topic Page - FemRes`}
+  description={`Explore quality feminist content about ${translatedTopic}, including books, articles, videos and more`}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topic Header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center justify-center w-24 h-24 bg-purple-100 dark:bg-purple-900 rounded-full mb-6">
+        <span class="text-4xl">
+          {getTopicIcon(decodedTopic)}
+        </span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+        {translatedTopic}
+      </h1>
+
+      <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+        <span class="font-semibold text-purple-600 dark:text-purple-400">{topicContent.length}</span> related content items found
+      </p>
+
+      <!-- Breadcrumb -->
+      <nav class="flex justify-center mb-8">
+        <ol class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+          <li><a href={homeLink} class="hover:text-purple-600 dark:hover:text-purple-400">Home</a></li>
+          <li><span class="mx-2">/</span></li>
+          <li><a href={getLocalizedPath('topics', currentLocale)} class="hover:text-purple-600 dark:hover:text-purple-400">Topics</a></li>
+          <li><span class="mx-2">/</span></li>
+          <li class="text-gray-900 dark:text-white font-medium">{translatedTopic}</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Content by Type -->
+    {topicContent.length > 0 ? (
+      <section class="mb-16">
+
+        <!-- Books Section -->
+        {topicContent.filter(item => item.contentType === 'book').length > 0 && (
+          <div class="mb-12">
+            <div class="flex items-center mb-6">
+              <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
+                <span class="text-3xl mr-3">📚</span>
+                Books
+                <span class="ml-2 px-2 py-1 text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
+                  {topicContent.filter(item => item.contentType === 'book').length}
+                </span>
+              </h3>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+              {topicContent.filter(item => item.contentType === 'book').map(item => (
+                <BookCard
+                  title={item.data.title}
+                  author={item.data.author}
+                  description={item.data.description}
+                  coverImage={item.data.coverImage}
+                  publishDate={item.data.publishDate}
+                  slug={item.slug}
+                  topics={item.data.topics}
+                  isbn={item.data.isbn}
+                  locale={currentLocale}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Articles Section -->
+        {topicContent.filter(item => item.contentType === 'article').length > 0 && (
+          <div class="mb-12">
+            <div class="flex items-center mb-6">
+              <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
+                <span class="text-3xl mr-3">📰</span>
+                Articles
+                <span class="ml-2 px-2 py-1 text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
+                  {topicContent.filter(item => item.contentType === 'article').length}
+                </span>
+              </h3>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+              {topicContent.filter(item => item.contentType === 'article').map(item => (
+                <ContentCard
+                  title={item.data.title}
+                  author={item.data.author}
+                  description={item.data.description}
+                  contentType={item.contentType}
+                  topics={item.data.topics}
+                  publishDate={item.data.publishDate}
+                  sourceUrl={item.data.sourceUrl}
+                  slug={item.slug}
+                  readingTime={item.data.readingTime}
+                  duration={item.data.duration}
+                  locale={currentLocale}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Videos Section -->
+        {topicContent.filter(item => item.contentType === 'video').length > 0 && (
+          <div class="mb-12">
+            <div class="flex items-center mb-6">
+              <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
+                <span class="text-3xl mr-3">🎥</span>
+                Videos
+                <span class="ml-2 px-2 py-1 text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
+                  {topicContent.filter(item => item.contentType === 'video').length}
+                </span>
+              </h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {topicContent.filter(item => item.contentType === 'video').map(item => (
+                <VideoCard
+                  title={item.data.title}
+                  author={item.data.author}
+                  description={item.data.description}
+                  slug={item.slug}
+                  thumbnail={item.data.thumbnail}
+                  publishDate={item.data.publishDate}
+                  duration={item.data.duration}
+                  sourceUrl={item.data.sourceUrl}
+                  topics={item.data.topics}
+                  locale={currentLocale}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Podcasts Section -->
+        {topicContent.filter(item => item.contentType === 'podcast').length > 0 && (
+          <div class="mb-12">
+            <div class="flex items-center mb-6">
+              <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
+                <span class="text-3xl mr-3">🎧</span>
+                Podcasts
+                <span class="ml-2 px-2 py-1 text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
+                  {topicContent.filter(item => item.contentType === 'podcast').length}
+                </span>
+              </h3>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {topicContent.filter(item => item.contentType === 'podcast').map(item => (
+                <PodcastCard
+                  title={item.data.title}
+                  author={item.data.author}
+                  description={item.data.description}
+                  slug={item.slug}
+                  thumbnail={item.data.thumbnail}
+                  publishDate={item.data.publishDate}
+                  duration={item.data.duration}
+                  sourceUrl={item.data.sourceUrl}
+                  topics={item.data.topics}
+                  episodeNumber={item.data.episodeNumber}
+                  locale={currentLocale}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Papers Section -->
+        {topicContent.filter(item => item.contentType === 'paper').length > 0 && (
+          <div class="mb-12">
+            <div class="flex items-center mb-6">
+              <h3 class="text-2xl font-semibold text-gray-900 dark:text-white flex items-center">
+                <span class="text-3xl mr-3">📄</span>
+                Papers
+                <span class="ml-2 px-2 py-1 text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
+                  {topicContent.filter(item => item.contentType === 'paper').length}
+                </span>
+              </h3>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+              {topicContent.filter(item => item.contentType === 'paper').map(item => (
+                <ContentCard
+                  title={item.data.title}
+                  author={item.data.author}
+                  description={item.data.description}
+                  contentType={item.contentType}
+                  topics={item.data.topics}
+                  publishDate={item.data.publishDate}
+                  sourceUrl={item.data.sourceUrl}
+                  slug={item.slug}
+                  readingTime={item.data.readingTime}
+                  duration={item.data.duration}
+                  locale={currentLocale}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+      </section>
+    ) : (
+      <section class="text-center py-16">
+        <div class="max-w-md mx-auto">
+          <div class="text-6xl mb-6">🔍</div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            No Related Content
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400 mb-8">
+            We're working on collecting quality content about "{translatedTopic}". Stay tuned!
+          </p>
+          <a
+            href={getLocalizedPath('topics', currentLocale)}
+            class="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-md transition-colors"
+          >
+            Browse Other Topics
+          </a>
+        </div>
+      </section>
+    )}
+
+    <!-- Related Topics -->
+    {topRelatedTopics.length > 0 && (
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+          Related Topics
+        </h2>
+        <div class="flex flex-wrap justify-center gap-3">
+          {topRelatedTopics.map(relatedTopic => (
+            <a
+              href={getLocalizedPath(`topics/${encodeURIComponent(relatedTopic)}`, currentLocale)}
+              class="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-full hover:border-purple-500 dark:hover:border-purple-400 hover:shadow-md transition-all duration-200 group"
+            >
+              <span class="text-xl mr-2">
+                {getTopicIcon(relatedTopic)}
+              </span>
+              <span class="font-medium text-gray-700 dark:text-gray-300 group-hover:text-purple-600 dark:group-hover:text-purple-400">
+                {getTopicTranslation(relatedTopic, 'en')}
+              </span>
+              <span class="ml-2 px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-full">
+                {relatedTopics[relatedTopic]}
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Call to Action -->
+    <section class="text-center">
+      <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          Discover More Content
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+          Explore more feminist-related topics and content
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href={getLocalizedPath('search', currentLocale)}
+            class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-md transition-colors"
+          >
+            Search Content
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </a>
+          <a
+            href={getLocalizedPath('topics', currentLocale)}
+            class="inline-flex items-center justify-center px-6 py-3 border border-purple-600 text-purple-600 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20 font-medium rounded-md transition-colors"
+          >
+            Browse All Topics
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

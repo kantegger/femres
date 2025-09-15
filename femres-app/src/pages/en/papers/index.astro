@@ -1,0 +1,133 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import PaperCard from '../../../components/PaperCard.astro';
+import Pagination from '../../../components/Pagination.astro';
+import { createT } from '../../../i18n/index';
+import { getTopicTranslation, findTopicByName } from '../../../i18n/topicsUtils';
+
+const currentLocale = 'en';
+const t = createT(currentLocale);
+
+const papers = await getCollection('papers');
+// 英文界面只显示带-en后缀的论文
+const publishedPapers = papers.filter(paper => {
+  const isPublished = paper.data.status === 'published';
+  if (!isPublished) return false;
+  return paper.slug.endsWith('-en');
+});
+
+const sortedPapers = publishedPapers.sort((a, b) => {
+  return new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime();
+});
+
+const allTopics = [...new Set(publishedPapers.flatMap(paper => paper.data.topics))].sort();
+
+const PAPERS_PER_PAGE = 15;
+const totalPapers = publishedPapers.length;
+const totalPages = Math.ceil(totalPapers / PAPERS_PER_PAGE);
+
+const currentPage = Number(Astro.url.searchParams.get('page') || '1');
+const validPage = Math.max(1, Math.min(currentPage, totalPages));
+
+const startIndex = (validPage - 1) * PAPERS_PER_PAGE;
+const endIndex = startIndex + PAPERS_PER_PAGE;
+const currentPagePapers = sortedPapers.slice(startIndex, endIndex);
+---
+
+<Layout
+  title={`${t('nav.papers')} - FemRes`}
+  description="Access cutting-edge academic research in feminist studies, gender theory, and related disciplines from leading scholars worldwide."
+>
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            📄 {t('nav.papers')}
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+            Explore the latest academic research in feminist studies, gender theory, and intersectional scholarship from leading institutions
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-6 text-sm">
+            <div class="flex items-center bg-purple-50 dark:bg-purple-900/20 px-4 py-2 rounded-full">
+              <span class="text-purple-600 dark:text-purple-400 mr-2">📚</span>
+              <span class="text-purple-800 dark:text-purple-200">{totalPapers} papers total</span>
+            </div>
+            <div class="flex items-center bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-full">
+              <span class="text-blue-600 dark:text-blue-400 mr-2">🏷️</span>
+              <span class="text-blue-800 dark:text-blue-200">{allTopics.length} topic categories</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Topic Categories</h2>
+        <div class="relative">
+          <div id="topics-container" class="flex flex-wrap gap-3 overflow-hidden transition-all duration-300" style="max-height: 90px;">
+            <button class="filter-btn inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium" data-filter="all">
+              All Papers
+            </button>
+            {allTopics.map(topic => {
+              const topicInfo = findTopicByName(topic);
+              const translatedTopic = topicInfo
+                ? getTopicTranslation(topic, currentLocale as 'zh-CN' | 'en')
+                : topic;
+              return (
+                <button class="filter-btn inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-sm" data-filter={topic}>
+                  {translatedTopic}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Latest Research</h2>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">
+              Showing {currentPagePapers.length} of {totalPapers} papers (Page {validPage} of {totalPages})
+            </p>
+          </div>
+        </div>
+
+        <div id="papers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {currentPagePapers.map(paper => (
+            <div class="paper-item" data-topics={paper.data.topics.join(',')}>
+              <PaperCard
+                title={paper.data.title}
+                author={paper.data.author}
+                description={paper.data.description}
+                publishDate={paper.data.publishDate}
+                slug={paper.slug}
+                topics={paper.data.topics}
+                journal={paper.data.journal}
+                doi={paper.data.doi}
+                citationCount={paper.data.citationCount}
+                paperType={paper.data.paperType}
+                locale={currentLocale}
+              />
+            </div>
+          ))}
+        </div>
+
+        {totalPages > 1 && (
+          <div class="flex justify-center mt-12">
+            <Pagination
+              currentPage={validPage}
+              totalPages={totalPages}
+              baseUrl="/en/papers"
+              locale={currentLocale}
+            />
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</Layout>
