@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(do if [[ ! \"$file\" =~ -en.md$ ]])"
+      "Bash(do if [[ ! \"$file\" =~ -en.md$ ]])",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
