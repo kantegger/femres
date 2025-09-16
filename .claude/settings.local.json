@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(do if [[ ! \"$file\" =~ -en.md$ ]])",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []
