@@ -3,7 +3,7 @@ title: "BK座谈：女性主义教学法"
 author: "BKTUDelft"
 description: "这个视频记录了一场题为'女性主义教学法'的小组讨论，来自建筑和城市设计领域的演讲者们分享了他们与女性主义相关的经验。讨论涵盖了如何在设计中应用女性主义价值观、认可女性贡献的重要性，以及挑战现有父权制和资本主义结构的必要性。还重点介绍了一个女性主义空间实践的在线平台，并讨论了将学术理论转化为专业实践的挑战。"
 publishDate: 2025-03-05
-language: "zh"
+language: "en"
 topics: ["Feminist Literary Criticism", "Cultural Critique", "Capitalism Critique", "Patriarchy Critique", "Intersectional Feminism", "Academic Patriarchy Critique", "Ethics of Care", "Race and Gender", "Digital Feminism", "Political Participation"]
 sourceUrl: "https://www.youtube.com/watch?v=JolSkUu1c7Y"
 embedUrl: "https://www.google.com/search?q=https://www.youtube.com/embed/JolSkUu1c7Y"

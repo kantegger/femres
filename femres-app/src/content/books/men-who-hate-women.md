@@ -5,7 +5,7 @@ author: "劳拉·贝茨"
 description: "对极端厌女症网络世界的开创性调查，揭露非自愿独身者社区、搭讪艺术家和更广泛的'男性圈'如何让男性激进化反对女性。贝茨揭示了数字仇恨的危险现实后果及其对整个社会的影响。"
 publishDate: 2021-03-02
 isbn: "9781728236247"
-language: "zh"
+language: "en"
 topics: ["Men's Rights Movement Critique", "Digital Feminism", "Cultural Critique", "Anti-Feminism Studies", "Patriarchy Critique", "Media Representation Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=men+who+hate+women+laura+bates&tag=inkrupt-22"
 coverImage: "/images/books/men-who-hate-women.jpg"

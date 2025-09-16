@@ -3,7 +3,7 @@ title: "2010年代流行女性主义：痛苦的回望"
 author: "Lily Alexandre"
 description: "在这个视频中，Lily Alexandre对流行女性主义进行了回顾性分析，审视其兴起、批判和最终衰落。视频对比了该运动专注于意识觉醒与需要更系统性、唯物主义的社会变革方法之间的差异。"
 publishDate: 2023-09-21
-language: "zh"
+language: "en"
 topics: ["Pop Culture Feminism", "Cultural Critique", "Media Representation Critique", "Anti-Feminism Studies", "Feminist Literary Criticism"]
 sourceUrl: "https://www.youtube.com/watch?v=bmnsK74khNw"
 embedUrl: "https://www.youtube.com/embed/bmnsK74khNw"

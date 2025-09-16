@@ -5,7 +5,7 @@ author: "卡罗琳·麦钱特"
 description: "生态女性主义学术研究的开创性作品，审视了科学革命如何将西方文化对自然的理解从一个有生命的、滋养的有机体转变为一个死亡的、可被剥削的机械物体。麦钱特揭示了女性统治与自然统治之间的密切联系。"
 publishDate: 1980-09-01
 isbn: "9780062505958"
-language: "zh"
+language: "en"
 topics: ["Ecofeminism", "Scientific Revolution", "Patriarchy Critique", "Capitalism Critique", "Cultural Critique", "Feminist Literary Criticism"]
 sourceUrl: "https://www.amazon.sg/s?k=the+death+of+nature+carolyn+merchant&tag=inkrupt-22"
 coverImage: "/images/books/the-death-of-nature.jpg"

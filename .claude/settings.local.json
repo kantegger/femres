@@ -3,7 +3,8 @@
     "allow": [
       "Bash(do if [[ ! \"$file\" =~ -en.md$ ]])",
       "Bash(git add:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(sed:*)"
     ],
     "deny": [],
     "ask": []

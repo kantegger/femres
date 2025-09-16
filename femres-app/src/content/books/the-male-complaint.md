@@ -5,7 +5,7 @@ author: "西蒙·詹姆斯·科普兰"
 description: "对网络男性圈及其与当代厌女症关系的全面分析。科普兰审视了数字平台如何促成厌女主义社区的形成，这些社区将历史上的男性不满与现代技术能力相结合，创造了新形式的反女性主义抵抗。"
 publishDate: 2025-02-07
 isbn: "9781509562565"
-language: "zh"
+language: "en"
 topics: ["Digital Feminism", "Men's Rights Movement Critique", "Cultural Critique", "Anti-Feminism Studies", "Media Representation Critique", "Patriarchy Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=the+male+complaint+simon+james+copland&tag=inkrupt-22"
 coverImage: "/images/books/the-male-complaint.jpg"

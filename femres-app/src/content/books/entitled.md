@@ -5,7 +5,7 @@ author: "凯特·曼恩"
 description: "继开创性的《压制女性》之后，曼恩审视男性特权如何在各个领域运作——从亲密关系到医疗保健到政治——揭示男性无理的特权感如何系统性地伤害女性并破坏性别平等。"
 publishDate: 2020-08-11
 isbn: "9781984826558"
-language: "zh"
+language: "en"
 topics: ["Patriarchy Critique", "Male Privilege", "Cultural Critique", "Bodily Autonomy", "Political Participation", "Intersectional Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=entitled+how+male+privilege+hurts+women+kate+manne&tag=inkrupt-22"
 coverImage: "/images/books/entitled.jpg"

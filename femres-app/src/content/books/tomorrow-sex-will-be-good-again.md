@@ -5,7 +5,7 @@ author: "凯瑟琳·安吉尔"
 description: "对当代积极同意时代中女性性欲、欲望和能动性的挑衅性审视。安吉尔挑战了关于性赋权的简化叙事，探索了在#MeToo运动之后，同意、欲望和女性性自主之间的复杂关系。"
 publishDate: 2022-02-08
 isbn: "9781788739207"
-language: "zh"
+language: "en"
 topics: ["Bodily Autonomy", "Sexual Liberation", "MeToo Movement", "Cultural Critique", "Feminist Literary Criticism", "Third Wave Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=tomorrow+sex+will+be+good+again+katherine+angel&tag=inkrupt-22"
 coverImage: "/images/books/tomorrow-sex-will-be-good-again.jpg"

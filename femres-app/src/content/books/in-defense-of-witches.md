@@ -5,7 +5,7 @@ author: "莫娜·肖莱"
 description: "一部强有力的女性主义分析，将历史上的女巫猎杀与当代对女性自主权的攻击联系起来。肖莱审视了对'女巫'——独立女性、无子女性和老年女性——的迫害如何建立了继续塑造社会如何对待违抗传统角色女性的厌女症模式。"
 publishDate: 2022-01-06
 isbn: "9781529034042"
-language: "zh"
+language: "en"
 topics: ["Historical Feminism", "Patriarchy Critique", "Bodily Autonomy", "Cultural Critique", "Women's History", "Witch Trials"]
 sourceUrl: "https://www.amazon.sg/s?k=in+defense+of+witches+mona+chollet&tag=inkrupt-22"
 coverImage: "/images/books/in-defense-of-witches.jpg"
