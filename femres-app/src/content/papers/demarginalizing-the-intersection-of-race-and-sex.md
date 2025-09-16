@@ -4,7 +4,7 @@ originalTitle: "Demarginalizing the Intersection of Race and Sex: A Black Femini
 author: "金伯利·克伦肖"
 description: "这篇奠基性论文通过黑人女性主义视角对反歧视法、女性主义理论和反种族主义政治进行批判，首次提出了交叉性概念。克伦肖论证了法律和政治话语中使用的单轴框架未能考虑种族和性别歧视的复合性质，从而边缘化了黑人女性。"
 publishDate: 1989-01-01
-language: zh-CN
+language: en
 topics: ["Intersectional Feminism", "Black Feminism", "Legal Equality", "Patriarchy Critique", "Epistemic Colonialism Critique"]
 sourceUrl: "https://chicagounbound.uchicago.edu/uclf/vol1989/iss1/8/"
 doi: "0892-5593"

@@ -4,7 +4,7 @@ originalTitle: "Under Western Eyes: Feminist Scholarship and Colonial Discourses
 author: "钱德拉·塔尔帕德·莫汉蒂"
 description: "这篇影响深远的论文批评了将第三世界女性表征为单一、受压迫群体且缺乏能动性的西方女性主义学术研究。莫汉蒂论证这种表征延续了殖民话语，并呼吁对不同文化和地缘政治位置的女性经验进行更加细致、情境化的理解。"
 publishDate: 1988-01-01
-language: zh-CN
+language: en
 topics: ["Decolonial Feminism", "Postmodern Feminism", "Epistemic Colonialism Critique", "Cultural Critique", "Third World Feminism"]
 sourceUrl: "https://www.jstor.org/stable/302821"
 doi: "10.2307/302821"

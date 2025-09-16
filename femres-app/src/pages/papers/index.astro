@@ -5,34 +5,38 @@ import PaperCard from '../../components/PaperCard.astro';
 import { createT } from '../../i18n';
 import { getTopicTranslation, findTopicByName } from '../../i18n/topicsUtils';
 
-// 获取所有已发布的中文论文
-const papers = await getCollection('papers', ({ data }) =>
-  data.status === 'published' && (!data.language || data.language === 'zh-CN')
-);
+// 获取所有已发布的中文论文（不带-en后缀的论文）
+const papers = await getCollection('papers');
+const publishedPapers = papers.filter(paper => {
+  const isPublished = paper.data.status === 'published';
+  if (!isPublished) return false;
+
+  return !paper.slug.endsWith('-en');
+});
 
 // 按发布日期排序
-const sortedPapers = papers.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
+const sortedPapers = publishedPapers.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
 
 // 统计信息
-const totalPapers = papers.length;
-const totalCitations = papers.reduce((acc, paper) => acc + (paper.data.citationCount || 0), 0);
+const totalPapers = publishedPapers.length;
+const totalCitations = publishedPapers.reduce((acc, paper) => acc + (paper.data.citationCount || 0), 0);
 
 // 获取所有主题并去重
-const allTopics = [...new Set(papers.flatMap(paper => paper.data.topics))].sort();
+const allTopics = [...new Set(publishedPapers.flatMap(paper => paper.data.topics))].sort();
 
 // 设置当前语言和翻译函数
 const currentLocale = 'zh-CN';
 const t = createT(currentLocale);
 
 // 论文类型统计
-const paperTypes = papers.reduce((acc, paper) => {
+const paperTypes = publishedPapers.reduce((acc, paper) => {
   const type = paper.data.paperType || 'research';
   acc[type] = (acc[type] || 0) + 1;
   return acc;
 }, {} as Record<string, number>);
 
 // 期刊统计
-const journalCount = new Set(papers.map(paper => paper.data.journal).filter(Boolean)).size;
+const journalCount = new Set(publishedPapers.map(paper => paper.data.journal).filter(Boolean)).size;
 
 // 格式化数字
 const formatNumber = (num: number) => {

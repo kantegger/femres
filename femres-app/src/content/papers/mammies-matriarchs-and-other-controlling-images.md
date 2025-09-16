@@ -4,7 +4,7 @@ originalTitle: "Mammies, Matriarchs, and Other Controlling Images"
 author: "帕特里夏·希尔·柯林斯"
 description: "这一章节来自柯林斯的开创性著作《黑人女性主义思想》，分析了美国文化中黑人女性身份的控制性形象——如保姆、女家长、福利女王和荡妇——以及这些刻板印象如何为种族、性别和阶级压迫的交叉体系辩护。柯林斯论证这些形象是意识形态工具，用于规制黑人女性的劳动、性和社会角色。"
 publishDate: 1990-01-01
-language: zh-CN
+language: en
 topics: ["Black Feminism", "Intersectional Feminism", "Media Representation Critique", "Capitalism Critique", "Patriarchy Critique"]
 sourceUrl: "https://www.bing.com/search?q=Mammies%2C+Matriarchs%2C+and+Other+Controlling+Images"
 doi: ""
