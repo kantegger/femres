@@ -2,7 +2,7 @@
 title: "卡推女王"
 originalTitle: "Queen of Katwe"
 director: "米拉·奈尔"
-description: "迪士尼有一种让我们感觉像是"看看我们能让他们哭得多厉害"游戏中棋子的方式。但米拉·奈尔关于一个乌干达女孩成为国际象棋冠军之路的感觉良好剧情片并非如此，改编自ESPN杂志文章。"
+description: "迪士尼有一种让我们感觉像是\"看看我们能让他们哭得多厉害\"游戏中棋子的方式。但米拉·奈尔关于一个乌干达女孩成为国际象棋冠军之路的感觉良好剧情片并非如此，改编自ESPN杂志文章。"
 posterImage: "/images/films/queen-of-katwe-2016.jpg"
 releaseDate: 2016-09-23
 year: 2016
