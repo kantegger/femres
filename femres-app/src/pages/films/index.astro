@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import FilmCard from '../../components/FilmCard.astro';
+import PageHeader from '../../components/PageHeader.astro';
 import { createT } from '../../i18n';
 import { getTopicTranslation, findTopicByName } from '../../i18n/topicsUtils';
 
@@ -62,50 +63,17 @@ const middlePages = pageNumbers.filter(num =>
   description="精选女性主义相关电影，通过影像探索性别议题、女性故事与社会批判，为观影提供多元视角。"
 >
   <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
-    <!-- Header -->
-    <div class="relative overflow-hidden text-white border-b border-white/20">
-      <!-- 磨砂玻璃渐变背景 -->
-      <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600" style="filter: saturate(1.3) contrast(1.15);"></div>
-      <!-- 粗磨砂纹理层 -->
-      <div class="absolute inset-0 opacity-65" style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.5) 1px, transparent 0); background-size: 12px 12px;"></div>
-      <!-- 中等磨砂纹理层 -->
-      <div class="absolute inset-0 opacity-45" style="background-image: radial-gradient(circle at 0.8px 0.8px, rgba(255,255,255,0.7) 0.8px, transparent 0); background-size: 6px 6px;"></div>
-      <!-- 细磨砂纹理层 -->
-      <div class="absolute inset-0 opacity-35" style="background-image: radial-gradient(circle at 0.3px 0.3px, rgba(255,255,255,0.8) 0.3px, transparent 0); background-size: 3px 3px;"></div>
-      <!-- 保持现有的玻璃叠加层 -->
-      <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.1),transparent)]"></div>
-      <div class="relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div class="relative backdrop-blur-sm">
-            <div class="text-center">
-              <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                🎬 电影推荐
-              </h1>
-              <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-                透过镜头审视性别议题，用影像记录女性故事，以电影激发社会思考
-              </p>
-
-              <!-- 统计信息 -->
-              <div class="flex flex-wrap justify-center gap-6 text-sm">
-                <div class="flex items-center bg-white/15 backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 px-4 py-2 rounded-full">
-                  <span class="text-white mr-2">🎞️</span>
-                  <span class="text-white">共 {totalFilms} 部电影</span>
-                </div>
-                <div class="flex items-center bg-white/15 backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 px-4 py-2 rounded-full">
-                  <span class="text-white mr-2">🌍</span>
-                  <span class="text-white">{allCountries.length} 个国家/地区</span>
-                </div>
-                <div class="flex items-center bg-white/15 backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 px-4 py-2 rounded-full">
-                  <span class="text-white mr-2">🎭</span>
-                  <span class="text-white">{allGenres.length} 种类型</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Page Header with Glass Effect -->
+    <PageHeader
+      title="🎬 电影推荐"
+      description="透过镜头审视性别议题，用影像记录女性故事，以电影激发社会思考"
+      gradient="purple"
+      stats={[
+        { icon: "🎞️", text: `共 ${totalFilms} 部电影` },
+        { icon: "🌍", text: `${allCountries.length} 个国家/地区` },
+        { icon: "🎭", text: `${allGenres.length} 种类型` }
+      ]}
+    />
 
     <!-- Main Content -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
