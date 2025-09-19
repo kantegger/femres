@@ -8,7 +8,7 @@ releaseDate: 2007-05-17
 year: 2007
 country: "罗马尼亚"
 duration: "113分钟"
-language: "ro"
+language: "en"
 genre: ["剧情", "社会现实"]
 cast: ["阿娜玛丽亚·马林卡", "劳拉·瓦西柳", "弗拉德·伊万诺夫", "亚历山德鲁·波托切安", "利米亚·乌加罗夫"]
 topics: ["Abortion Rights", "Reproductive Autonomy", "Historical Context", "Political Participation", "Bodily Autonomy", "Anti-Feminism Studies", "Female Friendship", "Legal Equality"]
