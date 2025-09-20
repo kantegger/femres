@@ -253,7 +253,7 @@ const enrichedArticles = articles.map(article => {
 
         <!-- 文章结果 -->
         {enrichedArticles.map(article => (
-          <div class="search-item" data-type="article" data-title={article.data.title.toLowerCase()} data-author={article.data.author.toLowerCase()} data-description={article.data.description.toLowerCase()} data-topics={article.data.topics.join(' ').toLowerCase()} data-language={article.data.language} data-date={article.data.publishDate.getTime()}>
+          <div class="search-item" data-type="article" data-title={article.data.title.toLowerCase()} data-author={article.data.author.toLowerCase()} data-description={article.data.description.toLowerCase()} data-topics={article.data.topics.join(' ').toLowerCase()} data-language={article.data.contentLanguage} data-date={article.data.publishDate.getTime()}>
             <ArticleCard
               title={article.data.title}
               author={article.data.author}
@@ -271,7 +271,7 @@ const enrichedArticles = articles.map(article => {
 
         <!-- 视频结果 -->
         {videos.map(video => (
-          <div class="search-item" data-type="video" data-title={video.data.title.toLowerCase()} data-author={video.data.author.toLowerCase()} data-description={video.data.description.toLowerCase()} data-topics={video.data.topics.join(' ').toLowerCase()} data-language={video.data.language} data-date={video.data.publishDate.getTime()}>
+          <div class="search-item" data-type="video" data-title={video.data.title.toLowerCase()} data-author={video.data.author.toLowerCase()} data-description={video.data.description.toLowerCase()} data-topics={video.data.topics.join(' ').toLowerCase()} data-language={video.data.contentLanguage} data-date={video.data.publishDate.getTime()}>
             <VideoCard
               title={video.data.title}
               author={video.data.author}
@@ -288,7 +288,7 @@ const enrichedArticles = articles.map(article => {
 
         <!-- 播客结果 -->
         {podcasts.map(podcast => (
-          <div class="search-item" data-type="podcast" data-title={podcast.data.title.toLowerCase()} data-author={podcast.data.author.toLowerCase()} data-description={podcast.data.description.toLowerCase()} data-topics={podcast.data.topics.join(' ').toLowerCase()} data-language={podcast.data.language} data-date={podcast.data.publishDate.getTime()}>
+          <div class="search-item" data-type="podcast" data-title={podcast.data.title.toLowerCase()} data-author={podcast.data.author.toLowerCase()} data-description={podcast.data.description.toLowerCase()} data-topics={podcast.data.topics.join(' ').toLowerCase()} data-language={podcast.data.contentLanguage} data-date={podcast.data.publishDate.getTime()}>
             <PodcastCard
               title={podcast.data.title}
               author={podcast.data.author}
@@ -306,7 +306,7 @@ const enrichedArticles = articles.map(article => {
 
         <!-- 论文结果 -->
         {papers.map(paper => (
-          <div class="search-item" data-type="paper" data-title={paper.data.title.toLowerCase()} data-author={paper.data.author.toLowerCase()} data-description={paper.data.description.toLowerCase()} data-topics={paper.data.topics.join(' ').toLowerCase()} data-language={paper.data.language} data-date={paper.data.publishDate.getTime()}>
+          <div class="search-item" data-type="paper" data-title={paper.data.title.toLowerCase()} data-author={paper.data.author.toLowerCase()} data-description={paper.data.description.toLowerCase()} data-topics={paper.data.topics.join(' ').toLowerCase()} data-language={paper.data.contentLanguage} data-date={paper.data.publishDate.getTime()}>
             <PaperCard
               title={paper.data.title}
               author={paper.data.author}

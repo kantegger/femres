@@ -8,7 +8,7 @@ releaseDate: 2017-09-01
 year: 2017
 country: "USA"
 duration: "94 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama", "Comedy", "Coming-of-age"]
 cast: ["Saoirse Ronan", "Laurie Metcalf", "Tracy Letts", "Lucas Hedges", "Timothée Chalamet"]
 topics: ["Family Liberation", "Economic Empowerment", "Education Equality", "Bodily Autonomy"]

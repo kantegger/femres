@@ -10,7 +10,7 @@ releaseDate: 2016-11-23
 year: 2016
 country: "USA"
 duration: "107 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Animation", "Adventure", "Musical"]
 cast: ["Auli'i Cravalho", "Dwayne Johnson", "Rachel House", "Temuera Morrison", "Jemaine Clement"]
 topics: ["Cultural Identity", "Ecofeminism", "Family Liberation", "Feminist Art"]

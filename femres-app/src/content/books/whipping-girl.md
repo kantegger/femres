@@ -5,7 +5,7 @@ author: "朱莉亚·塞拉诺"
 description: "跨性别女性主义的开创性宣言。塞拉诺从跨性别女性的独特视角，深刻分析跨恐症与性别歧视的内在联系，揭示社会对女性气质的系统性贬低和暴力。"
 publishDate: 2007-03-01
 isbn: "9781580056229"
-language: "en"
+contentLanguage: "en"
 topics: ["Trans Feminism", "Patriarchy Critique", "Bodily Autonomy", "Anti-Feminism Studies"]
 sourceUrl: "https://www.amazon.sg/s?k=whipping+girl+julia+serano&tag=inkrupt-22"
 coverImage: "/images/books/whipping-girl.jpg"

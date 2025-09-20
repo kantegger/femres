@@ -3,7 +3,7 @@ title: "Thinking Out Loud About Feminism"
 author: "Kate M. Ott" 
 description: "Through a fictional roundtable dialogue, this article explores diverse feminist perspectives, internal tensions, and the profound impact of issues like race, class, and gender identity on contemporary feminism." 
 publishDate: 2011-01-01
-language: "en" 
+contentLanguage: "en" 
 topics: ["Feminism", "Gender Equality", "Queer Theory", "Race and Class"] 
 sourceUrl: "https://reflections.yale.edu/article/womens-journeys-progress-and-peril/thinking-out-loud-about-feminism" 
 readingTime: 5

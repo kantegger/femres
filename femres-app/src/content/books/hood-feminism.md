@@ -5,7 +5,7 @@ author: "米基·肯德尔"
 description: "批判主流女性主义忽视边缘化女性的基本需求，倡导将住房、食物、教育等生存问题置于女性主义议程的核心。"
 publishDate: 2020-02-01
 isbn: "9780525560548"
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Black Feminism", "Economic Empowerment", "Class Analysis", "Race and Gender"]
 sourceUrl: "https://www.amazon.sg/s?k=hood+feminism+mikki+kendall&tag=inkrupt-22"
 coverImage: "/images/books/hood-feminism.jpg"

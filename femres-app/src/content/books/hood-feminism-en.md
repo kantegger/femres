@@ -5,7 +5,7 @@ author: "Mikki Kendall"
 description: "A powerful critique of mainstream feminism's failure to address the basic needs of marginalized women, advocating for housing, food, education, and other survival issues to be at the core of feminist agenda."
 publishDate: 2020-02-01
 isbn: "9780525560548"
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Black Feminism", "Economic Empowerment", "Class Analysis", "Race and Gender"]
 sourceUrl: "https://www.amazon.sg/s?k=hood+feminism+mikki+kendall&tag=inkrupt-22"
 coverImage: "/images/books/hood-feminism.jpg"

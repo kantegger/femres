@@ -3,7 +3,7 @@ title: "Woman: Global Women's Voices and Resilience"
 author: "Yann Arthus-Bertrand & Anastasia Mikova"
 description: "'Woman' is a global documentary featuring interviews with 2,000 women from 50 countries, presenting their authentic experiences on topics including motherhood, education, marriage, economic independence, menstruation, and sexuality. The film not only reveals the injustices faced by women worldwide but also emphasizes their inner strength and ability to change the world."
 publishDate: 2019-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Education Equality", "Economic Empowerment", "Bodily Autonomy", "Anti-Sexual Violence"]
 sourceUrl: "https://www.youtube.com/watch?v=GNsy4lWHiyc"
 embedUrl: "https://www.youtube.com/embed/GNsy4lWHiyc"

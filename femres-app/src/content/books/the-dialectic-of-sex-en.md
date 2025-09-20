@@ -5,7 +5,7 @@ author: "Shulamith Firestone"
 description: "A radical feminist masterwork proposing that technological revolution in reproductive control is key to women's liberation, offering a feminist transformation of Marxism."
 publishDate: 1970-01-01
 isbn: "9780374527877"
-language: "en"
+contentLanguage: "en"
 topics: ["Radical Feminism", "Marxist Feminism", "Reproductive Autonomy"]
 sourceUrl: "https://www.amazon.sg/s?k=dialectic+of+sex+shulamith+firestone&tag=inkrupt-22"
 coverImage: "/images/books/dialectic-of-sex.jpg"

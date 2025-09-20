@@ -8,7 +8,7 @@ releaseDate: 1980-12-19
 year: 1980
 country: "USA"
 duration: "110 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Comedy", "Drama"]
 cast: ["Jane Fonda", "Lily Tomlin", "Dolly Parton", "Dabney Coleman", "Elizabeth Wilson"]
 topics: ["Workplace Equality", "Anti-Sexual Violence", "Equal Pay", "Female Friendship", "Patriarchy Critique"]

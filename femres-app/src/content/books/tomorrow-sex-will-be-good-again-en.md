@@ -5,7 +5,7 @@ author: "Katherine Angel"
 description: "A provocative examination of women's sexuality, desire, and agency in the contemporary era of affirmative consent. Angel challenges simplistic narratives about sexual empowerment and explores the complex relationship between consent, desire, and female sexual autonomy in the wake of #MeToo."
 publishDate: 2022-02-08
 isbn: "9781788739207"
-language: "en"
+contentLanguage: "en"
 topics: ["Bodily Autonomy", "Sexual Liberation", "MeToo Movement", "Cultural Critique", "Feminist Literary Criticism", "Third Wave Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=tomorrow+sex+will+be+good+again+katherine+angel&tag=inkrupt-22"
 coverImage: "/images/books/tomorrow-sex-will-be-good-again.jpg"

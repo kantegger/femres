@@ -8,10 +8,10 @@ releaseDate: 1992-07-01
 year: 1992
 country: "USA"
 duration: "128 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Comedy", "Drama", "Sport"]
 cast: ["Tom Hanks", "Geena Davis", "Madonna", "Lori Petty", "Rosie O'Donnell", "Jon Lovitz", "David Strathairn", "Bill Pullman"]
-topics: ["Sports Equality", "Women's History", "Workplace Equality", "Patriarchy Critique", "Female Friendship", "Historical Feminism"]
+topics: ["Sports Equality", "Historical Context", "Workplace Equality", "Patriarchy Critique", "Female Friendship", "Historical Context"]
 status: "published"
 awards: ["National Film Registry Selection 2012", "Casting Society of America Award", "Young Artist Award"]
 imdbRating: "7.4"

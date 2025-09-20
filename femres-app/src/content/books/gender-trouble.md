@@ -5,7 +5,7 @@ author: "朱迪斯·巴特勒"
 description: "后现代女性主义的经典著作，提出了性别表演理论，彻底颠覆了传统的性别二元论观念。"
 publishDate: 1990-01-01
 isbn: "9787532757077"
-language: "en"
+contentLanguage: "en"
 topics: ["Postmodern Feminism", "Trans Feminism", "Cultural Critique", "Queer Theory"]
 sourceUrl: "https://www.amazon.sg/s?k=gender+trouble+judith+butler&tag=inkrupt-22"
 coverImage: "/images/books/gender-trouble.jpg"

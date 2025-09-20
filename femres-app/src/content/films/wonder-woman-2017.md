@@ -8,10 +8,10 @@ releaseDate: 2017-06-02
 year: 2017
 country: "美国"
 duration: "141分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["动作", "冒险", "奇幻"]
 cast: ["盖尔·加朵", "克里斯·派恩", "罗宾·怀特", "丹尼·休斯顿", "大卫·休里斯", "康妮·尼尔森", "埃琳娜·安纳亚"]
-topics: ["Female Empowerment", "Anti-Sexual Violence", "Patriarchy Critique", "Women's History", "Female Leadership", "Mythological Feminism"]
+topics: ["Economic Empowerment", "Anti-Sexual Violence", "Patriarchy Critique", "Historical Context", "Political Participation", "Cultural Critique"]
 status: "published"
 awards: ["2018年雨果奖最佳戏剧表现", "AFI2017年十佳电影", "青少年选择奖动作电影", "评论家选择奖最佳动作电影"]
 imdbRating: "7.3"

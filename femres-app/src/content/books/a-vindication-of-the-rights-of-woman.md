@@ -5,7 +5,7 @@ author: "玛丽·沃斯通克拉夫特"
 description: "女性主义思想史上的开创性作品，最早系统地为女性的权利和教育平等进行辩护的著作之一。"
 publishDate: 1792-01-01
 isbn: "9787100093200"
-language: "en"
+contentLanguage: "en"
 topics: ["First Wave Feminism", "Education Equality", "Legal Equality"]
 sourceUrl: "https://www.amazon.sg/s?k=vindication+rights+woman+mary+wollstonecraft&tag=inkrupt-22"
 coverImage: "/images/books/vindication-rights-woman.jpg"

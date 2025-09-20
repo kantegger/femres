@@ -3,7 +3,7 @@ title: "Unladylike"
 author: "Cristen Conger"
 description: "《Unladylike》是一档由女性主义者 Cristen Conger 主持的播客，聚焦现代女性身份的边缘议题。节目以“Where feminism meets fringe”为口号，深入剖析塑造当代女性（以及非传统女性身份）的神话、混乱与媒体叙事。内容涵盖双性恋冒名综合症、高个女孩心理、枪支文化、避孕争议等社会热点，结合深度研究与批判性视角，挑战主流性别话语。节目风格犀利、知识密度高，适合关注交叉女性主义、文化批评与社会结构的听众。"
 publishDate: 2025-07-08
-language: en
+contentLanguage: en
 topics: ["Intersectional Feminism", "Media Representation Critique", "Fourth Wave Feminism"]
 sourceUrl: "https://open.spotify.com/show/4HIbrI2ckotPHTh6REyR73"
 embedUrl: "https://open.spotify.com/embed/show/4HIbrI2ckotPHTh6REyR73"

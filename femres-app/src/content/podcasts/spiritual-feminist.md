@@ -3,7 +3,7 @@ title: "The Spiritual Feminist"
 author: "Leneth Witte"
 description: "《The Spiritual Feminist》由 Leneth Witte 主持，是一档融合女性主义与灵性探索的播客，强调自我觉察、直觉生活与女性成长旅程。节目以个人故事为线索，探讨慢生活、创伤修复、社群归属与灵性实践的交汇，风格温柔、深刻且富有疗愈性。Spotify 评分为 4.8（76 条评论），在灵性女性主义社群中广受欢迎。"
 publishDate: 2025-09-12
-language: en
+contentLanguage: en
 topics: ["Spiritual Feminism", "Feminist Psychology", "Emotional Labor", "Bodily Autonomy", "Cultural Critique"]
 sourceUrl: "https://open.spotify.com/show/5EJX98kecdxxptUpk0HgfX"
 embedUrl: "https://open.spotify.com/embed/show/5EJX98kecdxxptUpk0HgfX"

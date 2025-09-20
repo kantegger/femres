@@ -8,10 +8,10 @@ releaseDate: 1985-12-18
 year: 1985
 country: "美国"
 duration: "154分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["剧情", "历史"]
 cast: ["乌比·戈德堡", "丹尼·格洛弗", "玛格丽特·艾弗里", "奥普拉·温弗瑞", "阿道夫·凯撒", "威拉德·E·普", "阿科苏阿·布西亚", "德斯雷塔·杰克逊", "蕾·道恩·钟", "丹娜·艾维"]
-topics: ["Black Feminism", "Domestic Violence", "Sexual Abuse", "Sisterhood", "LGBTQ+ Themes", "Racial Oppression", "Female Empowerment", "Southern Gothic", "Literary Adaptation", "Coming of Age"]
+topics: ["Black Feminism", "Anti-Sexual Violence", "Anti-Sexual Violence", "Female Friendship", "Queer Theory", "Race and Gender", "Economic Empowerment", "Cultural Critique", "Women's Literature", "Identity Formation"]
 status: "published"
 awards: ["11项奥斯卡奖提名", "导演公会奖杰出导演成就（史蒂文·斯皮尔伯格）", "有色人种协进会形象奖杰出电影", "金球奖最佳电影提名", "英国电影学院奖提名"]
 imdbRating: "7.7"

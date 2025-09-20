@@ -3,7 +3,7 @@ title: "Faith and Feminism"
 author: "Meghan Tschanz"
 description: "《Faith and Feminism》是一档由前传教士、作家 Meghan Tschanz 主持的播客，旨在将女性主义重新带回教会语境。节目通过与专家、作家及亲密朋友的访谈，探讨信仰与性别正义之间的张力与可能性。内容涵盖宗教创伤、属灵虐待、女性属灵旅程、教会中的性别角色等议题，风格坦率而富有同理心，深受进步基督徒与女性主义者欢迎，评分高达 4.9（76 条评论）。"
 publishDate: 2025-09-09
-language: en
+contentLanguage: en
 topics: ["Religious Patriarchy Critique", "Christian Feminism", "Spiritual Feminism"]
 sourceUrl: "https://open.spotify.com/show/5dbvsM87ExeY3z1hP7OvK6"
 embedUrl: "https://open.spotify.com/embed/show/5dbvsM87ExeY3z1hP7OvK6"

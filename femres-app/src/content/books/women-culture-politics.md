@@ -5,7 +5,7 @@ author: "安吉拉·Y·戴维斯"
 description: "资深政治活动家安吉拉·Y·戴维斯的重要演讲与论文集，主要围绕20世纪后期性别歧视、种族主义和经济平等对话的转变。从埃及女性割礼的故事到饶舌歌词的审视，再到种族的个人政治，戴维斯犀利而精湛的散文确立了她在当代重要女性主义声音中的地位。"
 publishDate: 1989-01-01
 isbn: "9780394757209"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Intersectional Feminism", "Race and Gender", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=women+culture+politics+angela+davis&tag=inkrupt-22"
 coverImage: "/images/books/women-culture-politics.jpg"

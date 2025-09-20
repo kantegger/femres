@@ -3,7 +3,7 @@ title: "Madness Cafe"
 author: "Raquel Howard & Jennifer Bolanos"
 description: "Madness Cafe is a feminist current affairs commentary podcast hosted by Raquel Howard and Jennifer Bolanos, focusing on politics, health, culture, and women's rights issues. With a frank, intimate, and critically strong style, the content covers menopause, sexual awakening, marriage institution critique, book banning movement, psychological trauma, and the intersection of social structures. The hosts frequently invite writers, therapists, and activists to jointly explore women's experiences in midlife, trauma recovery, and social change. With a Spotify rating of 5.0 (8 reviews), it has an excellent reputation in feminist podcast circles."
 publishDate: 2025-09-11
-language: "en"
+contentLanguage: "en"
 topics: ["Feminist Psychology", "Patriarchy Critique", "Emotional Labor"]
 sourceUrl: "https://open.spotify.com/show/02hhFKCkOt1sM2Os2HIVNX"
 embedUrl: "https://open.spotify.com/embed/show/02hhFKCkOt1sM2Os2HIVNX"

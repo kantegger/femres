@@ -8,7 +8,7 @@ releaseDate: 2014-12-05
 year: 2014
 country: "美国"
 duration: "115分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["剧情", "传记", "冒险"]
 cast: ["瑞茜·威瑟斯彭", "劳拉·邓恩", "托马斯·萨多斯基", "米歇尔·休斯曼", "加比·霍夫曼"]
 topics: ["Mother-Daughter Relationships", "Bodily Autonomy", "Anti-Sexual Violence", "Ecofeminism"]

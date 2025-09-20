@@ -5,7 +5,7 @@ author: "Gerda Lerner"
 description: "Traces the origins and development of patriarchy from a historical perspective, providing crucial understanding of the historical roots of gender oppression."
 publishDate: 1986-01-01
 isbn: "9780195051858"
-language: "en"
+contentLanguage: "en"
 topics: ["Patriarchy Critique", "Historical Context", "Radical Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=creation+of+patriarchy+gerda+lerner&tag=inkrupt-22"
 coverImage: "/images/books/creation-of-patriarchy.jpg"

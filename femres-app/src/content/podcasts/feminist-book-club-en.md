@@ -3,7 +3,7 @@ title: "Feminist Book Club: The Podcast"
 author: "Renee Powers & Team"
 description: "Feminist Book Club: The Podcast is an intersectional feminist podcast hosted by Renee Powers and her team, conducting social justice conversations around books. The show uses reading as a tool for activism, exploring issues of gender, race, desire, and cultural representation. Content covers feminist literary criticism, transgender experiences, media gender politics, and commodification of sexuality, with a style blending critical analysis and intimate conversation. Spotify rating of 4.8 (25 reviews), widely popular in feminist reading communities."
 publishDate: 2025-09-11
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Media Representation Critique", "Emotional Labor"]
 sourceUrl: "https://open.spotify.com/show/3I6NcL1My0SLo1JJjCkNaN"
 embedUrl: "https://open.spotify.com/embed/show/3I6NcL1My0SLo1JJjCkNaN"

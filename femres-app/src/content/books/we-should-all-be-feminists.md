@@ -5,7 +5,7 @@ author: "奇玛曼达·恩戈齐·阿迪契"
 description: "尼日利亚作家阿迪契基于TED演讲扩展而成的小册子，以个人经历和尖锐观察，重新定义了21世纪的女性主义，让这个概念更加平易近人。"
 publishDate: 2014-07-29
 isbn: "9787559827463"
-language: "en"
+contentLanguage: "en"
 topics: ["Fourth Wave Feminism", "Decolonial Feminism", "Women's Literature", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=we+should+all+be+feminists+chimamanda+ngozi+adichie&tag=inkrupt-22"
 coverImage: "/images/books/we-should-all-be-feminists.jpg"

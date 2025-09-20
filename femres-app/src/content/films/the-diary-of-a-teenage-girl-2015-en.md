@@ -8,7 +8,7 @@ releaseDate: 2015-08-07
 year: 2015
 country: "USA"
 duration: "102 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Comedy", "Drama", "Romance"]
 cast: ["Bel Powley", "Alexander Skarsgård", "Kristen Wiig", "Christopher Meloni", "Austin Lyon", "Quinn Nagle", "Abby Wait", "Miranda Bailey", "Madeleine Waters"]
 topics: ["Female Desire", "Sexual Liberation", "Bodily Autonomy", "Feminist Art", "Cultural Critique", "Women's Rights", "Pop Culture Feminism", "Historical Context", "Gender Norms", "Identity Formation"]

@@ -5,7 +5,7 @@ author: "韩江"
 description: "2007年首次出版，2015年翻译成英文的现代寓言小说，探讨当一位家庭主妇拒绝社会期待的角色时会发生什么。当生活在首尔的家庭主妇兼平面设计师英慧在一个关于动物虐待的暴力噩梦后醒来，她立即决定成为素食主义者。这个看似无害的决定导致了英慧被家人排斥，以及她自己精神和身体的衰退。"
 publishDate: 2007-01-01
 isbn: "9780553448184"
-language: "en"
+contentLanguage: "en"
 topics: ["Bodily Autonomy", "Patriarchy Critique", "Women's Literature"]
 sourceUrl: "https://www.amazon.sg/s?k=vegetarian+han+kang&tag=inkrupt-22"
 coverImage: "/images/books/vegetarian.jpg"

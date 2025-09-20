@@ -3,7 +3,7 @@ title: "How Feminism Ends?"
 author: "Ginevra Davis"
 description: "This article starts from bodily experience to critique contemporary feminism's over-abstraction of 'gender,' exploring the inescapability of the female body, the predicament of gender theory, and the tension between women's freedom and self-exhaustion."
 publishDate: 2024-02-01
-language: "en"
+contentLanguage: "en"
 topics: ["Patriarchy Critique", "Trans Feminism", "Feminist Psychology", "Bodily Autonomy", "Anti-Feminism Studies", "Fourth Wave Feminism", "Existentialist Feminism", "Linguistic Sexism"]
 sourceUrl: "https://americanaffairsjournal.org/2024/02/how-feminism-ends/?ref=refind"
 readingTime: 20

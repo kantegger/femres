@@ -5,7 +5,7 @@ author: "夏洛特·珀金斯·吉尔曼"
 description: "1898年出版的开创性女性主义经济学著作，系统分析了女性经济依附的社会根源，提出了女性经济独立的理论基础，被誉为可与穆勒《妇女的屈从地位》媲美的重要文献。"
 publishDate: 1898-01-01
 isbn: "9781602060340"
-language: "en"
+contentLanguage: "en"
 topics: ["First Wave Feminism", "Economic Empowerment", "Marxist Feminism", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=women+and+economics+charlotte+perkins+gilman&tag=inkrupt-22"
 coverImage: "/images/books/women-and-economics.jpg"

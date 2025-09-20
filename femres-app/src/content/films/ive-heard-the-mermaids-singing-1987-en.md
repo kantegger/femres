@@ -8,10 +8,10 @@ releaseDate: 1987-09-11
 year: 1987
 country: "Canada"
 duration: "81 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Comedy", "Drama"]
 cast: ["Sheila McCarthy", "Paule Baillargeon", "Ann-Marie MacDonald", "Richard Monette", "John Evans", "Brenda Kamino"]
-topics: ["Queer Cinema", "Female Artistic Identity", "Lesbian Representation", "Canadian Feminism", "Self-Discovery", "Avant-garde Cinema", "Female Friendship", "Artistic Expression"]
+topics: ["Queer Theory", "Feminist Art", "Intersectional Feminism", "Identity Formation", "Female Friendship", "Arts and Performance"]
 status: "published"
 awards: ["Cannes Film Festival Prix de la Jeunesse 1987", "Genie Award Best Actress (Sheila McCarthy)", "Genie Award Best Supporting Actress (Paule Baillargeon)", "Toronto International Film Festival People's Choice Award", "Vancouver International Film Festival Most Popular Film"]
 imdbRating: "6.7"

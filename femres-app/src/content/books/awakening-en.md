@@ -5,7 +5,7 @@ author: "Kate Chopin"
 description: "No feminist reading list is complete without this 1899 novella. This early proto-modernist story follows Edna Pontellier, a wealthy New Orleans housewife who begins to contemplate what life might offer beyond her narrow roles as wife and mother."
 publishDate: 1899-01-01
 isbn: "9780486277868"
-language: "en"
+contentLanguage: "en"
 topics: ["First Wave Feminism", "Bodily Autonomy", "Women's Literature", "Patriarchy Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=awakening+kate+chopin&tag=inkrupt-22"
 coverImage: "/images/books/awakening.jpg"

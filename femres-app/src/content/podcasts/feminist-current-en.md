@@ -3,7 +3,7 @@ title: "Feminist Current"
 author: "Meghan Murphy"
 description: "Feminist Current is a podcast hosted by Canadian journalist Meghan Murphy, focusing on controversial issues within the feminist movement, particularly debates around gender identity, women's spaces, and legal policy. The show approaches from a critical feminist stance, emphasizing women's rights based on biological sex, covering content including Title IX revisions, transgender policy, domestic violence, pornography criticism, and internal left-wing controversies. With a frank and clear-positioned style, it represents an important voice in gender politics debates. Spotify rating of 4.5 (217 reviews), with broad influence among critical feminist podcasts."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Radical Feminism", "Patriarchy Critique", "Anti-Sexual Violence", "Political Participation", "Gender Politics"]
 sourceUrl: "https://open.spotify.com/show/2G3Bs2BCGwvsaXJwak5ivf"
 embedUrl: "https://open.spotify.com/embed/show/2G3Bs2BCGwvsaXJwak5ivf"

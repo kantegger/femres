@@ -10,7 +10,7 @@ releaseDate: 2001-07-13
 year: 2001
 country: "USA"
 duration: "96 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Comedy", "Romance"]
 cast: ["Reese Witherspoon", "Luke Wilson", "Selma Blair", "Matthew Davis", "Victor Garber"]
 topics: ["Media Representation Critique", "Education Equality", "Female Friendship", "Legal Equality"]

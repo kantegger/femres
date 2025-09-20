@@ -5,7 +5,7 @@ author: "Chanel Miller"
 description: "In 2015, when Stanford University student Brock Turner sexually assaulted a woman known as 'Emily Doe,' this case became a symbol of unity for women across America. Because of the worst thing that happened to her, Emily Doe became one of the most famous women in the world—yet no one knew her real name. This all changed in 2019 when Chanel Miller revealed herself as 'Emily Doe' and published this memoir, telling her story as an act of reclaiming narrative identity."
 publishDate: 2019-09-24
 isbn: "9780735223707"
-language: "en"
+contentLanguage: "en"
 topics: ["Anti-Sexual Violence", "Bodily Autonomy", "Media Representation Critique", "MeToo Movement", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=know+my+name+chanel+miller&tag=inkrupt-22"
 coverImage: "/images/books/know-my-name.jpg"

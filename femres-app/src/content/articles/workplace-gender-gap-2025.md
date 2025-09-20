@@ -3,7 +3,7 @@ title: "2025年全球职场性别差距报告解读"
 author: "World Economic Forum" 
 description: "深入分析世界经济论坛发布的《2025年全球性别差距报告》，探讨职场性别平等的现状、挑战与未来趋势。" 
 publishDate: 2025-06-15
-language: "en"
+contentLanguage: "en"
 topics: ["Workplace Equality", "Equal Pay", "Political Participation"] 
 sourceUrl: "https://reports.weforum.org/docs/WEF_GGGR_2025.pdf" 
 readingTime: 8 

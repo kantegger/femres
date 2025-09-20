@@ -5,7 +5,7 @@ author: "奥克塔维娅·E·巴特勒"
 description: "几乎任何奥克塔维娅·E·巴特勒的小说都是女性主义必读书：1976年至2005年间出版的她的非洲未来主义科幻小说，是对新世界和永恒伦理困境的富有远见的探索。我们推荐从《播种者的寓言》开始，这是巴特勒后启示录地球种子二部曲的第一部小说。"
 publishDate: 1993-01-01
 isbn: "9780446675505"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Ecofeminism", "Climate Justice", "Women's Literature"]
 sourceUrl: "https://www.amazon.sg/s?k=parable+sower+octavia+butler&tag=inkrupt-22"
 coverImage: "/images/books/parable-of-the-sower.jpg"

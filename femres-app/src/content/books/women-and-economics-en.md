@@ -5,7 +5,7 @@ author: "Charlotte Perkins Gilman"
 description: "A groundbreaking 1898 feminist economics work that systematically analyzes the social roots of women's economic dependency and proposes theoretical foundations for women's economic independence. Praised as an important document comparable to Mill's 'The Subjection of Women'."
 publishDate: 1898-01-01
 isbn: "9781602060340"
-language: "en"
+contentLanguage: "en"
 topics: ["First Wave Feminism", "Economic Empowerment", "Marxist Feminism", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=women+and+economics+charlotte+perkins+gilman&tag=inkrupt-22"
 coverImage: "/images/books/women-and-economics.jpg"

@@ -5,7 +5,7 @@ author: "Roxane Gay"
 description: "A collection of essays that explores the complexities of contemporary feminism with humor and honesty, acknowledging that feminists can be contradictory and imperfect."
 publishDate: 2014-08-05
 isbn: "9780062282712"
-language: "en"
+contentLanguage: "en"
 topics: ["Fourth Wave Feminism", "Pop Culture Feminism", "Intersectional Feminism", "Media Representation Critique", "Feminist Literary Criticism"]
 sourceUrl: "https://www.amazon.sg/s?k=bad+feminist+roxane+gay&tag=inkrupt-22"
 coverImage: "/images/books/bad-feminist.jpg"

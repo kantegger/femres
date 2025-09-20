@@ -3,7 +3,7 @@ title: "The Crisis in Modern Masculinity"
 author: "Pankaj Mishra"
 description: "This article traces the historical evolution of modern masculinity, revealing the politicization and pathologization of the 'strong man' fantasy on a global scale, and critiques how patriarchy shapes oppressive roles for both men and women."
 publishDate: 2018-03-17
-language: "en"
+contentLanguage: "en"
 topics: ["Patriarchy Critique", "Anti-Feminism Studies", "Cultural Critique", "Men's Rights Movement Critique", "Race and Gender", "Feminist Psychology", "Political Participation", "Media Representation Critique"]
 sourceUrl: "https://www.theguardian.com/books/2018/mar/17/the-crisis-in-modern-masculinity?ref=refind"
 readingTime: 15

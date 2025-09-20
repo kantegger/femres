@@ -3,7 +3,7 @@ title: "《我们都应该是女性主义者》"
 author: "奇玛曼达·恩戈兹·阿迪契"
 description: "在这个著名的TEDxEuston演讲中，作家奇玛曼达·恩戈兹·阿迪契分享了她对女性主义的个人见解和定义。她通过个人故事和观察，揭示了性别不平等以及传统性别角色对男性和女性造成的负面影响。演讲深入探讨了社会中的性别不公，呼吁改变对男孩和女孩的养育方式，并强调文化是由人创造的，因此可以被改变，以实现真正的性别平等。"
 publishDate: 2013-04-12
-language: "en"
+contentLanguage: "en"
 topics: ["Feminism", "Liberal Feminism", "Patriarchy Critique", "Cultural Critique", "Media Representation Critique"]
 sourceUrl: "https://www.youtube.com/watch?v=hg3umXU_qWc"
 embedUrl: "https://www.youtube.com/embed/hg3umXU_qWc"

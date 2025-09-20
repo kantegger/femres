@@ -8,7 +8,7 @@ releaseDate: 2019-05-19
 year: 2019
 country: "法国"
 duration: "122分钟"
-language: "fr"
+contentLanguage: "fr"
 genre: ["剧情", "爱情", "历史"]
 cast: ["诺米·梅兰特", "阿黛拉·哈内尔", "卢安娜·巴拉米", "瓦莱丽亚·戈利诺"]
 topics: ["Feminist Art", "Queer Identity", "Bodily Autonomy", "Media Representation Critique", "Female Friendship"]

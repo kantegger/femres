@@ -5,7 +5,7 @@ author: "Naomi Wolf"
 description: "Exposes how beauty standards have become a new tool for controlling women, analyzing the impact of consumer culture on women's bodies and psyche."
 publishDate: 1990-01-01
 isbn: "9780060512187"
-language: "en"
+contentLanguage: "en"
 topics: ["Third Wave Feminism", "Media Representation Critique", "Bodily Autonomy", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=beauty+myth+naomi+wolf&tag=inkrupt-22"
 coverImage: "/images/books/beauty-myth.jpg"

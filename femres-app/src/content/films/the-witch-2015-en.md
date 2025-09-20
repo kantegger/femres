@@ -8,7 +8,7 @@ releaseDate: 2016-02-19
 year: 2015
 country: "USA"
 duration: "93 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Horror", "Drama", "Fantasy"]
 cast: ["Anya Taylor-Joy", "Ralph Ineson", "Kate Dickie", "Harvey Scrimshaw", "Ellie Grainger", "Lucas Dawson", "Julian Richings", "Bathsheba Garnett"]
 topics: ["Radical Feminism", "Patriarchy Critique", "Religious Patriarchy Critique", "Bodily Autonomy", "Historical Context", "Female Desire", "Family Liberation", "Cultural Critique", "Gender Norms", "Women's Rights"]

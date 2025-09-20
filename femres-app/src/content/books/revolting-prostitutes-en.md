@@ -5,7 +5,7 @@ author: "Juno Mac and Molly Smith"
 description: "A groundbreaking work written by sex workers themselves, directly challenging mainstream feminist narratives about sex work while providing theoretical foundations and political strategies for the sex workers' rights movement."
 publishDate: 2018-11-06
 isbn: "9781786633606"
-language: "en"
+contentLanguage: "en"
 topics: ["Radical Feminism", "Intersectional Feminism", "Bodily Autonomy", "Economic Empowerment"]
 sourceUrl: "https://www.amazon.sg/s?k=revolting+prostitutes+juno+mac+molly+smith&tag=inkrupt-22"
 coverImage: "/images/books/revolting-prostitutes.jpg"

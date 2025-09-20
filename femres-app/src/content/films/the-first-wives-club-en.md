@@ -10,7 +10,7 @@ releaseDate: 1996-09-20
 year: 1996
 country: "USA"
 duration: "102 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Comedy", "Drama"]
 cast: ["Bette Midler", "Goldie Hawn", "Diane Keaton", "Maggie Smith", "Sarah Jessica Parker"]
 topics: ["Female Friendship", "Economic Empowerment", "Family Liberation", "Patriarchy Critique"]

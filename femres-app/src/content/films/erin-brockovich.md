@@ -8,7 +8,7 @@ releaseDate: 2000-03-17
 year: 2000
 country: "美国"
 duration: "131分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["剧情", "传记"]
 cast: ["朱莉娅·罗伯茨", "阿尔伯特·芬尼", "阿伦·艾克哈特", "玛格·海根柏格", "凯瑞-安·莫斯"]
 topics: ["Economic Empowerment", "Workplace Equality", "Legal Equality", "Climate Justice"]

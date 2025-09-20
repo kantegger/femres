@@ -3,7 +3,7 @@ title: "An Invitation to All Men: Taking Feminism Further"
 author: "Hannah Ferguson"
 description: "In this TEDxSydney Youth talk, Hannah Ferguson extends an invitation to all men: to engage more deeply with feminism. She points out that misogyny is not limited to extremists but exists widely among ordinary male populations. The speech explores the growing ideological divide between men and women, calls for redefining the term 'feminism,' and emphasizes that men are also harmed under patriarchy. Ferguson encourages men to move beyond the 'ally or enemy' binary opposition and challenge harmful speech and behavior in private spaces where women are not present through dialogue and education."
 publishDate: 2024-11-22
-language: "en"
+contentLanguage: "en"
 topics: ["Anti-Feminism Studies", "Patriarchy Critique", "Cultural Critique", "Media Representation Critique"]
 sourceUrl: "https://www.youtube.com/watch?v=pMN5k6zH7sU"
 embedUrl: "https://www.youtube.com/embed/pMN5k6zH7sU"

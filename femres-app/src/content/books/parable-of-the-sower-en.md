@@ -5,7 +5,7 @@ author: "Octavia E. Butler"
 description: "Almost any Octavia E. Butler novel is feminist required reading: her Afrofuturistic science fiction published between 1976 and 2005 offers visionary explorations of new worlds and eternal ethical dilemmas. We recommend starting with 'Parable of the Sower,' the first novel in Butler's post-apocalyptic Earthseed duology."
 publishDate: 1993-01-01
 isbn: "9780446675505"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Ecofeminism", "Climate Justice", "Women's Literature"]
 sourceUrl: "https://www.amazon.sg/s?k=parable+sower+octavia+butler&tag=inkrupt-22"
 coverImage: "/images/books/parable-of-the-sower.jpg"

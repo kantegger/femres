@@ -5,7 +5,7 @@ author: "Emily Ratajkowski"
 description: "A profound self-reflection from supermodel turned writer, analyzing the complex mechanisms of female body commodification through personal experience, exploring modern women's survival predicament between desire and contempt."
 publishDate: 2021-11-09
 isbn: "9781250817860"
-language: "en"
+contentLanguage: "en"
 topics: ["Bodily Autonomy", "Fourth Wave Feminism", "Cultural Critique", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=my+body+emily+ratajkowski&tag=inkrupt-22"
 coverImage: "/images/books/my-body.jpg"

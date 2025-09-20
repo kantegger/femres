@@ -5,7 +5,7 @@ author: "阿德丽安·里奇"
 description: "讨论女性主义诗歌时不可能不提到阿德丽安·里奇，她是20世纪阅读量最大的诗人之一，也是著名的交叉性女性主义活动家。我们推荐的最佳入门诗集：《潜入沉船》，这是一部特别具有抒情性和愤怒情感的诗歌合集——包括《强奸》，这首叙事诗常被认为是里奇最重要的作品之一。"
 publishDate: 1973-01-01
 isbn: "9780393311402"
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Radical Feminism", "Patriarchy Critique", "Women's Writing", "Anti-Sexual Violence", "Race and Gender"]
 sourceUrl: "https://www.amazon.sg/s?k=diving+into+wreck+adrienne+rich&tag=inkrupt-22"
 coverImage: "/images/books/diving-into-the-wreck.jpg"

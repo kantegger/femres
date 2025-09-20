@@ -3,7 +3,7 @@ title: "Frisky History"
 author: "Lacey & Robin"
 description: "《Frisky History》由 Lacey 与 Robin 主持，是一档以幽默方式探讨性、性别与历史交汇的播客。节目内容涵盖性教育演变、避孕技术发展、性工作权利、政治人物的性丑闻与性别规范的历史变迁。风格轻松但富有批判性，结合历史资料与当代视角，Spotify 评分为 4.6（30+ 条评论），在性别研究与大众文化交叉领域中具有独特影响力。"
 publishDate: 2025-09-12
-language: en
+contentLanguage: en
 topics: ["Gender Norms", "History of Sex Education", "Sex Worker Rights", "Body Politics", "Cultural Critique"]
 sourceUrl: "https://open.spotify.com/show/5ahzHKvqFLTvN1sRHYltBn"
 embedUrl: "https://open.spotify.com/embed/show/5ahzHKvqFLTvN1sRHYltBn"

@@ -3,7 +3,7 @@ title: "Unsettling Feminism in Social Work: Toward an Indigenous Decolonial Femi
 author: "Autumn Asher BlackDeer"
 description: "This research critically examines how feminism and social work have historically participated in colonial projects, perpetuating structural violence rooted in white supremacy. The author proposes an Indigenous decolonial feminist framework, emphasizing that social work should reorient its justice goals toward collective liberation and sovereignty for Indigenous peoples."
 publishDate: 2023-08-01
-language: en
+contentLanguage: en
 topics: ["Decolonial Feminism", "Indigenous Feminism", "Anti-Sexual Violence"]
 sourceUrl: "https://journals.sagepub.com/doi/10.1177/08861099231193617"
 doi: "10.1177/08861099231193617"

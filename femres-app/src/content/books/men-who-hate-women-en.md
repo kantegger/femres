@@ -5,7 +5,7 @@ author: "Laura Bates"
 description: "A groundbreaking investigation into the online world of extreme misogyny, exposing how incel communities, pickup artists, and the broader 'manosphere' radicalize men against women. Bates reveals the dangerous real-world consequences of digital hatred and its impact on society as a whole."
 publishDate: 2021-03-02
 isbn: "9781728236247"
-language: "en"
+contentLanguage: "en"
 topics: ["Men's Rights Movement Critique", "Digital Feminism", "Cultural Critique", "Anti-Feminism Studies", "Patriarchy Critique", "Media Representation Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=men+who+hate+women+laura+bates&tag=inkrupt-22"
 coverImage: "/images/books/men-who-hate-women.jpg"

@@ -4,7 +4,7 @@ originalTitle: "Performative Acts and Gender Constitution: An Essay in Phenomeno
 author: "Judith Butler"
 description: "This influential essay explores gender as a performative act rather than a natural given, drawing on phenomenological theory to argue that gender identity is constituted through repeated stylized acts. Butler challenges essentialist notions of gender and proposes that gender is continuously constructed through performance within regulatory frameworks."
 publishDate: 1988-12-01
-language: en
+contentLanguage: en
 topics: ["Gender Identity", "Feminist Theory", "Gender Norms", "Gender Socialization", "Academic Feminism"]
 sourceUrl: "https://www.jstor.org/stable/3207893"
 doi: "10.1632/S0040557400062652"

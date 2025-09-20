@@ -5,7 +5,7 @@ author: "bell hooks"
 description: "A profound analysis of the historical experience of Black women under the dual oppression of racism and sexism, critiquing the limitations of white feminism."
 publishDate: 1981-01-01
 isbn: "9780896081307"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Intersectional Feminism", "Race and Gender", "Anti-Feminism Studies"]
 sourceUrl: "https://www.amazon.sg/s?k=ain%27t+i+woman+black+women+feminism+bell+hooks&tag=inkrupt-22"
 coverImage: "/images/books/aint-i-a-woman.jpg"

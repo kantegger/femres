@@ -8,7 +8,7 @@ releaseDate: 2000-03-17
 year: 2000
 country: "USA"
 duration: "131 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama", "Biography"]
 cast: ["Julia Roberts", "Albert Finney", "Aaron Eckhart", "Marg Helgenberger", "Carrie-Anne Moss"]
 topics: ["Economic Empowerment", "Workplace Equality", "Legal Equality", "Climate Justice"]

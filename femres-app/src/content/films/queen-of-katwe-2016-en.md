@@ -8,7 +8,7 @@ releaseDate: 2016-09-23
 year: 2016
 country: "USA"
 duration: "124 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Biography", "Drama", "Sport"]
 cast: ["Madina Nalwanga", "David Oyelowo", "Lupita Nyong'o", "Martin Kabanza", "Sheebah Karungi", "Ronald Ssekandi", "Esther Tebandeke", "Taryn Kyaze", "Edgar Katende", "Ivan Jacobo"]
 topics: ["Cross-Cultural Feminism", "Education Equality", "Economic Empowerment", "Cultural Identity", "Race and Gender", "Family Liberation", "Feminist Art", "Social Movements", "Cultural Critique", "Gender Equality"]

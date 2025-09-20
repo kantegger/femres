@@ -3,7 +3,7 @@ title: "Feminism Ruins Everything"
 author: "Millicent Sarre & Ellis Dolan"
 description: "Feminism Ruins Everything is a podcast hosted by Millicent Sarre and Ellis Dolan, critiquing film, television, musical theater, and popular culture works from a feminist perspective. With a humorous and highly critical style, emphasizing 'friendly feminism' and cultural deconstruction, the content covers queer representation, gender stereotypes, artistic philosophy, and media renarration, representing one of the cultural feminist voices in the Australian context."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Media Representation Critique", "Gender Politics", "Queer Feminism", "Cultural Critique"]
 sourceUrl: "https://open.spotify.com/show/2KbDKv7cxYXFQpNnnoUd9f"
 embedUrl: "https://open.spotify.com/embed/show/2KbDKv7cxYXFQpNnnoUd9f"

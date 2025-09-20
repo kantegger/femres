@@ -3,7 +3,7 @@ title: "Feminist Hotdog"
 author: "Adrienne van der Valk & Loudspeaker Studios"
 description: "Feminist Hotdog is a podcast hosted by Adrienne van der Valk, dedicated to finding joy and resistance through feminism. The show focuses on everyday feminist practices, marginalized group experiences, and social justice advocacy, covering content including self-recovery, prison system criticism, gender and mental health, socialist feminism, and far-right political criticism. With an intimate, highly critical style emphasizing voices of women, transgender, and non-binary groups, it represents a warm yet radical presence in American feminist podcasting."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Socialist Feminism", "Anti-Sexual Violence", "Patriarchy Critique", "Gender Politics"]
 sourceUrl: "https://open.spotify.com/show/2ers0KxE2sI7Nuz1U6abkL"
 embedUrl: "https://open.spotify.com/embed/show/2ers0KxE2sI7Nuz1U6abkL"

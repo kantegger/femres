@@ -3,7 +3,7 @@ title: "Feminist Fight Club"
 author: "Isabella Anzideo"
 description: "Feminist Fight Club is an educational podcast hosted by Isabella Anzideo, introducing feminist history and contemporary issues in an accessible way. The show's content covers American women's political history, second-wave feminism, gender bias in philosophy, sexual violence statistics and survivor support, and transgender women's history. With a friendly style aimed at Gen Z, it's suitable for feminist beginners and teenage audiences. Spotify rating of 5.0 (1 review), representing an emerging voice among educational feminist podcasts."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Second Wave Feminism", "Anti-Sexual Violence", "Political Participation", "Oral History", "Gender Politics"]
 sourceUrl: "https://open.spotify.com/show/4EWfnGAnoHDN9ocvJKuHeT"
 embedUrl: "https://open.spotify.com/embed/show/4EWfnGAnoHDN9ocvJKuHeT"

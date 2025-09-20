@@ -4,7 +4,7 @@ originalTitle: "Under Western Eyes: Feminist Scholarship and Colonial Discourses
 author: "Chandra Talpade Mohanty"
 description: "This influential essay critiques Western feminist scholarship that represents Third World women as a monolithic, oppressed group without agency. Mohanty argues that such representations perpetuate colonial discourses and calls for a more nuanced, contextualized understanding of women's experiences across different cultures and geopolitical locations."
 publishDate: 1988-01-01
-language: en
+contentLanguage: en
 topics: ["Decolonial Feminism", "Postmodern Feminism", "Epistemic Colonialism Critique", "Cultural Critique", "Third World Feminism"]
 sourceUrl: "https://www.jstor.org/stable/302821"
 doi: "10.2307/302821"

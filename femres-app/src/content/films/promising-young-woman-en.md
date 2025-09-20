@@ -10,7 +10,7 @@ releaseDate: 2020-12-25
 year: 2020
 country: "USA"
 duration: "113 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Thriller", "Drama", "Dark Comedy"]
 cast: ["Carey Mulligan", "Bo Burnham", "Alison Brie", "Clancy Brown", "Jennifer Coolidge"]
 topics: ["Anti-Sexual Violence", "Rape Culture Critique", "Bystander Responsibility", "MeToo Movement", "Fourth Wave Feminism"]

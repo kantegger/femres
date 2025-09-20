@@ -8,10 +8,10 @@ releaseDate: 2008-05-22
 year: 2008
 country: "美国"
 duration: "80分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["剧情"]
 cast: ["米歇尔·威廉姆斯", "威尔·奥德汉姆", "威尔·巴顿", "约翰·罗宾逊", "沃尔特·道尔顿", "露西狗", "大卫·科佩尔", "马克斯·克莱门特", "拉里·费森登"]
-topics: ["Economic Precarity", "Homelessness", "Female Survival", "Minimalist Cinema", "Social Critique", "Economic Crisis", "Female Resilience", "Class Consciousness"]
+topics: ["Economic Empowerment", "Economic Empowerment", "Mental Resilience", "Feminist Art", "Cultural Critique", "Economic Empowerment", "Mental Resilience", "Class Analysis"]
 status: "published"
 awards: ["多伦多影评人协会最佳影片", "多伦多影评人协会最佳女演员（米歇尔·威廉姆斯）", "独立精神奖最佳故事片提名", "独立精神奖最佳女主角提名"]
 imdbRating: "7.1"

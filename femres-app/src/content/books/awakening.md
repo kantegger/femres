@@ -5,7 +5,7 @@ author: "凯特·肖邦"
 description: "没有这部1899年的短篇小说，任何女性主义阅读清单都是不完整的。这部早期的、准现代主义故事讲述了新奥尔良的富裕家庭主妇埃德娜·庞特利尔开始思考，在她作为妻子和母亲的狭隘角色之外，生活可能还有什么可以提供。"
 publishDate: 1899-01-01
 isbn: "9780486277868"
-language: "en"
+contentLanguage: "en"
 topics: ["First Wave Feminism", "Bodily Autonomy", "Women's Literature", "Patriarchy Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=awakening+kate+chopin&tag=inkrupt-22"
 coverImage: "/images/books/awakening.jpg"

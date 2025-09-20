@@ -8,10 +8,10 @@ releaseDate: 2002-10-25
 year: 2002
 country: "美国"
 duration: "123分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["传记", "剧情", "爱情"]
 cast: ["萨尔玛·海耶克", "阿尔弗雷德·莫里纳", "阿什莉·贾德", "安东尼奥·班德拉斯", "杰弗里·拉什", "爱德华·诺顿", "米娅·玛埃斯托", "罗杰·里斯", "帕特里夏·雷耶斯·斯平多拉", "迭戈·卢纳"]
-topics: ["Mexican Feminism", "Artist Biography", "Physical Disability", "Communist Politics", "Surrealism", "Mexican Identity", "Bisexuality", "Pain and Art", "Revolutionary Art", "Female Artistic Expression"]
+topics: ["Cultural Identity", "Feminist Art", "Bodily Autonomy", "Political Participation", "Feminist Art", "Cultural Identity", "Queer Identity", "Feminist Art", "Feminist Art", "Feminist Art"]
 status: "published"
 awards: ["奥斯卡最佳化妆奖", "奥斯卡最佳原创音乐奖", "英国电影学院奖最佳服装设计", "金球奖最佳女主角提名（萨尔玛·海耶克）", "美国演员工会奖提名", "威尼斯电影节国际影评人联盟奖"]
 imdbRating: "7.3"

@@ -8,10 +8,10 @@ releaseDate: 2002-09-20
 year: 2002
 country: "新西兰"
 duration: "101分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["剧情", "家庭"]
 cast: ["凯莎·卡斯尔-休斯", "拉维里·帕拉蒂尼", "维姬·霍顿", "克里夫·柯蒂斯", "格兰特·罗阿"]
-topics: ["Indigenous Feminism", "Female Leadership", "Cultural Traditions", "Patriarchy Critique", "Coming of Age", "Decolonial Feminism"]
+topics: ["Indigenous Feminism", "Political Participation", "Cultural Identity", "Patriarchy Critique", "Identity Formation", "Decolonial Feminism"]
 status: "published"
 awards: ["多伦多电影节观众选择奖2002", "圣丹斯观众选择奖2003", "奥斯卡最佳女主角提名（凯莎·卡斯尔-休斯）", "英国电影学院奖最佳非英语电影"]
 imdbRating: "7.5"

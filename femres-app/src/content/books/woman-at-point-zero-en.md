@@ -5,7 +5,7 @@ author: "Nawal El Saadawi"
 description: "A groundbreaking novel by Egyptian feminist pioneer Saadawi that exposes the violence and oppression faced by women in Arab society through the story of a woman sentenced to death."
 publishDate: 1975-01-01
 isbn: "9781783602964"
-language: "en"
+contentLanguage: "en"
 topics: ["Arab Feminism", "Decolonial Feminism", "Anti-Sexual Violence", "Women's Literature", "Patriarchy Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=woman+at+point+zero+nawal+el+saadawi&tag=inkrupt-22"
 coverImage: "/images/books/woman-at-point-zero.jpg"

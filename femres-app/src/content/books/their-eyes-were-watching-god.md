@@ -5,7 +5,7 @@ author: "佐拉·尼尔·赫斯顿"
 description: "虽然佐拉·尼尔·赫斯顿最著名的小说现在被认为是哈莱姆文艺复兴的基石作品，但《他们眼望上苍》在1937年首次出版时反响冷淡，直到1970年代才被重新发现。故事追随一位名叫珍妮·克劳福德的黑人女性在佛罗里达州的成长历程，从她'无声'的少女时代发展到更加自我掌控的成年期。"
 publishDate: 1937-01-01
 isbn: "9780061120060"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Race and Gender", "Women's Literature", "Bodily Autonomy"]
 sourceUrl: "https://www.amazon.sg/s?k=their+eyes+were+watching+god+zora+neale+hurston&tag=inkrupt-22"
 coverImage: "/images/books/their-eyes-were-watching-god.jpg"

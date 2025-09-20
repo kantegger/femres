@@ -5,7 +5,7 @@ author: "贝尔·胡克斯"
 description: "bell hooks的通俗女性主义入门读物，以简洁明了的语言阐述女性主义的核心理念，强调女性主义不仅是为女性而存在，而是为了结束性别歧视、性别剥削和性别压迫，让所有人都能从中受益的政治运动。"
 publishDate: 2000-01-01
 isbn: "9780896085688"
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Black Feminism", "Feminist Education"]
 sourceUrl: "https://www.amazon.sg/s?k=feminism+is+for+everybody+bell+hooks&tag=inkrupt-22"
 coverImage: "/images/books/bell-hooks-feminism-for-everybody.jpg"

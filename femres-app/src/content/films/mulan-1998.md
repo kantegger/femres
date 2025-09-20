@@ -8,7 +8,7 @@ releaseDate: 1998-06-19
 year: 1998
 country: "美国"
 duration: "88分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["动画", "家庭", "冒险", "音乐"]
 cast: ["温明娜", "艾迪·墨菲", "李保罗", "哈维·费斯坦", "弗兰克·韦尔克"]
 topics: ["Feminist Art", "Bodily Autonomy", "Patriarchy Critique", "Chinese Feminist Movement", "Queer Identity"]

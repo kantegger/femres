@@ -553,5 +553,10 @@
     "en": "Identity Formation",
     "zh-CN": "身份认同形成",
     "icon": "🔄"
+  },
+  "Youth Rights": {
+    "en": "Youth Rights",
+    "zh-CN": "青少年权利",
+    "icon": "👶"
   }
 }

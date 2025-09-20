@@ -5,7 +5,7 @@ author: "伊芙·恩斯勒"
 description: "革命性的女性主义戏剧作品，通过女性身体经验的直接表达，打破性别禁忌，为全球反性暴力运动奠定基础。"
 publishDate: 1996-01-01
 isbn: "9781860499265"
-language: "en"
+contentLanguage: "en"
 topics: ["Bodily Autonomy", "Anti-Sexual Violence", "Women's Literature", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=vagina+monologues+eve+ensler&tag=inkrupt-22"
 coverImage: "/images/books/vagina-monologues.jpg"

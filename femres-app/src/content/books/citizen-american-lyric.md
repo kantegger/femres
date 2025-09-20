@@ -5,7 +5,7 @@ author: "克劳迪娅·兰金"
 description: "散文与诗歌的混合体，克劳迪娅·兰金的回忆录式艺术书籍对21世纪美国黑人——特别是黑人女性——的生存状态提供了毫不妥协的洞察。从微侵犯到有意的偏见行为，兰金创建了一套针对美国黑人日常冒犯的分类学，挑战我们所有人考虑自己的共谋。"
 publishDate: 2014-01-01
 isbn: "9781555976903"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Race and Gender", "Cultural Critique", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=citizen+american+lyric+claudia+rankine&tag=inkrupt-22"
 coverImage: "/images/books/citizen-american-lyric.jpg"

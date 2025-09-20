@@ -3,7 +3,7 @@ title: "The Fiscal Feminist"
 author: "Kimberlee A. Davis"
 description: "《The Fiscal Feminist》是一档由财富顾问 Kimberlee A. Davis 主持的播客，聚焦女性与金钱的关系，强调财务独立、职业发展与心理能量的整合。节目内容涵盖职场性别差异、离婚财务规划、青少年理财教育、房地产趋势与能量振动理论，风格专业、鼓舞人心，适合关注女性主义财务实践的听众。"
 publishDate: 2025-09-12
-language: en
+contentLanguage: en
 topics: ["Women's Economic Rights", "Bodily Autonomy", "Gender Politics", "Spiritual Feminism", "Career Development"]
 sourceUrl: "https://open.spotify.com/show/2jhwBTud4LzRgYhizc0GPq"
 embedUrl: "https://open.spotify.com/embed/show/2jhwBTud4LzRgYhizc0GPq"

@@ -8,10 +8,10 @@ releaseDate: 1995-07-19
 year: 1995
 country: "美国"
 duration: "97分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["喜剧", "爱情"]
 cast: ["艾丽西亚·希尔维斯通", "史黛西·达什", "布莱特妮·墨菲", "保罗·路德", "唐纳德·费森", "艾丽莎·多诺万", "布雷金·梅耶", "杰瑞米·西斯托", "丹·海达亚", "华莱士·肖恩"]
-topics: ["Third Wave Feminism", "Female Friendship", "Coming of Age", "Class Critique", "Media Representation", "Pop Culture Feminism", "Female Agency", "Consumer Culture"]
+topics: ["Third Wave Feminism", "Female Friendship", "Identity Formation", "Class Analysis", "Media Representation Critique", "Pop Culture Feminism", "Economic Empowerment", "Capitalism Critique"]
 status: "published"
 awards: ["国家影评人协会最佳剧本", "MTV电影奖最佳女演员表现（艾丽西亚·希尔维斯通）", "MTV电影奖最受欢迎女性（艾丽西亚·希尔维斯通）", "国家影评委员会突破性表演（艾丽西亚·希尔维斯通）", "美国喜剧奖最搞笑女演员（艾丽西亚·希尔维斯通）"]
 imdbRating: "6.9"

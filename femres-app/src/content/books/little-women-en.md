@@ -5,7 +5,7 @@ author: "Louisa May Alcott"
 description: "A classic coming-of-age novel that, through the growth journey of the four March sisters, showcases diverse life choices for 19th-century women, influencing generations of female readers' values and life pursuits."
 publishDate: 1868-09-30
 isbn: "9780147514011"
-language: "en"
+contentLanguage: "en"
 topics: ["First Wave Feminism", "Women's Literature", "Women's Writing", "Economic Empowerment"]
 sourceUrl: "https://www.amazon.sg/s?k=little+women+louisa+may+alcott&tag=inkrupt-22"
 coverImage: "/images/books/little-women.jpg"

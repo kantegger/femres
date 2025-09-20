@@ -3,7 +3,7 @@ title: "Feminist Erotica"
 author: "Karen & Princess"
 description: "Feminist Erotica is a podcast hosted by Karen and Princess, exploring desire expression and erotic narratives from a feminist perspective. The show blends critical discussion, creative writing, and cultural recommendations, covering content including queer relationships, disability desire, BDSM, erotic literature, and film/TV analysis, emphasizing pleasure, consent, and diversity. With an intimate, inclusive, and critical style, it serves as an important platform for feminist erotic culture."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Bodily Autonomy", "Women's Writing", "Gender Politics", "Race and Gender", "Cultural Critique"]
 sourceUrl: "https://open.spotify.com/show/3D7yunmvIZV1xVXoJCZff3"
 embedUrl: "https://open.spotify.com/embed/show/3D7yunmvIZV1xVXoJCZff3"

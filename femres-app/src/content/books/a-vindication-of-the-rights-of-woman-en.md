@@ -5,7 +5,7 @@ author: "Mary Wollstonecraft"
 description: "A groundbreaking work in the history of feminist thought, one of the first to systematically advocate for women's rights and educational equality."
 publishDate: 1792-01-01
 isbn: "9787100093200"
-language: "en"
+contentLanguage: "en"
 topics: ["First Wave Feminism", "Education Equality", "Legal Equality"]
 sourceUrl: "https://www.amazon.sg/s?k=vindication+rights+woman+mary+wollstonecraft&tag=inkrupt-22"
 coverImage: "/images/books/vindication-rights-woman.jpg"

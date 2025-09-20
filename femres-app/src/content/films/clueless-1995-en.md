@@ -8,10 +8,10 @@ releaseDate: 1995-07-19
 year: 1995
 country: "USA"
 duration: "97 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Comedy", "Romance"]
 cast: ["Alicia Silverstone", "Stacey Dash", "Brittany Murphy", "Paul Rudd", "Donald Faison", "Elisa Donovan", "Breckin Meyer", "Jeremy Sisto", "Dan Hedaya", "Wallace Shawn"]
-topics: ["Third Wave Feminism", "Female Friendship", "Coming of Age", "Class Critique", "Media Representation", "Pop Culture Feminism", "Female Agency", "Consumer Culture"]
+topics: ["Third Wave Feminism", "Female Friendship", "Identity Formation", "Class Analysis", "Media Representation Critique", "Pop Culture Feminism", "Economic Empowerment", "Capitalism Critique"]
 status: "published"
 awards: ["National Society of Film Critics Best Screenplay", "MTV Movie Award Best Female Performance (Alicia Silverstone)", "MTV Movie Award Most Desirable Female (Alicia Silverstone)", "National Board of Review Breakthrough Performance (Alicia Silverstone)", "American Comedy Awards Funniest Actress (Alicia Silverstone)"]
 imdbRating: "6.9"

@@ -3,7 +3,7 @@ title: "Feminist Survival Project"
 author: "Emily Nagoski, Amelia Nagoski"
 description: "Feminist Survival Project is a podcast hosted by twin sisters Emily and Amelia Nagoski, specifically designed for those who feel exhausted in feminist practice while still constantly doubting themselves. The two hosts are also authors of the bestselling book 'Burnout: The Secret to Unlocking the Stress Cycle.' The show focuses on stress cycles, nervous system regulation, trauma recovery, and emotional labor, combining psychological research with personal experiences to help listeners find ways to survive in patriarchal society. With a warm, frank, and insightful style, it's popular among feminist communities, with a high rating of 4.9 (217 reviews)."
 publishDate: 2025-08-27
-language: "en"
+contentLanguage: "en"
 topics: ["Emotional Labor", "Ethics of Care", "Feminist Psychology"]
 sourceUrl: "https://open.spotify.com/show/2fn4mcGmFl42rplP9K903P"
 embedUrl: "https://open.spotify.com/embed/show/2fn4mcGmFl42rplP9K903P"

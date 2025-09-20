@@ -5,7 +5,7 @@ author: "萨拉·艾哈迈德"
 description: "探讨如何在日常生活中践行女性主义，分析了女性主义者的快乐与挣扎，提出了女性主义生存工具包的概念。"
 publishDate: 2017-02-01
 isbn: "9780822363194"
-language: "en"
+contentLanguage: "en"
 topics: ["Feminist Psychology", "Emotional Labor", "Intersectional Feminism", "Queer Theory", "Everyday Life Practices"]
 sourceUrl: "https://www.amazon.sg/s?k=living+a+feminist+life+sara+ahmed&tag=inkrupt-22"
 coverImage: "/images/books/living-a-feminist-life.jpg"

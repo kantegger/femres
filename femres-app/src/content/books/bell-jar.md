@@ -5,7 +5,7 @@ author: "西尔维娅·普拉斯"
 description: "20世纪女性主义文学经典，通过半自传体叙述揭示1950年代女性面临的心理困境与社会压迫，深刻探讨精神疾病与性别束缚的关系。"
 publishDate: 1963-01-14
 isbn: "9780060837020"
-language: "en"
+contentLanguage: "en"
 topics: ["Women's Literature", "Second Wave Feminism", "Patriarchy Critique", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=bell+jar+sylvia+plath&tag=inkrupt-22"
 coverImage: "/images/books/bell-jar.jpg"

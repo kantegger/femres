@@ -5,7 +5,7 @@ author: "Angela Carter"
 description: "A groundbreaking work of feminist fairy tale reconstruction that subverts classic fairy tales to create new female narratives, exploring the complex relationships between gender power, desire, and female subjectivity."
 publishDate: 1979-01-01
 isbn: "9780060107086"
-language: "en"
+contentLanguage: "en"
 topics: ["Women's Literature", "Postmodern Feminism", "Cultural Critique", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=bloody+chamber+angela+carter&tag=inkrupt-22"
 coverImage: "/images/books/bloody-chamber.jpg"

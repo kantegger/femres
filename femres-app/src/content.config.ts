@@ -1,5 +1,11 @@
 import { defineCollection, z } from 'astro:content';
 
+// 支持的内容语言列表 - 表示内容本身的语言
+const supportedContentLanguages = [
+  'zh-CN', 'en', 'zh-TW', 'fr', 'de', 'es', 'it', 'ja', 'ko', 'pt', 'ru',
+  'ar', 'hi', 'th', 'vi', 'tr', 'pl', 'nl', 'sv', 'da', 'no', 'fi', 'cs', 'hu', 'bg', 'hr', 'sk', 'sl', 'et', 'lv', 'lt'
+] as const;
+
 // 定义内容集合的schema
 const books = defineCollection({
   type: 'content',
@@ -10,7 +16,7 @@ const books = defineCollection({
     description: z.string(),
     publishDate: z.date(),
     isbn: z.string().optional(),
-    language: z.enum(['zh-CN', 'en', 'zh-TW', 'fr', 'de', 'es', 'it', 'ja', 'ko', 'pt', 'ru']).default('zh-CN'),
+    contentLanguage: z.enum(supportedContentLanguages).default('zh-CN'),
     topics: z.array(z.string()),
     sourceUrl: z.string().url().optional(),
     coverImage: z.string().optional(),
@@ -19,13 +25,13 @@ const books = defineCollection({
 });
 
 const articles = defineCollection({
-  type: 'content', 
+  type: 'content',
   schema: z.object({
     title: z.string(),
     author: z.string(),
     description: z.string(),
     publishDate: z.date(),
-    language: z.enum(['zh-CN', 'en', 'zh-TW', 'fr', 'de', 'es', 'it', 'ja', 'ko', 'pt', 'ru']).default('zh-CN'),
+    contentLanguage: z.enum(supportedContentLanguages).default('zh-CN'),
     topics: z.array(z.string()),
     sourceUrl: z.string().url(),
     readingTime: z.number().optional(),
@@ -41,7 +47,7 @@ const videos = defineCollection({
     author: z.string(),
     description: z.string(),
     publishDate: z.date(),
-    language: z.enum(['zh-CN', 'en', 'zh-TW', 'fr', 'de', 'es', 'it', 'ja', 'ko', 'pt', 'ru']).default('zh-CN'),
+    contentLanguage: z.enum(supportedContentLanguages).default('zh-CN'),
     topics: z.array(z.string()),
     sourceUrl: z.string().url(),
     embedUrl: z.string().url().optional(),
@@ -58,7 +64,7 @@ const podcasts = defineCollection({
     author: z.string(),
     description: z.string(),
     publishDate: z.date(),
-    language: z.enum(['zh-CN', 'en', 'zh-TW', 'fr', 'de', 'es', 'it', 'ja', 'ko', 'pt', 'ru']).default('zh-CN'),
+    contentLanguage: z.enum(supportedContentLanguages).default('zh-CN'),
     topics: z.array(z.string()),
     sourceUrl: z.string().url(),
     audioUrl: z.string().url().optional(),
@@ -79,7 +85,7 @@ const papers = defineCollection({
     author: z.string(),
     description: z.string(),
     publishDate: z.date(),
-    language: z.enum(['zh-CN', 'en', 'zh-TW', 'fr', 'de', 'es', 'it', 'ja', 'ko', 'pt', 'ru']).default('zh-CN'),
+    contentLanguage: z.enum(supportedContentLanguages).default('zh-CN'),
     topics: z.array(z.string()),
     sourceUrl: z.string().url(),
     doi: z.string().optional(),
@@ -103,7 +109,7 @@ const films = defineCollection({
     year: z.number(),
     country: z.string(),
     duration: z.string().optional(),
-    language: z.enum(['zh-CN', 'en', 'zh-TW', 'fr', 'de', 'es', 'it', 'ja', 'ko', 'pt', 'ru']).default('zh-CN'),
+    contentLanguage: z.enum(supportedContentLanguages).default('zh-CN'),
     genre: z.array(z.string()).optional(),
     cast: z.array(z.string()).optional(),
     topics: z.array(z.string()),

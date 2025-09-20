@@ -3,7 +3,7 @@ title: "The REAL-WORLD FEMINIST® Podcast"
 author: "Michelle Kinsman"
 description: "The REAL-WORLD FEMINIST® Podcast is hosted by career coach Michelle Kinsman, designed for 'bold and fearless' women, providing workplace strategies, goal setting, and self-improvement tools. The show emphasizes action orientation, motivational language, and authentic experience sharing, covering workplace communication, goal planning, financial discipline, and self-awareness, serving as a practical guide in feminist career development podcasting."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Career Development", "Women's Economic Rights", "Gender Politics", "Bodily Autonomy", "Cultural Critique"]
 sourceUrl: "https://open.spotify.com/show/0tfli4fNF7hhlTb64Q9faO"
 embedUrl: "https://open.spotify.com/embed/show/0tfli4fNF7hhlTb64Q9faO"

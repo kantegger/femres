@@ -5,7 +5,7 @@ author: "Kate Manne"
 description: "A groundbreaking philosophical analysis that redefines misogyny not as hatred of women, but as a system designed to police and punish women who challenge patriarchal norms. Manne provides a rigorous framework for understanding how misogyny functions as the enforcement branch of patriarchy."
 publishDate: 2017-10-18
 isbn: "9780190604981"
-language: "en"
+contentLanguage: "en"
 topics: ["Patriarchy Critique", "Feminist Literary Criticism", "Cultural Critique", "Political Participation", "Intersectional Feminism", "Academic Patriarchy Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=down+girl+logic+misogyny+kate+manne&tag=inkrupt-22"
 coverImage: "/images/books/down-girl.jpg"

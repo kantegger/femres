@@ -3,7 +3,7 @@ title: "Reply Guys"
 author: "Kate Willett & Julia Claire"
 description: "Reply Guys is a feminist political commentary podcast hosted by Kate Willett and Julia Claire, exploring American politics, gender issues, and media phenomena with humor, satire, and a leftist perspective. The show focuses on abortion rights, labor movements, electoral politics, and online gender violence, frequently inviting journalists, activists, and political candidates for discussion. With a style blending standup comedy and critical analysis, it emphasizes women's voices and action in progressive politics. Spotify rating of 4.8 (120 reviews), representative in leftist feminist podcast circles."
 publishDate: 2025-09-11
-language: "en"
+contentLanguage: "en"
 topics: ["Abortion Rights", "Political Participation", "Media Representation Critique"]
 sourceUrl: "https://open.spotify.com/show/6rUuYvZrZKZzXjZQvZK1vA"
 embedUrl: "https://open.spotify.com/embed/show/6rUuYvZrZKZzXjZQvZK1vA"

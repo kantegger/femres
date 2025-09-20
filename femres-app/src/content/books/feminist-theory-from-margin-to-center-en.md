@@ -5,7 +5,7 @@ author: "bell hooks"
 description: "This classic work by the American Black feminist theorist re-examines feminism from an intersectional perspective, emphasizing the multiple oppressions of race, class, and gender, laying the theoretical foundation for inclusive feminism."
 publishDate: 1984-01-01
 isbn: "9780896086135"
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Black Feminism", "Second Wave Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=feminist+theory+from+margin+to+center+bell+hooks&tag=inkrupt-22"
 coverImage: "/images/books/bell-hooks-feminism.jpg"

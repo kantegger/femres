@@ -3,7 +3,7 @@ title: "Feminists Without Mystique"
 author: "FWMPodcast Collective"
 description: "《Feminists Without Mystique》是一档由多位女性主义者共同主持的播客，以犀利幽默的方式探讨政治、性别与文化议题。节目风格直率、批判性强，内容涵盖堕胎权、跨性别议题、种族与司法不公、媒体责任等，常以“we see you”环节揭露社会中的结构性暴力与沉默共谋。自 2018 年开播以来，已发布超过 200 集，Spotify 评分为 4.7（12 条评论），深受进步主义听众欢迎。"
 publishDate: 2025-09-11
-language: en
+contentLanguage: en
 topics: ["Abortion Rights", "Trans Feminism", "Political Participation"]
 sourceUrl: "https://open.spotify.com/show/7FnvRFHlrrVPJqOyn008Aj"
 embedUrl: "https://open.spotify.com/embed/show/7FnvRFHlrrVPJqOyn008Aj"

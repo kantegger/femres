@@ -8,10 +8,10 @@ releaseDate: 1928-04-21
 year: 1928
 country: "France"
 duration: "114 minutes"
-language: "fr"
+contentLanguage: "fr"
 genre: ["Drama", "Biography", "History"]
 cast: ["Renée Jeanne Falconetti", "Eugene Silvain", "André Berley", "Maurice Schutz", "Michel Simon", "Antonin Artaud"]
-topics: ["Religious Feminism", "Female Martyrdom", "Historical Feminism", "Spiritual Resistance", "Patriarchal Authority", "Women's Voice"]
+topics: ["Feminist Theology", "Historical Context", "Spiritual Feminism", "Patriarchy Critique", "Female Desire"]
 status: "published"
 awards: ["Village Voice 8th Greatest 20th Century Film", "National Society of Film Critics Top 100 Essential Films", "Criterion Collection", "98% Rotten Tomatoes"]
 imdbRating: "8.1"

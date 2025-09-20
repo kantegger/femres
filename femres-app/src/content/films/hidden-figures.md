@@ -8,7 +8,7 @@ releaseDate: 2016-12-25
 year: 2016
 country: "美国"
 duration: "127分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["剧情", "传记", "历史"]
 cast: ["塔拉吉·P·汉森", "奥克塔维亚·斯宾瑟", "加奈儿·梦奈", "凯文·科斯特纳", "克斯汀·邓斯特"]
 topics: ["Intersectional Feminism", "Black Feminism", "Workplace Equality", "Equal Pay", "Glass Ceiling", "Education Equality", "Race and Gender"]

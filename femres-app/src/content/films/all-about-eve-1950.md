@@ -8,7 +8,7 @@ releaseDate: 1950-10-13
 year: 1950
 country: "美国"
 duration: "138分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["剧情", "悬疑"]
 cast: ["贝蒂·戴维斯", "安妮·巴克斯特", "乔治·桑德斯", "塞莱斯特·霍尔姆", "加里·美林", "休·马洛"]
 topics: ["Workplace Equality", "Glass Ceiling", "Cultural Critique", "Media Representation Critique", "Patriarchy Critique", "Historical Context"]

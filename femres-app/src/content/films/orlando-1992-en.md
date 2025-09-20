@@ -8,7 +8,7 @@ releaseDate: 1992-12-11
 year: 1992
 country: "UK"
 duration: "93 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama", "Fantasy", "Biography"]
 cast: ["Tilda Swinton", "Billy Zane", "Quentin Crisp", "Lothaire Bluteau", "John Wood"]
 topics: ["Gender Identity", "Queer Theory", "Trans Feminism", "Historical Context", "Cultural Critique", "Patriarchy Critique", "Gender Norms", "Body Politics"]

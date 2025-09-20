@@ -4,7 +4,7 @@ originalTitle: "A very basic view of feminism: feminist girls and meanings of (c
 author: "Sue Jackson"
 description: "This paper explores young women's understanding of feminism, particularly their perspectives on celebrity feminism. The research finds that while celebrity feminism is often criticized as superficial and lacking intersectional perspectives, it plays an important role as a 'gateway' or 'starting point' for attracting and guiding young girls to engage with and deepen their understanding of feminism."
 publishDate: 2020-05-19
-language: en
+contentLanguage: en
 topics: ["Fourth Wave Feminism", "Media Representation Critique", "Pop Culture Feminism"]
 sourceUrl: "https://doi.org/10.1080/14680777.2020.1762236"
 doi: "10.1080/14680777.2020.1762236"

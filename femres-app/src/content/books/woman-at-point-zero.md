@@ -5,7 +5,7 @@ author: "纳瓦尔·萨达维"
 description: "埃及女性主义先驱萨达维的经典小说，通过一个被判死刑的女性的故事，揭露了阿拉伯社会中女性所面临的暴力和压迫。"
 publishDate: 1975-01-01
 isbn: "9781783602964"
-language: "en"
+contentLanguage: "en"
 topics: ["Arab Feminism", "Decolonial Feminism", "Anti-Sexual Violence", "Women's Literature", "Patriarchy Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=woman+at+point+zero+nawal+el+saadawi&tag=inkrupt-22"
 coverImage: "/images/books/woman-at-point-zero.jpg"

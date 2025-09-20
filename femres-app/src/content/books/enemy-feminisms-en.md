@@ -5,7 +5,7 @@ author: "Sophie Lewis"
 description: "A provocative and unflinching examination of reactionary strands within feminism that work against liberation. Lewis traces two centuries of 'enemy feminisms' from imperial feminists to contemporary TERFs, revealing how feminist rhetoric can be weaponized to reinforce rather than dismantle systems of oppression."
 publishDate: 2025-02-18
 isbn: "9798888902493"
-language: "en"
+contentLanguage: "en"
 topics: ["Radical Feminism", "Trans Feminism", "Intersectional Feminism", "Cultural Critique", "Anti-Feminism Studies", "Patriarchy Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=enemy+feminisms+sophie+lewis&tag=inkrupt-22"
 coverImage: "/images/books/enemy-feminisms.jpg"

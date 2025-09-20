@@ -5,7 +5,7 @@ author: "Charlotte Perkins Gilman"
 description: "A groundbreaking feminist utopian novel published in 1915 that envisions an ideal society composed entirely of women, exploring fundamental questions about gender roles, social organization, and women's potential."
 publishDate: 1915-01-01
 isbn: "9780394736655"
-language: "en"
+contentLanguage: "en"
 topics: ["First Wave Feminism", "Radical Feminism", "Women's Literature", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=herland+charlotte+perkins+gilman&tag=inkrupt-22"
 coverImage: "/images/books/herland.jpg"

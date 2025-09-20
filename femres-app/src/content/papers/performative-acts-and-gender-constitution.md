@@ -4,7 +4,7 @@ originalTitle: "Performative Acts and Gender Constitution: An Essay in Phenomeno
 author: "朱迪思·巴特勒"
 description: "这篇具有影响力的论文将性别探讨为一种表演性行为而非自然给定，运用现象学理论论证性别认同是通过重复的风格化行为构成的。巴特勒挑战了性别的本质主义观念，提出性别是在规制框架内通过表演持续建构的。"
 publishDate: 1988-12-01
-language: en
+contentLanguage: en
 topics: ["Gender Identity", "Feminist Theory", "Gender Norms", "Gender Socialization", "Academic Feminism"]
 sourceUrl: "https://www.jstor.org/stable/3207893"
 doi: "10.1632/S0040557400062652"

@@ -8,10 +8,10 @@ releaseDate: 1992-07-01
 year: 1992
 country: "美国"
 duration: "128分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["喜剧", "剧情", "运动"]
 cast: ["汤姆·汉克斯", "吉娜·戴维斯", "麦当娜", "洛里·佩蒂", "罗西·欧唐奈", "乔恩·洛维茨", "大卫·斯特雷泽恩", "比尔·普尔曼"]
-topics: ["Sports Equality", "Women's History", "Workplace Equality", "Patriarchy Critique", "Female Friendship", "Historical Feminism"]
+topics: ["Sports Equality", "Historical Context", "Workplace Equality", "Patriarchy Critique", "Female Friendship", "Historical Context"]
 status: "published"
 awards: ["2012年国家电影登记处收录", "演员工会铸造奖", "青年艺术家奖"]
 imdbRating: "7.4"

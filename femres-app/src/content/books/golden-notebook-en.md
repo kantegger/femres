@@ -5,7 +5,7 @@ author: "Doris Lessing"
 description: "The most famous 1962 experimental novel by 2007 Nobel Prize winner Doris Lessing, telling the then-unspeakable facts: women as beings with sexual desires, who suffer from mental illness, who struggle, who climax, who menstruate. Through the perspective of writer Anna trying to integrate her life experiences and creative notes into a unified whole, Lessing explores the unbeautiful aspects of women's lives with love, anger, and a frankness almost unheard of among women writers at the time."
 publishDate: 1962-01-01
 isbn: "9780060931407"
-language: "en"
+contentLanguage: "en"
 topics: ["Second Wave Feminism", "Women's Writing", "Women's Literature", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=golden+notebook+doris+lessing&tag=inkrupt-22"
 coverImage: "/images/books/golden-notebook.jpg"

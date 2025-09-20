@@ -5,7 +5,7 @@ author: "Audre Lorde"
 description: "A foundational work of intersectional feminist theory. Through fifteen essays and speeches, Lorde explores the intersectional oppression of race, gender, class, and sexuality, creating a revolutionary theoretical framework for understanding multiple identities."
 publishDate: 1984-01-01
 isbn: "9781580911863"
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Black Feminism", "Queer Theory", "Race and Gender"]
 sourceUrl: "https://www.amazon.sg/s?k=sister+outsider+audre+lorde&tag=inkrupt-22"
 coverImage: "/images/books/sister-outsider.jpg"

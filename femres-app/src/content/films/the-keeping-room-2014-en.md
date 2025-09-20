@@ -8,7 +8,7 @@ releaseDate: 2014-09-08
 year: 2014
 country: "USA"
 duration: "95 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Western", "Drama", "Thriller"]
 cast: ["Brit Marling", "Hailee Steinfeld", "Muna Otaru", "Sam Worthington", "Amy Nuttall"]
 topics: ["Anti-Sexual Violence", "Race and Gender", "Historical Context", "Bodily Autonomy", "Economic Empowerment", "Intersectional Feminism", "Cultural Critique"]

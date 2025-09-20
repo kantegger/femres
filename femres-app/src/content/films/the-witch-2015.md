@@ -8,7 +8,7 @@ releaseDate: 2016-02-19
 year: 2015
 country: "美国"
 duration: "93分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["恐怖", "剧情", "奇幻"]
 cast: ["安雅·泰勒-乔伊", "拉尔夫·伊内森", "凯特·迪基", "哈维·斯克林肖", "埃莉·格兰杰", "卢卡斯·道森", "朱利安·里金斯", "芭丝希芭·加内特"]
 topics: ["Radical Feminism", "Patriarchy Critique", "Religious Patriarchy Critique", "Bodily Autonomy", "Historical Context", "Female Desire", "Family Liberation", "Cultural Critique", "Gender Norms", "Women's Rights"]

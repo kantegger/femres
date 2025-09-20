@@ -3,7 +3,7 @@ title: "Fifty Feminist States"
 author: "Amelia Hruby"
 description: "Fifty Feminist States is a podcast hosted by Amelia Hruby, taking a road trip format across America's fifty states to interview local feminist artists and advocates. The show emphasizes intersectionality and cross-regional perspectives, covering reproductive justice, Black feminism, media representation, mental health, and community organizing. It serves as an archive combining oral history with cultural critique. The show concluded in 2021, but all episodes remain accessible."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Reproductive Autonomy", "Black Feminism", "Cultural Critique"]
 sourceUrl: "https://open.spotify.com/show/7JC4EPFBricXpPA0hkMykz"
 embedUrl: "https://open.spotify.com/embed/show/7JC4EPFBricXpPA0hkMykz"

@@ -3,7 +3,7 @@ title: "Burn It All Down"
 author: "Shireen Ahmed, Lindsay Gibbs, Brenda Elsey, Amira Rose Davis, Jessica Luther"
 description: "Burn It All Down is a podcast co-hosted by five feminist sports commentators, dedicated to analyzing sports and cultural issues from a feminist perspective. The hosts include Shireen Ahmed, Lindsay Gibbs, Brenda Elsey, Amira Rose Davis, and Jessica Luther, who explore athlete activism, gender and race intersectional issues, injustices in the sports industry, and how sports intervene in contemporary culture wars. With a sharp, critical style, the show is popular among feminists and sports researchers, with a high Spotify rating of 4.9 (73 reviews)."
 publishDate: 2025-07-01
-language: "en"
+contentLanguage: "en"
 topics: ["Sports Equality", "Intersectional Feminism", "Race and Gender"]
 sourceUrl: "https://open.spotify.com/show/0yQs1F78LcjPWDPPSS3MPH"
 embedUrl: "https://open.spotify.com/embed/show/0yQs1F78LcjPWDPPSS3MPH"

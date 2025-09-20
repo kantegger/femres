@@ -5,7 +5,7 @@ author: "Mindy Seu"
 description: "A pioneering work exploring feminism in the digital age, analyzing how the internet, artificial intelligence, and digital technologies are reshaping gender relations and feminist practice."
 publishDate: 2022-03-15
 isbn: "9781839762456"
-language: "en"
+contentLanguage: "en"
 topics: ["Digital Feminism", "Technology Critique", "AI Ethics", "Internet Culture", "Fourth Wave Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=cyberfeminism+index+mindy+seu&tag=inkrupt-22"
 coverImage: "/images/books/cyberfeminism-index.jpg"

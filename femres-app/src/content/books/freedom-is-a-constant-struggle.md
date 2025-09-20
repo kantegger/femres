@@ -5,7 +5,7 @@ author: "安吉拉·戴维斯"
 description: "连接不同时代和地域的解放运动，从废奴到巴勒斯坦，展现了交叉性分析在当代社会运动中的重要性。"
 publishDate: 2016-02-01
 isbn: "9781608465644"
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Black Feminism", "Anti-Feminism Studies", "Political Participation", "Race and Gender"]
 sourceUrl: "https://www.amazon.sg/s?k=freedom+is+a+constant+struggle+angela+davis&tag=inkrupt-22"
 coverImage: "/images/books/freedom-is-a-constant-struggle.jpg"

@@ -3,7 +3,7 @@ title: "Feminist History"
 author: "Maggie Coomer"
 description: "Feminist History is a podcast hosted by Maggie Coomer, using creative non-fiction narrative to tell the life stories of historical women figures, focusing on those who challenged norms and advanced gender equality. The show's content covers pioneering women in journalism, mental asylum human rights history, baby placement controversies, and Black women newspaper editors, emphasizing the intersection of historical renarration and cultural memory. Spotify rating of 4.9 (7 reviews), representing exemplary work among feminist history podcasts."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Women's Writing", "Patriarchy Critique", "Oral History", "Media Representation Critique"]
 sourceUrl: "https://open.spotify.com/show/5T2H9gBG6X4206jQM4YHHp"
 embedUrl: "https://open.spotify.com/embed/show/5T2H9gBG6X4206jQM4YHHp"

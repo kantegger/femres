@@ -3,7 +3,7 @@ title: "《邀请所有男性：将女性主义推向更远》"
 author: "Hannah Ferguson" 
 description: "在这个TEDxSydney青年演讲中，汉娜·弗格森向所有男性发出了一个邀请：更深入地参与到女性主义中来。她指出，厌女症并非只存在于极端分子中，而是广泛存在于日常男性群体中。演讲探讨了男女之间日益扩大的意识形态鸿沟，呼吁重新定义“女性主义”一词，并强调男性在父权制下也受到伤害。弗格森鼓励男性超越“盟友或敌人”的二元对立，通过对话和教育，在没有女性在场的私人空间中挑战有害的言论和行为。" 
 publishDate: 2024-11-22 
-language: "en" 
+contentLanguage: "en" 
 topics: ["Anti-Feminism Studies", "Patriarchy Critique", "Cultural Critique", "Media Representation Critique"] 
 sourceUrl: "https://www.youtube.com/watch?v=pMN5k6zH7sU" 
 embedUrl: "https://www.google.com/search?q=https://www.youtube.com/embed/pMN5k6zH7sU" 

@@ -10,7 +10,7 @@ releaseDate: 1990-03-09
 year: 1990
 country: "Germany/USA"
 duration: "109 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama", "Science Fiction", "Thriller"]
 cast: ["Natasha Richardson", "Faye Dunaway", "Aidan Quinn", "Elizabeth McGovern"]
 topics: ["Radical Feminism", "Bodily Autonomy", "Reproductive Autonomy", "Patriarchy Critique"]

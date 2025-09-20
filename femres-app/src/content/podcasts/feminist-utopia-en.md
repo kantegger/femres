@@ -3,7 +3,7 @@ title: "Feminist Utopia"
 author: "Benita & Debby"
 description: "Feminist Utopia is a podcast hosted by Benita and Debby, focusing on how feminism promotes dignity, solidarity, and social justice. Using American political events as entry points, the show explores abortion rights, Supreme Court politicization, protest actions, and moral discourse authority, emphasizing transgender, racial, class, and religious intersectionality. With a direct, highly critical style, it's suitable for audiences interested in contemporary American feminist politics."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Political Participation", "Abortion Rights", "Gender Politics", "Cultural Critique", "Intersectional Feminism"]
 sourceUrl: "https://open.spotify.com/show/5QN6cNdpPIxqoG1IBAggxF"
 embedUrl: "https://open.spotify.com/embed/show/5QN6cNdpPIxqoG1IBAggxF"

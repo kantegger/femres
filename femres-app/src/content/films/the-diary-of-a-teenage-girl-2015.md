@@ -8,7 +8,7 @@ releaseDate: 2015-08-07
 year: 2015
 country: "美国"
 duration: "102分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["喜剧", "剧情", "爱情"]
 cast: ["贝尔·波利", "亚历山大·斯卡斯加德", "克里斯汀·韦格", "克里斯托弗·梅洛尼", "奥斯汀·里昂", "奎因·纳格尔", "艾比·韦特", "米兰达·贝利", "玛德琳·沃特斯"]
 topics: ["Female Desire", "Sexual Liberation", "Bodily Autonomy", "Feminist Art", "Cultural Critique", "Women's Rights", "Pop Culture Feminism", "Historical Context", "Gender Norms", "Identity Formation"]

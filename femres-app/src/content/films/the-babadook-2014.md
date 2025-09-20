@@ -8,7 +8,7 @@ releaseDate: 2014-05-22
 year: 2014
 country: "澳大利亚"
 duration: "94分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["恐怖", "心理", "剧情"]
 cast: ["艾希·戴维斯", "诺亚·怀斯曼", "丹尼尔·亨索尔", "海莉·麦克艾尔希尼", "芭芭拉·韦斯特"]
 topics: ["Motherhood Critique", "Mental Health", "Family Liberation", "Cultural Critique", "Feminist Psychology", "Emotional Labor", "Mental Resilience"]

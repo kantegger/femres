@@ -3,7 +3,7 @@ title: "Masala Podcast: The South Asian feminist podcast"
 author: "Sangeeta Pillai / Soul Sutras"
 description: "Masala Podcast is hosted by Sangeeta Pillai, an award-winning South Asian feminist podcast focusing on sex, body, mental health, and cultural taboos. The show features intimate narrative and critical reflection, exploring themes of shame, sexual harassment, menopause, belonging, and motherhood pressure, emphasizing diverse experiences of South Asian women and intersectional feminist perspectives. Winner of British Podcast Award, Spotify SoundUp Award, and featured on New York and London street billboards. With a Spotify rating of 4.8 (56 reviews), it has widespread influence in global South Asian feminist communities."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Body Politics", "Cultural Taboos", "Motherhood Critique", "Mental Health"]
 sourceUrl: "https://open.spotify.com/show/7eCWGNxaofWADklejsML95"
 embedUrl: "https://open.spotify.com/embed/show/7eCWGNxaofWADklejsML95"

@@ -8,7 +8,7 @@ releaseDate: 2013-08-09
 year: 2013
 country: "美国"
 duration: "93分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["喜剧", "剧情"]
 cast: ["蕾克·贝尔", "弗雷德·梅拉梅德", "德米特里·马丁", "罗布·考德瑞", "米凯拉·沃特金斯", "肯·马里诺", "尼克·奥弗曼", "蒂格·诺塔罗", "亚历山德拉·霍尔顿", "伊娃·朗格利亚", "吉娜·戴维斯", "卡梅隆·迪亚兹"]
 topics: ["Workplace Equality", "Glass Ceiling", "Media Representation Critique", "Gender Norms", "Career Development", "Cultural Critique", "Women's Rights", "Economic Empowerment", "Third Wave Feminism", "Feminist Film Criticism"]

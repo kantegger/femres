@@ -8,7 +8,7 @@ releaseDate: 1993-09-08
 year: 1993
 country: "USA"
 duration: "139 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama", "Family"]
 cast: ["Ming-Na Wen", "Faye Yu", "Joan Chen", "Lisa Lu", "Rosalind Chao", "Lauren Tom"]
 topics: ["Family Liberation", "Intersectional Feminism", "Immigrant Identity", "Cultural Identity"]

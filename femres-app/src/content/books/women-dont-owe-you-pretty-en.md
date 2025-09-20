@@ -5,7 +5,7 @@ author: "Florence Given"
 description: "A vibrant manifesto for intersectional feminism that challenges beauty standards, toxic relationships, and societal expectations. Given combines personal insight with political analysis to encourage women to reject the pressure to be 'pretty' for others and embrace their authentic selves."
 publishDate: 2020-06-11
 isbn: "9781788402118"
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Body Positivity", "Third Wave Feminism", "Cultural Critique", "Self-Love", "Beauty Standards"]
 sourceUrl: "https://www.amazon.sg/s?k=women+don%27t+owe+you+pretty+florence+given&tag=inkrupt-22"
 coverImage: "/images/books/women-dont-owe-you-pretty.jpg"

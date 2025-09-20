@@ -3,7 +3,7 @@ title: "Feminist Lifestyle Blog"
 author: "Tonii"
 description: "Feminist Lifestyle Blog is a personal podcast hosted by Tonii, exploring feminist lifestyles, gender issues, and social relationships through casual conversation format. The show blends personal experiences with social observations, covering content including social perceptions of single women, religious and educational conflicts, exclusivity in intimate relationships, women's professional challenges, and emotional expression. With a friendly, highly reflective style suitable for young audiences and feminist beginners. Spotify rating of 5.0 (1 review), providing unique perspectives for feminist podcasting in the Nigerian context."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Women's Writing", "Political Participation", "Cultural Critique", "Emotional Labor"]
 sourceUrl: "https://open.spotify.com/show/1jR7vX3ivki2TQFJJ2nW4i"
 embedUrl: "https://open.spotify.com/embed/show/1jR7vX3ivki2TQFJJ2nW4i"

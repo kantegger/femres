@@ -3,7 +3,7 @@ title: "Feminist Sleeper Cell"
 author: "Abortion Access Force"
 description: "Feminist Sleeper Cell is a podcast produced by Abortion Access Force, focusing on the latest developments in America's abortion rights crisis and anti-gender politics. Hosts Lizz Winstead, Moji Alawode-El, and Marie Khan respond to Supreme Court decisions, anti-abortion organizational actions, misogynistic structures in healthcare systems, and Black women's health issues with satire, anger, and critical humor. With a radical, information-dense style, it represents a frontline voice in American abortion rights advocacy."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Abortion Rights", "Anti-Sexual Violence", "Black Feminism", "Patriarchy Critique", "Political Participation"]
 sourceUrl: "https://open.spotify.com/show/24jIOFszKsgyUPfrU7WgL3"
 embedUrl: "https://open.spotify.com/embed/show/24jIOFszKsgyUPfrU7WgL3"

@@ -4,7 +4,7 @@ originalTitle: "The Queer Art of Failure"
 author: "Jack Halberstam"
 description: "Halberstam challenges success standards in heteronormative capitalist society, exploring the productive potential of failure as a form of resistance. Through analysis of popular culture and queer theory, the author proposes 'low theory' as a mode of thinking and writing, redefining failure not as deficiency but as a strategy for subverting mainstream values."
 publishDate: 2011-01-01
-language: en
+contentLanguage: en
 topics: ["Trans Feminism", "Queer Theory", "Capitalism Critique", "Cultural Critique", "Postmodern Feminism"]
 isbn: "9780822350453"
 coverImage: "/images/books/the-queer-art-of-failure.jpg"

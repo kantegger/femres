@@ -5,7 +5,7 @@ author: "莱斯利·费恩伯格"
 description: "跨性别权利运动的奠基性文本，探讨性别二元论的压迫性，倡导所有性别表达的解放。"
 publishDate: 1998-09-01
 isbn: "9780807079515"
-language: "en"
+contentLanguage: "en"
 topics: ["Trans Feminism", "Queer Theory", "Bodily Autonomy", "Gender Diversity", "Intersectional Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=trans+liberation+leslie+feinberg&tag=inkrupt-22"
 coverImage: "/images/books/trans-liberation.jpg"

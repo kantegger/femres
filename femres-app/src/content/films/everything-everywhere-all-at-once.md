@@ -8,7 +8,7 @@ releaseDate: 2022-03-25
 year: 2022
 country: "美国"
 duration: "139分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["科幻", "喜剧", "动作", "奇幻"]
 cast: ["杨紫琼", "关继威", "许玮伦", "詹美·李·柯蒂斯", "吴汉章"]
 topics: ["Immigrant Identity", "Mother-Daughter Relationships", "Queer Identity", "Economic Empowerment", "Cultural Identity"]

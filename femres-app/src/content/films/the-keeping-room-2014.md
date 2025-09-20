@@ -8,7 +8,7 @@ releaseDate: 2014-09-08
 year: 2014
 country: "美国"
 duration: "95分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["西部", "剧情", "惊悚"]
 cast: ["布丽·拉森", "海莉·斯坦菲尔德", "穆娜·奥塔鲁", "山姆·沃辛顿", "艾米·纳托尔"]
 topics: ["Anti-Sexual Violence", "Race and Gender", "Historical Context", "Bodily Autonomy", "Economic Empowerment", "Intersectional Feminism", "Cultural Critique"]

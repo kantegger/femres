@@ -5,7 +5,7 @@ author: "Chimamanda Ngozi Adichie"
 description: "Nigerian writer Adichie's pamphlet expanded from her TED talk redefines 21st-century feminism through personal experiences and sharp observations, making this concept more accessible and relatable."
 publishDate: 2014-07-29
 isbn: "9787559827463"
-language: "en"
+contentLanguage: "en"
 topics: ["Fourth Wave Feminism", "Decolonial Feminism", "Women's Literature", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=we+should+all+be+feminists+chimamanda+ngozi+adichie&tag=inkrupt-22"
 coverImage: "/images/books/we-should-all-be-feminists.jpg"

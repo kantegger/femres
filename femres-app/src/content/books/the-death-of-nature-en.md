@@ -5,7 +5,7 @@ author: "Carolyn Merchant"
 description: "A groundbreaking work of ecofeminist scholarship that examines how the Scientific Revolution transformed Western culture's understanding of nature from a living, nurturing organism to a dead, mechanical object to be exploited. Merchant reveals the intimate connection between the domination of women and the domination of nature."
 publishDate: 1980-09-01
 isbn: "9780062505958"
-language: "en"
+contentLanguage: "en"
 topics: ["Ecofeminism", "Scientific Revolution", "Patriarchy Critique", "Capitalism Critique", "Cultural Critique", "Feminist Literary Criticism"]
 sourceUrl: "https://www.amazon.sg/s?k=the+death+of+nature+carolyn+merchant&tag=inkrupt-22"
 coverImage: "/images/books/the-death-of-nature.jpg"

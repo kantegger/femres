@@ -5,7 +5,7 @@ author: "Angela Davis"
 description: "Connecting liberation movements across different eras and regions, from abolitionism to Palestine, demonstrating the importance of intersectional analysis in contemporary social movements."
 publishDate: 2016-02-01
 isbn: "9781608465644"
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Black Feminism", "Anti-Feminism Studies", "Political Participation", "Race and Gender"]
 sourceUrl: "https://www.amazon.sg/s?k=freedom+is+a+constant+struggle+angela+davis&tag=inkrupt-22"
 coverImage: "/images/books/freedom-is-a-constant-struggle.jpg"

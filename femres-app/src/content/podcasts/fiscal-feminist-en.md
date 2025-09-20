@@ -3,7 +3,7 @@ title: "The Fiscal Feminist"
 author: "Kimberlee A. Davis"
 description: "The Fiscal Feminist is a podcast hosted by wealth advisor Kimberlee A. Davis, focusing on women's relationship with money and emphasizing the integration of financial independence, career development, and psychological energy. The show covers workplace gender differences, divorce financial planning, youth financial education, real estate trends, and energy vibration theory. With a professional and inspiring style, it's suitable for audiences interested in feminist financial practices."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Women's Economic Rights", "Bodily Autonomy", "Gender Politics", "Spiritual Feminism", "Career Development"]
 sourceUrl: "https://open.spotify.com/show/2jhwBTud4LzRgYhizc0GPq"
 embedUrl: "https://open.spotify.com/embed/show/2jhwBTud4LzRgYhizc0GPq"

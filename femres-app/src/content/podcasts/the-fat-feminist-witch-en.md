@@ -3,7 +3,7 @@ title: "The Fat Feminist Witch"
 author: "Paige Vanderbeck"
 description: "The Fat Feminist Witch is a feminist spiritual podcast hosted by Paige Vanderbeck, centered on fat advocacy, witch practice, and cultural critique, exploring the intersection of body politics and modern witchcraft. With a humorous, frank, and critical style, the content covers witchcraft history, feminist magic, religious critique, and cannabis culture. Spotify rating of 4.9 (186 reviews), with distinctive characteristics in alternative feminism and spiritual podcast circles."
 publishDate: 2025-09-11
-language: "en"
+contentLanguage: "en"
 topics: ["Bodily Autonomy", "Religious Patriarchy Critique", "Cultural Critique"]
 sourceUrl: "https://open.spotify.com/show/4TIu8rGpu17Kzo0qPg1xyG"
 embedUrl: "https://open.spotify.com/embed/show/4TIu8rGpu17Kzo0qPg1xyG"

@@ -3,7 +3,7 @@ title: "The Divine Feminist"
 author: "Ceryn Rowntree"
 description: "The Divine Feminist, hosted by Ceryn Rowntree, is a podcast that blends feminism with spiritual exploration, emphasizing self-reconnection, energy balance, and depatriarchalized lifestyles. The show revolves around 'thirteen keys,' exploring themes of boundaries, wildness, beauty, death, and connection, with a philosophical, healing, and action-oriented style. It has featured guests like Laura Bates for conversations, with a Spotify rating of 5.0 (9 reviews), having deep influence in spiritual feminism and psychological growth communities."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Spiritual Feminism", "Feminist Psychology", "Body Politics", "Depatriarchalization"]
 sourceUrl: "https://open.spotify.com/show/5nvT62FToMzkujkhGvDDZY"
 embedUrl: "https://open.spotify.com/embed/show/5nvT62FToMzkujkhGvDDZY"

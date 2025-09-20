@@ -5,7 +5,7 @@ author: "凯瑟琳·罗滕伯格"
 description: "对新自由主义如何收编女性主义话语的批判性审视，揭示了女性主义如何从一个追求社会正义的集体运动转变为服务企业利益的个人赋权追求，同时抛弃了绝大多数女性的利益。"
 publishDate: 2018-09-04
 isbn: "9780190901226"
-language: "en"
+contentLanguage: "en"
 topics: ["Liberal Feminism", "Capitalism Critique", "Neoliberalism", "Cultural Critique", "Political Participation", "Economic Empowerment"]
 sourceUrl: "https://www.amazon.sg/s?k=the+rise+of+neoliberal+feminism+catherine+rottenberg&tag=inkrupt-22"
 coverImage: "/images/books/the-rise-of-neoliberal-feminism.jpg"

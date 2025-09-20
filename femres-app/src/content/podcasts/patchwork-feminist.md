@@ -3,7 +3,7 @@ title: "The Patchwork Feminist"
 author: "Ja'Mya Jackson & Garnet Media Group"
 description: "《The Patchwork Feminist》由 Ja'Mya Jackson 主持，是一档融合文化、身份与时事的播客，以拼布隐喻呈现女性经验的多样性。节目风格亲密而批判，涵盖黑人女性主义、成长焦虑、社交媒体影响与政治参与等议题。Spotify 评分为 3.7（3 条评论），在大学生与青年社群中具有代表性。"
 publishDate: 2025-09-12
-language: en
+contentLanguage: en
 topics: ["Black Feminism", "Cultural Critique", "Political Participation", "Emotional Labor"]
 sourceUrl: "https://open.spotify.com/show/4XUQkvkTkXZ3LMRSxKPIMi"
 embedUrl: "https://open.spotify.com/embed/show/4XUQkvkTkXZ3LMRSxKPIMi"

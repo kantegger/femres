@@ -8,7 +8,7 @@ releaseDate: 1979-05-25
 year: 1979
 country: "美国/英国"
 duration: "117分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["科幻", "恐怖", "惊悚"]
 cast: ["西格妮·韦弗", "汤姆·斯凯里特", "维罗尼卡·卡特莱特", "哈里·迪恩·斯坦顿", "约翰·赫特", "伊恩·霍姆", "亚菲特·科托"]
 topics: ["Feminist Art", "Media Representation Critique", "Workplace Equality", "Economic Empowerment", "Bodily Autonomy", "Patriarchy Critique"]

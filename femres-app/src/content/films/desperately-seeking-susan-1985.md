@@ -8,7 +8,7 @@ releaseDate: 1985-03-29
 year: 1985
 country: "美国"
 duration: "104分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["喜剧", "剧情", "悬疑"]
 cast: ["罗莎娜·阿奎特", "麦当娜", "艾丹·奎因", "马克·布卢姆", "劳瑞·梅特卡夫"]
 topics: ["Family Liberation", "Cultural Critique", "Pop Culture Feminism", "Identity Formation", "Economic Empowerment", "Third Wave Feminism"]

@@ -8,7 +8,7 @@ releaseDate: 2020-09-11
 year: 2020
 country: "美国"
 duration: "107分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["剧情", "公路"]
 cast: ["弗兰西斯·麦克多蒙德", "大卫·斯特拉森", "琳达·梅"]
 topics: ["Economic Empowerment", "Capitalism Critique"]

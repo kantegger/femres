@@ -8,7 +8,7 @@ releaseDate: 1990-03-09
 year: 1990
 country: "德国/美国"
 duration: "109分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["剧情", "科幻", "惊悚"]
 cast: ["娜塔莎·理查德森", "费·唐纳薇", "艾丹·奎因", "伊丽莎白·麦戈文"]
 topics: ["Radical Feminism", "Bodily Autonomy", "Reproductive Autonomy", "Patriarchy Critique"]

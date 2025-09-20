@@ -5,7 +5,7 @@ author: "艾米丽·拉塔科夫斯基"
 description: "超模转身作家的深刻自省，通过亲身经历剖析女性身体商品化的复杂机制，探讨现代女性在欲望与蔑视之间的生存困境。"
 publishDate: 2021-11-09
 isbn: "9781250817860"
-language: "en"
+contentLanguage: "en"
 topics: ["Bodily Autonomy", "Fourth Wave Feminism", "Cultural Critique", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=my+body+emily+ratajkowski&tag=inkrupt-22"
 coverImage: "/images/books/my-body.jpg"

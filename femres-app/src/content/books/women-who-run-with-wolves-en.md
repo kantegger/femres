@@ -5,7 +5,7 @@ author: "Clarissa Pinkola Estés"
 description: "The myth of the wild woman exists in various cultures, from fairy tales to folk legends. Often she is portrayed as a fearsome being, but in Jungian analyst Clarissa Pinkola Estés's assessment, she is something completely different: an inner leader and behavioral pattern capable of guiding women on their own healing journey. First published in 1992, Women Who Run with the Wolves earned Estés praise from many of her feminist contemporaries—including Alice Walker and Maya Angelou, two other authors on this list."
 publishDate: 1992-01-01
 isbn: "9780345409874"
-language: "en"
+contentLanguage: "en"
 topics: ["Feminist Psychology", "Spiritual Feminism", "Cultural Critique", "Emotional Labor", "Ethics of Care"]
 sourceUrl: "https://www.amazon.sg/s?k=women+who+run+wolves+clarissa+pinkola+estes&tag=inkrupt-22"
 coverImage: "/images/books/women-who-run-with-wolves.jpg"

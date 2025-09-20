@@ -3,7 +3,7 @@ title: "The Spiritual Feminist"
 author: "Leneth Witte"
 description: "The Spiritual Feminist is hosted by Leneth Witte, a podcast blending feminism with spiritual exploration, emphasizing self-awareness, intuitive living, and women's growth journeys. Using personal stories as threads, the show explores the intersection of slow living, trauma repair, community belonging, and spiritual practice, with a gentle, profound, and healing style. Spotify rating of 4.8 (76 reviews), widely popular in spiritual feminist communities."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Spiritual Feminism", "Feminist Psychology", "Emotional Labor", "Bodily Autonomy", "Cultural Critique"]
 sourceUrl: "https://open.spotify.com/show/5EJX98kecdxxptUpk0HgfX"
 embedUrl: "https://open.spotify.com/embed/show/5EJX98kecdxxptUpk0HgfX"

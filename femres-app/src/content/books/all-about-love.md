@@ -5,7 +5,7 @@ author: "贝尔·胡克斯"
 description: "重新定义爱的含义，探讨爱如何成为抵抗压迫和建立正义社会的基础，提出爱的伦理作为社会变革的核心。"
 publishDate: 2000-01-01
 isbn: "9780060959470"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Ethics of Care", "Emotional Labor", "Spiritual Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=all+about+love+bell+hooks&tag=inkrupt-22"
 coverImage: "/images/books/all-about-love.jpg"

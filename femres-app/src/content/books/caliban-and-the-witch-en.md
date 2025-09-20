@@ -5,7 +5,7 @@ author: "Silvia Federici"
 description: "A groundbreaking feminist re-examination of capitalist primitive accumulation that reveals how violent control over women's bodies became foundational to capitalist development."
 publishDate: 2004-01-01
 isbn: "9781570270598"
-language: "en"
+contentLanguage: "en"
 topics: ["Marxist Feminism", "Capitalism Critique", "Historical Context", "Bodily Autonomy", "Patriarchy Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=caliban+and+the+witch+silvia+federici&tag=inkrupt-22"
 coverImage: "/images/books/caliban-and-the-witch.jpg"

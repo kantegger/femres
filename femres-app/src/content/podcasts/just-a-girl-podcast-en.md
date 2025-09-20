@@ -3,7 +3,7 @@ title: "Just A Girl Podcast"
 author: "Just A Girl Podcast Team"
 description: "Just A Girl Podcast is a light-hearted feminist podcast hosted by two women, using music, workplace, and daily life as entry points to explore gender inequality, patriarchal culture, and micro-resistance. With an intimate, humorous, and satirical style, the content covers workplace gender discrimination, feminist lyric analysis, holiday culture critique, and everyday micro-feminist practices. With a Spotify rating of 4.9 (32 reviews), it's quite popular among young generation feminist podcasts."
 publishDate: 2025-09-11
-language: "en"
+contentLanguage: "en"
 topics: ["Patriarchy Critique", "Media Representation Critique", "Emotional Labor"]
 sourceUrl: "https://open.spotify.com/show/53XjocC3lre3QZLR1Z60TF"
 embedUrl: "https://open.spotify.com/embed/show/53XjocC3lre3QZLR1Z60TF"

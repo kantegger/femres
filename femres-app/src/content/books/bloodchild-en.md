@@ -5,7 +5,7 @@ author: "Octavia E. Butler"
 description: "A classic collection by the master of science fiction feminist literature Butler, featuring the Hugo and Nebula Award-winning titular novella that explores gender roles, power relationships, and identity through interspecies dynamics."
 publishDate: 1984-06-01
 isbn: "9781583226988"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Bodily Autonomy", "Race and Gender", "Women's Literature"]
 sourceUrl: "https://www.amazon.sg/s?k=bloodchild+other+stories+octavia+butler&tag=inkrupt-22"
 coverImage: "/images/books/bloodchild.jpg"

@@ -3,7 +3,7 @@ title: "反对‘温顺暴政’：我们为何需要棘手的女性"
 author: "Helen Lewis"
 description: "本文批判了当代女性主义中对‘完美’与‘可爱’的期待，呼吁正视女性主义内部的复杂性与矛盾，接纳那些不合群、难以归类但推动变革的‘棘手女性’。"
 publishDate: 2020-02-15
-language: "en"
+contentLanguage: "en"
 topics: ["Fourth Wave Feminism", "Patriarchy Critique", "Anti-Feminism Studies", "Media Representation Critique", "Political Participation", "Bodily Autonomy", "Emotional Labor", "Feminist Psychology"]
 sourceUrl: "https://www.theguardian.com/books/2020/feb/15/feminism-feminists-tyranny-niceness-complexity?ref=refind"
 readingTime: 10

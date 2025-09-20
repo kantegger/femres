@@ -3,7 +3,7 @@ title: "Feminist Frequency Radio"
 author: "Kat Spada, Anita Sarkeesian"
 description: "Feminist Frequency Radio is a podcast hosted by Kat Spada and Anita Sarkeesian, focusing on critiquing pop culture from a feminist perspective. The show explores gender representation, power structures, and social metaphors in movies, TV shows, and video games weekly, covering everything from Hollywood blockbusters to obscure classics. The hosts frequently invite guests to analyze gender stereotypes, race and class issues in works, and engage in deep conversations combining current events with cultural trends."
 publishDate: 2025-09-02
-language: en
+contentLanguage: en
 topics: ["Media Representation Critique", "Pop Culture Feminism", "Fourth Wave Feminism"]
 sourceUrl: "https://open.spotify.com/show/74M0UAKuI6S7ny0wGGwlHp"
 embedUrl: "https://open.spotify.com/embed/show/74M0UAKuI6S7ny0wGGwlHp"

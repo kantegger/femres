@@ -8,7 +8,7 @@ releaseDate: 2007-06-27
 year: 2007
 country: "法国/美国"
 duration: "96分钟"
-language: "fr"
+contentLanguage: "fr"
 genre: ["动画", "传记", "剧情", "历史"]
 cast: ["嘉布丽埃勒·洛佩兹", "凯瑟琳·德纳芙", "达妮埃勒·达里厄", "西蒙·阿布卡瑞安"]
 topics: ["Decolonial Feminism", "Religious Patriarchy Critique", "Bodily Autonomy", "Feminist Art", "Political Participation", "Cultural Identity"]

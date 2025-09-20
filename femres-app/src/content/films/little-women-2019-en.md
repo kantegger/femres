@@ -10,7 +10,7 @@ releaseDate: 2019-12-25
 year: 2019
 country: "USA"
 duration: "135 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama", "Romance", "Family"]
 cast: ["Saoirse Ronan", "Emma Watson", "Florence Pugh", "Eliza Scanlen", "Laura Dern", "Meryl Streep"]
 topics: ["Women's Literature", "Feminist Art", "Economic Empowerment", "Women's Writing", "Bodily Autonomy", "Family Liberation"]

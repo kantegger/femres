@@ -5,7 +5,7 @@ author: "Julia Serano"
 description: "A groundbreaking manifesto of transgender feminism. From the unique perspective of a transgender woman, Serano deeply analyzes the intrinsic connection between transphobia and sexism, revealing society's systematic devaluation and violence against femininity."
 publishDate: 2007-03-01
 isbn: "9781580056229"
-language: "en"
+contentLanguage: "en"
 topics: ["Trans Feminism", "Patriarchy Critique", "Bodily Autonomy", "Anti-Feminism Studies"]
 sourceUrl: "https://www.amazon.sg/s?k=whipping+girl+julia+serano&tag=inkrupt-22"
 coverImage: "/images/books/whipping-girl.jpg"

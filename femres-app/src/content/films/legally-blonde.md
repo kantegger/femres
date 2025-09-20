@@ -8,7 +8,7 @@ releaseDate: 2001-07-13
 year: 2001
 country: "美国"
 duration: "96分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["喜剧", "爱情"]
 cast: ["瑞茜·威瑟斯彭", "卢克·威尔逊", "塞尔玛·布莱尔", "马修·戴维斯", "维克多·戈博"]
 topics: ["Media Representation Critique", "Education Equality", "Female Friendship", "Legal Equality"]

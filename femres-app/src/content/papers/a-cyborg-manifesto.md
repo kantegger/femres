@@ -4,7 +4,7 @@ originalTitle: "A Cyborg Manifesto: Science, Technology, and Socialist-Feminism 
 author: "唐娜·哈拉维"
 description: "这篇具有影响力的论文通过赛博格的隐喻——机器与有机体的混合体——重新构想女性主义理论。哈拉维批评人类与非人类、自然与文化之间的传统界限，提出一种植根于亲和性、反讽和技术具身的后性别、后本质主义女性主义政治。"
 publishDate: 1985-01-01
-language: en
+contentLanguage: en
 topics: ["Socialist Feminism", "Postmodern Feminism", "Digital Feminism", "Capitalism Critique", "Feminist Art"]
 sourceUrl: "https://www.jstor.org/stable/3174064"
 doi: "10.2307/3174064"

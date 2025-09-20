@@ -5,7 +5,7 @@ author: "罗克珊·盖伊"
 description: "以幽默和诚实的方式探讨了当代女性主义的复杂性，承认女性主义者也可以有矛盾和不完美。"
 publishDate: 2014-08-05
 isbn: "9780062282712"
-language: "en"
+contentLanguage: "en"
 topics: ["Fourth Wave Feminism", "Pop Culture Feminism", "Intersectional Feminism", "Media Representation Critique", "Feminist Literary Criticism"]
 sourceUrl: "https://www.amazon.sg/s?k=bad+feminist+roxane+gay&tag=inkrupt-22"
 coverImage: "/images/books/bad-feminist.jpg"

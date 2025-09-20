@@ -8,10 +8,10 @@ releaseDate: 1928-04-21
 year: 1928
 country: "法国"
 duration: "114分钟"
-language: "fr"
+contentLanguage: "fr"
 genre: ["剧情", "传记", "历史"]
 cast: ["勒内·珍妮·法尔科内蒂", "欧仁·西尔万", "安德烈·贝利", "莫里斯·舒茨", "米歇尔·西蒙", "安托南·阿尔托"]
-topics: ["Religious Feminism", "Female Martyrdom", "Historical Feminism", "Spiritual Resistance", "Patriarchal Authority", "Women's Voice"]
+topics: ["Feminist Theology", "Historical Context", "Spiritual Feminism", "Patriarchy Critique", "Female Desire"]
 status: "published"
 awards: ["乡村之声20世纪第8伟大电影", "国家影评人协会百大必看电影", "标准收藏", "烂番茄98%"]
 imdbRating: "8.1"

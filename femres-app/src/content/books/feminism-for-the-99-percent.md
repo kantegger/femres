@@ -5,7 +5,7 @@ author: "辛西娅·阿鲁扎, 提西·巴塔查里亚, 南希·弗雷泽"
 description: "批判精英女性主义，提出反资本主义的女性主义愿景，将女性解放与经济正义、种族平等和环境可持续性联系起来。"
 publishDate: 2019-03-01
 isbn: "9781788734424"
-language: "en"
+contentLanguage: "en"
 topics: ["Marxist Feminism", "Capitalism Critique", "Economic Empowerment", "Intersectional Feminism", "Climate Justice"]
 sourceUrl: "https://www.amazon.sg/s?k=feminism+for+the+99+percent&tag=inkrupt-22"
 coverImage: "/images/books/feminism-for-the-99-percent.jpg"

@@ -3,7 +3,7 @@ title: "South Korea's Gender Inequality and Anti-Feminist Sentiment"
 author: "Haeryun Kang"
 description: "This article analyzes South Korea's phenomenon of ranking low in global gender equality while experiencing strong anti-feminist sentiment, exploring conservative government policies, young men's backlash psychology, and feminism's complex position in Korean society."
 publishDate: 2022-12-04
-language: "en"
+contentLanguage: "en"
 topics: ["Anti-Feminism Studies", "Patriarchy Critique", "Political Participation", "Workplace Equality", "Education Equality", "Race and Gender", "Fourth Wave Feminism"]
 sourceUrl: "https://www.nbcnews.com/news/world/stark-gender-inequality-south-korea-hostility-feminism-growing-rcna59747"
 readingTime: 7

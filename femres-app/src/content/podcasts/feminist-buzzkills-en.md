@@ -3,7 +3,7 @@ title: "Feminist Buzzkills"
 author: "Lizz Winstead & Moji Alawode-El"
 description: "Feminist Buzzkills is a feminist podcast hosted by Lizz Winstead and Moji Alawode-El, affiliated with Abortion Access Front. With a tone of satire, anger, and activism, the show focuses on abortion rights, medical justice, transgender care, and anti-patriarchal struggles. Content covers Supreme Court case analysis, book banning legislation, fake clinic exposure, transgender medical advocacy, and anti-abortion legislation criticism. The show frequently invites legal experts, activists, and artists to explore reproductive rights and social change together. Spotify rating of 4.9 (68 reviews), with significant influence in radical feminist podcast circles."
 publishDate: 2025-09-11
-language: "en"
+contentLanguage: "en"
 topics: ["Abortion Rights", "Trans Feminism", "Patriarchy Critique"]
 sourceUrl: "https://open.spotify.com/show/2N7u35AgzU3brTviftfm0a"
 embedUrl: "https://open.spotify.com/embed/show/2N7u35AgzU3brTviftfm0a"

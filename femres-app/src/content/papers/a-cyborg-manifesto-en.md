@@ -4,7 +4,7 @@ originalTitle: "A Cyborg Manifesto: Science, Technology, and Socialist-Feminism 
 author: "Donna Haraway"
 description: "This influential essay reimagines feminist theory through the metaphor of the cyborg—a hybrid of machine and organism. Haraway critiques traditional boundaries between human and non-human, nature and culture, and proposes a post-gender, post-essentialist feminist politics rooted in affinity, irony, and technological embodiment."
 publishDate: 1985-01-01
-language: en
+contentLanguage: en
 topics: ["Socialist Feminism", "Postmodern Feminism", "Digital Feminism", "Capitalism Critique", "Feminist Art"]
 sourceUrl: "https://www.jstor.org/stable/3174064"
 doi: "10.2307/3174064"

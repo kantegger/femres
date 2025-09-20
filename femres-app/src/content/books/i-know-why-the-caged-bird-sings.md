@@ -5,7 +5,7 @@ author: "玛雅·安吉洛"
 description: "玛雅·安吉洛1969年的自传是一部改变文学格局的里程碑作品——它不仅在文学如何讨论种族主义、性别歧视和身份认同等议题方面开创先河，更重要的是，它重新定义了我们对自传体裁本身的理解。在这部作品中，安吉洛探索了她在阿肯色州的成长经历，直至16岁成为母亲。尽管有时读来沉重（安吉洛对童年性侵犯的简短叙述贯穿全书），《我知道笼中鸟为何歌唱》也向文学界引入了书写女性生命的全新方式。"
 publishDate: 1969-01-01
 isbn: "9780345514400"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Intersectional Feminism", "Women's Literature", "Race and Gender", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=i+know+why+caged+bird+sings+maya+angelou&tag=inkrupt-22"
 coverImage: "/images/books/i-know-why-the-caged-bird-sings.jpg"

@@ -8,7 +8,7 @@ releaseDate: 2020-12-25
 year: 2020
 country: "美国"
 duration: "113分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["惊悚", "剧情", "犯罪"]
 cast: ["凯莉·穆里根", "博·伯纳姆", "艾莉森·布里", "克兰西·布朗", "詹妮弗·库里奇"]
 topics: ["Anti-Sexual Violence", "MeToo Movement"]

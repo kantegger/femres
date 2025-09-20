@@ -3,7 +3,7 @@ title: "Lean Back: Critical Feminist Conversations"
 author: "Lisa Corrigan & Laura Weiderhaft"
 description: "Lean Back is a critical feminist podcast hosted by Lisa Corrigan and Laura Weiderhaft, focusing on in-depth analysis of American culture, politics, and social phenomena. The show uses a theory-driven approach to explore issues including abortion rights, democratic crisis, perfectionism, complicity, and candor, emphasizing the intersection of structural oppression and feminist critique. With a sharp, academically rigorous style, it's suitable for audiences interested in critical feminism and cultural politics."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Radical Feminism", "Abortion Rights", "Political Participation", "Cultural Critique", "Patriarchy Critique"]
 sourceUrl: "https://open.spotify.com/show/3ZfcqbPq16BO414XgDZ2aV"
 embedUrl: "https://open.spotify.com/embed/show/3ZfcqbPq16BO414XgDZ2aV"

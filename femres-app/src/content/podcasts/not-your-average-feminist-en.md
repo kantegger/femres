@@ -3,7 +3,7 @@ title: "Not Your Average Feminist"
 author: "Amanda Elliott & Sarah Curran"
 description: "Not Your Average Feminist is a podcast hosted by Amanda Elliott and Sarah Curran, exploring contemporary gender and political issues from a conservative feminist perspective. The show critiques mainstream feminism's progressive policy positions, emphasizing personal responsibility, traditional values, and free market logic. Content covers Supreme Court hearings, transgender movement, Equal Pay Day, workplace culture, and media event commentary, with a sharp, satirical style that has certain influence among conservative female audiences. With a Spotify rating of 5.0 (3 reviews), it positions itself as an alternative feminist voice."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Liberal Feminism", "Political Participation", "Media Representation Critique"]
 sourceUrl: "https://open.spotify.com/show/7B2nQuHWe4IfpcUMSzodyU"
 embedUrl: "https://open.spotify.com/embed/show/7B2nQuHWe4IfpcUMSzodyU"

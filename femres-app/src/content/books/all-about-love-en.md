@@ -5,7 +5,7 @@ author: "bell hooks"
 description: "Redefining the meaning of love, exploring how love can become the foundation for resisting oppression and building a just society, proposing an ethic of love as the core of social transformation."
 publishDate: 2000-01-01
 isbn: "9780060959470"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Ethics of Care", "Emotional Labor", "Spiritual Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=all+about+love+bell+hooks&tag=inkrupt-22"
 coverImage: "/images/books/all-about-love.jpg"

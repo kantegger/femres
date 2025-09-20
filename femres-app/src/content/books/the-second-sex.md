@@ -5,7 +5,7 @@ author: "西蒙·德·波伏娃"
 description: "现代女性主义的奠基之作，深刻分析了女性在社会中的地位和处境，提出了\"女人不是天生的，而是后天形成的\"这一著名观点。"
 publishDate: 1949-06-01
 isbn: "9787020035816"
-language: "en"
+contentLanguage: "en"
 topics: ["Existentialist Feminism", "Second Wave Feminism", "Patriarchy Critique", "Feminist Literary Criticism"]
 sourceUrl: "https://www.amazon.sg/s?k=second+sex+simone+de+beauvoir&tag=inkrupt-22"
 coverImage: "/images/books/the-second-sex.jpg"

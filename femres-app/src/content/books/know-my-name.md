@@ -5,7 +5,7 @@ author: "香奈儿·米勒"
 description: "2015年，当斯坦福大学学生布洛克·特纳性侵一名被称为'艾米丽·多伊'的女性时，这个案件成为全美女性的团结象征。因为发生在她身上的最可怕的事情，艾米丽·多伊成为世界上最著名的女性之一——却没有人知道她的真实姓名。这一切在2019年改变了，当香奈儿·米勒公开自己就是'艾米丽·多伊'，并发表这部回忆录，讲述她的经历，作为重新夺回叙事身份的行动。"
 publishDate: 2019-09-24
 isbn: "9780735223707"
-language: "en"
+contentLanguage: "en"
 topics: ["Anti-Sexual Violence", "Bodily Autonomy", "Media Representation Critique", "MeToo Movement", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=know+my+name+chanel+miller&tag=inkrupt-22"
 coverImage: "/images/books/know-my-name.jpg"

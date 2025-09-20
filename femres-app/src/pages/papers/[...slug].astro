@@ -279,8 +279,8 @@ const getPaperTypeIcon = (type?: string) => {
               <div class="flex justify-between">
                 <span class="text-gray-500 dark:text-gray-400">语言:</span>
                 <span class="text-gray-900 dark:text-white">
-                  {paper.data.language === 'zh-CN' ? '中文' : 
-                   paper.data.language === 'en' ? '英语' : paper.data.language}
+                  {paper.data.contentLanguage === 'zh-CN' ? '中文' :
+                   paper.data.contentLanguage === 'en' ? '英语' : paper.data.contentLanguage}
                 </span>
               </div>
             </div>

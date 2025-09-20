@@ -5,7 +5,7 @@ author: "Maya Angelou"
 description: "Maya Angelou's 1969 autobiography is a milestone work that changed the literary landscape—it not only pioneered how literature discusses issues of racism, sexism, and identity, but more importantly, it redefined our understanding of the autobiographical genre itself. In this work, Angelou explores her experiences growing up in Arkansas until becoming a mother at 16. Though sometimes heavy reading (Angelou's brief narrative of childhood sexual assault runs throughout the book), 'I Know Why the Caged Bird Sings' introduced new ways of writing women's lives to the literary world."
 publishDate: 1969-01-01
 isbn: "9780345514400"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Intersectional Feminism", "Women's Literature", "Race and Gender", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=i+know+why+caged+bird+sings+maya+angelou&tag=inkrupt-22"
 coverImage: "/images/books/i-know-why-the-caged-bird-sings.jpg"

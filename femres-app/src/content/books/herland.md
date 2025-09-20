@@ -5,7 +5,7 @@ author: "夏洛特·珀金斯·吉尔曼"
 description: "1915年发表的开创性女性主义乌托邦小说，构想了一个完全由女性组成的理想社会，探讨了性别角色、社会组织和女性潜能的根本问题。"
 publishDate: 1915-01-01
 isbn: "9780394736655"
-language: "en"
+contentLanguage: "en"
 topics: ["First Wave Feminism", "Radical Feminism", "Women's Literature", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=herland+charlotte+perkins+gilman&tag=inkrupt-22"
 coverImage: "/images/books/herland.jpg"

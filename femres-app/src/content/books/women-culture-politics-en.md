@@ -5,7 +5,7 @@ author: "Angela Y. Davis"
 description: "An important collection of speeches and essays by veteran political activist Angela Y. Davis, focusing on transformations in conversations about sexism, racism, and economic equality in the late 20th century. From stories of female circumcision in Egypt to examinations of rap lyrics, to the personal politics of race, Davis's sharp and accomplished essays establish her place among the important contemporary feminist voices."
 publishDate: 1989-01-01
 isbn: "9780394757209"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Intersectional Feminism", "Race and Gender", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=women+culture+politics+angela+davis&tag=inkrupt-22"
 coverImage: "/images/books/women-culture-politics.jpg"

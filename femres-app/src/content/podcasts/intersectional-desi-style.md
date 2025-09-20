@@ -3,7 +3,7 @@ title: "Intersectional Feminism—Desi Style!"
 author: "Feminism In India"
 description: "《Intersectional Feminism—Desi Style!》是由 Feminism In India 出品的播客，聚焦南亚语境下的交叉女性主义议题。节目由 Sukanya Shaji 与 Shriya Roy 主持，内容涵盖女性在政治、科技、色情、媒体与发展领域中的刻板印象与挑战，强调去殖民视角与性别正义。风格批判性强、文化敏锐，适合关注南亚女性经验与交叉性议题的听众。Spotify 评分为 4.7（47 条评论），为印度女性主义播客中的代表作品。"
 publishDate: 2025-09-12
-language: en
+contentLanguage: en
 topics: ["Intersectional Feminism", "Media Representation Critique", "Political Participation", "Gender Politics", "Decolonial Feminism"]
 sourceUrl: "https://open.spotify.com/show/18n27MGTDbxoKP8M33kJdx"
 embedUrl: "https://open.spotify.com/embed/show/18n27MGTDbxoKP8M33kJdx"

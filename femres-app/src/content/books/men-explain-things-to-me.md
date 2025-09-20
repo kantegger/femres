@@ -5,7 +5,7 @@ author: "丽贝卡·索尼特"
 description: "现代女性主义经典之作，深入探讨'男性说教'现象及其对女性的影响。索尼特以犀利的文笔揭示日常生活中的性别权力关系，为理解当代女性处境提供重要视角。"
 publishDate: 2014-04-14
 isbn: "9781608464661"
-language: "en"
+contentLanguage: "en"
 topics: ["Patriarchy Critique", "Cultural Critique", "Feminist Literary Criticism", "Race and Gender"]
 sourceUrl: "https://www.amazon.sg/s?k=men+explain+things+to+me+rebecca+solnit&tag=inkrupt-22"
 coverImage: "/images/books/men-explain-things-to-me.jpg"

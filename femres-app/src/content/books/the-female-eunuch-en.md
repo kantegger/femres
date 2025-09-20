@@ -5,7 +5,7 @@ author: "Germaine Greer"
 description: "A groundbreaking work of second-wave feminism, Greer analyzes women's castrated state in patriarchal society with radical and incisive prose, challenging traditional female roles and gender norms to become an important theoretical foundation for the women's liberation movement."
 publishDate: 1970-10-01
 isbn: "9780007205011"
-language: "en"
+contentLanguage: "en"
 topics: ["Radical Feminism", "Second Wave Feminism", "Bodily Autonomy", "Patriarchy Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=the+female+eunuch+germaine+greer&tag=inkrupt-22"
 coverImage: "/images/books/the-female-eunuch.jpg"

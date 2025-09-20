@@ -3,7 +3,7 @@ title: "Feminist Inc Pod"
 author: "Ayo (Feminist Inc)"
 description: "Feminist Inc Pod is a podcast hosted by Nigerian feminist Ayo, exploring the real circumstances of Nigerian women through satirical and intimate styles. The show's content covers systemic misogyny, body politics, legal injustices, cultural norms, and media representation, emphasizing Black feminist and intersectional perspectives, representing an independent voice in Nigerian feminist podcasting."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Bodily Autonomy", "Patriarchy Critique", "Cultural Critique", "Gender Politics"]
 sourceUrl: "https://open.spotify.com/show/7bTNaJHjUqvk3vbo2yyfsC"
 embedUrl: "https://open.spotify.com/embed/show/7bTNaJHjUqvk3vbo2yyfsC"

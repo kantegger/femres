@@ -5,7 +5,7 @@ author: "贝尔·胡克斯"
 description: "深入分析父权制如何伤害男性，探讨男性如何参与女性主义运动，倡导建立基于爱与平等的新型男性气质。"
 publishDate: 2004-01-01
 isbn: "9780743456081"
-language: "en"
+contentLanguage: "en"
 topics: ["Patriarchy Critique", "Men's Rights Movement Critique", "Ethics of Care", "Emotional Labor", "Black Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=will+to+change+bell+hooks&tag=inkrupt-22"
 coverImage: "/images/books/the-will-to-change.jpg"

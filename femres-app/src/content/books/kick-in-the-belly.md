@@ -5,7 +5,7 @@ author: "史黛拉·达齐"
 description: "揭示被遗忘的奴隶女性历史，重现她们在加勒比地区反抗奴隶制斗争中的关键作用和不屈精神。"
 publishDate: 2020-10-01
 isbn: "9781788738842"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Decolonial Feminism", "Race and Gender", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=kick+in+the+belly+stella+dadzie&tag=inkrupt-22"
 coverImage: "/images/books/kick-in-the-belly.jpg"

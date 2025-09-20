@@ -5,7 +5,7 @@ author: "Rebecca Solnit"
 description: "A modern feminist classic that deeply explores the phenomenon of 'mansplaining' and its impact on women. Solnit's sharp writing reveals gender power relations in everyday life, providing important perspectives for understanding contemporary women's circumstances."
 publishDate: 2014-04-14
 isbn: "9781608464661"
-language: "en"
+contentLanguage: "en"
 topics: ["Patriarchy Critique", "Cultural Critique", "Feminist Literary Criticism", "Race and Gender"]
 sourceUrl: "https://www.amazon.sg/s?k=men+explain+things+to+me+rebecca+solnit&tag=inkrupt-22"
 coverImage: "/images/books/men-explain-things-to-me.jpg"

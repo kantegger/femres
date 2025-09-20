@@ -4,7 +4,7 @@ originalTitle: "The Queer Art of Failure"
 author: "杰克·哈伯斯坦"
 description: "哈伯斯坦挑战异性恋规范和资本主义社会中的成功标准，探索失败作为抵抗形式的生产性潜力。通过分析流行文化和酷儿理论，作者提出'低理论'作为思考和写作的模式，重新定义失败不是缺陷而是颠覆主流价值观的策略。"
 publishDate: 2011-01-01
-language: zh-CN
+contentLanguage: zh-CN
 topics: ["Trans Feminism", "Queer Theory", "Capitalism Critique", "Cultural Critique", "Postmodern Feminism"]
 isbn: "9780822350453"
 coverImage: "/images/books/the-queer-art-of-failure.jpg"

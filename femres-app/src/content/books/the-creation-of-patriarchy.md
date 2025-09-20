@@ -5,7 +5,7 @@ author: "格尔达·勒纳"
 description: "从历史学角度追溯父权制的起源和发展，是理解性别压迫历史根源的重要著作。"
 publishDate: 1986-01-01
 isbn: "9780195051858"
-language: "en"
+contentLanguage: "en"
 topics: ["Patriarchy Critique", "Historical Context", "Radical Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=creation+of+patriarchy+gerda+lerner&tag=inkrupt-22"
 coverImage: "/images/books/creation-of-patriarchy.jpg"

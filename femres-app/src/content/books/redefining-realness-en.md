@@ -5,7 +5,7 @@ author: "Janet Mock"
 description: "A transgender rights activist's autobiographical work that explores the multiple meanings of feminine identity through personal growth experiences, challenging mainstream society's rigid perceptions of authenticity and femininity."
 publishDate: 2014-02-01
 isbn: "9781476709123"
-language: "en"
+contentLanguage: "en"
 topics: ["Trans Feminism", "Race and Gender", "Women's Writing", "Bodily Autonomy"]
 sourceUrl: "https://www.amazon.sg/s?k=redefining+realness+janet+mock&tag=inkrupt-22"
 coverImage: "/images/books/redefining-realness.jpg"

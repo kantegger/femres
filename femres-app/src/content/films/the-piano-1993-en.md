@@ -8,10 +8,10 @@ releaseDate: 1993-05-19
 year: 1993
 country: "New Zealand"
 duration: "121 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama", "Romance", "Music"]
 cast: ["Holly Hunter", "Harvey Keitel", "Sam Neill", "Anna Paquin", "Kerry Walker", "Genevieve Lemon", "Tungia Baker", "Ian Mune", "Peter Dennett", "Te Whatanui Skipwith"]
-topics: ["Female Sexuality", "Sexual Awakening", "Silent Resistance", "Victorian Patriarchy", "Artistic Expression", "Colonial Feminism", "Erotic Power", "Female Agency", "Gothic Romance", "Music as Language"]
+topics: ["Female Desire", "Sexual Liberation", "Anti-Sexual Violence", "Patriarchy Critique", "Feminist Art", "Decolonial Feminism", "Bodily Autonomy", "Economic Empowerment", "Women's Literature", "Arts and Performance"]
 status: "published"
 awards: ["Palme d'Or Cannes Film Festival", "Academy Award Best Actress (Holly Hunter)", "Academy Award Best Supporting Actress (Anna Paquin)", "Academy Award Best Original Screenplay", "BAFTA Best Actress", "Golden Globe Best Actress"]
 imdbRating: "7.5"

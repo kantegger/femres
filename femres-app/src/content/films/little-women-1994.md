@@ -8,10 +8,10 @@ releaseDate: 1994-12-25
 year: 1994
 country: "美国"
 duration: "115分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["剧情", "家庭", "爱情"]
 cast: ["薇诺娜·赖德", "加布里埃尔·伯恩", "特里尼·阿尔瓦拉多", "萨曼莎·马蒂斯", "克尔斯滕·邓斯特", "克莱尔·丹妮丝", "克里斯蒂安·贝尔", "苏珊·萨兰登", "埃里克·斯托尔兹", "约翰·内维尔", "玛丽·威克斯"]
-topics: ["Coming of Age", "Female Independence", "Literary Adaptation", "Victorian Feminism", "Sisterhood", "Artistic Ambition", "Family Dynamics", "Women's Choices", "Economic Constraints", "Social Expectations"]
+topics: ["Identity Formation", "Economic Empowerment", "Women's Literature", "Historical Context", "Female Friendship", "Feminist Art", "Family Liberation", "Bodily Autonomy", "Economic Empowerment", "Gender Norms"]
 status: "published"
 awards: ["奥斯卡最佳女主角提名（薇诺娜·赖德）", "奥斯卡最佳服装设计提名", "奥斯卡最佳原创音乐提名", "美国演员工会奖杰出演员提名", "金球奖最佳电影提名"]
 imdbRating: "7.3"

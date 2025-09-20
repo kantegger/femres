@@ -8,7 +8,7 @@ releaseDate: 2004-02-15
 year: 2004
 country: "美国"
 duration: "123分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["传记", "剧情", "历史"]
 cast: ["希拉里·斯旺克", "弗朗西丝·奥康纳", "朱莉娅·奥蒙德", "安杰丽卡·休斯顿", "帕特里克·德姆西", "薇拉·法米加", "劳拉·弗雷泽", "莫利·帕克", "布鲁克·史密斯", "洛伊丝·史密斯", "玛戈·马丁代尔"]
 topics: ["First Wave Feminism", "Political Participation", "Women's Rights", "Social Movements", "Political Consciousness", "Legal Equality", "Historical Context", "Patriarchy Critique", "Gender Politics", "Economic Empowerment"]

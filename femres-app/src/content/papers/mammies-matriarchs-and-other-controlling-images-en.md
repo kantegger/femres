@@ -4,7 +4,7 @@ originalTitle: "Mammies, Matriarchs, and Other Controlling Images"
 author: "Patricia Hill Collins"
 description: "This chapter from Collins’ seminal book *Black Feminist Thought* analyzes the controlling images of Black womanhood in U.S. culture—such as the mammy, matriarch, welfare queen, and jezebel—and how these stereotypes function to justify intersecting systems of race, gender, and class oppression. Collins argues that these images are ideological tools used to regulate Black women’s labor, sexuality, and social roles."
 publishDate: 1990-01-01
-language: en
+contentLanguage: en
 topics: ["Black Feminism", "Intersectional Feminism", "Media Representation Critique", "Capitalism Critique", "Patriarchy Critique"]
 sourceUrl: "https://www.bing.com/search?q=Mammies%2C+Matriarchs%2C+and+Other+Controlling+Images"
 doi: ""

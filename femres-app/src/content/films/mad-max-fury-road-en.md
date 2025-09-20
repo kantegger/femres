@@ -10,7 +10,7 @@ releaseDate: 2015-05-15
 year: 2015
 country: "Australia"
 duration: "120 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Action", "Adventure", "Sci-Fi"]
 cast: ["Tom Hardy", "Charlize Theron", "Nicholas Hoult", "Hugh Keays-Byrne", "Rosie Huntington-Whiteley"]
 topics: ["Radical Feminism", "Bodily Autonomy", "Patriarchy Critique", "Female Friendship", "Ecofeminism"]

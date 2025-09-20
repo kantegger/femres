@@ -5,7 +5,7 @@ author: "Margaret Atwood"
 description: "The Emmy Award-winning television series source material, the gold standard of feminist speculative fiction. The story follows Offred, a fertile woman forced to survive as a member of the servant class in a dystopian near-future, where they are used as reproductive tools for the ruling class. In an era when women's reproductive rights remain politically sensitive, Atwood's groundbreaking novel remains profoundly relevant more than 30 years later."
 publishDate: 1985-01-01
 isbn: "9780385490818"
-language: "en"
+contentLanguage: "en"
 topics: ["Reproductive Autonomy", "Bodily Autonomy", "Patriarchy Critique", "Women's Literature"]
 sourceUrl: "https://www.amazon.sg/s?k=handmaids+tale+margaret+atwood&tag=inkrupt-22"
 coverImage: "/images/books/handmaids-tale.jpg"

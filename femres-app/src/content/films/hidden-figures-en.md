@@ -8,7 +8,7 @@ releaseDate: 2016-12-25
 year: 2016
 country: "USA"
 duration: "127 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama", "Biography", "History"]
 cast: ["Taraji P. Henson", "Octavia Spencer", "Janelle Monáe", "Kevin Costner", "Kirsten Dunst"]
 topics: ["Intersectional Feminism", "Black Feminism", "Workplace Equality", "Equal Pay", "Glass Ceiling", "Education Equality", "Race and Gender"]

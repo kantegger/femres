@@ -8,7 +8,7 @@ releaseDate: 1992-12-11
 year: 1992
 country: "英国"
 duration: "93分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["剧情", "奇幻", "传记"]
 cast: ["蒂尔达·斯文顿", "比利·赞恩", "昆汀·克里斯普", "洛泰尔·布吕托", "约翰·伍德"]
 topics: ["Gender Identity", "Queer Theory", "Trans Feminism", "Historical Context", "Cultural Critique", "Patriarchy Critique", "Gender Norms", "Body Politics"]

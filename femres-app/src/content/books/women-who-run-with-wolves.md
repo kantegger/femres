@@ -5,7 +5,7 @@ author: "克拉丽莎·平科拉·埃斯特斯"
 description: "野性女人的神话存在于各种文化中，从童话到民间传说。通常她被描绘成一个令人恐惧的存在，但在荣格学派分析师克拉丽莎·平科拉·埃斯特斯的评估中，她是完全不同的东西：一位内在的领导者和行为模式，能够指导女性进行自己的治愈之旅。1992年首次出版，《与狼共舞的女人》赢得了埃斯特斯许多女性主义同代人的赞誉——包括爱丽丝·沃克和玛雅·安杰洛，这份书单上的另外两位作者。"
 publishDate: 1992-01-01
 isbn: "9780345409874"
-language: "en"
+contentLanguage: "en"
 topics: ["Feminist Psychology", "Spiritual Feminism", "Cultural Critique", "Emotional Labor", "Ethics of Care"]
 sourceUrl: "https://www.amazon.sg/s?k=women+who+run+wolves+clarissa+pinkola+estes&tag=inkrupt-22"
 coverImage: "/images/books/women-who-run-with-wolves.jpg"

@@ -3,7 +3,7 @@ title: "The Everyday Feminist"
 author: "Stephanie Heck & Lois Volta"
 description: "The Everyday Feminist is a podcast hosted by Stephanie Heck and Lois Volta, focusing on feminist practice in daily life, emphasizing gender politics in family, relationships, and self-awareness. The show blends psychology, social critique, and cultural analysis, covering housework labor, marriage institution, silence mechanisms, holiday culture, and feminist expression in music. With an intimate, philosophically strong style, it's an important platform for bringing feminism into everyday details."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Gender Politics", "Patriarchy Critique", "Cultural Critique", "Bodily Autonomy", "Arts and Performance"]
 sourceUrl: "https://open.spotify.com/show/6pOO50UTFv14HYltpbzBCK"
 embedUrl: "https://open.spotify.com/embed/show/6pOO50UTFv14HYltpbzBCK"

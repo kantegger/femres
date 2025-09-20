@@ -8,7 +8,7 @@ releaseDate: 1979-05-25
 year: 1979
 country: "USA/UK"
 duration: "117 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Science Fiction", "Horror", "Thriller"]
 cast: ["Sigourney Weaver", "Tom Skerritt", "Veronica Cartwright", "Harry Dean Stanton", "John Hurt", "Ian Holm", "Yaphet Kotto"]
 topics: ["Feminist Art", "Media Representation Critique", "Workplace Equality", "Economic Empowerment", "Bodily Autonomy", "Patriarchy Critique"]

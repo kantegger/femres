@@ -5,7 +5,7 @@ author: "Alice Walker"
 description: "A collection of essays, speeches, and reviews spanning 20 years by Pulitzer Prize winner Alice Walker, focusing on the intersection of personal and political, from civil rights movement to anti-nuclear sentiment, from literary criticism to personal reflections of Black women, mothers, and feminists. Called 'womanist prose' by the author, it provides profound perspectives for understanding late 20th-century feminism."
 publishDate: 1983-01-01
 isbn: "9780156028646"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Feminist Literary Criticism", "Race and Gender", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=in+search+mothers+gardens+alice+walker&tag=inkrupt-22"
 coverImage: "/images/books/in-search-of-our-mothers-gardens.jpg"

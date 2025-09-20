@@ -8,10 +8,10 @@ releaseDate: 2018-08-30
 year: 2018
 country: "Mexico"
 duration: "135 minutes"
-language: "es"
+contentLanguage: "es"
 genre: ["Drama", "Historical"]
 cast: ["Yalitza Aparicio", "Marina de Tavira", "Fernando Grediaga", "Diego Cortina Autrey", "Carlos Peralta", "Marco Graf", "Daniela Demesa"]
-topics: ["Intersectional Feminism", "Class Analysis", "Domestic Labor", "Indigenous Feminism", "Motherhood Critique", "Women's History", "Decolonial Feminism"]
+topics: ["Intersectional Feminism", "Class Analysis", "Emotional Labor", "Indigenous Feminism", "Motherhood Critique", "Historical Context", "Decolonial Feminism"]
 status: "published"
 awards: ["Venice International Film Festival Golden Lion 2018", "Academy Award Best Director", "Academy Award Best Cinematography", "10 Oscar Nominations including Best Picture"]
 imdbRating: "7.6"

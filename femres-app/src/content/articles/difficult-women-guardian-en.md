@@ -3,7 +3,7 @@ title: "Fighting the Tyranny of 'Niceness': Why We Need Difficult Women"
 author: "Helen Lewis"
 description: "This article critiques the expectations of 'perfection' and 'likability' in contemporary feminism, calling for recognition of the complexity and contradictions within feminism, and embracing those 'difficult women' who are nonconformist, hard to categorize, but drive change."
 publishDate: 2020-02-15
-language: "en"
+contentLanguage: "en"
 topics: ["Fourth Wave Feminism", "Patriarchy Critique", "Anti-Feminism Studies", "Media Representation Critique", "Political Participation", "Bodily Autonomy", "Emotional Labor", "Feminist Psychology"]
 sourceUrl: "https://www.theguardian.com/books/2020/feb/15/feminism-feminists-tyranny-niceness-complexity?ref=refind"
 readingTime: 10

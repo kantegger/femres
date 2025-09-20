@@ -5,7 +5,7 @@ author: "爱丽丝·沃克"
 description: "普利策奖得主爱丽丝·沃克跨越20年的散文、演讲和评论集，聚焦个人与政治的交汇，从民权运动到反核情绪，从文学批评到黑人女性、母亲和女性主义者的个人反思。作者称其为'女性主义散文'，为理解20世纪后期女性主义提供了深刻视角。"
 publishDate: 1983-01-01
 isbn: "9780156028646"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Feminist Literary Criticism", "Race and Gender", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=in+search+mothers+gardens+alice+walker&tag=inkrupt-22"
 coverImage: "/images/books/in-search-of-our-mothers-gardens.jpg"

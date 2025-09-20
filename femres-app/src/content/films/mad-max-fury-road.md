@@ -8,7 +8,7 @@ releaseDate: 2015-05-15
 year: 2015
 country: "澳大利亚"
 duration: "120分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["动作", "冒险", "科幻"]
 cast: ["汤姆·哈迪", "查理兹·塞隆", "尼古拉斯·霍尔特", "休·基斯-拜伦", "罗茜·亨廷顿-怀特莉"]
 topics: ["Radical Feminism", "Bodily Autonomy", "Patriarchy Critique", "Female Friendship", "Ecofeminism"]

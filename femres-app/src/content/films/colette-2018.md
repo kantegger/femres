@@ -8,7 +8,7 @@ releaseDate: 2018-09-21
 year: 2018
 country: "英国/美国"
 duration: "111分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["传记", "剧情", "历史"]
 cast: ["凯拉·奈特莉", "多米尼克·韦斯特", "埃莉诺·汤姆林森", "丹妮丝·高夫"]
 topics: ["Women's Writing", "Economic Empowerment", "Women's Literature", "Queer Identity", "Patriarchy Critique", "Feminist Art", "First Wave Feminism"]

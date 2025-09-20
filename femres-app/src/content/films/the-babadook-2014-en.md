@@ -8,7 +8,7 @@ releaseDate: 2014-05-22
 year: 2014
 country: "Australia"
 duration: "94 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Horror", "Psychological", "Drama"]
 cast: ["Essie Davis", "Noah Wiseman", "Daniel Henshall", "Hayley McElhinney", "Barbara West"]
 topics: ["Motherhood Critique", "Mental Health", "Family Liberation", "Cultural Critique", "Feminist Psychology", "Emotional Labor", "Mental Resilience"]

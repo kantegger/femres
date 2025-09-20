@@ -5,7 +5,7 @@ author: "朱诺·麦克和莫莉·史密斯"
 description: "由性工作者本人撰写的开创性著作，直接挑战主流女性主义关于性工作的叙述，为性工作者权利运动提供理论基础和政治策略。"
 publishDate: 2018-11-06
 isbn: "9781786633606"
-language: "en"
+contentLanguage: "en"
 topics: ["Radical Feminism", "Intersectional Feminism", "Bodily Autonomy", "Economic Empowerment"]
 sourceUrl: "https://www.amazon.sg/s?k=revolting+prostitutes+juno+mac+molly+smith&tag=inkrupt-22"
 coverImage: "/images/books/revolting-prostitutes.jpg"

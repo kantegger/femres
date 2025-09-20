@@ -5,7 +5,7 @@ author: "Angela Davis"
 description: "Analyzes the history of the American women's movement from a historical materialist perspective, revealing the interconnections of racial, class, and gender oppression."
 publishDate: 1981-01-01
 isbn: "9780394713519"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Intersectional Feminism", "Race and Gender"]
 sourceUrl: "https://www.amazon.sg/s?k=women+race+and+class+angela+davis&tag=inkrupt-22"
 coverImage: "/images/books/women-race-class.jpg"

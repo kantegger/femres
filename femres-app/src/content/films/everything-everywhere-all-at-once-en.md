@@ -8,7 +8,7 @@ releaseDate: 2022-03-25
 year: 2022
 country: "USA"
 duration: "139 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Science Fiction", "Comedy", "Action", "Fantasy"]
 cast: ["Michelle Yeoh", "Ke Huy Quan", "Stephanie Hsu", "Jamie Lee Curtis", "James Hong"]
 topics: ["Immigrant Identity", "Family Liberation", "Intersectional Feminism", "Economic Empowerment", "Cultural Identity"]

@@ -3,7 +3,7 @@ title: "She Who Persisted. The Nasty Podcast"
 author: "She Who Persisted Collective"
 description: "She Who Persisted is a biweekly feminist podcast co-hosted by an American and an Austrian, focusing on cross-cultural gender issues, political events, and marginalized communities' history. The show covers abortion rights, gaming culture, tech industry sexism, LGBTQ+ history, and media representation critique, with a sharp, humorous, and critical style emphasizing transnational feminist perspectives and community memory. Spotify rating of 5.0 (1 review), serving as an independent platform for European and North American feminist dialogue."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Political Participation", "Anti-Sexual Violence", "Media Representation Critique", "Oral History", "Digital Feminism"]
 sourceUrl: "https://open.spotify.com/show/41ryutvkpiUWDKDNM6DbZY"
 embedUrl: "https://open.spotify.com/embed/show/41ryutvkpiUWDKDNM6DbZY"

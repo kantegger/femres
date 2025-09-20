@@ -5,7 +5,7 @@ author: "Sara Ahmed"
 description: "Explores how to practice feminism in daily life, analyzing the joys and struggles of being a feminist, and introduces the concept of a feminist survival kit."
 publishDate: 2017-02-01
 isbn: "9780822363194"
-language: "en"
+contentLanguage: "en"
 topics: ["Feminist Psychology", "Emotional Labor", "Intersectional Feminism", "Queer Theory", "Everyday Life Practices"]
 sourceUrl: "https://www.amazon.sg/s?k=living+a+feminist+life+sara+ahmed&tag=inkrupt-22"
 coverImage: "/images/books/living-a-feminist-life.jpg"

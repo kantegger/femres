@@ -5,7 +5,7 @@ author: "简·里斯"
 description: "在夏洛蒂·勃朗特的《简·爱》出版近200年后，它已相当公正地获得了经典女性主义小说的地位。如果《简·爱》是经典，那么简·里斯的《藻海无边》——这部1966年的小说为勃朗特故事中被遗弃的女性赋予了生命——就是杰作。通过重新审视伯莎·罗切斯特这个角色并想象她在原小说事件之前的生活，里斯为文学史上典型的'阁楼上的疯女人'赋予了能动性和尊严。"
 publishDate: 1966-01-01
 isbn: "9780393308815"
-language: "en"
+contentLanguage: "en"
 topics: ["Decolonial Feminism", "Race and Gender", "Women's Literature", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=wide+sargasso+sea+jean+rhys&tag=inkrupt-22"
 coverImage: "/images/books/wide-sargasso-sea.jpg"

@@ -3,7 +3,7 @@ title: "2010s Pop Feminism: A Painful Look Back"
 author: "Lily Alexandre"
 description: "In this video, Lily Alexandre provides a retrospective analysis of pop feminism, examining its rise, critiques, and eventual decline. The video contrasts the movement's focus on awareness with the need for a more systemic, materialist approach to social change."
 publishDate: 2023-09-21
-language: "en"
+contentLanguage: "en"
 topics: ["Pop Culture Feminism", "Cultural Critique", "Media Representation Critique", "Anti-Feminism Studies", "Feminist Literary Criticism"]
 sourceUrl: "https://www.youtube.com/watch?v=bmnsK74khNw"
 embedUrl: "https://www.youtube.com/embed/bmnsK74khNw"

@@ -8,7 +8,7 @@ releaseDate: 1950-10-13
 year: 1950
 country: "USA"
 duration: "138 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama", "Mystery"]
 cast: ["Bette Davis", "Anne Baxter", "George Sanders", "Celeste Holm", "Gary Merrill", "Hugh Marlowe"]
 topics: ["Workplace Equality", "Glass Ceiling", "Cultural Critique", "Media Representation Critique", "Patriarchy Critique", "Historical Context"]

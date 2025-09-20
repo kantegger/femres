@@ -8,7 +8,7 @@ releaseDate: 2014-12-05
 year: 2014
 country: "USA"
 duration: "115 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama", "Biography", "Adventure"]
 cast: ["Reese Witherspoon", "Laura Dern", "Thomas Sadoski", "Michiel Huisman", "Gaby Hoffmann"]
 topics: ["Family Liberation", "Bodily Autonomy", "Anti-Sexual Violence", "Intersectional Feminism"]

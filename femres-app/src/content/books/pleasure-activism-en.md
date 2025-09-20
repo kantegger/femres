@@ -5,7 +5,7 @@ author: "Adrienne Maree Brown"
 description: "Explores how pleasure and joy can become central to social justice work, advocating for liberation politics based on body wisdom and collective delight."
 publishDate: 2019-03-01
 isbn: "9781849353267"
-language: "en"
+contentLanguage: "en"
 topics: ["Bodily Autonomy", "Black Feminism", "Queer Theory", "Emotional Labor", "Sexual Liberation"]
 sourceUrl: "https://www.amazon.sg/s?k=pleasure+activism+adrienne+maree+brown&tag=inkrupt-22"
 coverImage: "/images/books/pleasure-activism.jpg"

@@ -8,10 +8,10 @@ releaseDate: 2002-09-20
 year: 2002
 country: "New Zealand"
 duration: "101 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama", "Family"]
 cast: ["Keisha Castle-Hughes", "Rawiri Paratene", "Vicky Haughton", "Cliff Curtis", "Grant Roa"]
-topics: ["Indigenous Feminism", "Female Leadership", "Cultural Traditions", "Patriarchy Critique", "Coming of Age", "Decolonial Feminism"]
+topics: ["Indigenous Feminism", "Political Participation", "Cultural Identity", "Patriarchy Critique", "Identity Formation", "Decolonial Feminism"]
 status: "published"
 awards: ["Toronto Film Festival People's Choice Award 2002", "Sundance Audience Choice Award 2003", "Academy Award Best Actress Nomination (Keisha Castle-Hughes)", "BAFTA Best Film Not in English Language"]
 imdbRating: "7.5"

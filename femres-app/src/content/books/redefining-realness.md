@@ -5,7 +5,7 @@ author: "珍妮特·莫克"
 description: "跨性别权利活动家的自传体作品，以个人成长经历探索女性身份的多重内涵，挑战主流社会对真实性和女性气质的固化认知。"
 publishDate: 2014-02-01
 isbn: "9781476709123"
-language: "en"
+contentLanguage: "en"
 topics: ["Trans Feminism", "Race and Gender", "Women's Writing", "Bodily Autonomy"]
 sourceUrl: "https://www.amazon.sg/s?k=redefining+realness+janet+mock&tag=inkrupt-22"
 coverImage: "/images/books/redefining-realness.jpg"

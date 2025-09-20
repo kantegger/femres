@@ -5,7 +5,7 @@ author: "玛丽莲·弗莱"
 description: "激进女性主义哲学的经典之作。弗莱通过九篇深刻的论文，从哲学认识论的角度系统分析压迫的结构性本质，探讨女性主义理论的核心概念和根本问题。"
 publishDate: 1983-01-01
 isbn: "9780895940995"
-language: "en"
+contentLanguage: "en"
 topics: ["Radical Feminism", "Patriarchy Critique", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=politics+of+reality+marilyn+frye&tag=inkrupt-22"
 coverImage: "/images/books/the-politics-of-reality.jpg"

@@ -10,7 +10,7 @@ releaseDate: 2020-09-11
 year: 2020
 country: "USA"
 duration: "107 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama", "Road Movie"]
 cast: ["Frances McDormand", "David Strathairn", "Linda May"]
 topics: ["Economic Empowerment", "Capitalism Critique"]

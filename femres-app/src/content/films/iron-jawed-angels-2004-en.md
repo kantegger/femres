@@ -8,7 +8,7 @@ releaseDate: 2004-02-15
 year: 2004
 country: "USA"
 duration: "123 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Biography", "Drama", "History"]
 cast: ["Hilary Swank", "Frances O'Connor", "Julia Ormond", "Anjelica Huston", "Patrick Dempsey", "Vera Farmiga", "Laura Fraser", "Molly Parker", "Brooke Smith", "Lois Smith", "Margo Martindale"]
 topics: ["First Wave Feminism", "Political Participation", "Women's Rights", "Social Movements", "Political Consciousness", "Legal Equality", "Historical Context", "Patriarchy Critique", "Gender Politics", "Economic Empowerment"]

@@ -8,7 +8,7 @@ releaseDate: 2019-12-25
 year: 2019
 country: "美国"
 duration: "135分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["剧情", "爱情", "家庭"]
 cast: ["西尔莎·罗南", "艾玛·沃森", "佛洛伦斯·普", "伊莱扎·斯坎伦", "劳拉·邓恩", "梅丽尔·斯特里普"]
 topics: ["Women's Literature", "Feminist Art", "Economic Empowerment", "Women's Writing", "Bodily Autonomy", "Family Liberation"]

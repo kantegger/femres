@@ -4,7 +4,7 @@ originalTitle: "The Feminist Standpoint: Developing the Ground for a Specificall
 author: "Nancy C. M. Hartsock"
 description: "This foundational chapter develops the concept of the feminist standpoint by integrating Marxist theory with feminist epistemology. Hartsock argues that women's experiences—particularly in domestic labor and social reproduction—offer a privileged epistemic position from which to critique dominant knowledge systems and capitalist structures."
 publishDate: 1983-01-01
-language: en
+contentLanguage: en
 topics: ["Marxist Feminism", "Epistemic Colonialism Critique", "Domestic Labor", "Sexual Division of Labor", "Capitalism Critique"]
 sourceUrl: "https://link.springer.com/chapter/10.1007/0-306-48017-4_15"
 doi: "10.1007/0-306-48017-4_15"

@@ -8,7 +8,7 @@ releaseDate: 2007-05-17
 year: 2007
 country: "Romania"
 duration: "113 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama", "Social Realism"]
 cast: ["Anamaria Marinca", "Laura Vasiliu", "Vlad Ivanov", "Alexandru Potocean", "Luminița Gheorghiu"]
 topics: ["Abortion Rights", "Reproductive Autonomy", "Historical Context", "Political Participation", "Bodily Autonomy", "Anti-Feminism Studies", "Female Friendship", "Legal Equality"]

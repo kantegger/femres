@@ -8,7 +8,7 @@ releaseDate: 1996-09-20
 year: 1996
 country: "美国"
 duration: "102分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["喜剧", "剧情"]
 cast: ["贝蒂·米德勒", "戈尔迪·霍恩", "黛安·基顿", "玛吉·史密斯", "萨拉·杰西卡·帕克"]
 topics: ["Female Friendship", "Economic Empowerment", "Family Liberation", "Patriarchy Critique"]

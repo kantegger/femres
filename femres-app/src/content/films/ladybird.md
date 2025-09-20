@@ -8,7 +8,7 @@ releaseDate: 2017-09-01
 year: 2017
 country: "美国"
 duration: "94分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["剧情", "喜剧", "成长"]
 cast: ["西尔莎·罗南", "劳里·梅特卡夫", "崔西·莱茨", "卢卡斯·赫奇斯", "蒂莫西·柴勒梅德"]
 topics: ["Mother-Daughter Relationships", "Economic Empowerment", "Education Equality", "Bodily Autonomy"]

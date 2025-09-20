@@ -5,7 +5,7 @@ author: "安琪拉·加尔贝斯"
 description: "第一代菲律宾裔美国作家加尔贝斯结合回忆录与文化分析，深刻审视母职期待与假设，揭示美国社会如何依赖却常忽视母亲和家庭照护者的核心贡献。"
 publishDate: 2022-08-16
 isbn: "9780062938091"
-language: "en"
+contentLanguage: "en"
 topics: ["Emotional Labor", "Ethics of Care", "Intersectional Feminism", "Economic Empowerment"]
 sourceUrl: "https://www.amazon.sg/s?k=essential+labor+angela+garbes&tag=inkrupt-22"
 coverImage: "/images/books/essential-labor.jpg"

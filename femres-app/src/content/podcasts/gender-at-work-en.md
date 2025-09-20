@@ -3,7 +3,7 @@ title: "The Gender at Work Podcast"
 author: "Aruna Rao & Joanne Sandler"
 description: "The Gender at Work Podcast is hosted by Aruna Rao and Joanne Sandler, featuring conversations with global feminist activists, scholars, and community practitioners. The show takes a critical perspective exploring issues of love, policy, war, and cross-cultural alliances, emphasizing the intersection of decolonization, anti-militarization, and emotional politics. With a style that blends theoretical depth with cross-regional experience, it has a Spotify rating of 4.2 (6 reviews) and significant influence in international feminist communities."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Decolonial Feminism", "Anti-Sexual Violence", "Patriarchy Critique", "Emotional Labor", "Trans Feminism"]
 sourceUrl: "https://open.spotify.com/show/7db4regaxI7a8FigMrGOQJ"
 embedUrl: "https://open.spotify.com/embed/show/7db4regaxI7a8FigMrGOQJ"

@@ -8,7 +8,7 @@ releaseDate: 1993-09-08
 year: 1993
 country: "美国"
 duration: "139分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["剧情", "家庭"]
 cast: ["温明娜", "俞飞鸿", "邬君梅", "卢燕", "罗莎琳德·周", "劳伦·汤姆"]
 topics: ["Mother-Daughter Relationships", "Cross-Cultural Feminism", "Immigrant Identity", "Cultural Identity"]

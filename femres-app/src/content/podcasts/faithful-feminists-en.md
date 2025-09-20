@@ -3,7 +3,7 @@ title: "The Faithful Feminists Podcast"
 author: "Channing & Elise"
 description: "The Faithful Feminists Podcast is a show hosted by Channing and Elise, interpreting the Mormon (LDS) official 'Come Follow Me' study manual from a feminist theological perspective. The show emphasizes the coexistence of faith and criticism, covering content including gender politics in biblical texts, marginalized group experiences, sacramental symbolism, and community care, representing a unique voice in feminist religious criticism. The show concluded in 2023, with all episodes still accessible."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Feminist Theology", "Gender Politics", "Oral History", "Cultural Critique", "Bodily Autonomy"]
 sourceUrl: "https://open.spotify.com/show/7ioDW86NKEPR6KrTQ0m6i3"
 embedUrl: "https://open.spotify.com/embed/show/7ioDW86NKEPR6KrTQ0m6i3"

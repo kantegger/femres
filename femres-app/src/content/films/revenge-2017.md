@@ -8,7 +8,7 @@ releaseDate: 2017-09-10
 year: 2017
 country: "法国"
 duration: "108分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["动作", "惊悚", "恐怖"]
 cast: ["玛蒂尔达·卢茨", "凯文·詹森斯", "文森特·科隆贝", "纪尧姆·布谢德"]
 topics: ["Radical Feminism", "Anti-Sexual Violence", "Bodily Autonomy", "Media Representation Critique", "Fourth Wave Feminism"]

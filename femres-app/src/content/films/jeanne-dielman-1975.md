@@ -8,10 +8,10 @@ releaseDate: 1975-05-15
 year: 1975
 country: "比利时"
 duration: "201分钟"
-language: "fr"
+contentLanguage: "fr"
 genre: ["剧情", "实验"]
 cast: ["德尔菲娜·塞里格", "扬·德科特", "亨利·斯托克", "雅克·多尼奥尔-瓦尔克罗兹"]
-topics: ["Domestic Labor", "Feminist Film Theory", "Experimental Cinema", "Women's Daily Life", "Economic Marginalization", "Slow Cinema"]
+topics: ["Emotional Labor", "Feminist Film Criticism", "Feminist Art", "Everyday Life Practices", "Economic Empowerment", "Feminist Art"]
 status: "published"
 awards: ["2022年视与听史上最伟大电影", "1975年戛纳导演双周", "乡村之声20世纪第19伟大电影", "标准收藏"]
 imdbRating: "7.5"

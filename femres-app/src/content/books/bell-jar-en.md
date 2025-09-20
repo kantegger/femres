@@ -5,7 +5,7 @@ author: "Sylvia Plath"
 description: "A 20th-century feminist literary classic that reveals the psychological predicament and social oppression faced by women in the 1950s through semi-autobiographical narrative, profoundly exploring the relationship between mental illness and gender constraints."
 publishDate: 1963-01-14
 isbn: "9780060837020"
-language: "en"
+contentLanguage: "en"
 topics: ["Women's Literature", "Second Wave Feminism", "Patriarchy Critique", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=bell+jar+sylvia+plath&tag=inkrupt-22"
 coverImage: "/images/books/bell-jar.jpg"

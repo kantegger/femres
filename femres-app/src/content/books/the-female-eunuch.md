@@ -5,7 +5,7 @@ author: "杰曼·格里尔"
 description: "第二波女性主义的开创性作品，格里尔以激进而犀利的笔触分析女性在父权社会中的阉割状态，挑战传统的女性角色和性别规范，成为女性解放运动的重要理论基础。"
 publishDate: 1970-10-01
 isbn: "9780007205011"
-language: "en"
+contentLanguage: "en"
 topics: ["Radical Feminism", "Second Wave Feminism", "Bodily Autonomy", "Patriarchy Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=the+female+eunuch+germaine+greer&tag=inkrupt-22"
 coverImage: "/images/books/the-female-eunuch.jpg"

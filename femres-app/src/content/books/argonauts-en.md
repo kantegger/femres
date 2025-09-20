@@ -5,7 +5,7 @@ author: "Maggie Nelson"
 description: "Contemporary queen of memoir-theory fusion Maggie Nelson turns her lens on identity, desire, and family. This instant classic recounts Nelson's relationship with her partner, artist Harry Dodge. Through intimate documentation of family life and pregnancy, Nelson presents a complex portrait of modern queer motherhood with blurred boundaries."
 publishDate: 2015-01-01
 isbn: "9781555977351"
-language: "en"
+contentLanguage: "en"
 topics: ["Queer Theory", "Trans Feminism", "Emotional Labor", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=argonauts+maggie+nelson&tag=inkrupt-22"
 coverImage: "/images/books/argonauts.jpg"

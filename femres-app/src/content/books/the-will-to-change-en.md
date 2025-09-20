@@ -5,7 +5,7 @@ author: "bell hooks"
 description: "Deeply analyzes how patriarchy harms men, explores how men can participate in feminist movements, and advocates for building new masculinity based on love and equality."
 publishDate: 2004-01-01
 isbn: "9780743456081"
-language: "en"
+contentLanguage: "en"
 topics: ["Patriarchy Critique", "Men's Rights Movement Critique", "Ethics of Care", "Emotional Labor", "Black Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=will+to+change+bell+hooks&tag=inkrupt-22"
 coverImage: "/images/books/the-will-to-change.jpg"

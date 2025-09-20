@@ -8,10 +8,10 @@ releaseDate: 2002-10-25
 year: 2002
 country: "USA"
 duration: "123 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Biography", "Drama", "Romance"]
 cast: ["Salma Hayek", "Alfred Molina", "Ashley Judd", "Antonio Banderas", "Geoffrey Rush", "Edward Norton", "Mía Maestro", "Roger Rees", "Patricia Reyes Spíndola", "Diego Luna"]
-topics: ["Mexican Feminism", "Artist Biography", "Physical Disability", "Communist Politics", "Surrealism", "Mexican Identity", "Bisexuality", "Pain and Art", "Revolutionary Art", "Female Artistic Expression"]
+topics: ["Cultural Identity", "Feminist Art", "Bodily Autonomy", "Political Participation", "Feminist Art", "Cultural Identity", "Queer Identity", "Feminist Art", "Feminist Art", "Feminist Art"]
 status: "published"
 awards: ["Academy Award Best Makeup", "Academy Award Best Original Score", "BAFTA Best Costume Design", "Golden Globe Best Actress nomination (Salma Hayek)", "Screen Actors Guild Award nomination", "Venice Film Festival Premio FIPRESCI"]
 imdbRating: "7.3"

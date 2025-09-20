@@ -4,7 +4,7 @@ originalTitle: "Demarginalizing the Intersection of Race and Sex: A Black Femini
 author: "Kimberlé Crenshaw"
 description: "This foundational paper introduces the concept of intersectionality through a Black feminist critique of antidiscrimination law, feminist theory, and antiracist politics. Crenshaw argues that the single-axis framework used in legal and political discourse marginalizes Black women by failing to account for the compound nature of race and gender discrimination."
 publishDate: 1989-01-01
-language: en
+contentLanguage: en
 topics: ["Intersectional Feminism", "Black Feminism", "Legal Equality", "Patriarchy Critique", "Epistemic Colonialism Critique"]
 sourceUrl: "https://chicagounbound.uchicago.edu/uclf/vol1989/iss1/8/"
 doi: "0892-5593"

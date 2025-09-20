@@ -8,7 +8,7 @@ releaseDate: 1985-03-29
 year: 1985
 country: "USA"
 duration: "104 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Comedy", "Drama", "Mystery"]
 cast: ["Rosanna Arquette", "Madonna", "Aidan Quinn", "Mark Blum", "Laurie Metcalf"]
 topics: ["Family Liberation", "Cultural Critique", "Pop Culture Feminism", "Identity Formation", "Economic Empowerment", "Third Wave Feminism"]

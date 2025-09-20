@@ -10,7 +10,7 @@ releaseDate: 2019-05-19
 year: 2019
 country: "France"
 duration: "122 minutes"
-language: "fr"
+contentLanguage: "fr"
 genre: ["Drama", "Romance", "Historical"]
 cast: ["Noémie Merlant", "Adèle Haenel", "Luàna Bajrami", "Valeria Golino"]
 topics: ["Feminist Art", "Queer Identity", "Bodily Autonomy", "Media Representation Critique", "Female Friendship"]

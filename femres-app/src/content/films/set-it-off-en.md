@@ -10,7 +10,7 @@ releaseDate: 1996-11-06
 year: 1996
 country: "USA"
 duration: "123 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Crime", "Action", "Drama", "Thriller"]
 cast: ["Jada Pinkett Smith", "Queen Latifah", "Vivica A. Fox", "Kimberly Elise", "Blair Underwood"]
 topics: ["Black Feminism", "Female Friendship", "Economic Empowerment", "Race and Gender", "Queer Identity", "Capitalism Critique"]

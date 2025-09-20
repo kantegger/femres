@@ -10,7 +10,7 @@ releaseDate: 2007-06-27
 year: 2007
 country: "France/USA"
 duration: "96 minutes"
-language: "fr"
+contentLanguage: "fr"
 genre: ["Animation", "Biography", "Drama", "History"]
 cast: ["Chiara Mastroianni", "Catherine Deneuve", "Danielle Darrieux", "Simon Abkarian"]
 topics: ["Decolonial Feminism", "Religious Patriarchy Critique", "Bodily Autonomy", "Feminist Art", "Political Participation", "Cultural Identity"]

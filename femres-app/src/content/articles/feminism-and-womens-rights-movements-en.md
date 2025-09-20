@@ -3,7 +3,7 @@ title: "Feminism and Women's Rights Movements"
 author: "Council of Europe" 
 description: "This article provides an in-depth exploration of the definition of feminism, its historical development (including three waves and cyberfeminism), and its importance in contemporary society. It details the various forms of gender discrimination and explains why specific women's rights are necessary, emphasizing that women's rights are human rights." 
 publishDate: 2025-09-13 
-language: "en" 
+contentLanguage: "en" 
 topics: ["Feminism", "Women's Rights", "Gender Equality", "Gender Discrimination", "Social Movements"] 
 sourceUrl: "https://www.coe.int/en/web/gender-matters/feminism-and-women-s-rights-movements" 
 readingTime: 5

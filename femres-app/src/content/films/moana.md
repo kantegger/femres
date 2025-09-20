@@ -8,7 +8,7 @@ releaseDate: 2016-11-23
 year: 2016
 country: "美国"
 duration: "107分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["动画", "冒险", "音乐剧"]
 cast: ["奥丽伊·卡瑞瓦洛", "道恩·强森", "瑞切尔·豪斯", "特穆拉·莫里森", "杰梅奈·克莱门特"]
 topics: ["Cultural Identity", "Ecofeminism", "Family Liberation", "Feminist Art"]

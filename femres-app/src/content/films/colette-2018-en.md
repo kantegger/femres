@@ -8,7 +8,7 @@ releaseDate: 2018-09-21
 year: 2018
 country: "UK/USA"
 duration: "111 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Biography", "Drama", "History"]
 cast: ["Keira Knightley", "Dominic West", "Eleanor Tomlinson", "Denise Gough"]
 topics: ["Women's Writing", "Economic Empowerment", "Women's Literature", "Intersectional Feminism", "Patriarchy Critique", "Feminist Art", "First Wave Feminism"]

@@ -5,7 +5,7 @@ author: "索菲·刘易斯"
 description: "对女性主义内部反动派别的挑衅性和毫不妥协的审视，这些派别的工作实际上是在对抗解放。刘易斯追溯了两个世纪的'敌对女性主义'，从帝国主义女性主义者到当代跨性别恐惧者，揭示了女性主义修辞如何被武器化来强化而非拆除压迫系统。"
 publishDate: 2025-02-18
 isbn: "9798888902493"
-language: "en"
+contentLanguage: "en"
 topics: ["Radical Feminism", "Trans Feminism", "Intersectional Feminism", "Cultural Critique", "Anti-Feminism Studies", "Patriarchy Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=enemy+feminisms+sophie+lewis&tag=inkrupt-22"
 coverImage: "/images/books/enemy-feminisms.jpg"

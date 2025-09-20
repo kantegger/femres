@@ -3,7 +3,7 @@ title: "Unladylike"
 author: "Cristen Conger"
 description: "Unladylike is a podcast hosted by feminist Cristen Conger, focusing on fringe issues of modern female identity. With the motto 'Where feminism meets fringe,' the show deeply analyzes myths, chaos, and media narratives shaping contemporary women (and non-traditional female identities). Content covers bisexual impostor syndrome, tall girl psychology, gun culture, contraception controversies, and other social hot topics, combining deep research with critical perspectives to challenge mainstream gender discourse. With a sharp, knowledge-dense style suitable for audiences interested in intersectional feminism, cultural criticism, and social structures."
 publishDate: 2025-07-08
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Media Representation Critique", "Fourth Wave Feminism"]
 sourceUrl: "https://open.spotify.com/show/4HIbrI2ckotPHTh6REyR73"
 embedUrl: "https://open.spotify.com/embed/show/4HIbrI2ckotPHTh6REyR73"

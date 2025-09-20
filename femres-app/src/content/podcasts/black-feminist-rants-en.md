@@ -3,7 +3,7 @@ title: "Black Feminist Rants"
 author: "LaKia Williams"
 description: "Black Feminist Rants is an independently produced podcast hosted by LaKia Williams, focusing on the experiences of Black women and non-binary individuals in social justice spaces, with reproductive justice as the core framework for conversations. The show covers oral history, youth activism, motherhood and lactation politics, perfectionism criticism, and self-healing, blending personal narrative with political criticism to showcase the diversity and depth of Black feminism. Spotify rating of 5.0 (26 reviews), representative among Black feminist podcasts."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Reproductive Autonomy", "Cultural Critique", "Oral History", "Emotional Labor"]
 sourceUrl: "https://open.spotify.com/show/1fClysfXOf4gew0hx8n9yL"
 embedUrl: "https://open.spotify.com/embed/show/1fClysfXOf4gew0hx8n9yL"

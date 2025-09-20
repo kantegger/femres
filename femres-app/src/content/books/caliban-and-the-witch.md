@@ -5,7 +5,7 @@ author: "西尔维娅·费德里奇"
 description: "从女性主义视角重新审视资本主义原始积累，揭示了对女性身体的暴力控制如何成为资本主义发展的基础。"
 publishDate: 2004-01-01
 isbn: "9781570270598"
-language: "en"
+contentLanguage: "en"
 topics: ["Marxist Feminism", "Capitalism Critique", "Historical Context", "Bodily Autonomy", "Patriarchy Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=caliban+and+the+witch+silvia+federici&tag=inkrupt-22"
 coverImage: "/images/books/caliban-and-the-witch.jpg"

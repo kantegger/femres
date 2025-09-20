@@ -5,7 +5,7 @@ author: "安吉拉·戴维斯"
 description: "从历史唯物主义视角分析美国女性运动史，揭示了种族、阶级和性别压迫的相互关联。"
 publishDate: 1981-01-01
 isbn: "9780394713519"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Intersectional Feminism", "Race and Gender"]
 sourceUrl: "https://www.amazon.sg/s?k=women+race+and+class+angela+davis&tag=inkrupt-22"
 coverImage: "/images/books/women-race-class.jpg"

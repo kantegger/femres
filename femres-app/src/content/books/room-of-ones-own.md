@@ -5,7 +5,7 @@ author: "弗吉尼亚·伍尔夫"
 description: "女性主义文学批评的奠基之作，以诗意而犀利的笔触探讨女性创作的物质与心理条件，提出影响深远的女性写作理论。"
 publishDate: 1929-10-24
 isbn: "9781101908501"
-language: "en"
+contentLanguage: "en"
 topics: ["Women's Literature", "Feminist Literary Criticism", "Women's Writing", "Economic Empowerment"]
 sourceUrl: "https://www.amazon.sg/s?k=room+of+ones+own+virginia+woolf&tag=inkrupt-22"
 coverImage: "/images/books/room-of-ones-own.jpg"

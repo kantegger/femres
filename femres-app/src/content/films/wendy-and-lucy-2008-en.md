@@ -8,10 +8,10 @@ releaseDate: 2008-05-22
 year: 2008
 country: "USA"
 duration: "80 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama"]
 cast: ["Michelle Williams", "Will Oldham", "Will Patton", "John Robinson", "Walter Dalton", "Lucy the Dog", "David Koppell", "Max Clement", "Larry Fessenden"]
-topics: ["Economic Precarity", "Homelessness", "Female Survival", "Minimalist Cinema", "Social Critique", "Economic Crisis", "Female Resilience", "Class Consciousness"]
+topics: ["Economic Empowerment", "Economic Empowerment", "Mental Resilience", "Feminist Art", "Cultural Critique", "Economic Empowerment", "Mental Resilience", "Class Analysis"]
 status: "published"
 awards: ["Toronto Film Critics Association Best Picture", "Toronto Film Critics Association Best Actress (Michelle Williams)", "Independent Spirit Award Best Feature nomination", "Independent Spirit Award Best Female Lead nomination"]
 imdbRating: "7.1"

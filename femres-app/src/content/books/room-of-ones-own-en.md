@@ -7,7 +7,7 @@ description: "A foundational work of feminist literary criticism that explores t
 descriptionEn: "A foundational work of feminist literary criticism that explores the material and psychological conditions necessary for women's creative work with poetic and incisive insight, proposing influential theories of women's writing."
 publishDate: 1929-10-24
 isbn: "9781101908501"
-language: "en"
+contentLanguage: "en"
 topics: ["Women's Literature", "Feminist Literary Criticism", "Women's Writing", "Economic Empowerment"]
 sourceUrl: "https://www.amazon.sg/s?k=room+of+ones+own+virginia+woolf&tag=inkrupt-22"
 coverImage: "/images/books/room-of-ones-own.jpg"

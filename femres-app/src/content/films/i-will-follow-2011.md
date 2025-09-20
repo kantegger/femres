@@ -8,7 +8,7 @@ releaseDate: 2011-03-11
 year: 2011
 country: "美国"
 duration: "83分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["剧情", "家庭", "独立电影"]
 cast: ["萨利·理查德森-惠特菲尔德", "奥马里·哈德威克", "布莱尔·安德伍德", "贝弗利·托德", "米科尔·布里安娜·怀特", "迪宗·塔尔顿", "特雷茜·托姆斯", "达蒙·罗伯茨"]
 topics: ["Black Feminism", "Economic Empowerment", "Feminist Art", "Cultural Identity", "Family Liberation", "Emotional Labor", "Race and Gender", "Arts and Performance", "Social Movements", "Cultural Critique"]

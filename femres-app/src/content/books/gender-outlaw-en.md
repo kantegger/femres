@@ -5,7 +5,7 @@ author: "Kate Bornstein"
 description: "A groundbreaking work in transgender theory that challenges the binary gender system, explores gender fluidity and performativity, and provides theoretical foundations for non-binary gender identity."
 publishDate: 1994-01-01
 isbn: "9781101973240"
-language: "en"
+contentLanguage: "en"
 topics: ["Trans Feminism", "Queer Theory", "Bodily Autonomy", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=gender+outlaw+kate+bornstein&tag=inkrupt-22"
 coverImage: "/images/books/gender-outlaw.jpg"

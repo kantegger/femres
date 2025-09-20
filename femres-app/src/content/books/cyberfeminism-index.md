@@ -5,7 +5,7 @@ author: "明迪·苏"
 description: "探索数字时代女性主义的开创性作品，分析互联网、人工智能和数字技术如何重塑性别关系和女性主义实践。"
 publishDate: 2022-03-15
 isbn: "9781839762456"
-language: "en"
+contentLanguage: "en"
 topics: ["Digital Feminism", "Technology Critique", "AI Ethics", "Internet Culture", "Fourth Wave Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=cyberfeminism+index+mindy+seu&tag=inkrupt-22"
 coverImage: "/images/books/cyberfeminism-index.jpg"

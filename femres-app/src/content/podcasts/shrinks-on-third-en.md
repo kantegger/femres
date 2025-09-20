@@ -3,7 +3,7 @@ title: "Shrinks on Third"
 author: "Julie Mayer & Cindy Ariel"
 description: "Shrinks on Third is a feminist psychology podcast hosted by psychologists Julie Mayer and Cindy Ariel, with social justice at its core, exploring connections between mental health, trauma recovery, and political structures. With a gentle, rational, and critical style, the content covers antisocial personality, adult ADHD, traumatic separation, factitious disorder fabrication, and collective survival psychology. Spotify rating of 5.0 (1 review), uniquely positioned at the intersection of psychology and social justice podcasting."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Feminist Psychology", "Emotional Labor", "Patriarchy Critique"]
 sourceUrl: "https://open.spotify.com/show/7ornGjcnv2DQbXpRx075jW"
 embedUrl: "https://open.spotify.com/embed/show/7ornGjcnv2DQbXpRx075jW"

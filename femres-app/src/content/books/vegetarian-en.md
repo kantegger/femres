@@ -5,7 +5,7 @@ author: "Han Kang"
 description: "First published in 2007 and translated into English in 2015, this modern allegorical novel explores what happens when a housewife refuses to fulfill the role society expects of her. When Young-hye, a housewife and graphic designer living in Seoul, awakens from a violent nightmare about animal cruelty, she immediately decides to become a vegetarian. This seemingly harmless decision leads to Young-hye being ostracized by her family and her own mental and physical deterioration."
 publishDate: 2007-01-01
 isbn: "9780553448184"
-language: "en"
+contentLanguage: "en"
 topics: ["Bodily Autonomy", "Patriarchy Critique", "Women's Literature"]
 sourceUrl: "https://www.amazon.sg/s?k=vegetarian+han+kang&tag=inkrupt-22"
 coverImage: "/images/books/vegetarian.jpg"

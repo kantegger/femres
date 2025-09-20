@@ -8,7 +8,7 @@ releaseDate: 1996-11-06
 year: 1996
 country: "美国"
 duration: "123分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["犯罪", "动作", "剧情", "惊悚"]
 cast: ["杰达·萍克史密斯", "奎恩·拉提法", "薇薇卡·福克斯", "金伯利·艾丽斯", "布莱尔·安德伍德"]
 topics: ["Black Feminism", "Female Friendship", "Economic Empowerment", "Race and Gender", "Queer Identity", "Capitalism Critique"]

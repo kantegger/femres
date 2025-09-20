@@ -8,10 +8,10 @@ releaseDate: 1985-12-18
 year: 1985
 country: "USA"
 duration: "154 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama", "Period"]
 cast: ["Whoopi Goldberg", "Danny Glover", "Margaret Avery", "Oprah Winfrey", "Adolph Caesar", "Willard E. Pugh", "Akosua Busia", "Desreta Jackson", "Rae Dawn Chong", "Dana Ivey"]
-topics: ["Black Feminism", "Domestic Violence", "Sexual Abuse", "Sisterhood", "LGBTQ+ Themes", "Racial Oppression", "Female Empowerment", "Southern Gothic", "Literary Adaptation", "Coming of Age"]
+topics: ["Black Feminism", "Anti-Sexual Violence", "Anti-Sexual Violence", "Female Friendship", "Queer Theory", "Race and Gender", "Economic Empowerment", "Cultural Critique", "Women's Literature", "Identity Formation"]
 status: "published"
 awards: ["11 Academy Award nominations", "Directors Guild Award Outstanding Directorial Achievement (Steven Spielberg)", "NAACP Image Award Outstanding Motion Picture", "Golden Globe Best Motion Picture nomination", "BAFTA nominations"]
 imdbRating: "7.7"

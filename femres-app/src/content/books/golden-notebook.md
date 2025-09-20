@@ -5,7 +5,7 @@ author: "多丽丝·莱辛"
 description: "2007年诺贝尔文学奖得主多丽丝·莱辛最著名的1962年实验性小说，讲述了当时不可言说的事实：女性作为具有性欲、患有精神疾病、会挣扎、会高潮、会来月经的生物。通过作家安娜试图将生活经历和创作笔记整合为统一整体的视角，莱辛以爱、愤怒和在当时女性作家中几乎闻所未闻的坦率，探索了女性生活不美好的一面。"
 publishDate: 1962-01-01
 isbn: "9780060931407"
-language: "en"
+contentLanguage: "en"
 topics: ["Second Wave Feminism", "Women's Writing", "Women's Literature", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=golden+notebook+doris+lessing&tag=inkrupt-22"
 coverImage: "/images/books/golden-notebook.jpg"

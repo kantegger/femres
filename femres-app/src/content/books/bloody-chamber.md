@@ -5,7 +5,7 @@ author: "安吉拉·卡特"
 description: "女性主义童话重构的开山之作，通过颠覆经典童话创造全新的女性叙事，探索性别权力、欲望与女性主体性的复杂关系。"
 publishDate: 1979-01-01
 isbn: "9780060107086"
-language: "en"
+contentLanguage: "en"
 topics: ["Women's Literature", "Postmodern Feminism", "Cultural Critique", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=bloody+chamber+angela+carter&tag=inkrupt-22"
 coverImage: "/images/books/bloody-chamber.jpg"

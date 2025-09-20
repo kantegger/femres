@@ -5,7 +5,7 @@ author: "Marilyn Frye"
 description: "A classic work of radical feminist philosophy. Through nine profound essays, Frye systematically analyzes the structural nature of oppression from a philosophical epistemological perspective, exploring core concepts and fundamental issues in feminist theory."
 publishDate: 1983-01-01
 isbn: "9780895940995"
-language: "en"
+contentLanguage: "en"
 topics: ["Radical Feminism", "Patriarchy Critique", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=politics+of+reality+marilyn+frye&tag=inkrupt-22"
 coverImage: "/images/books/the-politics-of-reality.jpg"

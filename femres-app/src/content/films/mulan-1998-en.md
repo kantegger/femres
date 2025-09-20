@@ -10,7 +10,7 @@ releaseDate: 1998-06-19
 year: 1998
 country: "USA"
 duration: "88 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Animation", "Family", "Adventure", "Musical"]
 cast: ["Ming-Na Wen", "Eddie Murphy", "BD Wong", "Harvey Fierstein", "Frank Welker"]
 topics: ["Feminist Art", "Bodily Autonomy", "Patriarchy Critique", "Chinese Feminist Movement", "Queer Identity"]

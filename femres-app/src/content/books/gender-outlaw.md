@@ -5,7 +5,7 @@ author: "凯特·博恩斯坦"
 description: "跨性别理论的开创性著作，挑战二元性别体系，探讨性别流动性与表演性，为非二元性别认同提供理论基础。"
 publishDate: 1994-01-01
 isbn: "9781101973240"
-language: "en"
+contentLanguage: "en"
 topics: ["Trans Feminism", "Queer Theory", "Bodily Autonomy", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=gender+outlaw+kate+bornstein&tag=inkrupt-22"
 coverImage: "/images/books/gender-outlaw.jpg"

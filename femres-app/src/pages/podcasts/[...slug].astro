@@ -282,8 +282,8 @@ const getPodcastEmbed = (embedUrl: string) => {
               <div class="flex justify-between">
                 <span class="text-gray-500 dark:text-gray-400">语言:</span>
                 <span class="text-gray-900 dark:text-white">
-                  {podcast.data.language === 'zh-CN' ? '中文' : 
-                   podcast.data.language === 'en' ? '英语' : podcast.data.language}
+                  {podcast.data.contentLanguage === 'zh-CN' ? '中文' :
+                   podcast.data.contentLanguage === 'en' ? '英语' : podcast.data.contentLanguage}
                 </span>
               </div>
               

@@ -3,7 +3,7 @@ title: "《Woman》：全球女性的声音与韧性"
 author: "Yann Arthus-Bertrand & Anastasia Mikova"
 description: "《Woman》是一部全球性纪录片，收录来自 50 个国家、2000 位女性的访谈，呈现她们在母职、教育、婚姻、经济独立、月经与性等议题上的真实经验。影片不仅揭示全球女性所面临的不公，更强调她们的内在力量与改变世界的能力。"
 publishDate: 2019-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Education Equality", "Economic Empowerment", "Bodily Autonomy", "Anti-Sexual Violence"]
 sourceUrl: "https://www.youtube.com/watch?v=GNsy4lWHiyc"
 embedUrl: "https://www.youtube.com/embed/GNsy4lWHiyc"

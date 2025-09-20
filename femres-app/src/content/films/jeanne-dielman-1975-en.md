@@ -8,10 +8,10 @@ releaseDate: 1975-05-15
 year: 1975
 country: "Belgium"
 duration: "201 minutes"
-language: "fr"
+contentLanguage: "fr"
 genre: ["Drama", "Experimental"]
 cast: ["Delphine Seyrig", "Jan Decorte", "Henri Storck", "Jacques Doniol-Valcroze"]
-topics: ["Domestic Labor", "Feminist Film Theory", "Experimental Cinema", "Women's Daily Life", "Economic Marginalization", "Slow Cinema"]
+topics: ["Emotional Labor", "Feminist Film Criticism", "Feminist Art", "Everyday Life Practices", "Economic Empowerment", "Feminist Art"]
 status: "published"
 awards: ["Sight and Sound Greatest Film of All Time 2022", "Cannes Directors' Fortnight 1975", "Village Voice 19th Greatest 20th Century Film", "Criterion Collection"]
 imdbRating: "7.5"

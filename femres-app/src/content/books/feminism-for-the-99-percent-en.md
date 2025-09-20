@@ -5,7 +5,7 @@ author: "Cinzia Arruzza, Tithi Bhattacharya, Nancy Fraser"
 description: "Critiques elite feminism and proposes an anti-capitalist feminist vision, linking women's liberation to economic justice, racial equality, and environmental sustainability."
 publishDate: 2019-03-01
 isbn: "9781788734424"
-language: "en"
+contentLanguage: "en"
 topics: ["Marxist Feminism", "Capitalism Critique", "Economic Empowerment", "Intersectional Feminism", "Climate Justice"]
 sourceUrl: "https://www.amazon.sg/s?k=feminism+for+the+99+percent&tag=inkrupt-22"
 coverImage: "/images/books/feminism-for-the-99-percent.jpg"

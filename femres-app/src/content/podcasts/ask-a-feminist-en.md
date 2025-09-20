@@ -3,7 +3,7 @@ title: "Ask a Feminist"
 author: "Signs: Journal of Women in Culture and Society"
 description: "Ask a Feminist is an academic feminist podcast produced by Signs: Journal of Women in Culture and Society, focusing on feminist perspectives in current political and social justice issues. The show invites feminist scholars and public intellectuals from interdisciplinary fields to discuss issues such as abortion rights, transgender policy, digital gender violence, public feminism, and science criticism. With a rigorous style and high depth, it is suitable for researchers and public advocates. Spotify rating of 5.0 (1 review), representative among academic feminist podcasts."
 publishDate: 2025-09-11
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Political Participation", "Media Representation Critique"]
 sourceUrl: "https://open.spotify.com/show/6O8Rx2N3lXSrxrDwRPQApX"
 embedUrl: "https://open.spotify.com/embed/show/6O8Rx2N3lXSrxrDwRPQApX"

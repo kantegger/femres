@@ -5,7 +5,7 @@ author: "Kate Manne"
 description: "Following her groundbreaking 'Down Girl,' Manne examines how male entitlement operates across various domains—from intimate relationships to healthcare to politics—revealing how men's unwarranted sense of privilege systematically harms women and undermines gender equality."
 publishDate: 2020-08-11
 isbn: "9781984826558"
-language: "en"
+contentLanguage: "en"
 topics: ["Patriarchy Critique", "Male Privilege", "Cultural Critique", "Bodily Autonomy", "Political Participation", "Intersectional Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=entitled+how+male+privilege+hurts+women+kate+manne&tag=inkrupt-22"
 coverImage: "/images/books/entitled.jpg"

@@ -5,7 +5,7 @@ author: "玛吉·尼尔森"
 description: "当代回忆录与理论融合的女王玛吉·尼尔森将镜头对准身份、欲望和家庭话题，这部即时经典讲述了尼尔森与她的伴侣、艺术家哈里·道奇的关系。通过细致入微地记录她的家庭生活和怀孕经历，尼尔森呈现了一幅复杂的、模糊边界的现代酷儿母性肖像。"
 publishDate: 2015-01-01
 isbn: "9781555977351"
-language: "en"
+contentLanguage: "en"
 topics: ["Queer Theory", "Trans Feminism", "Emotional Labor", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=argonauts+maggie+nelson&tag=inkrupt-22"
 coverImage: "/images/books/argonauts.jpg"

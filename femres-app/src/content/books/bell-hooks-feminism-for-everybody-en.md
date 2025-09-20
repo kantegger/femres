@@ -5,7 +5,7 @@ author: "bell hooks"
 description: "bell hooks' accessible introduction to feminism that articulates the core concepts of feminist thought in clear, simple language, emphasizing that feminism is not just for women but a political movement to end sexism, sexist exploitation, and sexist oppression that benefits everyone."
 publishDate: 2000-01-01
 isbn: "9780896085688"
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Black Feminism", "Feminist Education"]
 sourceUrl: "https://www.amazon.sg/s?k=feminism+is+for+everybody+bell+hooks&tag=inkrupt-22"
 coverImage: "/images/books/bell-hooks-feminism-for-everybody.jpg"

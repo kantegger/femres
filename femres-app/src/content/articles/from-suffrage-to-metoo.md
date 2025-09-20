@@ -3,7 +3,7 @@ title: "从选举权运动到#MeToo：全球性别平等斗争的历史传承"
 author: "伊莎贝拉·德洛斯里奥斯·埃尔南德斯"
 description: "本文追溯了女性主义运动从19世纪选举权运动到#MeToo数字化行动主义时代的演变历程。文章探讨了女性主义的四个浪潮、其历史背景，以及性别平等面临的持续全球挑战，包括政治参与、生育权利和社会污名化问题。"
 publishDate: 2025-01-15
-language: "zh-CN"
+contentLanguage: "zh-CN"
 topics: [
   "First Wave Feminism",
   "Intersectional Feminism",

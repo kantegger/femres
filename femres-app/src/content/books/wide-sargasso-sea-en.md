@@ -5,7 +5,7 @@ author: "Jean Rhys"
 description: "Nearly 200 years after Charlotte Brontë's Jane Eyre was published, it has quite rightly earned the status of a classic feminist novel. If Jane Eyre is a classic, then Jean Rhys's Wide Sargasso Sea—the 1966 novel that gives life to the abandoned woman in Brontë's story—is a masterpiece. By re-examining the character of Bertha Rochester and imagining her life before the events of the original novel, Rhys gives agency and dignity to literature's archetypal 'madwoman in the attic'."
 publishDate: 1966-01-01
 isbn: "9780393308815"
-language: "en"
+contentLanguage: "en"
 topics: ["Decolonial Feminism", "Race and Gender", "Women's Literature", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=wide+sargasso+sea+jean+rhys&tag=inkrupt-22"
 coverImage: "/images/books/wide-sargasso-sea.jpg"

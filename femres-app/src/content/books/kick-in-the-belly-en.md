@@ -5,7 +5,7 @@ author: "Stella Dadzie"
 description: "Reveals the forgotten history of enslaved women, reconstructing their pivotal role and indomitable spirit in the struggle against slavery in the Caribbean region."
 publishDate: 2020-10-01
 isbn: "9781788738842"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Decolonial Feminism", "Race and Gender", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=kick+in+the+belly+stella+dadzie&tag=inkrupt-22"
 coverImage: "/images/books/kick-in-the-belly.jpg"

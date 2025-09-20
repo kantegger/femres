@@ -5,7 +5,7 @@ author: "Claudia Rankine"
 description: "A hybrid of prose and poetry, Claudia Rankine's memoir-like art book provides uncompromising insights into the living conditions of 21st-century Black Americans—particularly Black women. From microaggressions to intentional acts of bias, Rankine creates a taxonomy of daily offenses against Black Americans, challenging all of us to consider our own complicity."
 publishDate: 2014-01-01
 isbn: "9781555976903"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Race and Gender", "Cultural Critique", "Women's Writing"]
 sourceUrl: "https://www.amazon.sg/s?k=citizen+american+lyric+claudia+rankine&tag=inkrupt-22"
 coverImage: "/images/books/citizen-american-lyric.jpg"

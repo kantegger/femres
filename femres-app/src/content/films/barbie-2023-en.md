@@ -8,7 +8,7 @@ releaseDate: 2023-07-21
 year: 2023
 country: "USA"
 duration: "114 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Comedy", "Fantasy", "Adventure"]
 cast: ["Margot Robbie", "Ryan Gosling", "America Ferrera", "Kate McKinnon", "Issa Rae"]
 topics: ["Postmodern Feminism", "Media Representation Critique", "Patriarchy Critique", "Capitalism Critique", "Bodily Autonomy", "Pop Culture Feminism"]

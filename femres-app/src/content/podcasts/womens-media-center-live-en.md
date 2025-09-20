@@ -3,7 +3,7 @@ title: "Women's Media Center Live with Robin Morgan"
 author: "Robin Morgan"
 description: "Women's Media Center Live is hosted by veteran feminist writer and activist Robin Morgan, affiliated with Women's Media Center. The show explores feminist politics, culture, and social issues with a global perspective, covering abortion rights, media critique, climate crisis, immigration policy, and literary creation. Robin brings her deep Second Wave feminist background and critical language to in-depth dialogues with women experts across fields. Broadcasting in 110 countries worldwide, while unrated on Spotify, it has high influence in international feminist podcasting."
 publishDate: 2025-09-11
-language: "en"
+contentLanguage: "en"
 topics: ["Abortion Rights", "Media Representation Critique", "Political Participation"]
 sourceUrl: "https://open.spotify.com/show/0aDv5vw4F3A42bFZqOhBHv"
 embedUrl: "https://open.spotify.com/embed/show/0aDv5vw4F3A42bFZqOhBHv"

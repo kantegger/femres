@@ -3,7 +3,7 @@ title: "BK Talks. Pedagogies of Feminism"
 author: "BKTUDelft" 
 description: "This video is a recording of a panel discussion titled 'Pedagogies of Feminism,' where a panel of speakers from the fields of architecture and urban design share their experiences with feminism. The discussion covers how feminist values can be applied in design, the importance of recognizing the contributions of women, and the need to challenge existing patriarchal and capitalist structures. It also highlights an online platform for feminist spatial practices and discusses the challenges of translating academic theory into professional practice." 
 publishDate: 2025-03-05 
-language: "en" 
+contentLanguage: "en" 
 topics: ["Feminist Literary Criticism", "Cultural Critique", "Capitalism Critique", "Patriarchy Critique", "Intersectional Feminism", "Academic Patriarchy Critique", "Ethics of Care", "Race and Gender", "Digital Feminism", "Political Participation"] 
 sourceUrl: "https://www.youtube.com/watch?v=JolSkUu1c7Y" 
 embedUrl: "https://www.google.com/search?q=https://www.youtube.com/embed/JolSkUu1c7Y" 

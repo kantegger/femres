@@ -8,10 +8,10 @@ releaseDate: 1966-03-29
 year: 1966
 country: "美国"
 duration: "112分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["喜剧", "家庭"]
 cast: ["海莉·米尔斯", "罗莎琳德·拉塞尔", "琼·哈丁", "比妮·巴恩斯", "玛丽·威克斯", "卡米拉·斯帕夫", "吉普赛·罗斯·李", "波西亚·尼尔森", "马乔丽·杜兰特", "多洛雷斯·萨顿"]
-topics: ["Female Friendship", "Female Leadership", "Coming of Age", "Religious Feminism", "Female Mentorship", "Sisterhood", "Female Directorship", "Proto-Feminist Cinema"]
+topics: ["Female Friendship", "Political Participation", "Identity Formation", "Feminist Theology", "Female Friendship", "Female Friendship", "Feminist Art", "Historical Context"]
 status: "published"
 awards: ["国家影评委员会杰出家庭电影", "导演公会优秀导演成就奖提名"]
 imdbRating: "7.3"

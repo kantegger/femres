@@ -3,7 +3,7 @@ title: "韩国的性别不平等与反女性主义情绪"
 author: "Haeryun Kang"
 description: "本文分析了韩国在全球性别平等排名靠后却出现强烈反女性主义情绪的现象，探讨了保守政府政策、青年男性的反弹心理，以及女性主义在韩国社会中的复杂处境。"
 publishDate: 2022-12-04
-language: "en"
+contentLanguage: "en"
 topics: ["Anti-Feminism Studies", "Patriarchy Critique", "Political Participation", "Workplace Equality", "Education Equality", "Race and Gender", "Fourth Wave Feminism"]
 sourceUrl: "https://www.nbcnews.com/news/world/stark-gender-inequality-south-korea-hostility-feminism-growing-rcna59747"
 readingTime: 7

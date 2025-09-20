@@ -8,7 +8,7 @@ releaseDate: 2023-07-21
 year: 2023
 country: "美国"
 duration: "114分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["喜剧", "奇幻", "冒险"]
 cast: ["玛格特·罗比", "瑞恩·高斯林", "艾美莉卡·费雷拉", "凯特·麦金农", "伊萨·雷"]
 topics: ["Postmodern Feminism", "Media Representation Critique", "Patriarchy Critique", "Capitalism Critique", "Bodily Autonomy", "Pop Culture Feminism"]

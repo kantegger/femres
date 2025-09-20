@@ -4,7 +4,7 @@ originalTitle: "Female and Feminism: Exploring Contemporary Gender Identity and 
 author: "Dr. Maria Rodriguez, Dr. Chen Wei"
 description: "This interdisciplinary study examines the relationship between gender identity and feminist political consciousness in the contemporary era. Through survey data and qualitative interviews, the research explores how individuals navigate the relationship between being 'female' and identifying as 'feminist,' revealing complex patterns of identity formation and political engagement."
 publishDate: 2023-08-15
-language: en
+contentLanguage: en
 topics: ["Gender Identity", "Feminist Theory", "Political Consciousness", "Identity Formation"]
 sourceUrl: "https://doi.org/10.1177/example2023female"
 doi: "10.1177/example2023female"

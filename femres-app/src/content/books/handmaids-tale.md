@@ -5,7 +5,7 @@ author: "玛格丽特·阿特伍德"
 description: "艾美奖获奖电视剧原著，女性主义投机小说的黄金标准。故事追随奥芙弗雷德，一位被迫在反乌托邦近未来中生存的肥沃女性仆人阶级成员，她们被当作统治阶级的生殖工具。在女性生育权利仍然政治敏感的时代，阿特伍德的开创性小说在30多年后依然具有深刻现实意义。"
 publishDate: 1985-01-01
 isbn: "9780385490818"
-language: "en"
+contentLanguage: "en"
 topics: ["Reproductive Autonomy", "Bodily Autonomy", "Patriarchy Critique", "Women's Literature"]
 sourceUrl: "https://www.amazon.sg/s?k=handmaids+tale+margaret+atwood&tag=inkrupt-22"
 coverImage: "/images/books/handmaids-tale.jpg"

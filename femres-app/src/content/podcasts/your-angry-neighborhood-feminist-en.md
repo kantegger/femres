@@ -3,7 +3,7 @@ title: "Your Angry Neighborhood Feminist"
 author: "Madigan"
 description: "Your Angry Neighborhood Feminist is a podcast hosted by intersectional feminist Madigan, focusing on critical issues facing women and society. The show explores historical figures, current events, and cultural phenomena with a sharp perspective, covering topics from British feminism development to American political conspiracy theories and shooting incidents. Madigan challenges mainstream narratives through deep research and personal viewpoints, promoting feminist dialogue. With a frank, critically strong podcast style suitable for audiences interested in gender, power, and social structures."
 publishDate: 2025-09-05
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Radical Feminism", "Cultural Critique"]
 sourceUrl: "https://open.spotify.com/show/7wC6rC9b3qoDwW4KM6iJJN"
 embedUrl: "https://open.spotify.com/embed/show/7wC6rC9b3qoDwW4KM6iJJN"

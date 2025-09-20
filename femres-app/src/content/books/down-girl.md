@@ -5,7 +5,7 @@ author: "凯特·曼恩"
 description: "一部开创性的哲学分析，重新定义厌女症不是对女性的仇恨，而是一个旨在监管和惩罚那些挑战父权规范的女性的系统。曼恩提供了理解厌女症如何作为父权制执法部门运作的严谨框架。"
 publishDate: 2017-10-18
 isbn: "9780190604981"
-language: "en"
+contentLanguage: "en"
 topics: ["Patriarchy Critique", "Feminist Literary Criticism", "Cultural Critique", "Political Participation", "Intersectional Feminism", "Academic Patriarchy Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=down+girl+logic+misogyny+kate+manne&tag=inkrupt-22"
 coverImage: "/images/books/down-girl.jpg"

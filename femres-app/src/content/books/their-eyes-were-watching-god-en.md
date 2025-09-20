@@ -5,7 +5,7 @@ author: "Zora Neale Hurston"
 description: "Though Zora Neale Hurston's most famous novel is now considered a cornerstone work of the Harlem Renaissance, Their Eyes Were Watching God received a lukewarm reception when first published in 1937, not being rediscovered until the 1970s. The story follows a Black woman named Janie Crawford's coming-of-age in Florida, from her 'voiceless' teenage years to a more self-possessed adulthood."
 publishDate: 1937-01-01
 isbn: "9780061120060"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Race and Gender", "Women's Literature", "Bodily Autonomy"]
 sourceUrl: "https://www.amazon.sg/s?k=their+eyes+were+watching+god+zora+neale+hurston&tag=inkrupt-22"
 coverImage: "/images/books/their-eyes-were-watching-god.jpg"

@@ -3,7 +3,7 @@ title: "BBC中文网：MeToo五周年：究竟改变了什么？"
 author: "桑德琳·隆贡布" 
 description: "深入解读#MeToo运动五周年以来的全球影响，探讨其如何激发女性发声，揭示社会深层问题，并推动持续的结构性变革。" 
 publishDate: 2022-10-15 
-language: "zh-CN" 
+contentLanguage: "zh-CN" 
 topics: ["MeToo Movement", "Anti-Sexual Violence", "Fourth Wave Feminism"] 
 sourceUrl: "https://www.bbc.com/zhongwen/simp/world-63256653" 
 readingTime: 8 

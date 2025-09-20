@@ -5,7 +5,7 @@ author: "贝尔·胡克斯"
 description: "深刻分析了黑人女性在种族主义和性别歧视双重压迫下的历史经验，批判了白人女性主义的局限性。"
 publishDate: 1981-01-01
 isbn: "9780896081307"
-language: "en"
+contentLanguage: "en"
 topics: ["Black Feminism", "Intersectional Feminism", "Race and Gender", "Anti-Feminism Studies"]
 sourceUrl: "https://www.amazon.sg/s?k=ain%27t+i+woman+black+women+feminism+bell+hooks&tag=inkrupt-22"
 coverImage: "/images/books/aint-i-a-woman.jpg"

@@ -5,7 +5,7 @@ author: "奥德丽·洛德"
 description: "交叉女性主义理论的奠基之作。洛德通过十五篇散文和演讲，深入探讨种族、性别、阶级、性取向的交叉压迫，创建了理解多重身份认同的革命性理论框架。"
 publishDate: 1984-01-01
 isbn: "9781580911863"
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Black Feminism", "Queer Theory", "Race and Gender"]
 sourceUrl: "https://www.amazon.sg/s?k=sister+outsider+audre+lorde&tag=inkrupt-22"
 coverImage: "/images/books/sister-outsider.jpg"

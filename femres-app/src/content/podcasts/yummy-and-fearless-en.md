@@ -3,7 +3,7 @@ title: "The Yummy and Fearless Podcast w/The Sidechicks"
 author: "Yummy & Fearless"
 description: "The Yummy and Fearless Podcast is a comedy podcast hosted by a group of self-proclaimed 'aunties,' examining popular culture, gender relations, and social phenomena from a middle-aged feminist perspective. With a bold, satirical, hypersexualized yet critically humorous style, the content covers celebrity sex scandals, body politics, gender stereotypes, and female desire expression. Named one of the top 25 feminist podcasts globally by Feedspot."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Bodily Autonomy", "Cultural Critique", "Gender Politics", "Media Representation Critique", "Female Desire"]
 sourceUrl: "https://open.spotify.com/show/0gvRLwBZ7xg4oautLvLBaj"
 embedUrl: "https://open.spotify.com/embed/show/0gvRLwBZ7xg4oautLvLBaj"

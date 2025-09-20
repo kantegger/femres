@@ -3,7 +3,7 @@ title: "女性主义的终点？"
 author: "Ginevra Davis"
 description: "本文以身体经验为出发点，批判了当代女性主义对‘性别’的过度抽象，探讨了女性身体的不可规避性、性别理论的困境，以及女性在自由与自我耗损之间的张力。"
 publishDate: 2024-02-01
-language: "en"
+contentLanguage: "en"
 topics: ["Patriarchy Critique", "Trans Feminism", "Feminist Psychology", "Bodily Autonomy", "Anti-Feminism Studies", "Fourth Wave Feminism", "Existentialist Feminism", "Linguistic Sexism"]
 sourceUrl: "https://americanaffairsjournal.org/2024/02/how-feminism-ends/?ref=refind"
 readingTime: 20

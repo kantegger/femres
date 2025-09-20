@@ -292,8 +292,8 @@ const papersLink = getLocalizedPath('papers', currentLocale);
               <div class="flex justify-between">
                 <span class="text-gray-500 dark:text-gray-400">Language:</span>
                 <span class="text-gray-900 dark:text-white">
-                  {paper.data.language === 'zh-CN' ? 'Chinese' :
-                   paper.data.language === 'en' ? 'English' : paper.data.language}
+                  {paper.data.contentLanguage === 'zh-CN' ? 'Chinese' :
+                   paper.data.contentLanguage === 'en' ? 'English' : paper.data.contentLanguage}
                 </span>
               </div>
             </div>

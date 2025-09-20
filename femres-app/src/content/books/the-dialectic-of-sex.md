@@ -5,7 +5,7 @@ author: "舒拉米斯·费尔斯通"
 description: "激进女性主义的代表作，提出了生育控制的技术革命是女性解放的关键，对马克思主义进行了女性主义改造。"
 publishDate: 1970-01-01
 isbn: "9780374527877"
-language: "en"
+contentLanguage: "en"
 topics: ["Radical Feminism", "Marxist Feminism", "Reproductive Autonomy"]
 sourceUrl: "https://www.amazon.sg/s?k=dialectic+of+sex+shulamith+firestone&tag=inkrupt-22"
 coverImage: "/images/books/dialectic-of-sex.jpg"

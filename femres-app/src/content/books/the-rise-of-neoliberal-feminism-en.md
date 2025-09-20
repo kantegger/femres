@@ -5,7 +5,7 @@ author: "Catherine Rottenberg"
 description: "A critical examination of how neoliberalism has co-opted feminist discourse, transforming it from a collective movement for social justice into an individualized pursuit of personal empowerment that serves corporate interests while abandoning the vast majority of women."
 publishDate: 2018-09-04
 isbn: "9780190901226"
-language: "en"
+contentLanguage: "en"
 topics: ["Liberal Feminism", "Capitalism Critique", "Neoliberalism", "Cultural Critique", "Political Participation", "Economic Empowerment"]
 sourceUrl: "https://www.amazon.sg/s?k=the+rise+of+neoliberal+feminism+catherine+rottenberg&tag=inkrupt-22"
 coverImage: "/images/books/the-rise-of-neoliberal-feminism.jpg"

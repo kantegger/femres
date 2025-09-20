@@ -8,7 +8,7 @@ releaseDate: 2011-03-11
 year: 2011
 country: "USA"
 duration: "83 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama", "Family", "Independent"]
 cast: ["Salli Richardson-Whitfield", "Omari Hardwick", "Blair Underwood", "Beverly Todd", "Michole Briana White", "Dijon Talton", "Tracie Thoms", "Damone Roberts"]
 topics: ["Black Feminism", "Economic Empowerment", "Feminist Art", "Cultural Identity", "Family Liberation", "Emotional Labor", "Race and Gender", "Arts and Performance", "Social Movements", "Cultural Critique"]

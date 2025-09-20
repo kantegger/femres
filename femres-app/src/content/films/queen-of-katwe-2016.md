@@ -8,7 +8,7 @@ releaseDate: 2016-09-23
 year: 2016
 country: "美国"
 duration: "124分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["传记", "剧情", "运动"]
 cast: ["马蒂娜·纳旺加", "大卫·奥伊罗", "露皮塔·尼永奥", "马丁·卡班扎", "希巴·卡伦吉", "罗纳德·塞坎迪", "埃丝特·特班德克", "塔琳·基亚泽", "埃德加·卡滕德", "伊万·雅各布"]
 topics: ["Cross-Cultural Feminism", "Education Equality", "Economic Empowerment", "Cultural Identity", "Race and Gender", "Family Liberation", "Feminist Art", "Social Movements", "Cultural Critique", "Gender Equality"]

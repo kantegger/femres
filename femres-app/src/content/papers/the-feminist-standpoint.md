@@ -4,7 +4,7 @@ originalTitle: "The Feminist Standpoint: Developing the Ground for a Specificall
 author: "南希·C·M·哈茨克"
 description: "这篇奠基性章节通过整合马克思主义理论与女性主义认识论发展了女性主义立场概念。哈茨克论证女性的经验——特别是在家务劳动和社会再生产中的经验——提供了一个特权的认识论位置，从中可以批判主导知识体系和资本主义结构。"
 publishDate: 1983-01-01
-language: en
+contentLanguage: en
 topics: ["Marxist Feminism", "Epistemic Colonialism Critique", "Domestic Labor", "Sexual Division of Labor", "Capitalism Critique"]
 sourceUrl: "https://link.springer.com/chapter/10.1007/0-306-48017-4_15"
 doi: "10.1007/0-306-48017-4_15"

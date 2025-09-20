@@ -3,7 +3,7 @@ title: "Frisky History"
 author: "Lacey & Robin"
 description: "Frisky History is hosted by Lacey and Robin, a podcast exploring the intersection of sex, gender, and history with humor. The show covers the evolution of sex education, contraceptive technology development, sex worker rights, political sex scandals, and historical changes in gender norms. With a relaxed yet critical style that combines historical research with contemporary perspectives, it has a Spotify rating of 4.6 (30+ reviews) and unique influence in the intersection of gender studies and popular culture."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Gender Norms", "History of Sex Education", "Sex Worker Rights", "Body Politics", "Cultural Critique"]
 sourceUrl: "https://open.spotify.com/show/5ahzHKvqFLTvN1sRHYltBn"
 embedUrl: "https://open.spotify.com/embed/show/5ahzHKvqFLTvN1sRHYltBn"

@@ -10,7 +10,7 @@ releaseDate: 2017-09-10
 year: 2017
 country: "France"
 duration: "108 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Action", "Thriller", "Horror"]
 cast: ["Matilda Lutz", "Kevin Janssens", "Vincent Colombe", "Guillaume Bouchède"]
 topics: ["Radical Feminism", "Anti-Sexual Violence", "Bodily Autonomy", "Media Representation Critique", "Fourth Wave Feminism"]

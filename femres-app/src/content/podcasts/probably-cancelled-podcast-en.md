@@ -3,7 +3,7 @@ title: "Probably Cancelled Podcast"
 author: "Probably Cancelled Collective"
 description: "Probably Cancelled Podcast is a Marxist feminist podcast hosted by a group of radical educators and researchers, dedicated to exploring deep politics, women's issues, and social structural problems ignored by mainstream media. The show covers capitalist crisis theory, transnational revolutionary history, the intersection of mysticism and technology, and violence mechanisms under the interweaving of patriarchy and racism. With a frank, critically strong style, it has a Spotify rating of 4.3 (358 reviews) and high influence in radical leftist and feminist communities."
 publishDate: 2025-09-11
-language: "en"
+contentLanguage: "en"
 topics: ["Marxist Feminism", "Capitalism Critique", "Decolonial Feminism"]
 sourceUrl: "https://open.spotify.com/show/2WoL1XMXQiepfMdJIHwOPA"
 embedUrl: "https://open.spotify.com/embed/show/2WoL1XMXQiepfMdJIHwOPA"

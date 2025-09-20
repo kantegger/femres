@@ -3,7 +3,7 @@ title: "Big Bitch Energy"
 author: "Krystle & Kimber"
 description: "Big Bitch Energy is a feminist podcast hosted by Krystle and Kimber, exploring gender, labor, and cultural issues with socialist leanings and critical humor. The show covers content ranging from sexual harassment in the tech industry, colonialism criticism, body politics, academic patriarchy, social media norms, and gender exclusion in gaming culture. With a sharp, satirical, and left-wing critical style, it represents one of the feminist voices in the Canadian context."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Patriarchy Critique", "Anti-Sexual Violence", "Cultural Critique", "Digital Feminism", "Bodily Autonomy"]
 sourceUrl: "https://open.spotify.com/show/7r6KobsAzf2zP6vz9eqkfA"
 embedUrl: "https://open.spotify.com/embed/show/7r6KobsAzf2zP6vz9eqkfA"

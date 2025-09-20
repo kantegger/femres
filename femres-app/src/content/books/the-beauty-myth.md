@@ -5,7 +5,7 @@ author: "娜奥米·沃尔夫"
 description: "揭露了美貌标准如何成为控制女性的新工具，分析了消费主义文化对女性身体和心理的影响。"
 publishDate: 1990-01-01
 isbn: "9780060512187"
-language: "en"
+contentLanguage: "en"
 topics: ["Third Wave Feminism", "Media Representation Critique", "Bodily Autonomy", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=beauty+myth+naomi+wolf&tag=inkrupt-22"
 coverImage: "/images/books/beauty-myth.jpg"

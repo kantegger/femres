@@ -3,7 +3,7 @@ title: "From Suffrage Movements to #MeToo: The Enduring Global Fight for Gender 
 author: "Isabela De los Rios Hernández"  
 description: "This article traces the evolution of feminist movements from the 19th-century suffrage campaigns to the digital activism of the #MeToo era. It explores the four waves of feminism, their historical contexts, and the persistent global challenges to gender equality, including political representation, reproductive rights, and social stigma."  
 publishDate: 2025-01-15  
-language: "en"  
+contentLanguage: "en"  
 topics: [
   "First Wave Feminism",  
   "Intersectional Feminism",  

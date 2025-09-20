@@ -5,7 +5,7 @@ author: "Cherríe Moraga, Gloria Anzaldúa"
 description: "A groundbreaking collection of writings by radical women of color that brought together diverse racial voices, critiqued the limitations of white feminism, and advanced intersectional feminist development."
 publishDate: 1981-01-01
 isbn: "9781438454382"
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Race and Gender", "Decolonial Feminism", "Women's Literature"]
 sourceUrl: "https://www.amazon.sg/s?k=this+bridge+called+my+back&tag=inkrupt-22"
 coverImage: "/images/books/this-bridge-called-my-back.jpg"

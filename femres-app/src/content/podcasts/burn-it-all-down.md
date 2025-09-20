@@ -3,7 +3,7 @@ title: "Burn It All Down"
 author: "Shireen Ahmed, Lindsay Gibbs, Brenda Elsey, Amira Rose Davis, Jessica Luther"
 description: "《Burn It All Down》是一档由五位女性主义体育评论员共同主持的播客，致力于从女性主义视角剖析体育与文化议题。主持人包括 Shireen Ahmed、Lindsay Gibbs、Brenda Elsey、Amira Rose Davis 与 Jessica Luther，她们在节目中探讨运动员行动主义、性别与种族交叉议题、体育产业中的不公现象，以及体育如何介入当代文化战争。节目风格犀利、批判性强，深受女性主义者与体育研究者欢迎，Spotify 评分高达 4.9（73 条评论）。"
 publishDate: 2025-07-01
-language: en
+contentLanguage: en
 topics: ["Sports Equality", "Intersectional Feminism", "Race and Gender"]
 sourceUrl: "https://open.spotify.com/show/0yQs1F78LcjPWDPPSS3MPH"
 embedUrl: "https://open.spotify.com/embed/show/0yQs1F78LcjPWDPPSS3MPH"

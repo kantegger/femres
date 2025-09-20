@@ -5,7 +5,7 @@ author: "贝尔·胡克斯"
 description: "这位美国黑人女性主义理论家的经典作品，从交叉性视角重新审视女性主义，强调种族、阶级与性别的多重压迫，为包容性女性主义奠定理论基础。"
 publishDate: 1984-01-01
 isbn: "9780896086135"
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Black Feminism", "Second Wave Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=feminist+theory+from+margin+to+center+bell+hooks&tag=inkrupt-22"
 coverImage: "/images/books/bell-hooks-feminism.jpg"

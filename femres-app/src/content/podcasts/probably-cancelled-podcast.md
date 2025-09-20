@@ -3,7 +3,7 @@ title: "Probably Cancelled Podcast"
 author: "Probably Cancelled Collective"
 description: "《Probably Cancelled Podcast》是一档马克思主义女性主义播客，由一群激进教育者与研究者主持，致力于探讨深层政治、女性议题与主流媒体所忽视的社会结构问题。节目内容涵盖资本主义危机理论、跨国革命史、神秘主义与科技的交汇、以及父权制与种族主义交织下的暴力机制。风格直率、批判性强，Spotify 评分为 4.3（358 条评论），在激进左翼与女性主义社群中具有高度影响力。"
 publishDate: 2025-09-11
-language: en
+contentLanguage: en
 topics: ["Marxist Feminism", "Capitalism Critique", "Decolonial Feminism"]
 sourceUrl: "https://open.spotify.com/show/2WoL1XMXQiepfMdJIHwOPA"
 embedUrl: "https://open.spotify.com/embed/show/2WoL1XMXQiepfMdJIHwOPA"

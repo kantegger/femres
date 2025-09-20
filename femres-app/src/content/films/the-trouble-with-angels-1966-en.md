@@ -8,10 +8,10 @@ releaseDate: 1966-03-29
 year: 1966
 country: "USA"
 duration: "112 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Comedy", "Family"]
 cast: ["Hayley Mills", "Rosalind Russell", "June Harding", "Binnie Barnes", "Mary Wickes", "Camilla Sparv", "Gypsy Rose Lee", "Portia Nelson", "Marjorie Durant", "Dolores Sutton"]
-topics: ["Female Friendship", "Female Leadership", "Coming of Age", "Religious Feminism", "Female Mentorship", "Sisterhood", "Female Directorship", "Proto-Feminist Cinema"]
+topics: ["Female Friendship", "Political Participation", "Identity Formation", "Feminist Theology", "Female Friendship", "Female Friendship", "Feminist Art", "Historical Context"]
 status: "published"
 awards: ["National Board of Review Outstanding Family Film", "Directors Guild of America Outstanding Directorial Achievement nomination"]
 imdbRating: "7.3"

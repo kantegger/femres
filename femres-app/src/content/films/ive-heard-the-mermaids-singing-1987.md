@@ -8,10 +8,10 @@ releaseDate: 1987-09-11
 year: 1987
 country: "加拿大"
 duration: "81分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["喜剧", "剧情"]
 cast: ["希拉·麦卡锡", "宝拉·拜拉让", "安-玛丽·麦克唐纳", "理查德·莫奈特", "约翰·埃文斯", "布伦达·卡米诺"]
-topics: ["Queer Cinema", "Female Artistic Identity", "Lesbian Representation", "Canadian Feminism", "Self-Discovery", "Avant-garde Cinema", "Female Friendship", "Artistic Expression"]
+topics: ["Queer Theory", "Feminist Art", "Intersectional Feminism", "Identity Formation", "Female Friendship", "Arts and Performance"]
 status: "published"
 awards: ["戛纳电影节青年奖1987", "精灵奖最佳女主角（希拉·麦卡锡）", "精灵奖最佳女配角（宝拉·拜拉让）", "多伦多国际电影节观众选择奖", "温哥华国际电影节最受欢迎影片"]
 imdbRating: "6.7"

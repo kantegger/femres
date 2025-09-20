@@ -8,7 +8,7 @@ releaseDate: 2002-04-11
 year: 2002
 country: "英国/德国"
 duration: "112分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["喜剧", "剧情", "体育"]
 cast: ["帕敏德·纳格拉", "凯拉·奈特莉", "乔纳森·莱斯·梅耶斯", "阿奴潘·凯尔", "朱丽叶·史蒂文森"]
 topics: ["Sports Equality", "Cultural Identity", "Immigrant Identity", "Patriarchy Critique", "Family Liberation", "Female Friendship", "Queer Identity", "Cross-Cultural Feminism"]

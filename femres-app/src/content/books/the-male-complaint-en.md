@@ -5,7 +5,7 @@ author: "Simon James Copland"
 description: "A comprehensive analysis of the online manosphere and its relationship to contemporary misogyny. Copland examines how digital platforms have enabled the formation of misogynistic communities that blend historical male grievances with modern technological capabilities to create new forms of anti-feminist resistance."
 publishDate: 2025-02-07
 isbn: "9781509562565"
-language: "en"
+contentLanguage: "en"
 topics: ["Digital Feminism", "Men's Rights Movement Critique", "Cultural Critique", "Anti-Feminism Studies", "Media Representation Critique", "Patriarchy Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=the+male+complaint+simon+james+copland&tag=inkrupt-22"
 coverImage: "/images/books/the-male-complaint.jpg"

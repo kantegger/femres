@@ -5,7 +5,7 @@ author: "弗洛伦斯·给予"
 description: "一本充满活力的交叉女性主义宣言，挑战美丽标准、有毒关系和社会期望。给予将个人洞察与政治分析相结合，鼓励女性拒绝为他人'漂亮'的压力，拥抱她们的真实自我。"
 publishDate: 2020-06-11
 isbn: "9781788402118"
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Body Positivity", "Third Wave Feminism", "Cultural Critique", "Self-Love", "Beauty Standards"]
 sourceUrl: "https://www.amazon.sg/s?k=women+don%27t+owe+you+pretty+florence+given&tag=inkrupt-22"
 coverImage: "/images/books/women-dont-owe-you-pretty.jpg"

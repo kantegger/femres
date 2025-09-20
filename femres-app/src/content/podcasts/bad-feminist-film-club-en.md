@@ -3,7 +3,7 @@ title: "Bad Feminist Film Club"
 author: "Kelly & Sarah"
 description: "A weekly podcast that examines films through a feminist lens while acknowledging the complexities and contradictions of loving problematic media. Hosts Kelly and Sarah discuss everything from classic Hollywood films to contemporary blockbusters, exploring themes of representation, power dynamics, and cultural impact with humor and insight."
 publishDate: 2025-09-12
-language: en
+contentLanguage: en
 topics: ["Media Representation Critique", "Feminist Film Criticism", "Gender Norms", "Cultural Critique"]
 sourceUrl: "https://open.spotify.com/show/0zf87EJYsfxU5szIIMHg3y"
 embedUrl: "https://open.spotify.com/embed/show/0zf87EJYsfxU5szIIMHg3y"

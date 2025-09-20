@@ -297,8 +297,8 @@ const podcastsLink = getLocalizedPath('podcasts', currentLocale);
               <div class="flex justify-between">
                 <span class="text-gray-500 dark:text-gray-400">Language:</span>
                 <span class="text-gray-900 dark:text-white">
-                  {podcast.data.language === 'zh-CN' ? t('languages.zh-CN') :
-                   podcast.data.language === 'en' ? t('languages.en') : podcast.data.language}
+                  {podcast.data.contentLanguage === 'zh-CN' ? t('languages.zh-CN') :
+                   podcast.data.contentLanguage === 'en' ? t('languages.en') : podcast.data.contentLanguage}
                 </span>
               </div>
 

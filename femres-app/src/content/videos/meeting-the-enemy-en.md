@@ -3,7 +3,7 @@ title: "Meeting the Enemy: A Cross-Gender Dialogue and Reflection"
 author: "Cassie Jaye"
 description: "Through the lens of the documentary 'The Red Pill,' this analysis explores filmmaker Cassie Jaye's journey of dialogue with the men's rights movement, and how she moved from bias to understanding, ultimately reflecting on the nature of gender equality movements."
 publishDate: 2017-10-19
-language: "en"
+contentLanguage: "en"
 topics: ["Anti-Feminism Studies", "Men's Rights Movement Critique", "Fourth Wave Feminism"]
 sourceUrl: "https://youtu.be/3WMuzhQXJoY?si=knmsDJpJ1Jd31Sie"
 embedUrl: "https://www.youtube.com/embed/3WMuzhQXJoY?si=oa1v-3lLBkTbYo31"

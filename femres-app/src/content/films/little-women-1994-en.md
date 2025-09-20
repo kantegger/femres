@@ -8,10 +8,10 @@ releaseDate: 1994-12-25
 year: 1994
 country: "USA"
 duration: "115 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama", "Family", "Romance"]
 cast: ["Winona Ryder", "Gabriel Byrne", "Trini Alvarado", "Samantha Mathis", "Kirsten Dunst", "Claire Danes", "Christian Bale", "Susan Sarandon", "Eric Stoltz", "John Neville", "Mary Wickes"]
-topics: ["Coming of Age", "Female Independence", "Literary Adaptation", "Victorian Feminism", "Sisterhood", "Artistic Ambition", "Family Dynamics", "Women's Choices", "Economic Constraints", "Social Expectations"]
+topics: ["Identity Formation", "Economic Empowerment", "Women's Literature", "Historical Context", "Female Friendship", "Feminist Art", "Family Liberation", "Bodily Autonomy", "Economic Empowerment", "Gender Norms"]
 status: "published"
 awards: ["Academy Award Best Actress nomination (Winona Ryder)", "Academy Award Best Costume Design nomination", "Academy Award Best Original Score nomination", "Screen Actors Guild Award Outstanding Cast nomination", "Golden Globe Best Motion Picture nomination"]
 imdbRating: "7.3"

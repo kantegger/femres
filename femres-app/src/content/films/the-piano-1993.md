@@ -8,10 +8,10 @@ releaseDate: 1993-05-19
 year: 1993
 country: "新西兰"
 duration: "121分钟"
-language: "en"
+contentLanguage: "en"
 genre: ["剧情", "爱情", "音乐"]
 cast: ["霍利·亨特", "哈威·凯特尔", "山姆·尼尔", "安娜·帕奎因", "凯瑞·沃克", "吉纳维芙·莱蒙", "通吉亚·贝克", "伊恩·穆恩", "彼得·丹尼特", "特·瓦塔努伊·斯基普维思"]
-topics: ["Female Sexuality", "Sexual Awakening", "Silent Resistance", "Victorian Patriarchy", "Artistic Expression", "Colonial Feminism", "Erotic Power", "Female Agency", "Gothic Romance", "Music as Language"]
+topics: ["Female Desire", "Sexual Liberation", "Anti-Sexual Violence", "Patriarchy Critique", "Feminist Art", "Decolonial Feminism", "Bodily Autonomy", "Economic Empowerment", "Women's Literature", "Arts and Performance"]
 status: "published"
 awards: ["戛纳电影节金棕榈奖", "奥斯卡最佳女主角（霍利·亨特）", "奥斯卡最佳女配角（安娜·帕奎因）", "奥斯卡最佳原创剧本", "英国电影学院奖最佳女主角", "金球奖最佳女主角"]
 imdbRating: "7.5"

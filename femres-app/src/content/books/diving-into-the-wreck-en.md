@@ -5,7 +5,7 @@ author: "Adrienne Rich"
 description: "When discussing feminist poetry, it's impossible not to mention Adrienne Rich, one of the most widely read poets of the 20th century and a renowned intersectional feminist activist. Our recommended best introductory poetry collection: 'Diving into the Wreck,' a particularly lyrical and emotionally charged collection of poems—including 'Rape,' a narrative poem often considered one of Rich's most important works."
 publishDate: 1973-01-01
 isbn: "9780393311402"
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Radical Feminism", "Patriarchy Critique", "Women's Writing", "Anti-Sexual Violence", "Race and Gender"]
 sourceUrl: "https://www.amazon.sg/s?k=diving+into+wreck+adrienne+rich&tag=inkrupt-22"
 coverImage: "/images/books/diving-into-the-wreck.jpg"

@@ -3,7 +3,7 @@ title: "The Feminist Lens"
 author: "Peris Thuo & Nina de Ayala Parker"
 description: "The Feminist Lens is a podcast hosted by Women For Wanawake founder Peris Thuo and Nina de Ayala Parker, focusing on examining contemporary British society and cultural issues from a feminist perspective. The show covers abortion rights, racism, sexual harassment, child poverty, and feminist media practice, emphasizing intersectionality, activism, and public discourse reshaping. With a direct, advocacy-strong style, it's an emerging voice in British feminist podcasting."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Abortion Rights", "Anti-Sexual Violence", "Race and Gender", "Political Participation", "Media Representation Critique"]
 sourceUrl: "https://open.spotify.com/show/16e5Tw58T1bDhoueiCKeQF"
 embedUrl: "https://open.spotify.com/embed/show/16e5Tw58T1bDhoueiCKeQF"

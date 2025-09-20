@@ -3,7 +3,7 @@ title: "女性主义与妇女权利运动"
 author: "Council of Europe" 
 description: "本文深入探讨了女性主义的定义、历史发展（包括三次浪潮和网络女权主义），以及其在当今社会中的重要性，并详细解释了性别歧视的多种形式以及为什么需要专门的妇女权利，强调妇女权利就是人权。" 
 publishDate: 2025-09-13 
-language: "en" 
+contentLanguage: "en" 
 topics: ["Feminism", "Women's Rights", "Gender Equality", "Gender Discrimination", "Social Movements"] 
 sourceUrl: "https://www.coe.int/en/web/gender-matters/feminism-and-women-s-rights-movements" 
 readingTime: 5

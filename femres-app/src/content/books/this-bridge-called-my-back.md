@@ -5,7 +5,7 @@ author: "谢丽·莫拉加, 格洛丽亚·安扎尔杜瓦"
 description: "有色女性激进主义文集，汇集了多元种族女性的声音，批判了白人女性主义的局限性，推动了交叉性女性主义的发展。"
 publishDate: 1981-01-01
 isbn: "9781438454382"
-language: "en"
+contentLanguage: "en"
 topics: ["Intersectional Feminism", "Race and Gender", "Decolonial Feminism", "Women's Literature"]
 sourceUrl: "https://www.amazon.sg/s?k=this+bridge+called+my+back&tag=inkrupt-22"
 coverImage: "/images/books/this-bridge-called-my-back.jpg"

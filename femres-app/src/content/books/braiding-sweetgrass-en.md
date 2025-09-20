@@ -5,7 +5,7 @@ author: "Robin Wall Kimmerer"
 description: "Combining Indigenous wisdom with scientific knowledge to explore the relationship between humans and nature, proposing ecofeminist practices based on reciprocity and gratitude."
 publishDate: 2013-10-01
 isbn: "9781571313355"
-language: "en"
+contentLanguage: "en"
 topics: ["Ecofeminism", "Indigenous Feminism", "Climate Justice", "Spiritual Feminism", "Decolonial Feminism"]
 sourceUrl: "https://www.amazon.sg/s?k=braiding+sweetgrass+robin+wall+kimmerer&tag=inkrupt-22"
 coverImage: "/images/books/braiding-sweetgrass.jpg"

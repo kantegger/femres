@@ -8,7 +8,7 @@ releaseDate: 2002-04-11
 year: 2002
 country: "UK/Germany"
 duration: "112 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Comedy", "Drama", "Sports"]
 cast: ["Parminder Nagra", "Keira Knightley", "Jonathan Rhys Meyers", "Anupam Kher", "Juliet Stevenson"]
 topics: ["Sports Equality", "Cultural Identity", "Immigrant Identity", "Patriarchy Critique", "Family Liberation", "Female Friendship", "Intersectional Feminism"]

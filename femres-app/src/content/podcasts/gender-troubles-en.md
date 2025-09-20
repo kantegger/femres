@@ -3,7 +3,7 @@ title: "Gender Troubles"
 author: "Emma Austin & Eva Espenshade"
 description: "Gender Troubles is a podcast hosted by Emma Austin and Eva Espenshade, dedicated to deconstructing feminist academic discourse and reexamining gender theory and cultural phenomena from a critical leftist perspective. The show covers pornography platformization, sex wars, abortion rights, ethical consumption, and feminist canonical text rereading, emphasizing knowledge democratization and critical thinking. With a sharp, theory-dense style suitable for audiences with deep interest in feminist theory and gender politics, it has a Spotify rating of 4.0 (71 reviews) and serves as an important voice in academic feminist podcasting."
 publishDate: 2025-09-12
-language: "en"
+contentLanguage: "en"
 topics: ["Radical Feminism", "Capitalism Critique", "Anti-Sexual Violence", "Media Representation Critique", "Gender Politics"]
 sourceUrl: "https://open.spotify.com/show/2m9RT5JSC7KTAN7O4m5GHP"
 embedUrl: "https://open.spotify.com/embed/show/2m9RT5JSC7KTAN7O4m5GHP"

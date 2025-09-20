@@ -8,10 +8,10 @@ releaseDate: 2017-06-02
 year: 2017
 country: "USA"
 duration: "141 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Action", "Adventure", "Fantasy"]
 cast: ["Gal Gadot", "Chris Pine", "Robin Wright", "Danny Huston", "David Thewlis", "Connie Nielsen", "Elena Anaya"]
-topics: ["Female Empowerment", "Anti-Sexual Violence", "Patriarchy Critique", "Women's History", "Female Leadership", "Mythological Feminism"]
+topics: ["Economic Empowerment", "Anti-Sexual Violence", "Patriarchy Critique", "Historical Context", "Political Participation", "Cultural Critique"]
 status: "published"
 awards: ["Hugo Award Best Dramatic Presentation 2018", "AFI Top Ten Films 2017", "Teen Choice Awards Action Movie", "Critics' Choice Awards Best Action Movie"]
 imdbRating: "7.3"

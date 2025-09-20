@@ -3,7 +3,7 @@ title: "Women on the Line"
 author: "Cleis Hart, Kannagi Bhatt, Phuong Tran, Xen Nhà & Scheherazade Bloul"
 description: "Women on the Line is an Australian feminist current affairs podcast co-produced by multiple hosts, focusing on global gender justice, colonial critique, and community action. Presented in radio news format, the content covers Palestinian decolonial movements, public housing struggles, tech hegemony critique, and ecofeminist practice. With a serious, critically strong style emphasizing marginalized community voices and cross-cultural women's experiences. Spotify rating of 5.0 (5 reviews), representative in Australia's progressive broadcasting network."
 publishDate: 2025-09-11
-language: "en"
+contentLanguage: "en"
 topics: ["Decolonial Feminism", "Political Participation", "Capitalism Critique"]
 sourceUrl: "https://open.spotify.com/show/6lCkDne4hfDU5N3SfLRT2d"
 embedUrl: "https://open.spotify.com/embed/show/6lCkDne4hfDU5N3SfLRT2d"

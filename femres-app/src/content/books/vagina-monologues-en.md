@@ -5,7 +5,7 @@ author: "Eve Ensler"
 description: "Revolutionary feminist theatrical work that breaks gender taboos through direct expression of women's bodily experiences, laying foundations for global anti-sexual violence movements."
 publishDate: 1996-01-01
 isbn: "9781860499265"
-language: "en"
+contentLanguage: "en"
 topics: ["Bodily Autonomy", "Anti-Sexual Violence", "Women's Literature", "Cultural Critique"]
 sourceUrl: "https://www.amazon.sg/s?k=vagina+monologues+eve+ensler&tag=inkrupt-22"
 coverImage: "/images/books/vagina-monologues.jpg"

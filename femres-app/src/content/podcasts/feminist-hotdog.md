@@ -3,7 +3,7 @@ title: "Feminist Hotdog"
 author: "Adrienne van der Valk & Loudspeaker Studios"
 description: "《Feminist Hotdog》是一档由 Adrienne van der Valk 主持的播客，致力于通过女性主义寻找喜悦与抵抗的力量。节目聚焦日常女性主义实践、边缘群体经验与社会正义倡导，内容涵盖自我恢复、监狱制度批判、性别与心理健康、社会主义女性主义与极右政治批判。风格亲密、批判性强，强调女性、跨性别与非二元群体的声音，是美国女性主义播客中的温暖而激进的存在。"
 publishDate: 2025-09-12
-language: en
+contentLanguage: en
 topics: ["Socialist Feminism", "Anti-Sexual Violence", "Patriarchy Critique", "Gender Politics"]
 sourceUrl: "https://open.spotify.com/show/2ers0KxE2sI7Nuz1U6abkL"
 embedUrl: "https://open.spotify.com/embed/show/2ers0KxE2sI7Nuz1U6abkL"

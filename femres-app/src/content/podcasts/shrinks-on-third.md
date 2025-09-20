@@ -3,7 +3,7 @@ title: "Shrinks on Third"
 author: "Julie Mayer & Cindy Ariel"
 description: "《Shrinks on Third》是一档由心理学家 Julie Mayer 与 Cindy Ariel 主持的女性主义心理播客，以社会正义为核心，探讨心理健康、创伤恢复与政治结构之间的关联。节目风格温和、理性且富有批判性，内容涵盖反社会人格、成人 ADHD、创伤性分离、虚假疾病制造与集体生存心理。Spotify 评分为 5.0（1 条评论），在心理学与社会正义交叉播客中具有独特定位。"
 publishDate: 2025-09-12
-language: en
+contentLanguage: en
 topics: ["Feminist Psychology", "Emotional Labor", "Patriarchy Critique"]
 sourceUrl: "https://open.spotify.com/show/7ornGjcnv2DQbXpRx075jW"
 embedUrl: "https://open.spotify.com/embed/show/7ornGjcnv2DQbXpRx075jW"

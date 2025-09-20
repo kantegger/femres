@@ -5,7 +5,7 @@ author: "Mona Chollet"
 description: "A powerful feminist analysis connecting historical witch hunts to contemporary attacks on women's autonomy. Chollet examines how the persecution of 'witches'—independent women, childless women, and aging women—established patterns of misogyny that continue to shape how society treats women who defy traditional roles."
 publishDate: 2022-01-06
 isbn: "9781529034042"
-language: "en"
+contentLanguage: "en"
 topics: ["Historical Feminism", "Patriarchy Critique", "Bodily Autonomy", "Cultural Critique", "Women's History", "Witch Trials"]
 sourceUrl: "https://www.amazon.sg/s?k=in+defense+of+witches+mona+chollet&tag=inkrupt-22"
 coverImage: "/images/books/in-defense-of-witches.jpg"

@@ -8,7 +8,7 @@ releaseDate: 1991-05-24
 year: 1991
 country: "USA"
 duration: "130 minutes"
-language: "en"
+contentLanguage: "en"
 genre: ["Drama", "Crime", "Adventure"]
 cast: ["Geena Davis", "Susan Sarandon", "Harvey Keitel", "Michael Madsen", "Brad Pitt"]
 topics: ["Radical Feminism", "Anti-Sexual Violence", "Bodily Autonomy", "Patriarchy Critique", "Female Friendship"]
