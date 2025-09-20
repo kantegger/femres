@@ -29,161 +29,62 @@ export default function UserContentList({ type }: UserContentListProps) {
       }
 
       const contentIds = type === 'likes' ? interactions.likes : interactions.bookmarks;
-      
-      // For now, we'll simulate fetching real content based on the actual IDs
-      // In a real app, this would make API calls to get the content details
+
+      // Fetch content by making API calls to get actual content data
       const contentPromises = contentIds.map(async (id) => {
         const [contentType, ...slugParts] = id.split('-');
         const slug = slugParts.join('-');
-        
-        // Simulate fetching content from different collections
+
         try {
-          if (contentType === 'film' && slug) {
-            // Map known film slugs to their actual titles
-            const filmTitles: Record<string, {title: string, author: string, description: string}> = {
-              'the-handmaids-tale': {
-                title: '《使女的故事》',
-                author: '玛格丽特·阿特伍德',
-                description: '反乌托邦小说改编，探讨女性权利与身体自主权的经典作品。'
-              },
-              'little-women': {
-                title: '《小妇人》',
-                author: '路易莎·梅·奥尔科特',
-                description: '描绘19世纪美国女性成长与独立精神的经典文学改编。'
-              },
-              'hidden-figures': {
-                title: '《隐藏人物》',
-                author: '玛戈·李·谢特利',
-                description: '讲述NASA黑人女性数学家为太空计划做出贡献的真实故事。'
-              }
-            };
-            
-            const filmInfo = filmTitles[slug] || {
-              title: `《${slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}》`,
-              author: '导演信息',
-              description: '这部电影探讨了女性主义相关的重要议题...'
-            };
-            
+          // Fetch content from the appropriate collection endpoint
+          const response = await fetch(`/api/content/${contentType}/${slug}`);
+          if (response.ok) {
+            const contentData = await response.json();
             return {
               id,
-              title: filmInfo.title,
-              author: filmInfo.author,
-              description: filmInfo.description,
-              type: 'film' as const,
+              title: contentData.title,
+              author: contentData.author || contentData.director || contentData.speaker || '未知作者',
+              description: contentData.description,
+              type: contentType as ContentItem['type'],
               slug,
-              publishDate: new Date().toISOString()
+              coverImage: contentData.coverImage || contentData.posterImage || contentData.thumbnail || contentData.featuredImage,
+              publishDate: contentData.publishDate || new Date().toISOString()
             };
-          } else if (contentType === 'book' && slug) {
-            // Map known book slugs to their actual titles
-            const bookTitles: Record<string, {title: string, author: string, description: string}> = {
-              'the-second-sex': {
-                title: '《第二性》',
-                author: '西蒙娜·德·波伏娃',
-                description: '存在主义女性主义的经典之作，深入分析女性在社会中的地位和处境。'
-              },
-              'feminine-mystique': {
-                title: '《女性迷思》',
-                author: '贝蒂·弗里丹',
-                description: '第二波女性主义运动的重要著作，揭示了家庭主妇角色对女性的束缚。'
-              },
-              'we-should-all-be-feminists': {
-                title: '《我们都应该是女性主义者》',
-                author: '奇马曼达·恩戈兹·阿迪契埃',
-                description: '当代女性主义的入门读物，用简洁有力的语言阐述女性主义的重要性。'
-              }
-            };
-            
-            const bookInfo = bookTitles[slug] || {
-              title: `《${slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}》`,
-              author: '作者信息',
-              description: '这本书的详细介绍...'
-            };
-            
+          } else {
+            // If API call fails, try to determine the correct content type and provide fallback
+            const fallbackData = await getFallbackContentData(contentType, slug);
+            if (fallbackData) {
+              return {
+                id,
+                ...fallbackData,
+                type: contentType as ContentItem['type'],
+                slug,
+                publishDate: new Date().toISOString()
+              };
+            }
+          }
+        } catch (error) {
+          console.warn(`Failed to load content for ${id}:`, error);
+          // Provide fallback data
+          const fallbackData = await getFallbackContentData(contentType, slug);
+          if (fallbackData) {
             return {
               id,
-              title: bookInfo.title,
-              author: bookInfo.author,
-              description: bookInfo.description,
-              type: 'book' as const,
-              slug,
-              publishDate: new Date().toISOString()
-            };
-          } else if (contentType === 'article' && slug) {
-            const articleInfo = {
-              title: slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '),
-              author: '文章作者',
-              description: '这篇文章探讨了女性主义相关的重要议题...'
-            };
-            
-            return {
-              id,
-              title: articleInfo.title,
-              author: articleInfo.author,
-              description: articleInfo.description,
-              type: 'article' as const,
-              slug,
-              publishDate: new Date().toISOString()
-            };
-          } else if (contentType === 'video' && slug) {
-            const videoInfo = {
-              title: slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '),
-              author: '视频创作者',
-              description: '这个视频分享了关于女性主义的见解和思考...'
-            };
-            
-            return {
-              id,
-              title: videoInfo.title,
-              author: videoInfo.author,
-              description: videoInfo.description,
-              type: 'video' as const,
-              slug,
-              publishDate: new Date().toISOString()
-            };
-          } else if (contentType === 'podcast' && slug) {
-            const podcastInfo = {
-              title: slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '),
-              author: '播客主持人',
-              description: '这期播客深入讨论了女性主义相关话题...'
-            };
-            
-            return {
-              id,
-              title: podcastInfo.title,
-              author: podcastInfo.author,
-              description: podcastInfo.description,
-              type: 'podcast' as const,
-              slug,
-              publishDate: new Date().toISOString()
-            };
-          } else if (contentType === 'paper' && slug) {
-            const paperInfo = {
-              title: slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '),
-              author: '研究作者',
-              description: '这篇学术论文研究了女性主义理论的重要方面...'
-            };
-            
-            return {
-              id,
-              title: paperInfo.title,
-              author: paperInfo.author,
-              description: paperInfo.description,
-              type: 'paper' as const,
+              ...fallbackData,
+              type: contentType as ContentItem['type'],
               slug,
               publishDate: new Date().toISOString()
             };
           }
-        } catch (error) {
-          console.warn(`Failed to load content for ${id}:`, error);
         }
-        
-        // Fallback for unknown or invalid IDs
+
+        // Final fallback for invalid content
         return {
           id,
           title: '内容已删除或不存在',
           author: '未知',
           description: '此内容可能已被删除或移动。',
-          type: 'book' as const,
+          type: contentType as ContentItem['type'] || 'article',
           slug: 'unknown',
           publishDate: new Date().toISOString()
         };
@@ -192,6 +93,44 @@ export default function UserContentList({ type }: UserContentListProps) {
       const loadedContent = await Promise.all(contentPromises);
       setContentItems(loadedContent.filter(Boolean) as ContentItem[]);
       setLoading(false);
+    };
+
+    // Helper function to provide better fallback content data
+    const getFallbackContentData = async (contentType: string, slug: string) => {
+      const contentMappings = {
+        film: {
+          title: `《${slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}》`,
+          author: '导演信息',
+          description: '这部电影探讨了女性主义相关的重要议题...'
+        },
+        book: {
+          title: `《${slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}》`,
+          author: '作者信息',
+          description: '这本书探讨了女性主义理论和实践...'
+        },
+        article: {
+          title: slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '),
+          author: '文章作者',
+          description: '这篇文章分析了当代女性主义的重要议题...'
+        },
+        video: {
+          title: slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '),
+          author: '视频创作者',
+          description: '这个视频分享了关于女性主义的深入见解...'
+        },
+        podcast: {
+          title: slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '),
+          author: '播客主持人',
+          description: '这期播客深入讨论了女性主义相关话题...'
+        },
+        paper: {
+          title: slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '),
+          author: '研究作者',
+          description: '这篇学术论文研究了女性主义理论的重要方面...'
+        }
+      };
+
+      return contentMappings[contentType as keyof typeof contentMappings] || null;
     };
 
     loadContent();
