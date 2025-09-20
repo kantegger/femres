@@ -6,7 +6,7 @@ description: "王子逸导演的半自传式作品，讲述华裔美国作家比
 posterImage: "/images/films/the-farewell-2019.jpg"
 releaseDate: 2019-07-12
 year: 2019
-country: "USA"
+country: "美国"
 duration: "100分钟"
 contentLanguage: "zh-CN"
 genre: ["剧情", "喜剧", "家庭"]

@@ -6,7 +6,7 @@ description: "这部HBO电视电影由凯瑞·华盛顿主演，饰演安妮塔�
 posterImage: "/images/films/confirmation-2016.jpg"
 releaseDate: 2016-04-16
 year: 2016
-country: "USA"
+country: "美国"
 duration: "110分钟"
 contentLanguage: "en"
 genre: ["剧情", "传记", "历史"]

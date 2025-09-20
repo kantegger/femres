@@ -3,7 +3,7 @@ import { defineCollection, z } from 'astro:content';
 // 支持的内容语言列表 - 表示内容本身的语言
 const supportedContentLanguages = [
   'zh-CN', 'en', 'zh-TW', 'fr', 'de', 'es', 'it', 'ja', 'ko', 'pt', 'ru',
-  'ar', 'hi', 'th', 'vi', 'tr', 'pl', 'nl', 'sv', 'da', 'no', 'fi', 'cs', 'hu', 'bg', 'hr', 'sk', 'sl', 'et', 'lv', 'lt'
+  'ar', 'hi', 'th', 'vi', 'tr', 'pl', 'nl', 'sv', 'da', 'no', 'fi', 'cs', 'hu', 'bg', 'hr', 'sk', 'sl', 'et', 'lv', 'lt', 'bem'
 ] as const;
 
 // 定义内容集合的schema

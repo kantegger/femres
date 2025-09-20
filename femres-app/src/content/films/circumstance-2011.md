@@ -6,7 +6,7 @@ description: "导演玛丽亚姆·克沙瓦兹的成长剧情片聚焦一个富�
 posterImage: "/images/films/circumstance-2011.jpg"
 releaseDate: 2011-08-26
 year: 2011
-country: "USA"
+country: "美国"
 duration: "106分钟"
 contentLanguage: "en"
 genre: ["剧情", "成长", "爱情"]

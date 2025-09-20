@@ -6,7 +6,7 @@ description: "改编自埃莱娜·费兰特小说，讲述中年文学教授莱�
 posterImage: "/images/films/the-lost-daughter-2021.jpg"
 releaseDate: 2021-12-31
 year: 2021
-country: "USA"
+country: "美国"
 duration: "121分钟"
 contentLanguage: "en"
 genre: ["剧情", "心理", "惊悚"]

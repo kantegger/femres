@@ -6,7 +6,7 @@ description: "高中啦啦队长詹妮弗在被男性乐队成员献祭后变成
 posterImage: "/images/films/jennifers-body-2009.jpg"
 releaseDate: 2009-09-18
 year: 2009
-country: "USA"
+country: "美国"
 duration: "102分钟"
 contentLanguage: "en"
 genre: ["恐怖", "喜剧", "惊悚"]

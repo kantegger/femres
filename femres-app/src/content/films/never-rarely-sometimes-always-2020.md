@@ -6,7 +6,7 @@ description: "在最高法院推翻罗伊诉韦德案后，伊莉莎·希特曼�
 posterImage: "/images/films/never-rarely-sometimes-always-2020.jpg"
 releaseDate: 2020-03-13
 year: 2020
-country: "USA"
+country: "美国"
 duration: "101分钟"
 contentLanguage: "en"
 genre: ["剧情", "社会现实"]

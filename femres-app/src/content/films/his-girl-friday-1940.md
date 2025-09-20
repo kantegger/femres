@@ -6,7 +6,7 @@ description: "1940年上映的这部霍华德·霍克斯浪漫喜剧至今仍以
 posterImage: "/images/films/his-girl-friday-1940.jpg"
 releaseDate: 1940-01-11
 year: 1940
-country: "USA"
+country: "美国"
 duration: "92分钟"
 contentLanguage: "en"
 genre: ["喜剧", "剧情", "爱情"]

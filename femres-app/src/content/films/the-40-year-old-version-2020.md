@@ -6,7 +6,7 @@ description: "即将40岁的非裔美国剧作家拉妮在纽约艺术界遭遇�
 posterImage: "/images/films/the-40-year-old-version-2020.jpg"
 releaseDate: 2020-10-09
 year: 2020
-country: "USA"
+country: "美国"
 duration: "123分钟"
 contentLanguage: "en"
 genre: ["剧情", "喜剧", "音乐"]

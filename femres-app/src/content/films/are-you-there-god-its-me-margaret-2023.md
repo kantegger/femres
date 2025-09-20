@@ -6,7 +6,7 @@ description: "改编自朱迪·布鲁姆1970年的开创性小说，讲述11岁�
 posterImage: "/images/films/are-you-there-god-its-me-margaret-2023.jpg"
 releaseDate: 2023-04-28
 year: 2023
-country: "USA"
+country: "美国"
 duration: "106分钟"
 contentLanguage: "en"
 genre: ["剧情", "喜剧", "家庭", "青春"]

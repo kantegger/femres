@@ -6,7 +6,7 @@ description: "如果你还没有在帕姆·格里尔的祭坛前顶礼膜拜，�
 posterImage: "/images/films/foxy-brown-1974.jpg"
 releaseDate: 1974-04-05
 year: 1974
-country: "USA"
+country: "美国"
 duration: "94分钟"
 contentLanguage: "en"
 genre: ["动作", "犯罪", "惊悚"]

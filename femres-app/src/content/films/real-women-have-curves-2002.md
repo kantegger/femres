@@ -6,7 +6,7 @@ description: "18岁的墨西哥裔美国少女安娜·加西亚，在追求大�
 posterImage: "/images/films/real-women-have-curves-2002.jpg"
 releaseDate: 2002-10-18
 year: 2002
-country: "USA"
+country: "美国"
 duration: "90分钟"
 contentLanguage: "en"
 genre: ["剧情", "喜剧", "成长"]

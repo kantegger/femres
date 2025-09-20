@@ -6,7 +6,7 @@ description: "奥利维亚·王尔德的导演处女作重新定义了高中喜�
 posterImage: "/images/films/booksmart-2019.jpg"
 releaseDate: 2019-05-24
 year: 2019
-country: "USA"
+country: "美国"
 duration: "102分钟"
 contentLanguage: "en"
 genre: ["喜剧", "成长", "剧情"]

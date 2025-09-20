@@ -6,7 +6,7 @@ description: "改编自安吉·托马斯畅销小说，讲述16岁非裔美国�
 posterImage: "/images/films/the-hate-u-give-2018.jpg"
 releaseDate: 2018-10-05
 year: 2018
-country: "USA"
+country: "美国"
 duration: "133分钟"
 contentLanguage: "en"
 genre: ["剧情", "青春", "社会议题"]
