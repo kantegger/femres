@@ -15,10 +15,10 @@ topics: ["Anti-Sexual Violence", "Economic Empowerment", "Gender Politics", "Men
 status: "published"
 awards: ["DGA Theater Los Angeles Premiere", "Amazon MGM Studios Distribution", "Toronto International Film Festival Screening", "Critics Choice Award Nomination"]
 imdbRating: "6.5"
-doubanRating: "7.2"
+doubanRating: "5.7"
 sourceUrl: [
   { platform: "IMDB", url: "https://www.imdb.com/title/tt14858658/" },
-  { platform: "Douban", url: "https://movie.douban.com/subject/36472851/" }
+  { platform: "Douban", url: "https://movie.douban.com/subject/35496206/" }
 ]
 ---
 

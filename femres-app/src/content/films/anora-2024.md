@@ -15,10 +15,10 @@ topics: ["Sex Worker Rights", "Economic Empowerment", "Class Analysis", "Anti-Se
 status: "published"
 awards: ["戛纳电影节金棕榈奖", "奥斯卡最佳影片", "金球奖最佳影片提名", "美国电影学会年度十佳影片"]
 imdbRating: "7.4"
-doubanRating: "8.1"
+doubanRating: "6.3"
 sourceUrl: [
   { platform: "IMDB", url: "https://www.imdb.com/title/tt28607951/" },
-  { platform: "Douban", url: "https://movie.douban.com/subject/36484456/" }
+  { platform: "Douban", url: "https://movie.douban.com/subject/36195543/" }
 ]
 ---
 

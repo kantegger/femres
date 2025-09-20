@@ -15,10 +15,10 @@ topics: ["Media Representation Critique", "Body Politics", "Gender Politics", "M
 status: "published"
 awards: ["Cannes Film Festival Best Screenplay", "Cannes Film Festival Palme d'Or Nomination", "Toronto International Film Festival People's Choice Award", "British Independent Film Award Best Director Nomination"]
 imdbRating: "7.2"
-doubanRating: "7.8"
+doubanRating: "7.5"
 sourceUrl: [
   { platform: "IMDB", url: "https://www.imdb.com/title/tt17526714/" },
-  { platform: "Douban", url: "https://movie.douban.com/subject/36161408/" }
+  { platform: "Douban", url: "https://movie.douban.com/subject/35882838/" }
 ]
 ---
 

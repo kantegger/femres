@@ -15,10 +15,10 @@ topics: ["Class Analysis", "Economic Empowerment", "Female Friendship", "Gender 
 status: "published"
 awards: ["Academy Award Best Costume Design Nomination", "Academy Award Best Makeup and Hairstyling Nomination", "BAFTA Award Best Costume Design", "Costume Designers Guild Award"]
 imdbRating: "6.7"
-doubanRating: "7.8"
+doubanRating: "7.3"
 sourceUrl: [
   { platform: "IMDB", url: "https://www.imdb.com/title/tt9214832/" },
-  { platform: "Douban", url: "https://movie.douban.com/subject/30139652/" }
+  { platform: "Douban", url: "https://movie.douban.com/subject/30361878/" }
 ]
 ---
 

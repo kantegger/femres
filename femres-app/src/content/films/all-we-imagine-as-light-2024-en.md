@@ -15,10 +15,10 @@ topics: ["Female Friendship", "Cultural Identity", "Intersectional Feminism", "E
 status: "published"
 awards: ["Cannes Film Festival Grand Prix", "Sight & Sound Best Film of 2024", "New York Times #1 Best Film of 2024"]
 imdbRating: "7.1"
-doubanRating: "8.2"
+doubanRating: "7.5"
 sourceUrl: [
   { platform: "IMDB", url: "https://www.imdb.com/title/tt32086077/" },
-  { platform: "Douban", url: "https://movie.douban.com/subject/36502847/" }
+  { platform: "Douban", url: "https://movie.douban.com/subject/35965772/" }
 ]
 ---
 

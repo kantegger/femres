@@ -15,10 +15,10 @@ topics: ["Anti-Sexual Violence", "Economic Empowerment", "Gender Politics", "Men
 status: "published"
 awards: ["DGA剧院洛杉矶首映", "亚马逊MGM工作室发行", "多伦多国际电影节展映", "评论家选择奖提名"]
 imdbRating: "6.5"
-doubanRating: "7.2"
+doubanRating: "5.7"
 sourceUrl: [
   { platform: "IMDB", url: "https://www.imdb.com/title/tt14858658/" },
-  { platform: "Douban", url: "https://movie.douban.com/subject/36472851/" }
+  { platform: "Douban", url: "https://movie.douban.com/subject/35496206/" }
 ]
 ---
 

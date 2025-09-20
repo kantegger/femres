@@ -15,10 +15,10 @@ topics: ["Female Friendship", "Cultural Identity", "Intersectional Feminism", "E
 status: "published"
 awards: ["戛纳电影节评审团大奖", "Sight & Sound 2024年度最佳影片", "纽约时报2024年度最佳电影第一名"]
 imdbRating: "7.1"
-doubanRating: "8.2"
+doubanRating: "7.5"
 sourceUrl: [
   { platform: "IMDB", url: "https://www.imdb.com/title/tt32086077/" },
-  { platform: "Douban", url: "https://movie.douban.com/subject/36502847/" }
+  { platform: "Douban", url: "https://movie.douban.com/subject/35965772/" }
 ]
 ---
 

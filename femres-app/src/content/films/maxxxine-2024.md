@@ -15,10 +15,10 @@ topics: ["Sex Worker Rights", "Economic Empowerment", "Media Representation Crit
 status: "published"
 awards: ["多伦多国际电影节午夜狂欢单元", "洛杉矶电影节恐怖片竞赛单元", "范塔西亚国际电影节最佳女主角提名"]
 imdbRating: "6.2"
-doubanRating: "6.8"
+doubanRating: "6.0"
 sourceUrl: [
   { platform: "IMDB", url: "https://www.imdb.com/title/tt22048412/" },
-  { platform: "Douban", url: "https://movie.douban.com/subject/35753908/" }
+  { platform: "Douban", url: "https://movie.douban.com/subject/35891632/" }
 ]
 ---
 

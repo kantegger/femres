@@ -15,10 +15,10 @@ topics: ["Economic Empowerment", "Class Analysis", "Female Friendship", "Sex Wor
 status: "published"
 awards: ["Golden Globe Best Supporting Actress Nomination", "American Film Institute Top Ten Films", "Critics Choice Award Best Supporting Actress Nomination", "Independent Spirit Award Best Supporting Actress Nomination"]
 imdbRating: "6.3"
-doubanRating: "7.1"
+doubanRating: "6.3"
 sourceUrl: [
   { platform: "IMDB", url: "https://www.imdb.com/title/tt5503686/" },
-  { platform: "Douban", url: "https://movie.douban.com/subject/27087724/" }
+  { platform: "Douban", url: "https://movie.douban.com/subject/30294313/" }
 ]
 ---
 

@@ -15,10 +15,10 @@ topics: ["Media Representation Critique", "Body Politics", "Gender Politics", "M
 status: "published"
 awards: ["戛纳电影节最佳剧本奖", "戛纳电影节金棕榈奖提名", "多伦多国际电影节人民选择奖", "英国独立电影奖最佳导演提名"]
 imdbRating: "7.2"
-doubanRating: "7.8"
+doubanRating: "7.5"
 sourceUrl: [
   { platform: "IMDB", url: "https://www.imdb.com/title/tt17526714/" },
-  { platform: "Douban", url: "https://movie.douban.com/subject/36161408/" }
+  { platform: "Douban", url: "https://movie.douban.com/subject/35882838/" }
 ]
 ---
 

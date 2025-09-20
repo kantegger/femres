@@ -15,10 +15,10 @@ topics: ["Economic Empowerment", "Class Analysis", "Female Friendship", "Sex Wor
 status: "published"
 awards: ["金球奖最佳女配角提名", "美国电影学会年度十佳电影", "评论家选择奖最佳女配角提名", "独立精神奖最佳女配角提名"]
 imdbRating: "6.3"
-doubanRating: "7.1"
+doubanRating: "6.3"
 sourceUrl: [
   { platform: "IMDB", url: "https://www.imdb.com/title/tt5503686/" },
-  { platform: "Douban", url: "https://movie.douban.com/subject/27087724/" }
+  { platform: "Douban", url: "https://movie.douban.com/subject/30294313/" }
 ]
 ---
 

@@ -15,10 +15,10 @@ topics: ["Sports Equality", "Equal Pay", "Gender Politics", "Political Conscious
 status: "published"
 awards: ["金球奖最佳女主角提名", "金球奖最佳男主角提名", "评论家选择奖最佳女主角提名", "美国演员工会奖提名"]
 imdbRating: "6.7"
-doubanRating: "7.3"
+doubanRating: "6.7"
 sourceUrl: [
   { platform: "IMDB", url: "https://www.imdb.com/title/tt4622512/" },
-  { platform: "Douban", url: "https://movie.douban.com/subject/26683421/" }
+  { platform: "Douban", url: "https://movie.douban.com/subject/26372319/" }
 ]
 ---
 

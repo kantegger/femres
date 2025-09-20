@@ -15,10 +15,10 @@ topics: ["Sex Worker Rights", "Economic Empowerment", "Media Representation Crit
 status: "published"
 awards: ["Toronto International Film Festival Midnight Madness Section", "Los Angeles Film Festival Horror Competition", "Fantasia International Film Festival Best Actress Nomination"]
 imdbRating: "6.2"
-doubanRating: "6.8"
+doubanRating: "6.0"
 sourceUrl: [
   { platform: "IMDB", url: "https://www.imdb.com/title/tt22048412/" },
-  { platform: "Douban", url: "https://movie.douban.com/subject/35753908/" }
+  { platform: "Douban", url: "https://movie.douban.com/subject/35891632/" }
 ]
 ---
 

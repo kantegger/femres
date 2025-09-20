@@ -15,10 +15,10 @@ topics: ["Sports Equality", "Equal Pay", "Gender Politics", "Political Conscious
 status: "published"
 awards: ["Golden Globe Best Actress Nomination", "Golden Globe Best Actor Nomination", "Critics Choice Award Best Actress Nomination", "Screen Actors Guild Award Nomination"]
 imdbRating: "6.7"
-doubanRating: "7.3"
+doubanRating: "6.7"
 sourceUrl: [
   { platform: "IMDB", url: "https://www.imdb.com/title/tt4622512/" },
-  { platform: "Douban", url: "https://movie.douban.com/subject/26683421/" }
+  { platform: "Douban", url: "https://movie.douban.com/subject/26372319/" }
 ]
 ---
 
