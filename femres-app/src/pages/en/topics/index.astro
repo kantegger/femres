@@ -36,92 +36,97 @@ const topicCounts = allContent.reduce((acc, item) => {
 const topicCategories = {
   'Theoretical Schools': {
     topics: [
-      '交叉女性主义',
-      '马克思主义女性主义',
-      '去殖民女性主义',
-      '存在主义女性主义',
-      '自由主义女性主义',
-      '激进女性主义',
-      '黑人女性主义',
-      '原住民女性主义',
-      '跨性别女性主义',
-      '生态女性主义',
-      '后现代女性主义'
+      'Intersectional Feminism',
+      'Marxist Feminism',
+      'Decolonial Feminism',
+      'Existentialist Feminism',
+      'Liberal Feminism',
+      'Radical Feminism',
+      'Black Feminism',
+      'Indigenous Feminism',
+      'Trans Feminism',
+      'Ecofeminism',
+      'Postmodern Feminism'
     ],
     icon: '🧩',
     description: 'Theoretical schools and intellectual streams of feminism'
   },
   'Movement Issues': {
     topics: [
-      '职场平等',
-      '同工同酬',
-      '玻璃天花板',
-      '生育自主',
-      '堕胎权',
-      '反性暴力',
-      '政治参与',
-      '法律平等',
-      '经济赋权',
-      '教育平等',
-      '家庭解放',
-      '体育平等',
-      '身体自主',
-      '数字女性主义',
-      '气候正义'
+      'Workplace Equality',
+      'Equal Pay',
+      'Glass Ceiling',
+      'Reproductive Autonomy',
+      'Abortion Rights',
+      'Anti-Sexual Violence',
+      'Political Participation',
+      'Legal Equality',
+      'Economic Empowerment',
+      'Education Equality',
+      'Family Liberation',
+      'Sports Equality',
+      'Bodily Autonomy',
+      'Digital Feminism',
+      'Climate Justice'
     ],
     icon: '✊',
     description: 'Specific social issues that feminism focuses on'
   },
   'Critical Domains': {
     topics: [
-      '父权制批判',
-      '资本主义批判',
-      '媒体表征批判',
-      '宗教父权批判',
-      '男权运动批判',
-      '文化批判',
-      '反女性主义研究',
-      '学术父权批判',
-      '语言性别歧视',
-      '翻译政治',
-      '知识殖民批判'
+      'Patriarchy Critique',
+      'Capitalism Critique',
+      'Media Representation Critique',
+      'Religious Patriarchy Critique',
+      'Men\'s Rights Movement Critique',
+      'Cultural Critique',
+      'Anti-Feminism Studies',
+      'Academic Patriarchy Critique',
+      'Linguistic Sexism',
+      'Politics of Translation',
+      'Epistemic Colonialism Critique'
     ],
     icon: '🔍',
     description: 'Key areas of feminist critique and analysis'
   },
   'Historical Context': {
     topics: [
-      '第一波女性主义',
-      '第二波女性主义',
-      '第三波女性主义',
-      '第四波女性主义',
-      'MeToo运动',
-      '中国女权运动',
-      '流行文化女性主义',
-      '基督教女性主义',
-      '灵性女性主义'
+      'First Wave Feminism',
+      'Second Wave Feminism',
+      'Third Wave Feminism',
+      'Fourth Wave Feminism',
+      'MeToo Movement',
+      'Chinese Feminist Movement',
+      'Pop Culture Feminism',
+      'Christian Feminism',
+      'Spiritual Feminism'
     ],
     icon: '📚',
     description: 'Historical development and temporal contexts of feminism'
   },
   'Literature & Creation': {
     topics: [
-      '女性文学',
-      '女性写作',
-      '女性文学批评',
-      '翻译女性主义',
-      '女性叙事学'
+      'Women\'s Literature',
+      'Women\'s Writing',
+      'Feminist Literary Criticism',
+      'Feminist Translation Studies',
+      'Feminist Narratology'
     ],
     icon: '✍️',
     description: 'Feminist literary theory and creative practices'
   },
   'Special Concepts': {
     topics: [
-      '情绪劳动',
-      '关怀伦理',
-      '女性主义心理学',
-      '女性主义艺术',
-      '种族与性别'
+      'Emotional Labor',
+      'Ethics of Care',
+      'Feminist Psychology',
+      'Feminist Art',
+      'Race and Gender',
+      'Mother-Daughter Relationships',
+      'Female Friendship',
+      'Queer Identity',
+      'Immigrant Identity',
+      'Cultural Identity'
     ],
     icon: '💡',
     description: 'Unique concepts and theories in feminism'
@@ -136,10 +141,10 @@ const enrichedCategories = Object.entries(topicCategories).map(([categoryName, c
   topics: category.topics.map(topic => {
     const topicInfo = findTopicByName(topic);
     return {
-      chineseName: topic,
-      englishName: topicInfo ? topicInfo.enName : topic,
+      englishName: topic,
+      chineseName: topicInfo?.zhName || topic,
       count: topicCounts[topic] || 0,
-      icon: getTopicIcon(topic)
+      icon: topicInfo?.icon || '📋'
     };
   })
 }));
@@ -151,10 +156,10 @@ const popularTopics = Object.entries(topicCounts)
   .map(([topic, count]) => {
     const topicInfo = findTopicByName(topic);
     return {
-      chineseName: topic,
-      englishName: topicInfo ? topicInfo.enName : topic,
+      englishName: topic,
+      chineseName: topicInfo?.zhName || topic,
       count,
-      icon: getTopicIcon(topic)
+      icon: topicInfo?.icon || '📋'
     };
   });
 ---

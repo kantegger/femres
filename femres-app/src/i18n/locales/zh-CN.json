@@ -90,7 +90,7 @@
       "title": "发现",
       "titleHighlight": "女性主义",
       "titleEnd": "的力量",
-      "subtitle": "探索书籍、文章、视频、播客和学术论文<br/>深入了解性别平等的理论与实践，推动社会进步",
+      "subtitle": "探索书籍、电影、文章、视频、播客和论文<br/>深入了解性别平等的理论与实践，推动社会进步",
       "startExploring": "开始探索",
       "learnMore": "了解项目"
     },
@@ -110,12 +110,12 @@
     },
     "sections": {
       "featured": "精选内容",
-      "latestBooks": "最新收录书籍",
-      "latestFilms": "最新收录电影",
-      "latestArticles": "最新收录文章",
-      "latestVideos": "最新收录视频",
-      "latestPodcasts": "最新收录播客",
-      "latestPapers": "最新收录论文",
+      "latestBooks": "精选书籍",
+      "latestFilms": "精选电影",
+      "latestArticles": "精选文章",
+      "latestVideos": "精选视频",
+      "latestPodcasts": "精选播客",
+      "latestPapers": "精选论文",
       "popularTopics": "热门主题"
     },
     "cta": {

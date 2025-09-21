@@ -558,5 +558,30 @@
     "en": "Youth Rights",
     "zh-CN": "青少年权利",
     "icon": "👶"
+  },
+  "Male Privilege": {
+    "en": "Male Privilege",
+    "zh-CN": "男性特权",
+    "icon": "👑"
+  },
+  "Body Positivity": {
+    "en": "Body Positivity",
+    "zh-CN": "身体积极性",
+    "icon": "💖"
+  },
+  "Beauty Standards": {
+    "en": "Beauty Standards",
+    "zh-CN": "美丽标准",
+    "icon": "💄"
+  },
+  "Self-Love": {
+    "en": "Self-Love",
+    "zh-CN": "自爱",
+    "icon": "💕"
+  },
+  "Historical Feminism": {
+    "en": "Historical Feminism",
+    "zh-CN": "历史女性主义",
+    "icon": "📜"
   }
 }

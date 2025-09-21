@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { findTopicByName, getTopicIcon } from '../../i18n/topicsUtils';
 
 // 获取所有内容以统计主题
 const books = await getCollection('books');
@@ -126,97 +127,41 @@ const topicCategories = {
   }
 };
 
-// 主题图标映射
-const topicIcons: Record<string, string> = {
-  // 理论流派
-  '交叉女性主义': '🌐',
-  '马克思主义女性主义': '⚒️',
-  '去殖民女性主义': '🌍',
-  '存在主义女性主义': '🤔',
-  '自由主义女性主义': '🗽',
-  '激进女性主义': '⚡',
-  '黑人女性主义': '✊🏿',
-  '原住民女性主义': '🪶',
-  '跨性别女性主义': '🏳️‍⚧️',
-  '生态女性主义': '🌱',
-  '后现代女性主义': '🎭',
-  
-  // 运动议题
-  '职场平等': '💼',
-  '同工同酬': '💰',
-  '玻璃天花板': '🔝',
-  '生育自主': '🤱',
-  '堕胎权': '⚕️',
-  '反性暴力': '🛡️',
-  '政治参与': '🗳️',
-  '法律平等': '⚖️',
-  '经济赋权': '📈',
-  '教育平等': '📚',
-  '家庭解放': '🏠',
-  '体育平等': '⚽',
-  '身体自主': '💪',
-  '数字女性主义': '💻',
-  '气候正义': '🌍',
-  
-  // 批判领域
-  '父权制批判': '👑',
-  '资本主义批判': '🏭',
-  '媒体表征批判': '📺',
-  '宗教父权批判': '⛪',
-  '男权运动批判': '🚫',
-  '文化批判': '🎨',
-  '反女性主义研究': '🔍',
-  '学术父权批判': '🎓',
-  '语言性别歧视': '💬',
-  '翻译政治': '🌐',
-  '知识殖民批判': '📖',
-  
-  // 历史脉络
-  '第一波女性主义': '1️⃣',
-  '第二波女性主义': '2️⃣',
-  '第三波女性主义': '3️⃣',
-  '第四波女性主义': '4️⃣',
-  'MeToo运动': '#️⃣',
-  '中国女权运动': '🇨🇳',
-  '流行文化女性主义': '🎬',
-  '基督教女性主义': '✝️',
-  '灵性女性主义': '🔮',
-  
-  // 文学与创作
-  '女性文学': '📖',
-  '女性写作': '✍️',
-  '女性文学批评': '📝',
-  '翻译女性主义': '🔤',
-  '女性叙事学': '📚',
-  
-  // 特殊概念
-  '情绪劳动': '💭',
-  '关怀伦理': '❤️',
-  '女性主义心理学': '🧠',
-  '女性主义艺术': '🎨',
-  '种族与性别': '🌈',
-  '母女关系': '👩‍👧',
-  '女性友谊': '👭',
-  '酷儿身份': '🏳️‍🌈',
-  '移民身份认同': '🌍',
-  '文化认同': '🏛️'
-};
-
 // 为每个分类添加统计数据
 const enrichedCategories = Object.entries(topicCategories).map(([categoryName, category]) => ({
   name: categoryName,
   ...category,
-  totalContent: category.topics.reduce((sum, topic) => sum + (topicCounts[topic] || 0), 0),
-  topics: category.topics.map(topic => ({
-    name: topic,
-    count: topicCounts[topic] || 0
-  }))
+  totalContent: category.topics.reduce((sum, topic) => {
+    const topicInfo = findTopicByName(topic);
+    const englishName = topicInfo?.enName || topic;
+    return sum + (topicCounts[englishName] || 0);
+  }, 0),
+  topics: category.topics.map(topic => {
+    // topic 是中文名，需要找到对应的英文名来统计
+    const topicInfo = findTopicByName(topic);
+    const englishName = topicInfo?.enName || topic;
+    return {
+      englishName: englishName,
+      chineseName: topic,
+      count: topicCounts[englishName] || 0,
+      icon: topicInfo?.icon || '📋'
+    };
+  })
 }));
 
 // 获取热门主题（按内容数量排序）
 const popularTopics = Object.entries(topicCounts)
   .sort((a, b) => b[1] - a[1])
-  .slice(0, 12);
+  .slice(0, 12)
+  .map(([topic, count]) => {
+    const topicInfo = findTopicByName(topic);
+    return {
+      englishName: topic,
+      chineseName: topicInfo?.zhName || topic,
+      count,
+      icon: topicInfo?.icon || '📋'
+    };
+  });
 ---
 
 <Layout 
@@ -259,20 +204,20 @@ const popularTopics = Object.entries(topicCounts)
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-        {popularTopics.map(([topic, count]) => (
-          <a 
-            href={`/topics/${topic}`}
+        {popularTopics.map((topic) => (
+          <a
+            href={`/topics/${topic.englishName}`}
             class="group bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 hover:-translate-y-1"
           >
             <div class="text-center">
               <div class="text-4xl mb-3">
-                {topicIcons[topic] || '📋'}
+                {topic.icon}
               </div>
               <h3 class="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                {topic}
+                {topic.chineseName}
               </h3>
               <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">
-                {count} 个内容
+                {topic.count} 个内容
               </span>
             </div>
           </a>
@@ -308,17 +253,17 @@ const popularTopics = Object.entries(topicCounts)
           {category.topics.map(topic => (
             <div class="group">
               {topic.count > 0 ? (
-                <a 
-                  href={`/topics/${topic.name}`}
+                <a
+                  href={`/topics/${topic.englishName}`}
                   class="block bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-200 hover:-translate-y-0.5"
                 >
                   <div class="flex items-center">
                     <span class="text-2xl mr-3">
-                      {topicIcons[topic.name] || '📋'}
+                      {topic.icon}
                     </span>
                     <div class="flex-1 min-w-0">
                       <h3 class="font-medium text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors truncate">
-                        {topic.name}
+                        {topic.chineseName}
                       </h3>
                       <span class="text-sm text-gray-500 dark:text-gray-400">
                         {topic.count} 个内容
@@ -330,11 +275,11 @@ const popularTopics = Object.entries(topicCounts)
                 <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-5 border border-gray-200 dark:border-gray-700 opacity-60">
                   <div class="flex items-center">
                     <span class="text-2xl mr-3 grayscale">
-                      {topicIcons[topic.name] || '📋'}
+                      {topic.icon}
                     </span>
                     <div class="flex-1 min-w-0">
                       <h3 class="font-medium text-gray-500 dark:text-gray-400 truncate">
-                        {topic.name}
+                        {topic.chineseName}
                       </h3>
                       <span class="text-sm text-gray-400 dark:text-gray-500">
                         即将推出

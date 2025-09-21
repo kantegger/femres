@@ -39,6 +39,8 @@ const papers = await getCollection('papers');
 
 // 根据界面语言过滤所有内容类型
 const filteredBooks = books.filter(book => {
+  const isPublished = book.data.status === 'published';
+  if (!isPublished) return false;
   if (currentLocale === 'en') {
     return book.slug.endsWith('-en');
   } else {
@@ -47,6 +49,8 @@ const filteredBooks = books.filter(book => {
 });
 
 const filteredArticles = articles.filter(article => {
+  const isPublished = article.data.status === 'published';
+  if (!isPublished) return false;
   if (currentLocale === 'en') {
     return article.slug.endsWith('-en');
   } else {
@@ -55,6 +59,8 @@ const filteredArticles = articles.filter(article => {
 });
 
 const filteredFilms = films.filter(film => {
+  const isPublished = film.data.status === 'published';
+  if (!isPublished) return false;
   if (currentLocale === 'en') {
     return film.slug.endsWith('-en');
   } else {
@@ -63,6 +69,8 @@ const filteredFilms = films.filter(film => {
 });
 
 const filteredVideos = videos.filter(video => {
+  const isPublished = video.data.status === 'published';
+  if (!isPublished) return false;
   if (currentLocale === 'en') {
     return video.slug.endsWith('-en');
   } else {
@@ -71,6 +79,8 @@ const filteredVideos = videos.filter(video => {
 });
 
 const filteredPodcasts = podcasts.filter(podcast => {
+  const isPublished = podcast.data.status === 'published';
+  if (!isPublished) return false;
   if (currentLocale === 'en') {
     return podcast.slug.endsWith('-en');
   } else {
@@ -79,6 +89,8 @@ const filteredPodcasts = podcasts.filter(podcast => {
 });
 
 const filteredPapers = papers.filter(paper => {
+  const isPublished = paper.data.status === 'published';
+  if (!isPublished) return false;
   if (currentLocale === 'en') {
     return paper.slug.endsWith('-en');
   } else {
@@ -117,7 +129,7 @@ const popularTopics = Object.entries(topicCounts)
 
 
 // 为文章添加类型标记
-const enrichedArticles = articles.map(article => {
+const enrichedArticles = filteredArticles.map(article => {
   let articleType: 'news' | 'blog' | 'research' | 'opinion' | 'analysis' = 'blog';
   if (article.data.title.includes('报告') || article.data.title.includes('数据')) {
     articleType = 'analysis';

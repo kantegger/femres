@@ -95,7 +95,7 @@
       "title": "Discover the",
       "titleHighlight": "Power of Feminism",
       "titleEnd": "",
-      "subtitle": "Explore books, articles, videos, podcasts, and academic papers<br/>Dive deep into gender equality theory and practice, driving social progress",
+      "subtitle": "Explore books, films, articles, videos, podcasts, and theses<br/>Dive deep into gender equality theory and practice, driving social progress",
       "startExploring": "Start Exploring",
       "learnMore": "Learn About Project"
     },
@@ -115,12 +115,12 @@
     },
     "sections": {
       "featured": "Featured Content",
-      "latestBooks": "Latest Updated Books",
-      "latestFilms": "Latest Updated Films",
-      "latestArticles": "Latest Updated Articles",
-      "latestVideos": "Latest Updated Videos",
-      "latestPodcasts": "Latest Updated Podcasts",
-      "latestPapers": "Latest Updated Papers",
+      "latestBooks": "Featured Books",
+      "latestFilms": "Featured Films",
+      "latestArticles": "Featured Articles",
+      "latestVideos": "Featured Videos",
+      "latestPodcasts": "Featured Podcasts",
+      "latestPapers": "Featured Papers",
       "popularTopics": "Popular Topics"
     },
     "cta": {

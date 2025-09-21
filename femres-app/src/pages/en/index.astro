@@ -8,10 +8,26 @@ import PodcastCard from '../../components/PodcastCard.astro';
 import PaperCard from '../../components/PaperCard.astro';
 import { getCollection } from 'astro:content';
 import { createT, getLocalizedPath } from '../../i18n/index';
+import topicsMapping from '../../i18n/topicsMapping.json';
 
 // Set current locale
 const currentLocale = 'en';
 const t = createT(currentLocale);
+
+// Function to get localized topic name
+function getLocalizedTopicName(topic: string): string {
+  const mapping = topicsMapping[topic as keyof typeof topicsMapping];
+  if (mapping) {
+    return mapping[currentLocale as 'en' | 'zh-CN'] || topic;
+  }
+  return topic;
+}
+
+// Function to get topic icon
+function getTopicIcon(topic: string): string {
+  const mapping = topicsMapping[topic as keyof typeof topicsMapping];
+  return mapping?.icon || '📋';
+}
 
 // 获取所有内容
 const books = await getCollection('books');
@@ -88,63 +104,6 @@ const popularTopics = Object.entries(topicCounts)
   .sort((a, b) => b[1] - a[1])
   .slice(0, 8);
 
-// 主题图标映射
-const topicIcons: Record<string, string> = {
-  // 理论流派
-  '交叉女性主义': '🌐',
-  '马克思主义女性主义': '⚒️',
-  '去殖民女性主义': '🌍',
-  '存在主义女性主义': '🤔',
-  '自由主义女性主义': '🗽',
-  '激进女性主义': '⚡',
-  '黑人女性主义': '✊🏿',
-  '原住民女性主义': '🪶',
-  '跨性别女性主义': '🏳️‍⚧️',
-  '生态女性主义': '🌱',
-  '后现代女性主义': '🎭',
-
-  // 运动议题
-  '职场平等': '💼',
-  '同工同酬': '💰',
-  '玻璃天花板': '🔝',
-  '生育自主': '🤱',
-  '堕胎权': '⚕️',
-  '反性暴力': '🛡️',
-  '政治参与': '🗳️',
-  '法律平等': '⚖️',
-  '经济赋权': '📈',
-  '教育平等': '📚',
-  '家庭解放': '🏠',
-  '体育平等': '⚽',
-  '身体自主': '💪',
-
-  // 批判领域
-  '父权制批判': '👑',
-  '资本主义批判': '🏭',
-  '媒体表征批判': '📺',
-  '宗教父权批判': '⛪',
-  '男权运动批判': '🚫',
-  '文化批判': '🎨',
-  '反女性主义研究': '🔍',
-
-  // 历史脉络
-  '第一波女性主义': '1️⃣',
-  '第二波女性主义': '2️⃣',
-  '第三波女性主义': '3️⃣',
-  '第四波女性主义': '4️⃣',
-  'MeToo运动': '#️⃣',
-  '中国女权运动': '🇨🇳',
-  '流行文化女性主义': '🎬',
-  '基督教女性主义': '✝️',
-  '灵性女性主义': '🔮',
-
-  // 特殊概念
-  '情绪劳动': '💭',
-  '关怀伦理': '❤️',
-  '女性主义心理学': '🧠',
-  '女性主义艺术': '🎨',
-  '种族与性别': '🌈'
-};
 
 // 为文章添加类型标记（使用过滤后的文章）
 const enrichedArticles = filteredArticles.map(article => {
@@ -528,14 +487,14 @@ const contributeLink = getLocalizedPath('contribute', currentLocale);
               <!-- Icon with background -->
               <div class={`relative inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${bgGradient} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 <span class="text-3xl">
-                  {topicIcons[topic] || '📋'}
+                  {getTopicIcon(topic)}
                 </span>
               </div>
 
               <!-- Content -->
               <div class="relative">
                 <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-600 transition-all duration-300">
-                  {topic}
+                  {getLocalizedTopicName(topic)}
                 </h3>
                 <p class="text-gray-600 dark:text-gray-400 mb-4">
                   {count} featured content
