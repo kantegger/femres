@@ -16,7 +16,7 @@ export async function getStaticPaths() {
   // 英文界面：为所有带-en后缀的视频生成页面，但URL不带-en后缀
   const englishInterfaceVideos = videos.filter(video => video.slug.endsWith('-en'));
   return englishInterfaceVideos.map((video) => ({
-    params: { slug: video.slug.replace('-en', '') }, // 去掉-en后缀生成URL
+    params: { slug: video.slug.slice(0, -3) }, // 去掉-en后缀生成URL (使用slice确保只移除末尾的-en)
     props: video,
   }));
 }
@@ -278,7 +278,7 @@ const videosLink = getLocalizedPath('videos', currentLocale);
               <div class="space-y-4">
                 {relatedVideos.map(relatedVideo => (
                   <a
-                    href={getLocalizedPath(`videos/${relatedVideo.slug.replace('-en', '')}`, currentLocale)}
+                    href={getLocalizedPath(`videos/${relatedVideo.slug.slice(0, -3)}`, currentLocale)}
                     class="group flex gap-3 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg p-2 transition-colors"
                   >
                     <div class="flex-shrink-0 w-20 h-14 bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900 to-purple-900 rounded-lg flex items-center justify-center">

@@ -17,7 +17,7 @@ export async function getStaticPaths() {
   // 英文界面：为所有带-en后缀的书籍生成页面
   const englishInterfaceBooks = books.filter(book => book.slug.endsWith('-en'));
   return englishInterfaceBooks.map((book) => ({
-    params: { slug: book.slug.replace('-en', '') }, // 去掉-en后缀生成URL
+    params: { slug: book.slug.slice(0, -3) }, // 去掉-en后缀生成URL (使用slice确保只移除末尾的-en)
     props: book,
   }));
 }

@@ -16,7 +16,7 @@ export async function getStaticPaths() {
   // 英文界面：为所有带-en后缀的播客生成页面，但URL不带-en后缀
   const englishInterfacePodcasts = podcasts.filter(podcast => podcast.slug.endsWith('-en'));
   return englishInterfacePodcasts.map((podcast) => ({
-    params: { slug: podcast.slug.replace('-en', '') }, // 去掉-en后缀生成URL
+    params: { slug: podcast.slug.slice(0, -3) }, // 去掉-en后缀生成URL (使用slice确保只移除末尾的-en)
     props: podcast,
   }));
 }
@@ -319,7 +319,7 @@ const podcastsLink = getLocalizedPath('podcasts', currentLocale);
               <div class="space-y-4">
                 {relatedPodcasts.map(relatedPodcast => (
                   <a
-                    href={getLocalizedPath(`podcasts/${relatedPodcast.slug.replace('-en', '')}`, currentLocale)}
+                    href={getLocalizedPath(`podcasts/${relatedPodcast.slug.slice(0, -3)}`, currentLocale)}
                     class="group flex gap-3 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg p-2 transition-colors"
                   >
                     <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900 to-indigo-900 rounded-lg flex items-center justify-center">

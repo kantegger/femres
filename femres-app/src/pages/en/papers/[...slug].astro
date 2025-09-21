@@ -17,7 +17,7 @@ export async function getStaticPaths() {
   // 英文界面：为所有带-en后缀的论文生成页面
   const englishInterfacePapers = papers.filter(paper => paper.slug.endsWith('-en'));
   return englishInterfacePapers.map((paper) => ({
-    params: { slug: paper.slug.replace('-en', '') }, // 去掉-en后缀生成URL
+    params: { slug: paper.slug.slice(0, -3) }, // 去掉-en后缀生成URL (使用slice确保只移除末尾的-en)
     props: paper,
   }));
 }
@@ -307,7 +307,7 @@ const papersLink = getLocalizedPath('papers', currentLocale);
               <div class="space-y-4">
                 {relatedPapers.map(relatedPaper => (
                   <a
-                    href={getLocalizedPath(`papers/${relatedPaper.slug.replace('-en', '')}`, currentLocale)}
+                    href={getLocalizedPath(`papers/${relatedPaper.slug.slice(0, -3)}`, currentLocale)}
                     class="group block hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg p-2 transition-colors"
                   >
                     <h4 class="font-medium text-gray-900 dark:text-white text-sm leading-tight mb-1 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors line-clamp-2">

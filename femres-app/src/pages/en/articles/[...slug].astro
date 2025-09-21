@@ -16,7 +16,7 @@ export async function getStaticPaths() {
   // 英文界面：为所有带-en后缀的文章生成页面
   const englishInterfaceArticles = articles.filter(article => article.slug.endsWith('-en'));
   return englishInterfaceArticles.map((article) => ({
-    params: { slug: article.slug.replace('-en', '') }, // 去掉-en后缀生成URL
+    params: { slug: article.slug.slice(0, -3) }, // 去掉-en后缀生成URL (使用slice确保只移除末尾的-en)
     props: article,
   }));
 }
@@ -213,7 +213,7 @@ const articlesLink = getLocalizedPath('articles', currentLocale);
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           {relatedArticles.map(relatedArticle => (
             <a
-              href={getLocalizedPath(`articles/${relatedArticle.slug.replace('-en', '')}`, currentLocale)}
+              href={getLocalizedPath(`articles/${relatedArticle.slug.slice(0, -3)}`, currentLocale)}
               class="group block bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
             >
               {relatedArticle.data.featuredImage && (
