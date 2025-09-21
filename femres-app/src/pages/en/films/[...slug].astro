@@ -285,16 +285,16 @@ const filmsLink = getLocalizedPath('films', currentLocale);
               )}
 
               {/* Douban Rating & Link */}
-              {film.data.sourceUrl?.find(link => link.platform === '豆瓣') && (
+              {film.data.sourceUrl?.find(link => link.platform === '豆瓣' || link.platform === 'Douban') && (
                 <a
-                  href={film.data.sourceUrl.find(link => link.platform === '豆瓣').url}
+                  href={film.data.sourceUrl.find(link => link.platform === '豆瓣' || link.platform === 'Douban').url}
                   target="_blank"
                   rel="noopener noreferrer"
                   class="block w-full px-4 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border border-blue-300 dark:border-blue-700 rounded-lg transition-all duration-200"
                 >
                   <div class="flex justify-between items-center">
                     <span class="text-blue-700 dark:text-blue-300 font-medium">Douban</span>
-                    {film.data.doubanRating && (
+                    {film.data.doubanRating && film.data.doubanRating !== "N/A" && (
                       <span class="font-bold text-lg text-green-600 dark:text-green-400">
                         {film.data.doubanRating}/10
                       </span>
@@ -304,7 +304,7 @@ const filmsLink = getLocalizedPath('films', currentLocale);
               )}
 
               {/* Other Links without ratings */}
-              {film.data.sourceUrl?.filter(link => link.platform !== 'IMDB' && link.platform !== '豆瓣').map(link => (
+              {film.data.sourceUrl?.filter(link => link.platform !== 'IMDB' && link.platform !== '豆瓣' && link.platform !== 'Douban').map(link => (
                 <a
                   href={link.url}
                   target="_blank"

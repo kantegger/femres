@@ -1,9 +1,14 @@
 // Film genre translation utilities
 export type Genre =
   | 'Action' | 'Comedy' | 'Drama' | 'Thriller' | 'Horror' | 'Romance'
-  | 'Sci-Fi' | 'Fantasy' | 'Documentary' | 'Animation' | 'Musical'
+  | 'Sci-Fi' | 'Science Fiction' | 'Fantasy' | 'Documentary' | 'Animation' | 'Musical'
   | 'Coming-of-Age' | 'Cultural Identity' | 'Biography' | 'History'
-  | 'Crime' | 'Mystery' | 'War' | 'Western' | 'Family' | 'Adventure';
+  | 'Crime' | 'Mystery' | 'War' | 'Western' | 'Family' | 'Adventure'
+  | 'Social Realism' | 'Sport' | 'Sports' | 'Historical' | 'Art House'
+  | 'LGBTQ+' | 'Dark Comedy' | 'Period Drama' | 'Independent' | 'Experimental'
+  | 'Road Movie' | 'Black Comedy' | 'Social Issues' | 'Feminist'
+  | 'Superhero' | 'Body Horror' | 'Psychological' | 'Journalism'
+  | 'Music' | 'Period';
 
 const genreTranslations: Record<Genre, { 'zh-CN': string; 'en': string }> = {
   'Action': { 'zh-CN': '动作', 'en': 'Action' },
@@ -13,6 +18,7 @@ const genreTranslations: Record<Genre, { 'zh-CN': string; 'en': string }> = {
   'Horror': { 'zh-CN': '恐怖', 'en': 'Horror' },
   'Romance': { 'zh-CN': '爱情', 'en': 'Romance' },
   'Sci-Fi': { 'zh-CN': '科幻', 'en': 'Sci-Fi' },
+  'Science Fiction': { 'zh-CN': '科幻', 'en': 'Science Fiction' },
   'Fantasy': { 'zh-CN': '奇幻', 'en': 'Fantasy' },
   'Documentary': { 'zh-CN': '纪录片', 'en': 'Documentary' },
   'Animation': { 'zh-CN': '动画', 'en': 'Animation' },
@@ -26,7 +32,27 @@ const genreTranslations: Record<Genre, { 'zh-CN': string; 'en': string }> = {
   'War': { 'zh-CN': '战争', 'en': 'War' },
   'Western': { 'zh-CN': '西部', 'en': 'Western' },
   'Family': { 'zh-CN': '家庭', 'en': 'Family' },
-  'Adventure': { 'zh-CN': '冒险', 'en': 'Adventure' }
+  'Adventure': { 'zh-CN': '冒险', 'en': 'Adventure' },
+  'Social Realism': { 'zh-CN': '社会现实', 'en': 'Social Realism' },
+  'Sport': { 'zh-CN': '体育', 'en': 'Sport' },
+  'Sports': { 'zh-CN': '体育', 'en': 'Sports' },
+  'Historical': { 'zh-CN': '历史', 'en': 'Historical' },
+  'Art House': { 'zh-CN': '艺术', 'en': 'Art House' },
+  'LGBTQ+': { 'zh-CN': 'LGBTQ+', 'en': 'LGBTQ+' },
+  'Dark Comedy': { 'zh-CN': '黑色喜剧', 'en': 'Dark Comedy' },
+  'Period Drama': { 'zh-CN': '古装剧', 'en': 'Period Drama' },
+  'Independent': { 'zh-CN': '独立电影', 'en': 'Independent' },
+  'Experimental': { 'zh-CN': '实验', 'en': 'Experimental' },
+  'Road Movie': { 'zh-CN': '公路', 'en': 'Road Movie' },
+  'Black Comedy': { 'zh-CN': '黑色喜剧', 'en': 'Black Comedy' },
+  'Social Issues': { 'zh-CN': '社会议题', 'en': 'Social Issues' },
+  'Feminist': { 'zh-CN': '女性主义', 'en': 'Feminist' },
+  'Superhero': { 'zh-CN': '超级英雄', 'en': 'Superhero' },
+  'Body Horror': { 'zh-CN': '身体恐怖', 'en': 'Body Horror' },
+  'Psychological': { 'zh-CN': '心理', 'en': 'Psychological' },
+  'Journalism': { 'zh-CN': '新闻', 'en': 'Journalism' },
+  'Music': { 'zh-CN': '音乐', 'en': 'Music' },
+  'Period': { 'zh-CN': '时代', 'en': 'Period' }
 };
 
 export function getGenreTranslation(genre: string, locale: 'zh-CN' | 'en' = 'zh-CN'): string {
