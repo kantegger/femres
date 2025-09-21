@@ -18,11 +18,12 @@ export async function getStaticPaths() {
 const paper = Astro.props;
 const { Content } = await paper.render();
 
-// 获取相关论文
+// 获取相关论文 - 仅显示中文论文
 const allPapers = await getCollection('papers');
 const relatedPapers = allPapers
-  .filter(p => 
-    p.slug !== paper.slug && 
+  .filter(p =>
+    p.slug !== paper.slug &&
+    !p.slug.endsWith('-en') && // 只显示中文论文（不带-en后缀）
     p.data.topics.some(topic => paper.data.topics.includes(topic))
   )
   .slice(0, 3);

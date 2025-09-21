@@ -24,11 +24,12 @@ export async function getStaticPaths() {
 const film = Astro.props;
 const { Content } = await film.render();
 
-// 获取相关电影（相同主题的其他电影）
+// 获取相关电影（相同主题的其他电影） - 仅显示英文电影
 const allFilms = await getCollection('films');
 const relatedFilms = allFilms
   .filter(f =>
     f.slug !== film.slug &&
+    f.slug.endsWith('-en') && // 只显示英文电影（带-en后缀）
     f.data.topics.some(topic => film.data.topics.includes(topic))
   )
   .slice(0, 4);

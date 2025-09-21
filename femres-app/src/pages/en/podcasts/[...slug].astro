@@ -24,11 +24,12 @@ export async function getStaticPaths() {
 const podcast = Astro.props;
 const { Content } = await podcast.render();
 
-// 获取相关播客
+// 获取相关播客 - 仅显示英文播客
 const allPodcasts = await getCollection('podcasts');
 const relatedPodcasts = allPodcasts
   .filter(p =>
     p.slug !== podcast.slug &&
+    p.slug.endsWith('-en') && // 只显示英文播客（带-en后缀）
     p.data.topics.some(topic => podcast.data.topics.includes(topic))
   )
   .slice(0, 3);

@@ -25,11 +25,12 @@ export async function getStaticPaths() {
 const book = Astro.props;
 const { Content } = await book.render();
 
-// 获取相关书籍（相同主题的其他书籍）
+// 获取相关书籍（相同主题的其他书籍） - 仅显示中文书籍
 const allBooks = await getCollection('books');
 const relatedBooks = allBooks
-  .filter(b => 
-    b.slug !== book.slug && 
+  .filter(b =>
+    b.slug !== book.slug &&
+    !b.slug.endsWith('-en') && // 只显示中文书籍（不带-en后缀）
     b.data.topics.some(topic => book.data.topics.includes(topic))
   )
   .slice(0, 3);

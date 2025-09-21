@@ -18,7 +18,7 @@ imdbRating: "6.6"
 doubanRating: "6.0"
 sourceUrl: [
   { platform: "IMDB", url: "https://www.imdb.com/title/tt18257464/" },
-  { platform: "Douban", url: "https://movie.douban.com/subject/36181541/" }
+  { platform: "豆瓣", url: "https://movie.douban.com/subject/36181541/" }
 ]
 ---
 

@@ -24,11 +24,12 @@ export async function getStaticPaths() {
 const article = Astro.props;
 const { Content } = await article.render();
 
-// 获取相关文章
+// 获取相关文章 - 仅显示英文文章
 const allArticles = await getCollection('articles');
 const relatedArticles = allArticles
   .filter(a =>
     a.slug !== article.slug &&
+    a.slug.endsWith('-en') && // 只显示英文文章（带-en后缀）
     a.data.topics.some(topic => article.data.topics.includes(topic))
   )
   .slice(0, 3);

@@ -25,11 +25,12 @@ export async function getStaticPaths() {
 const paper = Astro.props;
 const { Content } = await paper.render();
 
-// Get related papers
+// Get related papers - only show English papers
 const allPapers = await getCollection('papers');
 const relatedPapers = allPapers
   .filter(p =>
     p.slug !== paper.slug &&
+    p.slug.endsWith('-en') && // Only show English papers (with -en suffix)
     p.data.topics.some(topic => paper.data.topics.includes(topic))
   )
   .slice(0, 3);
