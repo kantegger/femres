@@ -71,7 +71,7 @@ const buildPageUrl = (page: number) => {
 
   const pageUrl = hasQueryParams
     ? `${basePath}&page=${page}`
-    : `${basePath}/page/${page}`;
+    : `${basePath}?page=${page}`;
 
   return getLocalizedPath(pageUrl, currentLocale);
 };

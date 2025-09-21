@@ -16,6 +16,10 @@ status: "published"
 awards: ["96th Academy Awards Best Adapted Screenplay Nomination", "81st Golden Globe Awards Best Motion Picture Musical/Comedy Nomination", "76th BAFTA Awards Best Adapted Screenplay Nomination"]
 imdbRating: "6.8"
 doubanRating: "8.0"
+sourceUrl: [
+  { platform: "IMDB", url: "https://www.imdb.com/title/tt1517268/" },
+  { platform: "Douban", url: "https://movie.douban.com/subject/4058939/" }
+]
 ---
 
 Greta Gerwig's "Barbie" arrived in theaters in July 2023 as much more than a toy-based blockbuster. Beneath its deliberately artificial pink aesthetic and playful tone lies a sophisticated examination of gender roles, societal expectations, and the complex relationship between femininity and empowerment in the 21st century.
