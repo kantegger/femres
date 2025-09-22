@@ -1,5 +1,6 @@
 ---
-title: "The Feminist Present"
+title: "女性主义当下"
+originalTitle: "The Feminist Present"
 author: "Adrian Daub & Laura Goode"
 description: "《The Feminist Present》是由斯坦福大学 Clayman Institute for Gender Research 出品的播客，由 Adrian Daub 与 Laura Goode 主持。节目邀请女性主义学者、作家与活动家，探讨性别、文化与政治的交叉议题。内容涵盖酷儿口述史、女性身体进化、禁欲与欲望政治、Audre Lorde 的档案研究与“Girlboss”文化批判。风格融合学术深度与文化敏锐度，在女性主义知识生产与公共对话中具有重要地位。Spotify 评分为 4.7（86 条评论），在学术与文化女性主义播客中广受好评。"
 publishDate: 2025-09-12

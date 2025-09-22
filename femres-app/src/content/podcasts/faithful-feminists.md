@@ -1,5 +1,6 @@
 ---
-title: "The Faithful Feminists Podcast"
+title: "忠实的女性主义者"
+originalTitle: "The Faithful Feminists Podcast"
 author: "Channing & Elise"
 description: "《The Faithful Feminists Podcast》是一档由 Channing 与 Elise 主持的播客，以女性主义神学视角解读摩门教（LDS）官方《Come Follow Me》研读手册。节目强调信仰与批判的共存，内容涵盖圣经文本中的性别政治、边缘群体经验、圣礼象征与社群关怀，是女性主义宗教批判中的独特声音。节目已于 2023 年完结，所有集数仍可访问。"
 publishDate: 2025-09-12

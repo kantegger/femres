@@ -1,5 +1,6 @@
 ---
-title: "Your Angry Neighborhood Feminist"
+title: "你的愤怒邻居女性主义者"
+originalTitle: "Your Angry Neighborhood Feminist"
 author: "Madigan"
 description: "《Your Angry Neighborhood Feminist》是一档由交叉女性主义者 Madigan 主持的播客，聚焦女性与社会面临的关键议题。节目以犀利的视角探讨历史人物、时事新闻与文化现象，内容涵盖从英国女性主义发展到美国政治阴谋论、枪击事件等社会热点。Madigan 通过深入研究与个人观点，挑战主流叙事，推动女性主义对话。播客风格直率、批判性强，适合关注性别、权力与社会结构的听众。"
 publishDate: 2025-09-05

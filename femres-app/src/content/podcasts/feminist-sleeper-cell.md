@@ -1,5 +1,6 @@
 ---
-title: "Feminist Sleeper Cell"
+title: "女性主义潜伏小组"
+originalTitle: "Feminist Sleeper Cell"
 author: "Abortion Access Force"
 description: "《Feminist Sleeper Cell》是由 Abortion Access Force 出品的播客，聚焦美国堕胎权危机与反性别政治的最新动态。主持人 Lizz Winstead、Moji Alawode-El 与 Marie Khan 以讽刺、愤怒与批判性幽默回应最高法院判决、反堕胎组织行动、医疗系统中的厌女结构与黑人女性健康议题。节目风格激进、信息密集，是美国堕胎权倡导中的前线声音。"
 publishDate: 2025-09-12

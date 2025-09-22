@@ -1,5 +1,6 @@
 ---
-title: "The REAL-WORLD FEMINIST® Podcast"
+title: "现实世界的女性主义者"
+originalTitle: "The REAL-WORLD FEMINIST® Podcast"
 author: "Michelle Kinsman"
 description: "《The REAL-WORLD FEMINIST® Podcast》是一档由职业教练 Michelle Kinsman 主持的播客，专为“大胆且无畏”的女性打造，提供职场策略、目标设定与自我提升工具。节目强调行动导向、激励性语言与真实经验分享，内容涵盖职场沟通、目标规划、财务节制与自我认知，是女性主义职业发展播客中的实用指南。"
 publishDate: 2025-09-12

@@ -1,5 +1,6 @@
 ---
-title: "Feminist Wellness"
+title: "女性主义健康"
+originalTitle: "Feminist Wellness"
 author: "Victoria Albina"
 description: "《Feminist Wellness》是一档由神经系统专家、生活教练 Victoria Albina 主持的播客，致力于帮助女性摆脱情绪外包、建立自我价值与真实的自我关怀。节目融合女性主义心理学、整体医学与神经科学，探讨如何打破讨好型人格、功能性冻结等适应性模式。Victoria 提供实用的身体练习与认知框架，帮助听众重建与自我之间的连接。播客风格温暖而犀利，适合渴望心理成长与情绪复原的女性听众。"
 publishDate: 2025-09-09

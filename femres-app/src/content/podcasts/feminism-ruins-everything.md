@@ -1,5 +1,6 @@
 ---
-title: "Feminism Ruins Everything"
+title: "女性主义毁掉一切"
+originalTitle: "Feminism Ruins Everything"
 author: "Millicent Sarre & Ellis Dolan"
 description: "《Feminism Ruins Everything》是一档由 Millicent Sarre 与 Ellis Dolan 主持的播客，以女性主义视角批判影视、音乐剧与流行文化作品。节目风格幽默、批判性强，强调“友善女性主义”与文化解构，内容涵盖酷儿代表性、性别刻板印象、艺术哲学与媒体再叙述，是澳大利亚语境下的文化女性主义声音之一。"
 publishDate: 2025-09-12

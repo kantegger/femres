@@ -1,5 +1,6 @@
 ---
-title: "Lean Back: Critical Feminist Conversations"
+title: "向后靠：批判性女性主义对话"
+originalTitle: "Lean Back: Critical Feminist Conversations"
 author: "Lisa Corrigan & Laura Weiderhaft"
 description: "《Lean Back》是一档由 Lisa Corrigan 与 Laura Weiderhaft 主持的批判性女性主义播客，聚焦美国文化、政治与社会现象的深度分析。节目以理论驱动的方式探讨堕胎权、民主危机、完美主义、共谋与坦率等议题，强调结构性压迫与女性主义批判的交汇。风格犀利、学术性强，适合关注批判性女性主义与文化政治的听众。"
 publishDate: 2025-09-12

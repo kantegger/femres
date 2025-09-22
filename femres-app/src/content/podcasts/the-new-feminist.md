@@ -1,5 +1,6 @@
 ---
-title: "The New Feminist"
+title: "新女性主义者"
+originalTitle: "The New Feminist"
 author: "Jill Sorensen"
 description: "《The New Feminist》是一档由 Jill Sorensen 主持的女性主义播客，以“常识女性主义”为核心理念，结合幽默与批判性分析探讨性别不平等、流行文化与社会结构。节目内容涵盖色情产业批判、家庭暴力、跨宗教女性团结、媒体性别暴力与酷儿母职等议题，强调情感真实与行动主义。Spotify 评分为 5.0（12 条评论），在北美女性主义播客圈中具有鲜明立场。"
 publishDate: 2025-09-12

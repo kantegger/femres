@@ -1,5 +1,6 @@
 ---
-title: "She Who Persisted. The Nasty Podcast"
+title: "坚持的她"
+originalTitle: "She Who Persisted"
 author: "She Who Persisted Collective"
 description: "《She Who Persisted》是一档由一位美国人与一位奥地利人共同主持的双周女性主义播客，聚焦跨文化性别议题、政治事件与边缘群体的历史。节目内容涵盖堕胎权、游戏文化、科技行业性别歧视、LGBTQ+历史与媒体表征批判，风格犀利、幽默且具批判性，强调跨国女性主义视角与社群记忆。Spotify 评分为 5.0（1 条评论），为欧洲与北美女性主义对话的独立平台。"
 publishDate: 2025-09-12

@@ -1,5 +1,6 @@
 ---
-title: "Big Bitch Energy"
+title: "大婊子能量"
+originalTitle: "Big Bitch Energy"
 author: "Krystle & Kimber"
 description: "《Big Bitch Energy》是一档由 Krystle 与 Kimber 主持的女性主义播客，以社会主义倾向与批判性幽默探讨性别、劳动与文化议题。节目内容涵盖科技行业性骚扰、殖民主义批判、身体政治、学术父权、社交媒体规范与游戏文化中的性别排斥，风格尖锐、讽刺且具左翼批判性，是加拿大语境下的女性主义声音之一。"
 publishDate: 2025-09-12

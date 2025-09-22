@@ -96,12 +96,14 @@ const podcasts = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    originalTitle: z.string().optional(),
     titleEn: z.string().optional(),
     author: z.string(),
     description: z.string(),
     descriptionEn: z.string().optional(),
     publishDate: z.date(),
     language: z.string().optional(),
+    contentLanguage: z.string().optional(),
     topics: z.array(z.string()),
     sourceUrl: z.string().optional(),
     embedUrl: z.string().optional(),
@@ -109,6 +111,8 @@ const podcasts = defineCollection({
     transcript: z.string().optional(),
     transcriptEn: z.string().optional(),
     status: z.enum(['draft', 'published']),
+    duration: z.string().or(z.number()).optional(),
+    episodeNumber: z.number().optional(),
   }),
 });
 

@@ -1,5 +1,6 @@
 ---
-title: "Feminist History"
+title: "女性主义历史"
+originalTitle: "Feminist History"
 author: "Maggie Coomer"
 description: "《Feminist History》是一档由 Maggie Coomer 主持的播客，以创意非虚构叙事方式讲述女性历史人物的生命轨迹，聚焦那些挑战规范、推动性别平等的女性。节目内容涵盖新闻女性先驱、精神病院人权史、婴儿安置争议与黑人女性报刊编辑等议题，强调历史再叙述与文化记忆的交织。Spotify 评分为 4.9（7 条评论），为女性主义历史播客中的代表作品。"
 publishDate: 2025-09-12

@@ -1,5 +1,6 @@
 ---
-title: "Black Feminist Rants"
+title: "黑人女性主义呐喊"
+originalTitle: "Black Feminist Rants"
 author: "LaKia Williams"
 description: "《Black Feminist Rants》是一档独立制作的播客，由 LaKia Williams 主持，聚焦黑人女性与非二元者在社会正义空间中的经验，以生育正义为核心框架展开对话。节目涵盖口述历史、青年行动主义、母职与哺乳政治、完美主义批判与自我疗愈等议题，融合个人叙事与政治批判，展现黑人女性主义的多样性与深度。Spotify 评分为 5.0（26 条评论），在黑人女性主义播客中具有代表性。"
 publishDate: 2025-09-12

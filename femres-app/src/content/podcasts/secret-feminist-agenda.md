@@ -1,5 +1,6 @@
 ---
-title: "Secret Feminist Agenda"
+title: "秘密女性主义议程"
+originalTitle: "Secret Feminist Agenda"
 author: "Hannah McGregor"
 description: "《Secret Feminist Agenda》是由加拿大学者 Hannah McGregor 主持的播客，聚焦日常生活中的女性主义实践与文化批判。节目以“秘密议程”为隐喻，探讨女性主义如何在平凡、叛逆与制度性空间中展开。内容涵盖出版伦理、学术界性别政治、创伤写作、跨代集体主义与拒绝权力结构的策略。节目已于 2020 年完结，但所有集数仍可访问。"
 publishDate: 2025-09-12

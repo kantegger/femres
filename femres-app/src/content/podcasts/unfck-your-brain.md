@@ -1,5 +1,6 @@
 ---
-title: "UnF*ck Your Brain: Feminist Self-Help for Everyone"
+title: "解放你的大脑"
+originalTitle: "UnF*ck Your Brain"
 author: "Kara Loewentheil"
 description: "《UnF*ck Your Brain》是一档由女性主义教练 Kara Loewentheil 主持的播客，致力于帮助听众识别并打破由性别社会化带来的自我怀疑、焦虑与倦怠。节目结合认知行为技巧与女性主义批判，探讨情绪劳动、完美主义、关系中的权力结构等议题，帮助女性主义者在父权制社会中重建思维与自我认同。Spotify 评分为 4.3（2777 条评论），已发布超过 420 集。"
 publishDate: 2025-09-11

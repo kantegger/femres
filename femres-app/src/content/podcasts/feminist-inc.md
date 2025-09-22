@@ -1,5 +1,6 @@
 ---
-title: "Feminist Inc Pod"
+title: "女性主义公司"
+originalTitle: "Feminist Inc Pod"
 author: "Ayo (Feminist Inc)"
 description: "《Feminist Inc Pod》是一档由尼日利亚女性主义者 Ayo 主持的播客，以讽刺与亲密风格探讨尼日利亚女性的现实处境。节目内容涵盖系统性厌女、身体政治、法律不公、文化规范与媒体表征，强调黑人女性主义与交叉性视角，是尼日利亚女性主义播客中的独立声音。"
 publishDate: 2025-09-12

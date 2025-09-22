@@ -1,5 +1,6 @@
 ---
-title: "Bad Feminist Film Club"
+title: "坏女性主义电影俱乐部"
+originalTitle: "Bad Feminist Film Club"
 author: "Kelly & Sarah"
 description: "《Bad Feminist Film Club》由 Kelly 与 Sarah 主持，是一档以女性主义视角解析电影的双周播客。节目风格轻松幽默但富有批判性，涵盖好莱坞大片、独立电影与流行文化现象，探讨性别表征、权力结构与叙事政治。代表集包括对《The Batman》《The Matrix Resurrections》《Phantom of the Opera》等影片的女性主义解读。Apple Podcasts 评分为 4.8（44 条评论），在影迷与性别研究社群中广受欢迎。"
 publishDate: 2025-09-12

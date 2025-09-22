@@ -1,5 +1,6 @@
 ---
-title: "The Feminist Bar Podcast"
+title: "女性主义酒吧"
+originalTitle: "The Feminist Bar Podcast"
 author: "Tinatswe Mhaka"
 description: "《The Feminist Bar Podcast》是一档由津巴布韦作家与活动家 Tinatswe Mhaka 主持的女性主义播客，聚焦性别、情感与身份的交叉经验。节目以“Love Series”为核心，邀请来自不同背景的女性与酷儿讲述亲密关系中的自我发现、创伤、欲望与抗争。风格亲密、坦率且富有情感张力，强调真实性与情感政治。Spotify 评分为 4.6（41 条评论），在非洲女性主义播客圈中具有独特影响力。"
 publishDate: 2025-09-12

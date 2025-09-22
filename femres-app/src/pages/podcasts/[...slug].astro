@@ -9,7 +9,9 @@ import { getTopicTranslation } from '../../i18n/topicsUtils';
 
 export async function getStaticPaths() {
   const podcasts = await getCollection('podcasts');
-  return podcasts.map((podcast) => ({
+  // 中文界面：只为不带-en后缀的播客生成页面
+  const chineseInterfacePodcasts = podcasts.filter(podcast => !podcast.slug.endsWith('-en'));
+  return chineseInterfacePodcasts.map((podcast) => ({
     params: { slug: podcast.slug },
     props: podcast,
   }));
@@ -260,7 +262,14 @@ const getPodcastEmbed = (embedUrl: string) => {
                 <span class="text-gray-500 dark:text-gray-400">主播:</span>
                 <span class="text-gray-900 dark:text-white font-medium">{podcast.data.author}</span>
               </div>
-              
+
+              {podcast.data.originalTitle && (
+                <div class="flex justify-between">
+                  <span class="text-gray-500 dark:text-gray-400">原名:</span>
+                  <span class="text-gray-900 dark:text-white font-medium">{podcast.data.originalTitle}</span>
+                </div>
+              )}
+
               <div class="flex justify-between">
                 <span class="text-gray-500 dark:text-gray-400">收录:</span>
                 <span class="text-gray-900 dark:text-white">{formatDate(podcast.data.publishDate)}</span>

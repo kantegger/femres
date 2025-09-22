@@ -1,5 +1,6 @@
 ---
-title: "Feminist Frequency Radio"
+title: "女性主义频率电台"
+originalTitle: "Feminist Frequency Radio"
 author: "Kat Spada, Anita Sarkeesian"
 description: "《Feminist Frequency Radio》是一档由 Kat Spada 与 Anita Sarkeesian 主持的播客，专注于从女性主义视角批判流行文化。节目每周探讨电影、电视剧与电子游戏中的性别表现、权力结构与社会隐喻，内容涵盖从好莱坞大片到冷门经典。主持人常邀请嘉宾共同分析作品中的性别刻板印象、种族与阶级问题，并结合时事与文化趋势展开深度对话。节目风格犀利、知识密度高，深受媒体研究者与女性主义社群喜爱，评分高达 4.8（101 条评论）。"
 publishDate: 2025-09-02

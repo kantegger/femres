@@ -1,5 +1,6 @@
 ---
-title: "The Gender at Work Podcast"
+title: "职场性别"
+originalTitle: "The Gender at Work Podcast"
 author: "Aruna Rao & Joanne Sandler"
 description: "《The Gender at Work Podcast》由 Aruna Rao 与 Joanne Sandler 主持，聚焦全球女性主义行动者、学者与社区实践者的对话。节目以批判性视角探讨爱、政策、战争与跨文化联盟等议题，强调去殖民、反军事化与情感政治的交汇。风格融合理论深度与跨区域经验，Spotify 评分为 4.2（6 条评论），在国际女性主义社群中具有影响力。"
 publishDate: 2025-09-12

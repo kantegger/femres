@@ -1,5 +1,6 @@
 ---
-title: "Feminist Erotica"
+title: "女性主义情色"
+originalTitle: "Feminist Erotica"
 author: "Karen & Princess"
 description: "《Feminist Erotica》是一档由 Karen 与 Princess 主持的播客，探索女性主义视角下的欲望表达与情色叙事。节目融合批判性讨论、创意写作与文化推荐，内容涵盖酷儿关系、残障欲望、BDSM、情色文学与影视作品分析，强调愉悦、同意与多样性。风格亲密、包容且具批判性，是女性主义情色文化的重要平台。"
 publishDate: 2025-09-12

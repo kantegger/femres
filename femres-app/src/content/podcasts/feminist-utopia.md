@@ -1,5 +1,6 @@
 ---
-title: "Feminist Utopia"
+title: "女性主义乌托邦"
+originalTitle: "Feminist Utopia"
 author: "Benita & Debby"
 description: "《Feminist Utopia》是一档由 Benita 与 Debby 主持的播客，聚焦女性主义如何推动尊严、团结与社会正义。节目以美国政治事件为切入点，探讨堕胎权、最高法院政治化、抗议行动与道德话语权，强调跨性别、种族、阶级与宗教交叉性。风格直接、批判性强，适合关注当代美国女性主义政治的听众。"
 publishDate: 2025-09-12

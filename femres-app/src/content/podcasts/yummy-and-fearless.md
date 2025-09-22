@@ -1,5 +1,6 @@
 ---
-title: "The Yummy and Fearless Podcast w/The Sidechicks"
+title: "美味无畏"
+originalTitle: "Yummy and Fearless"
 author: "Yummy & Fearless"
 description: "《The Yummy and Fearless Podcast》是一档由一群自称“aunties”的主持人主理的喜剧性播客，以中年女性主义视角审视流行文化、性别关系与社会现象。节目风格大胆、讽刺、过度性化但带有批判性幽默，内容涵盖名人性丑闻、身体政治、性别刻板印象与女性欲望表达。曾被 Feedspot 评为全球前 25 名女性主义播客之一。"
 publishDate: 2025-09-12
