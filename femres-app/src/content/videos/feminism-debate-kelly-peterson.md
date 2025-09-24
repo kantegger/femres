@@ -1,6 +1,6 @@
 ---
 title: "《女性主义辩论》：女性真的能拥有一切吗？"
-author: "乔丹·彼得森 (Jordan B. Peterson) & 梅根·凯利 (Megyn Kelly)"
+author: "乔丹·彼得森与梅根·凯利"
 description: "在《女性主义辩论》一集中，心理学家乔丹·彼得森与新闻主播梅根·凯利展开深度对话，探讨现代女性主义的文化与心理影响，尤其是女性幸福感下降、传统男性气质的压制，以及母职与职业之间的张力。"
 publishDate: 2025-06-02
 contentLanguage: "en"

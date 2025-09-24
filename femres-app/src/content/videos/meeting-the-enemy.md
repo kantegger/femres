@@ -1,6 +1,6 @@
 ---
 title: "《会见敌人》：一场跨越性别的对话与反思"
-author: "卡西·杰伊 (Cassie Jaye)"
+author: "卡西·杰伊"
 description: "通过纪录片《会见敌人》的镜头，本文探讨了电影制作人卡西·杰伊与男性权利运动的对话之旅，以及她如何从偏见到理解，最终反思性别平等运动的本质。"
 publishDate: 2017-10-19
 contentLanguage: "en"

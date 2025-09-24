@@ -123,51 +123,45 @@ const formatDate = (date: Date) => {
 
     <!-- Video Info -->
     <div class="p-5">
-      <div class="flex items-start gap-3">
-        <!-- Channel Avatar Placeholder -->
-        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex-shrink-0 flex items-center justify-center">
-          <span class="text-white text-sm font-bold">
+      <!-- Title -->
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+        {displayTitle}
+      </h3>
+
+      <!-- Author & Meta -->
+      <div class="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-3">
+        <div class="flex items-center">
+          <div class="w-6 h-6 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white text-xs font-semibold mr-2">
             {author.charAt(0).toUpperCase()}
+          </div>
+          <span class="font-medium hover:text-gray-900 dark:hover:text-gray-200">
+            {author}
           </span>
         </div>
+        <span class="mx-2">•</span>
+        <span>{formatDate(publishDate)}</span>
+      </div>
 
-        <div class="flex-1 min-w-0">
-          <!-- Title -->
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1 line-clamp-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-            {displayTitle}
-          </h3>
+      <!-- Description -->
+      <p class="text-gray-700 dark:text-gray-300 text-sm mb-3 line-clamp-2">
+        {displayDescription}
+      </p>
 
-          <!-- Channel & Meta -->
-          <div class="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-2">
-            <span class="font-medium hover:text-gray-900 dark:hover:text-gray-200">
-              {author}
+      <!-- Topics -->
+      <div class="flex flex-wrap gap-1.5">
+        {topics.slice(0, 6).map(topic => {
+          const translatedTopic = getTopicTranslation(topic, currentLocale as 'zh-CN' | 'en');
+          return (
+            <span class="inline-block px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-md">
+              {translatedTopic}
             </span>
-            <span class="mx-2">•</span>
-            <span>{formatDate(publishDate)}</span>
-          </div>
-
-          <!-- Description -->
-          <p class="text-gray-700 dark:text-gray-300 text-sm mb-3 line-clamp-2">
-            {displayDescription}
-          </p>
-
-          <!-- Topics -->
-          <div class="flex flex-wrap gap-1.5">
-            {topics.slice(0, 6).map(topic => {
-              const translatedTopic = getTopicTranslation(topic, currentLocale as 'zh-CN' | 'en');
-              return (
-                <span class="inline-block px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-md">
-                  {translatedTopic}
-                </span>
-              );
-            })}
-            {topics.length > 6 && (
-              <span class="inline-block px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-500 rounded-md">
-                +{topics.length - 6}
-              </span>
-            )}
-          </div>
-        </div>
+          );
+        })}
+        {topics.length > 6 && (
+          <span class="inline-block px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-500 rounded-md">
+            +{topics.length - 6}
+          </span>
+        )}
       </div>
 
       <!-- Action Bar -->

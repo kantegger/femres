@@ -1,6 +1,6 @@
 ---
 title: "RBG：鲁思·巴德·金斯堡传记纪录片（预告片）"
-author: "Betsy West & Julie Cohen"
+author: "贝西·韦斯特与朱莉·科恩"
 description: "这部获得艾美奖的纪录片讲述了美国最高法院大法官鲁思·巴德·金斯堡为性别平等而奋斗的传奇人生，展现了她作为法律先驱和女权活动家的卓越贡献。"
 publishDate: 2018-05-04
 contentLanguage: "en"

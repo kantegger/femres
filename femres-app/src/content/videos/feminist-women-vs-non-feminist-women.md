@@ -1,6 +1,6 @@
 ---
 title: "《辩论：女性主义者vs非女性主义者》"
-author: "The Diary Of A CEO"
+author: "《CEO日记》"
 description: "这是一场由《CEO日记》主持的辩论，邀请了三位女性，她们分别代表了对女性社会问题、女性主义、性解放以及性别角色不同的观点。讨论核心聚焦于性解放和第二波女性主义对女性自由、心理健康和人际关系的影响，以及现代女性主义对性别角色的深远后果。"
 publishDate: 2025-06-19
 contentLanguage: "en"

@@ -1,6 +1,6 @@
 ---
 title: "《Woman》：全球女性的声音与韧性"
-author: "Yann Arthus-Bertrand & Anastasia Mikova"
+author: "扬·阿尔蒂斯-贝特朗等"
 description: "《Woman》是一部全球性纪录片，收录来自 50 个国家、2000 位女性的访谈，呈现她们在母职、教育、婚姻、经济独立、月经与性等议题上的真实经验。影片不仅揭示全球女性所面临的不公，更强调她们的内在力量与改变世界的能力。"
 publishDate: 2019-09-12
 contentLanguage: "en"
@@ -12,7 +12,7 @@ thumbnail: "/images/videos/woman-documentary.jpg"
 status: "published"
 ---
 
-《Woman》是一部由Yann Arthus-Bertrand和Anastasia Mikova联合执导的突破性纪录片，通过女性自己的叙述呈现全球女性经验，既揭示了性别体系中的结构性不平等，也展现了世界各地女性非凡的韧性。
+《Woman》是一部由扬·阿尔蒂斯-贝特朗和阿纳斯塔西娅·米科娃联合执导的突破性纪录片，通过女性自己的叙述呈现全球女性经验，既揭示了性别体系中的结构性不平等，也展现了世界各地女性非凡的韧性。
 
 ## 规模与方法论
 
