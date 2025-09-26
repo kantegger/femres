@@ -12,7 +12,10 @@
       "Bash(python:*)",
       "Bash(grep:*)",
       "Bash(cat:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "WebSearch",
+      "WebFetch(domain:www.aljazeera.com)",
+      "WebFetch(domain:www.technologyreview.com)"
     ],
     "deny": [],
     "ask": []
