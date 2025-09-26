@@ -3,7 +3,7 @@ title: "为什么性别平等对每个人都有益——包括男性"
 author: "迈克尔·基梅尔"
 description: "在这场TEDWomen演讲中，社会学家迈克尔·基梅尔令人信服地论证了为什么性别平等不仅有益于女性，也有益于男性。通过幽默和研究，他认为平等会带来更健康的关系、更好的工作场所和更公正的社会。基梅尔挑战男性成为女性主义进步的积极参与者。"
 publishDate: 2015-05-01
-contentLanguage: "zh-CN"
+contentLanguage: "en"  
 topics: ["Gender Equality", "Men's Rights Movement Critique", "Patriarchy Critique", "Political Participation", "Workplace Equality"]
 sourceUrl: "https://www.ted.com/talks/michael_kimmel_why_gender_equality_is_good_for_everyone_men_included?autoplay=true&referrer=playlist-talks_on_feminism"
 embedUrl: "https://embed.ted.com/talks/michael_kimmel_why_gender_equality_is_good_for_everyone_men_included"

@@ -3,7 +3,7 @@ title: "致希望为女性创造更美好世界的男性们"
 author: "伊丽莎白·尼亚马亚罗"
 description: "在这场TEDWomen演讲中，伊丽莎白·尼亚马亚罗介绍了HeForShe运动，呼吁男性积极参与全球性别平等的斗争。她借鉴个人经历和联合国倡导工作，强调在拆解父权制体系中的共同人性和集体责任。"
 publishDate: 2015-05-01
-contentLanguage: "zh-CN"
+contentLanguage: "en"  
 topics: ["Women's Rights", "Gender Equality", "Political Participation", "Patriarchy Critique", "Religious Patriarchy Critique"]
 sourceUrl: "https://www.ted.com/talks/elizabeth_nyamayaro_an_invitation_to_men_who_want_a_better_world_for_women?autoplay=true&referrer=playlist-talks_on_feminism"
 embedUrl: "https://embed.ted.com/talks/elizabeth_nyamayaro_an_invitation_to_men_who_want_a_better_world_for_women"

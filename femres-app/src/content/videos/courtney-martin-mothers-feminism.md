@@ -3,7 +3,7 @@ title: "这不是她母亲的女性主义"
 author: "考特尼·E·马丁"
 description: "在这场TEDWomen演讲中，考特尼·E·马丁反思了女性主义跨代际的演变意义。通过个人叙事和文化批判，她探讨了定义她这一代人女性主义身份的三个悖论，强调了传统与创新、理想主义与务实主义之间的张力。"
 publishDate: 2010-12-01
-contentLanguage: "zh-CN"
+contentLanguage: "en"  
 topics: ["Fourth Wave Feminism", "Cultural Critique", "Identity Formation", "Women's Writing", "Feminism"]
 sourceUrl: "https://www.ted.com/talks/courtney_e_martin_this_isn_t_her_mother_s_feminism?referrer=playlist-talks_on_feminism&autoplay=true"
 embedUrl: "https://embed.ted.com/talks/courtney_e_martin_this_isn_t_her_mother_s_feminism"

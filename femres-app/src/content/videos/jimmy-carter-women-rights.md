@@ -3,7 +3,7 @@ title: "为什么我认为虐待妇女是头号人权问题"
 author: "吉米·卡特"
 description: "美国前总统吉米·卡特发出强有力的行动呼吁，要求解决全球妇女和女童遭受暴力侵害的危机。卡特凭借数十年的人道主义工作和外交经验，提出了关于全球妇女系统性虐待的令人震惊的统计数据和个人观察，从人口贩卖到荣誉谋杀，并挑战宗教、政治和文化机构直面他们在延续性别不平等中所扮演的角色。"
 publishDate: 2015-06-02
-contentLanguage: "zh-CN"
+contentLanguage: "en"  
 topics: ["Anti-Sexual Violence", "Women's Rights", "Religious Patriarchy Critique", "Gender Equality", "Legal Equality"]
 sourceUrl: "https://www.ted.com/talks/jimmy_carter_why_i_believe_the_mistreatment_of_women_is_the_number_one_human_rights_abuse"
 embedUrl: "https://embed.ted.com/talks/jimmy_carter_why_i_believe_the_mistreatment_of_women_is_the_number_one_human_rights_abuse"

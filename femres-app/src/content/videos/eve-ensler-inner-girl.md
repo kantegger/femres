@@ -3,7 +3,7 @@ title: "拥抱你内心的女孩"
 author: "伊芙·恩斯勒"
 description: "在这场TEDIndia演讲中，剧作家和活动家伊芙·恩斯勒探讨了'女孩细胞'的概念——一个普遍的同理心、脆弱性和力量的源泉，社会教导我们要压抑它。通过全球韧性故事，她认为拥抱这个内心的女孩是治愈和转变的关键。"
 publishDate: 2009-11-01
-contentLanguage: "zh-CN"
+contentLanguage: "en"  
 topics: ["Feminism", "Anti-Sexual Violence", "Patriarchy Critique", "Emotional Labor", "Gender Socialization"]
 sourceUrl: "https://www.ted.com/talks/eve_ensler_embrace_your_inner_girl?autoplay=true&referrer=playlist-talks_on_feminism"
 embedUrl: "https://embed.ted.com/talks/eve_ensler_embrace_your_inner_girl"

@@ -3,7 +3,7 @@ title: "气候行动为女性带来的隐藏机遇"
 author: "齐内布·斯卡利"
 description: "在这场TED@BCG演讲中，性别与气候研究员齐内布·斯卡利批判了气候政策的性别中立框架，揭示了它如何经常延续不平等。她强调维也纳的性别平等城市规划作为一个模式，并呼吁在每个阶段都有意识地整合性别平等的气候战略。"
 publishDate: 2022-09-01
-contentLanguage: "zh-CN"
+contentLanguage: "en"  
 topics: ["Climate Justice", "Gender Equality", "Urban Planning", "Patriarchy Critique", "Social Movements"]
 sourceUrl: "https://www.ted.com/talks/zineb_sqalli_climate_action_s_hidden_opportunities_for_women"
 embedUrl: "https://embed.ted.com/talks/zineb_sqalli_climate_action_s_hidden_opportunities_for_women"
