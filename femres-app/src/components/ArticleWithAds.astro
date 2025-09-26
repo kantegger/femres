@@ -1,0 +1,42 @@
+---
+import AdSense from './AdSense.astro';
+
+export interface Props {
+  content: string;
+}
+
+const { content } = Astro.props;
+
+// Split content into paragraphs
+const paragraphs = content.split('</p>');
+
+// Insert ad after 3rd paragraph if article is long enough
+const adPosition = 3;
+const shouldInsertAd = paragraphs.length > 6; // Only insert ad if article has more than 6 paragraphs
+
+let processedContent = content;
+if (shouldInsertAd) {
+  const beforeAd = paragraphs.slice(0, adPosition).join('</p>') + '</p>';
+  const afterAd = paragraphs.slice(adPosition).join('</p>');
+
+  processedContent = beforeAd;
+}
+---
+
+{shouldInsertAd ? (
+  <div>
+    <div set:html={processedContent} />
+
+    <!-- In-Article Ad -->
+    <AdSense
+      adSlot="8726969261"
+      adFormat="fluid"
+      adLayout="in-article"
+      className="my-8"
+    />
+
+    <div set:html={paragraphs.slice(adPosition).join('</p>')} />
+  </div>
+) : (
+  <div set:html={content} />
+)}

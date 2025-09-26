@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../../../layouts/Layout.astro';
 import InteractionButtons from '../../../components/InteractionButtons';
 import Discussion from '../../../components/Discussion';
+import AdSense from '../../../components/AdSense.astro';
 import { createT, getLocalizedPath } from '../../../i18n/index';
 import { getTopicTranslation } from '../../../i18n/topicsUtils';
 
@@ -187,6 +188,13 @@ const articlesLink = getLocalizedPath('articles', currentLocale);
       </div>
     </header>
 
+    <!-- AdSense Ad After Header -->
+    <AdSense
+      adSlot="7132377061"
+      adFormat="auto"
+      className="my-8"
+    />
+
     <!-- Content -->
     <div class="prose prose-lg max-w-none
                  prose-headings:text-gray-900 dark:prose-headings:text-white
@@ -205,6 +213,20 @@ const articlesLink = getLocalizedPath('articles', currentLocale);
          lang="en">
       <Content />
     </div>
+
+    <!-- AdSense Ad After Content -->
+    <AdSense
+      adSlot="5459190980"
+      adFormat="auto"
+      className="my-12"
+    />
+
+    <!-- AdSense Ad Before Related Articles -->
+    <AdSense
+      adSlot="2353132608"
+      adFormat="auto"
+      className="mb-12"
+    />
 
     <!-- Related Articles -->
     {relatedArticles.length > 0 && (
@@ -249,6 +271,16 @@ const articlesLink = getLocalizedPath('articles', currentLocale);
         </div>
       </section>
     )}
+
+    <!-- Multiplex Ad for Content Recommendations -->
+    <section class="border-t border-gray-200 dark:border-gray-700 pt-12 mt-16">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">Recommended Content</h2>
+      <AdSense
+        adSlot="9127985016"
+        adFormat="autorelaxed"
+        className="mb-12"
+      />
+    </section>
 
     <!-- Buy Me a Coffee Section -->
     <section class="border-t border-gray-200 dark:border-gray-700 pt-12 mt-16">

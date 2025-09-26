@@ -45,6 +45,10 @@ const { title, description = t('common.siteDescription') } = Astro.props;
 
     <!-- Google AdSense Verification -->
     <meta name="google-adsense-account" content="ca-pub-2079107911432321" />
+
+    <!-- Google AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2079107911432321"
+     crossorigin="anonymous"></script>
   </head>
   <body class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors flex flex-col">
     <Header locale={locale} />

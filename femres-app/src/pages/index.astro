@@ -6,6 +6,7 @@ import ArticleCard from '../components/ArticleCard.astro';
 import VideoCard from '../components/VideoCard.astro';
 import PodcastCard from '../components/PodcastCard.astro';
 import PaperCard from '../components/PaperCard.astro';
+import AdSense from '../components/AdSense.astro';
 import { getCollection } from 'astro:content';
 import { createT, getLocalizedPath, getLocaleFromUrl } from '../i18n/index';
 import topicsMapping from '../i18n/topicsMapping.json';
@@ -252,6 +253,13 @@ const contributeLink = getLocalizedPath('contribute', currentLocale);
         <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">探索最新的女性主义思想、研究与实践，汇聚全球优质内容</p>
       </div>
 
+      <!-- AdSense Ad Before Books Section -->
+      <AdSense
+        adSlot="7132377061"
+        adFormat="auto"
+        className="my-12"
+      />
+
       <!-- Latest Books -->
       {latestBooks.length > 0 && (
         <div class="mb-12">
@@ -287,6 +295,13 @@ const contributeLink = getLocalizedPath('contribute', currentLocale);
           </div>
         </div>
       )}
+
+      <!-- AdSense Ad Between Sections -->
+      <AdSense
+        adSlot="5459190980"
+        adFormat="auto"
+        className="my-12"
+      />
 
       <!-- Latest Films -->
       {latestFilms.length > 0 && (
@@ -326,6 +341,13 @@ const contributeLink = getLocalizedPath('contribute', currentLocale);
           </div>
         </div>
       )}
+
+      <!-- AdSense Ad Between Sections -->
+      <AdSense
+        adSlot="2353132608"
+        adFormat="auto"
+        className="my-12"
+      />
 
       <!-- Latest Articles -->
       {latestArticles.length > 0 && (
