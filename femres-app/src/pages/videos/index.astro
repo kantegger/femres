@@ -27,16 +27,6 @@ const t = createT(currentLocale);
 
 // 统计信息
 const totalVideos = publishedVideos.length;
-const totalDuration = publishedVideos.reduce((sum, video) => sum + (video.data.duration || 0), 0);
-
-// 格式化总时长
-const formatTotalDuration = (minutes: number) => {
-  const hours = Math.floor(minutes / 60);
-  if (hours > 0) {
-    return `${hours}小时${minutes % 60}分钟`;
-  }
-  return `${minutes}分钟`;
-};
 ---
 
 <Layout 
@@ -73,10 +63,6 @@ const formatTotalDuration = (minutes: number) => {
                 <div class="flex items-center bg-white/15 backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 px-4 py-2 rounded-full">
                   <span class="text-white mr-2">🎥</span>
                   <span class="text-white">共 {totalVideos} 个视频</span>
-                </div>
-                <div class="flex items-center bg-white/15 backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 px-4 py-2 rounded-full">
-                  <span class="text-white mr-2">🕒</span>
-                  <span class="text-white">总时长 {formatTotalDuration(totalDuration)}</span>
                 </div>
                 <div class="flex items-center bg-white/15 backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 px-4 py-2 rounded-full">
                   <span class="text-white mr-2">🏷️</span>
